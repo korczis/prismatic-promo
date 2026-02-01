@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prismatic Platform</title>
+
+    
+    <meta name="description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/">
+    <meta property="og:title" content="Prismatic Platform - AI-Orchestrated Intelligence Platform">
+    <meta property="og:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta property="og:image" content="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Prismatic Platform">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/">
+    <meta name="twitter:title" content="Prismatic Platform - AI-Orchestrated Intelligence Platform">
+    <meta name="twitter:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta name="twitter:image" content="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/images/twitter-card.png">
+    <meta name="twitter:creator" content="@korczis">
+    
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/favicon.svg">
+    <link rel="apple-touch-icon" href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Flowbite + Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer
+        src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        }
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.3s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+            (function () {
+                if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 transition-all duration-300">
+        <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;" class="flex items-center space-x-3 group">
+                <div class="relative w-10 h-10">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl rotate-0 group-hover:rotate-6 transition-transform duration-300 opacity-75 blur-sm">
+                    </div>
+                    <div
+                        class="relative w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/50 transition-all duration-300">
+                        <svg class="w-6 h-6 text-white transform group-hover:scale-110 transition-transform duration-300"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                </div>
+                <span
+                    class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300">Prismatic</span>
+            </a>
+
+            <div class="flex items-center xl:order-2 space-x-2 md:space-x-4">
+                <!-- Search Button (Mockup) -->
+                <button type="button"
+                    class="p-2.5 text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 transition-colors">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                    <span class="sr-only">Search</span>
+                </button>
+
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 transition-all duration-300 transform hover:scale-105">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 transition-colors">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full xl:flex xl:w-auto xl:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col font-medium p-4 xl:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 xl:space-x-8 xl:flex-row xl:mt-0 xl:border-0 xl:bg-transparent dark:bg-gray-800 xl:dark:bg-transparent dark:border-gray-700">
+
+                    <!-- Core Agents Link -->
+                    <li>
+                        <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:hover:text-blue-600 xl:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-500 xl:dark:hover:bg-transparent transition-colors">Agents</a>
+                    </li>
+
+                    <!-- Apps Dropdown -->
+                    <li>
+                        <button id="dropdownNavbarLinkAccess" data-dropdown-toggle="dropdownNavbarAccess"
+                            class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-purple-600 xl:p-0 dark:text-white xl:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:focus:text-white dark:border-gray-700 transition-colors">
+                            Apps
+                            <span
+                                class="ml-2 px-1.5 py-0.5 text-xs font-bold bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-400 rounded-full">90+</span>
+                            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <!-- Apps Dropdown menu -->
+                        <div id="dropdownNavbarAccess"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-xl w-44 dark:bg-gray-700 dark:divide-gray-600 animate-fade-in-down">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/"
+                                        class="block px-4 py-2 hover:bg-purple-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">All
+                                        Applications</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/prismatic-web/"
+                                        class="block px-4 py-2 hover:bg-purple-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Prismatic
+                                        Web</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/prismatic-agents/"
+                                        class="block px-4 py-2 hover:bg-purple-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Agent
+                                        Core</a>
+                                </li>
+                            </ul>
+                            <div class="py-1">
+                                <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/prismatic-osint-core/"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors">OSINT
+                                    Engine</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Architecture Link -->
+                    <li>
+                        <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:hover:text-blue-600 xl:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-500 xl:dark:hover:bg-transparent transition-colors">Architecture</a>
+                    </li>
+
+                    <!-- Knowledge Dropdown (Doctrine + Teams) -->
+                    <li>
+                        <button id="dropdownNavbarLinkKnowledge" data-dropdown-toggle="dropdownNavbarKnowledge"
+                            class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-600 xl:p-0 dark:text-white xl:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:focus:text-white dark:border-gray-700 transition-colors">
+                            Knowledge
+                            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <!-- Knowledge Dropdown menu -->
+                        <div id="dropdownNavbarKnowledge"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-xl w-44 dark:bg-gray-700 dark:divide-gray-600 animate-fade-in-down">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/"
+                                        class="block px-4 py-2 hover:bg-blue-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Doctrine</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/"
+                                        class="block px-4 py-2 hover:bg-blue-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Color
+                                        Teams</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- OSINT Dropdown -->
+                    <li>
+                        <button id="dropdownNavbarLinkOsint" data-dropdown-toggle="dropdownNavbarOsint"
+                            class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-emerald-600 xl:p-0 dark:text-white xl:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:focus:text-white dark:border-gray-700 transition-colors">
+                            OSINT
+                            <span
+                                class="ml-2 px-1.5 py-0.5 text-xs font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-400 rounded-full">121+</span>
+                            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <!-- OSINT Dropdown menu -->
+                        <div id="dropdownNavbarOsint"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-xl w-44 dark:bg-gray-700 dark:divide-gray-600 animate-fade-in-down">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/osint/"
+                                        class="block px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">All
+                                        Sources</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/osint/public-registers/"
+                                        class="block px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Public
+                                        Registers</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/osint/threat-intel/"
+                                        class="block px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Threat
+                                        Intel</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- HERO SECTION -->
+<section class="bg-white dark:bg-gray-900 overflow-hidden relative min-h-screen flex items-center">
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-emerald-500/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/5 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-12 xl:gap-16 lg:py-24 lg:grid-cols-12 relative z-10">
+        <div class="mr-auto place-self-center lg:col-span-7" x-data="{ loaded: false }" x-init="setTimeout(() => loaded = true, 100)">
+            <div x-show="loaded" x-transition:enter="transition ease-out duration-700"
+                x-transition:enter-start="opacity-0 -translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
+                class="inline-flex items-center gap-2 px-4 py-2 mb-6 text-xs font-bold tracking-widest text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 rounded-full uppercase">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Generation 18 | 0.999 Apex Fitness
+            </div>
+
+            <h1 x-show="loaded" x-transition:enter="transition ease-out duration-1000 delay-150"
+                x-transition:enter-start="opacity-0 translate-y-10" x-transition:enter-end="opacity-100 translate-y-0"
+                class="max-w-2xl mb-6 text-5xl font-black tracking-tight leading-none md:text-6xl xl:text-7xl dark:text-white">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-500">Prismatic</span>
+                <br>
+                <span class="text-gray-900 dark:text-white">Platform</span>
+            </h1>
+
+            <p x-show="loaded" x-transition:enter="transition ease-out duration-1000 delay-300"
+                x-transition:enter-start="opacity-0 translate-y-10" x-transition:enter-end="opacity-100 translate-y-0"
+                class="max-w-xl mb-8 text-lg font-light text-gray-600 lg:text-xl dark:text-gray-400">
+                Enterprise-grade AI orchestration platform. <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/" class="font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 underline decoration-dotted">404 autonomous agents</a> coordinating across <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/" class="font-bold text-gray-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 underline decoration-dotted">90 umbrella apps</a>. Self-evolving, deterministic, unstoppable.
+            </p>
+
+            <div x-show="loaded" x-transition:enter="transition ease-out duration-1000 delay-500"
+                x-transition:enter-start="opacity-0 translate-y-10" x-transition:enter-end="opacity-100 translate-y-0"
+                class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
+                <a href="#capabilities"
+                    class="inline-flex items-center justify-center px-6 py-4 text-base font-semibold text-center text-white rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500/25">
+                    Explore Capabilities
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </a>
+                <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/"
+                    class="inline-flex items-center justify-center px-6 py-4 text-base font-semibold text-center text-gray-900 border-2 border-gray-200 rounded-xl hover:bg-gray-50 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-800 dark:focus:ring-gray-700 transition-all duration-300">
+                    View Agents
+                </a>
+            </div>
+        </div>
+
+        <!-- Stats Panel -->
+        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex relative" x-data="{ agents: 0, apps: 0, loc: 0 }"
+             x-init="let interval = setInterval(() => { if (agents < 404) agents += 7; if (apps < 90) apps += 2; if (loc < 2800) loc += 50; if (agents >= 404 && apps >= 90 && loc >= 2800) { agents = 404; apps = 90; loc = 2800; clearInterval(interval); }}, 30)">
+            <div class="relative w-full">
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-3xl blur-2xl opacity-20 transform rotate-3 scale-105"></div>
+                <div class="relative bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-2xl">
+                    <div class="flex items-center gap-2 mb-6 pb-4 border-b border-gray-100 dark:border-gray-700">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="ml-3 text-sm text-gray-500 font-mono">prismatic-platform v7.5.0</span>
+                    </div>
+                    <div class="space-y-6">
+                        <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/" class="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-900/50 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-600 dark:text-gray-400 font-medium">AIAD Agents</span>
+                            </div>
+                            <span class="text-2xl font-black text-blue-600" x-text="agents">0</span>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/" class="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-900/50 rounded-xl hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 6a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2zm0 6a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1v-2z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-600 dark:text-gray-400 font-medium">Umbrella Apps</span>
+                            </div>
+                            <span class="text-2xl font-black text-emerald-600" x-text="apps">0</span>
+                        </a>
+                        <div class="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-900/50 rounded-xl">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+                                    <svg class="w-5 h-5 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-600 dark:text-gray-400 font-medium">Lines of Code</span>
+                            </div>
+                            <span class="text-2xl font-black text-purple-600"><span x-text="loc">0</span>K</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-gradient-to-r from-emerald-50 to-blue-50 dark:from-emerald-900/20 dark:to-blue-900/20 rounded-xl border border-emerald-200 dark:border-emerald-800">
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">Quality Score</span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-2xl font-black text-emerald-600">100</span>
+                                <span class="text-emerald-600 font-bold">/100</span>
+                                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="bg-gray-900 py-8 border-y border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/" class="hover:scale-105 transition-transform">
+                <div class="text-3xl md:text-4xl font-black text-white">404</div>
+                <div class="text-sm text-gray-400 mt-1">AIAD Agents</div>
+            </a>
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/" class="hover:scale-105 transition-transform">
+                <div class="text-3xl md:text-4xl font-black text-white">90</div>
+                <div class="text-sm text-gray-400 mt-1">Umbrella Apps</div>
+            </a>
+            <div>
+                <div class="text-3xl md:text-4xl font-black text-white">2.8M</div>
+                <div class="text-sm text-gray-400 mt-1">Lines of Code</div>
+            </div>
+            <div>
+                <div class="text-3xl md:text-4xl font-black text-emerald-500">100%</div>
+                <div class="text-sm text-gray-400 mt-1">Quality Score</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CAPABILITIES SECTION -->
+<section id="capabilities" class="bg-white dark:bg-gray-900 py-16 lg:py-24">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4">
+                What <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Prismatic</span> Can Do
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                A complete AI-orchestrated platform for enterprise intelligence, security, and development automation.
+            </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <!-- OSINT -->
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/osint/" class="group p-8 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-3xl border border-blue-200 dark:border-blue-800 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
+                <div class="w-14 h-14 bg-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600">OSINT Intelligence</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">Multi-source intelligence gathering across 27 EU countries. Email OSINT, Google Hacking, breach correlation.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-xs font-semibold bg-blue-200 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">62 agents</span>
+                </div>
+            </a>
+
+            <!-- Security -->
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/security/" class="group p-8 bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 rounded-3xl border border-red-200 dark:border-red-800 hover:shadow-xl hover:shadow-red-500/10 transition-all duration-300">
+                <div class="w-14 h-14 bg-red-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-red-600">Prismatic Perimeter</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">External Attack Surface Management (EASM). Security ratings A-F, NIS2/ZKB compliance.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-xs font-semibold bg-red-200 dark:bg-red-900 text-red-800 dark:text-red-200 rounded-full">38 agents</span>
+                </div>
+            </a>
+
+            <!-- M&A -->
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/ma-intelligence/" class="group p-8 bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 rounded-3xl border border-emerald-200 dark:border-emerald-800 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300">
+                <div class="w-14 h-14 bg-emerald-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-emerald-600">M&A Due Diligence</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">Comprehensive M&A intelligence. Deal tracking, supplier vetting, ownership analysis.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-xs font-semibold bg-emerald-200 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 rounded-full">28 agents</span>
+                </div>
+            </a>
+
+            <!-- Quality -->
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/quality/" class="group p-8 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-3xl border border-green-200 dark:border-green-800 hover:shadow-xl hover:shadow-green-500/10 transition-all duration-300">
+                <div class="w-14 h-14 bg-green-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-green-600">Quality Assurance</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">Autonomous quality monitoring, self-healing, 100/100 quality score maintenance.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-xs font-semibold bg-green-200 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full">45 agents</span>
+                </div>
+            </a>
+
+            <!-- Development -->
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/development/" class="group p-8 bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900/20 dark:to-cyan-800/20 rounded-3xl border border-cyan-200 dark:border-cyan-800 hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300">
+                <div class="w-14 h-14 bg-cyan-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-cyan-600">Development Automation</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">Intelligent code generation, refactoring, testing. Production-ready from the start.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-xs font-semibold bg-cyan-200 dark:bg-cyan-900 text-cyan-800 dark:text-cyan-200 rounded-full">58 agents</span>
+                </div>
+            </a>
+
+            <!-- Strategic -->
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/strategic/" class="group p-8 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-3xl border border-purple-200 dark:border-purple-800 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300">
+                <div class="w-14 h-14 bg-purple-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600">AI Agent Orchestration</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-4">Supreme orchestration, multi-agent coordination, NABLA Infinity epistemic framework.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 text-xs font-semibold bg-purple-200 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full">47 agents</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                View all 404 agents
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ARCHITECTURE SECTION -->
+<section class="bg-gray-50 dark:bg-gray-800 py-16 lg:py-24">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 text-xs font-bold tracking-widest text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/30 rounded-full uppercase">
+                    Built with Elixir/OTP
+                </div>
+                <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
+                    Deterministic <span class="text-emerald-500">Event-Sourced</span> Architecture
+                </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                    Every action is immutable, every state reproducible. Built on BEAM VM for fault tolerance and hot code reloading.
+                </p>
+
+                <div class="space-y-4">
+                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/phoenix-liveview/" class="flex items-center gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">Phoenix LiveView</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Real-time dashboards with server-rendered reactivity</p>
+                        </div>
+                    </a>
+
+                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/postgresql-kuzudb/" class="flex items-center gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">PostgreSQL + KuzuDB</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Relational + graph database for complex entity relationships</p>
+                        </div>
+                    </a>
+
+                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/ollama/" class="flex items-center gap-4 p-4 bg-white dark:bg-gray-900 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 dark:text-white">Local AI (Ollama)</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Air-gapped LLM inference with qwen3-coder, deepseek</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="mt-8">
+                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/" class="inline-flex items-center text-emerald-600 hover:text-emerald-700 font-semibold">
+                        Explore full architecture
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Terminal -->
+            <div class="relative">
+                <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-blue-500 rounded-3xl blur-2xl opacity-10"></div>
+                <div class="relative bg-gray-900 rounded-3xl p-6 shadow-2xl border border-gray-700">
+                    <div class="flex items-center gap-2 mb-4 pb-4 border-b border-gray-700">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="ml-3 text-sm text-gray-500 font-mono">iex -S mix</span>
+                    </div>
+                    <div class="font-mono text-sm space-y-2">
+                        <div class="text-gray-500">iex(1)&gt; <span class="text-emerald-400">Prismatic.Perimeter.discover("target.com")</span></div>
+                        <div class="text-blue-400 pl-4">{:ok, %{</div>
+                        <div class="text-gray-300 pl-8">domains: 47,</div>
+                        <div class="text-gray-300 pl-8">subdomains: 312,</div>
+                        <div class="text-gray-300 pl-8">certificates: 89,</div>
+                        <div class="text-gray-300 pl-8">security_rating: :A,</div>
+                        <div class="text-gray-300 pl-8">nis2_compliant: true</div>
+                        <div class="text-blue-400 pl-4">}}</div>
+                        <div class="text-gray-500 animate-pulse">iex(2)&gt; <span class="text-white">|</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COLOR TEAMS SECTION -->
+<section class="bg-white dark:bg-gray-900 py-16 lg:py-24">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 text-xs font-bold tracking-widest text-red-600 dark:text-red-400 bg-red-100 dark:bg-red-900/30 rounded-full uppercase">
+                Security Operations
+            </div>
+            <h2 class="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4">
+                Color-Team <span class="text-red-500">Adversarial</span> Security
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                20 specialized agents across 6 color teams. Epistemic security through adversarial-defensive synthesis.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/gray/" class="p-6 bg-gray-100 dark:bg-gray-800 rounded-2xl border-l-4 border-gray-500 hover:shadow-lg transition-shadow">
+                <h3 class="font-bold text-gray-900 dark:text-white mb-2">Gray Team</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Boundary exploration, edge case discovery, affordance drift detection</p>
+            </a>
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/red/" class="p-6 bg-red-50 dark:bg-red-900/20 rounded-2xl border-l-4 border-red-500 hover:shadow-lg transition-shadow">
+                <h3 class="font-bold text-gray-900 dark:text-white mb-2">Red Team</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Adversarial simulation, epistemic attacks, threat modeling</p>
+            </a>
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/blue/" class="p-6 bg-blue-50 dark:bg-blue-900/20 rounded-2xl border-l-4 border-blue-500 hover:shadow-lg transition-shadow">
+                <h3 class="font-bold text-gray-900 dark:text-white mb-2">Blue Team</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Defensive posture, signal aggregation, drift detection</p>
+            </a>
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/purple/" class="p-6 bg-purple-50 dark:bg-purple-900/20 rounded-2xl border-l-4 border-purple-500 hover:shadow-lg transition-shadow">
+                <h3 class="font-bold text-gray-900 dark:text-white mb-2">Purple Team</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Synthesis & closure, Red-Blue loop coordination</p>
+            </a>
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/white/" class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl border-l-4 border-white dark:border-gray-300 hover:shadow-lg transition-shadow">
+                <h3 class="font-bold text-gray-900 dark:text-white mb-2">White Team</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400">Constructive verification, formal proofs, Lean4 validation</p>
+            </a>
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/black/" class="p-6 bg-gray-900 dark:bg-black rounded-2xl border-l-4 border-gray-700 hover:shadow-lg transition-shadow">
+                <h3 class="font-bold text-white mb-2">Black Team</h3>
+                <p class="text-sm text-gray-400">Theoretical threat modeling, abstract risk assessment (ISOLATED)</p>
+            </a>
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/" class="inline-flex items-center text-red-600 hover:text-red-700 font-semibold">
+                View all color teams
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- DOCTRINE SECTION -->
+<section class="bg-gradient-to-br from-gray-900 via-red-900/20 to-gray-900 py-16 lg:py-24 border-y border-red-900/30">
+    <div class="max-w-screen-xl px-4 mx-auto text-center">
+        <h2 class="text-4xl md:text-6xl font-black text-white mb-6">
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/no-mercy/" class="hover:text-red-400 transition-colors">NO MERCY</a>. <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/no-doubts/" class="text-red-500 hover:text-red-300 transition-colors">NO DOUBTS.</a>
+        </h2>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-12">
+            Universal doctrine governing all platform operations. Zero tolerance for incomplete implementations.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/no-mercy/" class="p-8 bg-gray-900/50 rounded-3xl border border-red-900/30 text-left hover:border-red-500 transition-colors">
+                <h3 class="text-2xl font-bold text-red-500 mb-4">NO MERCY</h3>
+                <ul class="space-y-3 text-gray-400">
+                    <li class="flex items-center gap-2 hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                        </svg>
+                        Zero incomplete implementations
+                    </li>
+                    <li class="flex items-center gap-2 hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                        </svg>
+                        Zero stubs, mocks, or TODOs
+                    </li>
+                    <li class="flex items-center gap-2 hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                        </svg>
+                        100% test coverage mandatory
+                    </li>
+                    <li class="flex items-center gap-2 hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-red-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                        </svg>
+                        Zero warnings in production
+                    </li>
+                </ul>
+            </a>
+
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/no-doubts/" class="p-8 bg-gray-900/50 rounded-3xl border border-blue-900/30 text-left hover:border-blue-500 transition-colors">
+                <h3 class="text-2xl font-bold text-blue-500 mb-4">NO DOUBTS</h3>
+                <ul class="space-y-3 text-gray-400">
+                    <li class="flex items-center gap-2 hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        Full investigation before action
+                    </li>
+                    <li class="flex items-center gap-2 hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        Decisive execution with commitment
+                    </li>
+                    <li class="flex items-center gap-2 hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        Evidence-backed claims only
+                    </li>
+                    <li class="flex items-center gap-2 hover:text-white transition-colors">
+                        <svg class="w-5 h-5 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                        </svg>
+                        Verified results, no assumptions
+                    </li>
+                </ul>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="bg-gradient-to-r from-blue-600 via-purple-600 to-emerald-600 py-16 lg:py-24">
+    <div class="max-w-screen-xl px-4 mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+            Ready to Orchestrate?
+        </h2>
+        <p class="text-xl text-white/80 max-w-2xl mx-auto mb-10">
+            Explore the comprehensive documentation. Understand every agent, every capability, every architectural decision.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/"
+                class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-purple-600 bg-white rounded-xl hover:bg-gray-100 focus:ring-4 focus:ring-white/30 transition-all duration-300 transform hover:scale-105 shadow-xl">
+                Explore Agents
+            </a>
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/"
+                class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white border-2 border-white rounded-xl hover:bg-white/10 focus:ring-4 focus:ring-white/30 transition-all duration-300">
+                View Architecture
+            </a>
+        </div>
+
+        <div class="mt-12 flex flex-wrap justify-center gap-8 text-white/60 text-sm">
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/" class="flex items-center gap-2 hover:text-white transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                404 Agents
+            </a>
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/" class="flex items-center gap-2 hover:text-white transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                90 Apps
+            </a>
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/" class="flex items-center gap-2 hover:text-white transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                6 Color Teams
+            </a>
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/" class="flex items-center gap-2 hover:text-white transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Elixir/OTP
+            </a>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 404 autonomous agents. 90 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agent Ecosystem</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Tech Stack -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Built With</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/phoenix-liveview/"
+                                class="text-gray-400 hover:text-white transition-colors">Phoenix LiveView</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/postgresql-kuzudb/"
+                                class="text-gray-400 hover:text-white transition-colors">PostgreSQL + KuzuDB</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/ollama/"
+                                class="text-gray-400 hover:text-white transition-colors">Local AI (Ollama)</a></li>
+                        <li><span class="text-gray-400">TailwindCSS + Flowbite</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Flowbite JS -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+    </script>
+</body>
+
+</html>

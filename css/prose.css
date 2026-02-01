@@ -1,0 +1,357 @@
+/* Prismatic Platform - Prose Styles */
+/* Beautiful markdown rendering with Flowbite-inspired design */
+
+/* ==================== CSS Variables ==================== */
+:root {
+    --prose-text: #374151;
+    --prose-heading: #111827;
+    --prose-link: #2563eb;
+    --prose-link-hover: #1d4ed8;
+    --prose-code-bg: #f3f4f6;
+    --prose-code-text: #ec4899;
+    --prose-pre-bg: #1f2937;
+    --prose-pre-text: #e5e7eb;
+    --prose-border: #e5e7eb;
+    --prose-table-header: #f9fafb;
+    --prose-blockquote-bg: #eff6ff;
+    --prose-blockquote-border: #3b82f6;
+}
+
+.dark {
+    --prose-text: #d1d5db;
+    --prose-heading: #f9fafb;
+    --prose-link: #60a5fa;
+    --prose-link-hover: #93c5fd;
+    --prose-code-bg: #374151;
+    --prose-code-text: #f472b6;
+    --prose-pre-bg: #111827;
+    --prose-pre-text: #e5e7eb;
+    --prose-border: #374151;
+    --prose-table-header: #1f2937;
+    --prose-blockquote-bg: rgba(59, 130, 246, 0.1);
+    --prose-blockquote-border: #3b82f6;
+}
+
+/* ==================== Base Prose ==================== */
+.prose {
+    color: var(--prose-text);
+    font-size: 1rem;
+    line-height: 1.75;
+    max-width: 100%;
+}
+
+/* ==================== Headings ==================== */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    color: var(--prose-heading);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.prose h1 {
+    font-size: 2.25rem;
+    margin-top: 0;
+    border-bottom: 2px solid var(--prose-border);
+    padding-bottom: 0.5rem;
+}
+
+.prose h2 {
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--prose-border);
+    padding-bottom: 0.5rem;
+}
+
+.prose h3 {
+    font-size: 1.25rem;
+}
+
+.prose h4 {
+    font-size: 1.125rem;
+}
+
+/* ==================== Paragraphs ==================== */
+.prose p {
+    margin-bottom: 1.5rem;
+}
+
+.prose p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==================== Links ==================== */
+.prose a {
+    color: var(--prose-link);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.15s ease;
+}
+
+.prose a:hover {
+    color: var(--prose-link-hover);
+    text-decoration: underline;
+}
+
+/* ==================== Lists ==================== */
+.prose ul,
+.prose ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.75rem;
+}
+
+.prose li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.prose li::marker {
+    color: var(--prose-link);
+}
+
+.prose ul ul,
+.prose ol ol,
+.prose ul ol,
+.prose ol ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ==================== Inline Code ==================== */
+.prose code {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Menlo', monospace;
+    font-size: 0.875em;
+    font-weight: 500;
+    padding: 0.2em 0.4em;
+    background: var(--prose-code-bg);
+    color: var(--prose-code-text);
+    border-radius: 0.375rem;
+}
+
+.prose code::before,
+.prose code::after {
+    content: none;
+}
+
+/* ==================== Code Blocks ==================== */
+.prose pre {
+    margin: 1.5rem 0;
+    padding: 1.25rem 1.5rem;
+    background: var(--prose-pre-bg);
+    border-radius: 0.75rem;
+    overflow-x: auto;
+    border: 1px solid var(--prose-border);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.prose pre code {
+    padding: 0;
+    background: transparent;
+    color: var(--prose-pre-text);
+    font-size: 0.875rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* ==================== Tables ==================== */
+.prose table {
+    width: 100%;
+    margin: 1.5rem 0;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.prose thead {
+    background: var(--prose-table-header);
+}
+
+.prose th {
+    padding: 0.875rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--prose-heading);
+    border-bottom: 2px solid var(--prose-border);
+}
+
+.prose td {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid var(--prose-border);
+    vertical-align: top;
+}
+
+.prose tbody tr:hover {
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.prose tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==================== Blockquotes ==================== */
+.prose blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--prose-blockquote-border);
+    background: var(--prose-blockquote-bg);
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-style: normal;
+}
+
+.prose blockquote p {
+    margin-bottom: 0;
+}
+
+.prose blockquote p:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+/* ==================== Horizontal Rule ==================== */
+.prose hr {
+    margin: 2.5rem 0;
+    border: none;
+    border-top: 1px solid var(--prose-border);
+}
+
+/* ==================== Strong & Emphasis ==================== */
+.prose strong {
+    color: var(--prose-heading);
+    font-weight: 600;
+}
+
+.prose em {
+    font-style: italic;
+}
+
+/* ==================== Images ==================== */
+.prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75rem;
+    margin: 1.5rem auto;
+    display: block;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== Definition Lists ==================== */
+.prose dl {
+    margin-bottom: 1.5rem;
+}
+
+.prose dt {
+    font-weight: 600;
+    color: var(--prose-heading);
+    margin-top: 1rem;
+}
+
+.prose dd {
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ==================== Mermaid Diagrams ==================== */
+.prose .mermaid {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--prose-code-bg);
+    border-radius: 0.75rem;
+    overflow-x: auto;
+}
+
+.dark .prose .mermaid {
+    background: var(--prose-pre-bg);
+}
+
+/* ==================== Task Lists (GitHub style) ==================== */
+.prose input[type="checkbox"] {
+    margin-right: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--prose-link);
+}
+
+/* ==================== Footnotes ==================== */
+.prose .footnote-ref {
+    font-size: 0.75rem;
+    vertical-align: super;
+    color: var(--prose-link);
+}
+
+.prose .footnotes {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--prose-border);
+    font-size: 0.875rem;
+}
+
+/* ==================== Abbreviations ==================== */
+.prose abbr {
+    cursor: help;
+    text-decoration: underline dotted;
+}
+
+/* ==================== Keyboard Input ==================== */
+.prose kbd {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875em;
+    padding: 0.15em 0.4em;
+    background: var(--prose-table-header);
+    border: 1px solid var(--prose-border);
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 0 var(--prose-border);
+}
+
+/* ==================== Mark/Highlight ==================== */
+.prose mark {
+    background: rgba(250, 204, 21, 0.3);
+    padding: 0.1em 0.2em;
+    border-radius: 0.2em;
+}
+
+.dark .prose mark {
+    background: rgba(250, 204, 21, 0.2);
+    color: #fef3c7;
+}
+
+/* ==================== Details/Summary ==================== */
+.prose details {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: var(--prose-table-header);
+    border-radius: 0.75rem;
+    border: 1px solid var(--prose-border);
+}
+
+.prose summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--prose-heading);
+}
+
+.prose details[open] summary {
+    margin-bottom: 1rem;
+}
+
+/* ==================== Print Styles ==================== */
+@media print {
+    .prose {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    .prose pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    .prose a {
+        color: inherit;
+        text-decoration: underline;
+    }
+}

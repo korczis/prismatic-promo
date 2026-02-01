@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prismatic Platform</title>
+
+    
+    <meta name="description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/">
+    <meta property="og:title" content="Prismatic Platform - AI-Orchestrated Intelligence Platform">
+    <meta property="og:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta property="og:image" content="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Prismatic Platform">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/">
+    <meta name="twitter:title" content="Prismatic Platform - AI-Orchestrated Intelligence Platform">
+    <meta name="twitter:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta name="twitter:image" content="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/images/twitter-card.png">
+    <meta name="twitter:creator" content="@korczis">
+    
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/favicon.svg">
+    <link rel="apple-touch-icon" href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Flowbite + Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer
+        src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        }
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.3s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+            (function () {
+                if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 transition-all duration-300">
+        <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;" class="flex items-center space-x-3 group">
+                <div class="relative w-10 h-10">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl rotate-0 group-hover:rotate-6 transition-transform duration-300 opacity-75 blur-sm">
+                    </div>
+                    <div
+                        class="relative w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/50 transition-all duration-300">
+                        <svg class="w-6 h-6 text-white transform group-hover:scale-110 transition-transform duration-300"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                </div>
+                <span
+                    class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300">Prismatic</span>
+            </a>
+
+            <div class="flex items-center xl:order-2 space-x-2 md:space-x-4">
+                <!-- Search Button (Mockup) -->
+                <button type="button"
+                    class="p-2.5 text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 transition-colors">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                    <span class="sr-only">Search</span>
+                </button>
+
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 transition-all duration-300 transform hover:scale-105">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 transition-colors">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full xl:flex xl:w-auto xl:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col font-medium p-4 xl:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 xl:space-x-8 xl:flex-row xl:mt-0 xl:border-0 xl:bg-transparent dark:bg-gray-800 xl:dark:bg-transparent dark:border-gray-700">
+
+                    <!-- Core Agents Link -->
+                    <li>
+                        <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:hover:text-blue-600 xl:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-500 xl:dark:hover:bg-transparent transition-colors">Agents</a>
+                    </li>
+
+                    <!-- Apps Dropdown -->
+                    <li>
+                        <button id="dropdownNavbarLinkAccess" data-dropdown-toggle="dropdownNavbarAccess"
+                            class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-purple-600 xl:p-0 dark:text-white xl:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:focus:text-white dark:border-gray-700 transition-colors">
+                            Apps
+                            <span
+                                class="ml-2 px-1.5 py-0.5 text-xs font-bold bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-400 rounded-full">90+</span>
+                            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <!-- Apps Dropdown menu -->
+                        <div id="dropdownNavbarAccess"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-xl w-44 dark:bg-gray-700 dark:divide-gray-600 animate-fade-in-down">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/"
+                                        class="block px-4 py-2 hover:bg-purple-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">All
+                                        Applications</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/prismatic-web/"
+                                        class="block px-4 py-2 hover:bg-purple-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Prismatic
+                                        Web</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/prismatic-agents/"
+                                        class="block px-4 py-2 hover:bg-purple-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Agent
+                                        Core</a>
+                                </li>
+                            </ul>
+                            <div class="py-1">
+                                <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/prismatic-osint-core/"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors">OSINT
+                                    Engine</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Architecture Link -->
+                    <li>
+                        <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:hover:text-blue-600 xl:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-500 xl:dark:hover:bg-transparent transition-colors">Architecture</a>
+                    </li>
+
+                    <!-- Knowledge Dropdown (Doctrine + Teams) -->
+                    <li>
+                        <button id="dropdownNavbarLinkKnowledge" data-dropdown-toggle="dropdownNavbarKnowledge"
+                            class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-600 xl:p-0 dark:text-white xl:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:focus:text-white dark:border-gray-700 transition-colors">
+                            Knowledge
+                            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <!-- Knowledge Dropdown menu -->
+                        <div id="dropdownNavbarKnowledge"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-xl w-44 dark:bg-gray-700 dark:divide-gray-600 animate-fade-in-down">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/"
+                                        class="block px-4 py-2 hover:bg-blue-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Doctrine</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/"
+                                        class="block px-4 py-2 hover:bg-blue-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Color
+                                        Teams</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- OSINT Dropdown -->
+                    <li>
+                        <button id="dropdownNavbarLinkOsint" data-dropdown-toggle="dropdownNavbarOsint"
+                            class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-emerald-600 xl:p-0 dark:text-white xl:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:focus:text-white dark:border-gray-700 transition-colors">
+                            OSINT
+                            <span
+                                class="ml-2 px-1.5 py-0.5 text-xs font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-400 rounded-full">121+</span>
+                            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <!-- OSINT Dropdown menu -->
+                        <div id="dropdownNavbarOsint"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-xl w-44 dark:bg-gray-700 dark:divide-gray-600 animate-fade-in-down">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/osint/"
+                                        class="block px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">All
+                                        Sources</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/osint/public-registers/"
+                                        class="block px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Public
+                                        Registers</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/osint/threat-intel/"
+                                        class="block px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Threat
+                                        Intel</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-gray-900 via-emerald-900 to-gray-900 py-16 lg:py-20 border-b border-emerald-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="text-center mb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 text-xs font-bold tracking-widest text-emerald-400 bg-emerald-900/50 rounded-full uppercase border border-emerald-700/50">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+                Intelligence Platform
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">121+</span> OSINT Sources
+            </h1>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                <p>121+ intelligence sources across 7 categories. Czech registries, global threat intelligence, sanctions lists, and more.</p>
+
+            </p>
+        </div>
+
+        <!-- Category Stats -->
+        <div class="flex flex-wrap justify-center gap-4 mt-10">
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-blue-400">29</span>
+                <span class="text-sm text-gray-400 ml-2">Czech</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-purple-400">84</span>
+                <span class="text-sm text-gray-400 ml-2">Global</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-red-400">3</span>
+                <span class="text-sm text-gray-400 ml-2">Sanctions</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-yellow-400">1</span>
+                <span class="text-sm text-gray-400 ml-2">EU</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-cyan-400">2</span>
+                <span class="text-sm text-gray-400 ml-2">UK/US</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Advanced Table Section -->
+<section class="bg-white dark:bg-gray-900 py-12 lg:py-16" x-data="osintTable()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+
+        <!-- Controls Bar -->
+        <div class="mb-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div class="flex flex-col lg:flex-row gap-4">
+                <!-- Search -->
+                <div class="flex-1">
+                    <label for="search" class="sr-only">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                        <input type="text"
+                               id="search"
+                               x-model="searchQuery"
+                               @input="filterSources()"
+                               class="block w-full pl-10 pr-4 py-2.5 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-emerald-500 dark:focus:border-emerald-500"
+                               placeholder="Search sources... (fuzzy search enabled)">
+                    </div>
+                </div>
+
+                <!-- Category Filter -->
+                <div class="w-full lg:w-48">
+                    <select x-model="categoryFilter"
+                            @change="filterSources()"
+                            class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="">All Categories</option>
+                        <option value="czech">Czech</option>
+                        <option value="global">Global</option>
+                        <option value="sanctions">Sanctions</option>
+                        <option value="eu">EU</option>
+                        <option value="uk">UK</option>
+                        <option value="us">US</option>
+                        <option value="universal">Universal</option>
+                    </select>
+                </div>
+
+                <!-- Type Filter -->
+                <div class="w-full lg:w-48">
+                    <select x-model="typeFilter"
+                            @change="filterSources()"
+                            class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="">All Types</option>
+                        <option value="company">Company Registry</option>
+                        <option value="threat">Threat Intelligence</option>
+                        <option value="domain">Domain/DNS</option>
+                        <option value="email">Email</option>
+                        <option value="ip">IP Intelligence</option>
+                        <option value="crypto">Cryptocurrency</option>
+                        <option value="social">Social Media</option>
+                        <option value="sanctions">Sanctions</option>
+                        <option value="legal">Legal/Court</option>
+                        <option value="financial">Financial</option>
+                    </select>
+                </div>
+
+                <!-- View Toggle -->
+                <div class="flex items-center bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <button @click="viewMode = 'cards'"
+                            :class="viewMode === 'cards' ? 'bg-emerald-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                            class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                        </svg>
+                    </button>
+                    <button @click="viewMode = 'table'"
+                            :class="viewMode === 'table' ? 'bg-emerald-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                            class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Reset -->
+                <button @click="resetFilters()"
+                        class="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600">
+                    Reset
+                </button>
+            </div>
+
+            <!-- Results count -->
+            <div class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+                Showing <span class="font-semibold text-emerald-600 dark:text-emerald-400" x-text="filteredSources.length"></span> of <span x-text="allSources.length"></span> sources
+            </div>
+        </div>
+
+        <!-- Card View -->
+        <div x-show="viewMode === 'cards'" x-transition class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <template x-for="source in paginatedSources" :key="source.id">
+                <a :href="'https://korczis.github.io/prismatic-promo//osint/' + source.slug + '/'"
+                   class="group block p-5 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-300 hover:-translate-y-1">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                             :class="getCategoryColor(source.category)">
+                            <span x-text="source.name.substring(0,2).toUpperCase()"></span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-emerald-600 transition-colors" x-text="source.name"></h3>
+                            <span class="text-xs text-gray-500 font-mono" x-text="source.module"></span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2" x-text="source.description"></p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-2">
+                            <span class="px-2 py-0.5 text-xs font-medium rounded-full"
+                                  :class="getCategoryBadge(source.category)"
+                                  x-text="source.category"></span>
+                            <span class="px-2 py-0.5 text-xs font-medium rounded-lg bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300" x-text="source.type"></span>
+                        </div>
+                        <span x-show="source.hasApi" class="text-emerald-500 text-xs font-medium">API</span>
+                    </div>
+                </a>
+            </template>
+        </div>
+
+        <!-- Table -->
+        <div x-show="viewMode === 'table'" x-transition class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-800 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700" @click="sortBy('name')">
+                            <div class="flex items-center gap-2">
+                                Source
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'name' && sortDesc}" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700" @click="sortBy('category')">
+                            <div class="flex items-center gap-2">
+                                Category
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'category' && sortDesc}" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700" @click="sortBy('type')">
+                            <div class="flex items-center gap-2">
+                                Type
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'type' && sortDesc}" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4">Description</th>
+                        <th scope="col" class="px-6 py-4 text-center">API</th>
+                        <th scope="col" class="px-6 py-4 text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template x-for="source in paginatedSources" :key="source.id">
+                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                                         :class="getCategoryColor(source.category)">
+                                        <span x-text="source.name.substring(0,2).toUpperCase()"></span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900 dark:text-white" x-text="source.name"></div>
+                                        <div class="text-xs text-gray-500" x-text="source.module"></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-full"
+                                      :class="getCategoryBadge(source.category)"
+                                      x-text="source.category"></span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-lg bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
+                                      x-text="source.type"></span>
+                            </td>
+                            <td class="px-6 py-4 max-w-xs">
+                                <p class="truncate" x-text="source.description"></p>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span x-show="source.hasApi" class="text-emerald-500">
+                                    <svg class="w-5 h-5 inline" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                </span>
+                                <span x-show="!source.hasApi" class="text-gray-300 dark:text-gray-600">
+                                    <svg class="w-5 h-5 inline" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                    </svg>
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <a :href="'https://korczis.github.io/prismatic-promo//osint/' + source.slug + '/'"
+                                   class="font-medium text-emerald-600 dark:text-emerald-400 hover:underline">
+                                    Details
+                                </a>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex flex-col md:flex-row items-center justify-between mt-6 gap-4">
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+                Page <span class="font-semibold" x-text="currentPage"></span> of <span class="font-semibold" x-text="totalPages"></span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button @click="prevPage()"
+                        :disabled="currentPage === 1"
+                        :class="{'opacity-50 cursor-not-allowed': currentPage === 1}"
+                        class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    Previous
+                </button>
+                <template x-for="page in visiblePages" :key="page">
+                    <button @click="goToPage(page)"
+                            :class="{'bg-emerald-600 text-white border-emerald-600': currentPage === page, 'bg-white text-gray-700 border-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600': currentPage !== page}"
+                            class="px-4 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                            x-text="page">
+                    </button>
+                </template>
+                <button @click="nextPage()"
+                        :disabled="currentPage === totalPages"
+                        :class="{'opacity-50 cursor-not-allowed': currentPage === totalPages}"
+                        class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    Next
+                </button>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-sm text-gray-500 dark:text-gray-400">Per page:</span>
+                <select x-model.number="perPage" @change="currentPage = 1; filterSources()"
+                        class="py-1 px-2 text-sm border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Category Overview -->
+<section class="bg-gray-50 dark:bg-gray-800 py-16 border-t border-gray-200 dark:border-gray-700">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Source Categories</h2>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <!-- Czech -->
+            <div class="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Czech Registries</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">29 sources including ARES, Justice.cz, ISIR, RZP, and more Czech public registries.</p>
+                <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">29</span>
+            </div>
+
+            <!-- Global -->
+            <div class="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Global Intelligence</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">84 sources: Shodan, VirusTotal, HIBP, Censys, SecurityTrails, and more.</p>
+                <span class="text-2xl font-bold text-purple-600 dark:text-purple-400">84</span>
+            </div>
+
+            <!-- Sanctions -->
+            <div class="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Sanctions Lists</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">OFAC SDN, EU Sanctions, UN Sanctions - comprehensive compliance checking.</p>
+                <span class="text-2xl font-bold text-red-600 dark:text-red-400">3</span>
+            </div>
+
+            <!-- Other -->
+            <div class="p-6 bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Regional</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">UK Companies House, SEC EDGAR, EU Business Registry, and universal adapters.</p>
+                <span class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">5</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function osintTable() {
+    return {
+        searchQuery: '',
+        categoryFilter: '',
+        typeFilter: '',
+        sortField: 'name',
+        sortDesc: false,
+        viewMode: 'table',
+        currentPage: 1,
+        perPage: 25,
+        allSources: [],
+        filteredSources: [],
+
+        init() {
+            this.allSources = this.generateSources();
+            this.filterSources();
+        },
+
+        generateSources() {
+            // Czech sources
+            const czechSources = [
+                { id: 'ares', name: 'ARES', module: 'Ares', category: 'czech', type: 'company', description: 'Access Register of Economic Subjects - Czech business registry', hasApi: true },
+                { id: 'justice', name: 'Justice.cz', module: 'Justice', category: 'czech', type: 'company', description: 'Commercial Register and Collection of Deeds', hasApi: true },
+                { id: 'isir', name: 'ISIR', module: 'Isir', category: 'czech', type: 'legal', description: 'Insolvency Register - bankruptcy and restructuring proceedings', hasApi: true },
+                { id: 'rzp', name: 'RZP', module: 'Rzp', category: 'czech', type: 'company', description: 'Trade Licensing Register', hasApi: true },
+                { id: 'registr-smluv', name: 'Registr Smluv', module: 'RegistrSmluv', category: 'czech', type: 'legal', description: 'Contract Register - public sector contracts', hasApi: true },
+                { id: 'hlidac-statu', name: 'Hlidac Statu', module: 'HlidacStatu', category: 'czech', type: 'company', description: 'State watchdog - contracts, subsidies, insolvencies', hasApi: true },
+                { id: 'cuzk', name: 'CUZK', module: 'Cuzk', category: 'czech', type: 'legal', description: 'Land Registry - property ownership records', hasApi: true },
+                { id: 'cedr', name: 'CEDR', module: 'Cedr', category: 'czech', type: 'financial', description: 'Central Register of Subsidies', hasApi: true },
+                { id: 'cnb', name: 'CNB', module: 'Cnb', category: 'czech', type: 'financial', description: 'Czech National Bank - licensed entities', hasApi: true },
+                { id: 'datove-schranky', name: 'Datove Schranky', module: 'DatoveSchranky', category: 'czech', type: 'company', description: 'Data Box Register - official communication', hasApi: true },
+                { id: 'dph', name: 'DPH', module: 'Dph', category: 'czech', type: 'financial', description: 'VAT Payer Registry', hasApi: true },
+                { id: 'res', name: 'RES', module: 'Res', category: 'czech', type: 'company', description: 'Register of Economic Subjects', hasApi: true },
+                { id: 'szif', name: 'SZIF', module: 'Szif', category: 'czech', type: 'financial', description: 'Agricultural subsidy register', hasApi: true },
+                { id: 'sukl', name: 'SUKL', module: 'Sukl', category: 'czech', type: 'company', description: 'Pharmaceutical registry', hasApi: true },
+                { id: 'uohs', name: 'UOHS', module: 'Uohs', category: 'czech', type: 'legal', description: 'Competition authority decisions', hasApi: true },
+                { id: 'eru', name: 'ERU', module: 'Eru', category: 'czech', type: 'company', description: 'Energy Regulatory Office licenses', hasApi: true },
+                { id: 'ctu', name: 'CTU', module: 'Ctu', category: 'czech', type: 'company', description: 'Telecom licenses registry', hasApi: true },
+                { id: 'verejne-zakazky', name: 'Verejne Zakazky', module: 'VerejneZakazky', category: 'czech', type: 'legal', description: 'Public procurement register', hasApi: true },
+                { id: 'nespolehlivy-platce', name: 'Nespolehlivy Platce', module: 'NespolehlivyPlatce', category: 'czech', type: 'financial', description: 'Unreliable VAT payer list', hasApi: true },
+                { id: 'executors', name: 'Executors', module: 'Executors', category: 'czech', type: 'legal', description: 'Bailiff proceedings registry', hasApi: false },
+                { id: 'court-cases', name: 'Court Cases', module: 'CourtCases', category: 'czech', type: 'legal', description: 'Court case tracking', hasApi: false },
+                { id: 'podnikatel', name: 'Podnikatel.cz', module: 'Podnikatel', category: 'czech', type: 'company', description: 'Business information aggregator', hasApi: false },
+                { id: 'isvs', name: 'ISVS', module: 'Isvs', category: 'czech', type: 'company', description: 'Public administration IS registry', hasApi: true },
+            ];
+
+            // Global sources
+            const globalSources = [
+                { id: 'shodan', name: 'Shodan', module: 'Shodan', category: 'global', type: 'ip', description: 'Internet-connected device search engine', hasApi: true },
+                { id: 'censys', name: 'Censys', module: 'Censys', category: 'global', type: 'ip', description: 'Internet-wide scanning and certificate analysis', hasApi: true },
+                { id: 'virustotal', name: 'VirusTotal', module: 'Virustotal', category: 'global', type: 'threat', description: 'Malware and URL analysis with 70+ AV engines', hasApi: true },
+                { id: 'hibp', name: 'Have I Been Pwned', module: 'Hibp', category: 'global', type: 'email', description: 'Data breach notification service', hasApi: true },
+                { id: 'hunter', name: 'Hunter.io', module: 'Hunter', category: 'global', type: 'email', description: 'Email finder and verification', hasApi: true },
+                { id: 'securitytrails', name: 'SecurityTrails', module: 'Securitytrails', category: 'global', type: 'domain', description: 'Historical DNS and WHOIS data', hasApi: true },
+                { id: 'greynoise', name: 'GreyNoise', module: 'Greynoise', category: 'global', type: 'ip', description: 'Internet background noise analysis', hasApi: true },
+                { id: 'urlscan', name: 'URLScan', module: 'Urlscan', category: 'global', type: 'domain', description: 'Website scanning and screenshot service', hasApi: true },
+                { id: 'abuseipdb', name: 'AbuseIPDB', module: 'Abuseipdb', category: 'global', type: 'ip', description: 'IP address abuse reporting database', hasApi: true },
+                { id: 'alienvault-otx', name: 'AlienVault OTX', module: 'AlienvaultOtx', category: 'global', type: 'threat', description: 'Open Threat Exchange intelligence sharing', hasApi: true },
+                { id: 'binaryedge', name: 'BinaryEdge', module: 'Binaryedge', category: 'global', type: 'ip', description: 'Internet scanning and data collection', hasApi: true },
+                { id: 'builtwith', name: 'BuiltWith', module: 'Builtwith', category: 'global', type: 'domain', description: 'Technology profiling and web analytics', hasApi: true },
+                { id: 'crtsh', name: 'crt.sh', module: 'Crtsh', category: 'global', type: 'domain', description: 'Certificate Transparency log search', hasApi: true },
+                { id: 'dnsdumpster', name: 'DNSDumpster', module: 'Dnsdumpster', category: 'global', type: 'domain', description: 'DNS reconnaissance and research', hasApi: false },
+                { id: 'dehashed', name: 'DeHashed', module: 'Dehashed', category: 'global', type: 'email', description: 'Breach database search', hasApi: true },
+                { id: 'emailrep', name: 'EmailRep', module: 'Emailrep', category: 'global', type: 'email', description: 'Email reputation scoring', hasApi: true },
+                { id: 'fullcontact', name: 'FullContact', module: 'Fullcontact', category: 'global', type: 'social', description: 'Person and company enrichment', hasApi: true },
+                { id: 'intelligencex', name: 'Intelligence X', module: 'Intelligencex', category: 'global', type: 'threat', description: 'Search engine for leaked data', hasApi: true },
+                { id: 'ipinfo', name: 'IPInfo', module: 'Ipinfo', category: 'global', type: 'ip', description: 'IP geolocation and ASN data', hasApi: true },
+                { id: 'ipqualityscore', name: 'IPQualityScore', module: 'Ipqualityscore', category: 'global', type: 'ip', description: 'Fraud prevention and proxy detection', hasApi: true },
+                { id: 'maxmind', name: 'MaxMind', module: 'Maxmind', category: 'global', type: 'ip', description: 'GeoIP and fraud detection', hasApi: true },
+                { id: 'onyphe', name: 'ONYPHE', module: 'Onyphe', category: 'global', type: 'ip', description: 'Cyber defense search engine', hasApi: true },
+                { id: 'open-corporates', name: 'OpenCorporates', module: 'OpenCorporates', category: 'global', type: 'company', description: 'Largest open database of companies', hasApi: true },
+                { id: 'passivetotal', name: 'PassiveTotal', module: 'Passivetotal', category: 'global', type: 'domain', description: 'Passive DNS and threat intel (RiskIQ)', hasApi: true },
+                { id: 'phishtank', name: 'PhishTank', module: 'Phishtank', category: 'global', type: 'threat', description: 'Community phishing verification', hasApi: true },
+                { id: 'pulsedive', name: 'Pulsedive', module: 'Pulsedive', category: 'global', type: 'threat', description: 'Threat intelligence platform', hasApi: true },
+                { id: 'ripestat', name: 'RIPEstat', module: 'Ripestat', category: 'global', type: 'ip', description: 'RIPE NCC network information', hasApi: true },
+                { id: 'spamhaus', name: 'Spamhaus', module: 'Spamhaus', category: 'global', type: 'ip', description: 'IP and domain blocklists', hasApi: true },
+                { id: 'sslmate', name: 'SSLMate', module: 'Sslmate', category: 'global', type: 'domain', description: 'Certificate monitoring', hasApi: true },
+                { id: 'threatfox', name: 'ThreatFox', module: 'Threatfox', category: 'global', type: 'threat', description: 'IOC sharing platform (abuse.ch)', hasApi: true },
+                { id: 'urlhaus', name: 'URLhaus', module: 'Urlhaus', category: 'global', type: 'threat', description: 'Malicious URL database (abuse.ch)', hasApi: true },
+                { id: 'viewdns', name: 'ViewDNS', module: 'Viewdns', category: 'global', type: 'domain', description: 'DNS and IP tools', hasApi: true },
+                { id: 'zoomeye', name: 'ZoomEye', module: 'Zoomeye', category: 'global', type: 'ip', description: 'Chinese internet device search', hasApi: true },
+                { id: 'crunchbase', name: 'Crunchbase', module: 'Crunchbase', category: 'global', type: 'company', description: 'Startup and company database', hasApi: true },
+                { id: 'zoominfo', name: 'ZoomInfo', module: 'Zoominfo', category: 'global', type: 'company', description: 'B2B contact and company data', hasApi: true },
+                { id: 'clearbit', name: 'Clearbit', module: 'Clearbit', category: 'global', type: 'company', description: 'Company and person enrichment', hasApi: true },
+                { id: 'pipl', name: 'Pipl', module: 'Pipl', category: 'global', type: 'social', description: 'People search engine', hasApi: true },
+                { id: 'social-searcher', name: 'Social Searcher', module: 'SocialSearcher', category: 'global', type: 'social', description: 'Social media monitoring', hasApi: true },
+                { id: 'linkedin-sales', name: 'LinkedIn Sales Nav', module: 'LinkedinSalesNavigator', category: 'global', type: 'social', description: 'Professional network data', hasApi: true },
+                { id: 'blockchain-com', name: 'Blockchain.com', module: 'BlockchainCom', category: 'global', type: 'crypto', description: 'Bitcoin blockchain explorer', hasApi: true },
+                { id: 'etherscan', name: 'Etherscan', module: 'Etherscan', category: 'global', type: 'crypto', description: 'Ethereum blockchain explorer', hasApi: true },
+                { id: 'chainalysis', name: 'Chainalysis', module: 'Chainalysis', category: 'global', type: 'crypto', description: 'Cryptocurrency compliance and investigation', hasApi: true },
+                { id: 'elliptic', name: 'Elliptic', module: 'Elliptic', category: 'global', type: 'crypto', description: 'Crypto risk management', hasApi: true },
+                { id: 'crystal-blockchain', name: 'Crystal Blockchain', module: 'CrystalBlockchain', category: 'global', type: 'crypto', description: 'Blockchain analytics', hasApi: true },
+                { id: 'nvd', name: 'NVD', module: 'Nvd', category: 'global', type: 'threat', description: 'National Vulnerability Database', hasApi: true },
+                { id: 'exploit-db', name: 'Exploit-DB', module: 'ExploitDb', category: 'global', type: 'threat', description: 'Exploit database archive', hasApi: true },
+                { id: 'wayback-machine', name: 'Wayback Machine', module: 'WaybackMachine', category: 'global', type: 'domain', description: 'Internet Archive web pages', hasApi: true },
+                { id: 'common-crawl', name: 'Common Crawl', module: 'CommonCrawl', category: 'global', type: 'domain', description: 'Web crawl data repository', hasApi: true },
+                { id: 'gdelt', name: 'GDELT', module: 'Gdelt', category: 'global', type: 'social', description: 'Global news and events database', hasApi: true },
+                { id: 'newsapi', name: 'NewsAPI', module: 'Newsapi', category: 'global', type: 'social', description: 'News article aggregation', hasApi: true },
+            ];
+
+            // Sanctions
+            const sanctionsSources = [
+                { id: 'ofac-sdn', name: 'OFAC SDN', module: 'OfacSdn', category: 'sanctions', type: 'sanctions', description: 'US Treasury Specially Designated Nationals list', hasApi: true },
+                { id: 'eu-sanctions', name: 'EU Sanctions', module: 'EuSanctions', category: 'sanctions', type: 'sanctions', description: 'European Union consolidated sanctions list', hasApi: true },
+                { id: 'un-sanctions', name: 'UN Sanctions', module: 'UnSanctions', category: 'sanctions', type: 'sanctions', description: 'United Nations Security Council sanctions', hasApi: true },
+            ];
+
+            // Regional
+            const regionalSources = [
+                { id: 'companies-house', name: 'Companies House', module: 'CompaniesHouse', category: 'uk', type: 'company', description: 'UK company registry', hasApi: true },
+                { id: 'sec-edgar', name: 'SEC EDGAR', module: 'SecEdgar', category: 'us', type: 'financial', description: 'US SEC filings database', hasApi: true },
+                { id: 'ebr', name: 'EU Business Registry', module: 'Ebr', category: 'eu', type: 'company', description: 'European Business Registry', hasApi: true },
+                { id: 'email-intelligence', name: 'Email Intelligence', module: 'EmailIntelligence', category: 'universal', type: 'email', description: 'Multi-source email analysis', hasApi: true },
+            ];
+
+            return [...czechSources, ...globalSources, ...sanctionsSources, ...regionalSources].map(s => ({
+                ...s,
+                slug: s.id
+            }));
+        },
+
+        filterSources() {
+            let results = [...this.allSources];
+
+            // Search filter (fuzzy)
+            if (this.searchQuery) {
+                const query = this.searchQuery.toLowerCase();
+                results = results.filter(s =>
+                    s.name.toLowerCase().includes(query) ||
+                    s.description.toLowerCase().includes(query) ||
+                    s.module.toLowerCase().includes(query) ||
+                    s.type.toLowerCase().includes(query)
+                );
+            }
+
+            // Category filter
+            if (this.categoryFilter) {
+                results = results.filter(s => s.category === this.categoryFilter);
+            }
+
+            // Type filter
+            if (this.typeFilter) {
+                results = results.filter(s => s.type === this.typeFilter);
+            }
+
+            // Sort
+            results.sort((a, b) => {
+                let aVal = a[this.sortField];
+                let bVal = b[this.sortField];
+                if (typeof aVal === 'string') {
+                    aVal = aVal.toLowerCase();
+                    bVal = bVal.toLowerCase();
+                }
+                if (this.sortDesc) {
+                    return bVal > aVal ? 1 : -1;
+                }
+                return aVal > bVal ? 1 : -1;
+            });
+
+            this.filteredSources = results;
+        },
+
+        sortBy(field) {
+            if (this.sortField === field) {
+                this.sortDesc = !this.sortDesc;
+            } else {
+                this.sortField = field;
+                this.sortDesc = false;
+            }
+            this.filterSources();
+        },
+
+        resetFilters() {
+            this.searchQuery = '';
+            this.categoryFilter = '';
+            this.typeFilter = '';
+            this.sortField = 'name';
+            this.sortDesc = false;
+            this.currentPage = 1;
+            this.filterSources();
+        },
+
+        get paginatedSources() {
+            const start = (this.currentPage - 1) * this.perPage;
+            return this.filteredSources.slice(start, start + this.perPage);
+        },
+
+        get totalPages() {
+            return Math.ceil(this.filteredSources.length / this.perPage) || 1;
+        },
+
+        get visiblePages() {
+            const pages = [];
+            const total = this.totalPages;
+            const current = this.currentPage;
+            let start = Math.max(1, current - 2);
+            let end = Math.min(total, current + 2);
+
+            if (end - start < 4) {
+                if (start === 1) {
+                    end = Math.min(total, 5);
+                } else {
+                    start = Math.max(1, total - 4);
+                }
+            }
+
+            for (let i = start; i <= end; i++) {
+                pages.push(i);
+            }
+            return pages;
+        },
+
+        prevPage() {
+            if (this.currentPage > 1) this.currentPage--;
+        },
+
+        nextPage() {
+            if (this.currentPage < this.totalPages) this.currentPage++;
+        },
+
+        goToPage(page) {
+            this.currentPage = page;
+        },
+
+        getCategoryColor(category) {
+            const colors = {
+                czech: 'bg-blue-600',
+                global: 'bg-purple-600',
+                sanctions: 'bg-red-600',
+                eu: 'bg-yellow-600',
+                uk: 'bg-cyan-600',
+                us: 'bg-indigo-600',
+                universal: 'bg-emerald-600'
+            };
+            return colors[category] || 'bg-gray-600';
+        },
+
+        getCategoryBadge(category) {
+            const badges = {
+                czech: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+                global: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
+                sanctions: 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
+                eu: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400',
+                uk: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400',
+                us: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400',
+                universal: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
+            };
+            return badges[category] || 'bg-gray-100 text-gray-700';
+        }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 404 autonomous agents. 90 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agent Ecosystem</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Tech Stack -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Built With</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/phoenix-liveview/"
+                                class="text-gray-400 hover:text-white transition-colors">Phoenix LiveView</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/postgresql-kuzudb/"
+                                class="text-gray-400 hover:text-white transition-colors">PostgreSQL + KuzuDB</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/ollama/"
+                                class="text-gray-400 hover:text-white transition-colors">Local AI (Ollama)</a></li>
+                        <li><span class="text-gray-400">TailwindCSS + Flowbite</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Flowbite JS -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+    </script>
+</body>
+
+</html>

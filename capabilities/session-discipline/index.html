@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Discipline - Prismatic Platform Doctrine</title>
+
+    
+<meta name="description" content="Mandatory GitLab tracking, continuous commits, and push enforcement">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;&#x2F;capabilities&#x2F;session-discipline&#x2F;">
+<meta property="og:title" content="Session Discipline - Prismatic Platform Doctrine">
+<meta property="og:description" content="Mandatory GitLab tracking, continuous commits, and push enforcement">
+<meta property="og:image" content="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;&#x2F;capabilities&#x2F;session-discipline&#x2F;">
+<meta name="twitter:title" content="Session Discipline - Prismatic Platform Doctrine">
+<meta name="twitter:description" content="Mandatory GitLab tracking, continuous commits, and push enforcement">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/favicon.svg">
+    <link rel="apple-touch-icon" href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Flowbite + Tailwind -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer
+        src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.5/dist/cdn.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+                    },
+                    keyframes: {
+                        'fade-in-down': {
+                            '0%': {
+                                opacity: '0',
+                                transform: 'translateY(-10px)'
+                            },
+                            '100%': {
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        }
+                    },
+                    animation: {
+                        'fade-in-down': 'fade-in-down 0.3s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+            (function () {
+                if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 transition-all duration-300">
+        <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;" class="flex items-center space-x-3 group">
+                <div class="relative w-10 h-10">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl rotate-0 group-hover:rotate-6 transition-transform duration-300 opacity-75 blur-sm">
+                    </div>
+                    <div
+                        class="relative w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-blue-500/50 transition-all duration-300">
+                        <svg class="w-6 h-6 text-white transform group-hover:scale-110 transition-transform duration-300"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                </div>
+                <span
+                    class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300">Prismatic</span>
+            </a>
+
+            <div class="flex items-center xl:order-2 space-x-2 md:space-x-4">
+                <!-- Search Button (Mockup) -->
+                <button type="button"
+                    class="p-2.5 text-gray-500 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 transition-colors">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                    <span class="sr-only">Search</span>
+                </button>
+
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 transition-all duration-300 transform hover:scale-105">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg xl:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 transition-colors">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full xl:flex xl:w-auto xl:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col font-medium p-4 xl:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 xl:space-x-8 xl:flex-row xl:mt-0 xl:border-0 xl:bg-transparent dark:bg-gray-800 xl:dark:bg-transparent dark:border-gray-700">
+
+                    <!-- Core Agents Link -->
+                    <li>
+                        <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:hover:text-blue-600 xl:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-500 xl:dark:hover:bg-transparent transition-colors">Agents</a>
+                    </li>
+
+                    <!-- Apps Dropdown -->
+                    <li>
+                        <button id="dropdownNavbarLinkAccess" data-dropdown-toggle="dropdownNavbarAccess"
+                            class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-purple-600 xl:p-0 dark:text-white xl:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:focus:text-white dark:border-gray-700 transition-colors">
+                            Apps
+                            <span
+                                class="ml-2 px-1.5 py-0.5 text-xs font-bold bg-purple-100 text-purple-700 dark:bg-purple-900/50 dark:text-purple-400 rounded-full">90+</span>
+                            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <!-- Apps Dropdown menu -->
+                        <div id="dropdownNavbarAccess"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-xl w-44 dark:bg-gray-700 dark:divide-gray-600 animate-fade-in-down">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/"
+                                        class="block px-4 py-2 hover:bg-purple-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">All
+                                        Applications</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/prismatic-web/"
+                                        class="block px-4 py-2 hover:bg-purple-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Prismatic
+                                        Web</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/prismatic-agents/"
+                                        class="block px-4 py-2 hover:bg-purple-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Agent
+                                        Core</a>
+                                </li>
+                            </ul>
+                            <div class="py-1">
+                                <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/prismatic-osint-core/"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-50 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white transition-colors">OSINT
+                                    Engine</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Architecture Link -->
+                    <li>
+                        <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:hover:text-blue-600 xl:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-500 xl:dark:hover:bg-transparent transition-colors">Architecture</a>
+                    </li>
+
+                    <!-- Knowledge Dropdown (Doctrine + Teams) -->
+                    <li>
+                        <button id="dropdownNavbarLinkKnowledge" data-dropdown-toggle="dropdownNavbarKnowledge"
+                            class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-blue-600 xl:p-0 dark:text-white xl:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:focus:text-white dark:border-gray-700 transition-colors">
+                            Knowledge
+                            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <!-- Knowledge Dropdown menu -->
+                        <div id="dropdownNavbarKnowledge"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-xl w-44 dark:bg-gray-700 dark:divide-gray-600 animate-fade-in-down">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/"
+                                        class="block px-4 py-2 hover:bg-blue-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Doctrine</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/"
+                                        class="block px-4 py-2 hover:bg-blue-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Color
+                                        Teams</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- OSINT Dropdown -->
+                    <li>
+                        <button id="dropdownNavbarLinkOsint" data-dropdown-toggle="dropdownNavbarOsint"
+                            class="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-gray-100 xl:hover:bg-transparent xl:border-0 xl:hover:text-emerald-600 xl:p-0 dark:text-white xl:dark:hover:text-emerald-500 dark:hover:bg-gray-700 dark:focus:text-white dark:border-gray-700 transition-colors">
+                            OSINT
+                            <span
+                                class="ml-2 px-1.5 py-0.5 text-xs font-bold bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-400 rounded-full">121+</span>
+                            <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <!-- OSINT Dropdown menu -->
+                        <div id="dropdownNavbarOsint"
+                            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-xl w-44 dark:bg-gray-700 dark:divide-gray-600 animate-fade-in-down">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-400"
+                                aria-labelledby="dropdownLargeButton">
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/osint/"
+                                        class="block px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">All
+                                        Sources</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/osint/public-registers/"
+                                        class="block px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Public
+                                        Registers</a>
+                                </li>
+                                <li>
+                                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/osint/threat-intel/"
+                                        class="block px-4 py-2 hover:bg-emerald-50 dark:hover:bg-gray-600 dark:hover:text-white transition-colors">Threat
+                                        Intel</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Header -->
+<section class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 py-12 lg:py-16 border-b border-gray-200 dark:border-gray-700">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;" class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                        <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/" class="ml-1 text-sm font-medium text-gray-500 hover:text-blue-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Doctrine</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                        <span class="ml-1 text-sm font-medium text-gray-700 md:ml-2 dark:text-gray-200">Session Discipline</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Header Card -->
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden"
+             x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)">
+            <div class="p-8">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-6"
+                     x-show="shown"
+                     x-transition:enter="transition ease-out duration-500"
+                     x-transition:enter-start="opacity-0 transform -translate-y-4"
+                     x-transition:enter-end="opacity-100 transform translate-y-0">
+                    <!-- Icon Badge -->
+                    <div class="flex-shrink-0">
+                        
+                        <div class="w-24 h-24 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-lg">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Title & Description -->
+                    <div class="flex-grow">
+                        <div class="flex items-center gap-3 mb-3">
+                            <h1 class="text-3xl md:text-4xl font-black text-gray-900 dark:text-white">Session Discipline</h1>
+                            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-yellow-100 text-yellow-700 dark:bg-yellow-900/50 dark:text-yellow-300 rounded-full">
+                                DOCTRINE
+                            </span>
+                        </div>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">Mandatory GitLab tracking, continuous commits, and push enforcement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="bg-white dark:bg-gray-900 py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-3">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <article class="prose">
+                    <h2 id="overview">Overview</h2>
+<p>The Mandatory Session Discipline Protocol ensures that every development session is tracked, committed continuously, and pushed to remote. No work is ever lost, no changes go untracked.</p>
+<h2 id="session-requirements">Session Requirements</h2>
+<h3 id="1-gitlab-issue-tracking">1. GitLab Issue Tracking</h3>
+<p>Every session must have an associated GitLab issue.</p>
+<table><thead><tr><th>Requirement</th><th>Status</th></tr></thead><tbody>
+<tr><td>Issue created</td><td>✅ MANDATORY</td></tr>
+<tr><td>Progress tracked</td><td>✅ MANDATORY</td></tr>
+<tr><td>Issue closed on completion</td><td>✅ MANDATORY</td></tr>
+</tbody></table>
+<h3 id="2-continuous-commits">2. Continuous Commits</h3>
+<p>Commit frequently, not at the end.</p>
+<table><thead><tr><th>Rule</th><th>Enforcement</th></tr></thead><tbody>
+<tr><td>Atomic commits</td><td>One logical change per commit</td></tr>
+<tr><td>No batching</td><td>Commit as you complete</td></tr>
+<tr><td>Descriptive messages</td><td>Conventional commits format</td></tr>
+</tbody></table>
+<h3 id="3-push-to-remote">3. Push to Remote</h3>
+<p>All commits must be pushed before session end.</p>
+<table><thead><tr><th>Requirement</th><th>Status</th></tr></thead><tbody>
+<tr><td>Push after each commit</td><td>Recommended</td></tr>
+<tr><td>Push at session end</td><td>✅ MANDATORY</td></tr>
+<tr><td>No unpushed work</td><td>✅ ENFORCED</td></tr>
+</tbody></table>
+<h2 id="execution-flow">Execution Flow</h2>
+<pre><code>Session Start
+└─&gt; Create GitLab issue(s)
+└─&gt; Load session context
+
+During Session
+└─&gt; Work on feature/fix
+└─&gt; Run local tests
+└─&gt; Commit IMMEDIATELY when tests pass
+└─&gt; Push to remote
+
+Session End
+└─&gt; Ensure ALL commits pushed
+└─&gt; Save session context
+└─&gt; Close/update GitLab issues
+</code></pre>
+<h2 id="forbidden-actions">Forbidden Actions</h2>
+<table><thead><tr><th>Action</th><th>Status</th></tr></thead><tbody>
+<tr><td><code>git commit --no-verify</code></td><td>❌ FORBIDDEN</td></tr>
+<tr><td><code>git push --no-verify</code></td><td>❌ FORBIDDEN</td></tr>
+<tr><td>Batching multiple changes</td><td>❌ FORBIDDEN</td></tr>
+<tr><td>Committing without tests</td><td>❌ FORBIDDEN</td></tr>
+<tr><td>Working without ticket</td><td>❌ FORBIDDEN</td></tr>
+<tr><td>Session end without push</td><td>❌ FORBIDDEN</td></tr>
+</tbody></table>
+<h2 id="violation-consequences">Violation Consequences</h2>
+<table><thead><tr><th>Violation</th><th>Action</th></tr></thead><tbody>
+<tr><td>Session without ticket</td><td>L3 REJECTION</td></tr>
+<tr><td>Unpushed commits</td><td>L2 BLOCK</td></tr>
+<tr><td>--no-verify usage</td><td>L4 REVIEW</td></tr>
+<tr><td>Failed hooks bypassed</td><td>L4 REVIEW</td></tr>
+</tbody></table>
+<h2 id="commands">Commands</h2>
+<table><thead><tr><th>Command</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><code>/session-start</code></td><td>Initialize session tracking</td></tr>
+<tr><td><code>/session-save</code></td><td>Save session context</td></tr>
+<tr><td><code>/commit</code></td><td>Atomic commit with tracking</td></tr>
+</tbody></table>
+
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Quick Info Card -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Doctrine Info</h3>
+                    <dl class="space-y-3">
+                        <div class="flex justify-between">
+                            <dt class="text-gray-500 dark:text-gray-400">Type</dt>
+                            <dd class="font-medium text-yellow-600 dark:text-yellow-400">Doctrine</dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-gray-500 dark:text-gray-400">Enforcement</dt>
+                            <dd class="font-medium text-red-600 dark:text-red-400">Mandatory</dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-gray-500 dark:text-gray-400">Authority</dt>
+                            <dd class="font-medium text-gray-900 dark:text-white">Absolute Supreme</dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-gray-500 dark:text-gray-400">Bypass</dt>
+                            <dd class="font-medium text-red-600 dark:text-red-400">None</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!-- Quality Score Chart -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Quality Impact</h3>
+                    <canvas id="doctrineChart" width="300" height="200"></canvas>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            if (typeof Chart !== 'undefined') {
+                                var ctx = document.getElementById('doctrineChart');
+                                if (ctx) {
+                                    new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ['Quality Score', 'Remaining'],
+                                            datasets: [{
+                                                data: [100, 0],
+                                                backgroundColor: ['#10b981', '#e5e7eb'],
+                                                borderWidth: 0
+                                            }]
+                                        },
+                                        options: {
+                                            responsive: true,
+                                            cutout: '70%',
+                                            plugins: {
+                                                legend: { position: 'bottom', labels: { color: '#9ca3af', font: { size: 11 } } }
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+
+                <!-- In This Section -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">In This Section</h3>
+                    <ul class="space-y-2">
+                        
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;capabilities&#x2F;no-mercy&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                NO MERCY
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;capabilities&#x2F;no-doubts&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                NO DOUBTS
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;capabilities&#x2F;trinity-gate&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                Trinity Gate
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;capabilities&#x2F;nabla-axioms&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                NABLA Axioms
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;capabilities&#x2F;quality-gates&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                Quality Gates
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;capabilities&#x2F;regression-tests&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                Regression Testing
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;capabilities&#x2F;session-discipline&#x2F;" class="text-sm text-blue-600 dark:text-blue-400 font-semibold transition-colors">
+                                Session Discipline
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;capabilities&#x2F;aiad-standard&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                AIAD Standard
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;capabilities&#x2F;color-teams&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                Color Teams
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <!-- Related Sections -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Related Sections</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Color Teams</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Agent Ecosystem</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Architecture</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Content -->
+        <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Related Content</h2>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Color Teams</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">6 adversarial-defensive security teams with 20 specialized agents.</p>
+                </a>
+                <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Agent Ecosystem</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">404 autonomous agents across 14 specialized domains.</p>
+                </a>
+                <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Architecture</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Deterministic event-sourced architecture built on Elixir/OTP and BEAM VM.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-700 hover:to-purple-700 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 transition-all shadow-lg hover:shadow-xl">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Back to Doctrine
+            </a>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 404 autonomous agents. 90 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agent Ecosystem</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Tech Stack -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Built With</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/phoenix-liveview/"
+                                class="text-gray-400 hover:text-white transition-colors">Phoenix LiveView</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/postgresql-kuzudb/"
+                                class="text-gray-400 hover:text-white transition-colors">PostgreSQL + KuzuDB</a></li>
+                        <li><a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/architecture/ollama/"
+                                class="text-gray-400 hover:text-white transition-colors">Local AI (Ollama)</a></li>
+                        <li><span class="text-gray-400">TailwindCSS + Flowbite</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Flowbite JS -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;korczis.github.io&#x2F;prismatic-promo&#x2F;/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+    </script>
+</body>
+
+</html>

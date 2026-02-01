@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#10b981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.08" stroke="#3b82f6" stroke-width="1">
+    <path d="M0 0 L0 630 M100 0 L100 630 M200 0 L200 630 M300 0 L300 630 M400 0 L400 630 M500 0 L500 630 M600 0 L600 630 M700 0 L700 630 M800 0 L800 630 M900 0 L900 630 M1000 0 L1000 630 M1100 0 L1100 630"/>
+    <path d="M0 0 L1200 0 M0 100 L1200 100 M0 200 L1200 200 M0 300 L1200 300 M0 400 L1200 400 M0 500 L1200 500 M0 600 L1200 600"/>
+  </g>
+
+  <!-- Glowing orbs -->
+  <circle cx="200" cy="100" r="250" fill="#3b82f6" opacity="0.15"/>
+  <circle cx="1000" cy="530" r="300" fill="#8b5cf6" opacity="0.12"/>
+  <circle cx="600" cy="315" r="180" fill="#10b981" opacity="0.08"/>
+
+  <!-- Central logo - large -->
+  <g transform="translate(480, 155)">
+    <rect width="240" height="240" rx="50" fill="url(#accent)"/>
+    <path d="M120 45L45 82.5l75 37.5 75-37.5-75-37.5zM45 157.5l75 37.5 75-37.5M45 120l75 37.5 75-37.5"
+          stroke="white" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Decorative elements -->
+  <circle cx="100" cy="315" r="8" fill="#3b82f6" opacity="0.6"/>
+  <circle cx="1100" cy="315" r="8" fill="#8b5cf6" opacity="0.6"/>
+  <circle cx="600" cy="50" r="6" fill="#10b981" opacity="0.6"/>
+  <circle cx="600" cy="580" r="6" fill="#f59e0b" opacity="0.6"/>
+
+  <!-- Stats bar at bottom -->
+  <rect x="100" y="480" width="1000" height="100" rx="20" fill="rgba(255,255,255,0.05)"/>
+
+  <!-- Stat boxes -->
+  <rect x="150" y="505" width="180" height="50" rx="10" fill="rgba(59,130,246,0.2)"/>
+  <rect x="380" y="505" width="180" height="50" rx="10" fill="rgba(139,92,246,0.2)"/>
+  <rect x="610" y="505" width="180" height="50" rx="10" fill="rgba(16,185,129,0.2)"/>
+  <rect x="840" y="505" width="180" height="50" rx="10" fill="rgba(245,158,11,0.2)"/>
+
+  <!-- Bottom accent line -->
+  <rect x="100" y="610" width="1000" height="4" rx="2" fill="url(#accent)" opacity="0.6"/>
+</svg>
