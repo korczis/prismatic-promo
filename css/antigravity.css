@@ -1,0 +1,120 @@
+/**
+ * ANTIGRAVITY DESIGN ENFORCEMENT
+ * 
+ * This is the SINGLE SOURCE OF TRUTH for all colors and theme variables.
+ * 
+ * RULES:
+ * 1. Templates MUST use CSS variables, NOT direct colors
+ * 2. NO bg-white, bg-gray-*, or hex colors in templates
+ * 3. Dark/light mode controlled ONLY here
+ * 4. Local color overrides are FORBIDDEN
+ * 
+ * Violation = visual defect. Correct behavior.
+ */
+
+:root {
+  /* Light theme - canonical colors */
+  --bg-main: #ffffff;
+  --bg-muted: #f8fafc;
+  --bg-hero: #020617;
+  --bg-card: #f9fafb;
+  --bg-card-hover: #f3f4f6;
+  
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-hero: #f8fafc;
+  --text-link: #d97706;
+  --text-link-hover: #b45309;
+  
+  --border-main: #e2e8f0;
+  --border-muted: #cbd5e1;
+  --border-hero: #1e293b;
+  
+  /* Semantic colors */
+  --color-primary: #3b82f6;
+  --color-secondary: #8b5cf6;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #06b6d4;
+}
+
+html.dark {
+  /* Dark theme - enforced consistency */
+  --bg-main: #020617;
+  --bg-muted: #0f172a;
+  --bg-hero: #020617;
+  --bg-card: #1e293b;
+  --bg-card-hover: #334155;
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-hero: #f8fafc;
+  --text-link: #fbbf24;
+  --text-link-hover: #f59e0b;
+  
+  --border-main: #334155;
+  --border-muted: #475569;
+  --border-hero: #475569;
+  
+  /* Semantic colors - adjusted for dark mode */
+  --color-primary: #60a5fa;
+  --color-secondary: #a78bfa;
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+  --color-info: #22d3ee;
+}
+
+/* Body background handled by Tailwind classes on <body> element.
+   Do NOT override here - causes specificity conflicts with dark mode. */
+
+/* Hero sections - opt-in class only */
+.antigravity-hero {
+  background-color: var(--bg-hero);
+  color: var(--text-hero);
+  border-bottom: 1px solid var(--border-hero);
+}
+
+/* Card components - opt-in class only */
+.antigravity-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-main);
+}
+
+.antigravity-card:hover {
+  background-color: var(--bg-card-hover);
+}
+
+/* Sidebar - orbital object */
+.antigravity-sidebar {
+  background-color: var(--bg-card);
+  border-left: 1px solid var(--border-main);
+}
+
+/* Links - scoped to prose content only, not global */
+.prose a:not([class]) {
+  color: var(--text-link);
+}
+
+.prose a:not([class]):hover {
+  color: var(--text-link-hover);
+}
+
+/* Dark mode toggle - system control */
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  padding: 0.75rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-main);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dark-mode-toggle:hover {
+  background-color: var(--bg-card-hover);
+}

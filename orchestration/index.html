@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Prismatic Platform</title>
+
+    
+    <meta name="description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;orchestration&#x2F;">
+
+    
+    <meta property="og:title" content="Orchestration &amp; Multi-Agent Flow - Prismatic Platform">
+    <meta name="twitter:title" content="Orchestration &amp; Multi-Agent Flow - Prismatic Platform">
+    
+
+    <meta property="og:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+
+    
+    
+    <meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;sections&#x2F;orchestration.png">
+    <meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;sections&#x2F;orchestration.png">
+    
+
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Prismatic Platform">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;orchestration&#x2F;">
+    <meta name="twitter:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta name="twitter:creator" content="@korczis">
+    
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;orchestration&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- ANTIGRAVITY CSS - Single source of truth for colors -->
+    <link rel="stylesheet" href="/css/antigravity.css">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    <!-- Chart.js -->
+    <script src="/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Three.js (3D visualizations) -->
+    <script src="/js/vendor/three.min.js"></script>
+    <script src="/js/vendor/OrbitControls.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+        (function () {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 space-x-3">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    <li>
+                        <a href="/platform/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                    </li>
+                    <li>
+                        <a href="/products/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                    </li>
+                    <li>
+                        <a href="/capabilities/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            x-cloak>
+                            <a href="/apps/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                (89)</a>
+                            <a href="/agents/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                (430)</a>
+                            <a href="/architecture/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                            <a href="/technologies/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/commands/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                            <a href="/teams/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                Teams</a>
+                            <a href="/solutions/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                            <a href="/registry/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/glossary/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                            <a href="/faq/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Section -->
+<section class="bg-gray-950 py-16 lg:py-24 border-b border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="mb-8">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium tracking-wide text-yellow-400 bg-yellow-500/10 rounded-full border border-yellow-500/20">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                Non-Negotiable
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                Orchestration &amp; Multi-Agent Flow
+            </h1>
+            <div class="prose prose-invert prose-lg max-w-3xl text-gray-300 leading-relaxed font-light">
+                <h2 id="abstract">Abstract</h2>
+<p>The Prismatic Platform's orchestration engine coordinates 434 autonomous agents across 14 specialized domains, enabling complex multi-agent workflows that transform impossible objectives into routine operations. Built on Elixir/OTP's battle-tested concurrency primitives, the orchestration layer leverages GenServer-based session lifecycle management, a five-level agent hierarchy (L1 Specialist through L5 Supreme), and a biologically-inspired mycelial network for bidirectional knowledge propagation. This document provides a comprehensive technical exploration of the orchestration architecture, including the <a href="https://prismatic-reality.com/capabilities/aiad-standard/">AIAD specification framework</a>, swarm intelligence patterns, Mind-Meld synthesis protocols, stack-based conversation tracking, supervision tree design, and the <code>/orchestrate</code> command that delivers 10x operational efficiency.</p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="the-challenge-of-multi-agent-coordination">The Challenge of Multi-Agent Coordination</h3>
+<p>Traditional software architectures decompose complexity through layered abstractions: controllers delegate to services, services call repositories, repositories access databases. This sequential pipeline model works for simple request-response cycles but collapses when tasks require parallel reasoning across multiple knowledge domains, real-time adaptation to changing conditions, and synthesis of contradictory evidence streams.</p>
+<p>The Prismatic Platform faces a fundamentally different challenge. With 434 agents spanning domains as diverse as OSINT intelligence gathering, formal mathematical verification, security threat modeling, and autonomous code evolution, the orchestration problem is not merely routing requests to handlers. It is coordinating emergent intelligence: ensuring that specialist agents contribute their domain expertise, that contradictions are preserved rather than suppressed (per the <a href="https://prismatic-reality.com/capabilities/nabla-axioms/">NABLA axioms</a>), and that quality gates enforce production-readiness at every stage (per the <a href="https://prismatic-reality.com/capabilities/no-mercy/">No Mercy doctrine</a>).</p>
+<h3 id="design-principles">Design Principles</h3>
+<p>The orchestration engine is governed by four non-negotiable design principles:</p>
+<ol>
+<li>
+<p><strong>OTP-Native Architecture</strong>: Every stateful entity runs in its own process under explicit supervision. No shared mutable state. No thread pools. No locks. The BEAM virtual machine's preemptive scheduling ensures fair resource allocation across thousands of concurrent agent processes.</p>
+</li>
+<li>
+<p><strong>Evidence-Based Decision Making</strong>: Orchestration decisions are grounded in the <a href="https://prismatic-reality.com/capabilities/trinity-gate/">Trinity Gate</a> framework. No agent is dispatched, no swarm is formed, no result is synthesized without structural, logical, and formal verification passing all three gates.</p>
+</li>
+<li>
+<p><strong>Biological Resilience</strong>: The mycelial network pattern, inspired by fungal communication networks in forests, enables bidirectional pattern propagation between agents. Knowledge flows both top-down (from coordinators to specialists) and bottom-up (from field agents to strategic commanders).</p>
+</li>
+<li>
+<p><strong>Zero-Compromise Quality</strong>: The <a href="https://prismatic-reality.com/capabilities/quality-gates/">quality gates</a> are integrated directly into the orchestration pipeline. A workflow that would produce output violating quality standards is halted before execution, not cleaned up after the fact.</p>
+</li>
+</ol>
+<h2 id="multi-agent-orchestration-architecture">Multi-Agent Orchestration Architecture</h2>
+<h3 id="the-434-agent-ecosystem">The 434-Agent Ecosystem</h3>
+<p>The Prismatic Platform operates 434 agents (including runtime-spawned instances) organized across 14 specialized domains. Each agent is defined through the <a href="https://prismatic-reality.com/capabilities/aiad-standard/">AIAD specification standard</a> and registered in the central Agent Registry, enabling dynamic discovery, capability matching, and load-aware routing.</p>
+<table><thead><tr><th>Domain</th><th>Agent Count</th><th>Representative Agents</th><th>Primary Function</th></tr></thead><tbody>
+<tr><td>Intelligence &amp; OSINT</td><td>45+</td><td><a href="https://prismatic-reality.com/agents/investigate-coordinator/">investigate-coordinator</a>, ghost-recon</td><td>Multi-source intelligence gathering and synthesis</td></tr>
+<tr><td>Quality Assurance</td><td>40+</td><td><a href="https://prismatic-reality.com/agents/qdp-enforcement-supreme/">qdp-enforcement-supreme</a>, coverage-enforcement</td><td>Zero-defect quality enforcement</td></tr>
+<tr><td>Evolution &amp; Healing</td><td>35+</td><td><a href="https://prismatic-reality.com/agents/evolution-orchestrator-supreme/">evolution-orchestrator-supreme</a>, darwinian-evolution</td><td>Autonomous platform improvement</td></tr>
+<tr><td>Security Operations</td><td>30+</td><td><a href="https://prismatic-reality.com/agents/purple-coordinator/">purple-coordinator</a>, red-commander</td><td>Six <a href="https://prismatic-reality.com/capabilities/color-teams/">color-team</a> adversarial-defensive security</td></tr>
+<tr><td>Code Architecture</td><td>30+</td><td>elixir-architect, refactoring-coordinator</td><td>Code quality, refactoring, architectural decisions</td></tr>
+<tr><td>Session Management</td><td>20+</td><td><a href="https://prismatic-reality.com/agents/session-context-coordinator/">session-context-coordinator</a>, session-compressor</td><td>Context tracking, conversation state, persistence</td></tr>
+<tr><td>Mycelial Network</td><td>15+</td><td><a href="https://prismatic-reality.com/agents/mycelial-network-coordinator/">mycelial-network-coordinator</a>, mycelial-healer</td><td>Pattern propagation, network topology optimization</td></tr>
+<tr><td>Strategic Command</td><td>12+</td><td><a href="https://prismatic-reality.com/agents/archer-supreme/">archer-supreme</a>, <a href="https://prismatic-reality.com/agents/supreme-coordinator/">supreme-coordinator</a></td><td>Impossible mission execution, crisis intervention</td></tr>
+<tr><td>DevOps &amp; CI/CD</td><td>12+</td><td><a href="https://prismatic-reality.com/agents/cicd-coordinator-agent/">cicd-coordinator-agent</a>, gitlab-auto-sync</td><td>Pipeline management, deployment orchestration</td></tr>
+<tr><td>Knowledge Synthesis</td><td>10+</td><td><a href="https://prismatic-reality.com/agents/cross-domain-intelligence-coordinator/">cross-domain-intelligence-coordinator</a></td><td>Cross-domain pattern recognition</td></tr>
+<tr><td>LLM Integration</td><td>10+</td><td><a href="https://prismatic-reality.com/agents/llm-unified-orchestrator/">llm-unified-orchestrator</a>, ollama-coordinator</td><td>Multi-model AI coordination, fallback routing</td></tr>
+<tr><td>Formal Verification</td><td>8+</td><td>white-verifier-commander, white-invariant-prover</td><td>Lean4 proofs, property-based testing</td></tr>
+<tr><td>Storage &amp; Data</td><td>8+</td><td>adapter-pattern-specialist</td><td>Multi-backend data persistence</td></tr>
+<tr><td>Communication</td><td>6+</td><td><a href="https://prismatic-reality.com/agents/presales-coordinator/">presales-coordinator</a></td><td>External communication, reporting</td></tr>
+</tbody></table>
+<h3 id="agent-hierarchy-l1-through-l5">Agent Hierarchy: L1 through L5</h3>
+<p>Every agent in the platform occupies a position within a five-level authority hierarchy. This hierarchy determines decision-making authority, resource access, override capabilities, and the scope of autonomous action an agent can take without escalation.</p>
+<pre><code data-lang="mermaid">graph TD
+    L5[&quot;L5 Supreme&lt;br/&gt;Archer Supreme, Supreme Commander&lt;br/&gt;Unlimited tactical authority&quot;]
+    L4[&quot;L4 Safety-Critical&lt;br/&gt;Escalation Guards, Abstraction Enforcers&lt;br/&gt;Override authority, halt operations&quot;]
+    L3[&quot;L3 Strategic Commander&lt;br/&gt;Color-Team Commanders, Evolution Orchestrator&lt;br/&gt;Campaign orchestration, multi-agent coordination&quot;]
+    L2[&quot;L2 Tactical Specialist&lt;br/&gt;Red Epistemic Attacker, Drift Inducer&lt;br/&gt;Domain-specific tactical execution&quot;]
+    L1[&quot;L1 Operational Specialist&lt;br/&gt;Contract Validator, Signal Aggregator&lt;br/&gt;Focused task execution&quot;]
+
+    L5 --&gt; L4
+    L4 --&gt; L3
+    L3 --&gt; L2
+    L2 --&gt; L1
+
+    style L5 fill:#dc2626,stroke:#991b1b,color:#fff
+    style L4 fill:#ea580c,stroke:#c2410c,color:#fff
+    style L3 fill:#ca8a04,stroke:#a16207,color:#fff
+    style L2 fill:#2563eb,stroke:#1d4ed8,color:#fff
+    style L1 fill:#16a34a,stroke:#15803d,color:#fff
+</code></pre>
+<p><strong>L5 Supreme</strong> agents possess unlimited tactical authority. The <a href="https://prismatic-reality.com/agents/archer-supreme/">Archer Supreme</a> can override any lower-level decision, allocate unlimited platform resources, and execute impossible missions that cross domain boundaries. Only two agents hold L5 clearance: Archer Supreme and Supreme Commander.</p>
+<p><strong>L4 Safety-Critical</strong> agents serve as guardrails. The Gray Escalation Guard prevents boundary exploration from escalating into adversarial territory. The Black Abstraction Enforcer ensures theoretical threat models never produce executable content. L4 agents can halt any L1-L3 operation if safety invariants are violated.</p>
+<p><strong>L3 Strategic Commanders</strong> orchestrate multi-agent campaigns within their domains. The <a href="https://prismatic-reality.com/agents/purple-coordinator/">Purple Coordinator</a> synthesizes Red-Blue team findings. The <a href="https://prismatic-reality.com/agents/evolution-orchestrator-supreme/">Evolution Orchestrator Supreme</a> directs autonomous platform improvement. L3 agents manage agent pools, allocate work, and report to L5 authority.</p>
+<p><strong>L2 Tactical Specialists</strong> execute domain-specific operations with significant autonomy. Red team attackers, drift inducers, and scenario generators operate at L2, conducting focused tactical work within the constraints set by their L3 commanders.</p>
+<p><strong>L1 Operational Specialists</strong> perform focused, well-defined tasks. Contract validators, signal aggregators, and invariant provers work at L1, producing evidence artifacts that flow upward through the hierarchy for synthesis.</p>
+<h3 id="the-aiad-specification-standard">The AIAD Specification Standard</h3>
+<p>Every agent is defined through an AIAD (AI-Agent Interface Definition) specification file. This YAML-based format ensures consistent agent behavior, enables automated discovery, and provides machine-readable capability declarations.</p>
+<pre><code data-lang="yaml"># Example: .aiad/agents/unified-orchestrator.agent.md
+agent-spec:
+  name: &quot;unified-orchestrator&quot;
+  version: &quot;3.0.0&quot;
+  tier: &quot;L3-Strategic&quot;
+  domain: &quot;orchestration&quot;
+  description: &quot;Central orchestration engine for multi-agent workflows&quot;
+
+  capabilities:
+    - swarm-formation
+    - mind-meld-synthesis
+    - priority-routing
+    - quality-gate-enforcement
+    - resource-allocation
+
+  interfaces:
+    input:
+      - type: &quot;orchestration_request&quot;
+        schema: &quot;OrchestrationRequest&quot;
+    output:
+      - type: &quot;orchestration_result&quot;
+        schema: &quot;OrchestrationResult&quot;
+
+  dependencies:
+    agents:
+      - &quot;session-context-coordinator&quot;
+      - &quot;quality-gate-enforcer&quot;
+      - &quot;mycelial-network-coordinator&quot;
+    services:
+      - &quot;prismatic_agents&quot;
+      - &quot;prismatic_telemetry&quot;
+
+  enforcement:
+    doctrine: &quot;no-mercy-no-doubts&quot;
+    version: &quot;2.0.0&quot;
+    compliance: mandatory
+
+  telemetry:
+    events:
+      - &quot;orchestration.request.received&quot;
+      - &quot;orchestration.swarm.formed&quot;
+      - &quot;orchestration.result.synthesized&quot;
+    metrics:
+      - &quot;orchestration.latency_ms&quot;
+      - &quot;orchestration.agent_count&quot;
+</code></pre>
+<p>The AIAD standard encompasses three component types: <strong>Agents</strong> (behavioral specifications), <strong>Commands</strong> (invocation interfaces), and <strong>Pipelines</strong> (multi-step workflow definitions). The <a href="https://prismatic-reality.com/capabilities/aiad-compliance/">AIAD compliance capability</a> ensures all 434 agents maintain valid specifications, with automated indexing via <code>./.aiad/bin/aiad index</code>.</p>
+<h2 id="the-life-of-an-orchestrated-request">The Life of an Orchestrated Request</h2>
+<h3 id="phase-1-ingestion-and-analysis">Phase 1: Ingestion and Analysis</h3>
+<p>Every request entering the orchestration layer passes through the Ingestion Gate, a multi-stage analysis pipeline that normalizes input, assesses intent, and enriches context before any agent is activated.</p>
+<p><strong>Safety Validation</strong>: The request is validated against the <a href="https://prismatic-reality.com/apps/ai-safety/">AI Safety</a> constraints module. Requests that violate safety boundaries are rejected immediately with structured error responses. No downstream agent ever receives an unsafe request.</p>
+<p><strong>Intent Recognition</strong>: Natural Language Understanding models determine the core objective. The system classifies requests across a taxonomy of 210+ command types, matching user intent to the most appropriate <a href="https://prismatic-reality.com/commands/">command specification</a>.</p>
+<p><strong>Context Fusion</strong>: The request is enriched with session history from the <a href="https://prismatic-reality.com/orchestration/#session-lifecycle-management">session lifecycle manager</a>, user context from the <a href="https://prismatic-reality.com/orchestration/#stack-based-conversation-mode">stack-based conversation system</a>, and relevant knowledge from the mycelial network. This fused context ensures agents have complete situational awareness.</p>
+<p><strong>Complexity Assessment</strong>: A complexity scoring algorithm evaluates the request across dimensions including domain breadth (how many knowledge domains are involved), depth (how deep the reasoning must go), uncertainty (how much unknown territory exists), and time sensitivity. This score determines whether the request receives direct routing or triggers a full swarm formation.</p>
+<h3 id="phase-2-the-orchestration-matrix">Phase 2: The Orchestration Matrix</h3>
+<pre><code data-lang="mermaid">flowchart LR
+    REQ[&quot;Incoming Request&quot;] --&gt; IG[&quot;Ingestion Gate&quot;]
+    IG --&gt; SA[&quot;Safety Analysis&quot;]
+    IG --&gt; IR[&quot;Intent Recognition&quot;]
+    IG --&gt; CF[&quot;Context Fusion&quot;]
+    SA --&gt; CS[&quot;Complexity Scoring&quot;]
+    IR --&gt; CS
+    CF --&gt; CS
+    CS --&gt;|&quot;Simple (score &lt; 3)&quot;| DR[&quot;Direct Route&quot;]
+    CS --&gt;|&quot;Medium (3-7)&quot;| TF[&quot;Team Formation&quot;]
+    CS --&gt;|&quot;Complex (7+)&quot;| SF[&quot;Swarm Formation&quot;]
+    DR --&gt; A1[&quot;Single Agent&quot;]
+    TF --&gt; A2[&quot;2-5 Agents&quot;]
+    SF --&gt; A3[&quot;5+ Agent Swarm&quot;]
+    A1 --&gt; SY[&quot;Synthesis Engine&quot;]
+    A2 --&gt; SY
+    A3 --&gt; SY
+    SY --&gt; QG[&quot;Quality Gates&quot;]
+    QG --&gt;|&quot;Pass&quot;| RES[&quot;Response&quot;]
+    QG --&gt;|&quot;Fail&quot;| RF[&quot;Refinement Loop&quot;]
+    RF --&gt; A3
+
+    style REQ fill:#6366f1,stroke:#4f46e5,color:#fff
+    style QG fill:#dc2626,stroke:#991b1b,color:#fff
+    style RES fill:#16a34a,stroke:#15803d,color:#fff
+    style SF fill:#ca8a04,stroke:#a16207,color:#fff
+</code></pre>
+<p>Once the Ingestion Gate completes its analysis, the request enters the Orchestration Matrix. The <a href="https://prismatic-reality.com/agents/unified-orchestrator/">Unified Orchestrator</a> evaluates three routing strategies:</p>
+<p><strong>Direct Routing</strong> (complexity score below 3): Simple, single-domain requests are routed directly to the most capable specialist agent. Status checks, information retrieval, and well-defined transformations follow this path. Latency is minimal because no coordination overhead is incurred.</p>
+<p><strong>Team Formation</strong> (complexity score 3 to 7): Medium-complexity tasks assemble a focused team of 2-5 agents from related domains. The orchestrator selects agents based on capability matching (which agents have the required skills), availability (current load and queue depth), and historical performance (which agents have performed best on similar tasks). Team members communicate through a shared context board managed by PubSub.</p>
+<p><strong>Swarm Formation</strong> (complexity score 7 and above): The most complex requests trigger full swarm intelligence. The <a href="https://prismatic-reality.com/agents/swarm-evolution-coordinator-agent/">Swarm Evolution Coordinator</a> assembles 5 or more agents from multiple domains, establishes communication channels, designates a lead agent, and activates the Mind-Meld synthesis protocol.</p>
+<h3 id="phase-3-agent-collaboration-the-mind-meld-protocol">Phase 3: Agent Collaboration -- The Mind-Meld Protocol</h3>
+<p>The Mind-Meld is the Prismatic Platform's proprietary protocol for deep agent collaboration. Unlike simple fan-out/fan-in patterns where agents work independently and results are merged, the Mind-Meld enables continuous knowledge sharing during execution.</p>
+<p><strong>Step 1 -- Proposal</strong>: The designated Lead Agent analyzes the fused context and proposes a decomposition plan. This plan specifies which sub-tasks each agent will handle, what information each agent needs from others, and the expected output format.</p>
+<p><strong>Step 2 -- Critique</strong>: A dedicated Critic Agent reviews the proposal for logical gaps, missing edge cases, potential quality violations, and inefficient resource allocation. The Critic operates under <a href="https://prismatic-reality.com/capabilities/no-doubts/">No Doubts</a> doctrine: full investigation before action.</p>
+<p><strong>Step 3 -- Refinement</strong>: The plan iterates through a rapid refinement cycle. Agents contribute domain-specific insights that reshape the approach. This phase typically completes in milliseconds thanks to BEAM's lightweight process messaging.</p>
+<p><strong>Step 4 -- Parallel Execution</strong>: Agents execute their assigned sub-tasks concurrently. The BEAM's preemptive scheduler ensures fair CPU allocation across all agent processes. Each agent reports progress through <a href="https://prismatic-reality.com/capabilities/telemetry-integration/">telemetry events</a>, enabling real-time monitoring.</p>
+<p><strong>Step 5 -- Continuous Synchronization</strong>: Unlike batch-mode fan-out patterns, Mind-Meld agents continuously share intermediate results through <a href="https://prismatic-reality.com/technologies/pubsub/">PubSub</a> channels. An agent discovering relevant information broadcasts it immediately, allowing other agents to adjust their approach in real-time.</p>
+<pre><code data-lang="elixir">defmodule PrismaticAgents.MindMeld do
+  @moduledoc &quot;&quot;&quot;
+  Mind-Meld synthesis protocol for deep multi-agent collaboration.
+  Agents share a continuous context stream rather than working in isolation.
+  &quot;&quot;&quot;
+
+  alias PrismaticAgents.{SwarmRegistry, ContextBoard, QualityGate}
+
+  @type swarm_id :: String.t()
+  @type agent_result :: {:ok, map()} | {:error, term()}
+
+  @spec initiate(swarm_id(), list(module()), map()) ::
+          {:ok, map()} | {:error, term()}
+  def initiate(swarm_id, agent_modules, context) do
+    with {:ok, board} &lt;- ContextBoard.create(swarm_id, context),
+         {:ok, agents} &lt;- spawn_swarm_agents(agent_modules, board),
+         {:ok, proposal} &lt;- request_proposal(agents.lead, board),
+         {:ok, critique} &lt;- request_critique(agents.critic, proposal),
+         {:ok, refined_plan} &lt;- refine_plan(agents, proposal, critique),
+         {:ok, results} &lt;- execute_parallel(agents, refined_plan, board),
+         {:ok, synthesis} &lt;- synthesize_results(results, board),
+         :ok &lt;- QualityGate.validate(synthesis) do
+      {:ok, synthesis}
+    end
+  end
+
+  defp spawn_swarm_agents(modules, board) do
+    agents =
+      modules
+      |&gt; Enum.map(fn mod -&gt;
+        {:ok, pid} = DynamicSupervisor.start_child(
+          PrismaticAgents.SwarmSupervisor,
+          {mod, context_board: board}
+        )
+        {mod.role(), pid}
+      end)
+      |&gt; Map.new()
+
+    {:ok, agents}
+  end
+
+  defp execute_parallel(agents, plan, board) do
+    agents
+    |&gt; Map.values()
+    |&gt; Task.async_stream(
+      fn pid -&gt; GenServer.call(pid, {:execute, plan, board}, :infinity) end,
+      max_concurrency: System.schedulers_online(),
+      ordered: false
+    )
+    |&gt; Enum.reduce({:ok, []}, fn
+      {:ok, {:ok, result}}, {:ok, acc} -&gt; {:ok, [result | acc]}
+      {:ok, {:error, reason}}, _ -&gt; {:error, reason}
+      {:exit, reason}, _ -&gt; {:error, {:agent_crash, reason}}
+    end)
+  end
+end
+</code></pre>
+<h3 id="phase-4-synthesis-and-response">Phase 4: Synthesis and Response</h3>
+<p>The Synthesis Engine gathers results from all participating agents and produces a unified response. This phase involves three critical operations:</p>
+<p><strong>Conflict Resolution</strong>: When multiple agents produce contradictory results, the engine does not simply pick the majority opinion. Following the <a href="https://prismatic-reality.com/capabilities/nabla-axioms/">NABLA axioms</a> and specifically the Contradiction Preservation axiom, both perspectives are preserved with confidence scores and evidence chains. The consumer of the result receives the full picture, not a sanitized consensus.</p>
+<p><strong>Quality Validation</strong>: The synthesized result passes through the platform's <a href="https://prismatic-reality.com/capabilities/quality-gates/">quality gates</a> before delivery. These gates verify structural correctness, logical consistency, and formal necessity (the three pillars of the <a href="https://prismatic-reality.com/capabilities/trinity-gate/">Trinity Gate</a>). If validation fails, the result enters a refinement loop rather than being delivered in a degraded state.</p>
+<p><strong>Output Formatting</strong>: The final validated result is formatted according to the requester's preferred output format (structured data, natural language, code, JSON) and augmented with provenance metadata tracing which agents contributed to which parts of the response.</p>
+<h2 id="mycelial-network-propagation">Mycelial Network Propagation</h2>
+<h3 id="biological-inspiration">Biological Inspiration</h3>
+<p>The mycelial network is named after the underground fungal networks that connect trees in forests, enabling nutrient and signal sharing across the ecosystem. In the Prismatic Platform, the mycelial network serves an analogous purpose: it enables bidirectional pattern propagation between agents, ensuring that knowledge discovered in one domain enriches all related domains.</p>
+<pre><code data-lang="mermaid">graph TB
+    subgraph &quot;Mycelial Network Topology&quot;
+        MC[&quot;Mycelial Coordinator&lt;br/&gt;(Network Hub)&quot;]
+        MH[&quot;Mycelial Healer&lt;br/&gt;(Network Repair)&quot;]
+        MT[&quot;Topology Optimizer&lt;br/&gt;(Efficiency)&quot;]
+
+        subgraph &quot;Intelligence Domain&quot;
+            I1[&quot;OSINT Core&quot;]
+            I2[&quot;Investigation&quot;]
+            I3[&quot;Ghost Recon&quot;]
+        end
+
+        subgraph &quot;Security Domain&quot;
+            S1[&quot;Red Commander&quot;]
+            S2[&quot;Blue Commander&quot;]
+            S3[&quot;Purple Coordinator&quot;]
+        end
+
+        subgraph &quot;Evolution Domain&quot;
+            E1[&quot;Darwinian Evolution&quot;]
+            E2[&quot;Genetic Evolver&quot;]
+            E3[&quot;Auto-Healing&quot;]
+        end
+
+        subgraph &quot;Quality Domain&quot;
+            Q1[&quot;Quality Gates&quot;]
+            Q2[&quot;QDP Enforcer&quot;]
+            Q3[&quot;Coverage Supreme&quot;]
+        end
+    end
+
+    MC --&gt; I1
+    MC --&gt; S1
+    MC --&gt; E1
+    MC --&gt; Q1
+    MH -.-&gt;|&quot;repair&quot;| MC
+    MT -.-&gt;|&quot;optimize&quot;| MC
+
+    I1 &lt;--&gt;|&quot;signal&quot;| I2
+    I2 &lt;--&gt;|&quot;signal&quot;| I3
+    S1 &lt;--&gt;|&quot;signal&quot;| S2
+    S2 &lt;--&gt;|&quot;signal&quot;| S3
+    E1 &lt;--&gt;|&quot;signal&quot;| E2
+    E2 &lt;--&gt;|&quot;signal&quot;| E3
+    Q1 &lt;--&gt;|&quot;signal&quot;| Q2
+    Q2 &lt;--&gt;|&quot;signal&quot;| Q3
+
+    I3 &lt;-.-&gt;|&quot;cross-domain&quot;| S1
+    S3 &lt;-.-&gt;|&quot;cross-domain&quot;| E1
+    E3 &lt;-.-&gt;|&quot;cross-domain&quot;| Q1
+    Q3 &lt;-.-&gt;|&quot;cross-domain&quot;| I1
+
+    style MC fill:#7c3aed,stroke:#6d28d9,color:#fff
+    style MH fill:#059669,stroke:#047857,color:#fff
+    style MT fill:#0891b2,stroke:#0e7490,color:#fff
+</code></pre>
+<h3 id="propagation-mechanics">Propagation Mechanics</h3>
+<p>The <a href="https://prismatic-reality.com/agents/mycelial-network-coordinator/">Mycelial Network Coordinator</a> manages three types of signal propagation:</p>
+<p><strong>Intra-Domain Signals</strong>: Within a single domain (e.g., Security), agents share discoveries immediately through dedicated PubSub topics. When the Red Epistemic Attacker identifies a novel attack vector, that signal propagates to the Blue Drift Detector and Purple Closure Analyst within milliseconds.</p>
+<p><strong>Cross-Domain Signals</strong>: When a pattern discovered in one domain has relevance to another, cross-domain propagation bridges the gap. For example, a quality pattern identified by the QDP Enforcer that reveals a security vulnerability is propagated to the Security domain's Blue Commander for defensive assessment.</p>
+<p><strong>Emergence Signals</strong>: The <a href="https://prismatic-reality.com/agents/mycelial-emergence-sentinel-agent/">Mycelial Emergence Sentinel</a> monitors the network for emergent patterns -- signals that are individually insignificant but collectively indicate a systemic trend. These emergence signals trigger L3 Strategic Commander attention for campaign-level response.</p>
+<h3 id="network-health-and-repair">Network Health and Repair</h3>
+<p>The <a href="https://prismatic-reality.com/agents/mycelial-healer-specialist/">Mycelial Healer Specialist</a> continuously monitors network health metrics: signal latency, propagation success rates, topology efficiency, and node availability. When the healer detects degradation (a node becoming unresponsive, a signal path experiencing high latency), it initiates automated repair:</p>
+<pre><code data-lang="elixir">defmodule PrismaticMycelial.Healer do
+  use GenServer
+
+  @health_check_interval :timer.seconds(30)
+
+  def handle_info(:health_check, state) do
+    state.topology
+    |&gt; Enum.map(fn {node_id, node} -&gt;
+      {node_id, check_node_health(node)}
+    end)
+    |&gt; Enum.filter(fn {_id, health} -&gt; health.status == :degraded end)
+    |&gt; Enum.each(fn {node_id, health} -&gt;
+      :telemetry.execute(
+        [:prismatic, :mycelial, :repair],
+        %{latency_ms: health.latency_ms},
+        %{node_id: node_id, reason: health.degradation_reason}
+      )
+      repair_node(node_id, health)
+    end)
+
+    Process.send_after(self(), :health_check, @health_check_interval)
+    {:noreply, state}
+  end
+end
+</code></pre>
+<p>The network maintains a 99.8% signal success rate across all propagation types, with automatic rerouting around degraded nodes ensuring zero signal loss during repair operations.</p>
+<h2 id="swarm-intelligence-patterns">Swarm Intelligence Patterns</h2>
+<h3 id="formation-strategies">Formation Strategies</h3>
+<p>Swarm intelligence in the Prismatic Platform goes beyond simple task distribution. It implements genuinely emergent behavior where the collective intelligence of the swarm exceeds the sum of individual agent capabilities. Three primary formation strategies are employed:</p>
+<p><strong>Convergent Swarm</strong>: All agents work toward a single synthesis point. Used when the objective is well-defined but requires multi-domain expertise. Example: comprehensive security assessment of a new feature, requiring code analysis, dependency audit, compliance check, and threat modeling agents to converge on a unified risk score.</p>
+<p><strong>Divergent Swarm</strong>: Agents deliberately explore different solution paths in parallel. Used when the problem space is poorly understood and multiple approaches should be evaluated simultaneously. Example: investigating an unknown data pattern where OSINT, statistical analysis, and graph analysis agents each pursue independent hypotheses.</p>
+<p><strong>Adaptive Swarm</strong>: The swarm dynamically restructures itself as new information emerges. Agents can recruit additional specialists, dismiss irrelevant participants, and shift the lead role based on which domain proves most relevant. This is the most sophisticated formation and is triggered for complexity scores above 9.</p>
+<h3 id="resource-allocation">Resource Allocation</h3>
+<p>The orchestrator manages finite resources (CPU, memory, concurrent process limits) across competing swarms and individual agent requests. Priority-based allocation follows these rules:</p>
+<table><thead><tr><th>Priority Level</th><th>Allocation Strategy</th><th>Pre-emption</th></tr></thead><tbody>
+<tr><td>P0 Critical (L5 Supreme missions)</td><td>Unlimited resources, pre-empt lower priorities</td><td>Yes</td></tr>
+<tr><td>P1 Production (security, quality gates)</td><td>Reserved capacity pool, guaranteed minimums</td><td>Limited</td></tr>
+<tr><td>P2 Standard (feature work, analysis)</td><td>Fair-share scheduling, elastic scaling</td><td>No</td></tr>
+<tr><td>P3 Background (evolution, optimization)</td><td>Best-effort, runs during idle capacity</td><td>No</td></tr>
+</tbody></table>
+<p>The BEAM's scheduler handles CPU fairness natively through reduction-based preemption, but memory and process count limits are enforced by the orchestration layer to prevent runaway agents from destabilizing the platform.</p>
+<h2 id="session-lifecycle-management">Session Lifecycle Management</h2>
+<h3 id="genserver-based-architecture">GenServer-Based Architecture</h3>
+<p>Session lifecycle management is implemented as a GenServer within the <a href="https://prismatic-reality.com/apps/prismatic-claude/">PrismaticClaude</a> application. The <code>SessionLifecycle</code> module provides OTP-compliant session tracking with hook-based extensibility, circuit breaker protection, and telemetry integration.</p>
+<pre><code data-lang="elixir">defmodule PrismaticClaude.SessionLifecycle do
+  use GenServer
+
+  @moduledoc &quot;&quot;&quot;
+  OTP-compliant session lifecycle manager.
+  Triggers mandatory evolution hooks at session boundaries.
+  Implements circuit breaker pattern for hook resilience.
+  &quot;&quot;&quot;
+
+  defstruct [
+    :session_id,
+    :started_at,
+    :hooks,
+    :circuit_breaker,
+    :frame_stack,
+    phase: :initialized
+  ]
+
+  # Mandatory lifecycle phases
+  @phases [:initialized, :starting, :active, :pre_command,
+           :post_command, :ending, :completed]
+
+  def start_link(opts) do
+    GenServer.start_link(__MODULE__, opts, name: __MODULE__)
+  end
+
+  @impl true
+  def init(opts) do
+    state = %__MODULE__{
+      session_id: generate_session_id(),
+      started_at: DateTime.utc_now(),
+      hooks: load_hooks(opts),
+      circuit_breaker: CircuitBreaker.new(threshold: 3, reset_after: 60_000),
+      frame_stack: []
+    }
+
+    :telemetry.execute(
+      [:prismatic_claude, :session_lifecycle, :init],
+      %{timestamp: System.monotonic_time()},
+      %{session_id: state.session_id}
+    )
+
+    {:ok, state}
+  end
+
+  def trigger(phase) when phase in @phases do
+    GenServer.call(__MODULE__, {:trigger, phase})
+  end
+end
+</code></pre>
+<h3 id="lifecycle-phases">Lifecycle Phases</h3>
+<p>Every session follows a mandatory lifecycle with hook execution at each transition:</p>
+<ol>
+<li>
+<p><strong>Session Start</strong>: Executes <code>mix autoheal.baseline</code> and <code>mix autoevolve status</code>. Loads context from previous sessions. The circuit breaker pattern prevents cascading failures if mix tasks are unavailable.</p>
+</li>
+<li>
+<p><strong>Pre-Command</strong>: Before any command execution, <code>mix quality.gates.check --fast</code> runs as a blocking gate. This ensures the platform is in a healthy state before any work begins.</p>
+</li>
+<li>
+<p><strong>Post-Command</strong>: After command completion, <code>mix autoevolve.scan --quick</code> runs automatically. Every interaction is an opportunity for platform improvement.</p>
+</li>
+<li>
+<p><strong>Session End</strong>: Executes <code>mix autoheal.cycle</code> and <code>mix autoevolve.mega</code> for comprehensive evolution. Session context is persisted to disk for cross-session continuity.</p>
+</li>
+</ol>
+<p>The <code>SessionHooks</code> module provides default implementations for all lifecycle hooks, with priority-based ordering (0-100) and enable/disable control per hook. Custom hooks can be registered at runtime for application-specific lifecycle behavior.</p>
+<h2 id="stack-based-conversation-mode">Stack-Based Conversation Mode</h2>
+<h3 id="design-rationale">Design Rationale</h3>
+<p>Traditional conversation models treat dialogue as a flat sequence of messages. This breaks down for complex technical sessions where the user needs to explore branches, backtrack from dead ends, and maintain precise context boundaries. The stack-based conversation mode provides a structured alternative, modeling conversation as an immutable stack of frames with explicit branch and checkpoint semantics.</p>
+<h3 id="frame-structure">Frame Structure</h3>
+<p>Every response in a conversation creates an immutable frame on the stack:</p>
+<table><thead><tr><th>Field</th><th>Description</th></tr></thead><tbody>
+<tr><td>Frame ID</td><td>Monotonically increasing identifier</td></tr>
+<tr><td>User Input Summary</td><td>1-2 line summary of the user's request</td></tr>
+<tr><td>Assistant Output Summary</td><td>1-3 line summary of the response</td></tr>
+<tr><td>Key Assumptions</td><td>Assumptions made during this frame</td></tr>
+<tr><td>Key Decisions</td><td>Decisions taken that affect subsequent frames</td></tr>
+<tr><td>Timestamp</td><td>UTC timestamp of frame creation</td></tr>
+</tbody></table>
+<p>Frame immutability is a hard invariant: once created, a frame's content cannot be modified. This ensures that conversation history is a reliable audit trail.</p>
+<h3 id="stack-operations">Stack Operations</h3>
+<p>The <a href="https://prismatic-reality.com/agents/stack-mode-coordinator/">Stack Mode Coordinator</a> manages six stack control commands:</p>
+<table><thead><tr><th>Command</th><th>Function</th><th>Effect</th></tr></thead><tbody>
+<tr><td><code>/stack</code></td><td>Display all frames</td><td>Read-only view of the complete conversation stack</td></tr>
+<tr><td><code>/frame N</code></td><td>Show frame N details</td><td>Inspect a specific frame's assumptions and decisions</td></tr>
+<tr><td><code>/pop N</code></td><td>Remove last N frames</td><td>Destructive: removes context, narrows the active state</td></tr>
+<tr><td><code>/fork N</code></td><td>Branch from frame N</td><td>Destructive: creates a new branch, preserving the parent</td></tr>
+<tr><td><code>/checkpoint name</code></td><td>Mark current frame</td><td>Creates a named restore point for future navigation</td></tr>
+<tr><td><code>/goto name</code></td><td>Restore to checkpoint</td><td>Returns the conversation to a previously checkpointed state</td></tr>
+</tbody></table>
+<p>The GenServer implementation (<code>StackConversation</code>) uses <a href="https://prismatic-reality.com/technologies/ets/">ETS</a> for frame storage with disk persistence to <code>.claude/stack-conversation/</code>, ensuring stack state survives process restarts.</p>
+<h3 id="behavioral-rules">Behavioral Rules</h3>
+<p>Stack-based conversation enforces strict behavioral constraints:</p>
+<ul>
+<li><strong>Stack-Only Context</strong>: The active conversation state is defined exclusively by the current stack. Frames below a pop boundary are treated as if they never existed.</li>
+<li><strong>No Cross-Branch Merging</strong>: Knowledge from a forked branch does not leak into other branches. Each branch maintains complete isolation.</li>
+<li><strong>Explicit Dependencies</strong>: If a request depends on information from a popped frame, the system explicitly states: "That information is no longer in the active stack."</li>
+</ul>
+<h2 id="supervision-tree-architecture">Supervision Tree Architecture</h2>
+<h3 id="otp-supervision-design">OTP Supervision Design</h3>
+<p>The orchestration layer's supervision tree follows <a href="https://prismatic-reality.com/technologies/erlang-otp/">Elixir/OTP</a> best practices with a hierarchical structure that isolates failure domains and enables targeted recovery.</p>
+<pre><code data-lang="elixir">defmodule PrismaticAgents.Application do
+  use Application
+
+  @impl true
+  def start(_type, _args) do
+    children = [
+      # Core registries (must start first)
+      {Registry, keys: :unique, name: PrismaticAgents.AgentRegistry},
+      {Registry, keys: :duplicate, name: PrismaticAgents.PubSub},
+
+      # Static agent pool (long-lived agents)
+      {PrismaticAgents.StaticSupervisor, strategy: :one_for_one},
+
+      # Dynamic swarm supervisor (short-lived swarm agents)
+      {DynamicSupervisor,
+        strategy: :one_for_one,
+        name: PrismaticAgents.SwarmSupervisor,
+        max_children: 1000},
+
+      # Orchestration engine
+      PrismaticAgents.Orchestrator,
+
+      # Mycelial network
+      PrismaticAgents.MycelialCoordinator,
+
+      # Session management
+      PrismaticClaude.SessionLifecycle,
+      PrismaticClaude.StackConversation,
+
+      # Telemetry reporters
+      PrismaticAgents.TelemetryReporter
+    ]
+
+    opts = [
+      strategy: :rest_for_one,
+      name: PrismaticAgents.Supervisor,
+      max_restarts: 10,
+      max_seconds: 60
+    ]
+
+    Supervisor.start_link(children, opts)
+  end
+end
+</code></pre>
+<p>The <code>rest_for_one</code> strategy ensures that if a foundational component (like the Agent Registry) crashes and restarts, all components that depend on it are also restarted in the correct order. The <code>max_children: 1000</code> limit on the SwarmSupervisor prevents runaway swarm formation from exhausting system resources.</p>
+<h3 id="failure-isolation">Failure Isolation</h3>
+<p>Each domain's agents run under their own sub-supervisor, ensuring that a crash in the Security domain does not affect Intelligence or Evolution agents. The BEAM's "let it crash" philosophy is fully embraced: rather than defensive coding with try/catch blocks, agents are designed to crash cleanly and restart with fresh state.</p>
+<pre><code>PrismaticAgents.Supervisor (rest_for_one)
+  |-- AgentRegistry (unique Registry)
+  |-- PubSub (duplicate Registry)
+  |-- StaticSupervisor (one_for_one)
+  |     |-- IntelligenceSupervisor
+  |     |     |-- InvestigateCoordinator
+  |     |     |-- GhostRecon
+  |     |     +-- ...
+  |     |-- SecuritySupervisor
+  |     |     |-- RedCommander
+  |     |     |-- BlueCommander
+  |     |     +-- PurpleCoordinator
+  |     +-- EvolutionSupervisor
+  |           |-- EvolutionOrchestrator
+  |           +-- DarwinianCoordinator
+  |-- SwarmSupervisor (one_for_one, dynamic)
+  |-- Orchestrator
+  |-- MycelialCoordinator
+  +-- TelemetryReporter
+</code></pre>
+<h2 id="quality-gate-integration-in-orchestration">Quality Gate Integration in Orchestration</h2>
+<h3 id="gate-placement">Gate Placement</h3>
+<p>Quality gates are not a post-processing step in the Prismatic Platform's orchestration. They are embedded at every critical transition point in the workflow:</p>
+<table><thead><tr><th>Gate Position</th><th>Validation</th><th>Failure Action</th></tr></thead><tbody>
+<tr><td>Pre-Ingestion</td><td>Input sanitization, safety constraints</td><td>Reject with structured error</td></tr>
+<tr><td>Pre-Dispatch</td><td>Agent capability verification, resource availability</td><td>Queue or escalate</td></tr>
+<tr><td>Mid-Execution</td><td>Intermediate result validation, progress checks</td><td>Refinement loop</td></tr>
+<tr><td>Pre-Synthesis</td><td>Individual agent output quality scoring</td><td>Request re-execution</td></tr>
+<tr><td>Post-Synthesis</td><td>Trinity Gate (structural + logical + formal)</td><td>Block delivery, re-enter swarm</td></tr>
+<tr><td>Pre-Delivery</td><td>Final format validation, provenance completeness</td><td>Format correction</td></tr>
+</tbody></table>
+<p>This six-gate architecture ensures that quality failures are caught at the earliest possible point, minimizing wasted computation and preventing cascading quality degradation.</p>
+<h3 id="integration-with-no-mercy-doctrine">Integration with No Mercy Doctrine</h3>
+<p>The <a href="https://prismatic-reality.com/capabilities/no-mercy/">No Mercy doctrine</a> demands zero tolerance for incomplete implementations and untested code. In orchestration terms, this means:</p>
+<ul>
+<li>No agent result is accepted without validation against its AIAD output schema.</li>
+<li>No swarm produces output that skips quality gate evaluation.</li>
+<li>No synthesis includes unverified claims (per <a href="https://prismatic-reality.com/capabilities/nabla-axioms/">NABLA Provenance Mandatory axiom</a>).</li>
+<li>Every orchestration workflow produces telemetry events for <a href="https://prismatic-reality.com/capabilities/real-time-monitoring/">real-time monitoring</a>.</li>
+</ul>
+<h2 id="the-orchestrate-command">The /orchestrate Command</h2>
+<h3 id="10x-efficiency-through-intelligent-coordination">10x Efficiency Through Intelligent Coordination</h3>
+<p>The <a href="https://prismatic-reality.com/commands/orchestrate/"><code>/orchestrate</code> command</a> is the primary interface for invoking the full orchestration engine. It provides 10x efficiency over manual multi-agent coordination by automating swarm formation, context fusion, quality gate enforcement, and result synthesis.</p>
+<pre><code data-lang="bash"># Basic orchestration
+/orchestrate &quot;Analyze the security posture of the authentication module&quot;
+
+# Orchestration with domain constraints
+/orchestrate --domains=security,code-quality &quot;Review PR #1234 for vulnerabilities&quot;
+
+# Orchestration with priority override
+/orchestrate --priority=P0 &quot;Critical production incident in perimeter service&quot;
+
+# RC1 orchestration (release candidate quality)
+/rc1-orchestrate &quot;Prepare prismatic_perimeter for production deployment&quot;
+</code></pre>
+<p>When invoked, the <code>/orchestrate</code> command:</p>
+<ol>
+<li>Analyzes the request through the Ingestion Gate</li>
+<li>Selects the optimal formation strategy (direct, team, or swarm)</li>
+<li>Assembles agents based on capability matching and domain relevance</li>
+<li>Initiates the Mind-Meld protocol for complex requests</li>
+<li>Enforces all six quality gates during execution</li>
+<li>Synthesizes results with full provenance tracking</li>
+<li>Delivers the response with confidence scores and evidence chains</li>
+</ol>
+<p>The related <a href="https://prismatic-reality.com/commands/rc1-orchestrate/"><code>/rc1-orchestrate</code> command</a> applies stricter quality thresholds appropriate for release candidate workflows, where zero defects are mandatory.</p>
+<h2 id="performance-characteristics">Performance Characteristics</h2>
+<h3 id="concurrency-model">Concurrency Model</h3>
+<p>The orchestration engine leverages the BEAM virtual machine's massive concurrency capabilities. Key performance characteristics:</p>
+<table><thead><tr><th>Metric</th><th>Value</th><th>Mechanism</th></tr></thead><tbody>
+<tr><td>Concurrent agent processes</td><td>1,000+</td><td>BEAM lightweight processes (2KB initial heap)</td></tr>
+<tr><td>Inter-agent message latency</td><td>Sub-millisecond</td><td>Direct PID messaging, no serialization</td></tr>
+<tr><td>Swarm formation time</td><td>&lt; 50ms</td><td>Dynamic supervisor child spawning</td></tr>
+<tr><td>Quality gate evaluation</td><td>&lt; 10ms per gate</td><td>ETS-cached rule evaluation</td></tr>
+<tr><td>Mycelial signal propagation</td><td>&lt; 5ms cross-domain</td><td>PubSub with topic-based routing</td></tr>
+<tr><td>Session context load</td><td>&lt; 20ms</td><td>ETS with disk-backed persistence</td></tr>
+</tbody></table>
+<p>The BEAM's preemptive scheduler ensures that no single agent can monopolize CPU resources. Each process receives a fixed number of reductions (approximately 4,000) before being preempted, guaranteeing responsive behavior even under heavy load.</p>
+<h3 id="observability">Observability</h3>
+<p>Every orchestration operation emits structured telemetry events through the <a href="https://prismatic-reality.com/capabilities/telemetry-integration/">telemetry integration</a> framework. These events feed into <a href="https://prismatic-reality.com/capabilities/real-time-monitoring/">real-time monitoring</a> dashboards, enabling operators to observe:</p>
+<ul>
+<li>Active swarm count and composition</li>
+<li>Per-agent execution latency distributions</li>
+<li>Quality gate pass/fail rates</li>
+<li>Mycelial network health metrics</li>
+<li>Session lifecycle phase transitions</li>
+<li>Stack frame creation rates</li>
+</ul>
+<h2 id="cross-domain-orchestration-patterns">Cross-Domain Orchestration Patterns</h2>
+<h3 id="pattern-intelligence-to-security-pipeline">Pattern: Intelligence-to-Security Pipeline</h3>
+<p>When an OSINT investigation discovers a potential threat indicator, the orchestration engine automatically routes the finding through the security <a href="https://prismatic-reality.com/capabilities/color-teams/">color-team</a> pipeline:</p>
+<ol>
+<li>Intelligence domain agents discover the indicator</li>
+<li>Mycelial cross-domain signal propagates to Security domain</li>
+<li>Red team receives the indicator for adversarial simulation</li>
+<li>Blue team assesses defensive posture against the simulated attack</li>
+<li>Purple team synthesizes findings and evaluates closure conditions</li>
+<li>White team formally verifies that mitigations hold</li>
+</ol>
+<p>This entire pipeline executes without human intervention, driven by the orchestration engine's cross-domain routing rules and the mycelial network's signal propagation mechanics.</p>
+<h3 id="pattern-quality-driven-evolution">Pattern: Quality-Driven Evolution</h3>
+<p>When quality gates detect a degradation trend (even if individual gates still pass), the orchestration engine triggers <a href="https://prismatic-reality.com/capabilities/autonomous-self-healing/">autonomous self-healing</a>:</p>
+<ol>
+<li>Quality domain signals detect trend</li>
+<li>Evolution domain receives cross-domain propagation</li>
+<li><a href="https://prismatic-reality.com/agents/darwinian-evolution-coordinator/">Darwinian Evolution Coordinator</a> generates candidate fixes</li>
+<li>Quality gates evaluate each candidate</li>
+<li>The fittest candidate is selected and applied</li>
+<li><a href="https://prismatic-reality.com/capabilities/regression-tests/">Regression tests</a> verify the fix does not break existing functionality</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Prismatic Platform's orchestration engine represents a fundamentally different approach to multi-agent coordination. Rather than treating agents as interchangeable workers in a task queue, the platform models them as specialized intelligences within an interconnected ecosystem. The AIAD specification standard ensures every agent has well-defined capabilities and interfaces. The five-level hierarchy provides clear authority and escalation paths. The mycelial network enables organic knowledge propagation across domain boundaries. And the Mind-Meld protocol delivers genuine collaborative intelligence that exceeds what any individual agent could achieve alone.</p>
+<p>Built on <a href="https://prismatic-reality.com/technologies/elixir/">Elixir/OTP</a>'s proven concurrency primitives and governed by the <a href="https://prismatic-reality.com/capabilities/no-mercy/">No Mercy, No Doubts</a> doctrine, the orchestration layer transforms the coordination of 434 agents from an impossible distributed systems challenge into a routine Tuesday operation.</p>
+<hr />
+<p><em>For implementation details, see the <a href="https://prismatic-reality.com/apps/prismatic-agents/">PrismaticAgents application</a>. For the agent specification standard, see <a href="https://prismatic-reality.com/capabilities/aiad-standard/">AIAD Standard</a>. For the quality enforcement framework, see <a href="https://prismatic-reality.com/capabilities/quality-gates/">Quality Gates</a>.</em></p>
+
+            </div>
+        </div>
+
+        <!-- Doctrine Stats -->
+        <div class="flex flex-wrap justify-center gap-8 mt-12">
+            <div class="text-center">
+                <div class="text-4xl font-black text-red-500">100%</div>
+                <div class="text-sm text-gray-500 uppercase tracking-wider">Test Coverage</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-black text-yellow-500">0</div>
+                <div class="text-sm text-gray-500 uppercase tracking-wider">Warnings</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-black text-blue-500">0.95</div>
+                <div class="text-sm text-gray-500 uppercase tracking-wider">Confidence t</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-black text-purple-500">3</div>
+                <div class="text-sm text-gray-500 uppercase tracking-wider">Trinity Gates</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="bg-gray-900/50 py-8 border-b border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Related Commands</h3>
+        <div class="flex flex-wrap gap-2">
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/orchestrate/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /orchestrate
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/rc1-orchestrate/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /rc1-orchestrate
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/swarm-evolve/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /swarm-evolve
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/stack/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /stack
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/stack-mode/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /stack-mode
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/session-track/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /session-track
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/quality-gates/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /quality-gates
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/evolve/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /evolve
+            </a>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- Registry Section -->
+<section class="bg-white dark:bg-gray-950 py-12 lg:py-16" x-data="doctrineRegistry()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+
+        <!-- Stats Summary -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div
+                class="p-4 bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-200 dark:border-red-800 text-center">
+                <div class="text-3xl font-black text-red-600 dark:text-red-400" x-text="items.length">0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Doctrines</div>
+            </div>
+            <div
+                class="p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl border border-yellow-200 dark:border-yellow-800 text-center">
+                <div class="text-3xl font-black text-yellow-600 dark:text-yellow-400" x-text="uniqueColors">0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Categories</div>
+            </div>
+            <div
+                class="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 text-center">
+                <div class="text-3xl font-black text-blue-600 dark:text-blue-400">P0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Priority</div>
+            </div>
+            <div
+                class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800 text-center">
+                <div class="text-3xl font-black text-purple-600 dark:text-purple-400" x-text="filteredItems.length">0
+                </div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Showing</div>
+            </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="mb-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div class="flex flex-col lg:flex-row gap-4">
+                <!-- Search -->
+                <div class="flex-1">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                        <input type="text" x-model="searchTerm" @input="currentPage = 1"
+                            class="block w-full pl-10 pr-4 py-2.5 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+                            placeholder="Search doctrines, principles, frameworks...">
+                    </div>
+                </div>
+
+                <!-- Color/Category Filter -->
+                <div class="w-full lg:w-48">
+                    <select x-model="selectedColor" @change="currentPage = 1"
+                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="">All Categories</option>
+                        <template x-for="c in uniqueColorList" :key="c">
+                            <option :value="c" x-text="c.charAt(0).toUpperCase() + c.slice(1)"></option>
+                        </template>
+                    </select>
+                </div>
+
+                <!-- Sort -->
+                <div class="w-full lg:w-48">
+                    <select x-model="sortField"
+                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="title">Sort: Alphabetical</option>
+                        <option value="color">Sort: Category</option>
+                    </select>
+                </div>
+
+                <!-- View Toggle -->
+                <div
+                    class="flex items-center bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <button @click="viewMode = 'cards'"
+                        :class="viewMode === 'cards' ? 'bg-yellow-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg>
+                    </button>
+                    <button @click="viewMode = 'table'"
+                        :class="viewMode === 'table' ? 'bg-yellow-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Reset -->
+                <button @click="searchTerm = ''; selectedColor = ''; sortField = 'title'; currentPage = 1"
+                    class="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600">
+                    Reset
+                </button>
+            </div>
+
+            <div class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+                Showing <span class="font-semibold text-yellow-600 dark:text-yellow-400"
+                    x-text="paginatedItems.length"></span> of <span class="font-semibold"
+                    x-text="filteredItems.length"></span> doctrines
+            </div>
+        </div>
+
+        <!-- Card View -->
+        <div x-show="viewMode === 'cards'" x-transition class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <template x-for="item in paginatedItems" :key="item.title">
+                <a :href="item.url"
+                    class="group block p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:border-transparent transition-all duration-300 hover:-translate-y-1">
+                    <!-- Icon -->
+                    <div class="w-14 h-14 mb-5 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                        :class="getGradientBg(item.color)">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path x-show="item.icon === 'x-circle'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <path x-show="item.icon === 'check-circle'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <path x-show="item.icon === 'shield'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            <path x-show="item.icon === 'lightning'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            <path x-show="item.icon === 'eye'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path x-show="item.icon === 'eye'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            <path x-show="item.icon === 'cube'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                            <path x-show="item.icon === 'clock'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <path x-show="item.icon === 'refresh'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            <path x-show="item.icon === 'fire'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                            <path x-show="item.icon === 'scale'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                            <path x-show="item.icon === 'beaker'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            <path x-show="item.icon === 'document-text'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            <path
+                                x-show="!['x-circle','check-circle','shield','lightning','eye','cube','clock','refresh','fire','scale','beaker','document-text'].includes(item.icon)"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
+                        x-text="item.title"></h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-3"
+                        x-text="item.description"></p>
+                    <div
+                        class="mt-4 flex items-center text-sm font-medium text-gray-400 group-hover:text-blue-500 transition-colors">
+                        <span>Learn more</span>
+                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </a>
+            </template>
+        </div>
+
+        <!-- Table View -->
+        <div x-show="viewMode === 'table'" x-transition
+            class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-800 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="toggleSort('title')">
+                            <div class="flex items-center gap-2">
+                                Doctrine
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'title' && sortDesc}"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4">Description</th>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="toggleSort('color')">
+                            <div class="flex items-center gap-2">
+                                Category
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'color' && sortDesc}"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4 text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template x-for="item in paginatedItems" :key="item.title">
+                        <tr
+                            class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center"
+                                        :class="getGradientBg(item.color)">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        </svg>
+                                    </div>
+                                    <span class="font-semibold text-gray-900 dark:text-white"
+                                        x-text="item.title"></span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 max-w-md">
+                                <p class="truncate" x-text="item.description"></p>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-full capitalize"
+                                    :class="getCategoryBadge(item.color)" x-text="item.color"></span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <a :href="item.url"
+                                    class="font-medium text-yellow-600 dark:text-yellow-400 hover:underline">View</a>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Empty State -->
+        <div x-show="filteredItems.length === 0" class="text-center py-16">
+            <svg class="w-16 h-16 mx-auto text-gray-300 dark:text-gray-600 mb-4" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p class="text-gray-500 dark:text-gray-400 text-lg">No doctrines match your search criteria.</p>
+        </div>
+
+        <!-- Pagination -->
+        <div x-show="totalPages > 1" class="flex flex-col md:flex-row items-center justify-between mt-8 gap-4">
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+                Page <span class="font-semibold" x-text="currentPage"></span> of <span class="font-semibold"
+                    x-text="totalPages"></span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button @click="currentPage = Math.max(1, currentPage - 1)" :disabled="currentPage === 1"
+                    :class="{'opacity-50 cursor-not-allowed': currentPage === 1}"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    Previous
+                </button>
+                <template x-for="page in visiblePages" :key="page">
+                    <button @click="currentPage = page"
+                        :class="currentPage === page ? 'bg-yellow-600 text-white border-yellow-600' : 'bg-white text-gray-700 border-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600'"
+                        class="px-4 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                        x-text="page">
+                    </button>
+                </template>
+                <button @click="currentPage = Math.min(totalPages, currentPage + 1)"
+                    :disabled="currentPage === totalPages"
+                    :class="{'opacity-50 cursor-not-allowed': currentPage === totalPages}"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    Next
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Doctrine Integration -->
+<section class="bg-gray-50 dark:bg-gray-800 py-16 border-t border-gray-200 dark:border-gray-700">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Doctrine Integration</h2>
+            <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                Every layer of the platform enforces these doctrines through automated gates and verification.
+            </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-4">
+            <div
+                class="text-center p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 mx-auto mb-3 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Pre-Commit</h4>
+                <p class="text-sm text-gray-500">Quality gates block violations</p>
+            </div>
+            <div
+                class="text-center p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 mx-auto mb-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">CI/CD</h4>
+                <p class="text-sm text-gray-500">Pipeline enforcement</p>
+            </div>
+            <div
+                class="text-center p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 mx-auto mb-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Agent AIAD</h4>
+                <p class="text-sm text-gray-500">Runtime compliance</p>
+            </div>
+            <div
+                class="text-center p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 mx-auto mb-3 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Trinity Gate</h4>
+                <p class="text-sm text-gray-500">Formal verification</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function doctrineRegistry() {
+        return {
+            searchTerm: '',
+            selectedColor: '',
+            sortField: 'title',
+            sortDesc: false,
+            viewMode: 'cards',
+            currentPage: 1,
+            perPage: 12,
+            items: [
+                
+        ],
+
+        get uniqueColors() {
+            return [...new Set(this.items.map(i => i.color))].length;
+        },
+        get uniqueColorList() {
+            return [...new Set(this.items.map(i => i.color))].sort();
+        },
+        get filteredItems() {
+            let result = [...this.items];
+            if (this.searchTerm) {
+                const q = this.searchTerm.toLowerCase();
+                result = result.filter(i =>
+                    i.title.toLowerCase().includes(q) ||
+                    i.description.toLowerCase().includes(q)
+                );
+            }
+            if (this.selectedColor) {
+                result = result.filter(i => i.color === this.selectedColor);
+            }
+            result.sort((a, b) => {
+                let av = a[this.sortField], bv = b[this.sortField];
+                if (typeof av === 'string') { av = av.toLowerCase(); bv = bv.toLowerCase(); }
+                if (this.sortDesc) return bv > av ? 1 : bv < av ? -1 : 0;
+                return av > bv ? 1 : av < bv ? -1 : 0;
+            });
+            return result;
+        },
+        get paginatedItems() {
+            const start = (this.currentPage - 1) * this.perPage;
+            return this.filteredItems.slice(start, start + this.perPage);
+        },
+        get totalPages() {
+            return Math.ceil(this.filteredItems.length / this.perPage) || 1;
+        },
+        get visiblePages() {
+            const pages = [];
+            const total = this.totalPages;
+            const current = this.currentPage;
+            let start = Math.max(1, current - 2);
+            let end = Math.min(total, current + 2);
+            if (end - start < 4) {
+                if (start === 1) end = Math.min(total, 5);
+                else start = Math.max(1, total - 4);
+            }
+            for (let i = start; i <= end; i++) pages.push(i);
+            return pages;
+        },
+        toggleSort(field) {
+            if (this.sortField === field) this.sortDesc = !this.sortDesc;
+            else { this.sortField = field; this.sortDesc = false; }
+            this.currentPage = 1;
+        },
+        getGradientBg(color) {
+            const map = {
+                red: 'bg-gradient-to-br from-red-500 to-red-600',
+                blue: 'bg-gradient-to-br from-blue-500 to-blue-600',
+                purple: 'bg-gradient-to-br from-purple-500 to-purple-600',
+                emerald: 'bg-gradient-to-br from-emerald-500 to-emerald-600',
+                yellow: 'bg-gradient-to-br from-yellow-500 to-yellow-600',
+                cyan: 'bg-gradient-to-br from-cyan-500 to-cyan-600',
+                pink: 'bg-gradient-to-br from-pink-500 to-pink-600',
+                orange: 'bg-gradient-to-br from-orange-500 to-orange-600',
+                indigo: 'bg-gradient-to-br from-indigo-500 to-indigo-600'
+            };
+            return map[color] || 'bg-gradient-to-br from-gray-500 to-gray-600';
+        },
+        getCategoryBadge(color) {
+            const map = {
+                red: 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
+                blue: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+                purple: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
+                emerald: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400',
+                yellow: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400',
+                cyan: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400',
+                pink: 'bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400',
+                orange: 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400',
+                indigo: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400'
+            };
+            return map[color] || 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300';
+        }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/platform/" class="text-gray-400 hover:text-white transition-colors">Overview</a>
+                        </li>
+                        <li><a href="/apps/" class="text-gray-400 hover:text-white transition-colors">Applications (89)</a></li>
+                        <li><a href="/agents/" class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products & Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Products & Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/products/" class="text-gray-400 hover:text-white transition-colors">Products</a>
+                        </li>
+                        <li><a href="/osint/" class="text-gray-400 hover:text-white transition-colors">OSINT Sources
+                                (121+)</a></li>
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="/solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a>
+                        </li>
+                        <li><a href="/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a>
+                        </li>
+                        <li><a href="/faq/" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-white bg-blue-600 rounded-xl shadow-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-110 focus:ring-4 focus:ring-blue-300 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="/js/vendor/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Back to Top button
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

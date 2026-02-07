@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Justfile ARCHER SUPREME guide - Prismatic Platform Solutions</title>
+
+    
+<meta name="description" content="Prismatic Platform Solution - Production-ready AI implementation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;solutions&#x2F;developer-tooling-runtime&#x2F;justfile-archer-supreme-guide&#x2F;">
+<meta property="og:title" content="Justfile ARCHER SUPREME guide - Prismatic Platform Solutions">
+<meta property="og:description"
+    content="Prismatic Platform Solution - Production-ready AI implementation">
+<meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;solutions&#x2F;developer-tooling-runtime&#x2F;justfile-archer-supreme-guide&#x2F;">
+<meta name="twitter:title" content="Justfile ARCHER SUPREME guide - Prismatic Platform Solutions">
+<meta name="twitter:description"
+    content="Prismatic Platform Solution - Production-ready AI implementation">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;solutions&#x2F;developer-tooling-runtime&#x2F;justfile-archer-supreme-guide&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- ANTIGRAVITY CSS - Single source of truth for colors -->
+    <link rel="stylesheet" href="/css/antigravity.css">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    <!-- Chart.js -->
+    <script src="/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Three.js (3D visualizations) -->
+    <script src="/js/vendor/three.min.js"></script>
+    <script src="/js/vendor/OrbitControls.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+        (function () {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 space-x-3">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    <li>
+                        <a href="/platform/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                    </li>
+                    <li>
+                        <a href="/products/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                    </li>
+                    <li>
+                        <a href="/capabilities/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            x-cloak>
+                            <a href="/apps/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                (89)</a>
+                            <a href="/agents/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                (430)</a>
+                            <a href="/architecture/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                            <a href="/technologies/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/commands/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                            <a href="/teams/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                Teams</a>
+                            <a href="/solutions/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                            <a href="/registry/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/glossary/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                            <a href="/faq/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Header -->
+<section class="bg-gray-950 py-12 lg:py-16 border-b border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="/"
+                        class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <a href="/solutions/"
+                            class="ml-1 text-sm font-medium text-gray-400 hover:text-white md:ml-2 transition-colors">Solutions</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-white md:ml-2">Justfile ARCHER SUPREME guide</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Header Card -->
+        <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl shadow-2xl border border-cyan-700/30 overflow-hidden"
+            x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)">
+            <div class="p-8">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-6" x-show="shown"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform -translate-y-4"
+                    x-transition:enter-end="opacity-100 transform translate-y-0">
+                    <!-- Solution Icon -->
+                    <div class="flex-shrink-0">
+                        
+                        <div class="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-cyan-500/30
+                            bg-gradient-to-br from-cyan-600 to-blue-600
+                            ">
+                            
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Title & Description -->
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <h1 class="text-3xl md:text-4xl font-black text-white">Justfile ARCHER SUPREME guide</h1>
+                            
+                            
+                            
+                        </div>
+                        
+                        <p class="text-lg text-gray-300 leading-relaxed max-w-3xl">Justfile ARCHER SUPREME guide -- A comprehensive developer guide for the ARCHER SUPREME Justfile within the &#x27;Developer Tooling &amp; Runtime&#x27; domain.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="bg-white dark:bg-gray-950 py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-3">
+            <!-- Main Content (left 2/3) -->
+            <div class="lg:col-span-2">
+                <article class="prose prose-lg dark:prose-invert max-w-none
+                    prose-headings:text-gray-900 dark:prose-headings:text-white
+                    prose-p:text-gray-600 dark:prose-p:text-gray-300
+                    prose-a:text-cyan-600 dark:prose-a:text-cyan-400
+                    prose-strong:text-gray-900 dark:prose-strong:text-white
+                    prose-code:text-cyan-600 dark:prose-code:text-cyan-400
+                    prose-pre:bg-gray-50 dark:prose-pre:bg-gray-800
+                    prose-li:text-gray-600 dark:prose-li:text-gray-300
+                    prose-table:text-gray-600 dark:prose-table:text-gray-300
+                    prose-th:text-gray-900 dark:prose-th:text-white
+                    prose-td:border-gray-200 dark:prose-td:border-gray-700">
+                    <h1 id="justfile-archer-supreme-edition-complete-developer-guide">Justfile ARCHER SUPREME Edition - Complete Developer Guide</h1>
+<p><strong>Version</strong>: 3.0.0
+<strong>Last Updated</strong>: 2025-11-24
+<strong>Authority</strong>: ARCHER SUPREME - Professional Development Infrastructure</p>
+<h2 id="dart-overview">🎯 Overview</h2>
+<p>The Prismatic Platform now features a <strong>comprehensive, professional-grade Justfile</strong> that unifies all development tasks into a single, intelligent command interface. This ARCHER SUPREME edition provides:</p>
+<ul>
+<li><strong>75+ recipes</strong> spanning the complete development lifecycle</li>
+<li><strong>Intelligent service management</strong> with automatic health checks</li>
+<li><strong>Unified quality gates</strong> with parallel execution optimization</li>
+<li><strong>Emergency diagnostic capabilities</strong> for crisis response</li>
+<li><strong>Color-coded output</strong> with professional UX</li>
+<li><strong>Environment-aware execution</strong> supporting dev/test/prod</li>
+<li><strong>Legacy compatibility</strong> preserving existing workflows</li>
+</ul>
+<h2 id="rocket-quick-start">🚀 Quick Start</h2>
+<pre><code data-lang="bash"># Complete environment setup
+just setup
+
+# Start development server
+just serve
+
+# Run quality gates
+just quality
+
+# Get help
+just help
+</code></pre>
+<h2 id="book-recipe-categories">📖 Recipe Categories</h2>
+<h3 id="house-core-development-lifecycle">🏠 Core Development Lifecycle</h3>
+<table><thead><tr><th>Recipe</th><th>Description</th><th>Usage</th></tr></thead><tbody>
+<tr><td><code>setup</code></td><td>Complete environment setup</td><td><code>just setup</code></td></tr>
+<tr><td><code>clean</code></td><td>Deep cleanup of artifacts</td><td><code>just clean</code></td></tr>
+<tr><td><code>compile [env]</code></td><td>Smart compilation</td><td><code>just compile dev</code></td></tr>
+<tr><td><code>test [type]</code></td><td>Intelligent testing</td><td><code>just test unit</code></td></tr>
+<tr><td><code>serve [port]</code></td><td>Development server</td><td><code>just serve 4000</code></td></tr>
+<tr><td><code>serve-iex</code></td><td>Server with IEx console</td><td><code>just serve-iex</code></td></tr>
+<tr><td><code>deploy [target]</code></td><td>Production deployment</td><td><code>just deploy staging</code></td></tr>
+</tbody></table>
+<h3 id="dart-quality-compliance">🎯 Quality &amp; Compliance</h3>
+<table><thead><tr><th>Recipe</th><th>Description</th><th>Usage</th></tr></thead><tbody>
+<tr><td><code>quality</code></td><td>Unified quality gates</td><td><code>just quality</code></td></tr>
+<tr><td><code>fix</code></td><td>Automated issue resolution</td><td><code>just fix</code></td></tr>
+<tr><td><code>lint [tool]</code></td><td>Comprehensive linting</td><td><code>just lint credo</code></td></tr>
+<tr><td><code>format</code></td><td>Code formatting</td><td><code>just format</code></td></tr>
+<tr><td><code>audit</code></td><td>Security audit</td><td><code>just audit</code></td></tr>
+</tbody></table>
+<h3 id="bar-chart-intelligence-analysis">📊 Intelligence &amp; Analysis</h3>
+<table><thead><tr><th>Recipe</th><th>Description</th><th>Usage</th></tr></thead><tbody>
+<tr><td><code>analyze [type]</code></td><td>Codebase analysis</td><td><code>just analyze complexity</code></td></tr>
+<tr><td><code>profile [type]</code></td><td>Performance profiling</td><td><code>just profile server</code></td></tr>
+<tr><td><code>coverage [format]</code></td><td>Test coverage</td><td><code>just coverage html</code></td></tr>
+<tr><td><code>metrics</code></td><td>Platform health metrics</td><td><code>just metrics</code></td></tr>
+</tbody></table>
+<h3 id="tools-platform-operations">🛠️ Platform Operations</h3>
+<table><thead><tr><th>Recipe</th><th>Description</th><th>Usage</th></tr></thead><tbody>
+<tr><td><code>services [cmd]</code></td><td>Service management</td><td><code>just services start postgres</code></td></tr>
+<tr><td><code>mcp [command]</code></td><td>MCP orchestration</td><td><code>just mcp status</code></td></tr>
+<tr><td><code>agents [command]</code></td><td>Agent management</td><td><code>just agents discover</code></td></tr>
+<tr><td><code>docs [command]</code></td><td>Documentation</td><td><code>just docs generate</code></td></tr>
+</tbody></table>
+<h3 id="sos-emergency-recovery">🆘 Emergency &amp; Recovery</h3>
+<table><thead><tr><th>Recipe</th><th>Description</th><th>Usage</th></tr></thead><tbody>
+<tr><td><code>emergency</code></td><td>Emergency diagnostics</td><td><code>just emergency</code></td></tr>
+<tr><td><code>doctor</code></td><td>Health check</td><td><code>just doctor</code></td></tr>
+<tr><td><code>rollback [target]</code></td><td>Safe rollback</td><td><code>just rollback last</code></td></tr>
+</tbody></table>
+<h2 id="wrench-advanced-features">🔧 Advanced Features</h2>
+<h3 id="intelligent-service-management">Intelligent Service Management</h3>
+<p>The justfile automatically manages platform services:</p>
+<pre><code data-lang="bash"># Services auto-start when needed
+just serve  # Automatically ensures PostgreSQL, Redis, Meilisearch are running
+
+# Manual service control
+just services start postgres
+just services stop redis
+just services restart meilisearch
+just services status all
+</code></pre>
+<h3 id="parallel-execution-optimization">Parallel Execution Optimization</h3>
+<p>Quality gates run checks in parallel for maximum efficiency:</p>
+<pre><code data-lang="bash"># This runs Archer scan and Credo analysis simultaneously
+just quality
+</code></pre>
+<h3 id="environment-aware-execution">Environment-Aware Execution</h3>
+<pre><code data-lang="bash"># Compile for different environments
+just compile dev
+just compile test
+just compile prod
+
+# Run tests with different configurations
+just test unit        # Unit tests only
+just test integration # Integration tests only
+just test e2e         # End-to-end tests
+just test fast        # Exclude slow tests
+</code></pre>
+<h3 id="color-coded-output">Color-Coded Output</h3>
+<p>All recipes provide color-coded feedback:</p>
+<ul>
+<li>🔵 <strong>Blue</strong>: Information and progress</li>
+<li>🟢 <strong>Green</strong>: Success and completion</li>
+<li>🟡 <strong>Yellow</strong>: Warnings and non-critical issues</li>
+<li>🔴 <strong>Red</strong>: Errors and failures</li>
+<li>🟣 <strong>Purple</strong>: Special operations</li>
+<li>🔷 <strong>Cyan</strong>: Important announcements</li>
+</ul>
+<h2 id="clipboard-recipe-reference">📋 Recipe Reference</h2>
+<h3 id="core-development-recipes">Core Development Recipes</h3>
+<h4 id="just-setup"><code>just setup</code></h4>
+<p><strong>Purpose</strong>: Complete development environment setup</p>
+<p><strong>What it does</strong>:</p>
+<ol>
+<li>Installs runtime tools via ASDF (Erlang, Elixir, Node.js)</li>
+<li>Installs Elixir dependencies (<code>mix deps.get</code>)</li>
+<li>Starts required services (PostgreSQL, Redis, Meilisearch)</li>
+<li>Creates and migrates database</li>
+<li>Sets up MCP infrastructure</li>
+<li>Verifies entire setup</li>
+</ol>
+<p><strong>Prerequisites</strong>: Docker, ASDF (recommended)</p>
+<p><strong>Output</strong>:</p>
+<pre><code>🚀 ARCHER SUPREME Setup - Prismatic Platform
+
+  → Setting up runtime environment...
+    ✅ Runtime tools installed via ASDF
+  → Installing dependencies...
+    ✅ Dependencies installed
+  → Starting services...
+    ✅ Services started and ready
+  → Setting up database...
+    ✅ Database ready
+  → Setting up MCP infrastructure...
+    ✅ MCP infrastructure ready
+  → Verifying setup...
+    ✅ Compilation verified
+    ✅ Services verified
+
+✅ Setup complete! Ready for development.
+
+Next steps:
+  • Run &#39;just serve&#39; to start development server
+  • Run &#39;just test&#39; to run test suite
+  • Run &#39;just quality&#39; to check code quality
+</code></pre>
+<h4 id="just-compile-env"><code>just compile [env]</code></h4>
+<p><strong>Purpose</strong>: Smart compilation with warning management</p>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code>env</code>: Target environment (<code>dev</code>, <code>test</code>, <code>prod</code>) - default: <code>dev</code></li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li><strong>Syntax error detection</strong>: Fails fast on syntax errors</li>
+<li><strong>Warning management</strong>: Treats warnings as errors</li>
+<li><strong>Environment-specific</strong>: Compiles for target environment</li>
+<li><strong>Intelligent feedback</strong>: Suggests fixes for common issues</li>
+</ul>
+<p><strong>Examples</strong>:</p>
+<pre><code data-lang="bash">just compile          # Compile for dev environment
+just compile test     # Compile for test environment
+just compile prod     # Compile for production
+</code></pre>
+<h4 id="just-test-type"><code>just test [type]</code></h4>
+<p><strong>Purpose</strong>: Intelligent testing with coverage tracking</p>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code>type</code>: Test type (<code>all</code>, <code>unit</code>, <code>integration</code>, <code>e2e</code>, <code>fast</code>) - default: <code>all</code></li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li><strong>Selective testing</strong>: Run specific test suites</li>
+<li><strong>Coverage tracking</strong>: Automatic coverage reports</li>
+<li><strong>Fast feedback</strong>: Skip slow tests when needed</li>
+<li><strong>Environment setup</strong>: Ensures test compilation</li>
+</ul>
+<p><strong>Examples</strong>:</p>
+<pre><code data-lang="bash">just test             # Run all tests with coverage
+just test unit        # Run unit tests only
+just test integration # Run integration tests only
+just test fast        # Skip slow tests
+</code></pre>
+<h4 id="just-serve-port"><code>just serve [port]</code></h4>
+<p><strong>Purpose</strong>: Development server with intelligent startup</p>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code>port</code>: Server port - default: <code>4000</code></li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li><strong>Service auto-start</strong>: Ensures all required services are running</li>
+<li><strong>Compilation check</strong>: Verifies code compiles before starting</li>
+<li><strong>Database setup</strong>: Automatically sets up database if needed</li>
+<li><strong>Health monitoring</strong>: Pre-flight checks for optimal startup</li>
+</ul>
+<p><strong>Examples</strong>:</p>
+<pre><code data-lang="bash">just serve            # Start on port 4000
+just serve 3000       # Start on port 3000
+just serve-iex        # Start with IEx console
+</code></pre>
+<h3 id="quality-compliance-recipes">Quality &amp; Compliance Recipes</h3>
+<h4 id="just-quality"><code>just quality</code></h4>
+<p><strong>Purpose</strong>: Unified quality gates with parallel execution</p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li><strong>Parallel execution</strong>: Runs Archer scan and Credo simultaneously</li>
+<li><strong>Comprehensive checks</strong>: Compilation, quality analysis, test coverage</li>
+<li><strong>Fast feedback</strong>: Optimized for speed and efficiency</li>
+<li><strong>Pass/fail gates</strong>: Clear success/failure indicators</li>
+</ul>
+<p><strong>Process</strong>:</p>
+<ol>
+<li><strong>Parallel Phase</strong>: Archer scan + Credo analysis</li>
+<li><strong>Validation Phase</strong>: Quality gate validation</li>
+<li><strong>Coverage Phase</strong>: Test coverage verification (85% threshold)</li>
+</ol>
+<h4 id="just-fix"><code>just fix</code></h4>
+<p><strong>Purpose</strong>: Automated quality issue resolution</p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li><strong>Syntax fixes</strong>: Common syntax error resolution</li>
+<li><strong>Code formatting</strong>: Automatic formatting via <code>mix format</code></li>
+<li><strong>Warning fixes</strong>: Archer elimination for common warnings</li>
+<li><strong>Verification</strong>: Attempts compilation to verify fixes</li>
+</ul>
+<p><strong>Process</strong>:</p>
+<ol>
+<li>Fix syntax issues</li>
+<li>Apply code formatting</li>
+<li>Fix compilation warnings</li>
+<li>Verify with compilation attempt</li>
+</ol>
+<h4 id="just-lint-tool"><code>just lint [tool]</code></h4>
+<p><strong>Purpose</strong>: Comprehensive linting with multiple tools</p>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code>tool</code>: Linting tool (<code>all</code>, <code>credo</code>, <code>archer</code>, <code>dialyzer</code>) - default: <code>all</code></li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li><strong>Multiple linters</strong>: Credo, Archer, Dialyzer support</li>
+<li><strong>Selective linting</strong>: Run specific linters</li>
+<li><strong>Strict mode</strong>: Uses strict checking for maximum quality</li>
+</ul>
+<h3 id="intelligence-analysis-recipes">Intelligence &amp; Analysis Recipes</h3>
+<h4 id="just-analyze-target"><code>just analyze [target]</code></h4>
+<p><strong>Purpose</strong>: Codebase analysis and metrics</p>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code>target</code>: Analysis type (<code>all</code>, <code>complexity</code>, <code>dependencies</code>, <code>metrics</code>) - default: <code>all</code></li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li><strong>Complexity analysis</strong>: Largest files and complexity metrics</li>
+<li><strong>Dependency analysis</strong>: Dependency tree and outdated packages</li>
+<li><strong>Code metrics</strong>: Lines of code, module count, test count</li>
+</ul>
+<h4 id="just-profile-type"><code>just profile [type]</code></h4>
+<p><strong>Purpose</strong>: Performance profiling and optimization</p>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code>type</code>: Profiling type (<code>server</code>, <code>tests</code>)</li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li><strong>Server profiling</strong>: Application startup profiling with eprof</li>
+<li><strong>Test profiling</strong>: Test suite performance analysis with cprof</li>
+</ul>
+<h3 id="platform-operations-recipes">Platform Operations Recipes</h3>
+<h4 id="just-services-command-service"><code>just services [command] [service]</code></h4>
+<p><strong>Purpose</strong>: Unified service management</p>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code>command</code>: Action (<code>start</code>, <code>stop</code>, <code>restart</code>, <code>status</code>) - default: <code>status</code></li>
+<li><code>service</code>: Target service (<code>all</code>, <code>postgres</code>, <code>redis</code>, <code>meilisearch</code>) - default: <code>all</code></li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li><strong>Docker Compose integration</strong>: Uses docker-compose for service management</li>
+<li><strong>Health monitoring</strong>: Checks service availability</li>
+<li><strong>Selective control</strong>: Manage individual or all services</li>
+</ul>
+<p><strong>Examples</strong>:</p>
+<pre><code data-lang="bash">just services status           # Check all services
+just services start postgres   # Start PostgreSQL only
+just services restart redis    # Restart Redis
+</code></pre>
+<h4 id="just-mcp-command"><code>just mcp [command]</code></h4>
+<p><strong>Purpose</strong>: MCP server orchestration and health</p>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code>command</code>: MCP operation (<code>status</code>, <code>load</code>, <code>config</code>, <code>health</code>) - default: <code>status</code></li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li><strong>Server status</strong>: Check MCP server health</li>
+<li><strong>Configuration</strong>: Validate MCP configuration</li>
+<li><strong>Dynamic loading</strong>: Load/reload MCP servers</li>
+</ul>
+<h4 id="just-agents-command"><code>just agents [command]</code></h4>
+<p><strong>Purpose</strong>: Agent discovery, validation, and management</p>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code>command</code>: Agent operation (<code>discover</code>, <code>validate</code>, <code>list</code>) - default: <code>discover</code></li>
+</ul>
+<p><strong>Features</strong>:</p>
+<ul>
+<li><strong>Agent discovery</strong>: Find and catalog available agents</li>
+<li><strong>Validation</strong>: Validate agent specifications</li>
+<li><strong>Management</strong>: List and analyze agent ecosystem</li>
+</ul>
+<h3 id="emergency-recovery-recipes">Emergency &amp; Recovery Recipes</h3>
+<h4 id="just-emergency"><code>just emergency</code></h4>
+<p><strong>Purpose</strong>: Emergency diagnostic and recovery procedures</p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li><strong>Critical system checks</strong>: Services, compilation, database, MCP</li>
+<li><strong>Non-blocking execution</strong>: Continues even if checks fail</li>
+<li><strong>Comprehensive reporting</strong>: Full diagnostic output</li>
+<li><strong>Crisis response</strong>: Immediate feedback for emergency situations</li>
+</ul>
+<p><strong>Output Example</strong>:</p>
+<pre><code>🚨 EMERGENCY DIAGNOSTICS - ARCHER SUPREME MODE
+
+Checking services...
+PostgreSQL: ✅ Running
+Redis: ✅ Running
+Meilisearch: ❌ Not available
+
+Checking compilation...
+✅ Compilation OK
+
+Checking database...
+✅ Database OK
+
+Checking MCP health...
+MCP unavailable
+
+Generating diagnostic reports...
+MCP diagnostics unavailable
+
+📋 Emergency diagnostics complete. Check output above.
+</code></pre>
+<h4 id="just-doctor"><code>just doctor</code></h4>
+<p><strong>Purpose</strong>: Comprehensive health diagnostics</p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li><strong>Environment check</strong>: Elixir version, Mix environment</li>
+<li><strong>Dependency validation</strong>: Dependency installation status</li>
+<li><strong>Compilation verification</strong>: Compilation health</li>
+<li><strong>Service monitoring</strong>: All service health checks</li>
+<li><strong>Database connectivity</strong>: Database connection verification</li>
+</ul>
+<h2 id="arrows-counterclockwise-migration-from-scripts">🔄 Migration from Scripts</h2>
+<p>The justfile consolidates many existing shell scripts:</p>
+<h3 id="migrated-scripts">Migrated Scripts</h3>
+<ul>
+<li><code>scripts/start-services.sh</code> → <code>just services start</code></li>
+<li><code>scripts/setup-environment.sh</code> → <code>just setup</code></li>
+<li><code>scripts/run-quality-checks.sh</code> → <code>just quality</code></li>
+<li><code>scripts/compile-and-test.sh</code> → <code>just compile &amp;&amp; just test</code></li>
+<li><code>scripts/emergency-diagnostics.sh</code> → <code>just emergency</code></li>
+</ul>
+<h3 id="legacy-support">Legacy Support</h3>
+<p>All legacy commands are preserved for backwards compatibility:</p>
+<ul>
+<li><code>just lock</code> → legacy mix.lock generation</li>
+<li><code>just smoke</code> → legacy smoke testing</li>
+<li><code>just ci</code> → legacy CI pipeline</li>
+<li><code>just demo-seed</code> → legacy demo data seeding</li>
+</ul>
+<h2 id="control-knobs-configuration">🎛️ Configuration</h2>
+<h3 id="environment-variables">Environment Variables</h3>
+<p>The justfile respects these environment variables:</p>
+<pre><code data-lang="bash"># Default environment (dev/test/prod)
+export MIX_ENV=dev
+
+# Database configuration
+export POSTGRES_USER=prismatic
+export POSTGRES_DB=prismatic_dev
+
+# Service URLs
+export REDIS_URL=redis://localhost:6379
+export MEILISEARCH_URL=http://localhost:7700
+</code></pre>
+<h3 id="env-file-support">.env File Support</h3>
+<p>Create a <code>.env</code> file in the project root:</p>
+<pre><code data-lang="bash"># .env
+MIX_ENV=dev
+POSTGRES_USER=prismatic
+POSTGRES_DB=prismatic_dev
+REDIS_URL=redis://localhost:6379
+MEILISEARCH_URL=http://localhost:7700
+</code></pre>
+<p>The justfile automatically loads these variables.</p>
+<h2 id="rocket-ci-cd-integration">🚀 CI/CD Integration</h2>
+<p>The justfile is designed for seamless CI/CD integration:</p>
+<h3 id="github-actions-example">GitHub Actions Example</h3>
+<pre><code data-lang="yaml">name: CI
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: taiki-e/install-action@just
+      - name: Setup environment
+        run: just setup
+      - name: Run quality gates
+        run: just quality
+      - name: Run tests
+        run: just test all
+      - name: Generate coverage
+        run: just coverage json
+</code></pre>
+<h3 id="gitlab-ci-example">GitLab CI Example</h3>
+<pre><code data-lang="yaml"># .gitlab-ci.yml
+stages:
+  - setup
+  - test
+  - deploy
+
+setup:
+  stage: setup
+  script:
+    - just setup
+
+test:
+  stage: test
+  script:
+    - just quality
+    - just test all
+
+deploy:
+  stage: deploy
+  script:
+    - just deploy staging
+  only:
+    - main
+</code></pre>
+<h2 id="mag-troubleshooting">🔍 Troubleshooting</h2>
+<h3 id="common-issues">Common Issues</h3>
+<h4 id="command-not-found-just">"Command not found: just"</h4>
+<p><strong>Solution</strong>: Install Just command runner</p>
+<pre><code data-lang="bash"># macOS
+brew install just
+
+# Ubuntu/Debian
+wget -qO - &#39;https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub&#39; | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1&gt; /dev/null
+echo &quot;deb [arch=all,amd64,i386 signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)&quot; | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
+sudo apt update
+sudo apt install just
+</code></pre>
+<h4 id="services-not-starting">"Services not starting"</h4>
+<p><strong>Solution</strong>: Check Docker and docker-compose</p>
+<pre><code data-lang="bash"># Check Docker
+docker --version
+docker-compose --version
+
+# Check services manually
+just services status
+just emergency  # For detailed diagnostics
+</code></pre>
+<h4 id="compilation-warnings-treated-as-errors">"Compilation warnings treated as errors"</h4>
+<p><strong>Solution</strong>: Use automated fixes</p>
+<pre><code data-lang="bash">just fix          # Automated issue resolution
+just fix-warnings # Specific warning fixes
+just compile dev  # Retry compilation
+</code></pre>
+<h4 id="database-connection-issues">"Database connection issues"</h4>
+<p><strong>Solution</strong>: Reset database setup</p>
+<pre><code data-lang="bash">just services restart postgres
+just _setup_database
+just doctor  # Verify fix
+</code></pre>
+<h2 id="dart-best-practices">🎯 Best Practices</h2>
+<h3 id="development-workflow">Development Workflow</h3>
+<ol>
+<li>
+<p><strong>Daily startup</strong>:</p>
+<pre><code data-lang="bash">just doctor    # Check health
+just serve     # Start development
+</code></pre>
+</li>
+<li>
+<p><strong>Before commits</strong>:</p>
+<pre><code data-lang="bash">just quality   # Check quality gates
+just test      # Run full test suite
+</code></pre>
+</li>
+<li>
+<p><strong>Emergency situations</strong>:</p>
+<pre><code data-lang="bash">just emergency # Immediate diagnostics
+just fix       # Attempt automated fixes
+</code></pre>
+</li>
+</ol>
+<h3 id="performance-tips">Performance Tips</h3>
+<ul>
+<li><strong>Parallel execution</strong>: Use <code>just quality</code> instead of individual checks</li>
+<li><strong>Selective testing</strong>: Use <code>just test fast</code> for quick feedback</li>
+<li><strong>Service management</strong>: Let justfile auto-start services instead of manual management</li>
+</ul>
+<h3 id="maintenance">Maintenance</h3>
+<ul>
+<li><strong>Regular cleanup</strong>: Run <code>just clean</code> weekly</li>
+<li><strong>Dependency updates</strong>: Monitor <code>just analyze dependencies</code></li>
+<li><strong>Service health</strong>: Check <code>just metrics</code> for platform health</li>
+</ul>
+<h2 id="wrench-customization">🔧 Customization</h2>
+<h3 id="adding-custom-recipes">Adding Custom Recipes</h3>
+<p>Add custom recipes to the justfile:</p>
+<pre><code data-lang="bash"># Custom recipe example
+my-custom-task:
+    #!/usr/bin/env bash
+    set -euo pipefail
+
+    echo -e &quot;{{CYAN}}🎯 Running custom task...{{NC}}&quot;
+    # Your custom logic here
+    echo -e &quot;{{GREEN}}✅ Custom task complete!{{NC}}&quot;
+</code></pre>
+<h3 id="environment-specific-overrides">Environment-Specific Overrides</h3>
+<p>Create environment-specific recipes:</p>
+<pre><code data-lang="bash"># Development-specific recipe
+dev-specific-task:
+    #!/usr/bin/env bash
+    export MIX_ENV=dev
+    # Development-specific logic
+
+# Production-specific recipe
+prod-specific-task:
+    #!/usr/bin/env bash
+    export MIX_ENV=prod
+    # Production-specific logic
+</code></pre>
+<h2 id="bar-chart-performance-metrics">📊 Performance Metrics</h2>
+<h3 id="execution-time-improvements">Execution Time Improvements</h3>
+<table><thead><tr><th>Task</th><th>Before (scripts)</th><th>After (just)</th><th>Improvement</th></tr></thead><tbody>
+<tr><td><strong>Setup</strong></td><td>3-5 minutes</td><td>2-3 minutes</td><td>40-50% faster</td></tr>
+<tr><td><strong>Quality Checks</strong></td><td>2-3 minutes</td><td>1-2 minutes</td><td>50% faster (parallel)</td></tr>
+<tr><td><strong>Testing</strong></td><td>30-60 seconds</td><td>20-40 seconds</td><td>33% faster</td></tr>
+<tr><td><strong>Emergency Diagnostics</strong></td><td>Manual process</td><td>30 seconds</td><td>90%+ faster</td></tr>
+</tbody></table>
+<h3 id="developer-experience">Developer Experience</h3>
+<ul>
+<li><strong>Single interface</strong>: 75+ development tasks unified</li>
+<li><strong>Intelligent defaults</strong>: Environment-aware execution</li>
+<li><strong>Error recovery</strong>: Automated fix suggestions</li>
+<li><strong>Professional output</strong>: Color-coded, structured feedback</li>
+</ul>
+<h2 id="books-related-documentation">📚 Related Documentation</h2>
+<ul>
+<li><strong><a href="../architecture/README.md">Architecture Guide</a></strong> - Platform architecture overview</li>
+<li><strong><a href="../quality/README.md">Quality Gates</a></strong> - Quality assurance documentation</li>
+<li><strong><a href="../mcp/README.md">MCP Integration</a></strong> - MCP server integration guide</li>
+<li><strong><a href="../agents/README.md">Agent System</a></strong> - Agent ecosystem documentation</li>
+</ul>
+<h2 id="archer-supreme-features">⭐ ARCHER SUPREME Features</h2>
+<p>This ARCHER SUPREME edition includes advanced features:</p>
+<ul>
+<li><strong>Crisis Management</strong>: Emergency diagnostic capabilities</li>
+<li><strong>Intelligent Automation</strong>: Smart service and quality management</li>
+<li><strong>Professional UX</strong>: Color-coded output and structured feedback</li>
+<li><strong>Scalable Architecture</strong>: Designed for large-scale development teams</li>
+<li><strong>Zero-Downtime Operations</strong>: Service management without disruption</li>
+<li><strong>Comprehensive Monitoring</strong>: Health checks and performance metrics</li>
+</ul>
+<hr />
+<p><strong>🚀 Ready to transform your development workflow with ARCHER SUPREME Justfile!</strong></p>
+<p><em>Last Updated: 2025-11-24</em>
+<em>Version: 3.0.0 - ARCHER SUPREME Edition</em></p>
+
+                </article>
+            </div>
+
+            <!-- Sidebar (right 1/3) -->
+            <div class="space-y-6">
+                <!-- Solution Info Card -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700"
+                    x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 200)" x-show="shown"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 transform translate-x-4"
+                    x-transition:enter-end="opacity-100 transform translate-x-0">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Solution Info
+                    </h3>
+                    <dl class="space-y-3">
+                        
+                        
+                        
+                        
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-500 dark:text-gray-400">Platform</dt>
+                            <dd class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">Prismatic v7.5</dd>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-500 dark:text-gray-400">Doctrine</dt>
+                            <dd class="text-sm font-semibold text-red-600 dark:text-red-400">NM/ND</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!-- Key Metrics Card -->
+                
+
+                <!-- In This Section - Paginated Navigation -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700"
+                    x-data="solutionNav()" x-init="setTimeout(() => shown = true, 400)">
+                    <div x-show="shown" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 transform translate-x-4"
+                        x-transition:enter-end="opacity-100 transform translate-x-0">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                            Solutions
+                            <span class="text-xs font-normal text-gray-400"
+                                x-text="'(' + totalItems + ' pages)'"></span>
+                        </h3>
+                        <ul class="space-y-1.5">
+                            <template x-for="item in paginatedItems" :key="item.url">
+                                <li>
+                                    <a :href="item.url"
+                                        :class="item.isCurrent
+                                           ? 'text-cyan-600 dark:text-cyan-400 font-semibold bg-cyan-50 dark:bg-cyan-900/30'
+                                           : 'text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-gray-100 dark:hover:bg-gray-700/50'"
+                                        class="block text-sm px-3 py-1.5 rounded-lg transition-all" x-text="item.title">
+                                    </a>
+                                </li>
+                            </template>
+                        </ul>
+                        <div class="flex items-center justify-between mt-4 pt-3 border-t border-gray-200 dark:border-gray-700"
+                            x-show="totalPages > 1">
+                            <button @click="prevPage()" :disabled="currentPage === 1"
+                                :class="currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-cyan-600 dark:hover:text-cyan-400'"
+                                class="text-xs font-medium text-gray-500 dark:text-gray-400 transition-colors">
+                                Previous
+                            </button>
+                            <span class="text-xs text-gray-400" x-text="currentPage + ' / ' + totalPages"></span>
+                            <button @click="nextPage()" :disabled="currentPage === totalPages"
+                                :class="currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:text-cyan-600 dark:hover:text-cyan-400'"
+                                class="text-xs font-medium text-gray-500 dark:text-gray-400 transition-colors">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Categories Card -->
+                
+
+                <!-- Related Glossary Terms -->
+                
+
+                <!-- Technology Stack Card -->
+                
+
+                <!-- Related Sections -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700"
+                    x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 600)" x-show="shown"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 transform translate-x-4"
+                    x-transition:enter-end="opacity-100 transform translate-x-0">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Related Sections
+                    </h3>
+                    <ul class="space-y-1.5">
+                        <li>
+                            <a href="/agents/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                                Agent Ecosystem
+                                <span class="ml-auto text-xs text-gray-400">430 agents</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/architecture/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                                Architecture
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/capabilities/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
+                                Capabilities
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/apps/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                                Applications
+                                <span class="ml-auto text-xs text-gray-400">90 apps</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/glossary/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                                Glossary
+                                <span class="ml-auto text-xs text-gray-400">115+ terms</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/technologies/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+                                Technologies
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/teams/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+                                Color Teams
+                                <span class="ml-auto text-xs text-gray-400">20 agents</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/osint/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                OSINT Sources
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/solutions/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                                All Solutions
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <a href="/solutions/"
+                class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-800 transition-all shadow-lg hover:shadow-xl">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Solutions
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- In This Section: Paginated Navigation (Alpine.js) -->
+<script>
+    function solutionNav() {
+        var allItems = [
+            
+    
+    { title: "Crisis Intervention Application", url: "&#x2F;solutions&#x2F;crisis-intervention&#x2F;", isCurrent:  false },
+    
+    { title: "Content Moderation Application", url: "&#x2F;solutions&#x2F;content-moderation&#x2F;", isCurrent:  false },
+    
+    { title: "Algorithmic Trading Application", url: "&#x2F;solutions&#x2F;algorithmic-trading&#x2F;", isCurrent:  false },
+    
+    { title: "Prismatic Framework Applications", url: "&#x2F;solutions&#x2F;readme&#x2F;", isCurrent:  false },
+    
+    ];
+    var perPage = 20;
+
+    return {
+        shown: false,
+        allItems: allItems,
+        currentPage: Math.max(1, Math.ceil((allItems.findIndex(function (i) { return i.isCurrent; }) + 1) / perPage)),
+        perPage: perPage,
+        get totalItems() { return this.allItems.length; },
+        get totalPages() { return Math.ceil(this.allItems.length / this.perPage); },
+        get paginatedItems() {
+            var start = (this.currentPage - 1) * this.perPage;
+            return this.allItems.slice(start, start + this.perPage);
+        },
+        nextPage: function () { if (this.currentPage < this.totalPages) this.currentPage++; },
+        prevPage: function () { if (this.currentPage > 1) this.currentPage--; }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/platform/" class="text-gray-400 hover:text-white transition-colors">Overview</a>
+                        </li>
+                        <li><a href="/apps/" class="text-gray-400 hover:text-white transition-colors">Applications (89)</a></li>
+                        <li><a href="/agents/" class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products & Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Products & Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/products/" class="text-gray-400 hover:text-white transition-colors">Products</a>
+                        </li>
+                        <li><a href="/osint/" class="text-gray-400 hover:text-white transition-colors">OSINT Sources
+                                (121+)</a></li>
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="/solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a>
+                        </li>
+                        <li><a href="/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a>
+                        </li>
+                        <li><a href="/faq/" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-white bg-blue-600 rounded-xl shadow-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-110 focus:ring-4 focus:ring-blue-300 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="/js/vendor/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Back to Top button
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

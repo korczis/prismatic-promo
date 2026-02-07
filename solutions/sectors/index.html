@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Prismatic Platform</title>
+
+    
+    <meta name="description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;solutions&#x2F;sectors&#x2F;">
+
+    
+    <meta property="og:title" content="Industry Sectors - Prismatic Platform">
+    <meta name="twitter:title" content="Industry Sectors - Prismatic Platform">
+    
+
+    <meta property="og:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+
+    
+    
+    <meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+    <meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+    
+
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Prismatic Platform">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;solutions&#x2F;sectors&#x2F;">
+    <meta name="twitter:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta name="twitter:creator" content="@korczis">
+    
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;solutions&#x2F;sectors&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- ANTIGRAVITY CSS - Single source of truth for colors -->
+    <link rel="stylesheet" href="/css/antigravity.css">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    <!-- Chart.js -->
+    <script src="/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Three.js (3D visualizations) -->
+    <script src="/js/vendor/three.min.js"></script>
+    <script src="/js/vendor/OrbitControls.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+        (function () {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 space-x-3">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    <li>
+                        <a href="/platform/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                    </li>
+                    <li>
+                        <a href="/products/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                    </li>
+                    <li>
+                        <a href="/capabilities/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            x-cloak>
+                            <a href="/apps/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                (89)</a>
+                            <a href="/agents/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                (430)</a>
+                            <a href="/architecture/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                            <a href="/technologies/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/commands/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                            <a href="/teams/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                Teams</a>
+                            <a href="/solutions/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                            <a href="/registry/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/glossary/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                            <a href="/faq/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+
+<!-- Hero Section -->
+<section class="bg-gray-950 py-16 lg:py-24 border-b border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="mb-8">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium tracking-wide text-cyan-400 bg-cyan-500/10 rounded-full border border-cyan-500/20">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+                Real-World Solutions
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                Industry Sectors
+            </h1>
+            <div class="prose prose-invert prose-lg max-w-3xl text-gray-300 leading-relaxed font-light">
+                <h1 id="industry-sectors">Industry Sectors<a class="zola-anchor" href="#industry-sectors" aria-label="Anchor link for: industry-sectors">🔗</a></h1>
+<p>Prismatic provides tailored AI-powered language analysis solutions for specific industry verticals. Each sector page describes how Prismatic's analytical capabilities address the unique communication challenges, compliance requirements, and strategic needs within that domain.</p>
+<h2 id="available-sectors">Available Sectors<a class="zola-anchor" href="#available-sectors" aria-label="Anchor link for: available-sectors">🔗</a></h2>
+<ul>
+<li><strong>Business</strong> - Negotiation, leadership communication, and corporate strategy</li>
+<li><strong>Legal</strong> - Contract analysis, argumentation review, and compliance</li>
+<li><strong>HR</strong> - Recruitment analysis, candidate profiling, and employee communication</li>
+<li><strong>Security</strong> - Deception detection, social engineering defense, and threat analysis</li>
+<li><strong>Media</strong> - Bias detection, misinformation analysis, and audience perception</li>
+<li><strong>Healthcare</strong> - Patient communication, medical documentation, and research analysis</li>
+<li><strong>Education</strong> - Student feedback, academic paper analysis, and course material optimization</li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Registry Section -->
+<section class="bg-white dark:bg-gray-950 py-12 lg:py-16" x-data="solutionsRegistry()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+
+        <!-- Stats Summary -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div
+                class="p-4 bg-cyan-50 dark:bg-cyan-900/20 rounded-xl border border-cyan-200 dark:border-cyan-800 text-center">
+                <div class="text-3xl font-black text-cyan-600 dark:text-cyan-400" x-text="items.length">0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Total Solutions</div>
+            </div>
+            <div
+                class="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 text-center">
+                <div class="text-3xl font-black text-blue-600 dark:text-blue-400" x-text="totalSubpages">0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Total Pages</div>
+            </div>
+            <div
+                class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800 text-center">
+                <div class="text-3xl font-black text-purple-600 dark:text-purple-400" x-text="uniqueCategories">0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Categories</div>
+            </div>
+            <div
+                class="p-4 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800 text-center">
+                <div class="text-3xl font-black text-amber-600 dark:text-amber-400" x-text="filteredItems.length">0
+                </div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Showing</div>
+            </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="mb-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div class="flex flex-col lg:flex-row gap-4">
+                <!-- Search -->
+                <div class="flex-1">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                        <input type="text" x-model="searchTerm" @input="currentPage = 1"
+                            class="block w-full pl-10 pr-4 py-2.5 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500"
+                            placeholder="Search solutions by name, description, category...">
+                    </div>
+                </div>
+
+                <!-- Category Filter -->
+                <div class="w-full lg:w-48">
+                    <select x-model="selectedCategory" @change="currentPage = 1"
+                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="">All Categories</option>
+                        <template x-for="cat in categories" :key="cat">
+                            <option :value="cat" x-text="cat"></option>
+                        </template>
+                    </select>
+                </div>
+
+                <!-- Sort -->
+                <div class="w-full lg:w-48">
+                    <select x-model="sortField"
+                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="title">Sort: Name</option>
+                        <option value="pages">Sort: Page Count</option>
+                        <option value="category">Sort: Category</option>
+                    </select>
+                </div>
+
+                <!-- View Toggle -->
+                <div
+                    class="flex items-center bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <button @click="viewMode = 'cards'"
+                        :class="viewMode === 'cards' ? 'bg-indigo-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg>
+                    </button>
+                    <button @click="viewMode = 'table'"
+                        :class="viewMode === 'table' ? 'bg-indigo-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Reset -->
+                <button @click="searchTerm = ''; selectedCategory = ''; sortField = 'title'; currentPage = 1"
+                    class="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600">
+                    Reset
+                </button>
+            </div>
+
+            <div class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+                Showing <span class="font-semibold text-indigo-600 dark:text-indigo-400"
+                    x-text="paginatedItems.length"></span> of <span class="font-semibold"
+                    x-text="filteredItems.length"></span> solutions
+            </div>
+        </div>
+
+        <!-- Card View -->
+        <div x-show="viewMode === 'cards'" x-transition class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <template x-for="item in paginatedItems" :key="item.title">
+                <a :href="item.url"
+                    class="group block p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-indigo-300 dark:hover:border-indigo-700 transition-all duration-300 hover:-translate-y-1">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-cyan-600 transition-colors font-mono"
+                        x-text="item.title"></h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-2" x-text="item.description"></p>
+                    <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-500">
+                        <span x-text="item.pages + ' pages'"></span>
+                        <span
+                            class="px-2 py-1 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400 rounded-full font-medium"
+                            x-text="item.category"></span>
+                    </div>
+                </a>
+            </template>
+        </div>
+
+        <!-- Table View -->
+        <div x-show="viewMode === 'table'" x-transition
+            class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-800 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="toggleSort('title')">
+                            <div class="flex items-center gap-2">
+                                Solution Name
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'title' && sortDesc}"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4">Description</th>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="toggleSort('pages')">
+                            <div class="flex items-center gap-2">
+                                Pages
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'pages' && sortDesc}"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="toggleSort('category')">
+                            <div class="flex items-center gap-2">
+                                Category
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'category' && sortDesc}"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4 text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template x-for="item in paginatedItems" :key="item.title">
+                        <tr
+                            class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-cyan-600 flex items-center justify-center text-white font-bold text-xs">
+                                        <span x-text="item.title.substring(0,3).toUpperCase()"></span>
+                                    </div>
+                                    <span class="font-semibold text-gray-900 dark:text-white font-mono"
+                                        x-text="item.title"></span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 max-w-xs">
+                                <p class="truncate" x-text="item.description"></p>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="font-semibold" x-text="item.pages"></span>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-2.5 py-1 text-xs font-medium rounded-full bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400"
+                                    x-text="item.category"></span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <a :href="item.url"
+                                    class="font-medium text-indigo-600 dark:text-indigo-400 hover:underline">View</a>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Empty State -->
+        <div x-show="filteredItems.length === 0" class="text-center py-16">
+            <svg class="w-16 h-16 mx-auto text-gray-300 dark:text-gray-600 mb-4" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
+            <p class="text-gray-500 dark:text-gray-400 text-lg">No solutions match your search criteria.</p>
+        </div>
+
+        <!-- Pagination -->
+        <div x-show="totalPages > 1" class="flex flex-col md:flex-row items-center justify-between mt-8 gap-4">
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+                Page <span class="font-semibold" x-text="currentPage"></span> of <span class="font-semibold"
+                    x-text="totalPages"></span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button @click="currentPage = Math.max(1, currentPage - 1)" :disabled="currentPage === 1"
+                    :class="{'opacity-50 cursor-not-allowed': currentPage === 1}"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    Previous
+                </button>
+                <template x-for="pg in visiblePages" :key="pg">
+                    <button @click="currentPage = pg"
+                        :class="currentPage === pg ? 'bg-indigo-600 text-white border-indigo-600' : 'bg-white text-gray-700 border-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600'"
+                        class="px-4 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                        x-text="pg">
+                    </button>
+                </template>
+                <button @click="currentPage = Math.min(totalPages, currentPage + 1)"
+                    :disabled="currentPage === totalPages"
+                    :class="{'opacity-50 cursor-not-allowed': currentPage === totalPages}"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    Next
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function solutionsRegistry() {
+        return {
+            searchTerm: '',
+            selectedCategory: '',
+            sortField: 'title',
+            sortDesc: false,
+            viewMode: 'cards',
+            currentPage: 1,
+            perPage: 12,
+            items: [
+                
+                {
+                    title: "Crisis Intervention Application",
+                    url: "https://prismatic-reality.com/solutions/crisis-intervention/",
+                    description: "",
+                    pages: 0,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                {
+                    title: "Content Moderation Application",
+                    url: "https://prismatic-reality.com/solutions/content-moderation/",
+                    description: "",
+                    pages: 0,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                {
+                    title: "Algorithmic Trading Application",
+                    url: "https://prismatic-reality.com/solutions/algorithmic-trading/",
+                    description: "",
+                    pages: 0,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                {
+                    title: "Prismatic Framework Applications",
+                    url: "https://prismatic-reality.com/solutions/readme/",
+                    description: "",
+                    pages: 0,
+                    category: "solutions",
+                    color: "cyan"
+                }
+                
+                ,
+                
+                
+                {
+                    title: "Crisis Intervention & Negotiation",
+                    url: "https://prismatic-reality.com/solutions/crisis-intervention-negotiation/",
+                    description: "Crisis Intervention & Negotiation applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Education & Adaptive Tutoring",
+                    url: "https://prismatic-reality.com/solutions/education-adaptive-tutoring/",
+                    description: "Education & Adaptive Tutoring applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Multi-Agent Societies",
+                    url: "https://prismatic-reality.com/solutions/multi-agent-societies/",
+                    description: "Multi-Agent Societies applications within Prismatic.",
+                    pages: 21,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Algorithmic Trading & Finance",
+                    url: "https://prismatic-reality.com/solutions/algorithmic-trading-finance/",
+                    description: "Algorithmic Trading & Finance applications within Prismatic.",
+                    pages: 24,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Psychology & Psychiatry",
+                    url: "https://prismatic-reality.com/solutions/psychology-psychiatry/",
+                    description: "Psychology & Psychiatry applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Content Moderation & Manipulation",
+                    url: "https://prismatic-reality.com/solutions/content-moderation-manipulation/",
+                    description: "Content Moderation & Manipulation applications within Prismatic.",
+                    pages: 24,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Consciousness Research",
+                    url: "https://prismatic-reality.com/solutions/consciousness-research/",
+                    description: "Consciousness Research applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Academic Research & Epistemology",
+                    url: "https://prismatic-reality.com/solutions/academic-research-epistemology/",
+                    description: "Academic Research & Epistemology applications within Prismatic.",
+                    pages: 24,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Legal & Governance Systems",
+                    url: "https://prismatic-reality.com/solutions/legal-governance-systems/",
+                    description: "Legal & Governance Systems applications within Prismatic.",
+                    pages: 24,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Experimental Labs & UI Demonstrations",
+                    url: "https://prismatic-reality.com/solutions/experimental-labs-ui-demonstrations/",
+                    description: "Experimental Labs & UI Demonstrations applications within Prismatic.",
+                    pages: 23,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Arts & Creative Simulation",
+                    url: "https://prismatic-reality.com/solutions/arts-creative-simulation/",
+                    description: "Arts & Creative Simulation applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Sustainability & Ecology",
+                    url: "https://prismatic-reality.com/solutions/sustainability-ecology/",
+                    description: "Sustainability & Ecology applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Engineering & Systems Design",
+                    url: "https://prismatic-reality.com/solutions/engineering-systems-design/",
+                    description: "Engineering & Systems Design applications within Prismatic.",
+                    pages: 24,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Neuroscience & Neurobiology",
+                    url: "https://prismatic-reality.com/solutions/neuroscience-neurobiology/",
+                    description: "Neuroscience & Neurobiology applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Business & Organizational Training",
+                    url: "https://prismatic-reality.com/solutions/business-organizational-training/",
+                    description: "Business & Organizational Training applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Gaming & Simulation",
+                    url: "https://prismatic-reality.com/solutions/gaming-simulation/",
+                    description: "Gaming & Simulation applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Defense & Security",
+                    url: "https://prismatic-reality.com/solutions/defense-security/",
+                    description: "Defense & Security applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Communication & Media",
+                    url: "https://prismatic-reality.com/solutions/communication-media/",
+                    description: "Communication & Media applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Developer Tooling & Runtime",
+                    url: "https://prismatic-reality.com/solutions/developer-tooling-runtime/",
+                    description: "Developer Tooling & Runtime applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Documentation & Knowledge Systems",
+                    url: "https://prismatic-reality.com/solutions/documentation-knowledge-systems/",
+                    description: "Documentation & Knowledge Systems applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Intelligence & Counter-intelligence",
+                    url: "https://prismatic-reality.com/solutions/intelligence-counter-intelligence/",
+                    description: "Intelligence & Counter-intelligence applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Philosophy & Metaphysics",
+                    url: "https://prismatic-reality.com/solutions/philosophy-metaphysics/",
+                    description: "Philosophy & Metaphysics applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Ethics & Moral Philosophy",
+                    url: "https://prismatic-reality.com/solutions/ethics-moral-philosophy/",
+                    description: "Ethics & Moral Philosophy applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Medical & Healthcare Systems",
+                    url: "https://prismatic-reality.com/solutions/medical-healthcare-systems/",
+                    description: "Medical & Healthcare Systems applications within Prismatic.",
+                    pages: 25,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Cross-disciplinary Meta-Simulation",
+                    url: "https://prismatic-reality.com/solutions/cross-disciplinary-meta-simulation/",
+                    description: "Cross-disciplinary Meta-Simulation applications within Prismatic.",
+                    pages: 24,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Industry Sectors",
+                    url: "https://prismatic-reality.com/solutions/sectors/",
+                    description: "AI-powered language analysis solutions tailored for specific industry verticals including business, legal, healthcare, HR, security, media, and education",
+                    pages: 7,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Crisis Negotiator",
+                    url: "https://prismatic-reality.com/solutions/crissis-negotiator/",
+                    description: "High-fidelity crisis communication simulator for training professionals in negotiation, de-escalation, and psychological intervention",
+                    pages: 1,
+                    category: "solutions",
+                    color: "cyan"
+                },
+                
+                
+                {
+                    title: "Overview Versions",
+                    url: "https://prismatic-reality.com/solutions/versions/",
+                    description: "Quick overview and detailed explanation versions of the Prismatic AI-powered communication analysis platform",
+                    pages: 2,
+                    category: "solutions",
+                    color: "cyan"
+                }
+                
+            ],
+
+            get totalSubpages() {
+                return this.items.reduce((sum, i) => sum + i.pages, 0);
+            },
+            get uniqueCategories() {
+                return [...new Set(this.items.map(i => i.category))].length;
+            },
+            get categories() {
+                return [...new Set(this.items.map(i => i.category))].sort();
+            },
+            get filteredItems() {
+                let result = [...this.items];
+                if (this.searchTerm) {
+                    const q = this.searchTerm.toLowerCase();
+                    result = result.filter(i =>
+                        i.title.toLowerCase().includes(q) ||
+                        i.description.toLowerCase().includes(q) ||
+                        i.category.toLowerCase().includes(q)
+                    );
+                }
+                if (this.selectedCategory) {
+                    result = result.filter(i => i.category === this.selectedCategory);
+                }
+                result.sort((a, b) => {
+                    let av = a[this.sortField], bv = b[this.sortField];
+                    if (typeof av === 'string') { av = av.toLowerCase(); bv = bv.toLowerCase(); }
+                    if (this.sortDesc) return bv > av ? 1 : bv < av ? -1 : 0;
+                    return av > bv ? 1 : av < bv ? -1 : 0;
+                });
+                return result;
+            },
+            get paginatedItems() {
+                const start = (this.currentPage - 1) * this.perPage;
+                return this.filteredItems.slice(start, start + this.perPage);
+            },
+            get totalPages() {
+                return Math.ceil(this.filteredItems.length / this.perPage) || 1;
+            },
+            get visiblePages() {
+                const pages = [];
+                const total = this.totalPages;
+                const current = this.currentPage;
+                let start = Math.max(1, current - 2);
+                let end = Math.min(total, current + 2);
+                if (end - start < 4) {
+                    if (start === 1) end = Math.min(total, 5);
+                    else start = Math.max(1, total - 4);
+                }
+                for (let i = start; i <= end; i++) pages.push(i);
+                return pages;
+            },
+            toggleSort(field) {
+                if (this.sortField === field) this.sortDesc = !this.sortDesc;
+                else { this.sortField = field; this.sortDesc = false; }
+                this.currentPage = 1;
+            }
+        };
+    }
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/platform/" class="text-gray-400 hover:text-white transition-colors">Overview</a>
+                        </li>
+                        <li><a href="/apps/" class="text-gray-400 hover:text-white transition-colors">Applications (89)</a></li>
+                        <li><a href="/agents/" class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products & Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Products & Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/products/" class="text-gray-400 hover:text-white transition-colors">Products</a>
+                        </li>
+                        <li><a href="/osint/" class="text-gray-400 hover:text-white transition-colors">OSINT Sources
+                                (121+)</a></li>
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="/solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a>
+                        </li>
+                        <li><a href="/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a>
+                        </li>
+                        <li><a href="/faq/" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-white bg-blue-600 rounded-xl shadow-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-110 focus:ring-4 focus:ring-blue-300 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="/js/vendor/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Back to Top button
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

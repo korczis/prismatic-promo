@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Registry - Prismatic Platform</title>
+
+    
+<meta name="description" content="Complete registry of all agents and commands in the Prismatic Platform ecosystem">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com/registry/">
+<meta property="og:title" content="Platform Registry - Prismatic Platform">
+<meta property="og:description" content="Browse 494 agents and 212 commands across the Prismatic Platform">
+
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;registry&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- ANTIGRAVITY CSS - Single source of truth for colors -->
+    <link rel="stylesheet" href="/css/antigravity.css">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    <!-- Chart.js -->
+    <script src="/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Three.js (3D visualizations) -->
+    <script src="/js/vendor/three.min.js"></script>
+    <script src="/js/vendor/OrbitControls.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+        (function () {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 space-x-3">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    <li>
+                        <a href="/platform/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                    </li>
+                    <li>
+                        <a href="/products/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                    </li>
+                    <li>
+                        <a href="/capabilities/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            x-cloak>
+                            <a href="/apps/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                (89)</a>
+                            <a href="/agents/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                (430)</a>
+                            <a href="/architecture/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                            <a href="/technologies/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/commands/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                            <a href="/teams/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                Teams</a>
+                            <a href="/solutions/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                            <a href="/registry/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/glossary/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                            <a href="/faq/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Section -->
+<section class="bg-gray-950 py-16 lg:py-24 border-b border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="mb-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium tracking-wide text-indigo-400 bg-indigo-500/10 rounded-full border border-indigo-500/20">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                </svg>
+                Platform Registry
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                Registry
+            </h1>
+            <div class="prose prose-invert prose-lg max-w-3xl text-gray-300 leading-relaxed font-light">
+                <p>Unified searchable catalog of every autonomous agent and slash command in the Prismatic Platform. 434 agents and 216 commands span 14 operational domains -- from Quality Assurance and OSINT Intelligence to Security Operations and Strategic Command -- each registered with machine-readable metadata that enables auto-discovery, capability matching, and runtime skill selection.</p>
+<h2 id="abstract">Abstract</h2>
+<p>The Prismatic Platform Registry is the authoritative inventory of all AI-Assisted Development (AIAD) components available within the platform ecosystem. It indexes 434 autonomous agents, 216 slash commands, and their associated metadata -- capability declarations, authority levels, domain classifications, tool requirements, and enforcement policies -- into a single searchable catalog. The registry serves three distinct roles: it is the <strong>discovery mechanism</strong> through which operators and orchestration systems locate the right agent for a given task, the <strong>contract surface</strong> that defines what each component can do and under what constraints, and the <strong>quality enforcement checkpoint</strong> that ensures every registered component meets the platform's zero-tolerance compliance requirements before it can be deployed.</p>
+<p>This document explains the registry's architecture, the metadata schemas that govern agent and command definitions, the 14-domain classification taxonomy, the auto-indexing pipeline that keeps the registry synchronized with the filesystem, and the integration points through which Claude Code and other LLM consumers query the registry at runtime.</p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="the-discovery-problem">The Discovery Problem</h3>
+<p>A platform with hundreds of specialized agents faces a fundamental discoverability challenge. When an operator needs to fix a compilation warning, investigate a domain's WHOIS history, or orchestrate a multi-phase CI/CD recovery, they should not need to know the name of the agent or command that handles that task. The registry solves this by maintaining a searchable index of capabilities, so queries like "find all agents that can perform static analysis" or "which command handles genetic evolution" resolve to concrete, deployable components.</p>
+<p>Without a registry, agent ecosystems degrade into tribal knowledge -- a handful of operators know that <code>archer-supreme</code> handles crisis intervention and <code>navy-seal</code> handles OSINT audits, but new team members and automated orchestration systems have no structured way to discover these capabilities. The registry eliminates this knowledge silo by making every component's purpose, authority level, domain, and tool requirements explicit and queryable.</p>
+<h3 id="the-aiad-standard">The AIAD Standard</h3>
+<p>The registry is built on the AIAD (AI-Assisted Development) standard, a vendor-neutral specification for describing AI agents, commands, workflows, and policies. AIAD provides the schema language -- <code>agent-spec</code> for agents, <code>command-spec</code> for commands -- that gives each registry entry a consistent, machine-readable structure. This consistency is what makes cross-platform support possible: the same agent definitions work with Claude Code, ChatGPT, Gemini, and other LLM systems because AIAD does not depend on any single provider's API or prompt format.</p>
+<p>The AIAD standard currently governs 423 agent definition files (<code>.agent.md</code>) and 211 command definition files (<code>.cmd.md</code>), each stored in the <code>.aiad/agents/</code> and <code>.aiad/commands/</code> directories respectively. Runtime agents -- those registered dynamically during application startup -- bring the total to 434 agents and 216 commands including runtime-generated entries.</p>
+<h3 id="registry-as-living-infrastructure">Registry as Living Infrastructure</h3>
+<p>The registry is not a static document. It is continuously synchronized with the filesystem through the auto-indexing pipeline (<code>.aiad/bin/aiad index</code>), validated by quality gates on every commit, and queried at runtime by the orchestration layer to make deployment decisions. When a new agent definition file is added to <code>.aiad/agents/</code>, the next index run incorporates it into the registry. When an agent definition fails validation -- missing enforcement block, invalid authority level, undeclared tools -- the indexer flags it and the pre-commit hook blocks the commit.</p>
+<h2 id="registry-architecture">Registry Architecture</h2>
+<h3 id="storage-layer">Storage Layer</h3>
+<p>The registry is stored as two Markdown documents in the <code>.claude/</code> directory:</p>
+<ul>
+<li><strong><code>.claude/AGENT_REGISTRY.md</code></strong> -- The complete agent catalog. Contains platform statistics, mandatory policies (stack-based conversation mode, autonomous evolution protocol, context management), and the full listing of all agents organized by functional group.</li>
+<li><strong><code>.claude/COMMAND_REGISTRY.md</code></strong> -- The complete command catalog. Contains command statistics, category listings, and detailed specifications for all 216 slash commands.</li>
+</ul>
+<p>These Markdown files serve as the human-readable reference. The machine-readable source of truth lives in the individual <code>.agent.md</code> and <code>.cmd.md</code> files under <code>.aiad/</code>, each containing a structured YAML specification block. The registry documents are generated by aggregating these individual files.</p>
+<h3 id="indexing-layer">Indexing Layer</h3>
+<p>The <code>.aiad/bin/aiad index</code> script traverses the <code>.aiad/agents/</code> and <code>.aiad/commands/</code> directories, parses the <code>agent-spec</code> and <code>command-spec</code> YAML blocks from each file, validates them against the AIAD schema, and updates the registry documents. The indexer also performs cross-reference validation -- ensuring that agents referenced in command definitions actually exist, that tool declarations match available tools, and that domain classifications use the canonical taxonomy.</p>
+<h3 id="runtime-layer">Runtime Layer</h3>
+<p>At application startup, the <code>prismatic_agents</code> OTP application loads agent definitions from the registry into an ETS table, making them available for O(1) lookup by agent ID, domain, capability, or authority level. The runtime layer also registers dynamically created agents -- those defined programmatically rather than through <code>.agent.md</code> files -- bringing the total count above the static file count.</p>
+<h3 id="query-interface">Query Interface</h3>
+<p>The registry supports multiple query patterns:</p>
+<ul>
+<li><strong>By ID</strong>: Direct lookup of a specific agent or command by its unique identifier.</li>
+<li><strong>By Domain</strong>: Retrieve all agents operating in a given domain (e.g., "quality", "intelligence", "security").</li>
+<li><strong>By Level</strong>: Filter agents by hierarchy level (L1 through L4).</li>
+<li><strong>By Capability</strong>: Search for agents that declare a specific capability or tool.</li>
+<li><strong>By Authority</strong>: Find agents with sufficient authority for a given operation.</li>
+</ul>
+<h2 id="agent-registry">Agent Registry</h2>
+<h3 id="agent-metadata-schema">Agent Metadata Schema</h3>
+<p>Every agent in the registry is defined by an <code>agent-spec</code> YAML block embedded in its <code>.agent.md</code> file. The schema captures identity, classification, capabilities, coordination relationships, and enforcement policies:</p>
+<pre><code data-lang="yaml">agent-spec:
+  id: &quot;code-specialist&quot;
+  name: &quot;Code Specialist&quot;
+  version: &quot;2.0.0&quot;
+  tier: &quot;domain-expertise&quot;
+  description: &quot;Intelligent code generation with multi-phase requirement refinement&quot;
+  category: &quot;development&quot;
+  priority: &quot;P0&quot;
+  model: &quot;claude-opus-4.5&quot;
+
+  hierarchy:
+    level: &quot;L4&quot;
+    authority: &quot;Domain-specific implementation authority&quot;
+    reports_to: &quot;code-quality-commander&quot;
+
+  domains:
+    - &quot;Code generation and implementation&quot;
+    - &quot;Test generation with 100% coverage&quot;
+    - &quot;Code review with genetic quality patterns&quot;
+
+  capabilities:
+    tools: [Read, Write, Edit, Bash, Grep, Glob]
+
+  coordination:
+    coordinates_with:
+      - &quot;code-quality-commander&quot;
+      - &quot;test-automation-specialist&quot;
+
+  enforcement:
+    doctrine: &quot;no-mercy-no-doubts&quot;
+    version: &quot;2.0.0&quot;
+    compliance: mandatory
+
+  metadata:
+    source: &quot;.aiad/agents/code-specialist.agent.md&quot;
+    aiad_version: &quot;1.0.0&quot;
+</code></pre>
+<p>Key fields and their semantics:</p>
+<table><thead><tr><th>Field</th><th>Type</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><code>id</code></td><td>string</td><td>Unique identifier, used for lookup and coordination references</td></tr>
+<tr><td><code>version</code></td><td>semver</td><td>Agent specification version, follows semantic versioning</td></tr>
+<tr><td><code>tier</code></td><td>enum</td><td>Classification tier: <code>supreme-command</code>, <code>strategic</code>, <code>tactical</code>, <code>domain-expertise</code>, <code>specialist</code></td></tr>
+<tr><td><code>hierarchy.level</code></td><td>enum</td><td>Authority level: L1 (Strategic Supreme), L2 (Operational), L3 (Tactical), L4 (Specialist)</td></tr>
+<tr><td><code>domains</code></td><td>array</td><td>Operational domains the agent operates in</td></tr>
+<tr><td><code>capabilities.tools</code></td><td>array</td><td>Claude Code tools the agent requires (Read, Write, Edit, Bash, Grep, Glob, Task, WebFetch)</td></tr>
+<tr><td><code>coordination.coordinates_with</code></td><td>array</td><td>Other agent IDs this agent collaborates with</td></tr>
+<tr><td><code>enforcement</code></td><td>object</td><td>Mandatory doctrine compliance block</td></tr>
+<tr><td><code>model</code></td><td>string</td><td>Preferred LLM model for execution</td></tr>
+</tbody></table>
+<h3 id="agent-hierarchy-levels">Agent Hierarchy Levels</h3>
+<p>The four hierarchy levels establish a clear chain of command:</p>
+<p><strong>L1 -- Strategic Supreme</strong> (5 agents). These are the apex coordinators with unlimited tactical authority. They orchestrate multi-agent campaigns, resolve conflicts between lower-level agents, and make platform-wide decisions. Examples include <code>archer-supreme</code> (crisis intervention and impossible missions), <code>supreme-coordinator</code> (cross-domain orchestration), and <code>prismatic-supreme-commander</code> (ultimate platform authority).</p>
+<p><strong>L2 -- Operational</strong> (approximately 40 agents). Domain commanders that manage specific operational areas. They translate strategic directives into tactical plans, coordinate specialist teams, and enforce domain-specific quality standards. Examples include <code>code-quality-commander</code> (development quality enforcement), <code>blue-commander</code> (epistemic defense coordination), and <code>evolution-orchestrator</code> (evolution lifecycle management).</p>
+<p><strong>L3 -- Tactical</strong> (approximately 80 agents). Tactical specialists that execute defined missions within their domain. They have focused authority and operate under the direction of L2 commanders. Examples include <code>red-epistemic-attacker</code> (adversarial simulation), <code>purple-closure-analyst</code> (synthesis evaluation), and <code>gate-sentinel</code> (quality gate enforcement).</p>
+<p><strong>L4 -- Specialist</strong> (approximately 310 agents). The largest group, comprising domain experts with deep but narrow capabilities. Each specialist excels at a specific task -- static analysis, test generation, OSINT data collection, documentation writing, or performance profiling. They receive assignments from tactical agents and report results upward. Examples include <code>code-specialist</code> (code generation), <code>gray-edge-finder</code> (boundary analysis), and <code>evidence-scribe</code> (audit documentation).</p>
+<h3 id="agent-lifecycle-states">Agent Lifecycle States</h3>
+<p>Each agent operates in one of three states:</p>
+<ul>
+<li><strong>Active</strong>: Available for deployment and currently registered in the runtime ETS table.</li>
+<li><strong>Deprecated</strong>: Still registered but flagged for removal in a future version. Orchestration systems prefer alternatives when available.</li>
+<li><strong>Experimental</strong>: Available for testing but not included in production orchestration decisions.</li>
+</ul>
+<h2 id="command-registry">Command Registry</h2>
+<h3 id="command-metadata-schema">Command Metadata Schema</h3>
+<p>Commands are defined by a <code>command-spec</code> YAML block in <code>.cmd.md</code> files:</p>
+<pre><code data-lang="yaml">command-spec:
+  name: &quot;evolve&quot;
+  description: &quot;Self-evolving AIAD ecosystem intelligence&quot;
+  authority: &quot;supreme&quot;
+  version: &quot;5.1.0&quot;
+  classification:
+    - &quot;meta-evolution&quot;
+    - &quot;self-recursive&quot;
+    - &quot;living-intelligence&quot;
+
+  parameters:
+    - name: &quot;mode&quot;
+      type: &quot;enum&quot;
+      required: false
+      default: &quot;intelligent&quot;
+      values:
+        - &quot;intelligent&quot;
+        - &quot;self-evolve&quot;
+        - &quot;meta-analyze&quot;
+        - &quot;recursive&quot;
+        - &quot;full&quot;
+      description: &quot;Evolution mode with AI-powered intelligence selection&quot;
+
+    - name: &quot;scope&quot;
+      type: &quot;array&quot;
+      required: false
+      default: [&quot;intelligent-auto&quot;]
+      values:
+        - &quot;intelligent-auto&quot;
+        - &quot;self&quot;
+        - &quot;aiad&quot;
+        - &quot;ecosystem&quot;
+        - &quot;all&quot;
+      description: &quot;Intelligent scope selection&quot;
+
+    - name: &quot;meta-level&quot;
+      type: &quot;integer&quot;
+      required: false
+      default: 1
+      min: 1
+      max: 5
+      description: &quot;Meta-evolution recursion depth&quot;
+
+  outputs:
+    - type: &quot;meta_analysis_report&quot;
+      format: &quot;structured_intelligence&quot;
+      description: &quot;AI-powered meta-analysis of evolution effectiveness&quot;
+
+  enforcement:
+    doctrine: &quot;no-mercy-no-doubts&quot;
+    version: &quot;2.0.0&quot;
+    compliance: mandatory
+</code></pre>
+<h3 id="parameter-type-system">Parameter Type System</h3>
+<p>Command parameters support these types:</p>
+<table><thead><tr><th>Type</th><th>Description</th><th>Example</th></tr></thead><tbody>
+<tr><td><code>string</code></td><td>Free-form text input</td><td><code>--target "compilation"</code></td></tr>
+<tr><td><code>enum</code></td><td>One value from a fixed set</td><td><code>--mode intelligent</code></td></tr>
+<tr><td><code>array</code></td><td>Multiple values from a fixed set</td><td><code>--scope aiad,ecosystem</code></td></tr>
+<tr><td><code>integer</code></td><td>Numeric value with optional min/max bounds</td><td><code>--meta-level 3</code></td></tr>
+<tr><td><code>boolean</code></td><td>True/false flag</td><td><code>--intelligence-amplification true</code></td></tr>
+<tr><td><code>path</code></td><td>Filesystem path, validated for existence</td><td><code>--config ./custom.yml</code></td></tr>
+</tbody></table>
+<h3 id="command-categories">Command Categories</h3>
+<p>Commands are organized into functional categories:</p>
+<ul>
+<li><strong>Development (DX)</strong>: 22 commands for code generation, testing, refactoring, profiling, and quality enforcement (<code>/code</code>, <code>/test</code>, <code>/fix</code>, <code>/refactor</code>, <code>/optimize</code>, <code>/orchestrate</code>).</li>
+<li><strong>Intelligence (OSINT)</strong>: 11 commands for investigation, email analysis, domain reconnaissance, and threat assessment (<code>/investigate</code>, <code>/email-osint</code>, <code>/ghost-recon</code>, <code>/navy-seal</code>).</li>
+<li><strong>Evolution</strong>: 8 commands for genetic evolution, mycelial propagation, and ecosystem improvement (<code>/evolve</code>, <code>/mycelialize</code>, <code>/darwinize</code>, <code>/mendelize</code>).</li>
+<li><strong>Architecture</strong>: 6 commands for analysis, review, migration, and integration (<code>/analyze</code>, <code>/architect</code>, <code>/integrate</code>).</li>
+<li><strong>Crisis</strong>: 3 commands for emergency response and structural crisis detection (<code>/emergency</code>, <code>/archer-supreme</code>, <code>/dark-ops</code>).</li>
+<li><strong>Operations</strong>: 9 commands for deployment, health monitoring, and agent management (<code>/deploy</code>, <code>/health</code>, <code>/agents</code>).</li>
+<li><strong>Stack Mode</strong>: 6 commands for conversation state management (<code>/stack</code>, <code>/frame</code>, <code>/pop</code>, <code>/fork</code>, <code>/checkpoint</code>, <code>/goto</code>).</li>
+<li><strong>M&amp;A Operations</strong>: 5 commands for due diligence deal lifecycle management (<code>/ma-create</code>, <code>/ma-analyze</code>, <code>/ma-report</code>).</li>
+<li><strong>Documentation</strong>: 5 commands for hygiene, pattern scanning, and context preservation (<code>/chronic</code>, <code>/find-lowfruit</code>, <code>/context-preserve</code>).</li>
+<li><strong>Defensive Security</strong>: 4 commands for manipulation detection and defense (<code>/manipulation detect</code>, <code>/manipulation protect</code>).</li>
+<li><strong>Local AI</strong>: Infrastructure commands for Ollama model management (<code>/ollama</code>).</li>
+<li><strong>Doctrine Enforcement</strong>: Compliance verification commands (<code>/nmnd-status</code>).</li>
+</ul>
+<h2 id="domain-classification">Domain Classification</h2>
+<p>The 14 operational domains provide the primary organizational taxonomy for the registry. Each domain represents a distinct area of platform capability:</p>
+<table><thead><tr><th>Domain</th><th>Agent Count</th><th>Description</th><th>Key Agents</th></tr></thead><tbody>
+<tr><td><strong>Development</strong></td><td>~65</td><td>Code generation, review, refactoring, testing</td><td><code>code-specialist</code>, <code>code-quality-commander</code>, <code>test-automation-specialist</code></td></tr>
+<tr><td><strong>Quality</strong></td><td>~45</td><td>Static analysis, quality gates, regression prevention</td><td><code>gate-sentinel</code>, <code>cascade-quality-specialist</code>, <code>coverage-enforcement-supreme</code></td></tr>
+<tr><td><strong>Intelligence (OSINT)</strong></td><td>~40</td><td>Open-source intelligence, investigation, reconnaissance</td><td><code>navy-seal-osint-auditor</code>, <code>ghost-recon-specialist</code>, <code>falcon-strike</code></td></tr>
+<tr><td><strong>Security</strong></td><td>~35</td><td>Color-team operations, vulnerability analysis, defense</td><td><code>red-commander</code>, <code>blue-commander</code>, <code>purple-coordinator</code></td></tr>
+<tr><td><strong>Evolution</strong></td><td>~30</td><td>Genetic algorithms, mycelial propagation, auto-healing</td><td><code>evolution-orchestrator</code>, <code>mendel-bridge</code>, <code>society-mycologist</code></td></tr>
+<tr><td><strong>Architecture</strong></td><td>~25</td><td>System design, integration patterns, dependency analysis</td><td><code>architecture-decision-specialist</code>, <code>anti-corruption-layer-specialist</code></td></tr>
+<tr><td><strong>Strategic Command</strong></td><td>~20</td><td>Cross-domain coordination, crisis intervention</td><td><code>archer-supreme</code>, <code>supreme-coordinator</code>, <code>strategic-command</code></td></tr>
+<tr><td><strong>Infrastructure</strong></td><td>~20</td><td>CI/CD, deployment, monitoring, containerization</td><td><code>cicd-coordinator</code>, <code>deploy-unified</code>, <code>cloud-security-specialist</code></td></tr>
+<tr><td><strong>Epistemic</strong></td><td>~20</td><td>NABLA framework, Trinity Gate, formal verification</td><td><code>white-verifier-commander</code>, <code>white-invariant-prover</code>, <code>bayesian-analyst</code></td></tr>
+<tr><td><strong>Documentation</strong></td><td>~20</td><td>Knowledge management, report generation, audit trails</td><td><code>evidence-scribe</code>, <code>adr-specialist</code>, <code>doc-specialist</code></td></tr>
+<tr><td><strong>Storage</strong></td><td>~15</td><td>Database adapters, caching, search indexing</td><td><code>storage-core-architect</code>, <code>caching-architecture-specialist</code></td></tr>
+<tr><td><strong>Web &amp; UI</strong></td><td>~15</td><td>LiveView interfaces, dashboard components, API design</td><td><code>web-interface-supreme</code>, <code>api-design-specialist</code></td></tr>
+<tr><td><strong>Compliance</strong></td><td>~15</td><td>GDPR, NIS2, ZKB, regulatory framework enforcement</td><td><code>cer-compliance-commander</code>, <code>compliance-auditing-specialist</code></td></tr>
+<tr><td><strong>ChatGPT Integration</strong></td><td>~10</td><td>Cross-LLM coordination, context synchronization</td><td><code>chatgpt-bridge-commander</code>, <code>chatgpt-workflow-orchestrator</code></td></tr>
+</tbody></table>
+<p>Domain membership is not exclusive. An agent may operate across multiple domains -- for example, <code>gate-sentinel</code> belongs to both Quality and Evolution because it enforces quality gates during evolution cycles.</p>
+<h2 id="search-and-discovery">Search and Discovery</h2>
+<h3 id="the-agents-command">The <code>/agents</code> Command</h3>
+<p>The primary discovery interface is the <code>/agents</code> slash command, which queries the registry and returns matching results. Operators can search by any combination of fields:</p>
+<pre><code>/agents domain:security level:L3
+/agents capability:formal-verification
+/agents name:archer
+/agents tool:WebFetch domain:intelligence
+</code></pre>
+<p>The <code>/agents</code> command returns a formatted table showing agent ID, level, domain, and a brief description for each match. For detailed information about a specific agent, operators use the agent's documentation file directly.</p>
+<h3 id="browsing-by-domain">Browsing by Domain</h3>
+<p>The <code>/agents-browse</code> variant provides an interactive, domain-organized view of the registry. It presents the 14 domains as top-level categories, with agents grouped by hierarchy level within each domain. This is useful for exploration when the operator knows which domain they need but not which specific agent.</p>
+<h3 id="programmatic-access">Programmatic Access</h3>
+<p>At the application level, the <code>PrismaticAgents</code> module exposes functions for registry queries:</p>
+<pre><code data-lang="elixir"># Find all security domain agents
+{:ok, agents} = PrismaticAgents.Registry.by_domain(:security)
+
+# Find agents by capability
+{:ok, agents} = PrismaticAgents.Registry.by_capability(&quot;formal-verification&quot;)
+
+# Get a specific agent&#39;s full metadata
+{:ok, metadata} = PrismaticAgents.Registry.get(&quot;archer-supreme&quot;)
+
+# List all L1 agents
+{:ok, supremes} = PrismaticAgents.Registry.by_level(:L1)
+</code></pre>
+<h2 id="auto-indexing-pipeline">Auto-Indexing Pipeline</h2>
+<h3 id="how-aiad-bin-aiad-index-works">How <code>.aiad/bin/aiad index</code> Works</h3>
+<p>The auto-indexing pipeline is a shell script that performs four phases:</p>
+<p><strong>Phase 1 -- Discovery</strong>. The script recursively scans <code>.aiad/agents/</code> for <code>*.agent.md</code> files and <code>.aiad/commands/</code> for <code>*.cmd.md</code> files. It builds a manifest of all discovered files with their modification timestamps.</p>
+<p><strong>Phase 2 -- Parsing</strong>. For each discovered file, the script extracts the <code>agent-spec</code> or <code>command-spec</code> YAML block (delimited by triple-backtick code fences with the <code>agent-spec yaml</code> or <code>command-spec yaml</code> language tag). The YAML is parsed and validated against the AIAD schema.</p>
+<p><strong>Phase 3 -- Validation</strong>. Each parsed specification is checked for:</p>
+<ul>
+<li>Required fields present (id, version, enforcement block)</li>
+<li>Valid hierarchy level (L1-L4)</li>
+<li>Valid authority declaration</li>
+<li>Enforcement block includes <code>doctrine: "no-mercy-no-doubts"</code> with version <code>2.0.0</code></li>
+<li>All referenced agent IDs in <code>coordinates_with</code> resolve to existing agents</li>
+<li>All declared tools are in the platform's tool vocabulary</li>
+</ul>
+<p><strong>Phase 4 -- Generation</strong>. The validated specifications are aggregated into the registry documents. Statistics are recalculated (total agents, total commands, domain breakdowns), navigation links are updated, and the output is written to <code>.claude/AGENT_REGISTRY.md</code> and <code>.claude/COMMAND_REGISTRY.md</code>.</p>
+<h3 id="companion-tools">Companion Tools</h3>
+<p>The <code>.aiad/bin/</code> directory contains additional utilities:</p>
+<table><thead><tr><th>Tool</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><code>aiad</code></td><td>Main CLI -- <code>index</code>, <code>validate</code>, <code>search</code>, <code>status</code> subcommands</td></tr>
+<tr><td><code>aiad-doctor</code></td><td>Diagnostic tool that checks registry health and reports inconsistencies</td></tr>
+<tr><td><code>aiad-turbo</code></td><td>Fast-path indexer for incremental updates (only processes changed files)</td></tr>
+<tr><td><code>aiad-watch</code></td><td>Filesystem watcher that re-indexes automatically when <code>.agent.md</code> or <code>.cmd.md</code> files change</td></tr>
+</tbody></table>
+<h2 id="integration-with-claude-code">Integration with Claude Code</h2>
+<h3 id="skill-discovery-at-runtime">Skill Discovery at Runtime</h3>
+<p>When Claude Code starts a session against the Prismatic Platform, it loads the registry as part of its context. The <code>CLAUDE.md</code> project instructions reference the registry and provide shorthand commands for common queries. The orchestration layer -- triggered by the <code>/orchestrate</code> command -- uses the registry to select the optimal agent or agent team for a given task.</p>
+<p>The selection algorithm considers:</p>
+<ol>
+<li><strong>Task domain</strong>: Map the user's request to one or more domains.</li>
+<li><strong>Required authority</strong>: Determine the minimum authority level needed.</li>
+<li><strong>Tool requirements</strong>: Filter to agents that declare the necessary tools.</li>
+<li><strong>Coordination graph</strong>: Prefer agents that coordinate with already-active agents.</li>
+<li><strong>Fitness score</strong>: Among qualifying agents, prefer those with higher evolutionary fitness.</li>
+</ol>
+<h3 id="the-unified-orchestrator">The Unified Orchestrator</h3>
+<p>The <code>/orchestrate</code> command represents the registry's highest-level consumer. When invoked, it:</p>
+<ol>
+<li>Analyzes the user's request to determine task type, complexity, and domain.</li>
+<li>Queries the registry for candidate agents matching the requirements.</li>
+<li>Ranks candidates by fitness, authority, and coordination efficiency.</li>
+<li>Deploys the selected agent (or agent team for complex tasks).</li>
+<li>Monitors execution and can substitute agents if the initial selection underperforms.</li>
+</ol>
+<p>This closed loop -- from user intent, through registry query, to agent deployment -- is what makes the platform's 434 agents usable without requiring operators to memorize the catalog.</p>
+<h2 id="registry-maintenance">Registry Maintenance</h2>
+<h3 id="quality-enforcement">Quality Enforcement</h3>
+<p>The registry participates in the platform's quality gate pipeline. Every commit that modifies a <code>.agent.md</code> or <code>.cmd.md</code> file triggers:</p>
+<ol>
+<li><strong>Schema validation</strong>: The AIAD schema is checked for structural correctness.</li>
+<li><strong>Enforcement block verification</strong>: The <code>no-mercy-no-doubts</code> doctrine block must be present with version <code>2.0.0</code>.</li>
+<li><strong>Cross-reference integrity</strong>: All agent ID references must resolve.</li>
+<li><strong>Registry synchronization</strong>: The indexer runs and verifies the registry documents are up to date.</li>
+</ol>
+<p>If any check fails, the pre-commit hook blocks the commit. There are no bypass flags -- <code>--no-verify</code> is forbidden platform-wide.</p>
+<h3 id="version-management">Version Management</h3>
+<p>Agent and command specifications follow semantic versioning. The registry tracks the version of each component and flags breaking changes (major version bumps) for review. Version history is preserved in git, enabling temporal queries ("which agents existed at version X of the platform").</p>
+<h3 id="drift-detection">Drift Detection</h3>
+<p>The <code>registry-syncer</code> agent continuously monitors for drift between the filesystem state (<code>.agent.md</code> files) and the registry documents. Drift occurs when a file is added, modified, or deleted without re-running the indexer. The syncer detects these inconsistencies and either triggers an automatic re-index or flags the drift for human review, depending on the severity.</p>
+<h3 id="adding-new-components">Adding New Components</h3>
+<p>To add a new agent to the registry:</p>
+<ol>
+<li>Create a new file at <code>.aiad/agents/{agent-id}.agent.md</code>.</li>
+<li>Include the <code>agent-spec</code> YAML block with all required fields.</li>
+<li>Include the mandatory enforcement block.</li>
+<li>Run <code>.aiad/bin/aiad index</code> to regenerate the registry.</li>
+<li>Verify with <code>.aiad/bin/aiad-doctor</code> that no validation errors exist.</li>
+<li>Commit the agent file and the updated registry documents together.</li>
+</ol>
+<p>The same process applies for commands, substituting <code>.aiad/commands/</code> and <code>command-spec</code>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Prismatic Platform Registry transforms a large population of autonomous agents and commands from an opaque collection into a structured, searchable, quality-enforced catalog. By grounding every component in the AIAD standard's machine-readable specifications, the registry enables automated discovery, runtime skill selection, and continuous quality enforcement. The auto-indexing pipeline keeps the registry synchronized with the filesystem, the quality gate integration prevents invalid components from entering the catalog, and the query interfaces make the full breadth of platform capabilities accessible to both human operators and orchestration systems.</p>
+<p>As the platform continues to evolve -- with new agents added through genetic evolution, mycelial propagation, and manual development -- the registry scales with it. Every new component that meets the AIAD specification and passes the quality gates automatically becomes discoverable, deployable, and maintainable through the same unified infrastructure.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Platform Stats -->
+<section class="bg-white dark:bg-gray-950 py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+
+        <!-- Aggregate Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            <div class="p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-900/10 rounded-2xl border border-purple-200 dark:border-purple-800 text-center">
+                <div class="text-4xl font-black text-purple-600 dark:text-purple-400">494</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-2 font-medium">Autonomous Agents</div>
+            </div>
+            <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-900/10 rounded-2xl border border-blue-200 dark:border-blue-800 text-center">
+                <div class="text-4xl font-black text-blue-600 dark:text-blue-400">212</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-2 font-medium">Slash Commands</div>
+            </div>
+            <div class="p-6 bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/30 dark:to-emerald-900/10 rounded-2xl border border-emerald-200 dark:border-emerald-800 text-center">
+                <div class="text-4xl font-black text-emerald-600 dark:text-emerald-400">14</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-2 font-medium">Agent Domains</div>
+            </div>
+            <div class="p-6 bg-gradient-to-br from-amber-50 to-amber-100 dark:from-amber-900/30 dark:to-amber-900/10 rounded-2xl border border-amber-200 dark:border-amber-800 text-center">
+                <div class="text-4xl font-black text-amber-600 dark:text-amber-400">Gen 18</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-2 font-medium">Evolution Generation</div>
+            </div>
+        </div>
+
+        <!-- Registry Cards -->
+        <div class="grid gap-8 md:grid-cols-2">
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;registry&#x2F;agents&#x2F;" class="group block p-8 bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 border-purple-200 dark:border-purple-800 hover:shadow-purple-500/10 rounded-3xl border hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
+                        
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 transition-colors">Agent Registry</h2>
+                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
+                    </div>
+                </div>
+                <div class="flex items-center text-purple-600 dark:text-purple-400 font-semibold group-hover:gap-3 gap-2 transition-all">
+                    Browse Agent Registry
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </div>
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;registry&#x2F;commands&#x2F;" class="group block p-8 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border-blue-200 dark:border-blue-800 hover:shadow-blue-500/10 rounded-3xl border hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg">
+                        
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">Command Registry</h2>
+                        <span class="text-sm text-gray-500 dark:text-gray-400"></span>
+                    </div>
+                </div>
+                <div class="flex items-center text-blue-600 dark:text-blue-400 font-semibold group-hover:gap-3 gap-2 transition-all">
+                    Browse Command Registry
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </div>
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;registry&#x2F;apps&#x2F;" class="group block p-8 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border-blue-200 dark:border-blue-800 hover:shadow-blue-500/10 rounded-3xl border hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg">
+                        
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">Applications Registry</h2>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">Comprehensive registry of 93+ specialized applications powering the Prismatic Platform across specialized domains, intelligence, security, and AI.</span>
+                    </div>
+                </div>
+                <div class="flex items-center text-blue-600 dark:text-blue-400 font-semibold group-hover:gap-3 gap-2 transition-all">
+                    Browse Applications Registry
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </div>
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;registry&#x2F;osint&#x2F;" class="group block p-8 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border-blue-200 dark:border-blue-800 hover:shadow-blue-500/10 rounded-3xl border hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg">
+                        
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">Intelligence Sources</h2>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">Comprehensive catalog of Global Infrastructure, Threat, Social, Email, Domain, and Financial Intelligence sources integrated into the Prismatic Platform.</span>
+                    </div>
+                </div>
+                <div class="flex items-center text-blue-600 dark:text-blue-400 font-semibold group-hover:gap-3 gap-2 transition-all">
+                    Browse Intelligence Sources
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </div>
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;registry&#x2F;czech&#x2F;" class="group block p-8 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 border-blue-200 dark:border-blue-800 hover:shadow-blue-500/10 rounded-3xl border hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg">
+                        
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 transition-colors">Czech Registries</h2>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">Deep integration with Czech government data sources for corporate due diligence, legal analysis, and regulatory compliance.</span>
+                    </div>
+                </div>
+                <div class="flex items-center text-blue-600 dark:text-blue-400 font-semibold group-hover:gap-3 gap-2 transition-all">
+                    Browse Czech Registries
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </div>
+            </a>
+            
+        </div>
+
+        <!-- Domain Chart -->
+        <div class="mt-12 p-8 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Agent Domain Distribution</h2>
+            <div class="max-w-2xl mx-auto">
+                <canvas id="registryDomainChart" height="300"></canvas>
+            </div>
+        </div>
+
+        <!-- Cross-Links -->
+        <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Related Sections</h2>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Agent Ecosystem</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Browse agents by operational domain.</p>
+                </a>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Color Teams</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">6 adversarial-defensive security teams.</p>
+                </a>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Applications</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">89 umbrella applications.</p>
+                </a>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Doctrine</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">NO MERCY, NO DOUBTS governance.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof Chart !== 'undefined') {
+        var ctx = document.getElementById('registryDomainChart');
+        if (ctx) {
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Quality','OSINT','Security','Development','Strategic','M&A','Integration','Evolution','Mycelial','Infrastructure','Performance','Documentation','Crisis'],
+                    datasets: [{
+                        label: 'Agents',
+                        data: [45,62,48,55,35,42,38,28,24,22,30,15,10],
+                        backgroundColor: ['rgba(16,185,129,0.7)','rgba(245,158,11,0.7)','rgba(239,68,68,0.7)','rgba(59,130,246,0.7)','rgba(139,92,246,0.7)','rgba(236,72,153,0.7)','rgba(6,182,212,0.7)','rgba(34,197,94,0.7)','rgba(168,85,247,0.7)','rgba(249,115,22,0.7)','rgba(14,165,233,0.7)','rgba(132,204,22,0.7)','rgba(220,38,38,0.7)'],
+                        borderRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(107,114,128,0.1)' }, ticks: { color: '#9ca3af' } },
+                        x: { grid: { display: false }, ticks: { color: '#9ca3af', font: { size: 10 }, maxRotation: 45 } }
+                    }
+                }
+            });
+        }
+    }
+});
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/platform/" class="text-gray-400 hover:text-white transition-colors">Overview</a>
+                        </li>
+                        <li><a href="/apps/" class="text-gray-400 hover:text-white transition-colors">Applications (89)</a></li>
+                        <li><a href="/agents/" class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products & Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Products & Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/products/" class="text-gray-400 hover:text-white transition-colors">Products</a>
+                        </li>
+                        <li><a href="/osint/" class="text-gray-400 hover:text-white transition-colors">OSINT Sources
+                                (121+)</a></li>
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="/solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a>
+                        </li>
+                        <li><a href="/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a>
+                        </li>
+                        <li><a href="/faq/" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-white bg-blue-600 rounded-xl shadow-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-110 focus:ring-4 focus:ring-blue-300 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="/js/vendor/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Back to Top button
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

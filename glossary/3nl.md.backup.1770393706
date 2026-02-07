@@ -1,0 +1,68 @@
++++
+title = "3NL"
+weight = 10
+[extra]
+category = "architecture"
+description = "Three Nested Levels architecture organizing the platform into hierarchical layers of abstraction for agents, knowledge, and system operations."
+acronym = "3NL"
++++
+
+## Definition
+
+3NL (Three Nested Levels) is the Prismatic Platform's architectural framework that organizes all platform components into three hierarchical levels of abstraction. Each level encapsulates the complexity of the level below, providing clean interfaces and separation of concerns throughout the system.
+
+The framework ensures that high-level operations (agent coordination, knowledge synthesis) are cleanly separated from mid-level mechanisms (process management, data flow) and low-level implementation details (BEAM processes, storage adapters).
+
+## Context in Prismatic
+
+3NL provides the structural foundation for the entire platform. NABLA Infinity operates at 3NL Level 3 integration, meaning it is embedded across all three levels. The AIAD agent system, quality gates, and evolution mechanisms are all organized according to 3NL principles.
+
+The framework also governs how the platform's 90 umbrella applications communicate -- each app exposes a Level 1 (public) API while keeping Level 2 (internal) and Level 3 (implementation) details encapsulated.
+
+## The Three Levels
+
+### Level 1: Strategic (Public Interface)
+
+The outermost level visible to external consumers and high-level orchestration. This includes:
+- Public API endpoints (REST, GraphQL)
+- Agent command interfaces
+- Dashboard and LiveView interfaces
+- External integration points
+
+### Level 2: Tactical (Internal Coordination)
+
+The middle level handling coordination between platform components:
+- Inter-app communication protocols
+- Agent-to-agent messaging
+- Pipeline orchestration
+- Quality gate enforcement
+
+### Level 3: Operational (Implementation)
+
+The innermost level containing implementation details:
+- OTP process management
+- Storage adapter implementations
+- BEAM-level optimizations
+- Memory and process lifecycle management
+
+## Integration with Platform Components
+
+| Component | L1 (Strategic) | L2 (Tactical) | L3 (Operational) |
+|-----------|----------------|----------------|-------------------|
+| Agents | Command interface | Agent coordination | GenServer state |
+| Quality | Quality score API | Gate pipeline | Credo/Dialyzer checks |
+| Storage | Query API | Adapter routing | ETS/Ecto operations |
+| NABLA | Confidence output | Axiom evaluation | Signal processing |
+
+## Related Terms
+
+- [PVM](@/glossary/pvm.md) - Platform Virtual Machine organized by 3NL
+- [NABLA Infinity](@/glossary/nabla-infinity.md) - Epistemic framework at 3NL Level 3
+- [AIAD](@/glossary/aiad.md) - Agent standard following 3NL structure
+- [OTP](@/glossary/otp.md) - Foundation providing Level 3 primitives
+- [Supervision Tree](@/glossary/supervision-tree.md) - Process hierarchy within 3NL
+
+## See Also
+
+- [Architecture](@/architecture/_index.md) - Platform architecture
+- [Applications](@/apps/_index.md) - Umbrella applications organized by 3NL

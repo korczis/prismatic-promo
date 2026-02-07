@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Prismatic Platform</title>
+
+    
+    <meta name="description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;intelligence&#x2F;">
+
+    
+    <meta property="og:title" content="Intelligence Fusion - Prismatic Platform">
+    <meta name="twitter:title" content="Intelligence Fusion - Prismatic Platform">
+    
+
+    <meta property="og:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+
+    
+    
+    <meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;sections&#x2F;intelligence-fusion.png">
+    <meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;sections&#x2F;intelligence-fusion.png">
+    
+
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Prismatic Platform">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;intelligence&#x2F;">
+    <meta name="twitter:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta name="twitter:creator" content="@korczis">
+    
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;intelligence&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- ANTIGRAVITY CSS - Single source of truth for colors -->
+    <link rel="stylesheet" href="/css/antigravity.css">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    <!-- Chart.js -->
+    <script src="/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Three.js (3D visualizations) -->
+    <script src="/js/vendor/three.min.js"></script>
+    <script src="/js/vendor/OrbitControls.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+        (function () {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 space-x-3">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    <li>
+                        <a href="/platform/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                    </li>
+                    <li>
+                        <a href="/products/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                    </li>
+                    <li>
+                        <a href="/capabilities/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            x-cloak>
+                            <a href="/apps/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                (89)</a>
+                            <a href="/agents/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                (430)</a>
+                            <a href="/architecture/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                            <a href="/technologies/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/commands/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                            <a href="/teams/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                Teams</a>
+                            <a href="/solutions/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                            <a href="/registry/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/glossary/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                            <a href="/faq/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Section -->
+<section class="bg-gray-950 py-16 lg:py-24 border-b border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="mb-8">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium tracking-wide text-yellow-400 bg-yellow-500/10 rounded-full border border-yellow-500/20">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                Non-Negotiable
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                Intelligence Fusion
+            </h1>
+            <div class="prose prose-invert prose-lg max-w-3xl text-gray-300 leading-relaxed font-light">
+                <h2 id="intelligence-fusion-multi-spectrum-signal-convergence">Intelligence Fusion: Multi-Spectrum Signal Convergence</h2>
+<p>The Prismatic Platform implements a fundamentally different approach to intelligence gathering and analysis. Rather than treating intelligence as a linear pipeline where raw data flows through sequential transformation stages, the platform operates as a <strong>convergent intelligence fusion reactor</strong> -- a system where signals from 250+ sources are simultaneously ingested, correlated, validated against epistemic axioms, and synthesized into actionable knowledge through a network of <a href="https://prismatic-reality.com/agents/">434 AIAD agents</a>.</p>
+<p>This is not simple data aggregation. Intelligence Fusion requires that every signal be evaluated for provenance, temporal relevance, source independence, and contradiction potential before it enters the platform's knowledge graph. The <a href="https://prismatic-reality.com/capabilities/nabla-axioms/">NABLA Infinity framework</a> enforces seven non-negotiable axioms that prevent the system from accepting unvalidated claims, discarding contradictory evidence, or converging prematurely on conclusions that lack sufficient epistemic support.</p>
+<p>The result is an intelligence platform that knows what it knows, knows what it does not know, and -- critically -- preserves the distinction between the two. Every intelligence product carries confidence scores validated through the <a href="https://prismatic-reality.com/capabilities/trinity-gate/">Trinity Gate</a>, ensuring that structural consistency, logical coherence, and formal necessity are all satisfied before a claim is established.</p>
+<h3 id="the-intelligence-fusion-architecture">The Intelligence Fusion Architecture</h3>
+<p>The platform's intelligence architecture operates across five convergence layers, each responsible for a distinct phase of the fusion process:</p>
+<pre><code>Layer 5: Environmental Grounding (Gen 19)    -- External reality validation
+Layer 4: Entity Resolution &amp; Graph Analysis   -- Knowledge graph construction
+Layer 3: Intelligence Synthesis               -- Multi-source signal fusion
+Layer 2: Source Processing &amp; Extraction       -- Pattern-based data extraction
+Layer 1: Signal Acquisition                   -- Raw data collection from 250+ sources
+</code></pre>
+<p>Each layer operates independently but communicates through the platform's <a href="https://prismatic-reality.com/architecture/pubsub/">PubSub event system</a>, allowing real-time propagation of intelligence updates across all active processing pipelines. The <a href="https://prismatic-reality.com/architecture/telemetry/">telemetry infrastructure</a> monitors every signal transition, providing complete observability into the fusion process.</p>
+<h2 id="intelligence-pipeline-architecture">Intelligence Pipeline Architecture</h2>
+<p>The following diagram illustrates the complete intelligence pipeline from raw signal acquisition through environmental grounding:</p>
+<div class="mermaid-diagram">
+<pre><code data-lang="mermaid">graph TD
+    subgraph &quot;Layer 1: Signal Acquisition&quot;
+        OSINT[OSINT Sources&lt;br/&gt;250+ Providers]
+        CZECH[Czech Registries&lt;br/&gt;ARES/OR/Insolvency]
+        VISITOR[Visitor Signals&lt;br/&gt;Behavioral Data]
+        EASM[Attack Surface&lt;br/&gt;External Scanning]
+        CUSTOM[Custom Feeds&lt;br/&gt;API Integrations]
+    end
+
+    subgraph &quot;Layer 2: Extraction &amp; Normalization&quot;
+        EXTRACT[Pattern Extraction&lt;br/&gt;55+ Patterns]
+        NORMALIZE[Signal Normalization&lt;br/&gt;Schema Alignment]
+        VALIDATE[Provenance Validation&lt;br/&gt;Source Verification]
+    end
+
+    subgraph &quot;Layer 3: Intelligence Synthesis&quot;
+        FUSE[Signal Fusion&lt;br/&gt;Multi-Source Correlation]
+        CONTRA[Contradiction Preservation&lt;br/&gt;Addiction Preservation]
+        CONFIDENCE[Confidence Scoring&lt;br/&gt;Trinity Gate Validation]
+    end
+
+    subgraph &quot;Layer 4: Entity Resolution&quot;
+        RESOLVE[Entity Resolution&lt;br/&gt;Graph Matching]
+        GRAPH[Knowledge Graph&lt;br/&gt;KuzuDB Storage]
+        RELATION[Relationship Discovery&lt;br/&gt;Pattern Analysis]
+    end
+
+    subgraph &quot;Layer 5: Environmental Grounding&quot;
+        GROUND[Reality Validation&lt;br/&gt;External Anchoring]
+        DRIFT[Drift Detection&lt;br/&gt;Temporal Monitoring]
+        OUTPUT[Actionable Intelligence&lt;br/&gt;Rated &amp; Grounded]
+    end
+
+    OSINT --&gt; EXTRACT
+    CZECH --&gt; EXTRACT
+    VISITOR --&gt; EXTRACT
+    EASM --&gt; EXTRACT
+    CUSTOM --&gt; EXTRACT
+    EXTRACT --&gt; NORMALIZE
+    NORMALIZE --&gt; VALIDATE
+    VALIDATE --&gt; FUSE
+    FUSE --&gt; CONTRA
+    CONTRA --&gt; CONFIDENCE
+    CONFIDENCE --&gt; RESOLVE
+    RESOLVE --&gt; GRAPH
+    GRAPH --&gt; RELATION
+    RELATION --&gt; GROUND
+    GROUND --&gt; DRIFT
+    DRIFT --&gt; OUTPUT
+
+    style OSINT fill:#6366f1,stroke:#4f46e5,color:#fff
+    style CZECH fill:#6366f1,stroke:#4f46e5,color:#fff
+    style VISITOR fill:#6366f1,stroke:#4f46e5,color:#fff
+    style EASM fill:#6366f1,stroke:#4f46e5,color:#fff
+    style GRAPH fill:#8b5cf6,stroke:#7c3aed,color:#fff
+    style OUTPUT fill:#10b981,stroke:#059669,color:#fff
+</code></pre>
+</div>
+<h2 id="mycelial-intelligence-knowledge-propagation-across-the-agent-network">Mycelial Intelligence: Knowledge Propagation Across the Agent Network</h2>
+<p>The platform's intelligence distribution system is modeled on biological mycelial networks -- the underground fungal networks that enable trees in a forest to share nutrients and chemical signals. In the Prismatic Platform, <a href="https://prismatic-reality.com/glossary/mycelial-network/">Mycelial Intelligence</a> refers to the mechanism by which knowledge propagates across the network of 434 AIAD agents without requiring centralized coordination.</p>
+<p>When any agent in the network acquires new intelligence -- whether through OSINT collection, entity resolution, or environmental grounding -- that intelligence is not stored in isolation. Instead, it is published as a mycelial signal that propagates through the agent network based on relevance scoring. Agents subscribe to signal categories aligned with their specialization, and the mycelial router ensures that each signal reaches every agent that could benefit from it while avoiding noise flooding.</p>
+<h3 id="mycelial-propagation-properties">Mycelial Propagation Properties</h3>
+<p>The mycelial network exhibits four critical properties that distinguish it from conventional message-passing systems:</p>
+<p><strong>Selective Propagation</strong>: Signals do not broadcast uniformly. Each agent maintains a relevance profile that determines which signals it receives. A <a href="https://prismatic-reality.com/agents/czech-business-intelligence-specialist/">Czech Business Intelligence Specialist</a> receives signals about Czech legal entity changes but not about network infrastructure vulnerabilities. A <a href="https://prismatic-reality.com/agents/hawkeye-security-auditor/">Hawkeye Security Auditor</a> receives visitor behavioral anomaly signals but not M&amp;A financial intelligence.</p>
+<p><strong>Contradiction Amplification</strong>: When the mycelial network detects that two agents hold contradictory beliefs about the same entity or relationship, it does not resolve the contradiction by choosing one. Instead, it amplifies the contradiction signal, ensuring that both perspectives are preserved and flagged for higher-level synthesis. This directly implements the <a href="https://prismatic-reality.com/capabilities/nabla-axioms/">Addiction Preservation doctrine</a> -- the platform's commitment to never smoothing over inconvenient truths.</p>
+<p><strong>Temporal Decay Awareness</strong>: Every signal in the mycelial network carries a temporal stamp and a decay function. Intelligence about a company's registered address from three years ago is weighted differently than the same information from yesterday. The network automatically reduces confidence in aging signals while preserving their provenance chain for historical analysis.</p>
+<p><strong>Emergent Pattern Detection</strong>: Because signals propagate through the network rather than being stored in a central repository, the network itself becomes a pattern detector. When multiple independent agents report signals that individually seem unremarkable but collectively suggest a pattern -- such as a series of related company registrations across different jurisdictions -- the mycelial network surfaces the emergent pattern through convergence detection.</p>
+<h3 id="mycelial-integration-example">Mycelial Integration Example</h3>
+<pre><code data-lang="elixir">defmodule PrismaticAgents.Mycelial.IntelligenceRouter do
+  @moduledoc &quot;&quot;&quot;
+  Routes intelligence signals through the mycelial network
+  based on agent relevance profiles and signal categories.
+  &quot;&quot;&quot;
+
+  use GenServer
+
+  alias PrismaticAgents.Registry
+  alias PrismaticStorage.GraphAdapter
+
+  @type signal :: %{
+    source: atom(),
+    category: atom(),
+    payload: map(),
+    confidence: float(),
+    provenance: list(),
+    timestamp: DateTime.t()
+  }
+
+  @spec propagate(signal()) :: {:ok, non_neg_integer()} | {:error, term()}
+  def propagate(signal) do
+    with {:ok, validated} &lt;- validate_provenance(signal),
+         {:ok, enriched} &lt;- apply_temporal_decay(validated),
+         {:ok, targets} &lt;- resolve_target_agents(enriched),
+         {:ok, count} &lt;- deliver_to_agents(enriched, targets) do
+      emit_telemetry(:signal_propagated, %{
+        source: signal.source,
+        category: signal.category,
+        target_count: count,
+        confidence: enriched.confidence
+      })
+      {:ok, count}
+    end
+  end
+
+  defp resolve_target_agents(signal) do
+    agents =
+      Registry.list_agents()
+      |&gt; Enum.filter(&amp;relevance_match?(&amp;1, signal))
+      |&gt; Enum.sort_by(&amp;relevance_score(&amp;1, signal), :desc)
+
+    {:ok, agents}
+  end
+end
+</code></pre>
+<h2 id="osint-pipeline-250-sources-and-55-extraction-patterns">OSINT Pipeline: 250+ Sources and 55+ Extraction Patterns</h2>
+<p>The <a href="https://prismatic-reality.com/apps/prismatic-osint-core/">OSINT Core</a> subsystem provides the platform's primary raw intelligence acquisition capability. With integrations to over 250 data sources and 55+ specialized extraction patterns, the OSINT pipeline transforms unstructured external data into structured intelligence signals suitable for fusion processing.</p>
+<h3 id="source-taxonomy">Source Taxonomy</h3>
+<p>The OSINT sources are organized into eight operational categories, each managed by dedicated specialist agents:</p>
+<table><thead><tr><th>Category</th><th>Sources</th><th>Key Providers</th><th>Specialist Agent</th></tr></thead><tbody>
+<tr><td><strong>Business &amp; Financial</strong></td><td>40+</td><td>Crunchbase, OpenCorporates, SEC EDGAR, Bloomberg</td><td><a href="https://prismatic-reality.com/agents/financial-intelligence-commander/">Financial Intelligence Commander</a></td></tr>
+<tr><td><strong>Czech Legal</strong></td><td>15+</td><td>ARES, OR, Insolvency Registry, CEDR, CUZK</td><td><a href="https://prismatic-reality.com/agents/czech-legal-intelligence-operative/">Czech Legal Intelligence Operative</a></td></tr>
+<tr><td><strong>Network Infrastructure</strong></td><td>35+</td><td>Shodan, Censys, BinaryEdge, DNSDumpster</td><td><a href="https://prismatic-reality.com/agents/ghost-recon-specialist/">Ghost Recon Specialist</a></td></tr>
+<tr><td><strong>Social Media</strong></td><td>25+</td><td>LinkedIn, Twitter/X, Facebook, Discord</td><td><a href="https://prismatic-reality.com/agents/email-intelligence-specialist/">Email Intelligence Specialist</a></td></tr>
+<tr><td><strong>Threat Intelligence</strong></td><td>30+</td><td>AbuseIPDB, AlienVault OTX, CIRCL.lu</td><td><a href="https://prismatic-reality.com/agents/delta-force-specialist/">Delta Force Specialist</a></td></tr>
+<tr><td><strong>Domain &amp; Certificate</strong></td><td>20+</td><td>crt.sh, DomainTools, BuiltWith, Common Crawl</td><td><a href="https://prismatic-reality.com/agents/crawler-development-specialist/">Crawler Development Specialist</a></td></tr>
+<tr><td><strong>Government &amp; Regulatory</strong></td><td>25+</td><td>EU Institutions, Czech NBU, Companies House</td><td><a href="https://prismatic-reality.com/agents/czech-business-intelligence-specialist/">Czech Business Intelligence Specialist</a></td></tr>
+<tr><td><strong>Blockchain &amp; Financial</strong></td><td>15+</td><td>Blockchain.com, Chainalysis, Crystal</td><td><a href="https://prismatic-reality.com/agents/financial-intelligence-commander/">Financial Intelligence Commander</a></td></tr>
+</tbody></table>
+<h3 id="osint-source-routing-architecture">OSINT Source Routing Architecture</h3>
+<p>The following diagram shows how OSINT sources are routed through category-specific extraction engines before entering the fusion pipeline:</p>
+<div class="mermaid-diagram">
+<pre><code data-lang="mermaid">graph LR
+    subgraph &quot;Business Sources&quot;
+        CRUNCH[Crunchbase]
+        OPENCORP[OpenCorporates]
+        SEC[SEC EDGAR]
+    end
+
+    subgraph &quot;Czech Registries&quot;
+        ARES[ARES API]
+        OR[Justice.cz OR]
+        INSOL[Insolvency Reg.]
+        CEDR[CEDR Grants]
+    end
+
+    subgraph &quot;Network/Infra&quot;
+        SHODAN[Shodan]
+        CENSYS[Censys]
+        CRTSH[crt.sh]
+    end
+
+    subgraph &quot;Extraction Engines&quot;
+        BIZ_EXT[Business Extractor&lt;br/&gt;12 Patterns]
+        CZECH_EXT[Czech Legal Extractor&lt;br/&gt;8 Patterns]
+        NET_EXT[Network Extractor&lt;br/&gt;15 Patterns]
+    end
+
+    subgraph &quot;Normalization&quot;
+        NORM[Schema Normalizer&lt;br/&gt;Unified Entity Format]
+    end
+
+    subgraph &quot;Fusion Entry&quot;
+        QUEUE[Signal Queue&lt;br/&gt;Priority Routing]
+        PROV[Provenance Stamper&lt;br/&gt;Source Tracking]
+    end
+
+    CRUNCH --&gt; BIZ_EXT
+    OPENCORP --&gt; BIZ_EXT
+    SEC --&gt; BIZ_EXT
+    ARES --&gt; CZECH_EXT
+    OR --&gt; CZECH_EXT
+    INSOL --&gt; CZECH_EXT
+    CEDR --&gt; CZECH_EXT
+    SHODAN --&gt; NET_EXT
+    CENSYS --&gt; NET_EXT
+    CRTSH --&gt; NET_EXT
+
+    BIZ_EXT --&gt; NORM
+    CZECH_EXT --&gt; NORM
+    NET_EXT --&gt; NORM
+    NORM --&gt; PROV
+    PROV --&gt; QUEUE
+
+    style ARES fill:#6366f1,stroke:#4f46e5,color:#fff
+    style OR fill:#6366f1,stroke:#4f46e5,color:#fff
+    style QUEUE fill:#10b981,stroke:#059669,color:#fff
+</code></pre>
+</div>
+<h3 id="extraction-pattern-architecture">Extraction Pattern Architecture</h3>
+<p>Each OSINT source is paired with one or more extraction patterns -- declarative specifications that define how raw source data maps to the platform's internal entity schema. Patterns handle normalization, deduplication hints, confidence assignment, and provenance tagging. The pattern library currently contains 55+ production patterns covering structured APIs, semi-structured HTML, PDF documents, and streaming data feeds.</p>
+<pre><code data-lang="elixir">defmodule PrismaticOsintCore.Patterns.CzechAres do
+  @moduledoc &quot;&quot;&quot;
+  Extraction pattern for Czech ARES business registry.
+  Maps ARES XML/JSON responses to platform entity format.
+  &quot;&quot;&quot;
+
+  @behaviour PrismaticOsintCore.ExtractionPattern
+
+  @impl true
+  def source_id, do: :czech_ares
+
+  @impl true
+  def extract(raw_response) do
+    with {:ok, parsed} &lt;- parse_response(raw_response),
+         {:ok, entities} &lt;- map_entities(parsed),
+         {:ok, enriched} &lt;- attach_provenance(entities) do
+      {:ok, enriched}
+    end
+  end
+
+  defp map_entities(parsed) do
+    entities =
+      parsed
+      |&gt; Enum.map(fn record -&gt;
+        %PrismaticOsintCore.Entity{
+          type: :company,
+          name: record[&quot;obchodni_firma&quot;],
+          identifiers: %{ico: record[&quot;ico&quot;], dic: record[&quot;dic&quot;]},
+          jurisdiction: :cz,
+          registered_address: extract_address(record),
+          legal_form: record[&quot;pravni_forma&quot;],
+          status: map_status(record[&quot;stav_subjektu&quot;]),
+          confidence: 0.95,
+          provenance: [:czech_ares],
+          extracted_at: DateTime.utc_now()
+        }
+      end)
+
+    {:ok, entities}
+  end
+end
+</code></pre>
+<h2 id="entity-resolution-and-graph-analysis">Entity Resolution and Graph Analysis</h2>
+<p>Raw intelligence signals become truly powerful only when they are resolved into a unified knowledge graph. The platform's <a href="https://prismatic-reality.com/glossary/entity-resolution/">Entity Resolution</a> engine, backed by <a href="https://prismatic-reality.com/technologies/kuzudb/">KuzuDB</a> as the graph database, transforms millions of individual data points into a connected graph of entities and relationships.</p>
+<h3 id="the-resolution-challenge">The Resolution Challenge</h3>
+<p>Entity resolution in intelligence work is fundamentally harder than in conventional data engineering. The same person may appear as "Jan Novak" in the Czech business registry, "J. Novak" in a LinkedIn profile, "Ing. Jan Novak, MBA" in a court filing, and "novak.j@company.cz" in an email header. Each occurrence carries different metadata, different confidence levels, and potentially different temporal validity. The entity resolution engine must determine which of these references point to the same real-world entity while preserving the provenance of each individual observation.</p>
+<h3 id="resolution-pipeline">Resolution Pipeline</h3>
+<p>The entity resolution pipeline operates in four phases:</p>
+<p><strong>Phase 1 -- Candidate Generation</strong>: For each incoming entity signal, the system generates a set of candidate matches from the existing knowledge graph using blocking keys (normalized name variants, identifier matches, address proximity).</p>
+<p><strong>Phase 2 -- Pairwise Comparison</strong>: Each candidate pair is scored across multiple dimensions: name similarity (Jaro-Winkler, phonetic encoding), identifier overlap (ICO, DIC, email domains), temporal proximity, and contextual signals (shared addresses, shared board memberships).</p>
+<p><strong>Phase 3 -- Cluster Decision</strong>: Pairwise scores are aggregated into cluster decisions using transitive closure with confidence thresholds. If entity A matches entity B with 0.92 confidence and entity B matches entity C with 0.88 confidence, the system evaluates whether A-C should also be linked, applying the <a href="https://prismatic-reality.com/capabilities/trinity-gate/">Trinity Gate</a> to prevent false positive chains.</p>
+<p><strong>Phase 4 -- Graph Integration</strong>: Resolved entities are merged into the <a href="https://prismatic-reality.com/architecture/postgresql-kuzudb/">KuzuDB knowledge graph</a>, preserving all source observations as evidence nodes linked to the resolved entity. This allows any conclusion to be traced back to its constituent evidence.</p>
+<h3 id="entity-resolution-flow">Entity Resolution Flow</h3>
+<div class="mermaid-diagram">
+<pre><code data-lang="mermaid">graph TD
+    subgraph &quot;Incoming Signals&quot;
+        S1[ARES: Jan Novak&lt;br/&gt;ICO: 12345678]
+        S2[LinkedIn: J. Novak&lt;br/&gt;CEO at CompanyX]
+        S3[OR: Ing. Jan Novak MBA&lt;br/&gt;Board Member]
+        S4[Email: novak.j@companyx.cz&lt;br/&gt;Domain Match]
+    end
+
+    subgraph &quot;Phase 1: Candidate Generation&quot;
+        BLOCK[Blocking Keys&lt;br/&gt;Name + Identifier + Domain]
+        CAND[Candidate Pairs&lt;br/&gt;Similarity Threshold &gt; 0.6]
+    end
+
+    subgraph &quot;Phase 2: Pairwise Scoring&quot;
+        NAME[Name Similarity&lt;br/&gt;Jaro-Winkler + Phonetic]
+        ID[Identifier Match&lt;br/&gt;ICO/DIC/Email]
+        CTX[Context Signals&lt;br/&gt;Shared Entities]
+        SCORE[Composite Score&lt;br/&gt;Weighted Aggregation]
+    end
+
+    subgraph &quot;Phase 3: Cluster Decision&quot;
+        TRANS[Transitive Closure&lt;br/&gt;Chain Evaluation]
+        TRINITY[Trinity Gate&lt;br/&gt;Validation]
+        CLUSTER[Entity Cluster&lt;br/&gt;Confidence &gt;= 0.85]
+    end
+
+    subgraph &quot;Phase 4: Graph Integration&quot;
+        MERGE[Entity Merge&lt;br/&gt;Evidence Preservation]
+        KUZU[(KuzuDB&lt;br/&gt;Knowledge Graph)]
+        REL[Relationship&lt;br/&gt;Discovery]
+    end
+
+    S1 --&gt; BLOCK
+    S2 --&gt; BLOCK
+    S3 --&gt; BLOCK
+    S4 --&gt; BLOCK
+    BLOCK --&gt; CAND
+    CAND --&gt; NAME
+    CAND --&gt; ID
+    CAND --&gt; CTX
+    NAME --&gt; SCORE
+    ID --&gt; SCORE
+    CTX --&gt; SCORE
+    SCORE --&gt; TRANS
+    TRANS --&gt; TRINITY
+    TRINITY --&gt; CLUSTER
+    CLUSTER --&gt; MERGE
+    MERGE --&gt; KUZU
+    KUZU --&gt; REL
+
+    style KUZU fill:#8b5cf6,stroke:#7c3aed,color:#fff
+    style TRINITY fill:#f59e0b,stroke:#d97706,color:#fff
+    style CLUSTER fill:#10b981,stroke:#059669,color:#fff
+</code></pre>
+</div>
+<h3 id="graph-query-interface">Graph Query Interface</h3>
+<p>Once entities are resolved into the knowledge graph, the platform provides a powerful query interface for relationship discovery and pattern analysis:</p>
+<pre><code data-lang="elixir">defmodule PrismaticGraph.Intelligence do
+  @moduledoc &quot;&quot;&quot;
+  High-level intelligence queries against the KuzuDB knowledge graph.
+  Supports entity traversal, relationship discovery, and pattern matching.
+  &quot;&quot;&quot;
+
+  alias PrismaticGraph.KuzuAdapter
+
+  @spec find_connections(entity_id :: String.t(), depth :: pos_integer()) ::
+          {:ok, list(map())} | {:error, term()}
+  def find_connections(entity_id, depth \\ 3) do
+    query = &quot;&quot;&quot;
+    MATCH path = (source:Entity {id: $id})-[*1..#{depth}]-(target:Entity)
+    RETURN path, length(path) AS distance,
+           [r IN relationships(path) | type(r)] AS relationship_types,
+           target.name AS target_name,
+           target.type AS target_type
+    ORDER BY distance ASC
+    LIMIT 100
+    &quot;&quot;&quot;
+
+    KuzuAdapter.execute(query, %{id: entity_id})
+  end
+
+  @spec corporate_structure(ico :: String.t()) ::
+          {:ok, map()} | {:error, term()}
+  def corporate_structure(ico) do
+    query = &quot;&quot;&quot;
+    MATCH (company:Company {ico: $ico})
+    OPTIONAL MATCH (company)&lt;-[:OWNS]-(owner:Entity)
+    OPTIONAL MATCH (company)-[:HAS_BOARD_MEMBER]-&gt;(member:Person)
+    OPTIONAL MATCH (company)-[:SUBSIDIARY_OF]-&gt;(parent:Company)
+    RETURN company, collect(DISTINCT owner) AS owners,
+           collect(DISTINCT member) AS board_members,
+           collect(DISTINCT parent) AS parent_companies
+    &quot;&quot;&quot;
+
+    KuzuAdapter.execute(query, %{ico: ico})
+  end
+end
+</code></pre>
+<h2 id="hawkeye-visitor-intelligence">HAWKEYE Visitor Intelligence</h2>
+<p>The <a href="https://prismatic-reality.com/apps/prismatic-hawkeye/">HAWKEYE</a> subsystem (code name for <a href="https://prismatic-reality.com/apps/prismatic-visitor-intelligence/">Prismatic Visitor Intelligence</a>) provides real-time behavioral analysis and risk scoring for web visitors. Unlike conventional web analytics that track page views and session duration, HAWKEYE constructs behavioral fingerprints that reveal visitor intent, organizational affiliation, and threat potential.</p>
+<h3 id="behavioral-analysis-dimensions">Behavioral Analysis Dimensions</h3>
+<p>HAWKEYE analyzes visitor behavior across six dimensions:</p>
+<table><thead><tr><th>Dimension</th><th>Signals</th><th>Risk Indicators</th></tr></thead><tbody>
+<tr><td><strong>Navigation Pattern</strong></td><td>Page sequence, dwell time, scroll depth</td><td>Systematic crawling, unusual access patterns</td></tr>
+<tr><td><strong>Technical Fingerprint</strong></td><td>Browser, OS, screen resolution, WebGL hash</td><td>Headless browsers, known bot signatures</td></tr>
+<tr><td><strong>Network Context</strong></td><td>IP geolocation, ASN, reverse DNS, proxy detection</td><td>Tor exit nodes, VPN services, data center IPs</td></tr>
+<tr><td><strong>Temporal Behavior</strong></td><td>Visit frequency, time-of-day patterns, session gaps</td><td>After-hours access, rapid successive visits</td></tr>
+<tr><td><strong>Content Interest</strong></td><td>Pages viewed, search terms, download patterns</td><td>Focus on sensitive areas, competitive intelligence patterns</td></tr>
+<tr><td><strong>Interaction Quality</strong></td><td>Mouse movement, keystroke dynamics, form behavior</td><td>Automated interactions, scraping patterns</td></tr>
+</tbody></table>
+<h3 id="risk-scoring-model">Risk Scoring Model</h3>
+<p>Each visitor receives a composite risk score from 0 (benign) to 100 (critical threat), computed as a weighted combination of dimensional risk signals. The scoring model is calibrated through the platform's <a href="https://prismatic-reality.com/apps/ai-drift/">AI Drift monitoring</a> to prevent score inflation or deflation over time.</p>
+<pre><code data-lang="elixir">defmodule PrismaticVisitorIntelligence.RiskScoring do
+  @moduledoc &quot;&quot;&quot;
+  Composite risk scoring for visitor behavioral analysis.
+  Produces scores from 0-100 with confidence intervals.
+  &quot;&quot;&quot;
+
+  @dimension_weights %{
+    navigation: 0.20,
+    technical: 0.15,
+    network: 0.25,
+    temporal: 0.10,
+    content: 0.20,
+    interaction: 0.10
+  }
+
+  @spec compute_risk(visitor_profile :: map()) ::
+          {:ok, %{score: float(), confidence: float(), factors: list()}}
+  def compute_risk(visitor_profile) do
+    dimensional_scores =
+      @dimension_weights
+      |&gt; Enum.map(fn {dimension, weight} -&gt;
+        score = score_dimension(dimension, visitor_profile)
+        {dimension, score * weight}
+      end)
+
+    composite_score =
+      dimensional_scores
+      |&gt; Enum.map(&amp;elem(&amp;1, 1))
+      |&gt; Enum.sum()
+      |&gt; min(100.0)
+
+    confidence = compute_confidence(visitor_profile)
+    factors = extract_risk_factors(dimensional_scores)
+
+    {:ok, %{score: composite_score, confidence: confidence, factors: factors}}
+  end
+end
+</code></pre>
+<p>The <a href="https://prismatic-reality.com/apps/prismatic-hawkeye-web/">HAWKEYE Web dashboard</a> provides a real-time LiveView interface at <code>/hawkeye</code> where security teams can monitor visitor intelligence, investigate flagged visitors, and configure risk thresholds.</p>
+<h2 id="prismatic-perimeter-external-attack-surface-management">Prismatic Perimeter: External Attack Surface Management</h2>
+<p>The <a href="https://prismatic-reality.com/apps/prismatic-perimeter/">Prismatic Perimeter</a> subsystem implements External Attack Surface Management (EASM) -- the discipline of continuously discovering, monitoring, and assessing an organization's internet-facing assets from an attacker's perspective. The system competes directly with commercial EASM platforms such as BitSight, Black Kite, and SecurityScorecard.</p>
+<h3 id="security-rating-system">Security Rating System</h3>
+<p>Perimeter produces security ratings on an A-F scale with numeric scores from 300 to 900, providing an at-a-glance assessment of an organization's external security posture:</p>
+<table><thead><tr><th>Grade</th><th>Score Range</th><th>Interpretation</th><th>Typical Characteristics</th></tr></thead><tbody>
+<tr><td><strong>A</strong></td><td>800-900</td><td>Excellent</td><td>Minimal exposure, strong configurations, current patches</td></tr>
+<tr><td><strong>B</strong></td><td>700-799</td><td>Good</td><td>Minor issues, generally well-maintained</td></tr>
+<tr><td><strong>C</strong></td><td>600-699</td><td>Fair</td><td>Notable gaps, some outdated services</td></tr>
+<tr><td><strong>D</strong></td><td>500-599</td><td>Poor</td><td>Significant vulnerabilities, misconfigured services</td></tr>
+<tr><td><strong>F</strong></td><td>300-499</td><td>Critical</td><td>Severe exposure, immediate remediation required</td></tr>
+</tbody></table>
+<h3 id="asset-discovery">Asset Discovery</h3>
+<p>The Perimeter discovery engine identifies and catalogs internet-facing assets through passive reconnaissance techniques:</p>
+<ul>
+<li><strong>Domain enumeration</strong>: DNS records, subdomain discovery, WHOIS data</li>
+<li><strong>Certificate transparency</strong>: Monitoring CT logs for new certificates</li>
+<li><strong>IP range mapping</strong>: ASN lookups, BGP route analysis</li>
+<li><strong>Cloud resource detection</strong>: S3 buckets, Azure blobs, GCP storage</li>
+<li><strong>Service identification</strong>: Port scanning results, banner grabbing, technology fingerprinting</li>
+<li><strong>Email infrastructure</strong>: MX records, SPF/DKIM/DMARC configuration</li>
+</ul>
+<h3 id="compliance-assessment">Compliance Assessment</h3>
+<p>Perimeter includes built-in compliance assessment for two regulatory frameworks:</p>
+<p><strong>NIS2 Directive</strong> (EU 2022/2555): The European Union's Network and Information Security directive, which requires organizations in critical sectors to implement appropriate security measures and report significant incidents. Perimeter assesses compliance across the directive's security requirements including risk analysis, incident handling, supply chain security, and encryption.</p>
+<p><strong>ZKB 264/2025 Sb.</strong> (Czech Republic): The Czech cybersecurity regulation implementing NIS2 requirements with additional Czech-specific provisions. Perimeter evaluates compliance with Czech National Cyber and Information Security Agency (NUKIB) requirements.</p>
+<pre><code data-lang="elixir"># Discover attack surface and assess security rating
+{:ok, surface} = PrismaticPerimeter.discover(&quot;example.com&quot;)
+# =&gt; %{assets: 47, domains: 12, ips: 23, certificates: 18, services: 31}
+
+{:ok, rating} = PrismaticPerimeter.security_rating(&quot;example.com&quot;)
+# =&gt; %{grade: :B, score: 780, industry_percentile: 72,
+#       dimensions: %{patching: 85, configuration: 78, exposure: 72}}
+
+{:ok, compliance} = PrismaticPerimeter.assess_compliance(&quot;example.com&quot;, [:nis2, :zkb])
+# =&gt; %{nis2: %{compliant: 14, non_compliant: 3, score: 0.82},
+#       zkb: %{compliant: 11, non_compliant: 2, score: 0.85}}
+</code></pre>
+<p>The <a href="https://prismatic-reality.com/apps/prismatic-perimeter-web/">Perimeter Web dashboard</a> provides LiveView interfaces at <code>/perimeter</code>, <code>/perimeter/assets</code>, <code>/perimeter/compliance</code>, and <code>/perimeter/easm</code> for real-time monitoring and investigation.</p>
+<h2 id="m-a-due-diligence-intelligence">M&amp;A Due Diligence Intelligence</h2>
+<p>The <a href="https://prismatic-reality.com/apps/prismatic-dd/">Prismatic DD</a> (Due Diligence) subsystem applies the platform's full intelligence fusion capability to merger and acquisition scenarios. When evaluating a potential acquisition target or partnership, the DD engine conducts automated multi-dimensional analysis across financial, legal, regulatory, reputational, and technical dimensions.</p>
+<h3 id="due-diligence-dimensions">Due Diligence Dimensions</h3>
+<p>The DD engine evaluates targets across eight intelligence dimensions:</p>
+<p><strong>Corporate Structure</strong>: Ownership chains, beneficial ownership, subsidiary networks, cross-holdings, nominee structures. Uses entity resolution to map the complete corporate graph including indirect relationships.</p>
+<p><strong>Financial Health</strong>: Revenue trends, debt ratios, cash flow patterns, audit opinions, tax compliance. Integrates financial registry data with market intelligence for comprehensive financial profiling.</p>
+<p><strong>Legal Exposure</strong>: Active litigation, historical court cases, regulatory actions, compliance violations. The <a href="https://prismatic-reality.com/apps/prismatic-czech-courts/">Czech Courts integration</a> provides particular depth for Czech-jurisdiction targets.</p>
+<p><strong>Regulatory Compliance</strong>: License status, regulatory filings, sanctions screening, PEP (Politically Exposed Person) connections. Cross-references multiple international sanctions lists and PEP databases.</p>
+<p><strong>Reputational Risk</strong>: Media sentiment, social media presence, employee reviews, customer complaints. NLP-powered sentiment analysis tracks reputational trajectory over time.</p>
+<p><strong>Technology Assessment</strong>: Technology stack, security posture (via Perimeter), patent portfolio, open source dependencies. Evaluates technical debt and security risk of target's technology infrastructure.</p>
+<p><strong>Key Personnel</strong>: Background on executives, board members, and key employees. Identifies conflicts of interest, prior company failures, regulatory actions, and network connections.</p>
+<p><strong>Market Position</strong>: Competitive landscape, market share estimates, customer concentration, supplier dependencies. Contextualizes the target within its industry segment.</p>
+<h2 id="czech-legal-registry-integration">Czech Legal Registry Integration</h2>
+<p>The platform maintains deep integration with Czech Republic legal and business registries through the <a href="https://prismatic-reality.com/apps/prismatic-czech-autocrawler/">Czech Autocrawler</a> subsystem. This integration provides access to authoritative data on Czech legal entities, insolvency proceedings, court decisions, and property records.</p>
+<h3 id="registry-sources">Registry Sources</h3>
+<table><thead><tr><th>Registry</th><th>Data Type</th><th>Update Frequency</th><th>Coverage</th></tr></thead><tbody>
+<tr><td><strong>ARES</strong></td><td>Business entities, ICO/DIC lookup, trade licenses</td><td>Real-time API</td><td>All Czech legal entities</td></tr>
+<tr><td><strong>OR (Obchodni rejstrik)</strong></td><td>Corporate filings, ownership, board composition</td><td>Daily crawl</td><td>All registered companies</td></tr>
+<tr><td><strong>Insolvency Registry</strong></td><td>Insolvency proceedings, creditor claims, resolutions</td><td>Continuous monitoring</td><td>All proceedings since 2008</td></tr>
+<tr><td><strong>CEDR</strong></td><td>EU grant recipients, subsidy amounts, project details</td><td>Weekly sync</td><td>All Czech EU fund recipients</td></tr>
+<tr><td><strong>CUZK</strong></td><td>Property ownership, land registry, cadastral data</td><td>On-demand query</td><td>Czech Republic territory</td></tr>
+<tr><td><strong>Czech Courts</strong></td><td>Court decisions, case filings, judicial proceedings</td><td>Daily crawl via <a href="https://prismatic-reality.com/apps/prismatic-czech-courts/">Czech Courts app</a></td><td>Public court decisions</td></tr>
+<tr><td><strong>CNB</strong></td><td>Financial institution registries, exchange rates, regulated entities</td><td>Daily sync via <a href="https://prismatic-reality.com/osint/cnb/">CNB source</a></td><td>Czech National Bank data</td></tr>
+</tbody></table>
+<h3 id="automated-entity-monitoring">Automated Entity Monitoring</h3>
+<p>The Czech Autocrawler supports continuous monitoring of specified entities, automatically detecting and alerting on changes to corporate structure, ownership, insolvency status, and regulatory filings. When a monitored entity changes, the signal propagates through the mycelial network to all relevant agents and updates the knowledge graph.</p>
+<pre><code data-lang="elixir">defmodule PrismaticCzechAutocrawler.Monitor do
+  @moduledoc &quot;&quot;&quot;
+  Continuous monitoring of Czech legal entities for changes.
+  Detects ownership transfers, insolvency filings, board changes,
+  and regulatory actions in near real-time.
+  &quot;&quot;&quot;
+
+  @spec monitor_entity(ico :: String.t(), opts :: keyword()) ::
+          {:ok, reference()} | {:error, term()}
+  def monitor_entity(ico, opts \\ []) do
+    registries = Keyword.get(opts, :registries, [:ares, :or, :insolvency])
+    interval = Keyword.get(opts, :interval, :timer.hours(6))
+    callback = Keyword.get(opts, :callback, &amp;default_callback/1)
+
+    schedule_checks(ico, registries, interval, callback)
+  end
+
+  defp default_callback(%{entity: entity, changes: changes}) do
+    PrismaticAgents.Mycelial.propagate(%{
+      source: :czech_autocrawler,
+      category: :entity_change,
+      payload: %{ico: entity.ico, changes: changes},
+      confidence: 0.98,
+      provenance: [:czech_registry_direct],
+      timestamp: DateTime.utc_now()
+    })
+  end
+end
+</code></pre>
+<h2 id="connection-to-434-aiad-agents">Connection to 434 AIAD Agents</h2>
+<p>The intelligence fusion system does not operate in isolation -- it is deeply integrated with the platform's <a href="https://prismatic-reality.com/agents/">434 AIAD agents</a>. These agents are organized into operational domains, each contributing specialized intelligence capabilities to the overall fusion process.</p>
+<h3 id="intelligence-relevant-agent-domains">Intelligence-Relevant Agent Domains</h3>
+<table><thead><tr><th>Domain</th><th>Agent Count</th><th>Intelligence Role</th><th>Key Agents</th></tr></thead><tbody>
+<tr><td><strong>OSINT Operations</strong></td><td>30+</td><td>Raw intelligence collection and extraction</td><td><a href="https://prismatic-reality.com/agents/ghost-recon-specialist/">Ghost Recon</a>, <a href="https://prismatic-reality.com/agents/delta-force-specialist/">Delta Force</a>, <a href="https://prismatic-reality.com/commands/navy-seal/">Navy SEAL</a></td></tr>
+<tr><td><strong>Czech Intelligence</strong></td><td>8</td><td>Czech legal and business data processing</td><td><a href="https://prismatic-reality.com/agents/czech-business-intelligence-specialist/">Czech Business Intelligence</a>, <a href="https://prismatic-reality.com/agents/czech-legal-intelligence-operative/">Czech Legal Intelligence</a></td></tr>
+<tr><td><strong>Financial Intelligence</strong></td><td>5</td><td>Financial data analysis and risk assessment</td><td><a href="https://prismatic-reality.com/agents/financial-intelligence-commander/">Financial Intelligence Commander</a>, <a href="https://prismatic-reality.com/agents/business-financial-intelligence-specialist/">Business Financial Specialist</a></td></tr>
+<tr><td><strong>Color Teams</strong></td><td>20</td><td>Adversarial validation and defense</td><td><a href="https://prismatic-reality.com/capabilities/color-teams/">Red Commander</a>, <a href="https://prismatic-reality.com/capabilities/color-teams/">Blue Commander</a>, <a href="https://prismatic-reality.com/capabilities/color-teams/">Purple Coordinator</a></td></tr>
+<tr><td><strong>Identity Intelligence</strong></td><td>4</td><td>Person identification and background analysis</td><td><a href="https://prismatic-reality.com/agents/identity-intelligence-commander/">Identity Intelligence Commander</a>, <a href="https://prismatic-reality.com/agents/email-intelligence-specialist/">Email Intelligence</a></td></tr>
+<tr><td><strong>Cross-Domain</strong></td><td>6</td><td>Multi-source correlation and synthesis</td><td><a href="https://prismatic-reality.com/agents/cross-domain-intelligence-coordinator/">Cross-Domain Intelligence Coordinator</a>, <a href="https://prismatic-reality.com/agents/intelligence-diffusion-coordinator-agent/">Intelligence Diffusion Coordinator</a></td></tr>
+</tbody></table>
+<h3 id="agent-orchestration-for-intelligence-tasks">Agent Orchestration for Intelligence Tasks</h3>
+<p>When a user issues an intelligence command -- such as <a href="https://prismatic-reality.com/commands/investigate/"><code>/investigate</code></a>, <a href="https://prismatic-reality.com/commands/ghost-recon/"><code>/ghost-recon</code></a>, or <a href="https://prismatic-reality.com/commands/email-osint/"><code>/email-osint</code></a> -- the platform's orchestrator activates the relevant agent constellation. Multiple agents work in parallel, each contributing their specialized capability to the overall investigation. Results are fused through the mycelial network and presented as a unified intelligence product with per-source confidence scores.</p>
+<pre><code data-lang="elixir"># Orchestrated investigation activating multiple agent domains
+{:ok, result} = PrismaticAgents.Orchestrator.execute(:investigate, %{
+  target: &quot;example-company&quot;,
+  target_type: :company,
+  depth: :deep,
+  domains: [:business, :legal, :financial, :network],
+  jurisdiction: :cz,
+  confidence_threshold: 0.80
+})
+
+# Result includes contributions from 12+ agents:
+# - Czech Business Intelligence Specialist (ARES, OR)
+# - Financial Intelligence Commander (financial analysis)
+# - Ghost Recon Specialist (network infrastructure)
+# - Email Intelligence Specialist (email domain analysis)
+# - Cross-Domain Intelligence Coordinator (fusion)
+</code></pre>
+<h2 id="environmental-grounding-engine-generation-19">Environmental Grounding Engine (Generation 19)</h2>
+<p>The most recent addition to the intelligence fusion architecture is the Environmental Grounding Engine, introduced in Generation 19 of the platform's autonomous evolution. Environmental Grounding addresses a fundamental limitation of intelligence systems: the tendency to build increasingly elaborate internal models that drift away from external reality.</p>
+<h3 id="the-grounding-problem">The Grounding Problem</h3>
+<p>Intelligence fusion systems face a subtle but critical failure mode. As the knowledge graph grows and internal models become more sophisticated, the system can develop a self-reinforcing worldview that appears consistent internally but no longer reflects reality. A company might be modeled as financially healthy based on historical data even though it filed for insolvency last week. A network address might be classified as belonging to one organization when it was reassigned months ago.</p>
+<p>Environmental Grounding solves this by establishing continuous bidirectional validation between the platform's internal knowledge graph and external reality anchors -- authoritative sources that represent ground truth for specific domains.</p>
+<h3 id="grounding-anchors">Grounding Anchors</h3>
+<p>The Environmental Grounding Engine maintains connections to external reality anchors organized by domain:</p>
+<p><strong>Legal Reality</strong>: Official government registries (ARES, Companies House, SEC EDGAR) that authoritatively define corporate existence and legal status.</p>
+<p><strong>Network Reality</strong>: DNS systems, BGP routing tables, and certificate transparency logs that define the current state of internet infrastructure.</p>
+<p><strong>Financial Reality</strong>: Stock exchanges, financial reporting databases, and credit rating agencies that reflect current financial status.</p>
+<p><strong>Temporal Reality</strong>: NTP-synchronized timestamps and blockchain-anchored temporal proofs that prevent temporal drift in the knowledge graph.</p>
+<h3 id="drift-detection-and-correction">Drift Detection and Correction</h3>
+<p>When the Environmental Grounding Engine detects divergence between the internal model and external reality, it triggers a grounding correction process:</p>
+<ol>
+<li><strong>Divergence Signal</strong>: The discrepancy is recorded as a divergence signal with the magnitude of the gap and the affected entities.</li>
+<li><strong>Impact Assessment</strong>: The <a href="https://prismatic-reality.com/apps/ai-drift/">AI Drift</a> subsystem evaluates how many downstream conclusions depend on the now-questionable internal belief.</li>
+<li><strong>Confidence Recalibration</strong>: Affected entities have their confidence scores reduced proportionally to the divergence magnitude.</li>
+<li><strong>Mycelial Propagation</strong>: The correction signal propagates through the mycelial network, alerting all agents that hold beliefs dependent on the corrected data.</li>
+<li><strong>Graph Update</strong>: The knowledge graph is updated with the externally validated data, preserving the previous belief as a historical observation.</li>
+</ol>
+<h3 id="grounding-metrics">Grounding Metrics</h3>
+<p>The platform continuously monitors grounding health across all knowledge domains:</p>
+<table><thead><tr><th>Metric</th><th>Target</th><th>Description</th></tr></thead><tbody>
+<tr><td><strong>Grounding Ratio</strong></td><td>&gt; 0.85</td><td>Fraction of entities with recent external validation</td></tr>
+<tr><td><strong>Divergence Rate</strong></td><td>&lt; 0.05</td><td>Rate of detected discrepancies per validation cycle</td></tr>
+<tr><td><strong>Correction Latency</strong></td><td>&lt; 1 hour</td><td>Time from divergence detection to graph correction</td></tr>
+<tr><td><strong>Cascade Depth</strong></td><td>&lt; 3 hops</td><td>Average depth of confidence recalibration cascades</td></tr>
+<tr><td><strong>Anchor Freshness</strong></td><td>&lt; 24 hours</td><td>Age of most recent anchor validation per domain</td></tr>
+</tbody></table>
+<h2 id="intelligence-fusion-in-practice">Intelligence Fusion in Practice</h2>
+<p>The true power of intelligence fusion emerges when all subsystems work together on a concrete analytical task. Consider a scenario where the platform receives a request to evaluate a Czech company as an acquisition target:</p>
+<ol>
+<li>
+<p><strong>Signal Acquisition</strong>: The <a href="https://prismatic-reality.com/apps/prismatic-czech-autocrawler/">Czech Autocrawler</a> retrieves corporate data from ARES and OR. The <a href="https://prismatic-reality.com/apps/prismatic-osint-sources/">OSINT pipeline</a> collects data from financial databases, news sources, and social media. The <a href="https://prismatic-reality.com/apps/prismatic-perimeter-core/">Perimeter engine</a> scans the company's external attack surface.</p>
+</li>
+<li>
+<p><strong>Extraction and Normalization</strong>: 55+ extraction patterns parse the raw data into structured entity signals. Czech-specific extractors handle ICO-based lookups, insolvency cross-references, and trade license validation.</p>
+</li>
+<li>
+<p><strong>Entity Resolution</strong>: The resolution engine matches signals across sources, building a unified entity graph. The company's directors appear in ARES data, court filings, LinkedIn profiles, and news articles -- all resolved to individual entity nodes.</p>
+</li>
+<li>
+<p><strong>Graph Analysis</strong>: KuzuDB queries reveal the full corporate structure: parent companies, subsidiaries, cross-holdings, shared directors with other entities, historical ownership changes.</p>
+</li>
+<li>
+<p><strong>Risk Assessment</strong>: HAWKEYE behavioral data is correlated with the company's web presence. Perimeter security ratings reveal the external security posture. Financial intelligence provides solvency analysis.</p>
+</li>
+<li>
+<p><strong>Environmental Grounding</strong>: All conclusions are validated against external reality anchors. The insolvency registry is checked one final time. Current DNS records confirm the company's web infrastructure is active.</p>
+</li>
+<li>
+<p><strong>Intelligence Product</strong>: The fused output is a comprehensive DD report with per-claim confidence scores, provenance chains, identified risks, and explicit uncertainty markers for areas where the platform could not achieve sufficient confidence.</p>
+</li>
+</ol>
+<p>This entire process executes through the coordinated action of dozens of agents, each contributing specialized capability, all connected through the mycelial intelligence network. The result is not just data -- it is epistemically grounded, provenance-tracked, contradiction-preserving intelligence.</p>
+<h2 id="summary">Summary</h2>
+<p>Intelligence Fusion is the operational core of the Prismatic Platform. It combines 250+ OSINT sources, mycelial knowledge propagation, entity resolution against KuzuDB, HAWKEYE visitor intelligence, Perimeter EASM, M&amp;A due diligence, Czech legal registry integration, 434 AIAD agents, and Generation 19 Environmental Grounding into a unified system that produces intelligence products with full epistemic accountability.</p>
+<p>Every signal is tracked from source to conclusion. Every contradiction is preserved. Every confidence score passes the Trinity Gate. The platform knows what it knows, knows what it does not know, and continuously validates its internal model against external reality.</p>
+<p>For detailed technical documentation on individual subsystems, see the linked application pages, agent specifications, and architectural references throughout this document.</p>
+
+            </div>
+        </div>
+
+        <!-- Doctrine Stats -->
+        <div class="flex flex-wrap justify-center gap-8 mt-12">
+            <div class="text-center">
+                <div class="text-4xl font-black text-red-500">100%</div>
+                <div class="text-sm text-gray-500 uppercase tracking-wider">Test Coverage</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-black text-yellow-500">0</div>
+                <div class="text-sm text-gray-500 uppercase tracking-wider">Warnings</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-black text-blue-500">0.95</div>
+                <div class="text-sm text-gray-500 uppercase tracking-wider">Confidence t</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-black text-purple-500">3</div>
+                <div class="text-sm text-gray-500 uppercase tracking-wider">Trinity Gates</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="bg-gray-900/50 py-8 border-b border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Related Commands</h3>
+        <div class="flex flex-wrap gap-2">
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/investigate/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /investigate
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/ghost-recon/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /ghost-recon
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/delta-force/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /delta-force
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/navy-seal/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /navy-seal
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/email-osint/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /email-osint
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/google-hacking/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /google-hacking
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/perimeter/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /perimeter
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/perimeter-easm/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /perimeter-easm
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/perimeter-compliance/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /perimeter-compliance
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/osint-engines/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /osint-engines
+            </a>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- Registry Section -->
+<section class="bg-white dark:bg-gray-950 py-12 lg:py-16" x-data="doctrineRegistry()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+
+        <!-- Stats Summary -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div
+                class="p-4 bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-200 dark:border-red-800 text-center">
+                <div class="text-3xl font-black text-red-600 dark:text-red-400" x-text="items.length">0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Doctrines</div>
+            </div>
+            <div
+                class="p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl border border-yellow-200 dark:border-yellow-800 text-center">
+                <div class="text-3xl font-black text-yellow-600 dark:text-yellow-400" x-text="uniqueColors">0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Categories</div>
+            </div>
+            <div
+                class="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 text-center">
+                <div class="text-3xl font-black text-blue-600 dark:text-blue-400">P0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Priority</div>
+            </div>
+            <div
+                class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800 text-center">
+                <div class="text-3xl font-black text-purple-600 dark:text-purple-400" x-text="filteredItems.length">0
+                </div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Showing</div>
+            </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="mb-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div class="flex flex-col lg:flex-row gap-4">
+                <!-- Search -->
+                <div class="flex-1">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                        <input type="text" x-model="searchTerm" @input="currentPage = 1"
+                            class="block w-full pl-10 pr-4 py-2.5 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+                            placeholder="Search doctrines, principles, frameworks...">
+                    </div>
+                </div>
+
+                <!-- Color/Category Filter -->
+                <div class="w-full lg:w-48">
+                    <select x-model="selectedColor" @change="currentPage = 1"
+                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="">All Categories</option>
+                        <template x-for="c in uniqueColorList" :key="c">
+                            <option :value="c" x-text="c.charAt(0).toUpperCase() + c.slice(1)"></option>
+                        </template>
+                    </select>
+                </div>
+
+                <!-- Sort -->
+                <div class="w-full lg:w-48">
+                    <select x-model="sortField"
+                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="title">Sort: Alphabetical</option>
+                        <option value="color">Sort: Category</option>
+                    </select>
+                </div>
+
+                <!-- View Toggle -->
+                <div
+                    class="flex items-center bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <button @click="viewMode = 'cards'"
+                        :class="viewMode === 'cards' ? 'bg-yellow-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg>
+                    </button>
+                    <button @click="viewMode = 'table'"
+                        :class="viewMode === 'table' ? 'bg-yellow-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Reset -->
+                <button @click="searchTerm = ''; selectedColor = ''; sortField = 'title'; currentPage = 1"
+                    class="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600">
+                    Reset
+                </button>
+            </div>
+
+            <div class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+                Showing <span class="font-semibold text-yellow-600 dark:text-yellow-400"
+                    x-text="paginatedItems.length"></span> of <span class="font-semibold"
+                    x-text="filteredItems.length"></span> doctrines
+            </div>
+        </div>
+
+        <!-- Card View -->
+        <div x-show="viewMode === 'cards'" x-transition class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <template x-for="item in paginatedItems" :key="item.title">
+                <a :href="item.url"
+                    class="group block p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:border-transparent transition-all duration-300 hover:-translate-y-1">
+                    <!-- Icon -->
+                    <div class="w-14 h-14 mb-5 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                        :class="getGradientBg(item.color)">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path x-show="item.icon === 'x-circle'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <path x-show="item.icon === 'check-circle'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <path x-show="item.icon === 'shield'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            <path x-show="item.icon === 'lightning'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            <path x-show="item.icon === 'eye'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path x-show="item.icon === 'eye'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            <path x-show="item.icon === 'cube'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                            <path x-show="item.icon === 'clock'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <path x-show="item.icon === 'refresh'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            <path x-show="item.icon === 'fire'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                            <path x-show="item.icon === 'scale'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                            <path x-show="item.icon === 'beaker'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            <path x-show="item.icon === 'document-text'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            <path
+                                x-show="!['x-circle','check-circle','shield','lightning','eye','cube','clock','refresh','fire','scale','beaker','document-text'].includes(item.icon)"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
+                        x-text="item.title"></h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-3"
+                        x-text="item.description"></p>
+                    <div
+                        class="mt-4 flex items-center text-sm font-medium text-gray-400 group-hover:text-blue-500 transition-colors">
+                        <span>Learn more</span>
+                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </a>
+            </template>
+        </div>
+
+        <!-- Table View -->
+        <div x-show="viewMode === 'table'" x-transition
+            class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-800 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="toggleSort('title')">
+                            <div class="flex items-center gap-2">
+                                Doctrine
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'title' && sortDesc}"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4">Description</th>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="toggleSort('color')">
+                            <div class="flex items-center gap-2">
+                                Category
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'color' && sortDesc}"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4 text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template x-for="item in paginatedItems" :key="item.title">
+                        <tr
+                            class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center"
+                                        :class="getGradientBg(item.color)">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        </svg>
+                                    </div>
+                                    <span class="font-semibold text-gray-900 dark:text-white"
+                                        x-text="item.title"></span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 max-w-md">
+                                <p class="truncate" x-text="item.description"></p>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-full capitalize"
+                                    :class="getCategoryBadge(item.color)" x-text="item.color"></span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <a :href="item.url"
+                                    class="font-medium text-yellow-600 dark:text-yellow-400 hover:underline">View</a>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Empty State -->
+        <div x-show="filteredItems.length === 0" class="text-center py-16">
+            <svg class="w-16 h-16 mx-auto text-gray-300 dark:text-gray-600 mb-4" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p class="text-gray-500 dark:text-gray-400 text-lg">No doctrines match your search criteria.</p>
+        </div>
+
+        <!-- Pagination -->
+        <div x-show="totalPages > 1" class="flex flex-col md:flex-row items-center justify-between mt-8 gap-4">
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+                Page <span class="font-semibold" x-text="currentPage"></span> of <span class="font-semibold"
+                    x-text="totalPages"></span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button @click="currentPage = Math.max(1, currentPage - 1)" :disabled="currentPage === 1"
+                    :class="{'opacity-50 cursor-not-allowed': currentPage === 1}"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    Previous
+                </button>
+                <template x-for="page in visiblePages" :key="page">
+                    <button @click="currentPage = page"
+                        :class="currentPage === page ? 'bg-yellow-600 text-white border-yellow-600' : 'bg-white text-gray-700 border-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600'"
+                        class="px-4 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                        x-text="page">
+                    </button>
+                </template>
+                <button @click="currentPage = Math.min(totalPages, currentPage + 1)"
+                    :disabled="currentPage === totalPages"
+                    :class="{'opacity-50 cursor-not-allowed': currentPage === totalPages}"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    Next
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Doctrine Integration -->
+<section class="bg-gray-50 dark:bg-gray-800 py-16 border-t border-gray-200 dark:border-gray-700">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Doctrine Integration</h2>
+            <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                Every layer of the platform enforces these doctrines through automated gates and verification.
+            </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-4">
+            <div
+                class="text-center p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 mx-auto mb-3 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Pre-Commit</h4>
+                <p class="text-sm text-gray-500">Quality gates block violations</p>
+            </div>
+            <div
+                class="text-center p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 mx-auto mb-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">CI/CD</h4>
+                <p class="text-sm text-gray-500">Pipeline enforcement</p>
+            </div>
+            <div
+                class="text-center p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 mx-auto mb-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Agent AIAD</h4>
+                <p class="text-sm text-gray-500">Runtime compliance</p>
+            </div>
+            <div
+                class="text-center p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 mx-auto mb-3 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Trinity Gate</h4>
+                <p class="text-sm text-gray-500">Formal verification</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function doctrineRegistry() {
+        return {
+            searchTerm: '',
+            selectedColor: '',
+            sortField: 'title',
+            sortDesc: false,
+            viewMode: 'cards',
+            currentPage: 1,
+            perPage: 12,
+            items: [
+                
+        ],
+
+        get uniqueColors() {
+            return [...new Set(this.items.map(i => i.color))].length;
+        },
+        get uniqueColorList() {
+            return [...new Set(this.items.map(i => i.color))].sort();
+        },
+        get filteredItems() {
+            let result = [...this.items];
+            if (this.searchTerm) {
+                const q = this.searchTerm.toLowerCase();
+                result = result.filter(i =>
+                    i.title.toLowerCase().includes(q) ||
+                    i.description.toLowerCase().includes(q)
+                );
+            }
+            if (this.selectedColor) {
+                result = result.filter(i => i.color === this.selectedColor);
+            }
+            result.sort((a, b) => {
+                let av = a[this.sortField], bv = b[this.sortField];
+                if (typeof av === 'string') { av = av.toLowerCase(); bv = bv.toLowerCase(); }
+                if (this.sortDesc) return bv > av ? 1 : bv < av ? -1 : 0;
+                return av > bv ? 1 : av < bv ? -1 : 0;
+            });
+            return result;
+        },
+        get paginatedItems() {
+            const start = (this.currentPage - 1) * this.perPage;
+            return this.filteredItems.slice(start, start + this.perPage);
+        },
+        get totalPages() {
+            return Math.ceil(this.filteredItems.length / this.perPage) || 1;
+        },
+        get visiblePages() {
+            const pages = [];
+            const total = this.totalPages;
+            const current = this.currentPage;
+            let start = Math.max(1, current - 2);
+            let end = Math.min(total, current + 2);
+            if (end - start < 4) {
+                if (start === 1) end = Math.min(total, 5);
+                else start = Math.max(1, total - 4);
+            }
+            for (let i = start; i <= end; i++) pages.push(i);
+            return pages;
+        },
+        toggleSort(field) {
+            if (this.sortField === field) this.sortDesc = !this.sortDesc;
+            else { this.sortField = field; this.sortDesc = false; }
+            this.currentPage = 1;
+        },
+        getGradientBg(color) {
+            const map = {
+                red: 'bg-gradient-to-br from-red-500 to-red-600',
+                blue: 'bg-gradient-to-br from-blue-500 to-blue-600',
+                purple: 'bg-gradient-to-br from-purple-500 to-purple-600',
+                emerald: 'bg-gradient-to-br from-emerald-500 to-emerald-600',
+                yellow: 'bg-gradient-to-br from-yellow-500 to-yellow-600',
+                cyan: 'bg-gradient-to-br from-cyan-500 to-cyan-600',
+                pink: 'bg-gradient-to-br from-pink-500 to-pink-600',
+                orange: 'bg-gradient-to-br from-orange-500 to-orange-600',
+                indigo: 'bg-gradient-to-br from-indigo-500 to-indigo-600'
+            };
+            return map[color] || 'bg-gradient-to-br from-gray-500 to-gray-600';
+        },
+        getCategoryBadge(color) {
+            const map = {
+                red: 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
+                blue: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+                purple: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
+                emerald: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400',
+                yellow: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400',
+                cyan: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400',
+                pink: 'bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400',
+                orange: 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400',
+                indigo: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400'
+            };
+            return map[color] || 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300';
+        }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/platform/" class="text-gray-400 hover:text-white transition-colors">Overview</a>
+                        </li>
+                        <li><a href="/apps/" class="text-gray-400 hover:text-white transition-colors">Applications (89)</a></li>
+                        <li><a href="/agents/" class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products & Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Products & Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/products/" class="text-gray-400 hover:text-white transition-colors">Products</a>
+                        </li>
+                        <li><a href="/osint/" class="text-gray-400 hover:text-white transition-colors">OSINT Sources
+                                (121+)</a></li>
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="/solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a>
+                        </li>
+                        <li><a href="/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a>
+                        </li>
+                        <li><a href="/faq/" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-white bg-blue-600 rounded-xl shadow-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-110 focus:ring-4 focus:ring-blue-300 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="/js/vendor/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Back to Top button
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>FAQ - Prismatic Platform</title>
+
+    
+    <meta name="description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;faq&#x2F;">
+
+    
+    <meta property="og:title" content="FAQ - Prismatic Platform">
+    <meta name="twitter:title" content="FAQ - Prismatic Platform">
+    
+
+    <meta property="og:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+
+    
+    
+    <meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;sections&#x2F;faq.png">
+    <meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;sections&#x2F;faq.png">
+    
+
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Prismatic Platform">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;faq&#x2F;">
+    <meta name="twitter:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta name="twitter:creator" content="@korczis">
+    
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;faq&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- ANTIGRAVITY CSS - Single source of truth for colors -->
+    <link rel="stylesheet" href="/css/antigravity.css">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    <!-- Chart.js -->
+    <script src="/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Three.js (3D visualizations) -->
+    <script src="/js/vendor/three.min.js"></script>
+    <script src="/js/vendor/OrbitControls.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+        (function () {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 space-x-3">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    <li>
+                        <a href="/platform/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                    </li>
+                    <li>
+                        <a href="/products/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                    </li>
+                    <li>
+                        <a href="/capabilities/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            x-cloak>
+                            <a href="/apps/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                (89)</a>
+                            <a href="/agents/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                (430)</a>
+                            <a href="/architecture/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                            <a href="/technologies/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/commands/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                            <a href="/teams/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                Teams</a>
+                            <a href="/solutions/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                            <a href="/registry/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/glossary/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                            <a href="/faq/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<div x-data="faqApp()" x-cloak>
+    <!-- Hero Section -->
+    <section class="bg-gray-950 py-16 lg:py-24 border-b border-gray-800">
+        <div class="max-w-screen-xl mx-auto px-4">
+            <div class="mb-8">
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium tracking-wide text-rose-400 bg-rose-500/10 rounded-full border border-rose-500/20">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span x-text="allItems.length + ' Questions Answered'"></span>
+                </div>
+
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                    Frequently Asked Questions
+                </h1>
+
+                <p class="text-lg text-gray-300 max-w-3xl mb-10 font-light">
+                    Everything you need to know about the Prismatic Platform
+                </p>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="max-w-2xl relative">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+                <input type="text" x-model="searchQuery"
+                    placeholder="Search questions... (e.g., agents, security, OSINT)"
+                    class="w-full pl-12 pr-12 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent text-sm" />
+                <button x-show="searchQuery.length > 0" @click="searchQuery = ''"
+                    class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Result Count -->
+            <div class="mt-4 text-sm text-gray-400" x-show="searchQuery.length > 0">
+                <span x-text="filteredItems.length"></span> result<span x-show="filteredItems.length !== 1">s</span>
+                found
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section
+        class="sticky top-16 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-screen-xl mx-auto px-4 py-3">
+            <div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">
+                <button @click="activeCategory = 'all'"
+                    :class="activeCategory === 'all'
+                        ? 'bg-rose-600 text-white border-rose-600'
+                        : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-rose-400 hover:text-rose-600 dark:hover:text-rose-400'"
+                    class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium border rounded-full whitespace-nowrap transition-all duration-200">
+                    All
+                    <span
+                        :class="activeCategory === 'all' ? 'bg-rose-700 text-rose-100' : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400'"
+                        class="px-1.5 py-0.5 text-xs font-bold rounded-full" x-text="allItems.length"></span>
+                </button>
+
+                <template x-for="cat in categories" :key="cat.id">
+                    <button @click="activeCategory = cat.id"
+                        :class="activeCategory === cat.id
+                            ? cat.activeClass
+                            : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-rose-400 hover:text-rose-600 dark:hover:text-rose-400'"
+                        class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium border rounded-full whitespace-nowrap transition-all duration-200">
+                        <span x-text="cat.label"></span>
+                        <span
+                            :class="activeCategory === cat.id ? cat.badgeActiveClass : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400'"
+                            class="px-1.5 py-0.5 text-xs font-bold rounded-full"
+                            x-text="getCategoryCount(cat.id)"></span>
+                    </button>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="py-12 bg-gray-50 dark:bg-gray-900 min-h-screen">
+        <div class="max-w-4xl mx-auto px-4">
+
+            <!-- No Results -->
+            <div x-show="filteredItems.length === 0" class="text-center py-20">
+                <div
+                    class="w-20 h-20 mx-auto mb-6 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
+                    <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-700 dark:text-gray-300 mb-2">No questions match your search</h3>
+                <p class="text-gray-500 dark:text-gray-400 mb-6">Try adjusting your search terms or clearing filters.
+                </p>
+                <button @click="searchQuery = ''; activeCategory = 'all'"
+                    class="px-6 py-2.5 bg-rose-600 text-white rounded-lg hover:bg-rose-700 transition-colors font-medium">
+                    Clear all filters
+                </button>
+            </div>
+
+            <!-- Accordion Items -->
+            <div class="space-y-3" x-show="filteredItems.length > 0">
+                <template x-for="item in filteredItems" :key="item.id">
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200">
+                        <!-- Question Header -->
+                        <button @click="toggleItem(item.id)"
+                            class="flex items-start justify-between w-full px-6 py-5 text-left">
+                            <div class="flex-1 pr-4">
+                                <div class="flex flex-wrap items-center gap-2 mb-2">
+                                    <span class="px-2 py-0.5 text-xs font-semibold rounded-full"
+                                        :class="getCategoryStyle(item.category)"
+                                        x-text="getCategoryLabel(item.category)"></span>
+                                    <span class="text-xs text-gray-400 dark:text-gray-500"
+                                        x-text="'#' + item.id"></span>
+                                </div>
+                                <h3 class="text-base md:text-lg font-semibold text-gray-900 dark:text-white"
+                                    x-text="item.question"></h3>
+                            </div>
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 transition-transform duration-300"
+                                    :class="openItem === item.id ? 'rotate-180' : ''" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </button>
+
+                        <!-- Answer Body -->
+                        <div x-show="openItem === item.id" x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 -translate-y-2"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-in duration-150"
+                            x-transition:leave-start="opacity-100 translate-y-0"
+                            x-transition:leave-end="opacity-0 -translate-y-2" class="px-6 pb-6">
+                            <div class="border-t border-gray-100 dark:border-gray-700 pt-4">
+                                <div class="format format-sm dark:format-invert prose prose-sm dark:prose-invert max-w-none text-gray-600 dark:text-gray-300 leading-relaxed"
+                                    x-html="item.answer"></div>
+
+                                <!-- Tags -->
+                                <div
+                                    class="flex flex-wrap gap-1.5 mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                                    <template x-for="tag in item.tags" :key="tag">
+                                        <button @click="searchQuery = tag"
+                                            class="px-2.5 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-md hover:bg-rose-100 hover:text-rose-700 dark:hover:bg-rose-900/30 dark:hover:text-rose-400 transition-colors cursor-pointer"
+                                            x-text="tag"></button>
+                                    </template>
+                                </div>
+
+                                <!-- Was this helpful? -->
+                                <div
+                                    class="flex items-center gap-4 mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+                                    <span class="text-sm text-gray-500 dark:text-gray-400">Was this helpful?</span>
+                                    <button @click="markHelpful(item.id, true)"
+                                        :class="helpfulness[item.id] === true ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 border-green-300 dark:border-green-700' : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-600 hover:border-green-400 hover:text-green-600'"
+                                        class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium border rounded-lg transition-all duration-200">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
+                                        </svg>
+                                        Yes
+                                    </button>
+                                    <button @click="markHelpful(item.id, false)"
+                                        :class="helpfulness[item.id] === false ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 border-red-300 dark:border-red-700' : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-600 hover:border-red-400 hover:text-red-600'"
+                                        class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium border rounded-lg transition-all duration-200">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M10 14H5.236a2 2 0 01-1.789-2.894l3.5-7A2 2 0 018.736 3h4.018a2 2 0 01.485.06l3.76.94m-7 10v5a2 2 0 002 2h.096c.5 0 .905-.405.905-.904 0-.715.211-1.413.608-2.008L17 13V4m-7 10h2m5-10h2a2 2 0 012 2v6a2 2 0 01-2 2h-2.5" />
+                                        </svg>
+                                        No
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <!-- Stats Bar -->
+            <div x-show="filteredItems.length > 0"
+                class="mt-12 p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div>
+                        <div class="text-2xl font-bold text-rose-600 dark:text-rose-400" x-text="allItems.length"></div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Total Questions</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-purple-600 dark:text-purple-400" x-text="categories.length">
+                        </div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Categories</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-blue-600 dark:text-blue-400" x-text="getAllTags().length">
+                        </div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Unique Tags</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">24/7</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400 mt-1">Always Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    function faqApp() {
+        return {
+            searchQuery: '',
+            activeCategory: 'all',
+            openItem: null,
+            helpfulness: {},
+
+            categories: [
+                { id: 'general', label: 'General', activeClass: 'bg-rose-600 text-white border-rose-600', badgeActiveClass: 'bg-rose-700 text-rose-100' },
+                { id: 'architecture', label: 'Architecture', activeClass: 'bg-purple-600 text-white border-purple-600', badgeActiveClass: 'bg-purple-700 text-purple-100' },
+                { id: 'ai-agents', label: 'AI & Agents', activeClass: 'bg-blue-600 text-white border-blue-600', badgeActiveClass: 'bg-blue-700 text-blue-100' },
+                { id: 'security', label: 'Security', activeClass: 'bg-red-600 text-white border-red-600', badgeActiveClass: 'bg-red-700 text-red-100' },
+                { id: 'data', label: 'Data & OSINT', activeClass: 'bg-emerald-600 text-white border-emerald-600', badgeActiveClass: 'bg-emerald-700 text-emerald-100' },
+                { id: 'development', label: 'Development', activeClass: 'bg-amber-600 text-white border-amber-600', badgeActiveClass: 'bg-amber-700 text-amber-100' },
+                { id: 'deployment', label: 'Deployment', activeClass: 'bg-cyan-600 text-white border-cyan-600', badgeActiveClass: 'bg-cyan-700 text-cyan-100' },
+                { id: 'advanced', label: 'Advanced', activeClass: 'bg-indigo-600 text-white border-indigo-600', badgeActiveClass: 'bg-indigo-700 text-indigo-100' },
+            ],
+
+            allItems: [
+                // === GENERAL (8) ===
+                {
+                    id: 1,
+                    question: 'What is the Prismatic Platform?',
+                    answer: 'Prismatic is an <strong>enterprise-grade AI-orchestrated intelligence and development platform</strong> built with Elixir/OTP. It features <strong>430 autonomous agents</strong>, <strong>89 umbrella applications</strong>, <strong>121+ OSINT source integrations</strong>, and a self-evolving architecture achieving Generation 18 with a <strong>0.999 fitness score</strong>.',
+                    category: 'general',
+                    tags: ['platform', 'overview', 'elixir', 'agents']
+                },
+                {
+                    id: 2,
+                    question: 'What programming language is Prismatic built with?',
+                    answer: 'Prismatic is built primarily with <strong>Elixir</strong> running on the <strong>BEAM (Erlang VM)</strong>. The platform leverages <strong>OTP</strong> for fault tolerance, <strong>Phoenix/LiveView</strong> for real-time web interfaces, and integrates with PostgreSQL, Redis, Meilisearch, KuzuDB, and multiple AI providers.',
+                    category: 'general',
+                    tags: ['elixir', 'beam', 'otp', 'phoenix', 'tech-stack']
+                },
+                {
+                    id: 3,
+                    question: 'What does "NO MERCY, NO DOUBTS" mean?',
+                    answer: 'It is the platform\'s <strong>universal doctrine</strong>.<br><br><strong>NO MERCY</strong> means zero tolerance for incomplete implementations, untested code, or quality violations. Every line of code must be production-ready from the moment of creation.<br><br><strong>NO DOUBTS</strong> means every action is evidence-based with full investigation before execution. Once a decision is made, it is executed with full commitment.',
+                    category: 'general',
+                    tags: ['doctrine', 'no-mercy', 'no-doubts', 'quality', 'philosophy']
+                },
+                {
+                    id: 4,
+                    question: 'How many applications does the platform have?',
+                    answer: '<strong>89 umbrella applications</strong> organized in a monorepo structure under the <code>apps/</code> directory. Each application has a specific domain responsibility, from storage adapters to OSINT integration to AI orchestration.',
+                    category: 'general',
+                    tags: ['applications', 'umbrella', 'monorepo', 'structure']
+                },
+                {
+                    id: 5,
+                    question: 'What is the platform\'s quality score?',
+                    answer: 'The platform maintains a <strong>perfect 100/100 quality score</strong> across 13 quality domains including Dialyzer, Credo, compilation warnings, typespec coverage, memory safety, performance, timing patterns, and more. Zero violations across all domains.',
+                    category: 'general',
+                    tags: ['quality', 'score', 'dialyzer', 'credo']
+                },
+                {
+                    id: 6,
+                    question: 'Is Prismatic open source?',
+                    answer: 'The platform is <strong>proprietary</strong>, but this documentation site showcases its architecture, capabilities, and design philosophy for educational and portfolio purposes.',
+                    category: 'general',
+                    tags: ['open-source', 'licensing', 'proprietary']
+                },
+                {
+                    id: 7,
+                    question: 'What is the AIAD standard?',
+                    answer: '<strong>AI Agent Definition (AIAD)</strong> is the platform\'s standard format for defining agents, commands, pipelines, and policies. All 430 agents follow this specification with YAML frontmatter defining capabilities, tools, authority levels, and behavioral rules.',
+                    category: 'general',
+                    tags: ['aiad', 'agents', 'standard', 'yaml', 'specification']
+                },
+                {
+                    id: 8,
+                    question: 'What generation is the platform currently on?',
+                    answer: '<strong>Generation 18</strong>, with a fitness score of <strong>0.999</strong> (near-maximum). The platform self-evolves through autonomous evolution protocols triggered in every development session, having progressed from Gen 1 through 18 generations of improvement.',
+                    category: 'general',
+                    tags: ['generation', 'evolution', 'fitness', 'autonomous']
+                },
+
+                // === ARCHITECTURE (8) ===
+                {
+                    id: 9,
+                    question: 'Why Elixir/OTP instead of other languages?',
+                    answer: 'Elixir/OTP provides critical capabilities:<ol class="list-decimal ml-5 mt-2 space-y-1"><li><strong>Process-level isolation</strong> for fault tolerance</li><li><strong>Built-in distribution</strong> for clustering</li><li><strong>Supervisor trees</strong> for self-healing</li><li><strong>BEAM VM preemptive scheduling</strong> for 400+ concurrent agents</li><li><strong>Pattern matching</strong> for clean data transformation</li><li><strong>Hot code reload</strong> for zero-downtime updates</li></ol><br>The meta-rule: <em>"If the same solution could be written identically in Node.js, it\'s WRONG."</em>',
+                    category: 'architecture',
+                    tags: ['elixir', 'otp', 'beam', 'fault-tolerance', 'concurrency']
+                },
+                {
+                    id: 10,
+                    question: 'How is the application structured?',
+                    answer: 'As an <strong>Elixir umbrella project</strong> with 90 apps. Core apps include:<ul class="list-disc ml-5 mt-2 space-y-1"><li><code>prismatic_storage_core</code> &mdash; Traits, protocols, behaviors</li><li><code>prismatic</code> &mdash; Main API, coordination</li><li><code>prismatic_api</code> &mdash; Auto-introspecting REST gateway</li><li><code>prismatic_web</code> &mdash; LiveView dashboards (port 4000)</li><li><code>prismatic_agents</code> &mdash; Agent runtime (370 agents)</li></ul><br>Plus domain-specific apps for OSINT, security, AI, perimeter, and more.',
+                    category: 'architecture',
+                    tags: ['umbrella', 'structure', 'apps', 'monorepo']
+                },
+                {
+                    id: 11,
+                    question: 'What databases does Prismatic use?',
+                    answer: '<ul class="list-disc ml-5 space-y-1"><li><strong>PostgreSQL</strong> &mdash; Primary relational database</li><li><strong>ETS</strong> &mdash; In-memory storage (Erlang Term Storage)</li><li><strong>Redis</strong> &mdash; Caching layer</li><li><strong>Meilisearch</strong> &mdash; Full-text search engine</li><li><strong>KuzuDB</strong> &mdash; Graph database for relationship intelligence</li><li><strong>TimescaleDB</strong> &mdash; Time-series data for telemetry</li></ul>',
+                    category: 'architecture',
+                    tags: ['database', 'postgresql', 'ets', 'redis', 'meilisearch', 'kuzudb']
+                },
+                {
+                    id: 12,
+                    question: 'How does the auto-introspecting API work?',
+                    answer: '<strong>PrismaticAPI</strong> scans all <code>Prismatic*</code> facade modules at boot time using Elixir introspection (<code>Code.fetch_docs/1</code>, <code>Code.Typespec.fetch_specs/1</code>). It automatically generates <strong>OpenAPI 3.0 endpoints</strong> for every public function with zero manual configuration, using a single generic dispatch controller. Full Swagger UI available at <code>/api/swaggerui</code>.',
+                    category: 'architecture',
+                    tags: ['api', 'introspection', 'openapi', 'rest', 'swagger']
+                },
+                {
+                    id: 13,
+                    question: 'What is the SEADF framework?',
+                    answer: '<strong>Self-Evolving Autonomous Development Framework</strong> with 7 subsystems:<ol class="list-decimal ml-5 mt-2 space-y-1"><li>Scanner</li><li>Pipeline</li><li>Quality Guardian</li><li>Knowledge Sync</li><li>Cross-Domain Innovator</li><li>Autonomous Reporter</li><li>Enhanced Healing (5-level)</li></ol>',
+                    category: 'architecture',
+                    tags: ['seadf', 'framework', 'autonomous', 'self-evolving']
+                },
+                {
+                    id: 14,
+                    question: 'How does the platform handle fault tolerance?',
+                    answer: 'Through multiple layers:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>OTP supervision trees</strong> for automatic process restart</li><li><strong>Circuit breakers</strong> (15+ per-service) to prevent cascade failures</li><li><strong>Bulkhead isolation</strong> (3 pools) for resource protection</li><li><strong>Retry strategies</strong> with exponential backoff</li><li><strong>Fallback chains</strong> for graceful degradation</li><li><strong>Chaos engineering</strong> experiments for resilience testing</li></ul><br>Achieves a <strong>99.8% automatic recovery rate</strong>.',
+                    category: 'architecture',
+                    tags: ['fault-tolerance', 'otp', 'circuit-breaker', 'resilience', 'supervision']
+                },
+                {
+                    id: 15,
+                    question: 'What is the epistemic pipeline?',
+                    answer: 'A <strong>16-level processing pipeline</strong> (L0-L13 + Meta + Consciousness) that all information passes through. It ensures:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>Signal plurality</strong> &mdash; minimum 2 independent signals for belief</li><li><strong>Contradiction preservation</strong> &mdash; both sides of conflicts retained</li><li><strong>Source independence</strong> &mdash; independent sources weighted higher</li><li><strong>Provenance tracking</strong> &mdash; all beliefs are traceable to origin</li></ul>',
+                    category: 'architecture',
+                    tags: ['epistemic', 'pipeline', 'nabla', 'signals', 'processing']
+                },
+                {
+                    id: 16,
+                    question: 'How does hot code reload work in production?',
+                    answer: 'The <strong>BEAM VM</strong> supports replacing modules in running processes without stopping them. Combined with <strong>Fly.io rolling deployments</strong>, the platform can upgrade code without dropping connections or losing state. WebSocket connections gracefully migrate, and state persisted in PostgreSQL/ETS survives restarts.',
+                    category: 'architecture',
+                    tags: ['hot-reload', 'beam', 'deployment', 'zero-downtime']
+                },
+
+                // === AI & AGENTS (10) ===
+                {
+                    id: 17,
+                    question: 'How many agents does the platform have?',
+                    answer: '<strong>404 AIAD-defined agents</strong> (434 including runtime-generated ones). They span <strong>14 domains</strong> including OSINT, security, quality, evolution, color-team operations, and more.',
+                    category: 'ai-agents',
+                    tags: ['agents', 'aiad', 'count', 'domains']
+                },
+                {
+                    id: 18,
+                    question: 'What AI models does Prismatic use?',
+                    answer: '<ul class="list-disc ml-5 space-y-1"><li><strong>Claude (Anthropic)</strong> &mdash; Complex reasoning and orchestration</li><li><strong>Local Ollama models:</strong><ul class="list-disc ml-5 mt-1 space-y-0.5"><li><code>qwen3-coder</code> (7B) &mdash; Fast code generation, &lt;3s response</li><li><code>gpt-oss:20b</code> (20B) &mdash; General purpose, &lt;5s response</li><li><code>deepseek-coder</code> (6.7B) &mdash; Code-focused, &lt;3s response</li></ul></li></ul><br>The system auto-falls back to cloud when local quality drops below threshold.',
+                    category: 'ai-agents',
+                    tags: ['ai', 'models', 'claude', 'ollama', 'llm']
+                },
+                {
+                    id: 19,
+                    question: 'What is an AIAD agent?',
+                    answer: 'An <strong>AI Agent Definition</strong> specifying:<ul class="list-disc ml-5 mt-2 space-y-1"><li>Name, description, and domain</li><li>Authority level (L1-L5)</li><li>Available tools and capabilities</li><li>Behavioral rules and constraints</li><li>Input/output contracts</li><li>NM/ND enforcement compliance</li></ul><br>Defined in YAML files under <code>.aiad/agents/</code>.',
+                    category: 'ai-agents',
+                    tags: ['aiad', 'agent', 'definition', 'yaml', 'specification']
+                },
+                {
+                    id: 20,
+                    question: 'How do agents communicate?',
+                    answer: 'Through multiple channels:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>Phoenix PubSub</strong> for real-time event broadcasting</li><li><strong>ETS</strong> for shared state access</li><li><strong>Structured message protocol</strong> for typed inter-agent communication</li></ul><br>Agents can spawn sub-agents, emit telemetry events, and coordinate through the orchestrator.',
+                    category: 'ai-agents',
+                    tags: ['communication', 'pubsub', 'ets', 'telemetry', 'orchestration']
+                },
+                {
+                    id: 21,
+                    question: 'What authority levels do agents have?',
+                    answer: '<ul class="list-disc ml-5 space-y-1"><li><strong>L1</strong> &mdash; Task Execution (individual task completion)</li><li><strong>L2</strong> &mdash; Tactical Operations (coordinated multi-step work)</li><li><strong>L3</strong> &mdash; Strategic Command (domain-level decision making)</li><li><strong>L4</strong> &mdash; Domain Authority (cross-domain coordination)</li><li><strong>L5</strong> &mdash; Supreme Authority (platform-wide override capability)</li></ul><br>Higher levels can override lower-level decisions when necessary.',
+                    category: 'ai-agents',
+                    tags: ['authority', 'levels', 'hierarchy', 'permissions']
+                },
+                {
+                    id: 22,
+                    question: 'What is the NABLA Infinity framework?',
+                    answer: 'The platform\'s <strong>epistemic framework</strong> with 7 non-negotiable axioms:<ol class="list-decimal ml-5 mt-2 space-y-1"><li><strong>Signal Plurality</strong> &mdash; Minimum 2 signals for any belief</li><li><strong>Contradiction Evidence</strong> &mdash; Preserve both sides, never discard</li><li><strong>Absence Informative</strong> &mdash; Missing signals are tracked</li><li><strong>Time Decay</strong> &mdash; Mandatory timestamps on all data</li><li><strong>Unknown Valid</strong> &mdash; "I don\'t know" is a valid response</li><li><strong>Source Independence</strong> &mdash; Independent sources weighted higher</li><li><strong>Provenance Mandatory</strong> &mdash; All beliefs traceable to origin</li></ol>',
+                    category: 'ai-agents',
+                    tags: ['nabla', 'epistemic', 'axioms', 'framework', 'beliefs']
+                },
+                {
+                    id: 23,
+                    question: 'How does the Trinity Gate work?',
+                    answer: 'Three checks that <strong>ALL must pass</strong>:<ol class="list-decimal ml-5 mt-2 space-y-1"><li><strong>Structural Consistency</strong> via graph theory &mdash; validates data structure integrity</li><li><strong>Logical Consistency</strong> via rule-based validation &mdash; checks logical coherence</li><li><strong>Formal Necessity</strong> via modal logic and Lean4 proofs &mdash; ensures formal correctness</li></ol><br>If any gate fails, the operation is halted for review.',
+                    category: 'ai-agents',
+                    tags: ['trinity-gate', 'validation', 'consistency', 'lean4', 'proofs']
+                },
+                {
+                    id: 24,
+                    question: 'What is consciousness in the platform context?',
+                    answer: '<strong>11 emergent traits</strong> (0.998 fitness) manifesting as self-awareness, decision reflection, and autonomous evolution. This is <strong>computational metacognition</strong>, not sentience. The system models its own state, reflects on decisions, and adapts its behavior based on outcomes. It enables the platform to improve itself across generations.',
+                    category: 'ai-agents',
+                    tags: ['consciousness', 'metacognition', 'self-awareness', 'traits']
+                },
+                {
+                    id: 25,
+                    question: 'How does Ollama integration work?',
+                    answer: 'Ollama runs locally providing:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>&lt;3s response times</strong> for most queries</li><li><strong>&lt;8GB memory</strong> usage</li><li><strong>&gt;99% uptime</strong></li></ul><br>Models are managed through the <strong>Ollama Coordinator Agent</strong> with automatic cloud fallback when accuracy drops below 85%. Configuration via environment variables for seamless switching.',
+                    category: 'ai-agents',
+                    tags: ['ollama', 'local-ai', 'models', 'performance']
+                },
+                {
+                    id: 26,
+                    question: 'What is the agent evolution process?',
+                    answer: 'Each development session triggers autonomous evolution:<ol class="list-decimal ml-5 mt-2 space-y-1"><li><strong>Baseline capture</strong> &mdash; Current state snapshot</li><li><strong>Quality gate checks</strong> &mdash; Verify platform health</li><li><strong>Autoevolve scans</strong> &mdash; Detect improvement opportunities</li><li><strong>Mega-evolution cycles</strong> &mdash; Apply and validate improvements</li></ol><br>The platform has evolved from <strong>Gen 1 to Gen 18</strong> through this continuous process.',
+                    category: 'ai-agents',
+                    tags: ['evolution', 'autonomous', 'generation', 'improvement']
+                },
+
+                // === SECURITY (8) ===
+                {
+                    id: 27,
+                    question: 'What are Color Teams?',
+                    answer: 'Six specialized security teams with <strong>20 agents</strong> total:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong class="text-gray-600 dark:text-gray-300">Gray</strong> &mdash; Boundary exploration and edge case discovery</li><li><strong class="text-red-600 dark:text-red-400">Red</strong> &mdash; Adversarial simulation (synthetic data only)</li><li><strong class="text-blue-600 dark:text-blue-400">Blue</strong> &mdash; Defensive posture and drift detection</li><li><strong class="text-purple-600 dark:text-purple-400">Purple</strong> &mdash; Synthesis, Red-Blue loop closure</li><li><strong>White</strong> &mdash; Constructive verification and formal proofs</li><li><strong>Black</strong> &mdash; Theoretical threat modeling (maximum isolation)</li></ul>',
+                    category: 'security',
+                    tags: ['color-teams', 'security', 'red-team', 'blue-team', 'adversarial']
+                },
+                {
+                    id: 28,
+                    question: 'How does the Red Team work?',
+                    answer: 'Red Team simulates epistemic attacks using <strong>5 primitives</strong>:<ol class="list-decimal ml-5 mt-2 space-y-1"><li><strong>Truth distortion</strong></li><li><strong>Confidence manipulation</strong></li><li><strong>Signal poisoning</strong></li><li><strong>Drift induction</strong></li><li><strong>Salience hijacking</strong></li></ol><br>All operations are <strong>fully sandboxed</strong> with synthetic data only. No real data, no network access, no production state. Scenarios drawn from a 329-entry taxonomy.',
+                    category: 'security',
+                    tags: ['red-team', 'adversarial', 'simulation', 'epistemic', 'attacks']
+                },
+                {
+                    id: 29,
+                    question: 'What is Prismatic Perimeter (EASM)?',
+                    answer: '<strong>External Attack Surface Management</strong> module competing with BitSight and SecurityScorecard. Features:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>A-F security ratings</strong> (300-900 numeric scores)</li><li><strong>Asset discovery</strong> &mdash; domains, IPs, certificates, cloud resources, services</li><li><strong>NIS2/ZKB compliance</strong> assessment</li><li><strong>Evidence-based risk scoring</strong> with confidence levels</li><li><strong>Real-time LiveView dashboard</strong> at <code>/perimeter</code></li></ul>',
+                    category: 'security',
+                    tags: ['perimeter', 'easm', 'attack-surface', 'security-rating', 'compliance']
+                },
+                {
+                    id: 30,
+                    question: 'How is NIS2 compliance handled?',
+                    answer: 'Through the <strong>Prismatic Perimeter compliance engine</strong> which:<ul class="list-disc ml-5 mt-2 space-y-1"><li>Maps security controls to <strong>NIS2 Directive (EU 2022/2555)</strong> requirements</li><li>Generates detailed compliance reports</li><li>Monitors organizational security posture continuously</li><li>Provides gap analysis and remediation guidance</li></ul>',
+                    category: 'security',
+                    tags: ['nis2', 'compliance', 'eu', 'directive', 'regulation']
+                },
+                {
+                    id: 31,
+                    question: 'What is ZKB compliance?',
+                    answer: '<strong>Czech Cybersecurity Act</strong> (Z\u00e1kon o kybernetick\u00e9 bezpe\u010dnosti) <strong>264/2025 Sb.</strong> compliance checking, specific to Czech organizations and critical infrastructure operators. The platform automatically maps controls to ZKB requirements and assesses compliance posture.',
+                    category: 'security',
+                    tags: ['zkb', 'czech', 'compliance', 'cybersecurity', 'regulation']
+                },
+                {
+                    id: 32,
+                    question: 'How does visitor intelligence (HAWKEYE) work?',
+                    answer: 'Combines multiple intelligence sources for real-time visitor profiling:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>Browser fingerprinting</strong></li><li><strong>Geolocation analysis</strong></li><li><strong>Behavioral analysis</strong></li><li><strong>External threat feeds</strong> (AbuseIPDB, GreyNoise, Shodan)</li></ul><br>Achieves <strong>sub-100ms</strong> per request and <strong>98.5% bot detection accuracy</strong> with dynamic risk scoring.',
+                    category: 'security',
+                    tags: ['hawkeye', 'visitor-intelligence', 'fingerprinting', 'bot-detection']
+                },
+                {
+                    id: 33,
+                    question: 'What security standards does the platform follow?',
+                    answer: '<ul class="list-disc ml-5 space-y-1"><li><strong>OWASP Top 10</strong> &mdash; Web application security</li><li><strong>NIS2 Directive</strong> &mdash; EU cybersecurity regulation</li><li><strong>ZKB</strong> &mdash; Czech cybersecurity law</li></ul><br>Automated scanning covers XSS, SQL injection, and CSRF. All external input is validated, all queries are parameterized, and HTTPS is enforced throughout.',
+                    category: 'security',
+                    tags: ['owasp', 'standards', 'security', 'xss', 'sql-injection']
+                },
+                {
+                    id: 34,
+                    question: 'Is penetration testing supported?',
+                    answer: 'Yes, through the <strong>Red Team framework</strong> and <strong>Chaos Engineering</strong>. All testing uses synthetic data in sandboxed environments. No production access during testing. Operations are authorized for CTF challenges, defensive security research, and authorized penetration testing only.',
+                    category: 'security',
+                    tags: ['pentest', 'red-team', 'chaos-engineering', 'testing']
+                },
+
+                // === DATA & OSINT (8) ===
+                {
+                    id: 35,
+                    question: 'How many OSINT sources are integrated?',
+                    answer: '<strong>121+ sources</strong> across multiple categories:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>Czech registries</strong> &mdash; ARES, Justice.cz, RZP, and more</li><li><strong>Global intelligence</strong> &mdash; Shodan, Censys, VirusTotal, etc.</li><li><strong>Sanctions lists</strong> &mdash; OFAC, EU, UN</li><li><strong>Specialized feeds</strong> &mdash; Domain, IP, and threat intelligence</li></ul>',
+                    category: 'data',
+                    tags: ['osint', 'sources', 'intelligence', 'integrations']
+                },
+                {
+                    id: 36,
+                    question: 'How does OSINT source resilience work?',
+                    answer: 'Every source query passes through a <strong>circuit breaker</strong>. When a primary source fails (e.g., Shodan), the system automatically falls to alternatives (Censys), then to cached data. The platform continues operating even with multiple simultaneous source failures, ensuring uninterrupted intelligence gathering.',
+                    category: 'data',
+                    tags: ['resilience', 'circuit-breaker', 'fallback', 'osint']
+                },
+                {
+                    id: 37,
+                    question: 'What is the adapter pattern for OSINT?',
+                    answer: 'A standard interface (<code>PrismaticOsintSources.Adapters</code>) that all sources implement. This enables:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>Hot-swapping</strong> sources without code changes</li><li><strong>Unified error handling</strong> across all providers</li><li><strong>Consistent data structures</strong> regardless of the underlying API</li><li>Easy addition of new sources following the adapter contract</li></ul>',
+                    category: 'data',
+                    tags: ['adapter', 'pattern', 'osint', 'interface', 'architecture']
+                },
+                {
+                    id: 38,
+                    question: 'How is data enrichment handled?',
+                    answer: 'Through <strong>parallel queries</strong> to multiple intelligence sources, combining results with confidence scoring. For example, IP enrichment queries <strong>AbuseIPDB, GreyNoise, and Shodan simultaneously</strong>, merging results into a unified threat assessment with weighted confidence.',
+                    category: 'data',
+                    tags: ['enrichment', 'parallel', 'fusion', 'confidence', 'threat']
+                },
+                {
+                    id: 39,
+                    question: 'What Czech registries are supported?',
+                    answer: '15+ Czech data sources:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>ARES</strong> &mdash; Business register</li><li><strong>Justice.cz</strong> &mdash; Commercial register</li><li><strong>RZP</strong> &mdash; Trade licensing</li><li><strong>VR.cz</strong> &mdash; Public registers</li><li><strong>Insolvency Register</strong></li><li><strong>CUZK</strong> &mdash; Land registry</li><li><strong>CEDR</strong> &mdash; Subsidies database</li><li><strong>CNB</strong> &mdash; Central bank data</li><li>And more...</li></ul>',
+                    category: 'data',
+                    tags: ['czech', 'registries', 'ares', 'justice', 'government']
+                },
+                {
+                    id: 40,
+                    question: 'How does sanctions screening work?',
+                    answer: 'Parallel checks against multiple sanctions lists:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>OFAC SDN</strong> (US Treasury)</li><li><strong>EU Consolidated Sanctions List</strong></li><li><strong>UN Security Council Sanctions</strong></li></ul><br>Entity matching uses <strong>fuzzy algorithms</strong> with configurable threshold scoring to catch variations in names and identifiers.',
+                    category: 'data',
+                    tags: ['sanctions', 'ofac', 'screening', 'compliance', 'fuzzy-matching']
+                },
+                {
+                    id: 41,
+                    question: 'What is data fusion?',
+                    answer: 'Combining intelligence from <strong>multiple OSINT sources</strong> into unified entity profiles. For a company, this merges:<ul class="list-disc ml-5 mt-2 space-y-1"><li>Business registry data (ARES)</li><li>Financial data (CNB)</li><li>Legal proceedings (Justice.cz)</li><li>External intelligence (Shodan, etc.)</li></ul><br>Creating a comprehensive, multi-dimensional view of any entity.',
+                    category: 'data',
+                    tags: ['fusion', 'enrichment', 'entity', 'profile', 'intelligence']
+                },
+                {
+                    id: 42,
+                    question: 'How is search implemented?',
+                    answer: '<ul class="list-disc ml-5 space-y-1"><li><strong>Meilisearch</strong> &mdash; Sub-50ms full-text search with typo tolerance, faceted filtering, and ranking</li><li><strong>PostgreSQL</strong> &mdash; Structured queries and advanced SQL</li><li><strong>KuzuDB</strong> &mdash; Graph traversals for relationship intelligence</li></ul><br>Each engine serves its optimal use case, with results merged when needed.',
+                    category: 'data',
+                    tags: ['search', 'meilisearch', 'postgresql', 'kuzudb', 'graph']
+                },
+
+                // === DEVELOPMENT (8) ===
+                {
+                    id: 43,
+                    question: 'What testing strategy is used?',
+                    answer: 'Comprehensive multi-level testing:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>ExUnit</strong> for unit tests</li><li><strong>Property-based testing</strong> for edge case discovery</li><li><strong>Integration tests</strong> with real databases</li><li><strong>End-to-end tests</strong> for full workflow validation</li></ul><br><strong>5,532 test files</strong> across the platform. Every bug fix requires mandatory regression tests.',
+                    category: 'development',
+                    tags: ['testing', 'exunit', 'property-based', 'integration', 'e2e']
+                },
+                {
+                    id: 44,
+                    question: 'What is the regression test protocol?',
+                    answer: 'Every bug fix <strong>MUST</strong> follow this sequence:<ol class="list-decimal ml-5 mt-2 space-y-1"><li>Identify the root cause and failure mode</li><li>Create regression test(s) that would have caught the bug</li><li>Verify the test <strong>fails</strong> with unfixed code (proves test validity)</li><li>Apply the fix</li><li>Verify the test <strong>passes</strong> with fixed code (proves fix works)</li></ol><br>No exceptions. Commits are blocked without compliance.',
+                    category: 'development',
+                    tags: ['regression', 'testing', 'protocol', 'mandatory', 'bug-fix']
+                },
+                {
+                    id: 45,
+                    question: 'How do quality gates work?',
+                    answer: 'Automated pre-commit checks that <strong>all must pass</strong>:<ul class="list-disc ml-5 mt-2 space-y-1"><li>Zero compilation warnings (<code>--warnings-as-errors</code>)</li><li>Credo strict compliance</li><li>Dialyzer typecheck passing</li><li>Test coverage requirements met</li><li>No QDP (Quality Debt Points)</li></ul><br>Any failure blocks the merge entirely.',
+                    category: 'development',
+                    tags: ['quality-gates', 'pre-commit', 'credo', 'dialyzer', 'coverage']
+                },
+                {
+                    id: 46,
+                    question: 'What is the Quality Floor Guardian?',
+                    answer: 'Autonomous quality monitoring system with escalation levels:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>100-99%</strong> &mdash; OPTIMAL (monitor only)</li><li><strong>98-99%</strong> &mdash; WARNING (alert + investigation)</li><li><strong>95-98%</strong> &mdash; CRITICAL (auto-evolution trigger)</li><li><strong>&lt;95%</strong> &mdash; EMERGENCY (block commits + escalate)</li></ul>',
+                    category: 'development',
+                    tags: ['quality-floor', 'guardian', 'monitoring', 'autonomous']
+                },
+                {
+                    id: 47,
+                    question: 'What is Quality DNA?',
+                    answer: '<strong>Cross-session quality state persistence</strong> stored in <code>.claude/quality-dna/</code>. It maintains quality metrics, patterns, and history across development sessions, enabling continuous improvement tracking and preventing quality regression between sessions.',
+                    category: 'development',
+                    tags: ['quality-dna', 'persistence', 'metrics', 'cross-session']
+                },
+                {
+                    id: 48,
+                    question: 'How are mix tasks organized?',
+                    answer: 'Custom mix tasks include:<ul class="list-disc ml-5 mt-2 space-y-1"><li><code>mix quality.gates</code> &mdash; Static analysis suite</li><li><code>mix autoheal.baseline</code> &mdash; Quality snapshot capture</li><li><code>mix autoevolve.mega</code> &mdash; Full evolution cycle</li><li><code>mix git_trees</code> &mdash; Fast file operations (~100x faster than find)</li></ul><br>Plus <strong>50+ domain-specific tasks</strong> for OSINT, security, agents, and more.',
+                    category: 'development',
+                    tags: ['mix', 'tasks', 'tooling', 'quality', 'automation']
+                },
+                {
+                    id: 49,
+                    question: 'What code style rules are enforced?',
+                    answer: '<ul class="list-disc ml-5 space-y-1"><li><strong>Credo strict mode</strong> &mdash; All checks must pass</li><li><strong>Zero warnings</strong> &mdash; <code>--warnings-as-errors</code> on all compiles</li><li><strong>100% typespec coverage</strong> &mdash; Every public function has @spec</li><li><strong>No forbidden naming</strong> &mdash; Manager, Handler, Utils, Helper banned</li><li><strong>{:ok, _}/{:error, _}</strong> pattern everywhere</li><li><strong>Pure functions</strong> with side-effects only at edges</li></ul>',
+                    category: 'development',
+                    tags: ['code-style', 'credo', 'typespecs', 'naming', 'conventions']
+                },
+                {
+                    id: 50,
+                    question: 'How does the session discipline protocol work?',
+                    answer: 'Every development session <strong>MUST</strong>:<ul class="list-disc ml-5 mt-2 space-y-1"><li>Create GitLab issues for all work items</li><li>Commit frequently (no batching multiple changes)</li><li>Push all commits to remote immediately</li><li>Test locally before every commit</li><li>Pass all git hooks (pre-commit, commit-msg, pre-push)</li></ul><br>The <code>--no-verify</code> flag is <strong>ABSOLUTELY FORBIDDEN</strong>.',
+                    category: 'development',
+                    tags: ['session', 'discipline', 'gitlab', 'commits', 'hooks']
+                },
+
+                // === DEPLOYMENT (5) ===
+                {
+                    id: 51,
+                    question: 'Where is Prismatic deployed?',
+                    answer: '<strong>Fly.io</strong> edge deployment infrastructure:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>Staging</strong>: prismatic-staging.fly.dev</li><li><strong>Production</strong>: prismatic.fly.dev</li></ul><br>GitLab CI/CD handles the entire automated pipeline from commit to deployment.',
+                    category: 'deployment',
+                    tags: ['fly.io', 'deployment', 'staging', 'production', 'infrastructure']
+                },
+                {
+                    id: 52,
+                    question: 'How does CI/CD work?',
+                    answer: 'GitLab CI with a <strong>multi-stage pipeline</strong>:<ol class="list-decimal ml-5 mt-2 space-y-1"><li>Compile</li><li>Lint (Credo strict)</li><li>Typecheck (Dialyzer)</li><li>Test suite</li><li>Coverage analysis</li><li>Build release</li><li>Deploy</li></ol><br>Quality gates <strong>block deployment</strong> on any stage failure.',
+                    category: 'deployment',
+                    tags: ['ci-cd', 'gitlab', 'pipeline', 'automation', 'stages']
+                },
+                {
+                    id: 53,
+                    question: 'What is the deployment architecture?',
+                    answer: '<strong>Docker containers on Fly.io</strong> with:<ul class="list-disc ml-5 mt-2 space-y-1"><li>Distributed Erlang clustering</li><li>PostgreSQL managed database</li><li>Redis caching layer</li><li>Automatic SSL/TLS termination</li><li>Edge deployment for low latency</li></ul>',
+                    category: 'deployment',
+                    tags: ['docker', 'fly.io', 'erlang', 'clustering', 'ssl']
+                },
+                {
+                    id: 54,
+                    question: 'How is zero-downtime deployment achieved?',
+                    answer: '<strong>BEAM hot code reload</strong> combined with <strong>Fly.io rolling deployments</strong>. WebSocket connections gracefully migrate to new instances. State persisted in PostgreSQL and ETS survives process restarts, ensuring no data loss during upgrades.',
+                    category: 'deployment',
+                    tags: ['zero-downtime', 'hot-reload', 'rolling', 'deployment', 'beam']
+                },
+                {
+                    id: 55,
+                    question: 'What monitoring is in place?',
+                    answer: '<ul class="list-disc ml-5 space-y-1"><li><strong>Telemetry events</strong> for all operations</li><li><strong>Structured logging</strong> (JSON format)</li><li><strong>Prometheus-compatible metrics</strong></li><li><strong>LiveView dashboards</strong> for real-time monitoring</li><li>Circuit breaker states, queue depths, and response times all tracked</li></ul>',
+                    category: 'deployment',
+                    tags: ['monitoring', 'telemetry', 'logging', 'prometheus', 'dashboards']
+                },
+
+                // === ADVANCED (5) ===
+                {
+                    id: 56,
+                    question: 'What is the GARDEN knowledge base?',
+                    answer: '<strong>22 legacy repositories</strong> (3,050+ files, 55+ patterns, 20+ years) providing reusable intelligence:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>sig</strong> &mdash; 250+ OSINT providers</li><li><strong>kuzu-ex</strong> &mdash; KuzuDB Elixir SDK</li><li><strong>prismatic-legacy</strong> &mdash; 1,302 historical files</li><li><strong>Blackboard architecture</strong> patterns</li></ul><br>Organized in 5 tiers from T1 Production to T5 R&D.',
+                    category: 'advanced',
+                    tags: ['garden', 'legacy', 'knowledge', 'patterns', 'repositories']
+                },
+                {
+                    id: 57,
+                    question: 'How does chaos engineering work?',
+                    answer: '<code>PrismaticResilience.Chaos</code> injects controlled faults:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>Latency injection</strong> &mdash; Configurable delay + probability</li><li><strong>Failure injection</strong> &mdash; Specific error types triggered</li><li><strong>Multi-fault experiments</strong> &mdash; Complex scenarios with duration and assertions</li></ul><br>All experiments run in controlled environments with automatic rollback.',
+                    category: 'advanced',
+                    tags: ['chaos-engineering', 'resilience', 'fault-injection', 'testing']
+                },
+                {
+                    id: 58,
+                    question: 'What is the self-healing mechanism?',
+                    answer: 'When a service failure is detected:<ol class="list-decimal ml-5 mt-2 space-y-1"><li><strong>Circuit breaker opens</strong> &mdash; prevents further calls</li><li><strong>Fallback chain activates</strong> &mdash; alternative paths engaged</li><li><strong>Retry strategy</strong> with exponential backoff begins</li></ol><br>On recovery:<ol class="list-decimal ml-5 mt-2 space-y-1"><li>Circuit <strong>half-opens</strong> &mdash; allows test calls</li><li>Test calls execute and validate</li><li>Circuit <strong>closes</strong> &mdash; full traffic restored</li></ol><br>Self-healing reports emitted via telemetry.',
+                    category: 'advanced',
+                    tags: ['self-healing', 'circuit-breaker', 'recovery', 'fallback', 'resilience']
+                },
+                {
+                    id: 59,
+                    question: 'How does the platform evolve autonomously?',
+                    answer: 'Each session triggers a full evolution cycle:<ol class="list-decimal ml-5 mt-2 space-y-1"><li><strong>Baseline capture</strong> &mdash; Snapshot current state</li><li><strong>Quality gate checks</strong> &mdash; Verify platform health</li><li><strong>Autoevolve scans</strong> &mdash; Detect improvement opportunities</li><li><strong>Mega-evolution cycles</strong> &mdash; Apply fixes and validate results</li></ol><br>The platform has autonomously evolved from <strong>Gen 1 to Gen 18</strong>, detecting patterns, eliminating debt, and improving performance across thousands of sessions.',
+                    category: 'advanced',
+                    tags: ['evolution', 'autonomous', 'self-improving', 'generation']
+                },
+                {
+                    id: 60,
+                    question: 'What is the Stack Conversation protocol?',
+                    answer: 'Every response tracks structured frames:<ul class="list-disc ml-5 mt-2 space-y-1"><li><strong>Frame ID</strong> &mdash; Unique identifier</li><li><strong>Input Summary</strong> &mdash; 1-2 line user request summary</li><li><strong>Output Summary</strong> &mdash; 1-3 line response summary</li><li><strong>Key Assumptions</strong> and <strong>Key Decisions</strong></li></ul><br>Frames are <strong>immutable</strong>. Commands: <code>/stack</code> (display all), <code>/frame N</code> (show detail), <code>/pop N</code> (remove), <code>/fork N</code> (branch), <code>/checkpoint</code> (mark), <code>/goto</code> (restore).',
+                    category: 'advanced',
+                    tags: ['stack', 'conversation', 'protocol', 'frames', 'immutable']
+                },
+            ],
+
+            get filteredItems() {
+                let items = this.allItems;
+
+                if (this.activeCategory !== 'all') {
+                    items = items.filter(item => item.category === this.activeCategory);
+                }
+
+                if (this.searchQuery.trim().length > 0) {
+                    const query = this.searchQuery.toLowerCase().trim();
+                    items = items.filter(item => {
+                        return item.question.toLowerCase().includes(query) ||
+                            item.answer.toLowerCase().includes(query) ||
+                            item.tags.some(tag => tag.toLowerCase().includes(query)) ||
+                            item.category.toLowerCase().includes(query);
+                    });
+                }
+
+                return items;
+            },
+
+            toggleItem(id) {
+                this.openItem = this.openItem === id ? null : id;
+            },
+
+            getCategoryCount(categoryId) {
+                return this.allItems.filter(item => item.category === categoryId).length;
+            },
+
+            getCategoryLabel(categoryId) {
+                const cat = this.categories.find(c => c.id === categoryId);
+                return cat ? cat.label : categoryId;
+            },
+
+            getCategoryStyle(categoryId) {
+                const styles = {
+                    'general': 'bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400',
+                    'architecture': 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
+                    'ai-agents': 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+                    'security': 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
+                    'data': 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400',
+                    'development': 'bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400',
+                    'deployment': 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400',
+                    'advanced': 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400',
+                };
+                return styles[categoryId] || 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300';
+            },
+
+            getAllTags() {
+                const tags = new Set();
+                this.allItems.forEach(item => item.tags.forEach(tag => tags.add(tag)));
+                return Array.from(tags);
+            },
+
+            markHelpful(id, helpful) {
+                this.helpfulness[id] = helpful;
+            },
+        };
+    }
+</script>
+
+<style>
+    [x-cloak] {
+        display: none !important;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/platform/" class="text-gray-400 hover:text-white transition-colors">Overview</a>
+                        </li>
+                        <li><a href="/apps/" class="text-gray-400 hover:text-white transition-colors">Applications (89)</a></li>
+                        <li><a href="/agents/" class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products & Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Products & Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/products/" class="text-gray-400 hover:text-white transition-colors">Products</a>
+                        </li>
+                        <li><a href="/osint/" class="text-gray-400 hover:text-white transition-colors">OSINT Sources
+                                (121+)</a></li>
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="/solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a>
+                        </li>
+                        <li><a href="/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a>
+                        </li>
+                        <li><a href="/faq/" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-white bg-blue-600 rounded-xl shadow-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-110 focus:ring-4 focus:ring-blue-300 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="/js/vendor/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Back to Top button
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

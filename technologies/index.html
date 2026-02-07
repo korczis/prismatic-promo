@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Technologies - Prismatic Platform</title>
+
+    
+<meta name="description"
+    content="44 technologies powering the Prismatic Platform - from Elixir/OTP to AI, databases, and infrastructure.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com/technologies/">
+<meta property="og:title" content="Technologies - Prismatic Platform">
+<meta property="og:description"
+    content="44 technologies powering the Prismatic Platform - from Elixir/OTP to AI, databases, and infrastructure.">
+<meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com/technologies/">
+<meta name="twitter:title" content="Technologies - Prismatic Platform">
+<meta name="twitter:description"
+    content="44 technologies powering the Prismatic Platform - from Elixir/OTP to AI, databases, and infrastructure.">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;technologies&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- ANTIGRAVITY CSS - Single source of truth for colors -->
+    <link rel="stylesheet" href="/css/antigravity.css">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    <!-- Chart.js -->
+    <script src="/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Three.js (3D visualizations) -->
+    <script src="/js/vendor/three.min.js"></script>
+    <script src="/js/vendor/OrbitControls.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+        (function () {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 space-x-3">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    <li>
+                        <a href="/platform/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                    </li>
+                    <li>
+                        <a href="/products/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                    </li>
+                    <li>
+                        <a href="/capabilities/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            x-cloak>
+                            <a href="/apps/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                (89)</a>
+                            <a href="/agents/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                (430)</a>
+                            <a href="/architecture/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                            <a href="/technologies/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/commands/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                            <a href="/teams/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                Teams</a>
+                            <a href="/solutions/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                            <a href="/registry/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/glossary/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                            <a href="/faq/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Section -->
+<section class="bg-gray-950 py-16 lg:py-24 border-b border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="mb-8">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium tracking-wide text-teal-400 bg-teal-500/10 rounded-full border border-teal-500/20">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Technology Stack
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                Technologies
+            </h1>
+            
+            <div class="prose prose-invert prose-lg max-w-3xl text-gray-300 leading-relaxed font-light">
+                <p>45+ technologies forming the Prismatic Platform's production stack -- from the BEAM virtual machine and Elixir/OTP runtime through Phoenix LiveView real-time web interfaces to AI model integration, formal verification with Lean 4, and graph-native storage with KuzuDB. Each technology was selected through rigorous evaluation against fault tolerance, developer productivity, and long-term maintainability criteria.</p>
+<h2 id="abstract">Abstract</h2>
+<p>The Prismatic Platform integrates 45 distinct technologies into a unified stack that serves intelligence analysis, security assessment, formal verification, and autonomous AI agent operations. This document provides a comprehensive survey of the technology landscape, organized by architectural layer, with emphasis on the selection rationale, integration patterns, and operational characteristics of each component.</p>
+<p>Technology selection in a platform of this scale -- 93 OTP applications, 6,652 source files, approximately 2.8 million lines of code -- demands more than feature-list comparisons. Every technology must satisfy three constraints simultaneously: it must compose with the existing stack without impedance mismatch, it must operate reliably under the platform's fault tolerance requirements, and it must remain maintainable by a small team over multi-year timescales. These constraints eliminate a large number of otherwise capable tools and frameworks, producing a stack that favours proven, well-documented technologies over novel alternatives.</p>
+<p>The stack is organized into eight layers, from the BEAM runtime at the foundation through the web platform, data persistence, AI integration, frontend rendering, security tooling, development infrastructure, and deployment operations. Each layer defines clear interfaces to adjacent layers, preventing tight coupling while enabling the deep integration that distinguishes Prismatic from loosely assembled tool collections.</p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="selection-philosophy">Selection Philosophy</h3>
+<p>The Prismatic Platform's technology choices reflect a pragmatic engineering philosophy: <strong>select for operational characteristics first, developer experience second, and feature richness third</strong>. A technology that is pleasant to use but unreliable under load, or feature-rich but poorly documented, will be rejected in favour of a simpler alternative that can be fully understood, monitored, and debugged in production.</p>
+<p>This philosophy produces several observable patterns in the stack:</p>
+<ol>
+<li>
+<p><strong>BEAM-native when possible</strong>: If a capability can be implemented as an Erlang/Elixir library running on the BEAM VM, that approach is preferred over introducing an external service. ETS replaces Redis for many caching scenarios. Phoenix PubSub replaces message brokers for intra-node event distribution. GenServer-based state machines replace external workflow engines.</p>
+</li>
+<li>
+<p><strong>Polyglot storage</strong>: No single database technology optimally serves all access patterns. PostgreSQL handles relational data and ACID transactions. ETS provides microsecond key-value lookups. Meilisearch powers full-text search with typo tolerance. KuzuDB models graph relationships. DuckDB handles analytical queries on columnar data. Each storage engine is accessed through the platform's unified storage adapter layer, so application code never couples to a specific backend.</p>
+</li>
+<li>
+<p><strong>AI as a tool, not a foundation</strong>: AI models (Claude, Ollama, OpenAI) are integrated as callable services with well-defined interfaces, not as load-bearing architectural components. If every AI endpoint became unavailable simultaneously, the platform's core intelligence analysis, storage, and web serving would continue operating. AI enhances; it does not define.</p>
+</li>
+<li>
+<p><strong>Formal verification as a peer</strong>: Lean 4 and SWI-Prolog are not afterthoughts or academic curiosities -- they are first-class components in the platform's epistemic pipeline, providing mathematical proof verification and logical reasoning that complement statistical AI inference.</p>
+</li>
+</ol>
+<h3 id="selection-criteria">Selection Criteria</h3>
+<p>Every technology in the stack was evaluated against five weighted criteria:</p>
+<table><thead><tr><th>Criterion</th><th>Weight</th><th>Description</th></tr></thead><tbody>
+<tr><td><strong>Reliability</strong></td><td>30%</td><td>Proven stability in production environments at scale</td></tr>
+<tr><td><strong>Composability</strong></td><td>25%</td><td>Clean integration with existing stack components</td></tr>
+<tr><td><strong>Maintainability</strong></td><td>20%</td><td>Documentation quality, community activity, update frequency</td></tr>
+<tr><td><strong>Performance</strong></td><td>15%</td><td>Meets throughput and latency requirements for intended use</td></tr>
+<tr><td><strong>Security</strong></td><td>10%</td><td>Vulnerability history, security audit availability, hardening options</td></tr>
+</tbody></table>
+<p>Technologies scoring below 70% aggregate are rejected. Technologies scoring above 85% are preferred candidates. The current stack represents the cumulative result of applying these criteria across four years of platform evolution.</p>
+<h2 id="technology-layers">Technology Layers</h2>
+<p>The complete stack is organized into eight architectural layers. Each layer depends only on layers below it; no upward or circular dependencies exist.</p>
+<table><thead><tr><th>Layer</th><th>Domain</th><th>Key Technologies</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><strong>L0 -- Runtime</strong></td><td>VM &amp; Processes</td><td><a href="https://prismatic-reality.com/technologies/beam/">BEAM</a>, <a href="https://prismatic-reality.com/technologies/erlang-otp/">Erlang/OTP 27</a>, <a href="https://prismatic-reality.com/technologies/elixir/">Elixir 1.19</a></td><td>Fault-tolerant process runtime</td></tr>
+<tr><td><strong>L1 -- Framework</strong></td><td>Web &amp; API</td><td><a href="https://prismatic-reality.com/technologies/phoenix/">Phoenix 1.7</a>, <a href="https://prismatic-reality.com/technologies/phoenix-liveview/">LiveView</a>, <a href="https://prismatic-reality.com/technologies/plug/">Plug</a></td><td>Request handling, real-time UI</td></tr>
+<tr><td><strong>L2 -- Data</strong></td><td>Persistence &amp; Search</td><td><a href="https://prismatic-reality.com/technologies/postgresql/">PostgreSQL 16</a>, <a href="https://prismatic-reality.com/technologies/ecto/">Ecto</a>, <a href="https://prismatic-reality.com/technologies/ets/">ETS</a>, <a href="https://prismatic-reality.com/technologies/redis/">Redis</a></td><td>Structured storage, caching</td></tr>
+<tr><td><strong>L3 -- Search &amp; Graph</strong></td><td>Specialized Storage</td><td><a href="https://prismatic-reality.com/technologies/meilisearch/">Meilisearch</a>, <a href="https://prismatic-reality.com/technologies/kuzudb/">KuzuDB</a>, <a href="https://prismatic-reality.com/technologies/timescaledb/">TimescaleDB</a></td><td>Full-text, graph, time-series</td></tr>
+<tr><td><strong>L4 -- Intelligence</strong></td><td>AI &amp; Reasoning</td><td><a href="https://prismatic-reality.com/technologies/claude/">Claude</a>, <a href="https://prismatic-reality.com/technologies/ollama/">Ollama</a>, <a href="https://prismatic-reality.com/technologies/lean4/">Lean 4</a></td><td>AI inference, formal proofs</td></tr>
+<tr><td><strong>L5 -- Frontend</strong></td><td>UI Rendering</td><td><a href="https://prismatic-reality.com/technologies/tailwindcss/">TailwindCSS</a>, <a href="https://prismatic-reality.com/technologies/flowbite/">Flowbite</a>, <a href="https://prismatic-reality.com/technologies/alpinejs/">Alpine.js</a></td><td>Styling, components, interactivity</td></tr>
+<tr><td><strong>L6 -- Security</strong></td><td>Hardening &amp; Audit</td><td><a href="https://prismatic-reality.com/technologies/argon2/">Argon2</a>, <a href="https://prismatic-reality.com/technologies/ssl-tls/">SSL/TLS</a>, <a href="https://prismatic-reality.com/technologies/jose/">JOSE</a></td><td>Auth, encryption, vulnerability scanning</td></tr>
+<tr><td><strong>L7 -- DevOps</strong></td><td>Build &amp; Deploy</td><td><a href="https://prismatic-reality.com/technologies/docker/">Docker</a>, <a href="https://prismatic-reality.com/technologies/flyio/">Fly.io</a>, <a href="https://prismatic-reality.com/technologies/gitlab-ci/">GitLab CI</a>, <a href="https://prismatic-reality.com/technologies/mix/">Mix</a></td><td>Compilation, testing, deployment</td></tr>
+</tbody></table>
+<p>The following sections examine each layer in detail.</p>
+<h2 id="core-runtime-elixir-otp-and-the-beam">Core Runtime: Elixir, OTP, and the BEAM</h2>
+<p>The platform's foundation is the <a href="https://prismatic-reality.com/technologies/beam/">BEAM virtual machine</a> -- the Erlang runtime system that has powered telecommunications infrastructure since 1986. On the BEAM, <a href="https://prismatic-reality.com/technologies/erlang-otp/">Erlang/OTP 27</a> provides the process model, supervision trees, and distribution protocols, while <a href="https://prismatic-reality.com/technologies/elixir/">Elixir 1.19</a> provides the developer-facing language with modern syntax, metaprogramming, and the Mix build tool.</p>
+<h3 id="why-beam">Why BEAM</h3>
+<p>The BEAM provides three properties that no other mainstream runtime offers simultaneously:</p>
+<p><strong>Preemptive scheduling of lightweight processes.</strong> The BEAM scheduler time-slices across millions of lightweight processes (not OS threads) with guaranteed fairness. A computationally expensive operation in one process cannot starve others. This is fundamental for a platform running 434+ AI agents, web connections, and background jobs concurrently.</p>
+<p><strong>Per-process garbage collection.</strong> Each BEAM process has its own heap. Garbage collection is per-process and concurrent -- collecting one process does not pause any other. This eliminates the stop-the-world GC pauses that plague JVM and V8-based systems under heavy load.</p>
+<p><strong>Fault isolation through process boundaries.</strong> A crash in one process does not corrupt another's memory. Combined with OTP supervisors that automatically restart failed processes, this produces systems that self-heal from transient failures without manual intervention.</p>
+<h3 id="otp-in-practice">OTP in Practice</h3>
+<p>The platform uses OTP's core abstractions extensively:</p>
+<pre><code data-lang="elixir">defmodule Prismatic.Perimeter.DiscoveryService do
+  use GenServer
+
+  @impl true
+  def init(opts) do
+    state = %{
+      cache: :ets.new(:discovery_cache, [:set, :protected]),
+      scan_interval: Keyword.get(opts, :scan_interval, :timer.minutes(15)),
+      active_scans: %{}
+    }
+
+    schedule_periodic_scan(state.scan_interval)
+    {:ok, state}
+  end
+
+  @impl true
+  def handle_info(:periodic_scan, state) do
+    {:ok, updated} = execute_scan_cycle(state)
+    schedule_periodic_scan(state.scan_interval)
+    {:noreply, updated}
+  end
+
+  defp schedule_periodic_scan(interval) do
+    Process.send_after(self(), :periodic_scan, interval)
+  end
+end
+</code></pre>
+<p>Every stateful component in the platform follows this pattern: a <a href="https://prismatic-reality.com/technologies/genserver/">GenServer</a> process managed by a <a href="https://prismatic-reality.com/technologies/supervisor/">Supervisor</a>, with ETS for fast reads and message passing for coordination. There are no global variables, no shared mutable state, and no thread-safety concerns.</p>
+<h3 id="runtime-characteristics">Runtime Characteristics</h3>
+<table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>
+<tr><td><strong>Process creation</strong></td><td>~2 microseconds</td></tr>
+<tr><td><strong>Process memory overhead</strong></td><td>~2.6 KB initial heap</td></tr>
+<tr><td><strong>Message send</strong></td><td>~0.5 microseconds (same node)</td></tr>
+<tr><td><strong>Scheduler count</strong></td><td>Matches CPU cores (typically 10)</td></tr>
+<tr><td><strong>Max concurrent processes</strong></td><td>Millions (tested to 2M+)</td></tr>
+<tr><td><strong>GC strategy</strong></td><td>Per-process generational</td></tr>
+</tbody></table>
+<h2 id="web-platform-phoenix-and-liveview">Web Platform: Phoenix and LiveView</h2>
+<p><a href="https://prismatic-reality.com/technologies/phoenix/">Phoenix 1.7</a> provides the HTTP layer, routing, and WebSocket infrastructure. <a href="https://prismatic-reality.com/technologies/phoenix-liveview/">Phoenix LiveView 0.20</a> extends this with server-rendered, real-time interactive interfaces that require zero custom JavaScript for the majority of UI interactions.</p>
+<h3 id="real-time-without-complexity">Real-Time Without Complexity</h3>
+<p>LiveView's model eliminates the traditional frontend/backend split for dashboard-style applications. The server maintains the UI state, computes DOM diffs, and pushes minimal patches over a persistent WebSocket connection. The client applies patches without full page reloads.</p>
+<p>This architecture is ideal for the Prismatic Platform's monitoring dashboards, where data changes continuously and must propagate to all connected clients within milliseconds:</p>
+<pre><code data-lang="elixir">defmodule PrismaticWeb.Live.PerimeterDashboardLive do
+  use PrismaticWeb, :live_view
+
+  @impl true
+  def mount(_params, _session, socket) do
+    if connected?(socket) do
+      Phoenix.PubSub.subscribe(Prismatic.PubSub, &quot;perimeter:events&quot;)
+    end
+
+    {:ok, assign(socket, assets: [], rating: nil, last_scan: nil)}
+  end
+
+  @impl true
+  def handle_info({:asset_discovered, asset}, socket) do
+    {:noreply, update(socket, :assets, &amp;[asset | &amp;1])}
+  end
+
+  @impl true
+  def handle_info({:rating_updated, rating}, socket) do
+    {:noreply, assign(socket, rating: rating)}
+  end
+end
+</code></pre>
+<p>When the perimeter scanner discovers a new asset or updates a security rating, it broadcasts through <a href="https://prismatic-reality.com/technologies/pubsub/">Phoenix PubSub</a>. Every connected LiveView receives the event and updates its DOM -- no polling, no REST calls, no client-side state management libraries.</p>
+<h3 id="request-pipeline">Request Pipeline</h3>
+<p>Phoenix's <a href="https://prismatic-reality.com/technologies/plug/">Plug</a>-based request pipeline provides composable middleware for authentication, rate limiting, CORS, and telemetry:</p>
+<pre><code>Request → Endpoint → Router → Pipeline (Plugs) → Controller/LiveView → Response
+                                  │
+                                  ├── APIAuth (JWT verification)
+                                  ├── RateLimiter (sliding window)
+                                  ├── RequestLogger (structured telemetry)
+                                  └── CSRFProtection (form tokens)
+</code></pre>
+<p>The platform serves two Phoenix applications simultaneously: <code>prismatic_web</code> on port 4000 (LiveView dashboards) and <code>prismatic_api</code> on port 4004 (REST API with <a href="https://prismatic-reality.com/technologies/openapi/">OpenAPI</a> spec generation via OpenApiSpex).</p>
+<h2 id="data-layer-polyglot-persistence">Data Layer: Polyglot Persistence</h2>
+<p>The platform's data layer implements the polyglot persistence pattern -- using the best storage engine for each access pattern rather than forcing all data through a single database.</p>
+<h3 id="postgresql-relational-core">PostgreSQL -- Relational Core</h3>
+<p><a href="https://prismatic-reality.com/technologies/postgresql/">PostgreSQL 16</a> serves as the primary relational store for all structured, transactional data. Accessed through <a href="https://prismatic-reality.com/technologies/ecto/">Ecto</a> (Elixir's database wrapper and query DSL), PostgreSQL handles user data, audit logs, security ratings, compliance assessments, and configuration state.</p>
+<p><a href="https://prismatic-reality.com/technologies/timescaledb/">TimescaleDB</a> extends PostgreSQL for time-series workloads -- particularly AI drift monitoring metrics that require efficient range queries and automatic data retention policies.</p>
+<pre><code data-lang="elixir">defmodule Prismatic.Perimeter.SecurityRating do
+  use Ecto.Schema
+
+  schema &quot;security_ratings&quot; do
+    field :domain, :string
+    field :grade, Ecto.Enum, values: [:A, :B, :C, :D, :F]
+    field :score, :integer
+    field :confidence, :float
+    field :evidence, :map
+    timestamps(type: :utc_datetime_usec)
+  end
+end
+</code></pre>
+<h3 id="ets-in-memory-speed">ETS -- In-Memory Speed</h3>
+<p><a href="https://prismatic-reality.com/technologies/ets/">ETS (Erlang Term Storage)</a> provides in-process, shared-nothing tables with microsecond read/write latency. The platform uses ETS extensively for caching, session state, and hot-path data that would suffer from the network round-trip overhead of an external cache:</p>
+<table><thead><tr><th>ETS Table</th><th>Purpose</th><th>Access Pattern</th></tr></thead><tbody>
+<tr><td><code>:api_registry</code></td><td>Discovered API endpoints</td><td>Read-heavy, write on boot</td></tr>
+<tr><td><code>:discovery_cache</code></td><td>Perimeter scan results</td><td>TTL-based expiration</td></tr>
+<tr><td><code>:agent_state</code></td><td>Active agent contexts</td><td>Frequent read/write</td></tr>
+<tr><td><code>:rate_limits</code></td><td>Request rate counters</td><td>Atomic increment</td></tr>
+</tbody></table>
+<p>ETS tables are owned by dedicated GenServer processes. If the owning process crashes and restarts, the table is recreated from the authoritative PostgreSQL source -- making ETS a performance optimization layer rather than a durability concern.</p>
+<h3 id="redis-external-caching-and-queues">Redis -- External Caching and Queues</h3>
+<p><a href="https://prismatic-reality.com/technologies/redis/">Redis</a> handles caching scenarios that span multiple BEAM nodes (in clustered deployments) and provides the backing store for Oban job queues. While ETS serves single-node caching, Redis provides the shared state necessary for horizontal scaling.</p>
+<h3 id="meilisearch-full-text-search">Meilisearch -- Full-Text Search</h3>
+<p><a href="https://prismatic-reality.com/technologies/meilisearch/">Meilisearch</a> powers the platform's search capabilities with typo-tolerant, faceted full-text search. Entity search, document discovery, and asset inventory filtering all route through Meilisearch, which indexes data pushed from PostgreSQL through the storage adapter layer.</p>
+<h3 id="kuzudb-graph-analytics">KuzuDB -- Graph Analytics</h3>
+<p><a href="https://prismatic-reality.com/technologies/kuzudb/">KuzuDB</a> provides embedded graph database capabilities for relationship-centric queries. Due diligence entity graphs, organizational ownership chains, and asset dependency maps are modeled as property graphs in KuzuDB, enabling traversal queries that would require expensive recursive CTEs in PostgreSQL.</p>
+<h2 id="ai-and-intelligence-layer">AI and Intelligence Layer</h2>
+<p>The platform integrates three AI and formal reasoning systems, each serving a distinct role in the intelligence pipeline.</p>
+<h3 id="claude-anthropic">Claude (Anthropic)</h3>
+<p><a href="https://prismatic-reality.com/technologies/claude/">Claude</a> serves as the primary frontier AI model for code generation, complex analysis, and autonomous agent operations. The platform's 434 AIAD agents leverage Claude for reasoning-intensive tasks through the Claude Agent SDK, with session context management ensuring continuity across interactions.</p>
+<h3 id="ollama-local-ai">Ollama -- Local AI</h3>
+<p><a href="https://prismatic-reality.com/technologies/ollama/">Ollama</a> provides local AI inference with models running entirely on-premises. This addresses three requirements that cloud AI cannot: <strong>data sovereignty</strong> (sensitive intelligence data never leaves the local network), <strong>latency</strong> (sub-3-second responses without network round-trips), and <strong>availability</strong> (operates independently of external API availability).</p>
+<p>The platform's Ollama integration supports automatic model selection based on task complexity and automatic fallback to cloud models when local inference quality is insufficient:</p>
+<pre><code data-lang="elixir">defmodule PrismaticOllama.Coordinator do
+  @models %{
+    fast: &quot;qwen3-coder:7b&quot;,
+    balanced: &quot;deepseek-coder:6.7b&quot;,
+    capable: &quot;gpt-oss:20b&quot;
+  }
+
+  def infer(prompt, opts \\ []) do
+    tier = Keyword.get(opts, :tier, :balanced)
+    model = Map.fetch!(@models, tier)
+
+    case PrismaticOllama.Client.generate(model, prompt) do
+      {:ok, result} -&gt; {:ok, result}
+      {:error, _} -&gt; fallback_to_cloud(prompt, opts)
+    end
+  end
+end
+</code></pre>
+<h3 id="lean-4-formal-verification">Lean 4 -- Formal Verification</h3>
+<p><a href="https://prismatic-reality.com/technologies/lean4/">Lean 4</a> is an interactive theorem prover and programming language used for formal verification of the platform's critical deduction chains. When the epistemic pipeline produces a high-confidence conclusion, Lean 4 can verify the logical structure of the reasoning chain through machine-checked proofs.</p>
+<p>This is not a theoretical capability -- the platform maintains thousands of Lean 4 verification files in <code>apps/prismatic_lean4/priv/deduction_verification/</code>, each encoding a specific deduction that has been formally verified. The combination of statistical AI inference (Claude/Ollama) with formal mathematical proof (Lean 4) is a distinguishing architectural feature.</p>
+<h2 id="frontend-stack">Frontend Stack</h2>
+<p>The frontend layer follows a server-first philosophy: LiveView handles interactivity on the server side, while the frontend technologies handle styling, component structure, and the minimal client-side behaviour that requires JavaScript execution.</p>
+<h3 id="tailwindcss">TailwindCSS</h3>
+<p><a href="https://prismatic-reality.com/technologies/tailwindcss/">TailwindCSS 3.4</a> provides utility-first CSS styling. Every visual element is styled through Tailwind utility classes -- no custom CSS files, no BEM naming conventions, no specificity wars. This constraint (enforced as a platform policy) ensures visual consistency and makes style changes grep-able:</p>
+<pre><code data-lang="html">&lt;div class=&quot;bg-white dark:bg-gray-800 rounded-lg shadow-md p-6&quot;&gt;
+  &lt;h3 class=&quot;text-lg font-semibold text-gray-900 dark:text-white&quot;&gt;
+    Security Rating
+  &lt;/h3&gt;
+  &lt;span class=&quot;inline-flex items-center px-3 py-1 rounded-full
+               text-sm font-medium bg-green-100 text-green-800&quot;&gt;
+    Grade A
+  &lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="flowbite">Flowbite</h3>
+<p><a href="https://prismatic-reality.com/technologies/flowbite/">Flowbite 2.3</a> extends TailwindCSS with pre-built UI components: modals, dropdowns, data tables, navigation bars, and charts. Using Flowbite's component library rather than building custom components reduces frontend development time while maintaining visual consistency across the platform's dashboards.</p>
+<h3 id="alpine-js">Alpine.js</h3>
+<p><a href="https://prismatic-reality.com/technologies/alpinejs/">Alpine.js</a> handles the small subset of client-side interactivity that cannot be served by LiveView -- primarily dropdown toggle states, tooltip positioning, and animation triggers that must respond to user input without a server round-trip.</p>
+<h2 id="devops-and-infrastructure">DevOps and Infrastructure</h2>
+<h3 id="docker">Docker</h3>
+<p><a href="https://prismatic-reality.com/technologies/docker/">Docker</a> provides development/production parity through containerized builds. The platform uses multi-stage Dockerfiles that separate compilation (with the full Elixir/Erlang toolchain) from the runtime image (Alpine Linux with only the compiled release), producing production images under 100 MB.</p>
+<h3 id="fly-io">Fly.io</h3>
+<p><a href="https://prismatic-reality.com/technologies/flyio/">Fly.io</a> hosts the platform's staging and production deployments. Fly.io's edge-native architecture maps well to Elixir releases -- the platform deploys as a single BEAM VM per region, with Fly.io handling TLS termination, load balancing, and geographic routing.</p>
+<h3 id="gitlab-ci-cd">GitLab CI/CD</h3>
+<p><a href="https://prismatic-reality.com/technologies/gitlab-ci/">GitLab CI/CD</a> orchestrates the platform's build pipeline: compilation with <code>--warnings-as-errors</code>, Credo static analysis, Dialyzer type checking, the full test suite, and deployment to Fly.io. The pipeline enforces the platform's quality gates -- a single warning, type error, or test failure blocks deployment.</p>
+<h3 id="mix-and-hex">Mix and Hex</h3>
+<p><a href="https://prismatic-reality.com/technologies/mix/">Mix</a> is Elixir's build tool, managing compilation, dependency resolution, test execution, and custom task definition. The platform defines 30+ custom Mix tasks for quality enforcement, benchmarking, code generation, and operational automation. <a rel="external" href="https://hex.pm">Hex</a> serves as the package registry, providing access to the Elixir ecosystem's 14,000+ packages.</p>
+<h2 id="security-tooling">Security Tooling</h2>
+<p>Security is enforced at multiple layers through specialized tools:</p>
+<table><thead><tr><th>Tool</th><th>Function</th><th>Integration Point</th></tr></thead><tbody>
+<tr><td><strong><a href="https://prismatic-reality.com/technologies/argon2/">Argon2</a></strong></td><td>Password hashing (winner of PHC)</td><td>Authentication module</td></tr>
+<tr><td><strong>Sobelow</strong></td><td>Static security analysis for Phoenix</td><td>CI pipeline, pre-commit hooks</td></tr>
+<tr><td><strong>mix deps.audit</strong></td><td>Dependency vulnerability scanning</td><td>CI pipeline, weekly scheduled</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/technologies/jose/">JOSE</a></strong></td><td>JWT creation, verification, encryption</td><td>API authentication</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/technologies/ssl-tls/">SSL/TLS</a></strong></td><td>Transport encryption</td><td>All external connections</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/technologies/credo/">Credo</a></strong></td><td>Code consistency and anti-pattern detection</td><td>CI pipeline, pre-commit hooks</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/technologies/dialyzer/">Dialyzer</a></strong></td><td>Static type analysis via success typing</td><td>CI pipeline</td></tr>
+</tbody></table>
+<p>The security toolchain runs automatically on every commit through GitLab CI and pre-commit hooks. No code reaches the main branch without passing Sobelow (zero findings), Credo (strict mode, zero warnings), and Dialyzer (zero type violations).</p>
+<h2 id="build-and-development-tools">Build and Development Tools</h2>
+<h3 id="exdoc">ExDoc</h3>
+<p>ExDoc generates the platform's 11,308 documentation files from inline <code>@doc</code> and <code>@moduledoc</code> attributes. Documentation is treated as a first-class artifact -- modules without documentation trigger compilation warnings that block deployment.</p>
+<h3 id="exunit">ExUnit</h3>
+<p><a href="https://prismatic-reality.com/technologies/exunit/">ExUnit</a> is Elixir's built-in test framework, executing the platform's 5,532 test files. Tests run in parallel by default, with database sandboxing through Ecto's SQL sandbox for isolation. The platform uses property-based testing (StreamData) alongside example-based tests for critical business logic.</p>
+<h3 id="zola">Zola</h3>
+<p><a href="https://prismatic-reality.com/technologies/zola/">Zola</a> generates the public-facing promotional site (the one you are reading now). Zola is a single-binary static site generator written in Rust, chosen for its compilation speed (sub-second builds for the entire site), zero runtime dependencies, and native Sass/SCSS compilation.</p>
+<h3 id="git">Git</h3>
+<p><a href="https://prismatic-reality.com/technologies/git/">Git</a> provides version control with extensive platform-specific tooling. The platform's <code>git-trees.sh</code> script wraps <code>git ls-tree</code> for rapid codebase exploration (~80ms for 37,000+ files versus 500ms+ for <code>find</code>), and custom Git hooks enforce quality gates at commit, pre-push, and CI stages.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Prismatic Platform's 45-technology stack is the product of deliberate engineering trade-offs, not feature accumulation. Each technology occupies a specific niche defined by its operational characteristics, integration profile, and long-term maintainability. The BEAM VM provides the fault-tolerant foundation. Phoenix and LiveView deliver real-time web interfaces without frontend framework complexity. Polyglot storage ensures each data access pattern uses an optimized engine. AI models augment human analysis without becoming single points of failure. Formal verification with Lean 4 provides mathematical certainty where statistical inference is insufficient.</p>
+<p>The unifying principle across all eight layers is <strong>composability through well-defined interfaces</strong>. Storage adapters abstract persistence backends. The Plug pipeline composes HTTP middleware. PubSub decouples event producers from consumers. GenServer contracts define process communication. This interface discipline enables the platform to evolve individual technologies -- replacing Redis with a BEAM-native alternative, swapping Meilisearch for a different search engine, upgrading AI models -- without cascading changes through the codebase.</p>
+<p>For detailed documentation on any individual technology, select from the catalog below or navigate directly to the technology detail pages linked throughout this overview.</p>
+
+            </div>
+            
+        </div>
+
+        <!-- Category Stats -->
+        <div class="flex flex-wrap justify-center gap-4 mt-10">
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-purple-400">3</span>
+                <span class="text-sm text-gray-400 ml-2">Language</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-blue-400">5</span>
+                <span class="text-sm text-gray-400 ml-2">Web Framework</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-cyan-400">6</span>
+                <span class="text-sm text-gray-400 ml-2">Frontend</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-emerald-400">6</span>
+                <span class="text-sm text-gray-400 ml-2">Database</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-yellow-400">4</span>
+                <span class="text-sm text-gray-400 ml-2">AI/ML</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-orange-400">4</span>
+                <span class="text-sm text-gray-400 ml-2">Infrastructure</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-red-400">4</span>
+                <span class="text-sm text-gray-400 ml-2">Testing</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-indigo-400">6</span>
+                <span class="text-sm text-gray-400 ml-2">Protocol</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-rose-400">3</span>
+                <span class="text-sm text-gray-400 ml-2">Security</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-teal-400">3</span>
+                <span class="text-sm text-gray-400 ml-2">Tools</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Advanced Table Section -->
+<section class="bg-white dark:bg-gray-950 py-12 lg:py-16" x-data="techTable()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+
+        <!-- Interactive Analytics Panel -->
+        <div x-data="{ chartsOpen: false }" class="mb-8">
+            <button
+                @click="chartsOpen = !chartsOpen; if(chartsOpen) $nextTick(() => window.dispatchEvent(new Event('init-tech-charts')))"
+                class="w-full flex items-center justify-between p-4 bg-gradient-to-r from-teal-50 to-emerald-50 dark:from-teal-900/20 dark:to-emerald-900/20 rounded-xl border border-teal-200 dark:border-teal-700 hover:shadow-md transition-all">
+                <div class="flex items-center gap-3">
+                    <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                    <span class="text-sm font-bold text-gray-900 dark:text-white">Technology Stack Analytics</span>
+                    <span
+                        class="px-2 py-0.5 text-xs font-semibold bg-teal-100 dark:bg-teal-900/50 text-teal-700 dark:text-teal-300 rounded-full">Chart.js</span>
+                </div>
+                <svg class="w-5 h-5 text-gray-400 transition-transform" :class="chartsOpen ? 'rotate-180' : ''"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+            <div x-show="chartsOpen" x-transition:enter="transition ease-out duration-300"
+                x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+                x-cloak class="mt-4 grid gap-4 lg:grid-cols-2">
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 shadow-sm">
+                    <h4 class="text-sm font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                        <svg class="w-4 h-4 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                        </svg>
+                        Technology Category Distribution
+                    </h4>
+                    <div style="height: 280px;"><canvas id="techCategoryPie"></canvas></div>
+                </div>
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-4 shadow-sm">
+                    <h4 class="text-sm font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                        <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        Stack Capability Radar
+                    </h4>
+                    <div style="height: 280px;"><canvas id="techCapabilityRadar"></canvas></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="mb-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div class="flex flex-col lg:flex-row gap-4">
+                <!-- Search -->
+                <div class="flex-1">
+                    <label for="search" class="sr-only">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                        <input type="text" id="search" x-model="searchQuery" @input="filterTech()"
+                            class="block w-full pl-10 pr-4 py-2.5 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-teal-500 dark:focus:border-teal-500"
+                            placeholder="Search technologies... (fuzzy search enabled)">
+                    </div>
+                </div>
+
+                <!-- Category Filter -->
+                <div class="w-full lg:w-48">
+                    <select x-model="categoryFilter" @change="filterTech()"
+                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="">All Categories</option>
+                        <option value="language">Language</option>
+                        <option value="web-framework">Web Framework</option>
+                        <option value="frontend">Frontend</option>
+                        <option value="database">Database</option>
+                        <option value="ai-ml">AI/ML</option>
+                        <option value="infrastructure">Infrastructure</option>
+                        <option value="testing">Testing</option>
+                        <option value="protocol">Protocol</option>
+                        <option value="security">Security</option>
+                        <option value="tools">Tools</option>
+                    </select>
+                </div>
+
+                <!-- View Toggle -->
+                <div
+                    class="flex items-center bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <button @click="viewMode = 'cards'"
+                        :class="viewMode === 'cards' ? 'bg-teal-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg>
+                    </button>
+                    <button @click="viewMode = 'table'"
+                        :class="viewMode === 'table' ? 'bg-teal-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Reset -->
+                <button @click="resetFilters()"
+                    class="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600">
+                    Reset
+                </button>
+            </div>
+
+            <!-- Results count -->
+            <div class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+                Showing <span class="font-semibold text-teal-600 dark:text-teal-400"
+                    x-text="filteredTech.length"></span> of <span x-text="allTech.length"></span> technologies
+            </div>
+        </div>
+
+        <!-- Card View -->
+        <div x-show="viewMode === 'cards'" x-transition class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <template x-for="tech in paginatedTech" :key="tech.id">
+                <a :href="'https://prismatic-reality.com/technologies/' + tech.id + '/'"
+                    class="group block p-5 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-teal-300 dark:hover:border-teal-700 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                            :class="getCategoryColor(tech.category)">
+                            <span x-text="tech.name.substring(0,2).toUpperCase()"></span>
+                        </div>
+                        <div class="min-w-0">
+                            <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors truncate"
+                                x-text="tech.name"></h3>
+                            <span class="text-xs text-gray-500" x-text="tech.version"></span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2" x-text="tech.description"></p>
+                    <div class="flex items-center justify-between">
+                        <a :href="'https://prismatic-reality.com/technologies/?category=' + encodeURIComponent(tech.category)"
+                            @click.stop.prevent="categoryFilter = tech.category; currentPage = 1; filterTech()"
+                            :title="'Filter by category: ' + getCategoryLabel(tech.category)"
+                            class="px-2 py-0.5 text-xs font-medium rounded-full cursor-pointer hover:ring-2 hover:ring-offset-1 hover:ring-current transition-all"
+                            :class="getCategoryBadge(tech.category)" x-text="getCategoryLabel(tech.category)"></a>
+                        <svg class="w-4 h-4 text-gray-400 group-hover:text-teal-500 transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </a>
+            </template>
+        </div>
+
+        <!-- Table View -->
+        <div x-show="viewMode === 'table'" x-transition
+            class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-800 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="sortBy('name')">
+                            <div class="flex items-center gap-2">
+                                Technology
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'name' && sortDesc}"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="sortBy('category')">
+                            <div class="flex items-center gap-2">
+                                Category
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'category' && sortDesc}"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4">Version</th>
+                        <th scope="col" class="px-6 py-4">Description</th>
+                        <th scope="col" class="px-6 py-4 text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template x-for="tech in paginatedTech" :key="tech.id">
+                        <tr
+                            class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                                        :class="getCategoryColor(tech.category)">
+                                        <span x-text="tech.name.substring(0,2).toUpperCase()"></span>
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold text-gray-900 dark:text-white" x-text="tech.name">
+                                        </div>
+                                        <a :href="tech.url" target="_blank" rel="noopener"
+                                            class="text-xs text-teal-500 hover:underline" x-text="tech.url"
+                                            x-show="tech.url"></a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4">
+                                <a :href="'https://prismatic-reality.com/technologies/?category=' + encodeURIComponent(tech.category)"
+                                    @click.stop="categoryFilter = tech.category; currentPage = 1; filterTech()"
+                                    :title="'Filter by category: ' + getCategoryLabel(tech.category)"
+                                    class="px-2.5 py-1 text-xs font-medium rounded-full cursor-pointer hover:ring-2 hover:ring-offset-1 hover:ring-current transition-all"
+                                    :class="getCategoryBadge(tech.category)"
+                                    x-text="getCategoryLabel(tech.category)"></a>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span
+                                    class="px-2.5 py-1 text-xs font-medium rounded-lg bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
+                                    x-text="tech.version"></span>
+                            </td>
+                            <td class="px-6 py-4 max-w-xs">
+                                <p class="truncate" x-text="tech.description"></p>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <a :href="'https://prismatic-reality.com/technologies/' + tech.id + '/'"
+                                    class="font-medium text-teal-600 dark:text-teal-400 hover:underline">
+                                    Details
+                                </a>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex flex-col md:flex-row items-center justify-between mt-6 gap-4">
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+                Page <span class="font-semibold" x-text="currentPage"></span> of <span class="font-semibold"
+                    x-text="totalPages"></span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button @click="prevPage()" :disabled="currentPage === 1"
+                    :class="{'opacity-50 cursor-not-allowed': currentPage === 1}"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    Previous
+                </button>
+                <template x-for="page in visiblePages" :key="page">
+                    <button @click="goToPage(page)"
+                        :class="{'bg-teal-600 text-white border-teal-600': currentPage === page, 'bg-white text-gray-700 border-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600': currentPage !== page}"
+                        class="px-4 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                        x-text="page">
+                    </button>
+                </template>
+                <button @click="nextPage()" :disabled="currentPage === totalPages"
+                    :class="{'opacity-50 cursor-not-allowed': currentPage === totalPages}"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    Next
+                </button>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-sm text-gray-500 dark:text-gray-400">Per page:</span>
+                <select x-model.number="perPage" @change="currentPage = 1; filterTech()"
+                    class="py-1 px-2 text-sm border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300">
+                    <option value="20">20</option>
+                    <option value="44">44</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Category Overview -->
+<section class="bg-gray-50 dark:bg-gray-800 py-16 border-t border-gray-200 dark:border-gray-700">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Technology Categories</h2>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
+            <!-- Language -->
+            <div class="p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Core Language</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Elixir, Erlang/OTP, and the BEAM virtual
+                    machine.</p>
+                <span class="text-2xl font-bold text-purple-600 dark:text-purple-400">3</span>
+            </div>
+
+            <!-- Web Framework -->
+            <div class="p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Web Framework</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Phoenix, LiveView, Ecto, Plug, and Absinthe.
+                </p>
+                <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">5</span>
+            </div>
+
+            <!-- Database -->
+            <div class="p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Databases</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">PostgreSQL, ETS, Redis, Meilisearch, KuzuDB,
+                    TimescaleDB.</p>
+                <span class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">6</span>
+            </div>
+
+            <!-- AI/ML -->
+            <div class="p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-yellow-600 dark:text-yellow-400" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">AI & ML</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">Ollama, Claude, Lean 4, OpenAI integration.</p>
+                <span class="text-2xl font-bold text-yellow-600 dark:text-yellow-400">4</span>
+            </div>
+
+            <!-- Security -->
+            <div class="p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div class="w-12 h-12 bg-rose-100 dark:bg-rose-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-rose-600 dark:text-rose-400" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Security</h3>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">JOSE, Argon2, SSL/TLS encryption.</p>
+                <span class="text-2xl font-bold text-rose-600 dark:text-rose-400">3</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function techTable() {
+        return {
+            searchQuery: '',
+            categoryFilter: '',
+            sortField: 'name',
+            sortDesc: false,
+            viewMode: 'cards',
+            currentPage: 1,
+            perPage: 20,
+            allTech: [],
+            filteredTech: [],
+
+            init() {
+                this.allTech = this.generateTech();
+                // Handle URL query-param filtering (e.g., ?category=language)
+                var params = new URLSearchParams(window.location.search);
+                if (params.get('category')) { this.categoryFilter = params.get('category'); }
+                if (params.get('search')) { this.searchQuery = params.get('search'); }
+                this.filterTech();
+            },
+
+            generateTech() {
+                return [
+                    { id: 'elixir', name: 'Elixir', category: 'language', description: 'Dynamic, functional language for building scalable applications on the BEAM VM', url: 'https://elixir-lang.org', version: '1.19+', hasPage: true },
+                    { id: 'erlang-otp', name: 'Erlang/OTP', category: 'language', description: 'Battle-tested runtime for fault-tolerant distributed systems', url: 'https://www.erlang.org', version: '27+', hasPage: true },
+                    { id: 'beam', name: 'BEAM VM', category: 'language', description: 'Virtual machine powering Erlang and Elixir with lightweight process concurrency', url: 'https://www.erlang.org/blog/a-brief-beam-primer/', version: 'OTP 27', hasPage: true },
+                    { id: 'phoenix', name: 'Phoenix Framework', category: 'web-framework', description: 'High-performance web framework for Elixir with real-time capabilities', url: 'https://www.phoenixframework.org', version: '1.7+', hasPage: true },
+                    { id: 'phoenix-liveview', name: 'Phoenix LiveView', category: 'web-framework', description: 'Server-rendered real-time UI without JavaScript complexity', url: 'https://hexdocs.pm/phoenix_live_view/', version: '1.0+', hasPage: true },
+                    { id: 'ecto', name: 'Ecto', category: 'web-framework', description: 'Database wrapper and query generator with composable changesets', url: 'https://hexdocs.pm/ecto/', version: '3.12+', hasPage: true },
+                    { id: 'plug', name: 'Plug', category: 'web-framework', description: 'Composable middleware specification and connection adapter for web applications', url: 'https://hexdocs.pm/plug/', version: '1.16+', hasPage: true },
+                    { id: 'absinthe', name: 'Absinthe', category: 'web-framework', description: 'Full-featured GraphQL implementation for Elixir', url: 'https://hexdocs.pm/absinthe/', version: '1.7+', hasPage: true },
+                    { id: 'tailwindcss', name: 'TailwindCSS', category: 'frontend', description: 'Utility-first CSS framework for rapid UI development', url: 'https://tailwindcss.com', version: '3.4+', hasPage: true },
+                    { id: 'flowbite', name: 'Flowbite', category: 'frontend', description: 'Open-source UI component library built on TailwindCSS', url: 'https://flowbite.com', version: '2.3+', hasPage: true },
+                    { id: 'alpinejs', name: 'Alpine.js', category: 'frontend', description: 'Lightweight reactive JavaScript framework for composing behavior', url: 'https://alpinejs.dev', version: '3.13+', hasPage: true },
+                    { id: 'chartjs', name: 'Chart.js', category: 'frontend', description: 'Flexible charting library for beautiful data visualizations', url: 'https://www.chartjs.org', version: '4.4+', hasPage: true },
+                    { id: 'threejs', name: 'Three.js', category: 'frontend', description: '3D graphics library for creating immersive WebGL experiences', url: 'https://threejs.org', version: '0.160+', hasPage: true },
+                    { id: 'mermaidjs', name: 'Mermaid.js', category: 'frontend', description: 'Markdown-driven diagramming and charting tool', url: 'https://mermaid.js.org', version: '10+', hasPage: true },
+                    { id: 'postgresql', name: 'PostgreSQL', category: 'database', description: 'Advanced open-source relational database with extensions ecosystem', url: 'https://www.postgresql.org', version: '16+', hasPage: true },
+                    { id: 'ets', name: 'ETS', category: 'database', description: 'Erlang Term Storage for high-performance in-memory data', url: 'https://www.erlang.org/doc/man/ets.html', version: 'Built-in', hasPage: true },
+                    { id: 'redis', name: 'Redis', category: 'database', description: 'In-memory data store for caching, sessions, and pub/sub', url: 'https://redis.io', version: '7+', hasPage: true },
+                    { id: 'meilisearch', name: 'Meilisearch', category: 'database', description: 'Lightning-fast full-text search engine with typo tolerance', url: 'https://www.meilisearch.com', version: '1.6+', hasPage: true },
+                    { id: 'kuzudb', name: 'KuzuDB', category: 'database', description: 'Embedded graph database for relationship-heavy data models', url: 'https://kuzudb.com', version: '0.3+', hasPage: true },
+                    { id: 'timescaledb', name: 'TimescaleDB', category: 'database', description: 'Time-series database extension for PostgreSQL', url: 'https://www.timescale.com', version: '2.14+', hasPage: true },
+                    { id: 'ollama', name: 'Ollama', category: 'ai-ml', description: 'Local AI model runner for privacy-first inference', url: 'https://ollama.com', version: '0.3+', hasPage: true },
+                    { id: 'claude', name: 'Claude (Anthropic)', category: 'ai-ml', description: 'Advanced AI assistant for code generation and analysis', url: 'https://www.anthropic.com', version: 'Opus 4.5', hasPage: true },
+                    { id: 'lean4', name: 'Lean 4', category: 'ai-ml', description: 'Theorem prover and programming language for formal verification', url: 'https://lean-lang.org', version: '4.x', hasPage: true },
+                    { id: 'openai', name: 'OpenAI', category: 'ai-ml', description: 'GPT integration for natural language processing tasks', url: 'https://openai.com', version: 'GPT-4+', hasPage: true },
+                    { id: 'docker', name: 'Docker', category: 'infrastructure', description: 'Container platform for consistent development and deployment', url: 'https://www.docker.com', version: '25+', hasPage: true },
+                    { id: 'flyio', name: 'Fly.io', category: 'infrastructure', description: 'Global application deployment platform with edge computing', url: 'https://fly.io', version: 'Latest', hasPage: true },
+                    { id: 'gitlab-ci', name: 'GitLab CI/CD', category: 'infrastructure', description: 'Integrated CI/CD pipelines for automated testing and deployment', url: 'https://docs.gitlab.com/ee/ci/', version: '16+', hasPage: true },
+                    { id: 'nginx', name: 'Nginx', category: 'infrastructure', description: 'High-performance reverse proxy and load balancer', url: 'https://nginx.org', version: '1.25+', hasPage: true },
+                    { id: 'dialyzer', name: 'Dialyzer', category: 'testing', description: 'Static analysis tool for finding type discrepancies in Erlang/Elixir', url: 'https://www.erlang.org/doc/man/dialyzer.html', version: 'Built-in', hasPage: true },
+                    { id: 'credo', name: 'Credo', category: 'testing', description: 'Static code analysis tool for consistent Elixir code quality', url: 'https://hexdocs.pm/credo/', version: '1.7+', hasPage: true },
+                    { id: 'exunit', name: 'ExUnit', category: 'testing', description: 'Built-in test framework for Elixir with async support', url: 'https://hexdocs.pm/ex_unit/', version: 'Built-in', hasPage: true },
+                    { id: 'mix', name: 'Mix', category: 'testing', description: 'Build tool for compiling, testing, and managing Elixir projects', url: 'https://hexdocs.pm/mix/', version: 'Built-in', hasPage: true },
+                    { id: 'openapi', name: 'OpenAPI/Swagger', category: 'protocol', description: 'API specification standard for RESTful services documentation', url: 'https://www.openapis.org', version: '3.0', hasPage: true },
+                    { id: 'graphql', name: 'GraphQL', category: 'protocol', description: 'Query language for APIs with type system and runtime', url: 'https://graphql.org', version: 'Oct 2021', hasPage: true },
+                    { id: 'websockets', name: 'WebSockets', category: 'protocol', description: 'Full-duplex communication protocol for real-time data exchange', url: 'https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API', version: 'RFC 6455', hasPage: true },
+                    { id: 'genserver', name: 'GenServer', category: 'protocol', description: 'Generic server OTP behaviour for stateful process management', url: 'https://hexdocs.pm/elixir/GenServer.html', version: 'OTP', hasPage: true },
+                    { id: 'supervisor', name: 'Supervisor', category: 'protocol', description: 'OTP behaviour for building fault-tolerant supervision trees', url: 'https://hexdocs.pm/elixir/Supervisor.html', version: 'OTP', hasPage: true },
+                    { id: 'pubsub', name: 'Phoenix PubSub', category: 'protocol', description: 'Distributed publish-subscribe system for real-time messaging', url: 'https://hexdocs.pm/phoenix_pubsub/', version: '2.1+', hasPage: true },
+                    { id: 'jose', name: 'JOSE', category: 'security', description: 'JSON Object Signing and Encryption for JWT/JWS/JWE', url: 'https://hexdocs.pm/jose/', version: '1.11+', hasPage: true },
+                    { id: 'argon2', name: 'Argon2', category: 'security', description: 'Memory-hard password hashing algorithm for secure credential storage', url: 'https://hexdocs.pm/argon2_elixir/', version: '4.0+', hasPage: true },
+                    { id: 'ssl-tls', name: 'SSL/TLS', category: 'security', description: 'Transport layer encryption for secure communications', url: 'https://www.erlang.org/doc/man/ssl.html', version: 'TLS 1.3', hasPage: true },
+                    { id: 'zola', name: 'Zola', category: 'tools', description: 'Fast static site generator written in Rust', url: 'https://www.getzola.org', version: '0.19+', hasPage: true },
+                    { id: 'git', name: 'Git', category: 'tools', description: 'Distributed version control for source code management', url: 'https://git-scm.com', version: '2.43+', hasPage: true },
+                    { id: 'asdf', name: 'asdf', category: 'tools', description: 'Extendable version manager for multiple runtime versions', url: 'https://asdf-vm.com', version: '0.14+', hasPage: true },
+                ];
+            },
+
+            filterTech() {
+                let results = [...this.allTech];
+
+                if (this.searchQuery) {
+                    const query = this.searchQuery.toLowerCase();
+                    results = results.filter(t =>
+                        t.name.toLowerCase().includes(query) ||
+                        t.description.toLowerCase().includes(query) ||
+                        t.category.toLowerCase().includes(query) ||
+                        t.version.toLowerCase().includes(query)
+                    );
+                }
+
+                if (this.categoryFilter) {
+                    results = results.filter(t => t.category === this.categoryFilter);
+                }
+
+                results.sort((a, b) => {
+                    let aVal = a[this.sortField];
+                    let bVal = b[this.sortField];
+                    if (typeof aVal === 'string') {
+                        aVal = aVal.toLowerCase();
+                        bVal = bVal.toLowerCase();
+                    }
+                    if (this.sortDesc) {
+                        return bVal > aVal ? 1 : -1;
+                    }
+                    return aVal > bVal ? 1 : -1;
+                });
+
+                this.filteredTech = results;
+            },
+
+            sortBy(field) {
+                if (this.sortField === field) {
+                    this.sortDesc = !this.sortDesc;
+                } else {
+                    this.sortField = field;
+                    this.sortDesc = false;
+                }
+                this.filterTech();
+            },
+
+            resetFilters() {
+                this.searchQuery = '';
+                this.categoryFilter = '';
+                this.sortField = 'name';
+                this.sortDesc = false;
+                this.currentPage = 1;
+                this.filterTech();
+            },
+
+            get paginatedTech() {
+                const start = (this.currentPage - 1) * this.perPage;
+                return this.filteredTech.slice(start, start + this.perPage);
+            },
+
+            get totalPages() {
+                return Math.ceil(this.filteredTech.length / this.perPage) || 1;
+            },
+
+            get visiblePages() {
+                const pages = [];
+                const total = this.totalPages;
+                const current = this.currentPage;
+                let start = Math.max(1, current - 2);
+                let end = Math.min(total, current + 2);
+
+                if (end - start < 4) {
+                    if (start === 1) {
+                        end = Math.min(total, 5);
+                    } else {
+                        start = Math.max(1, total - 4);
+                    }
+                }
+
+                for (let i = start; i <= end; i++) {
+                    pages.push(i);
+                }
+                return pages;
+            },
+
+            prevPage() {
+                if (this.currentPage > 1) this.currentPage--;
+            },
+
+            nextPage() {
+                if (this.currentPage < this.totalPages) this.currentPage++;
+            },
+
+            goToPage(page) {
+                this.currentPage = page;
+            },
+
+            getCategoryColor(category) {
+                const colors = {
+                    'language': 'bg-purple-600',
+                    'web-framework': 'bg-blue-600',
+                    'frontend': 'bg-cyan-600',
+                    'database': 'bg-emerald-600',
+                    'ai-ml': 'bg-yellow-600',
+                    'infrastructure': 'bg-orange-600',
+                    'testing': 'bg-red-600',
+                    'protocol': 'bg-indigo-600',
+                    'security': 'bg-rose-600',
+                    'tools': 'bg-teal-600'
+                };
+                return colors[category] || 'bg-gray-600';
+            },
+
+            getCategoryBadge(category) {
+                const badges = {
+                    'language': 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
+                    'web-framework': 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+                    'frontend': 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400',
+                    'database': 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400',
+                    'ai-ml': 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400',
+                    'infrastructure': 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400',
+                    'testing': 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
+                    'protocol': 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400',
+                    'security': 'bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400',
+                    'tools': 'bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-400'
+                };
+                return badges[category] || 'bg-gray-100 text-gray-700';
+            },
+
+            getCategoryLabel(category) {
+                const labels = {
+                    'language': 'Language',
+                    'web-framework': 'Web Framework',
+                    'frontend': 'Frontend',
+                    'database': 'Database',
+                    'ai-ml': 'AI/ML',
+                    'infrastructure': 'Infrastructure',
+                    'testing': 'Testing',
+                    'protocol': 'Protocol',
+                    'security': 'Security',
+                    'tools': 'Tools'
+                };
+                return labels[category] || category;
+            }
+        };
+    }
+</script>
+<!-- Technology Analytics Charts -->
+<script>
+    (function () {
+        var techChartsInit = false;
+        function initTechCharts() {
+            if (techChartsInit || typeof Chart === 'undefined') return;
+            techChartsInit = true;
+            var isDark = document.documentElement.classList.contains('dark');
+            Chart.defaults.color = isDark ? '#d1d5db' : '#374151';
+            Chart.defaults.font.family = "'Inter', sans-serif";
+            var gridColor = isDark ? 'rgba(75,85,99,0.3)' : 'rgba(209,213,219,0.5)';
+            var catLabels = ['Frontend', 'Database', 'Web Framework', 'Protocol', 'AI/ML', 'Infrastructure', 'Testing', 'Language', 'Security', 'Tools'];
+            var catData = [6, 6, 5, 6, 4, 4, 4, 3, 3, 3];
+            var catColors = ['rgba(6,182,212,0.8)', 'rgba(16,185,129,0.8)', 'rgba(59,130,246,0.8)', 'rgba(99,102,241,0.8)', 'rgba(234,179,8,0.8)', 'rgba(249,115,22,0.8)', 'rgba(239,68,68,0.8)', 'rgba(168,85,247,0.8)', 'rgba(244,63,94,0.8)', 'rgba(20,184,166,0.8)'];
+            var pieCtx = document.getElementById('techCategoryPie');
+            if (pieCtx) {
+                new Chart(pieCtx, {
+                    type: 'doughnut',
+                    data: { labels: catLabels, datasets: [{ data: catData, backgroundColor: catColors, borderWidth: 0, hoverOffset: 8 }] },
+                    options: {
+                        responsive: true, maintainAspectRatio: false, cutout: '50%',
+                        onClick: function (event, elements) {
+                            if (elements.length > 0) {
+                                var slugMap = { 'Frontend': 'frontend', 'Database': 'database', 'Web Framework': 'web-framework', 'Protocol': 'protocol', 'AI/ML': 'ai-ml', 'Infrastructure': 'infrastructure', 'Testing': 'testing', 'Language': 'language', 'Security': 'security', 'Tools': 'tools' };
+                                var cat = catLabels[elements[0].index];
+                                if (slugMap[cat]) {
+                                    var sel = document.querySelector('[x-model="categoryFilter"]');
+                                    if (sel) { sel.value = slugMap[cat]; sel.dispatchEvent(new Event('change')); }
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: { position: 'right', labels: { padding: 8, usePointStyle: true, pointStyleWidth: 8, font: { size: 10 } } },
+                            tooltip: { backgroundColor: 'rgba(17,24,39,0.9)', padding: 10, cornerRadius: 8, callbacks: { label: function (c) { return c.label + ': ' + c.raw + ' technologies (' + Math.round(c.raw / 44 * 100) + '%)'; } } }
+                        }
+                    }
+                });
+            }
+            var radarCtx = document.getElementById('techCapabilityRadar');
+            if (radarCtx) {
+                new Chart(radarCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Real-Time', 'Scalability', 'AI/ML', 'Security', 'Search', 'Graph DB', 'Testing', 'Observability', 'Formal Verification'],
+                        datasets: [{
+                            label: 'Current Stack',
+                            data: [98, 95, 92, 90, 88, 85, 96, 82, 78],
+                            fill: true,
+                            backgroundColor: 'rgba(20,184,166,0.15)',
+                            borderColor: 'rgba(20,184,166,0.8)',
+                            pointBackgroundColor: 'rgba(20,184,166,1)',
+                            pointBorderColor: '#fff',
+                            borderWidth: 2,
+                            pointRadius: 4
+                        }, {
+                            label: 'Industry Average',
+                            data: [70, 75, 65, 72, 68, 40, 70, 60, 25],
+                            fill: true,
+                            backgroundColor: 'rgba(156,163,175,0.08)',
+                            borderColor: 'rgba(156,163,175,0.4)',
+                            borderWidth: 1,
+                            borderDash: [4, 4],
+                            pointRadius: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true, maintainAspectRatio: false,
+                        scales: { r: { beginAtZero: true, max: 100, ticks: { stepSize: 25, font: { size: 9 }, backdropColor: 'transparent' }, grid: { color: gridColor }, angleLines: { color: gridColor }, pointLabels: { font: { size: 9, weight: '500' } } } },
+                        plugins: {
+                            legend: { position: 'bottom', labels: { padding: 12, usePointStyle: true, font: { size: 10 } } },
+                            tooltip: { backgroundColor: 'rgba(17,24,39,0.9)', padding: 10, cornerRadius: 8 }
+                        },
+                        animation: { duration: 1200 }
+                    }
+                });
+            }
+        }
+        window.addEventListener('init-tech-charts', initTechCharts);
+    })();
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/platform/" class="text-gray-400 hover:text-white transition-colors">Overview</a>
+                        </li>
+                        <li><a href="/apps/" class="text-gray-400 hover:text-white transition-colors">Applications (89)</a></li>
+                        <li><a href="/agents/" class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products & Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Products & Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/products/" class="text-gray-400 hover:text-white transition-colors">Products</a>
+                        </li>
+                        <li><a href="/osint/" class="text-gray-400 hover:text-white transition-colors">OSINT Sources
+                                (121+)</a></li>
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="/solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a>
+                        </li>
+                        <li><a href="/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a>
+                        </li>
+                        <li><a href="/faq/" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-white bg-blue-600 rounded-xl shadow-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-110 focus:ring-4 focus:ring-blue-300 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="/js/vendor/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Back to Top button
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

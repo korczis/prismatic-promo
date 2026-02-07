@@ -1,0 +1,24 @@
+# Prismatic Platform Documentation
+
+## Architecture
+The Prismatic Platform is an enterprise-grade AI-orchestrated intelligence system built with Elixir/OTP.
+It features autonomous agents, umbrella applications, and extensive OSINT source integrations.
+
+## Tech Stack
+- **Backend:** Elixir / OTP / Phoenix LiveView
+- **Frontend:** Tailwind CSS / Flowbite / Alpine.js
+- **Database:** PostgreSQL / Redis / Meilisearch / KuzuDB
+- **Deployment:** Fly.io (Docker)
+
+## Key Concepts
+- **Agents:** Autonomous entities following the AIAD standard.
+- **SEADF:** Self-Evolving Autonomous Development Framework.
+- **NABLA Infinity:** Epistemic framework for truth validation.
+- **Trinity Gate:** Validation mechanism ensuring structural, logical, and formal consistency.
+
+## Documentation
+- `/apps/` - Application documentation
+- `/agents/` - Agent definitions and capabilities
+- `/osint/` - OSINT source integrations
+- `/architecture/` - System architecture details
+- `/technologies/` - Technology stack information

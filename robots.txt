@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://prismatic-reality.com/sitemap.xml
+
+# Block staging/dev areas
+Disallow: /admin/
+Disallow: /test/
+Disallow: /_dev/
+
+# Allow search engines to index all content
+Crawl-delay: 1
+
+# Optimize for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /

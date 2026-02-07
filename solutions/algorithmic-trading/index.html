@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Algorithmic Trading Application - Prismatic Platform Solutions</title>
+
+    
+<meta name="description" content="Prismatic Platform Solution - Production-ready AI implementation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;solutions&#x2F;algorithmic-trading&#x2F;">
+<meta property="og:title" content="Algorithmic Trading Application - Prismatic Platform Solutions">
+<meta property="og:description"
+    content="Prismatic Platform Solution - Production-ready AI implementation">
+<meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;solutions&#x2F;algorithmic-trading&#x2F;">
+<meta name="twitter:title" content="Algorithmic Trading Application - Prismatic Platform Solutions">
+<meta name="twitter:description"
+    content="Prismatic Platform Solution - Production-ready AI implementation">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;solutions&#x2F;algorithmic-trading&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- ANTIGRAVITY CSS - Single source of truth for colors -->
+    <link rel="stylesheet" href="/css/antigravity.css">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    <!-- Chart.js -->
+    <script src="/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Three.js (3D visualizations) -->
+    <script src="/js/vendor/three.min.js"></script>
+    <script src="/js/vendor/OrbitControls.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+        (function () {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 space-x-3">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    <li>
+                        <a href="/platform/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                    </li>
+                    <li>
+                        <a href="/products/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                    </li>
+                    <li>
+                        <a href="/capabilities/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            x-cloak>
+                            <a href="/apps/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                (89)</a>
+                            <a href="/agents/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                (430)</a>
+                            <a href="/architecture/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                            <a href="/technologies/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/commands/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                            <a href="/teams/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                Teams</a>
+                            <a href="/solutions/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                            <a href="/registry/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/glossary/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                            <a href="/faq/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Header -->
+<section class="bg-gray-950 py-12 lg:py-16 border-b border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="/"
+                        class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <a href="/solutions/"
+                            class="ml-1 text-sm font-medium text-gray-400 hover:text-white md:ml-2 transition-colors">Solutions</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-white md:ml-2">Algorithmic Trading Application</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Header Card -->
+        <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl shadow-2xl border border-cyan-700/30 overflow-hidden"
+            x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)">
+            <div class="p-8">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-6" x-show="shown"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform -translate-y-4"
+                    x-transition:enter-end="opacity-100 transform translate-y-0">
+                    <!-- Solution Icon -->
+                    <div class="flex-shrink-0">
+                        
+                        <div class="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-cyan-500/30
+                            bg-gradient-to-br from-cyan-600 to-blue-600
+                            ">
+                            
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Title & Description -->
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <h1 class="text-3xl md:text-4xl font-black text-white">Algorithmic Trading Application</h1>
+                            
+                            
+                            
+                        </div>
+                        
+                        <p class="text-lg text-gray-300 leading-relaxed max-w-3xl">AI-powered algorithmic trading system with multi-agent coordination and risk management</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="bg-white dark:bg-gray-950 py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-3">
+            <!-- Main Content (left 2/3) -->
+            <div class="lg:col-span-2">
+                <article class="prose prose-lg dark:prose-invert max-w-none
+                    prose-headings:text-gray-900 dark:prose-headings:text-white
+                    prose-p:text-gray-600 dark:prose-p:text-gray-300
+                    prose-a:text-cyan-600 dark:prose-a:text-cyan-400
+                    prose-strong:text-gray-900 dark:prose-strong:text-white
+                    prose-code:text-cyan-600 dark:prose-code:text-cyan-400
+                    prose-pre:bg-gray-50 dark:prose-pre:bg-gray-800
+                    prose-li:text-gray-600 dark:prose-li:text-gray-300
+                    prose-table:text-gray-600 dark:prose-table:text-gray-300
+                    prose-th:text-gray-900 dark:prose-th:text-white
+                    prose-td:border-gray-200 dark:prose-td:border-gray-700">
+                    <h1 id="algorithmic-trading-application">Algorithmic Trading Application</h1>
+<p>The Algorithmic Trading Application utilizes the Prismatic AI Agent Framework to create sophisticated, multi-agent trading systems capable of analyzing markets, executing trades, and managing risk across multiple financial instruments and timeframes.</p>
+<h2 id="clipboard-overview">📋 Overview</h2>
+<p>The Algorithmic Trading system provides:</p>
+<ul>
+<li><strong>Multi-Asset Trading</strong>: Stocks, bonds, commodities, cryptocurrencies, and derivatives</li>
+<li><strong>Real-time Market Analysis</strong>: Advanced technical and fundamental analysis</li>
+<li><strong>Risk Management</strong>: Comprehensive position sizing and portfolio protection</li>
+<li><strong>Multi-Agent Coordination</strong>: Specialized agents for different trading strategies</li>
+<li><strong>Regulatory Compliance</strong>: Automated compliance monitoring and reporting</li>
+<li><strong>Performance Analytics</strong>: Detailed trading performance and attribution analysis</li>
+</ul>
+<h2 id="construction-site-system-architecture">🏗️ System Architecture</h2>
+<h3 id="core-components">Core Components</h3>
+<ul>
+<li><strong>Market Data Engine</strong>: Real-time and historical market data processing</li>
+<li><strong>Strategy Engine</strong>: Multi-strategy trading algorithm coordination</li>
+<li><strong>Risk Management System</strong>: Real-time risk monitoring and position control</li>
+<li><strong>Execution Engine</strong>: Smart order routing and trade execution</li>
+<li><strong>Portfolio Manager</strong>: Multi-asset portfolio optimization and rebalancing</li>
+<li><strong>Compliance Monitor</strong>: Regulatory compliance and audit trail management</li>
+</ul>
+<h3 id="agent-specialization">Agent Specialization</h3>
+<ul>
+<li><strong>Market Analysis Agents</strong>: Technical and fundamental analysis specialists</li>
+<li><strong>Strategy Agents</strong>: Individual trading strategy implementation</li>
+<li><strong>Risk Management Agents</strong>: Portfolio risk assessment and control</li>
+<li><strong>Execution Agents</strong>: Order management and trade execution</li>
+<li><strong>Research Agents</strong>: Market research and opportunity identification</li>
+<li><strong>Compliance Agents</strong>: Regulatory monitoring and reporting</li>
+</ul>
+<h2 id="dart-key-features">🎯 Key Features</h2>
+<h3 id="advanced-market-analysis">Advanced Market Analysis</h3>
+<ul>
+<li><strong>Technical Analysis</strong>: Chart patterns, indicators, and momentum analysis</li>
+<li><strong>Fundamental Analysis</strong>: Financial statement analysis and valuation models</li>
+<li><strong>Sentiment Analysis</strong>: News, social media, and market sentiment processing</li>
+<li><strong>Alternative Data</strong>: Satellite imagery, web scraping, and unconventional data sources</li>
+<li><strong>Machine Learning Models</strong>: Predictive models for price movement and volatility</li>
+</ul>
+<h3 id="multi-strategy-framework">Multi-Strategy Framework</h3>
+<ul>
+<li><strong>Trend Following</strong>: Momentum-based strategies across multiple timeframes</li>
+<li><strong>Mean Reversion</strong>: Statistical arbitrage and pairs trading</li>
+<li><strong>Market Making</strong>: Liquidity provision and bid-ask spread capture</li>
+<li><strong>Event-Driven</strong>: Merger arbitrage, earnings plays, and news-based trading</li>
+<li><strong>High-Frequency Trading</strong>: Ultra-low latency execution strategies</li>
+</ul>
+<h3 id="comprehensive-risk-management">Comprehensive Risk Management</h3>
+<ul>
+<li><strong>Position Sizing</strong>: Dynamic position sizing based on volatility and correlation</li>
+<li><strong>Stop-Loss Management</strong>: Adaptive stop-loss orders and risk controls</li>
+<li><strong>Portfolio Diversification</strong>: Cross-asset and cross-strategy diversification</li>
+<li><strong>Stress Testing</strong>: Scenario analysis and portfolio stress testing</li>
+<li><strong>Real-time Monitoring</strong>: Continuous risk assessment and alert systems</li>
+</ul>
+<h2 id="microscope-implementation-details">🔬 Implementation Details</h2>
+<h3 id="market-data-integration">Market Data Integration</h3>
+<ul>
+<li><strong>Real-time Feeds</strong>: Direct market data from exchanges and data providers</li>
+<li><strong>Historical Data</strong>: Extensive historical price and volume data</li>
+<li><strong>Alternative Data</strong>: News, earnings, economic indicators, and social sentiment</li>
+<li><strong>Data Quality</strong>: Real-time data validation and error correction</li>
+<li><strong>Low Latency</strong>: Sub-millisecond data processing and distribution</li>
+</ul>
+<h3 id="trading-strategies">Trading Strategies</h3>
+<ul>
+<li><strong>Quantitative Models</strong>: Statistical and mathematical trading models</li>
+<li><strong>Machine Learning</strong>: Deep learning and reinforcement learning approaches</li>
+<li><strong>Hybrid Strategies</strong>: Combining multiple approaches for robust performance</li>
+<li><strong>Adaptive Algorithms</strong>: Self-adjusting strategies based on market conditions</li>
+<li><strong>Backtesting Framework</strong>: Comprehensive historical strategy validation</li>
+</ul>
+<h3 id="execution-infrastructure">Execution Infrastructure</h3>
+<ul>
+<li><strong>Smart Order Routing</strong>: Optimal execution across multiple venues</li>
+<li><strong>Algorithmic Execution</strong>: TWAP, VWAP, and implementation shortfall algorithms</li>
+<li><strong>Dark Pool Access</strong>: Hidden liquidity and institutional trading networks</li>
+<li><strong>Direct Market Access</strong>: Low-latency connections to exchanges</li>
+<li><strong>Transaction Cost Analysis</strong>: Minimizing market impact and trading costs</li>
+</ul>
+<h2 id="bar-chart-performance-metrics">📊 Performance Metrics</h2>
+<h3 id="trading-performance">Trading Performance</h3>
+<ul>
+<li><strong>Return Metrics</strong>: Absolute returns, risk-adjusted returns, and benchmark comparison</li>
+<li><strong>Risk Metrics</strong>: Volatility, maximum drawdown, and Value at Risk (VaR)</li>
+<li><strong>Sharpe Ratio</strong>: Risk-adjusted return measurement</li>
+<li><strong>Information Ratio</strong>: Active return per unit of tracking error</li>
+<li><strong>Win Rate</strong>: Percentage of profitable trades</li>
+</ul>
+<h3 id="operational-metrics">Operational Metrics</h3>
+<ul>
+<li><strong>Execution Quality</strong>: Fill rates, slippage, and market impact</li>
+<li><strong>Latency</strong>: Order-to-execution time and system response times</li>
+<li><strong>Uptime</strong>: System availability and reliability metrics</li>
+<li><strong>Capacity</strong>: Maximum trading volume and position limits</li>
+<li><strong>Cost Efficiency</strong>: Trading costs and operational expenses</li>
+</ul>
+<h2 id="lock-risk-management">🔒 Risk Management</h2>
+<h3 id="portfolio-risk-controls">Portfolio Risk Controls</h3>
+<ul>
+<li><strong>Position Limits</strong>: Maximum position sizes per instrument and strategy</li>
+<li><strong>Concentration Limits</strong>: Diversification requirements and exposure limits</li>
+<li><strong>Leverage Controls</strong>: Maximum leverage and margin requirements</li>
+<li><strong>Correlation Monitoring</strong>: Cross-asset and cross-strategy correlation tracking</li>
+<li><strong>Stress Testing</strong>: Regular portfolio stress tests and scenario analysis</li>
+</ul>
+<h3 id="operational-risk-management">Operational Risk Management</h3>
+<ul>
+<li><strong>System Redundancy</strong>: Backup systems and failover mechanisms</li>
+<li><strong>Data Integrity</strong>: Real-time data validation and error detection</li>
+<li><strong>Cybersecurity</strong>: Secure trading infrastructure and data protection</li>
+<li><strong>Audit Trails</strong>: Comprehensive logging and transaction records</li>
+<li><strong>Disaster Recovery</strong>: Business continuity and recovery procedures</li>
+</ul>
+<h2 id="classical-building-regulatory-compliance">🏛️ Regulatory Compliance</h2>
+<h3 id="compliance-framework">Compliance Framework</h3>
+<ul>
+<li><strong>Trade Reporting</strong>: Automated regulatory trade reporting</li>
+<li><strong>Position Reporting</strong>: Regular position and exposure reporting</li>
+<li><strong>Best Execution</strong>: Documentation of best execution practices</li>
+<li><strong>Market Abuse Prevention</strong>: Monitoring for market manipulation and abuse</li>
+<li><strong>Record Keeping</strong>: Comprehensive audit trails and documentation</li>
+</ul>
+<h3 id="risk-monitoring">Risk Monitoring</h3>
+<ul>
+<li><strong>Real-time Surveillance</strong>: Continuous monitoring for compliance violations</li>
+<li><strong>Alert Systems</strong>: Automated alerts for potential compliance issues</li>
+<li><strong>Reporting Dashboard</strong>: Real-time compliance status and metrics</li>
+<li><strong>Regulatory Updates</strong>: Automatic updates for changing regulations</li>
+<li><strong>Audit Support</strong>: Tools and reports for regulatory audits</li>
+</ul>
+<h2 id="link-integration-points">🔗 Integration Points</h2>
+<h3 id="market-infrastructure">Market Infrastructure</h3>
+<ul>
+<li><strong>Exchange Connectivity</strong>: Direct connections to major exchanges</li>
+<li><strong>Prime Brokerage</strong>: Integration with prime brokerage services</li>
+<li><strong>Clearing Systems</strong>: Automated clearing and settlement processes</li>
+<li><strong>Risk Systems</strong>: Integration with third-party risk management platforms</li>
+</ul>
+<h3 id="technology-stack">Technology Stack</h3>
+<ul>
+<li><strong>Low-Latency Infrastructure</strong>: High-performance computing and networking</li>
+<li><strong>Cloud Integration</strong>: Hybrid cloud deployment for scalability</li>
+<li><strong>Database Systems</strong>: High-performance time-series databases</li>
+<li><strong>Monitoring Tools</strong>: Comprehensive system and performance monitoring</li>
+</ul>
+<h2 id="link-related-systems">🔗 Related Systems</h2>
+<ul>
+<li><a href="https://prismatic-reality.com/solutions/algorithmic-trading/crisis-intervention.md">Crisis Intervention</a> - Emergency response for trading incidents</li>
+<li><a href="https://prismatic-reality.com/solutions/algorithmic-trading/content-moderation.md">Content Moderation</a> - News and social media analysis</li>
+<li><a href="../agents/README.md">Agent System</a> - Core AI agent architecture</li>
+<li><a href="../societies/README.md">Society Management</a> - Multi-agent coordination</li>
+<li><a href="../analytics/README.md">Analytics</a> - Performance analysis and reporting</li>
+</ul>
+<h2 id="rocket-future-enhancements">🚀 Future Enhancements</h2>
+<ul>
+<li><strong>Quantum Computing</strong>: Quantum algorithms for portfolio optimization</li>
+<li><strong>Blockchain Integration</strong>: Cryptocurrency and DeFi trading capabilities</li>
+<li><strong>ESG Integration</strong>: Environmental, social, and governance factor integration</li>
+<li><strong>Alternative Assets</strong>: Real estate, private equity, and commodity trading</li>
+<li><strong>Cross-Border Trading</strong>: Global market access and currency management</li>
+</ul>
+<hr />
+<p><em>The Algorithmic Trading Application showcases the power of multi-agent AI systems in financial markets, combining sophisticated analysis, execution, and risk management for institutional-grade trading performance.</em></p>
+
+                </article>
+            </div>
+
+            <!-- Sidebar (right 1/3) -->
+            <div class="space-y-6">
+                <!-- Solution Info Card -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700"
+                    x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 200)" x-show="shown"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 transform translate-x-4"
+                    x-transition:enter-end="opacity-100 transform translate-x-0">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Solution Info
+                    </h3>
+                    <dl class="space-y-3">
+                        
+                        
+                        
+                        
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-500 dark:text-gray-400">Platform</dt>
+                            <dd class="text-sm font-semibold text-emerald-600 dark:text-emerald-400">Prismatic v7.5</dd>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-500 dark:text-gray-400">Doctrine</dt>
+                            <dd class="text-sm font-semibold text-red-600 dark:text-red-400">NM/ND</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!-- Key Metrics Card -->
+                
+
+                <!-- In This Section - Paginated Navigation -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700"
+                    x-data="solutionNav()" x-init="setTimeout(() => shown = true, 400)">
+                    <div x-show="shown" x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 transform translate-x-4"
+                        x-transition:enter-end="opacity-100 transform translate-x-0">
+                        <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                            Solutions
+                            <span class="text-xs font-normal text-gray-400"
+                                x-text="'(' + totalItems + ' pages)'"></span>
+                        </h3>
+                        <ul class="space-y-1.5">
+                            <template x-for="item in paginatedItems" :key="item.url">
+                                <li>
+                                    <a :href="item.url"
+                                        :class="item.isCurrent
+                                           ? 'text-cyan-600 dark:text-cyan-400 font-semibold bg-cyan-50 dark:bg-cyan-900/30'
+                                           : 'text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-gray-100 dark:hover:bg-gray-700/50'"
+                                        class="block text-sm px-3 py-1.5 rounded-lg transition-all" x-text="item.title">
+                                    </a>
+                                </li>
+                            </template>
+                        </ul>
+                        <div class="flex items-center justify-between mt-4 pt-3 border-t border-gray-200 dark:border-gray-700"
+                            x-show="totalPages > 1">
+                            <button @click="prevPage()" :disabled="currentPage === 1"
+                                :class="currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-cyan-600 dark:hover:text-cyan-400'"
+                                class="text-xs font-medium text-gray-500 dark:text-gray-400 transition-colors">
+                                Previous
+                            </button>
+                            <span class="text-xs text-gray-400" x-text="currentPage + ' / ' + totalPages"></span>
+                            <button @click="nextPage()" :disabled="currentPage === totalPages"
+                                :class="currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:text-cyan-600 dark:hover:text-cyan-400'"
+                                class="text-xs font-medium text-gray-500 dark:text-gray-400 transition-colors">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Categories Card -->
+                
+
+                <!-- Related Glossary Terms -->
+                
+
+                <!-- Technology Stack Card -->
+                
+
+                <!-- Related Sections -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700"
+                    x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 600)" x-show="shown"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 transform translate-x-4"
+                    x-transition:enter-end="opacity-100 transform translate-x-0">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Related Sections
+                    </h3>
+                    <ul class="space-y-1.5">
+                        <li>
+                            <a href="/agents/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                                Agent Ecosystem
+                                <span class="ml-auto text-xs text-gray-400">430 agents</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/architecture/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                                Architecture
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/capabilities/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-orange-400"></span>
+                                Capabilities
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/apps/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                                Applications
+                                <span class="ml-auto text-xs text-gray-400">90 apps</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/glossary/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                                Glossary
+                                <span class="ml-auto text-xs text-gray-400">115+ terms</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/technologies/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>
+                                Technologies
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/teams/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+                                Color Teams
+                                <span class="ml-auto text-xs text-gray-400">20 agents</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/osint/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                OSINT Sources
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/solutions/"
+                                class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 px-3 py-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all">
+                                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+                                All Solutions
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <a href="/solutions/"
+                class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-800 transition-all shadow-lg hover:shadow-xl">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Solutions
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- In This Section: Paginated Navigation (Alpine.js) -->
+<script>
+    function solutionNav() {
+        var allItems = [
+            
+    
+    { title: "Crisis Intervention Application", url: "&#x2F;solutions&#x2F;crisis-intervention&#x2F;", isCurrent:  false },
+    
+    { title: "Content Moderation Application", url: "&#x2F;solutions&#x2F;content-moderation&#x2F;", isCurrent:  false },
+    
+    { title: "Algorithmic Trading Application", url: "&#x2F;solutions&#x2F;algorithmic-trading&#x2F;", isCurrent:  true },
+    
+    { title: "Prismatic Framework Applications", url: "&#x2F;solutions&#x2F;readme&#x2F;", isCurrent:  false },
+    
+    ];
+    var perPage = 20;
+
+    return {
+        shown: false,
+        allItems: allItems,
+        currentPage: Math.max(1, Math.ceil((allItems.findIndex(function (i) { return i.isCurrent; }) + 1) / perPage)),
+        perPage: perPage,
+        get totalItems() { return this.allItems.length; },
+        get totalPages() { return Math.ceil(this.allItems.length / this.perPage); },
+        get paginatedItems() {
+            var start = (this.currentPage - 1) * this.perPage;
+            return this.allItems.slice(start, start + this.perPage);
+        },
+        nextPage: function () { if (this.currentPage < this.totalPages) this.currentPage++; },
+        prevPage: function () { if (this.currentPage > 1) this.currentPage--; }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/platform/" class="text-gray-400 hover:text-white transition-colors">Overview</a>
+                        </li>
+                        <li><a href="/apps/" class="text-gray-400 hover:text-white transition-colors">Applications (89)</a></li>
+                        <li><a href="/agents/" class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products & Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Products & Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/products/" class="text-gray-400 hover:text-white transition-colors">Products</a>
+                        </li>
+                        <li><a href="/osint/" class="text-gray-400 hover:text-white transition-colors">OSINT Sources
+                                (121+)</a></li>
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="/solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a>
+                        </li>
+                        <li><a href="/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a>
+                        </li>
+                        <li><a href="/faq/" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-white bg-blue-600 rounded-xl shadow-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-110 focus:ring-4 focus:ring-blue-300 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="/js/vendor/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Back to Top button
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

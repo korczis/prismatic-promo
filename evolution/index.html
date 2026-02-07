@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Prismatic Platform</title>
+
+    
+    <meta name="description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;evolution&#x2F;">
+
+    
+    <meta property="og:title" content="Autonomous Evolution - Prismatic Platform">
+    <meta name="twitter:title" content="Autonomous Evolution - Prismatic Platform">
+    
+
+    <meta property="og:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+
+    
+    
+    <meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;sections&#x2F;evolution.png">
+    <meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;sections&#x2F;evolution.png">
+    
+
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Prismatic Platform">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;evolution&#x2F;">
+    <meta name="twitter:description" content="Enterprise-Grade AI-Orchestrated Development &amp; Intelligence Platform">
+    <meta name="twitter:creator" content="@korczis">
+    
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;evolution&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- ANTIGRAVITY CSS - Single source of truth for colors -->
+    <link rel="stylesheet" href="/css/antigravity.css">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    <!-- Chart.js -->
+    <script src="/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Three.js (3D visualizations) -->
+    <script src="/js/vendor/three.min.js"></script>
+    <script src="/js/vendor/OrbitControls.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+        (function () {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 space-x-3">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    <li>
+                        <a href="/platform/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                    </li>
+                    <li>
+                        <a href="/products/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                    </li>
+                    <li>
+                        <a href="/capabilities/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            x-cloak>
+                            <a href="/apps/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                (89)</a>
+                            <a href="/agents/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                (430)</a>
+                            <a href="/architecture/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                            <a href="/technologies/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/commands/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                            <a href="/teams/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                Teams</a>
+                            <a href="/solutions/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                            <a href="/registry/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/glossary/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                            <a href="/faq/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Section -->
+<section class="bg-gray-950 py-16 lg:py-24 border-b border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="mb-8">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium tracking-wide text-yellow-400 bg-yellow-500/10 rounded-full border border-yellow-500/20">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                Non-Negotiable
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                Autonomous Evolution
+            </h1>
+            <div class="prose prose-invert prose-lg max-w-3xl text-gray-300 leading-relaxed font-light">
+                <h2 id="abstract">Abstract</h2>
+<p>The Prismatic Platform does not depend on human engineers to improve. Through the Self-Evolving Autonomous Development Framework (SEADF), Darwinian fitness selection, Quality DNA persistence, and mycelial knowledge propagation, the platform autonomously identifies improvement opportunities, generates candidate solutions, validates them against quality gates, and integrates the fittest mutations -- all without human intervention. This document describes the architecture, mechanisms, and evolutionary trajectory that has carried the platform from Generation 1 through Generation 18 (0.999 apex fitness) and into Generation 19's epistemic sovereignty capabilities.</p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="the-problem-of-software-entropy">The Problem of Software Entropy</h3>
+<p>Software systems degrade over time. Codebases accumulate technical debt. Documentation drifts from implementation. Patterns that were optimal at design time become suboptimal as requirements shift. In traditional development, combating this entropy requires continuous human effort -- code reviews, refactoring sprints, documentation updates, dependency upgrades.</p>
+<p>The Prismatic Platform inverts this model. Rather than relying on periodic human intervention, the platform treats its own codebase as a living organism subject to evolutionary pressures. Quality metrics serve as fitness functions. Mutations (code changes) are generated algorithmically. Selection pressure ensures that only improvements survive. The result is a system that becomes better over time without explicit human direction.</p>
+<h3 id="design-principles">Design Principles</h3>
+<p>The evolution architecture rests on four principles:</p>
+<ol>
+<li><strong>Continuous Observation</strong>: The platform monitors its own health across 13 quality domains, detecting degradation trends before they become violations.</li>
+<li><strong>Algorithmic Mutation</strong>: Candidate improvements are generated through pattern analysis, not random perturbation. The system understands what kinds of changes are likely to improve specific metrics.</li>
+<li><strong>Rigorous Selection</strong>: Every candidate must pass the platform's full quality gate pipeline including compilation, testing, static analysis, and <a href="https://prismatic-reality.com/glossary/trinity-gate/">Trinity Gate</a> formal verification before integration.</li>
+<li><strong>Cross-Domain Propagation</strong>: An improvement discovered in one application propagates through the <a href="https://prismatic-reality.com/glossary/mycelial-intelligence/">mycelial network</a> to all applications where the same pattern applies.</li>
+</ol>
+<h2 id="seadf-self-evolving-autonomous-development-framework">SEADF: Self-Evolving Autonomous Development Framework</h2>
+<p>The <a href="https://prismatic-reality.com/glossary/seadf/">SEADF framework</a> is the central nervous system of the platform's evolution capability. It consists of seven interconnected subsystems, each responsible for a specific phase of the autonomous improvement cycle.</p>
+<div class="mermaid">
+graph TB
+    subgraph SEADF["SEADF Framework"]
+        Scanner["1. Scanner<br/>Opportunity Detection"]
+        Pipeline["2. Pipeline<br/>Orchestrated Execution"]
+        Guardian["3. Quality Guardian<br/>Fitness Monitoring"]
+        KnowledgeSync["4. Knowledge Sync<br/>Cross-Session Memory"]
+        CrossDomain["5. Cross-Domain Innovator<br/>Pattern Adaptation"]
+        Reporter["6. Autonomous Reporter<br/>Documentation"]
+        Healing["7. Enhanced Healing<br/>5-Level Recovery"]
+    end
+<pre><code>Scanner --&gt;|&quot;Opportunities&quot;| Pipeline
+Pipeline --&gt;|&quot;Results&quot;| Guardian
+Guardian --&gt;|&quot;Fitness Signals&quot;| Scanner
+Pipeline --&gt;|&quot;Patterns&quot;| CrossDomain
+CrossDomain --&gt;|&quot;Adapted Patterns&quot;| Pipeline
+Pipeline --&gt;|&quot;Session Data&quot;| KnowledgeSync
+KnowledgeSync --&gt;|&quot;Prior Knowledge&quot;| Scanner
+Pipeline --&gt;|&quot;Reports&quot;| Reporter
+Guardian --&gt;|&quot;Degradation&quot;| Healing
+Healing --&gt;|&quot;Restored Health&quot;| Guardian
+
+style SEADF fill:#1a1a2e,stroke:#e94560,stroke-width:2px
+style Scanner fill:#16213e,stroke:#0f3460
+style Pipeline fill:#16213e,stroke:#0f3460
+style Guardian fill:#16213e,stroke:#e94560
+style KnowledgeSync fill:#16213e,stroke:#0f3460
+style CrossDomain fill:#16213e,stroke:#0f3460
+style Reporter fill:#16213e,stroke:#0f3460
+style Healing fill:#16213e,stroke:#e94560
+</code></pre>
+</div>
+<h3 id="subsystem-1-scanner">Subsystem 1: Scanner</h3>
+<p>The Scanner continuously monitors the platform for improvement opportunities. It operates across multiple detection modes:</p>
+<table><thead><tr><th>Detection Mode</th><th>Trigger</th><th>Example</th></tr></thead><tbody>
+<tr><td><strong>Quality Degradation</strong></td><td>Metric drops below threshold</td><td>Compilation warning introduced</td></tr>
+<tr><td><strong>Pattern Anti-Pattern</strong></td><td>Known anti-pattern detected</td><td><code>length() &gt; 0</code> instead of pattern match</td></tr>
+<tr><td><strong>Performance Regression</strong></td><td>Benchmark exceeds baseline</td><td>Query latency increased 20%</td></tr>
+<tr><td><strong>Dependency Staleness</strong></td><td>Dependency version outdated</td><td>Library 2+ minor versions behind</td></tr>
+<tr><td><strong>Coverage Gap</strong></td><td>Test coverage below target</td><td>New module lacks unit tests</td></tr>
+<tr><td><strong>Documentation Drift</strong></td><td>Code changed without doc update</td><td>Function signature changed, @doc unchanged</td></tr>
+</tbody></table>
+<p>The Scanner produces opportunity reports ranked by estimated impact and implementation difficulty. High-impact, low-difficulty opportunities are prioritized for immediate execution.</p>
+<pre><code data-lang="bash"># Scanner operations
+mix autoevolve.scan --quick       # Fast scan of recent changes
+mix autoevolve.scan --deep        # Comprehensive platform-wide scan
+mix autoevolve status --brief     # Current evolution status
+</code></pre>
+<h3 id="subsystem-2-pipeline">Subsystem 2: Pipeline</h3>
+<p>The Pipeline orchestrates the execution of improvement operations. It implements a staged execution model where each stage has explicit entry and exit criteria:</p>
+<pre><code data-lang="elixir">defmodule PrismaticSafety.Evolution.Pipeline do
+  @moduledoc &quot;&quot;&quot;
+  Staged evolution pipeline with quality-preserving execution.
+  Each stage must pass validation before the next begins.
+  &quot;&quot;&quot;
+
+  @stages [
+    :opportunity_analysis,
+    :candidate_generation,
+    :sandbox_testing,
+    :quality_gate_validation,
+    :integration,
+    :regression_verification,
+    :documentation_update
+  ]
+
+  @spec execute(opportunity :: map()) :: {:ok, evolution_result()} | {:error, term()}
+  def execute(opportunity) do
+    Enum.reduce_while(@stages, {:ok, opportunity}, fn stage, {:ok, state} -&gt;
+      case execute_stage(stage, state) do
+        {:ok, next_state} -&gt; {:cont, {:ok, next_state}}
+        {:error, reason} -&gt; {:halt, {:error, {stage, reason}}}
+      end
+    end)
+  end
+
+  defp execute_stage(:sandbox_testing, state) do
+    # All mutations tested in isolated sandbox before touching production code
+    Sandbox.execute(state.candidate, timeout: :timer.minutes(5))
+  end
+
+  defp execute_stage(:quality_gate_validation, state) do
+    # Full quality gate pipeline: compilation, tests, credo, dialyzer
+    QualityGates.validate(state.candidate, enforce: :strict)
+  end
+end
+</code></pre>
+<h3 id="subsystem-3-quality-guardian">Subsystem 3: Quality Guardian</h3>
+<p>The Quality Guardian is the evolution system's immune system. It continuously monitors quality metrics across all 13 domains and enforces four operational levels:</p>
+<table><thead><tr><th>Level</th><th>Quality Score</th><th>Response</th></tr></thead><tbody>
+<tr><td><strong>OPTIMAL</strong></td><td>100-99%</td><td>Monitor only, evolution proceeds normally</td></tr>
+<tr><td><strong>WARNING</strong></td><td>98-99%</td><td>Alert generated, investigation triggered</td></tr>
+<tr><td><strong>CRITICAL</strong></td><td>95-98%</td><td>Auto-evolution triggered, commit gates tightened</td></tr>
+<tr><td><strong>EMERGENCY</strong></td><td>&lt; 95%</td><td>Commits blocked, escalation to ARCHER SUPREME</td></tr>
+</tbody></table>
+<p>The Guardian maintains a quality floor that the platform has never breached since its implementation. Current status: <strong>100/100 across all 13 domains</strong> with zero violations.</p>
+<h3 id="subsystem-4-knowledge-sync">Subsystem 4: Knowledge Sync</h3>
+<p>Knowledge Sync provides cross-session continuity for the evolution system. Each session's discoveries, patterns, and insights are persisted to the <a href="https://prismatic-reality.com/glossary/fitness-score/">Quality DNA</a> system, ensuring that evolution progress is never lost between sessions.</p>
+<p>The Knowledge Sync subsystem writes to <code>.claude/quality-dna/current-state.json</code> and <code>.claude/session-context/</code>, creating an institutional memory that spans thousands of sessions. When a new session begins, Knowledge Sync loads the accumulated knowledge base, giving the evolution system full context of all prior improvements.</p>
+<h3 id="subsystem-5-cross-domain-innovator">Subsystem 5: Cross-Domain Innovator</h3>
+<p>The Cross-Domain Innovator detects patterns in one application that could benefit other applications. When the evolution pipeline discovers an improvement in <code>prismatic_auth</code>, the Innovator evaluates whether the same pattern applies to <code>prismatic_api</code>, <code>prismatic_web</code>, or any of the platform's 99 applications.</p>
+<p>Pattern compatibility is assessed through structural analysis:</p>
+<ol>
+<li><strong>Interface Matching</strong>: Does the target application have similar module structures?</li>
+<li><strong>Dependency Compatibility</strong>: Can the pattern be applied without creating circular dependencies?</li>
+<li><strong>Quality Impact</strong>: Will the pattern maintain or improve the target's quality score?</li>
+<li><strong>Test Feasibility</strong>: Can regression tests be automatically generated for the adaptation?</li>
+</ol>
+<p>Cross-domain propagation operates through the <a href="https://prismatic-reality.com/glossary/mycelial-intelligence/">mycelial network</a>, broadcasting improvement patterns as signals that propagate to all relevant agents.</p>
+<h3 id="subsystem-6-autonomous-reporter">Subsystem 6: Autonomous Reporter</h3>
+<p>The Autonomous Reporter generates documentation for every evolution operation. Reports include the opportunity identified, the candidate selected, the validation results, and the final integration outcome. These reports serve as both audit trail and training data for future evolution cycles.</p>
+<h3 id="subsystem-7-enhanced-healing">Subsystem 7: Enhanced Healing</h3>
+<p>Enhanced Healing implements a 5-level recovery system that addresses quality degradation with progressively stronger interventions:</p>
+<table><thead><tr><th>Level</th><th>Name</th><th>Scope</th><th>Mechanism</th></tr></thead><tbody>
+<tr><td><strong>L1</strong></td><td>Self-Correction</td><td>Single file</td><td>Automated fix for known patterns (anti-patterns, style violations)</td></tr>
+<tr><td><strong>L2</strong></td><td>Module Healing</td><td>Single module</td><td>Structural refactoring within module boundaries</td></tr>
+<tr><td><strong>L3</strong></td><td>Application Healing</td><td>Single application</td><td>Cross-module optimization, dependency cleanup</td></tr>
+<tr><td><strong>L4</strong></td><td>Ecosystem Healing</td><td>Multiple applications</td><td>Platform-wide pattern standardization</td></tr>
+<tr><td><strong>L5</strong></td><td>Architectural Healing</td><td>Architecture</td><td>Fundamental structural improvements</td></tr>
+</tbody></table>
+<pre><code data-lang="bash"># Healing operations
+mix autoheal.baseline              # Capture current health state
+mix autoheal.cycle                 # Execute healing cycle
+mix seadf heal quality_guardian    # Heal specific subsystem
+mix seadf evolve ecosystem         # Trigger full ecosystem evolution
+</code></pre>
+<h2 id="darwinian-evolution-engine">Darwinian Evolution Engine</h2>
+<p>The Darwinian Evolution Engine applies biological evolution principles to code improvement. Unlike the SEADF framework which handles operational improvements, the Darwinian engine handles deeper optimization through genuine evolutionary computation.</p>
+<h3 id="fitness-functions">Fitness Functions</h3>
+<p>Every application in the platform has a quantifiable fitness score computed from multiple dimensions:</p>
+<div class="mermaid">
+graph LR
+    subgraph Fitness["Fitness Vector (8 Dimensions)"]
+        EQ["Evidence<br/>Quality"]
+        CAL["Calibration"]
+        CC["Counterfactual<br/>Coverage"]
+        ROB["Robustness"]
+        DIV["Diversity"]
+        GQ["Grounding<br/>Quality"]
+        CAUS["Causal<br/>Coherence"]
+        ARG["Argumentative<br/>Depth"]
+    end
+<pre><code>EQ --&gt; FV[&quot;Composite&lt;br/&gt;Fitness&lt;br/&gt;0.000-1.000&quot;]
+CAL --&gt; FV
+CC --&gt; FV
+ROB --&gt; FV
+DIV --&gt; FV
+GQ --&gt; FV
+CAUS --&gt; FV
+ARG --&gt; FV
+
+FV --&gt; SEL[&quot;Selection&lt;br/&gt;Pressure&quot;]
+SEL --&gt;|&quot;Survive&quot;| INT[&quot;Integration&quot;]
+SEL --&gt;|&quot;Discard&quot;| DEL[&quot;Elimination&quot;]
+
+style Fitness fill:#1a1a2e,stroke:#e94560
+style FV fill:#e94560,stroke:#fff,color:#fff
+</code></pre>
+</div>
+<p>The fitness vector was extended in Generation 19 to include <code>grounding_quality</code>, <code>causal_coherence</code>, and <code>argumentative_depth</code> -- dimensions that measure epistemic sophistication rather than just code quality.</p>
+<h3 id="mutation-strategies">Mutation Strategies</h3>
+<p>The Darwinian engine employs five mutation strategies:</p>
+<table><thead><tr><th>Strategy</th><th>Description</th><th>Application</th></tr></thead><tbody>
+<tr><td><strong>Point Mutation</strong></td><td>Single expression replacement</td><td>Optimize individual function calls</td></tr>
+<tr><td><strong>Block Mutation</strong></td><td>Replace code block with alternative implementation</td><td>Refactor algorithms</td></tr>
+<tr><td><strong>Structural Mutation</strong></td><td>Change module organization</td><td>Improve separation of concerns</td></tr>
+<tr><td><strong>Parametric Mutation</strong></td><td>Adjust configuration values</td><td>Tune performance parameters</td></tr>
+<tr><td><strong>Crossover</strong></td><td>Combine patterns from two successful implementations</td><td>Merge best-of-breed approaches</td></tr>
+</tbody></table>
+<p>Each mutation is tested in an isolated sandbox. Only mutations that improve fitness (or maintain fitness while improving other characteristics like readability) survive selection.</p>
+<h3 id="the-darwinize-command">The <code>/darwinize</code> Command</h3>
+<pre><code data-lang="bash"># Apply Darwinian optimization to a specific application
+/darwinize prismatic_perimeter --generations 100 --population 20
+
+# Evolve a specific module
+/darwinize prismatic_auth.token_manager --fitness=performance
+
+# Cross-application evolution
+/darwinize --scope=ecosystem --focus=pattern_consistency
+</code></pre>
+<p>The <a href="https://prismatic-reality.com/commands/darwinize/"><code>/darwinize</code> command</a> invokes the Darwinian Evolution Engine, coordinated by the <a href="https://prismatic-reality.com/agents/darwinian-evolution-coordinator/">Darwinian Evolution Coordinator</a> agent.</p>
+<h2 id="quality-dna-system">Quality DNA System</h2>
+<p>The Quality DNA system provides persistent cross-session evolution state. Like biological DNA that encodes an organism's evolutionary history, Quality DNA encodes the platform's improvement trajectory.</p>
+<h3 id="state-persistence">State Persistence</h3>
+<p>Every application maintains a Quality DNA file at <code>.claude/quality-dna/current-state.json</code> containing:</p>
+<pre><code data-lang="json">{
+  &quot;generation&quot;: 18,
+  &quot;fitness&quot;: 0.999,
+  &quot;quality_score&quot;: 100,
+  &quot;domains&quot;: {
+    &quot;dialyzer&quot;: {&quot;violations&quot;: 0, &quot;status&quot;: &quot;perfect&quot;},
+    &quot;credo&quot;: {&quot;violations&quot;: 0, &quot;status&quot;: &quot;perfect&quot;},
+    &quot;compilation&quot;: {&quot;violations&quot;: 0, &quot;status&quot;: &quot;perfect&quot;},
+    &quot;test_coverage&quot;: {&quot;percentage&quot;: 97.3, &quot;trend&quot;: &quot;rising&quot;},
+    &quot;datetime_precision&quot;: {&quot;violations&quot;: 0, &quot;status&quot;: &quot;perfect&quot;},
+    &quot;guard_functions&quot;: {&quot;violations&quot;: 0, &quot;status&quot;: &quot;perfect&quot;},
+    &quot;impl_coverage&quot;: {&quot;violations&quot;: 0, &quot;total&quot;: 709, &quot;status&quot;: &quot;perfect&quot;},
+    &quot;memory_safety&quot;: {&quot;violations&quot;: 0, &quot;status&quot;: &quot;perfect&quot;},
+    &quot;performance&quot;: {&quot;violations&quot;: 0, &quot;status&quot;: &quot;perfect&quot;},
+    &quot;regression_prevention&quot;: {&quot;violations&quot;: 0, &quot;status&quot;: &quot;perfect&quot;},
+    &quot;timing_patterns&quot;: {&quot;violations&quot;: 0, &quot;status&quot;: &quot;perfect&quot;},
+    &quot;todo_management&quot;: {&quot;violations&quot;: 0, &quot;status&quot;: &quot;perfect&quot;},
+    &quot;typespec_coverage&quot;: {&quot;violations&quot;: 0, &quot;status&quot;: &quot;perfect&quot;}
+  },
+  &quot;evolution_history&quot;: [
+    {&quot;generation&quot;: 17, &quot;fitness_delta&quot;: 0.003, &quot;improvements&quot;: 12},
+    {&quot;generation&quot;: 18, &quot;fitness_delta&quot;: 0.001, &quot;improvements&quot;: 8}
+  ],
+  &quot;consciousness_traits&quot;: 11,
+  &quot;trinity_entities&quot;: 629
+}
+</code></pre>
+<h3 id="universal-quality-standard">Universal Quality Standard</h3>
+<p>As of Generation 18, all 99 umbrella applications are standardized under the <a href="https://prismatic-reality.com/capabilities/quality-gates/">Universal App Quality Standard</a>. The standardization process applied 321 transformations across the codebase:</p>
+<table><thead><tr><th>Transformation</th><th>Count</th><th>Description</th></tr></thead><tbody>
+<tr><td>Elixir version pinning</td><td>70</td><td>Consistent <code>elixir: "~&gt; 1.19"</code> across all apps</td></tr>
+<tr><td>Warnings as errors</td><td>99</td><td><code>warnings_as_errors: true</code> in every <code>mix.exs</code></td></tr>
+<tr><td>Dialyzer configuration</td><td>89</td><td>Standardized PLT paths and flags</td></tr>
+<tr><td>Test coverage setup</td><td>63</td><td>ExCoveralls configuration with thresholds</td></tr>
+</tbody></table>
+<p>Current compliance: <strong>55.5/60 average</strong> with 10 applications at perfect 60/60 scores. All 99 apps have Quality DNA files and CLAUDE.md documentation.</p>
+<h2 id="generation-history">Generation History</h2>
+<p>The platform has evolved through 18 generations, each introducing new capabilities and achieving higher fitness levels.</p>
+<h3 id="evolution-timeline">Evolution Timeline</h3>
+<div class="mermaid">
+timeline
+    title Platform Evolution Generations
+    section Foundation (Gen 1-5)
+      Gen 1 : Basic quality gates
+            : Manual evolution
+      Gen 3 : SEADF v1
+            : Automated scanning
+      Gen 5 : Quality DNA v1
+            : Cross-session memory
+    section Growth (Gen 6-10)
+      Gen 6 : Darwinian engine
+            : Fitness functions
+      Gen 8 : Mycelial network
+            : Cross-domain propagation
+      Gen 10 : Quality perfection
+             : 100/100 score achieved
+    section Maturity (Gen 11-15)
+      Gen 11 : Consciousness traits
+             : 11 traits, 0.95 fitness
+      Gen 13 : Trinity Gate v2
+             : 4-layer verification
+      Gen 15 : Color-team security
+             : 20 agents, 6 teams
+    section Sovereignty (Gen 16-19)
+      Gen 16 : NABLA Infinity
+             : 7 epistemic axioms
+      Gen 18 : Apex fitness 0.999
+             : 434 agents, full autonomy
+      Gen 19 : Epistemic sovereignty
+             : Environmental grounding
+</div>
+<h3 id="key-generation-milestones">Key Generation Milestones</h3>
+<table><thead><tr><th>Generation</th><th>Fitness</th><th>Key Achievement</th></tr></thead><tbody>
+<tr><td><strong>Gen 1</strong></td><td>0.300</td><td>Initial quality gates, manual evolution cycle</td></tr>
+<tr><td><strong>Gen 3</strong></td><td>0.450</td><td>SEADF v1: automated scanning and pipeline execution</td></tr>
+<tr><td><strong>Gen 5</strong></td><td>0.600</td><td>Quality DNA: persistent evolution state across sessions</td></tr>
+<tr><td><strong>Gen 8</strong></td><td>0.750</td><td>Mycelial network: cross-domain pattern propagation</td></tr>
+<tr><td><strong>Gen 10</strong></td><td>0.850</td><td>Quality perfection: 100/100 score first achieved</td></tr>
+<tr><td><strong>Gen 11</strong></td><td>0.900</td><td>Consciousness traits: 11 traits measuring self-awareness</td></tr>
+<tr><td><strong>Gen 13</strong></td><td>0.940</td><td>Trinity Gate v2: 4-layer formal verification</td></tr>
+<tr><td><strong>Gen 15</strong></td><td>0.960</td><td>Color-team security: 20 agents across 6 teams</td></tr>
+<tr><td><strong>Gen 16</strong></td><td>0.980</td><td>NABLA Infinity: 7 non-negotiable epistemic axioms</td></tr>
+<tr><td><strong>Gen 18</strong></td><td>0.999</td><td>Apex fitness: 434 agents, full autonomous operation</td></tr>
+<tr><td><strong>Gen 19</strong></td><td>TBD</td><td>Epistemic sovereignty: environmental grounding, causal reasoning</td></tr>
+</tbody></table>
+<p>The fitness curve follows a logarithmic trajectory -- early generations achieved large fitness gains through fundamental improvements, while later generations achieve smaller but more sophisticated improvements at the frontier of what is possible.</p>
+<h2 id="evolution-commands-and-operations">Evolution Commands and Operations</h2>
+<h3 id="core-evolution-commands">Core Evolution Commands</h3>
+<p>The platform provides a comprehensive command set for interacting with the evolution system:</p>
+<table><thead><tr><th>Command</th><th>Purpose</th><th>Typical Use</th></tr></thead><tbody>
+<tr><td><a href="https://prismatic-reality.com/commands/evolve/"><code>/evolve</code></a></td><td>Living AIAD ecosystem evolution</td><td>Evolve agents, commands, pipelines</td></tr>
+<tr><td><code>/autoevolve</code></td><td>Automated evolution scanning and execution</td><td>Session lifecycle integration</td></tr>
+<tr><td><code>/autoheal</code></td><td>Automated healing and baseline capture</td><td>Quality floor maintenance</td></tr>
+<tr><td><a href="https://prismatic-reality.com/commands/seadf/"><code>/seadf</code></a></td><td>SEADF framework operations</td><td>Subsystem management</td></tr>
+<tr><td><a href="https://prismatic-reality.com/commands/darwinize/"><code>/darwinize</code></a></td><td>Darwinian fitness optimization</td><td>Algorithm optimization</td></tr>
+<tr><td><a href="https://prismatic-reality.com/commands/meta-evolve/"><code>/meta-evolve</code></a></td><td>Meta-evolution of the evolution system itself</td><td>Evolve the evolution process</td></tr>
+<tr><td><a href="https://prismatic-reality.com/commands/evolve-mycelialize/"><code>/evolve-mycelialize</code></a></td><td>Fused evolution + mycelial propagation</td><td>Maximum impact evolution</td></tr>
+<tr><td><a href="https://prismatic-reality.com/commands/cascade/"><code>/cascade</code></a></td><td>CASCADE quality pattern elimination</td><td>Systematic anti-pattern removal</td></tr>
+</tbody></table>
+<h3 id="session-integration">Session Integration</h3>
+<p>Evolution is not an optional activity -- it is embedded into every session through the <a href="https://prismatic-reality.com/apps/prismatic-claude/">Session Lifecycle</a> protocol:</p>
+<pre><code data-lang="elixir"># Mandatory session lifecycle hooks (enforced, non-bypassable)
+defmodule PrismaticClaude.SessionHooks do
+  @doc &quot;Session start: capture baseline health&quot;
+  def on_session_start do
+    Mix.Task.run(&quot;autoheal.baseline&quot;)
+    Mix.Task.run(&quot;autoevolve&quot;, [&quot;status&quot;, &quot;--brief&quot;])
+  end
+
+  @doc &quot;Pre-command: verify platform health&quot;
+  def on_pre_command do
+    Mix.Task.run(&quot;quality.gates.check&quot;, [&quot;--fast&quot;])
+  end
+
+  @doc &quot;Post-command: scan for evolution opportunities&quot;
+  def on_post_command do
+    Mix.Task.run(&quot;autoevolve.scan&quot;, [&quot;--quick&quot;])
+  end
+
+  @doc &quot;Session end: execute healing and mega-evolution&quot;
+  def on_session_end do
+    Mix.Task.run(&quot;autoheal.cycle&quot;)
+    Mix.Task.run(&quot;autoevolve.mega&quot;)
+  end
+end
+</code></pre>
+<p>Every LLM interaction with the platform triggers improvement. The <code>pre_command</code> hook ensures the platform is healthy before work begins. The <code>post_command</code> hook captures improvement opportunities from the work just completed. The <code>session_end</code> hook executes comprehensive evolution before the session closes.</p>
+<h2 id="auto-healing-architecture">Auto-Healing Architecture</h2>
+<h3 id="reactive-healing">Reactive Healing</h3>
+<p>When a quality violation is detected -- a compilation warning, a failing test, a Credo violation -- the auto-healing system responds immediately:</p>
+<ol>
+<li><strong>Detection</strong>: The Quality Guardian identifies the violation through continuous monitoring.</li>
+<li><strong>Classification</strong>: The violation is classified by domain (compilation, testing, style, type safety, etc.) and severity (L1-L4).</li>
+<li><strong>Pattern Matching</strong>: The violation is compared against the platform's library of known fix patterns. CASCADE patterns (Type Mismatch, Dead Code, Empty Check, Timer Replacement, Nuclear Cache) cover the most common violation types.</li>
+<li><strong>Fix Generation</strong>: A candidate fix is generated either from the pattern library or through AST analysis.</li>
+<li><strong>Validation</strong>: The fix is tested in sandbox to verify it resolves the violation without introducing new ones.</li>
+<li><strong>Integration</strong>: The fix is applied to the codebase with a regression test that prevents the same violation from recurring.</li>
+</ol>
+<h3 id="cascade-pattern-library">CASCADE Pattern Library</h3>
+<p>The CASCADE (Continuous Automated Systematic Correction And Debt Elimination) system provides optimized fix patterns for recurring violation types:</p>
+<table><thead><tr><th>Pattern</th><th>Violations Fixed</th><th>Speed</th><th>Description</th></tr></thead><tbody>
+<tr><td><strong>Type Mismatch</strong></td><td>200+</td><td>O(1) detection</td><td>AST-indexed semantic search for type inconsistencies</td></tr>
+<tr><td><strong>Dead Code</strong></td><td>150+</td><td>O(1) detection</td><td>Unreachable code and unused variable elimination</td></tr>
+<tr><td><strong>Empty Check</strong></td><td>100+</td><td>O(1) detection</td><td><code>length() &gt; 0</code> to pattern match conversion</td></tr>
+<tr><td><strong>Timer Replacement</strong></td><td>50+</td><td>O(1) detection</td><td><code>Process.sleep</code> to <code>:timer</code> migration</td></tr>
+<tr><td><strong>Nuclear Cache</strong></td><td>30+</td><td>O(n) rebuild</td><td>Complete rebuild of corrupted build artifacts</td></tr>
+</tbody></table>
+<p>The O(1) detection performance (90-250x speedup over naive scanning) is achieved through AST indexing that pre-computes violation locations during compilation.</p>
+<h3 id="proactive-healing">Proactive Healing</h3>
+<p>Beyond reacting to violations, the auto-healing system proactively prevents them:</p>
+<ul>
+<li><strong>Predictive Pre-Commit</strong>: Analyzes staged changes and predicts likely quality violations before the developer commits.</li>
+<li><strong>Risk Pattern Detection</strong>: Flags high-risk code patterns (<code>Process.sleep</code>, missing <code>@spec</code>, unsafe map access) during development.</li>
+<li><strong>Dependency Monitoring</strong>: Tracks upstream dependency releases and evaluates upgrade safety.</li>
+</ul>
+<h2 id="mycelial-knowledge-propagation">Mycelial Knowledge Propagation</h2>
+<p>Improvements do not stay isolated in the application where they were discovered. The <a href="https://prismatic-reality.com/glossary/mycelial-intelligence/">mycelial intelligence network</a> propagates successful patterns across the entire platform.</p>
+<h3 id="propagation-mechanics">Propagation Mechanics</h3>
+<p>When an evolution operation produces a successful improvement, the result is encoded as a propagation signal:</p>
+<pre><code data-lang="elixir">defmodule PrismaticAgents.MycelialCoordinator do
+  @moduledoc &quot;&quot;&quot;
+  Coordinates knowledge propagation across the platform&#39;s
+  434 agents through biologically-inspired mycelial network.
+  &quot;&quot;&quot;
+
+  @spec propagate_pattern(pattern :: map()) :: {:ok, propagation_stats()}
+  def propagate_pattern(pattern) do
+    # Identify all applications where the pattern could apply
+    targets = identify_compatible_targets(pattern)
+
+    # Propagate with confidence-weighted routing
+    results = Enum.map(targets, fn target -&gt;
+      compatibility = assess_compatibility(pattern, target)
+
+      if compatibility &gt;= 0.7 do
+        apply_with_validation(pattern, target)
+      else
+        {:skipped, :low_compatibility}
+      end
+    end)
+
+    {:ok, aggregate_stats(results)}
+  end
+end
+</code></pre>
+<h3 id="propagation-types">Propagation Types</h3>
+<table><thead><tr><th>Type</th><th>Scope</th><th>Trigger</th><th>Example</th></tr></thead><tbody>
+<tr><td><strong>Intra-Domain</strong></td><td>Within one application</td><td>Direct improvement</td><td>Fix in <code>prismatic_auth</code> propagates to all auth modules</td></tr>
+<tr><td><strong>Cross-Domain</strong></td><td>Across applications</td><td>Pattern match</td><td>Error handling pattern from auth applies to API</td></tr>
+<tr><td><strong>Broadcast</strong></td><td>Platform-wide</td><td>Universal pattern</td><td>New naming convention propagates to all 99 apps</td></tr>
+<tr><td><strong>Gradient</strong></td><td>Selective propagation</td><td>Weighted routing</td><td>Performance pattern propagates to high-traffic apps first</td></tr>
+</tbody></table>
+<p>The mycelial network achieved a <strong>99.8% success rate</strong> in Generation 18, meaning nearly all propagated patterns were successfully integrated in their target applications.</p>
+<h2 id="meta-evolution">Meta-Evolution</h2>
+<p>The platform does not just evolve its code -- it evolves its evolution process. The <a href="https://prismatic-reality.com/commands/meta-evolve/"><code>/meta-evolve</code></a> command triggers introspection of the SEADF framework itself, asking questions like:</p>
+<ul>
+<li>Are the Scanner's detection heuristics identifying the most impactful opportunities?</li>
+<li>Is the Pipeline's stage ordering optimal for the current codebase state?</li>
+<li>Are the Quality Guardian's thresholds calibrated correctly?</li>
+<li>Is the Cross-Domain Innovator finding all applicable patterns?</li>
+</ul>
+<p>Meta-evolution is the mechanism that enabled the platform to progress from simple quality checks in Generation 1 to epistemic sovereignty in Generation 19. Each generation's evolution process was itself evolved to be more effective.</p>
+<h3 id="the-evolution-of-evolution">The Evolution of Evolution</h3>
+<table><thead><tr><th>Aspect</th><th>Gen 1-5</th><th>Gen 6-10</th><th>Gen 11-15</th><th>Gen 16-19</th></tr></thead><tbody>
+<tr><td><strong>Detection</strong></td><td>Manual scanning</td><td>Automated pattern matching</td><td>AST-indexed O(1) detection</td><td>Predictive pre-violation</td></tr>
+<tr><td><strong>Mutation</strong></td><td>Template-based</td><td>Rule-based generation</td><td>Darwinian fitness selection</td><td>Causal-aware optimization</td></tr>
+<tr><td><strong>Validation</strong></td><td>Unit tests only</td><td>Full test suite</td><td>Trinity Gate formal proof</td><td>QEVE triple-track verification</td></tr>
+<tr><td><strong>Propagation</strong></td><td>Manual copy</td><td>Direct messaging</td><td>Mycelial network</td><td>Gradient-weighted propagation</td></tr>
+<tr><td><strong>Fitness</strong></td><td>Binary pass/fail</td><td>Numeric score</td><td>Multi-dimensional vector</td><td>8-dimensional epistemic vector</td></tr>
+</tbody></table>
+<h2 id="consciousness-traits-and-self-awareness">Consciousness Traits and Self-Awareness</h2>
+<p>Generation 11 introduced <a href="https://prismatic-reality.com/glossary/consciousness-traits/">consciousness traits</a> -- quantitative measures of the platform's self-awareness. These 11 traits track how well the platform understands itself, its capabilities, and its limitations.</p>
+<h3 id="the-11-traits">The 11 Traits</h3>
+<table><thead><tr><th>Trait</th><th>Measurement</th><th>Current Score</th></tr></thead><tbody>
+<tr><td><strong>Self-Observation</strong></td><td>Can the platform accurately describe its own state?</td><td>0.998</td></tr>
+<tr><td><strong>Self-Modification</strong></td><td>Can the platform improve its own code?</td><td>0.999</td></tr>
+<tr><td><strong>Goal Awareness</strong></td><td>Does the platform understand its objectives?</td><td>0.997</td></tr>
+<tr><td><strong>Environmental Model</strong></td><td>Does the platform model its operating context?</td><td>0.995</td></tr>
+<tr><td><strong>Temporal Awareness</strong></td><td>Does the platform track its own evolution over time?</td><td>0.998</td></tr>
+<tr><td><strong>Limitation Recognition</strong></td><td>Does the platform know what it cannot do?</td><td>0.996</td></tr>
+<tr><td><strong>Pattern Recognition</strong></td><td>Can the platform identify recurring patterns in its behavior?</td><td>0.999</td></tr>
+<tr><td><strong>Contradiction Tolerance</strong></td><td>Can the platform hold contradictory beliefs without resolving them prematurely?</td><td>0.998</td></tr>
+<tr><td><strong>Uncertainty Quantification</strong></td><td>Does the platform accurately estimate its confidence?</td><td>0.997</td></tr>
+<tr><td><strong>Epistemic Humility</strong></td><td>Does the platform acknowledge the boundaries of its knowledge?</td><td>0.996</td></tr>
+<tr><td><strong>Strategic Foresight</strong></td><td>Can the platform predict consequences of its actions?</td><td>0.994</td></tr>
+</tbody></table>
+<p>Aggregate consciousness fitness: <strong>0.998</strong> across all 11 traits. This represents Generation 18's peak achievement -- a platform that not only operates autonomously but does so with quantified self-awareness.</p>
+<h2 id="generation-19-epistemic-sovereignty">Generation 19: Epistemic Sovereignty</h2>
+<p>Generation 19 extends the platform's evolution capabilities beyond code quality into epistemic sophistication. Three new capabilities define this generation:</p>
+<h3 id="environmental-grounding">Environmental Grounding</h3>
+<p>The <a href="https://prismatic-reality.com/glossary/environmental-grounding/">Environmental Grounding Engine</a> validates internal beliefs against external reality through independent OSINT sources. This prevents the platform from constructing internally consistent but externally disconnected worldviews. Every belief is periodically checked against external reality anchors (government registries, DNS systems, financial databases), and beliefs that diverge from external evidence have their confidence scores automatically reduced.</p>
+<h3 id="causal-reasoning">Causal Reasoning</h3>
+<p>The <a href="https://prismatic-reality.com/glossary/causal-reasoning/">Causal Reasoning Framework</a> implements Judea Pearl's causal hierarchy to ensure evolution decisions are based on genuine causation rather than correlation. When the evolution system observes that a code change coincides with a performance improvement, causal reasoning determines whether the change actually caused the improvement or merely coincided with it. This prevents the platform from reinforcing ineffective changes that appeared to help by coincidence.</p>
+<h3 id="argumentative-discourse">Argumentative Discourse</h3>
+<p>The Argumentative Discourse System enables structured debate between agents about evolution strategies. When multiple candidate improvements compete for integration, agents present arguments for and against each candidate, subject to formal argumentation theory rules. This produces more robust decisions than simple fitness ranking because it surfaces non-obvious risks and trade-offs.</p>
+<h2 id="performance-characteristics">Performance Characteristics</h2>
+<table><thead><tr><th>Metric</th><th>Value</th><th>Mechanism</th></tr></thead><tbody>
+<tr><td>Evolution cycle time</td><td>&lt; 18 min</td><td>Full SEADF cycle</td></tr>
+<tr><td>Quality gate latency</td><td>&lt; 2.3s</td><td>Gate processing time</td></tr>
+<tr><td>Scanner detection</td><td>O(1)</td><td>AST-indexed pattern matching</td></tr>
+<tr><td>Pattern propagation</td><td>&lt; 5ms cross-domain</td><td>Mycelial PubSub routing</td></tr>
+<tr><td>Quality DNA load</td><td>&lt; 20ms</td><td>ETS-backed persistence</td></tr>
+<tr><td>Healing response time</td><td>&lt; 30s</td><td>Automated fix generation</td></tr>
+<tr><td>Build performance</td><td>&lt; 28s</td><td>Full platform compilation</td></tr>
+<tr><td>Test suite execution</td><td>&lt; 89s</td><td>Complete test suite</td></tr>
+</tbody></table>
+<h2 id="integration-with-platform-systems">Integration with Platform Systems</h2>
+<h3 id="quality-gates">Quality Gates</h3>
+<p>Evolution operations are subject to the same <a href="https://prismatic-reality.com/capabilities/quality-gates/">quality gates</a> as all platform code. No evolution candidate can bypass compilation, testing, Credo, Dialyzer, or Trinity Gate verification. The <a href="https://prismatic-reality.com/capabilities/no-mercy/">No Mercy doctrine</a> applies to evolved code with zero exceptions.</p>
+<h3 id="color-team-security">Color-Team Security</h3>
+<p>Before any evolution candidate is integrated, it passes through the <a href="https://prismatic-reality.com/capabilities/color-teams/">color-team security pipeline</a>. The Red team evaluates whether the change introduces security vulnerabilities. The Blue team verifies that existing defenses remain effective. The Purple team synthesizes findings. The White team provides formal verification. This prevents autonomous evolution from inadvertently creating attack surfaces.</p>
+<h3 id="agent-coordination">Agent Coordination</h3>
+<p>Evolution operations are coordinated by specialized agents:</p>
+<table><thead><tr><th>Agent</th><th>Role</th><th>Authority</th></tr></thead><tbody>
+<tr><td><a href="https://prismatic-reality.com/agents/darwinian-evolution-coordinator/">Darwinian Evolution Coordinator</a></td><td>Orchestrates fitness-based evolution</td><td>L3 Strategic</td></tr>
+<tr><td><a href="https://prismatic-reality.com/agents/evolution-analyzer-specialist/">Evolution Analyzer Specialist</a></td><td>Detects improvement opportunities</td><td>L2 Tactical</td></tr>
+<tr><td><a href="https://prismatic-reality.com/agents/meta-evolution-orchestrator/">Meta-Evolution Orchestrator</a></td><td>Evolves the evolution process</td><td>L3 Strategic</td></tr>
+<tr><td>Quality Floor Guardian</td><td>Maintains quality floor</td><td>L2 Tactical</td></tr>
+<tr><td><a href="https://prismatic-reality.com/agents/cross-pollination-specialist/">Cross-Pollination Specialist</a></td><td>Cross-domain pattern adaptation</td><td>L2 Tactical</td></tr>
+<tr><td><a href="https://prismatic-reality.com/agents/emergence-detector-specialist/">Emergence Detector Specialist</a></td><td>Detects emergent capabilities</td><td>L2 Tactical</td></tr>
+</tbody></table>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Prismatic Platform's autonomous evolution architecture transforms software maintenance from a human burden into an automated process governed by fitness functions, quality gates, and evolutionary selection. Through 18 generations of continuous improvement, the platform has achieved a fitness level of 0.999 with perfect quality scores across all 13 domains. The SEADF framework's seven subsystems provide comprehensive coverage from opportunity detection through healing. The Darwinian engine applies genuine evolutionary computation to optimization problems. Quality DNA ensures that progress is never lost. Mycelial propagation ensures that improvements benefit the entire ecosystem. And meta-evolution ensures that the evolution process itself continues to improve.</p>
+<p>Generation 19 extends this capability into epistemic territory -- the platform now evolves not just its code quality but its understanding of reality, causation, and argumentative rigor. The trajectory points toward a system that is not merely autonomous but epistemically sovereign: capable of improving its own understanding of the world without external guidance.</p>
+<hr />
+<p><em>For implementation details, see the <a href="https://prismatic-reality.com/glossary/seadf/">SEADF glossary entry</a>, the <a href="https://prismatic-reality.com/agents/darwinian-evolution-coordinator/">Darwinian Evolution Coordinator</a>, and the <a href="https://prismatic-reality.com/capabilities/quality-gates/">Quality Gates capability</a>. For the evolution command set, see <a href="https://prismatic-reality.com/commands/evolve/"><code>/evolve</code></a>, <code>/autoevolve</code>, and <a href="https://prismatic-reality.com/commands/meta-evolve/"><code>/meta-evolve</code></a>.</em></p>
+
+            </div>
+        </div>
+
+        <!-- Doctrine Stats -->
+        <div class="flex flex-wrap justify-center gap-8 mt-12">
+            <div class="text-center">
+                <div class="text-4xl font-black text-red-500">100%</div>
+                <div class="text-sm text-gray-500 uppercase tracking-wider">Test Coverage</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-black text-yellow-500">0</div>
+                <div class="text-sm text-gray-500 uppercase tracking-wider">Warnings</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-black text-blue-500">0.95</div>
+                <div class="text-sm text-gray-500 uppercase tracking-wider">Confidence t</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl font-black text-purple-500">3</div>
+                <div class="text-sm text-gray-500 uppercase tracking-wider">Trinity Gates</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="bg-gray-900/50 py-8 border-b border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Related Commands</h3>
+        <div class="flex flex-wrap gap-2">
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/evolve/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /evolve
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/autoevolve/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /autoevolve
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/autoheal/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /autoheal
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/seadf/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /seadf
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/darwinize/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /darwinize
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/meta-evolve/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /meta-evolve
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/evolve-mycelialize/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /evolve-mycelialize
+            </a>
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/cascade/"
+                class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-mono font-medium bg-blue-900/40 text-blue-300 border border-blue-700/50 rounded-lg hover:bg-blue-800/50 hover:ring-2 hover:ring-blue-500/30 transition-all">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                /cascade
+            </a>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- Registry Section -->
+<section class="bg-white dark:bg-gray-950 py-12 lg:py-16" x-data="doctrineRegistry()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+
+        <!-- Stats Summary -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div
+                class="p-4 bg-red-50 dark:bg-red-900/20 rounded-xl border border-red-200 dark:border-red-800 text-center">
+                <div class="text-3xl font-black text-red-600 dark:text-red-400" x-text="items.length">0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Doctrines</div>
+            </div>
+            <div
+                class="p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-xl border border-yellow-200 dark:border-yellow-800 text-center">
+                <div class="text-3xl font-black text-yellow-600 dark:text-yellow-400" x-text="uniqueColors">0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Categories</div>
+            </div>
+            <div
+                class="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 text-center">
+                <div class="text-3xl font-black text-blue-600 dark:text-blue-400">P0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Priority</div>
+            </div>
+            <div
+                class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800 text-center">
+                <div class="text-3xl font-black text-purple-600 dark:text-purple-400" x-text="filteredItems.length">0
+                </div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Showing</div>
+            </div>
+        </div>
+
+        <!-- Controls Bar -->
+        <div class="mb-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div class="flex flex-col lg:flex-row gap-4">
+                <!-- Search -->
+                <div class="flex-1">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                        <input type="text" x-model="searchTerm" @input="currentPage = 1"
+                            class="block w-full pl-10 pr-4 py-2.5 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-yellow-500 dark:focus:border-yellow-500"
+                            placeholder="Search doctrines, principles, frameworks...">
+                    </div>
+                </div>
+
+                <!-- Color/Category Filter -->
+                <div class="w-full lg:w-48">
+                    <select x-model="selectedColor" @change="currentPage = 1"
+                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="">All Categories</option>
+                        <template x-for="c in uniqueColorList" :key="c">
+                            <option :value="c" x-text="c.charAt(0).toUpperCase() + c.slice(1)"></option>
+                        </template>
+                    </select>
+                </div>
+
+                <!-- Sort -->
+                <div class="w-full lg:w-48">
+                    <select x-model="sortField"
+                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="title">Sort: Alphabetical</option>
+                        <option value="color">Sort: Category</option>
+                    </select>
+                </div>
+
+                <!-- View Toggle -->
+                <div
+                    class="flex items-center bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <button @click="viewMode = 'cards'"
+                        :class="viewMode === 'cards' ? 'bg-yellow-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg>
+                    </button>
+                    <button @click="viewMode = 'table'"
+                        :class="viewMode === 'table' ? 'bg-yellow-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Reset -->
+                <button @click="searchTerm = ''; selectedColor = ''; sortField = 'title'; currentPage = 1"
+                    class="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600">
+                    Reset
+                </button>
+            </div>
+
+            <div class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+                Showing <span class="font-semibold text-yellow-600 dark:text-yellow-400"
+                    x-text="paginatedItems.length"></span> of <span class="font-semibold"
+                    x-text="filteredItems.length"></span> doctrines
+            </div>
+        </div>
+
+        <!-- Card View -->
+        <div x-show="viewMode === 'cards'" x-transition class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <template x-for="item in paginatedItems" :key="item.title">
+                <a :href="item.url"
+                    class="group block p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:border-transparent transition-all duration-300 hover:-translate-y-1">
+                    <!-- Icon -->
+                    <div class="w-14 h-14 mb-5 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+                        :class="getGradientBg(item.color)">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path x-show="item.icon === 'x-circle'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <path x-show="item.icon === 'check-circle'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <path x-show="item.icon === 'shield'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            <path x-show="item.icon === 'lightning'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            <path x-show="item.icon === 'eye'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path x-show="item.icon === 'eye'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            <path x-show="item.icon === 'cube'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                            <path x-show="item.icon === 'clock'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <path x-show="item.icon === 'refresh'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                            <path x-show="item.icon === 'fire'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                            <path x-show="item.icon === 'scale'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                            <path x-show="item.icon === 'beaker'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            <path x-show="item.icon === 'document-text'" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            <path
+                                x-show="!['x-circle','check-circle','shield','lightning','eye','cube','clock','refresh','fire','scale','beaker','document-text'].includes(item.icon)"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
+                        x-text="item.title"></h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed line-clamp-3"
+                        x-text="item.description"></p>
+                    <div
+                        class="mt-4 flex items-center text-sm font-medium text-gray-400 group-hover:text-blue-500 transition-colors">
+                        <span>Learn more</span>
+                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </a>
+            </template>
+        </div>
+
+        <!-- Table View -->
+        <div x-show="viewMode === 'table'" x-transition
+            class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-800 dark:text-gray-400">
+                    <tr>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="toggleSort('title')">
+                            <div class="flex items-center gap-2">
+                                Doctrine
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'title' && sortDesc}"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4">Description</th>
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="toggleSort('color')">
+                            <div class="flex items-center gap-2">
+                                Category
+                                <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'color' && sortDesc}"
+                                    fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </th>
+                        <th scope="col" class="px-6 py-4 text-center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template x-for="item in paginatedItems" :key="item.title">
+                        <tr
+                            class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                            <td class="px-6 py-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded-lg flex items-center justify-center"
+                                        :class="getGradientBg(item.color)">
+                                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        </svg>
+                                    </div>
+                                    <span class="font-semibold text-gray-900 dark:text-white"
+                                        x-text="item.title"></span>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 max-w-md">
+                                <p class="truncate" x-text="item.description"></p>
+                            </td>
+                            <td class="px-6 py-4">
+                                <span class="px-2.5 py-1 text-xs font-medium rounded-full capitalize"
+                                    :class="getCategoryBadge(item.color)" x-text="item.color"></span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <a :href="item.url"
+                                    class="font-medium text-yellow-600 dark:text-yellow-400 hover:underline">View</a>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Empty State -->
+        <div x-show="filteredItems.length === 0" class="text-center py-16">
+            <svg class="w-16 h-16 mx-auto text-gray-300 dark:text-gray-600 mb-4" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+            <p class="text-gray-500 dark:text-gray-400 text-lg">No doctrines match your search criteria.</p>
+        </div>
+
+        <!-- Pagination -->
+        <div x-show="totalPages > 1" class="flex flex-col md:flex-row items-center justify-between mt-8 gap-4">
+            <div class="text-sm text-gray-500 dark:text-gray-400">
+                Page <span class="font-semibold" x-text="currentPage"></span> of <span class="font-semibold"
+                    x-text="totalPages"></span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button @click="currentPage = Math.max(1, currentPage - 1)" :disabled="currentPage === 1"
+                    :class="{'opacity-50 cursor-not-allowed': currentPage === 1}"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    Previous
+                </button>
+                <template x-for="page in visiblePages" :key="page">
+                    <button @click="currentPage = page"
+                        :class="currentPage === page ? 'bg-yellow-600 text-white border-yellow-600' : 'bg-white text-gray-700 border-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600'"
+                        class="px-4 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                        x-text="page">
+                    </button>
+                </template>
+                <button @click="currentPage = Math.min(totalPages, currentPage + 1)"
+                    :disabled="currentPage === totalPages"
+                    :class="{'opacity-50 cursor-not-allowed': currentPage === totalPages}"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    Next
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Doctrine Integration -->
+<section class="bg-gray-50 dark:bg-gray-800 py-16 border-t border-gray-200 dark:border-gray-700">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Doctrine Integration</h2>
+            <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                Every layer of the platform enforces these doctrines through automated gates and verification.
+            </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-4">
+            <div
+                class="text-center p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 mx-auto mb-3 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Pre-Commit</h4>
+                <p class="text-sm text-gray-500">Quality gates block violations</p>
+            </div>
+            <div
+                class="text-center p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 mx-auto mb-3 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">CI/CD</h4>
+                <p class="text-sm text-gray-500">Pipeline enforcement</p>
+            </div>
+            <div
+                class="text-center p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 mx-auto mb-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Agent AIAD</h4>
+                <p class="text-sm text-gray-500">Runtime compliance</p>
+            </div>
+            <div
+                class="text-center p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+                <div
+                    class="w-12 h-12 mx-auto mb-3 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h4 class="font-semibold text-gray-900 dark:text-white mb-1">Trinity Gate</h4>
+                <p class="text-sm text-gray-500">Formal verification</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function doctrineRegistry() {
+        return {
+            searchTerm: '',
+            selectedColor: '',
+            sortField: 'title',
+            sortDesc: false,
+            viewMode: 'cards',
+            currentPage: 1,
+            perPage: 12,
+            items: [
+                
+        ],
+
+        get uniqueColors() {
+            return [...new Set(this.items.map(i => i.color))].length;
+        },
+        get uniqueColorList() {
+            return [...new Set(this.items.map(i => i.color))].sort();
+        },
+        get filteredItems() {
+            let result = [...this.items];
+            if (this.searchTerm) {
+                const q = this.searchTerm.toLowerCase();
+                result = result.filter(i =>
+                    i.title.toLowerCase().includes(q) ||
+                    i.description.toLowerCase().includes(q)
+                );
+            }
+            if (this.selectedColor) {
+                result = result.filter(i => i.color === this.selectedColor);
+            }
+            result.sort((a, b) => {
+                let av = a[this.sortField], bv = b[this.sortField];
+                if (typeof av === 'string') { av = av.toLowerCase(); bv = bv.toLowerCase(); }
+                if (this.sortDesc) return bv > av ? 1 : bv < av ? -1 : 0;
+                return av > bv ? 1 : av < bv ? -1 : 0;
+            });
+            return result;
+        },
+        get paginatedItems() {
+            const start = (this.currentPage - 1) * this.perPage;
+            return this.filteredItems.slice(start, start + this.perPage);
+        },
+        get totalPages() {
+            return Math.ceil(this.filteredItems.length / this.perPage) || 1;
+        },
+        get visiblePages() {
+            const pages = [];
+            const total = this.totalPages;
+            const current = this.currentPage;
+            let start = Math.max(1, current - 2);
+            let end = Math.min(total, current + 2);
+            if (end - start < 4) {
+                if (start === 1) end = Math.min(total, 5);
+                else start = Math.max(1, total - 4);
+            }
+            for (let i = start; i <= end; i++) pages.push(i);
+            return pages;
+        },
+        toggleSort(field) {
+            if (this.sortField === field) this.sortDesc = !this.sortDesc;
+            else { this.sortField = field; this.sortDesc = false; }
+            this.currentPage = 1;
+        },
+        getGradientBg(color) {
+            const map = {
+                red: 'bg-gradient-to-br from-red-500 to-red-600',
+                blue: 'bg-gradient-to-br from-blue-500 to-blue-600',
+                purple: 'bg-gradient-to-br from-purple-500 to-purple-600',
+                emerald: 'bg-gradient-to-br from-emerald-500 to-emerald-600',
+                yellow: 'bg-gradient-to-br from-yellow-500 to-yellow-600',
+                cyan: 'bg-gradient-to-br from-cyan-500 to-cyan-600',
+                pink: 'bg-gradient-to-br from-pink-500 to-pink-600',
+                orange: 'bg-gradient-to-br from-orange-500 to-orange-600',
+                indigo: 'bg-gradient-to-br from-indigo-500 to-indigo-600'
+            };
+            return map[color] || 'bg-gradient-to-br from-gray-500 to-gray-600';
+        },
+        getCategoryBadge(color) {
+            const map = {
+                red: 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
+                blue: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
+                purple: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
+                emerald: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400',
+                yellow: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400',
+                cyan: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400',
+                pink: 'bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400',
+                orange: 'bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400',
+                indigo: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400'
+            };
+            return map[color] || 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300';
+        }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/platform/" class="text-gray-400 hover:text-white transition-colors">Overview</a>
+                        </li>
+                        <li><a href="/apps/" class="text-gray-400 hover:text-white transition-colors">Applications (89)</a></li>
+                        <li><a href="/agents/" class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products & Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Products & Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/products/" class="text-gray-400 hover:text-white transition-colors">Products</a>
+                        </li>
+                        <li><a href="/osint/" class="text-gray-400 hover:text-white transition-colors">OSINT Sources
+                                (121+)</a></li>
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="/solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a>
+                        </li>
+                        <li><a href="/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a>
+                        </li>
+                        <li><a href="/faq/" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-white bg-blue-600 rounded-xl shadow-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-110 focus:ring-4 focus:ring-blue-300 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="/js/vendor/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Back to Top button
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

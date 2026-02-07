@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Prismatic OSINT Core - Prismatic Platform Applications</title>
+
+    
+<meta name="description" content="121+ intelligence sources across 7 categories with unified interface">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-core&#x2F;">
+<meta property="og:title" content="Prismatic OSINT Core - Prismatic Platform Applications">
+<meta property="og:description" content="121+ intelligence sources across 7 categories with unified interface">
+<meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-core&#x2F;">
+<meta name="twitter:title" content="Prismatic OSINT Core - Prismatic Platform Applications">
+<meta name="twitter:description" content="121+ intelligence sources across 7 categories with unified interface">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-core&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- ANTIGRAVITY CSS - Single source of truth for colors -->
+    <link rel="stylesheet" href="/css/antigravity.css">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    <!-- Chart.js -->
+    <script src="/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Three.js (3D visualizations) -->
+    <script src="/js/vendor/three.min.js"></script>
+    <script src="/js/vendor/OrbitControls.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+        (function () {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 space-x-3">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    <li>
+                        <a href="/platform/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                    </li>
+                    <li>
+                        <a href="/products/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                    </li>
+                    <li>
+                        <a href="/capabilities/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            x-cloak>
+                            <a href="/apps/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                (89)</a>
+                            <a href="/agents/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                (430)</a>
+                            <a href="/architecture/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                            <a href="/technologies/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/commands/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                            <a href="/teams/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                Teams</a>
+                            <a href="/solutions/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                            <a href="/registry/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/glossary/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                            <a href="/faq/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Header -->
+<section class="bg-gray-950 py-12 lg:py-16 border-b border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/" class="ml-1 text-sm font-medium text-gray-400 hover:text-white md:ml-2">Applications</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                        <span class="ml-1 text-sm font-medium text-gray-200 md:ml-2">Prismatic OSINT Core</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Header Card -->
+        <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl shadow-2xl border border-cyan-700/30 overflow-hidden"
+             x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)">
+            <div class="p-8">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-6"
+                     x-show="shown"
+                     x-transition:enter="transition ease-out duration-500"
+                     x-transition:enter-start="opacity-0 transform -translate-y-4"
+                     x-transition:enter-end="opacity-100 transform translate-y-0">
+                    <!-- App Icon -->
+                    <div class="flex-shrink-0">
+                        <div class="w-20 h-20 bg-gradient-to-br from-cyan-400 via-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg ring-2 ring-cyan-500/30">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Title & Description -->
+                    <div class="flex-grow">
+                        <h1 class="text-3xl md:text-4xl font-black text-white font-mono mb-3">Prismatic OSINT Core</h1>
+                        <p class="text-lg text-gray-400 leading-relaxed">121+ intelligence sources across 7 categories with unified interface</p>
+                        <div class="mt-4 flex items-center gap-4 text-sm">
+                            <span class="text-gray-400"><strong>892</strong> files</span>
+                            <span class="px-3 py-1 bg-cyan-900/30 text-cyan-300 rounded-lg">Intelligence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="bg-white dark:bg-gray-950 py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-3">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <article class="prose prose-lg dark:prose-invert max-w-none
+                    prose-headings:text-gray-900 dark:prose-headings:text-white
+                    prose-p:text-gray-600 dark:prose-p:text-gray-300
+                    prose-a:text-purple-600 dark:prose-a:text-purple-400
+                    prose-strong:text-gray-900 dark:prose-strong:text-white
+                    prose-code:text-purple-600 dark:prose-code:text-purple-400
+                    prose-pre:bg-gray-50 dark:prose-pre:bg-gray-800
+                    prose-table:text-gray-600 dark:prose-table:text-gray-300
+                    prose-th:text-gray-900 dark:prose-th:text-white
+                    prose-td:border-gray-200 dark:prose-td:border-gray-700">
+                    <h2 id="abstract">Abstract</h2>
+<p>Prismatic OSINT Core is the central intelligence gathering engine of the Prismatic Platform, providing unified access to 121+ Open Source Intelligence sources across seven categories: network intelligence, domain/DNS, threat intelligence, business/financial, Czech registries, breach/leak databases, and vulnerability databases. The engine implements a source adapter protocol that normalizes heterogeneous API responses into a consistent schema, manages per-source rate limiting and authentication, and supports parallel multi-source queries with automatic result deduplication and confidence scoring. Each source adapter handles the specifics of its provider's API (REST, HTML scraping, database connection, file parsing), while the core orchestration layer manages query routing, result fusion, and source health monitoring. The architecture is designed around the NABLA epistemic framework, ensuring that intelligence assessments carry provenance metadata, confidence scores, and temporal timestamps from source through to consumption.</p>
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="1-1-problem-statement">1.1 Problem Statement</h3>
+<p>Intelligence analysis requires data from dozens of disparate sources, each with its own API format, authentication mechanism, rate limit policy, and data schema. Shodan returns JSON with host banners; ARES returns Czech business records in a government-specific XML format; VirusTotal returns malware analysis results; sanctions lists come as structured databases. An analyst or automated system querying these sources individually faces authentication management for each provider, rate limit compliance across concurrent queries, response format normalization for cross-source correlation, and manual deduplication of overlapping data.</p>
+<p>Prismatic OSINT Core solves this by presenting a single unified interface through which any combination of sources can be queried in parallel, with results automatically normalized, deduplicated, and confidence-scored.</p>
+<h3 id="1-2-design-goals">1.2 Design Goals</h3>
+<ol>
+<li><strong>Unified source interface</strong> -- all 121+ sources accessible through a single adapter protocol with consistent query/response patterns.</li>
+<li><strong>Source adapter isolation</strong> -- each source adapter encapsulates its provider's authentication, rate limiting, response parsing, and error handling.</li>
+<li><strong>Parallel multi-source queries</strong> -- query multiple sources concurrently with configurable timeouts and partial result handling.</li>
+<li><strong>Automatic result fusion</strong> -- deduplicate, normalize, and confidence-score results from multiple sources.</li>
+<li><strong>Rate limit compliance</strong> -- enforce per-source rate limits globally, preventing API key suspension or banning.</li>
+<li><strong>Source health monitoring</strong> -- track availability, response times, and error rates for each source.</li>
+<li><strong>Epistemic provenance</strong> -- every intelligence datum carries source attribution, collection timestamp, and confidence level per NABLA axioms.</li>
+</ol>
+<h3 id="1-3-scope">1.3 Scope</h3>
+<p>Prismatic OSINT Core provides the source adapter framework, query orchestration, and result fusion. Individual source adapters are organized into domain-specific sub-applications: <a href="/apps/prismatic-osint-network/">OSINT Network</a>, <a href="/apps/prismatic-osint-business-financial/">OSINT Business</a>, <a href="/apps/prismatic-osint-czech-legal/">OSINT Czech Legal</a>, <a href="/apps/prismatic-osint-eu-institutions/">OSINT EU Institutions</a>, <a href="/apps/prismatic-osint-social-media/">OSINT Social Media</a>, and <a href="/apps/prismatic-osint-sources/">OSINT Sources</a>.</p>
+<h2 id="2-architecture">2. Architecture</h2>
+<h3 id="2-1-system-design">2.1 System Design</h3>
+<pre><code>Application Query
+       |
+  PrismaticOSINT Facade
+       |
+  Source Router (capability-based selection)
+       |
+  +----+----+----+----+----+----+----+
+  |    |    |    |    |    |    |    |
+  Net  DNS  Threat Biz  Czech EU   Vuln
+  (15) (10) (12)  (8)  (15)  (6)  (6)
+  |    |    |    |    |    |    |    |
+  Adapter Protocol (normalize + rate limit)
+  |    |    |    |    |    |    |    |
+  Shodan Censys VT   ARES  Justice ECB  NVD ...
+       |
+  Result Fusion Engine
+  (deduplicate + confidence score + provenance)
+       |
+  Intelligence Result
+</code></pre>
+<h3 id="2-2-core-components">2.2 Core Components</h3>
+<table><thead><tr><th>Module</th><th>Responsibility</th></tr></thead><tbody>
+<tr><td><code>PrismaticOsintCore</code></td><td>Public facade: <code>search/2</code>, <code>build_company_profile/1</code>, <code>check_reputation/1</code></td></tr>
+<tr><td><code>PrismaticOsintCore.SourceRouter</code></td><td>Capability-based source selection and query routing</td></tr>
+<tr><td><code>PrismaticOsintCore.AdapterProtocol</code></td><td>Behaviour definition for source adapters (query, parse, normalize)</td></tr>
+<tr><td><code>PrismaticOsintCore.RateLimiter</code></td><td>Per-source global rate limit enforcement using token bucket</td></tr>
+<tr><td><code>PrismaticOsintCore.ResultFusion</code></td><td>Multi-source result deduplication, normalization, and scoring</td></tr>
+<tr><td><code>PrismaticOsintCore.SourceHealth</code></td><td>Availability, latency, and error rate monitoring per source</td></tr>
+<tr><td><code>PrismaticOsintCore.Provenance</code></td><td>Source attribution and NABLA-compliant metadata attachment</td></tr>
+<tr><td><code>PrismaticOsintCore.CredentialManager</code></td><td>API key and authentication credential management</td></tr>
+</tbody></table>
+<h3 id="2-3-process-topology">2.3 Process Topology</h3>
+<pre><code>PrismaticOsintCore.Application (Supervisor, :one_for_one)
++-- PrismaticOsintCore.SourceRouter (GenServer)
+|     Maintains source capability registry and routing rules
++-- PrismaticOsintCore.RateLimiter (GenServer)
+|     Token bucket rate limiters per source, global coordination
++-- PrismaticOsintCore.SourceHealth (GenServer)
+|     Health metrics collection and availability tracking
++-- Task.Supervisor
+      Supervises concurrent source queries
+</code></pre>
+<h3 id="2-4-data-flow">2.4 Data Flow</h3>
+<p>A query enters through the facade, which determines which sources to query based on the query type and requested categories. The SourceRouter selects adapters that match the query capabilities. Queries are dispatched in parallel via Task.Supervisor, with each query passing through the RateLimiter before reaching the source adapter. Adapter responses are parsed, normalized to the platform's entity schema, annotated with provenance metadata, and passed to the ResultFusion engine for deduplication and confidence scoring. The final intelligence result is returned to the caller.</p>
+<h2 id="3-implementation">3. Implementation</h2>
+<h3 id="3-1-key-algorithms">3.1 Key Algorithms</h3>
+<p><strong>Intelligence Fusion</strong>. When multiple sources return data about the same entity, the fusion engine performs entity resolution (matching records across sources), field-level deduplication (preferring the most authoritative source for each field), confidence scoring (higher confidence when multiple independent sources agree), and temporal selection (preferring the most recent data when timestamps differ).</p>
+<p><strong>Rate Limiting</strong>. Each source has a token bucket rate limiter with configurable capacity and refill rate. When a query would exceed the rate limit, it is queued with priority ordering. Critical queries (security incidents) receive priority over routine monitoring queries.</p>
+<h3 id="3-2-data-structures">3.2 Data Structures</h3>
+<pre><code data-lang="elixir">defmodule PrismaticOsintCore.IntelligenceResult do
+  @type t :: %__MODULE__{
+    entity: String.t(),
+    query_type: atom(),
+    sources_queried: [atom()],
+    sources_responded: [atom()],
+    data: map(),
+    confidence: float(),
+    provenance: [Provenance.t()],
+    collected_at: DateTime.t(),
+    fusion_metadata: FusionMetadata.t()
+  }
+end
+</code></pre>
+<h3 id="3-3-api-surface">3.3 API Surface</h3>
+<pre><code data-lang="elixir"># Multi-source entity search
+@spec search(String.t(), keyword()) :: {:ok, IntelligenceResult.t()} | {:error, term()}
+PrismaticOsintCore.search(&quot;example.com&quot;, categories: [:network, :threat, :business])
+
+# Build comprehensive company profile
+@spec build_company_profile(String.t() | keyword()) :: {:ok, CompanyProfile.t()} | {:error, term()}
+PrismaticOsintCore.build_company_profile(&quot;Example s.r.o.&quot;)
+
+# Domain reputation check
+@spec check_reputation(String.t()) :: {:ok, ReputationResult.t()} | {:error, term()}
+PrismaticOsintCore.check_reputation(&quot;suspicious.domain.com&quot;)
+
+# Sanctions screening
+@spec sanctions_check(String.t(), [String.t()]) :: {:ok, SanctionsResult.t()} | {:error, term()}
+PrismaticOsintCore.sanctions_check(&quot;Entity Name&quot;, [&quot;EU&quot;, &quot;US&quot;, &quot;UK&quot;])
+
+# IP intelligence
+@spec analyze_ip(String.t()) :: {:ok, IpIntelligence.t()} | {:error, term()}
+PrismaticOsintCore.analyze_ip(&quot;1.2.3.4&quot;)
+</code></pre>
+<h3 id="3-4-configuration">3.4 Configuration</h3>
+<pre><code data-lang="elixir">config :prismatic_osint_core,
+  # Query orchestration
+  default_timeout: 10_000,
+  max_concurrent_queries: 20,
+  partial_result_threshold: 0.5,
+
+  # Rate limits (requests per hour per source)
+  rate_limits: %{
+    shodan: 100, censys: 250, virustotal: 500,
+    abuseipdb: 1000, greynoise: 100, ares: 500,
+    justice: 200, crtsh: 1000
+  },
+
+  # Source priorities (higher = preferred)
+  source_priorities: %{
+    shodan: 10, censys: 9, virustotal: 8,
+    ares: 10, justice: 9
+  }
+</code></pre>
+<h2 id="4-integration">4. Integration</h2>
+<h3 id="4-1-dependencies">4.1 Dependencies</h3>
+<table><thead><tr><th>Application</th><th>Relationship</th></tr></thead><tbody>
+<tr><td><a href="/apps/prismatic-cache/">Prismatic Cache</a></td><td>Query result caching (reduces API costs)</td></tr>
+<tr><td><a href="/apps/prismatic-resilience/">Prismatic Resilience</a></td><td>Circuit breakers for source failures</td></tr>
+<tr><td><a href="/apps/prismatic-storage/">Prismatic Storage</a></td><td>Intelligence data persistence</td></tr>
+<tr><td><a href="/apps/prismatic-nabla/">Prismatic Nabla</a></td><td>Confidence scoring and provenance tracking</td></tr>
+<tr><td><a href="/apps/prismatic-telemetry/">Prismatic Telemetry</a></td><td>Source query metrics</td></tr>
+</tbody></table>
+<h3 id="4-2-dependents">4.2 Dependents</h3>
+<table><thead><tr><th>Application</th><th>Relationship</th></tr></thead><tbody>
+<tr><td><a href="/apps/prismatic-perimeter/">Prismatic Perimeter</a></td><td>Evidence collection for security ratings</td></tr>
+<tr><td><a href="/apps/prismatic-hawkeye/">Prismatic HAWKEYE</a></td><td>Visitor IP enrichment</td></tr>
+<tr><td><a href="/apps/prismatic-compliance/">Prismatic Compliance</a></td><td>Compliance evidence from OSINT data</td></tr>
+<tr><td><a href="/apps/prismatic-graph/">Prismatic Graph</a></td><td>Entity data for knowledge graph</td></tr>
+<tr><td><a href="/apps/prismatic-detection-engine/">Prismatic Detection Engine</a></td><td>Threat indicator feeds</td></tr>
+</tbody></table>
+<h3 id="4-3-inter-process-communication">4.3 Inter-Process Communication</h3>
+<p>Source queries are dispatched as supervised Tasks for parallel execution. Results flow back through the fusion engine via Task.await_many. Source health metrics are published via Phoenix PubSub for dashboard consumption. Rate limiter state is maintained in a central GenServer with ETS-backed token buckets.</p>
+<h3 id="4-4-external-integrations">4.4 External Integrations</h3>
+<p>121+ external services accessed via REST APIs, HTML scraping, database connections, and file downloads. Key providers include Shodan, Censys, VirusTotal, AbuseIPDB, GreyNoise, SecurityTrails, ARES (Czech business registry), Justice.cz (Czech commercial register), EU Sanctions List, OFAC, NVD, and crt.sh.</p>
+<h2 id="5-performance">5. Performance</h2>
+<h3 id="5-1-benchmarks">5.1 Benchmarks</h3>
+<table><thead><tr><th>Operation</th><th>Latency</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Single-source query</td><td>200ms-3s</td><td>Depends on source response time</td></tr>
+<tr><td>Multi-source parallel (5 sources)</td><td>1-3s</td><td>Bounded by slowest source</td></tr>
+<tr><td>Multi-source parallel (10 sources)</td><td>2-5s</td><td>With partial result handling</td></tr>
+<tr><td>Result fusion (deduplication)</td><td>&lt; 50ms</td><td>In-memory processing</td></tr>
+<tr><td>Cache hit (any source)</td><td>&lt; 1ms</td><td>ETS L1 cache</td></tr>
+</tbody></table>
+<h3 id="5-2-scalability">5.2 Scalability</h3>
+<p>Query throughput scales linearly with the concurrent query limit. Source queries are IO-bound (waiting for external APIs), so hundreds of concurrent queries require minimal CPU. The rate limiter ensures source compliance regardless of query volume.</p>
+<h3 id="5-3-resource-requirements">5.3 Resource Requirements</h3>
+<table><thead><tr><th>Resource</th><th>Minimum</th><th>Recommended</th></tr></thead><tbody>
+<tr><td>Memory</td><td>512 MB</td><td>2 GB (with result caching)</td></tr>
+<tr><td>CPU</td><td>2 cores</td><td>4 cores (for parallel queries)</td></tr>
+<tr><td>Network</td><td>Outbound HTTPS</td><td>Moderate bandwidth (API queries)</td></tr>
+</tbody></table>
+<h2 id="6-testing-strategy">6. Testing Strategy</h2>
+<h3 id="6-1-unit-tests">6.1 Unit Tests</h3>
+<p>Each source adapter has unit tests with recorded API responses (VCR-style cassettes) to verify parsing, normalization, and error handling without hitting live APIs. Fusion engine tests verify deduplication, confidence scoring, and provenance tracking with known multi-source inputs.</p>
+<h3 id="6-2-integration-tests">6.2 Integration Tests</h3>
+<p>End-to-end tests exercise the full query pipeline from facade through routing, parallel dispatch, adapter execution, and result fusion. Tests use a mock source server to verify timeout handling, partial results, and rate limit compliance.</p>
+<h3 id="6-3-property-based-testing">6.3 Property-Based Testing</h3>
+<p>StreamData generators produce random entity names and query parameters to verify that the facade always returns structured results (never crashes), source selection is deterministic for the same inputs, and confidence scores are bounded between 0.0 and 1.0.</p>
+<h2 id="7-security-considerations">7. Security Considerations</h2>
+<h3 id="7-1-threat-model">7.1 Threat Model</h3>
+<p>API key exposure is the primary threat. Source credentials are stored in encrypted environment variables, never logged, and rotated periodically. Rate limit compliance prevents account suspension. Query content is logged for audit purposes but sanitized of credentials.</p>
+<h3 id="7-2-access-control">7.2 Access Control</h3>
+<p>OSINT queries require <code>osint_query</code> permission through <a href="/apps/prismatic-auth/">Prismatic Auth</a>. Query results containing personal data (sanctions matches, breach data) are subject to GDPR retention policies managed through <a href="/apps/prismatic-compliance/">Prismatic Compliance</a>.</p>
+<h2 id="8-operational-considerations">8. Operational Considerations</h2>
+<h3 id="8-1-deployment">8.1 Deployment</h3>
+<p>Requires API credentials for each enabled source, configured via environment variables. Sources without credentials are automatically disabled. The system gracefully degrades when individual sources are unavailable.</p>
+<h3 id="8-2-monitoring">8.2 Monitoring</h3>
+<p>Telemetry events: <code>[:prismatic, :osint, :query]</code>, <code>[:prismatic, :osint, :source_error]</code>, <code>[:prismatic, :osint, :rate_limited]</code>. Key metrics include per-source latency, error rates, rate limit utilization, and cache hit rates.</p>
+<h3 id="8-3-troubleshooting">8.3 Troubleshooting</h3>
+<table><thead><tr><th>Symptom</th><th>Likely Cause</th><th>Resolution</th></tr></thead><tbody>
+<tr><td>Source returning errors</td><td>API key expired or rate limited</td><td>Rotate credentials; check rate limit status</td></tr>
+<tr><td>Slow multi-source queries</td><td>One source timing out</td><td>Check source health; adjust timeout</td></tr>
+<tr><td>Low confidence scores</td><td>Few sources available</td><td>Enable additional sources; check credentials</td></tr>
+<tr><td>Missing source data</td><td>Source adapter not loaded</td><td>Verify source configuration and credentials</td></tr>
+</tbody></table>
+<h2 id="9-future-work">9. Future Work</h2>
+<p>Planned enhancements include streaming result delivery (returning partial results as sources respond), adaptive source selection based on historical accuracy, cost-optimized source routing (preferring cheaper sources when quality is comparable), and support for authenticated scanning with target authorization.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="/apps/prismatic-osint-network/">Prismatic OSINT Network</a> -- Network intelligence adapters</li>
+<li><a href="/apps/prismatic-osint-business-financial/">Prismatic OSINT Business</a> -- Business intelligence adapters</li>
+<li><a href="/apps/prismatic-osint-czech-legal/">Prismatic OSINT Czech Legal</a> -- Czech legal adapters</li>
+<li><a href="/apps/prismatic-osint-eu-institutions/">Prismatic OSINT EU Institutions</a> -- EU institutional adapters</li>
+<li><a href="/apps/prismatic-osint-monitoring/">Prismatic OSINT Monitoring</a> -- Continuous monitoring</li>
+<li><a href="/apps/prismatic-osint-sources/">Prismatic OSINT Sources</a> -- Source registry</li>
+<li><a rel="external" href="https://www.shodan.io/">Shodan</a> -- Internet device search engine</li>
+<li><a rel="external" href="https://censys.io/">Censys</a> -- Internet-wide scanning platform</li>
+<li><a rel="external" href="https://www.virustotal.com/">VirusTotal</a> -- Multi-antivirus scanning service</li>
+</ul>
+
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Quick Info Card -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">App Info</h3>
+                    <dl class="space-y-3">
+                        <div class="flex justify-between">
+                            <dt class="text-gray-500 dark:text-gray-400">Files</dt>
+                            <dd class="font-medium text-gray-900 dark:text-white">892</dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-gray-500 dark:text-gray-400">Category</dt>
+                            <dd class="font-medium text-gray-900 dark:text-white">Intelligence</dd>
+                        </div>
+                        
+                        <div class="flex justify-between">
+                            <dt class="text-gray-500 dark:text-gray-400">Status</dt>
+                            <dd class="font-medium text-emerald-600 dark:text-emerald-400">Production</dd>
+                        </div>
+                        
+                        
+                        <div class="flex justify-between">
+                            <dt class="text-gray-500 dark:text-gray-400">Port</dt>
+                            <dd class="font-medium text-gray-900 dark:text-white font-mono">N&#x2F;A</dd>
+                        </div>
+                        
+                    </dl>
+                </div>
+
+                <!-- Chart -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Codebase Share</h3>
+                    <canvas id="appChart" width="300" height="200"></canvas>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            if (typeof Chart !== 'undefined') {
+                                var ctx = document.getElementById('appChart');
+                                if (ctx) {
+                                    var files = parseInt('892') || 0;
+                                    new Chart(ctx, {
+                                        type: 'doughnut',
+                                        data: {
+                                            labels: ['This App', 'Other Apps'],
+                                            datasets: [{
+                                                data: [files, Math.max(0, 6652 - files)],
+                                                backgroundColor: ['#06b6d4', '#e5e7eb'],
+                                                borderWidth: 0
+                                            }]
+                                        },
+                                        options: {
+                                            responsive: true,
+                                            plugins: {
+                                                legend: { position: 'bottom', labels: { color: '#9ca3af', font: { size: 11 } } }
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+
+                <!-- In This Section -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">In This Section</h3>
+                    <ul class="space-y-2">
+                        
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-perimeter&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Perimeter
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-api&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic API
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;sparkline&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Sparkline
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-core&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Core
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-hawkeye&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic HAWKEYE
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-agents&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Agents
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-kernel&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Kernel
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-nabla&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Nabla
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Storage
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-core&#x2F;" class="text-sm text-cyan-600 dark:text-cyan-400 font-semibold transition-colors">
+                                Prismatic OSINT Core
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-web&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Web
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-dd&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic DD
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-safety&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Safety
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-claude&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Claude
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-testing&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Testing
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-dark&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Dark
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-graph&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Graph
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-meilisearch&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Meilisearch
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-telemetry&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Telemetry
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-cache&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Cache
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-auth&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Auth
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-crawler&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Crawler
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-compliance&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Compliance
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-visitor-intelligence&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Visitor Intelligence
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-resilience&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Resilience
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-drift&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                AI Drift
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-drift-web&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                AI Drift Web
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-3nl&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic 3NL
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-algorithms&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Algorithms
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-audit&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Audit
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-ollama&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Ollama
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-lean&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Lean
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-monte-carlo&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Monte Carlo
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-browser&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Browser
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-signals&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Signals
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-blackboard&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Blackboard
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-meilisearch&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Storage Meilisearch
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-network&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic OSINT Network
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-business-financial&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic OSINT Business
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-czech-legal&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic OSINT Czech Legal
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-social-media&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic OSINT Social Media
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-monitoring&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic OSINT Monitoring
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-ets&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Storage ETS
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-ecto&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Storage Ecto
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-czech-courts&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Czech Courts
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-redis&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Storage Redis
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-kuzudb&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Storage KuzuDB
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-duckdb&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Storage DuckDB
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-crawler-core&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Crawler Core
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-czech-autocrawler&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Czech Autocrawler
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-evil&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Evil
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-perimeter-core&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Perimeter Core
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-perimeter-web&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Perimeter Web
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-mcp&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic MCP
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-detection-engine&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Detection Engine
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-ir-pvm-web&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic IR PVM Web
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-influence&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Influence
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-narrative&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Narrative
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-bifurcation&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Bifurcation
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-deduction&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Deduction
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-lean4&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Lean4
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-tracking&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Tracking
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-traits&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Traits
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-quality-intelligence&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Quality Intelligence
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-presales&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Presales
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-property-intelligence&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Property Intelligence
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-manipulation&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Manipulation
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-labs&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Labs
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-tooling&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Tooling
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-suppression&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Suppression
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-annihilation&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Annihilation
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-override&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Override
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-compression&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Compression
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-transcendence&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Transcendence
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-embodiment&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Embodiment
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-eu-institutions&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic OSINT EU Institutions
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-sources&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic OSINT Sources
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-hawkeye-web&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Hawkeye Web
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-tidewave&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Tidewave
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-logic-prolog&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Logic Prolog
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-agents&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Social Agents
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-mycelial-nx&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Mycelial Nx
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-prisc&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic PRISC
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-core&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Social Core
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-cer&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic CER
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-driver&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Social Driver
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-core&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Storage Core
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-fb&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Social FB
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-ir-pvm&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic IR PVM
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-test-support&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Social Test Support
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-modalities&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Modalities
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-ui&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Social UI
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-audio&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Audio
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-vault&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Social Vault
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-credo&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Credo
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-test-versioning&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                Prismatic Test Versioning
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-alignment-core&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                AI Alignment Core
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-evo-monitor&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                AI Evolution Monitor
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-interpretability&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                AI Interpretability
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-metacognitive&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                AI Metacognitive
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-safety&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                AI Safety
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-transparency&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                AI Transparency
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-value-align&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                                AI Value Align
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <!-- Related Sections -->
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Related Sections</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Architecture</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Agent Ecosystem</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">OSINT Sources</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Content -->
+        <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Related Content</h2>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Architecture</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Deterministic event-sourced architecture built on Elixir/OTP and BEAM VM.</p>
+                </a>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Agent Ecosystem</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">430 autonomous agents across 14 specialized domains.</p>
+                </a>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Doctrine</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">NO MERCY, NO DOUBTS - the universal doctrine governing all operations.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700 transition-all shadow-lg hover:shadow-xl">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Back to Applications
+            </a>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/platform/" class="text-gray-400 hover:text-white transition-colors">Overview</a>
+                        </li>
+                        <li><a href="/apps/" class="text-gray-400 hover:text-white transition-colors">Applications (89)</a></li>
+                        <li><a href="/agents/" class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products & Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Products & Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/products/" class="text-gray-400 hover:text-white transition-colors">Products</a>
+                        </li>
+                        <li><a href="/osint/" class="text-gray-400 hover:text-white transition-colors">OSINT Sources
+                                (121+)</a></li>
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="/solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a>
+                        </li>
+                        <li><a href="/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a>
+                        </li>
+                        <li><a href="/faq/" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-white bg-blue-600 rounded-xl shadow-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-110 focus:ring-4 focus:ring-blue-300 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="/js/vendor/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Back to Top button
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

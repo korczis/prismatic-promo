@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Command Registry - Prismatic Platform</title>
+
+    
+<meta name="description" content="Complete searchable registry of all 212 slash commands across the Prismatic Platform">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com/registry/commands/">
+<meta property="og:title" content="Command Registry - Prismatic Platform">
+<meta property="og:description" content="Browse and search 212 slash commands across 12 categories">
+
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;registry&#x2F;commands&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- ANTIGRAVITY CSS - Single source of truth for colors -->
+    <link rel="stylesheet" href="/css/antigravity.css">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    <!-- Chart.js -->
+    <script src="/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Three.js (3D visualizations) -->
+    <script src="/js/vendor/three.min.js"></script>
+    <script src="/js/vendor/OrbitControls.min.js"></script>
+
+    <!-- Prevent dark mode flash -->
+    <script>
+        (function () {
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
+</head>
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+    <!-- Navigation -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                    <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 space-x-3">
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button"
+                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    <li>
+                        <a href="/platform/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                    </li>
+                    <li>
+                        <a href="/products/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                    </li>
+                    <li>
+                        <a href="/capabilities/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            x-cloak>
+                            <a href="/apps/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                (89)</a>
+                            <a href="/agents/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                (430)</a>
+                            <a href="/architecture/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                            <a href="/technologies/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/commands/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                            <a href="/teams/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                Teams</a>
+                            <a href="/solutions/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                            <a href="/registry/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                            <a href="/glossary/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                            <a href="/faq/"
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<script src="/js/command-registry-data.js"></script>
+
+<!-- Hero Section -->
+<section class="bg-gray-950 py-16 lg:py-24 border-b border-gray-800">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div>
+            <nav class="flex mb-6" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                    <li><a href="https:&#x2F;&#x2F;prismatic-reality.com"
+                            class="text-sm text-gray-500 hover:text-white transition-colors">Home</a></li>
+                    <li><span class="mx-2 text-gray-700">/</span><a href="https:&#x2F;&#x2F;prismatic-reality.com/registry/"
+                            class="text-sm text-gray-500 hover:text-white transition-colors">Registry</a></li>
+                    <li><span class="mx-2 text-gray-700">/</span><span class="text-sm text-blue-400">Commands</span>
+                    </li>
+                </ol>
+            </nav>
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 mb-6 text-xs font-medium tracking-wide text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Complete Command Database
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">Command Registry</h1>
+            <div class="prose prose-invert prose-lg max-w-3xl text-gray-300 leading-relaxed font-light">
+                <p>Browse and search the complete database of 212 slash commands organized across 16 operational categories -- from Orchestration and Development to Intelligence Operations and Crisis Management.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Registry Section -->
+<section class="bg-white dark:bg-gray-950 py-12 lg:py-16" x-data="commandFullRegistry()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+            <div
+                class="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800 text-center">
+                <div class="text-3xl font-black text-blue-600 dark:text-blue-400" x-text="commands.length">0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Total Commands</div>
+            </div>
+            <div
+                class="p-4 bg-cyan-50 dark:bg-cyan-900/20 rounded-xl border border-cyan-200 dark:border-cyan-800 text-center">
+                <div class="text-3xl font-black text-cyan-600 dark:text-cyan-400" x-text="categoryList.length">0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Categories</div>
+            </div>
+            <div
+                class="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl border border-emerald-200 dark:border-emerald-800 text-center">
+                <div class="text-3xl font-black text-emerald-600 dark:text-emerald-400" x-text="productionCount">0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Production</div>
+            </div>
+            <div
+                class="p-4 bg-purple-50 dark:bg-purple-900/20 rounded-xl border border-purple-200 dark:border-purple-800 text-center">
+                <div class="text-3xl font-black text-purple-600 dark:text-purple-400" x-text="experimentalCount">0</div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Experimental</div>
+            </div>
+            <div
+                class="p-4 bg-amber-50 dark:bg-amber-900/20 rounded-xl border border-amber-200 dark:border-amber-800 text-center">
+                <div class="text-3xl font-black text-amber-600 dark:text-amber-400" x-text="filteredCommands.length">0
+                </div>
+                <div class="text-sm text-gray-600 dark:text-gray-400 mt-1">Showing</div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="mb-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div class="flex flex-col lg:flex-row gap-4">
+                <div class="flex-1">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                        <input type="text" name="search" id="search-input" x-model="searchTerm" @input="currentPage=1"
+                            class="block w-full pl-10 pr-4 py-2.5 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+                            placeholder="Search commands by name, description, category, agent...">
+                    </div>
+                </div>
+                <div class="w-full lg:w-56">
+                    <select x-model="selectedCategory" @change="currentPage=1"
+                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="">All Categories</option>
+                        <template x-for="c in categoryList" :key="c">
+                            <option :value="c" x-text="c + ' (' + categoryCounts[c] + ')'"></option>
+                        </template>
+                    </select>
+                </div>
+                <div class="w-full lg:w-44">
+                    <select x-model="selectedStatus" @change="currentPage=1"
+                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="">All Statuses</option>
+                        <option value="Production">Production</option>
+                        <option value="Experimental">Experimental</option>
+                    </select>
+                </div>
+                <div class="w-full lg:w-44">
+                    <select x-model="sortField"
+                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        <option value="name">Sort: Name</option>
+                        <option value="category">Sort: Category</option>
+                        <option value="usage">Sort: Usage</option>
+                        <option value="status">Sort: Status</option>
+                    </select>
+                </div>
+                <div
+                    class="flex items-center bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    <button @click="viewMode='cards'"
+                        :class="viewMode==='cards'?'bg-blue-600 text-white':'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                        </svg>
+                    </button>
+                    <button @click="viewMode='table'"
+                        :class="viewMode==='table'?'bg-blue-600 text-white':'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        class="px-3 py-2.5 text-sm font-medium transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+                <button @click="searchTerm='';selectedCategory='';selectedStatus='';sortField='name';currentPage=1"
+                    class="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600">Reset</button>
+            </div>
+            <div class="mt-3 text-sm text-gray-500 dark:text-gray-400">
+                Showing <span class="font-semibold text-blue-600 dark:text-blue-400"
+                    x-text="paginatedCommands.length"></span> of <span class="font-semibold"
+                    x-text="filteredCommands.length"></span> commands
+                <span x-show="searchTerm||selectedCategory||selectedStatus" class="ml-2 text-blue-500">(filtered)</span>
+            </div>
+        </div>
+
+        <!-- Card View -->
+        <div x-show="viewMode==='cards'" x-transition class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <template x-for="cmd in paginatedCommands" :key="cmd.name">
+                <div
+                    class="group p-5 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 hover:-translate-y-0.5">
+                    <div class="flex items-start justify-between mb-3">
+                        <code class="text-lg font-bold text-blue-600 dark:text-blue-400 font-mono"
+                            x-text="cmd.name"></code>
+                        <span class="px-2 py-0.5 text-xs font-semibold rounded-full"
+                            :class="cmd.status==='Production'?'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400':'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400'"
+                            x-text="cmd.status"></span>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2" x-text="cmd.description"></p>
+                    <div class="flex items-center justify-between text-xs">
+                        <span
+                            class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full font-medium"
+                            x-text="cmd.category"></span>
+                        <span class="text-gray-500 dark:text-gray-500" x-text="'Auth: ' + cmd.authority"></span>
+                    </div>
+                    <div
+                        class="mt-3 pt-3 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between text-xs">
+                        <span class="text-gray-500 dark:text-gray-500 font-mono" x-text="cmd.agent"></span>
+                        <span class="flex items-center gap-1"
+                            :class="cmd.usage==='high'?'text-emerald-600':cmd.usage==='medium'?'text-amber-600':'text-gray-400'">
+                            <span class="w-2 h-2 rounded-full"
+                                :class="cmd.usage==='high'?'bg-emerald-500':cmd.usage==='medium'?'bg-amber-500':'bg-gray-400'"></span>
+                            <span x-text="cmd.usage"></span>
+                        </span>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+        <!-- Table View -->
+        <div x-show="viewMode==='table'" x-transition
+            class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-800 dark:text-gray-400">
+                    <tr>
+                        <th class="px-4 py-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="toggleSort('name')">
+                            <div class="flex items-center gap-1">Command <svg class="w-3 h-3"
+                                    :class="{'rotate-180':sortField==='name'&&sortDesc}" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg></div>
+                        </th>
+                        <th class="px-4 py-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="toggleSort('category')">
+                            <div class="flex items-center gap-1">Category <svg class="w-3 h-3"
+                                    :class="{'rotate-180':sortField==='category'&&sortDesc}" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg></div>
+                        </th>
+                        <th class="px-4 py-3">Description</th>
+                        <th class="px-4 py-3">Authority</th>
+                        <th class="px-4 py-3">Agent</th>
+                        <th class="px-4 py-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="toggleSort('status')">
+                            <div class="flex items-center gap-1">Status <svg class="w-3 h-3"
+                                    :class="{'rotate-180':sortField==='status'&&sortDesc}" fill="currentColor"
+                                    viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg></div>
+                        </th>
+                        <th class="px-4 py-3 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                            @click="toggleSort('usage')">Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template x-for="cmd in paginatedCommands" :key="cmd.name">
+                        <tr
+                            class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                            <td class="px-4 py-3"><code
+                                    class="font-semibold text-blue-600 dark:text-blue-400 font-mono text-xs"
+                                    x-text="cmd.name"></code></td>
+                            <td class="px-4 py-3"><span
+                                    class="px-2 py-0.5 text-xs font-medium rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400"
+                                    x-text="cmd.category"></span></td>
+                            <td class="px-4 py-3 max-w-xs">
+                                <p class="truncate text-xs" x-text="cmd.description"></p>
+                            </td>
+                            <td class="px-4 py-3 text-xs" x-text="cmd.authority"></td>
+                            <td class="px-4 py-3"><span class="text-xs font-mono text-gray-500"
+                                    x-text="cmd.agent"></span></td>
+                            <td class="px-4 py-3"><span class="px-2 py-0.5 text-xs font-semibold rounded-full"
+                                    :class="cmd.status==='Production'?'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-400':'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-400'"
+                                    x-text="cmd.status"></span></td>
+                            <td class="px-4 py-3"><span class="flex items-center gap-1 text-xs"
+                                    :class="cmd.usage==='high'?'text-emerald-600':cmd.usage==='medium'?'text-amber-600':'text-gray-400'"><span
+                                        class="w-2 h-2 rounded-full"
+                                        :class="cmd.usage==='high'?'bg-emerald-500':cmd.usage==='medium'?'bg-amber-500':'bg-gray-400'"></span><span
+                                        x-text="cmd.usage"></span></span></td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Empty State -->
+        <div x-show="filteredCommands.length===0" class="text-center py-16">
+            <svg class="w-16 h-16 mx-auto text-gray-300 dark:text-gray-600 mb-4" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <p class="text-gray-500 dark:text-gray-400 text-lg">No commands match your search criteria.</p>
+            <button @click="searchTerm='';selectedCategory='';selectedStatus='';currentPage=1"
+                class="mt-4 px-6 py-2 text-sm font-medium text-blue-600 bg-blue-100 rounded-lg hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-400">Clear
+                Filters</button>
+        </div>
+
+        <!-- Pagination -->
+        <div x-show="totalPages>1" class="flex flex-col md:flex-row items-center justify-between mt-8 gap-4">
+            <div class="text-sm text-gray-500 dark:text-gray-400">Page <span class="font-semibold"
+                    x-text="currentPage"></span> of <span class="font-semibold" x-text="totalPages"></span></div>
+            <div class="flex items-center gap-2">
+                <button @click="currentPage=Math.max(1,currentPage-1)" :disabled="currentPage===1"
+                    :class="{'opacity-50 cursor-not-allowed':currentPage===1}"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">Previous</button>
+                <template x-for="p in visiblePages" :key="p"><button @click="currentPage=p"
+                        :class="currentPage===p?'bg-blue-600 text-white border-blue-600':'bg-white text-gray-700 border-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600'"
+                        class="px-4 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                        x-text="p"></button></template>
+                <button @click="currentPage=Math.min(totalPages,currentPage+1)" :disabled="currentPage===totalPages"
+                    :class="{'opacity-50 cursor-not-allowed':currentPage===totalPages}"
+                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">Next</button>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="mt-12 p-8 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Command Distribution</h2>
+            <div class="grid gap-8 lg:grid-cols-2">
+                <div><canvas id="cmdCategoryChart" height="300"></canvas></div>
+                <div><canvas id="cmdUsageChart" height="300"></canvas></div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div
+            class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 flex flex-col md:flex-row items-center justify-between gap-4">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/registry/"
+                class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-blue-600 rounded-xl hover:from-blue-700 hover:to-cyan-700 transition-all shadow-lg hover:shadow-xl">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Registry
+            </a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/registry/agents/"
+                class="inline-flex items-center px-6 py-3 text-sm font-semibold text-blue-700 bg-blue-100 rounded-xl hover:bg-blue-200 dark:bg-blue-900/30 dark:text-blue-300 dark:hover:bg-blue-900/50 transition-all">
+                Browse Agents
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    function commandFullRegistry() {
+        var baseUrl = "https://prismatic-reality.com";
+        var allCommands = generateCommandData(baseUrl);
+        return {
+            searchTerm: '', selectedCategory: '', selectedStatus: '', sortField: 'name', sortDesc: false, viewMode: 'cards', currentPage: 1, perPage: 20,
+            commands: allCommands,
+            get categoryList() { return [...new Set(this.commands.map(function (c) { return c.category }))].sort() },
+            get categoryCounts() { var counts = {}; this.commands.forEach(function (c) { counts[c.category] = (counts[c.category] || 0) + 1 }); return counts },
+            get productionCount() { return this.commands.filter(function (c) { return c.status === 'Production' }).length },
+            get experimentalCount() { return this.commands.filter(function (c) { return c.status === 'Experimental' }).length },
+            get filteredCommands() {
+                var r = this.commands.slice(), st = this.searchTerm, sc = this.selectedCategory, ss = this.selectedStatus, sf = this.sortField, sd = this.sortDesc;
+                if (st) { var q = st.toLowerCase(); r = r.filter(function (c) { return c.name.toLowerCase().indexOf(q) !== -1 || c.description.toLowerCase().indexOf(q) !== -1 || c.category.toLowerCase().indexOf(q) !== -1 || c.agent.toLowerCase().indexOf(q) !== -1 || c.authority.toLowerCase().indexOf(q) !== -1 }) }
+                if (sc) { r = r.filter(function (c) { return c.category === sc }) }
+                if (ss) { r = r.filter(function (c) { return c.status === ss }) }
+                var usageOrder = { high: 3, medium: 2, low: 1 };
+                r.sort(function (a, b) { var av, bv; if (sf === 'usage') { av = usageOrder[a.usage] || 0; bv = usageOrder[b.usage] || 0 } else { av = a[sf]; bv = b[sf] } if (typeof av === 'string') { av = av.toLowerCase(); bv = bv.toLowerCase() } if (sd) return bv > av ? 1 : bv < av ? -1 : 0; return av > bv ? 1 : av < bv ? -1 : 0 });
+                return r;
+            },
+            get paginatedCommands() { var s = (this.currentPage - 1) * this.perPage; return this.filteredCommands.slice(s, s + this.perPage) },
+            get totalPages() { return Math.ceil(this.filteredCommands.length / this.perPage) || 1 },
+            get visiblePages() { var p = [], t = this.totalPages, c = this.currentPage, s = Math.max(1, c - 2), e = Math.min(t, c + 2); if (e - s < 4) { if (s === 1) e = Math.min(t, 5); else s = Math.max(1, t - 4) } for (var i = s; i <= e; i++)p.push(i); return p },
+            toggleSort(f) { if (this.sortField === f) this.sortDesc = !this.sortDesc; else { this.sortField = f; this.sortDesc = false } this.currentPage = 1 }
+        };
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        if (typeof Chart === 'undefined') return;
+        var cc = document.getElementById('cmdCategoryChart');
+        if (cc) {
+            var data = generateCommandData('');
+            var cats = {}; data.forEach(function (c) { cats[c.category] = (cats[c.category] || 0) + 1 });
+            var labels = Object.keys(cats).sort();
+            var values = labels.map(function (l) { return cats[l] });
+            var colors = ['#3b82f6', '#06b6d4', '#10b981', '#8b5cf6', '#f59e0b', '#ef4444', '#ec4899', '#22c55e', '#f97316', '#14b8a6', '#6366f1', '#84cc16', '#e11d48', '#0ea5e9', '#a855f7', '#d946ef'];
+            new Chart(cc, { type: 'doughnut', data: { labels: labels, datasets: [{ data: values, backgroundColor: colors.slice(0, labels.length), borderWidth: 0 }] }, options: { responsive: true, plugins: { legend: { position: 'right', labels: { color: '#9ca3af', font: { size: 10 }, boxWidth: 12, padding: 6 } }, title: { display: true, text: 'By Category', color: '#9ca3af' } } } });
+        }
+        var uc = document.getElementById('cmdUsageChart');
+        if (uc) {
+            var data2 = generateCommandData('');
+            var usage = { high: 0, medium: 0, low: 0 }; data2.forEach(function (c) { usage[c.usage] = (usage[c.usage] || 0) + 1 });
+            new Chart(uc, { type: 'bar', data: { labels: ['High', 'Medium', 'Low'], datasets: [{ label: 'Commands', data: [usage.high, usage.medium, usage.low], backgroundColor: ['rgba(16,185,129,0.7)', 'rgba(245,158,11,0.7)', 'rgba(156,163,175,0.7)'], borderRadius: 6 }] }, options: { responsive: true, plugins: { legend: { display: false }, title: { display: true, text: 'By Usage Frequency', color: '#9ca3af' } }, scales: { y: { beginAtZero: true, grid: { color: 'rgba(107,114,128,0.1)' }, ticks: { color: '#9ca3af' } }, x: { grid: { display: false }, ticks: { color: '#9ca3af' } } } } });
+        }
+    });
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/platform/" class="text-gray-400 hover:text-white transition-colors">Overview</a>
+                        </li>
+                        <li><a href="/apps/" class="text-gray-400 hover:text-white transition-colors">Applications (89)</a></li>
+                        <li><a href="/agents/" class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products & Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Products & Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/products/" class="text-gray-400 hover:text-white transition-colors">Products</a>
+                        </li>
+                        <li><a href="/osint/" class="text-gray-400 hover:text-white transition-colors">OSINT Sources
+                                (121+)</a></li>
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Doctrine</a></li>
+                        <li><a href="/solutions/" class="text-gray-400 hover:text-white transition-colors">Solutions</a>
+                        </li>
+                        <li><a href="/glossary/" class="text-gray-400 hover:text-white transition-colors">Glossary</a>
+                        </li>
+                        <li><a href="/faq/" class="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-red-500 hover:text-red-400">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-blue-500 hover:text-blue-400">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-emerald-500 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-white bg-blue-600 rounded-xl shadow-lg hover:shadow-xl hover:shadow-purple-500/25 hover:scale-110 focus:ring-4 focus:ring-blue-300 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="/js/vendor/flowbite.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="/js/mermaid-init.js" defer></script>
+
+    <!-- Dark Mode Script -->
+    <script>
+        // Set initial icon state
+        if (document.documentElement.classList.contains('dark')) {
+            document.getElementById('theme-toggle-light-icon').classList.remove('hidden');
+        } else {
+            document.getElementById('theme-toggle-dark-icon').classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        document.getElementById('theme-toggle').addEventListener('click', function () {
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden');
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden');
+
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+        });
+
+        // Back to Top button
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>
