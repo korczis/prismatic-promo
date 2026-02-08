@@ -100,10 +100,10 @@
     </script>
 </head>
 
-<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+<body class="bg-gray-950 text-white antialiased">
     <!-- Navigation -->
     <nav
-        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-lg border-b border-gray-800">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
             <a href="/" class="flex items-center space-x-3">
                 <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
@@ -111,13 +111,13 @@
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                     </svg>
                 </div>
-                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+                <span class="text-xl font-bold text-white">Prismatic</span>
             </a>
 
             <div class="flex items-center lg:order-2 space-x-3">
                 <!-- Dark Mode Toggle -->
                 <button id="theme-toggle" type="button"
-                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    class="text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-700 rounded-lg text-sm p-2.5">
                     <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                     </svg>
@@ -130,7 +130,7 @@
 
                 <!-- Mobile menu button -->
                 <button data-collapse-toggle="navbar-menu" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -141,27 +141,27 @@
 
             <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
                 <ul
-                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-700 rounded-lg bg-gray-800 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent text-sm">
                     <li>
                         <a href="/platform/"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-emerald-400 lg:p-0">Platform</a>
                     </li>
                     <li>
                         <a href="/products/"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-cyan-400 lg:p-0">Products</a>
                     </li>
                     <li>
                         <a href="/capabilities/"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-red-400 lg:p-0">Doctrine</a>
                     </li>
                     <li>
                         <a href="/osint/"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-blue-400 lg:p-0">OSINT</a>
                     </li>
                     <!-- More dropdown -->
                     <li class="relative" x-data="{ open: false }">
                         <button @click="open = !open" @click.outside="open = false"
-                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            class="flex items-center gap-1 py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-blue-400 lg:p-0">
                             More
                             <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
@@ -173,33 +173,33 @@
                             x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
                             x-transition:leave="transition ease-in duration-75"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            class="absolute right-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-lg border border-gray-700 py-2 z-50"
                             x-cloak>
                             <a href="/apps/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Applications
                                 (89)</a>
                             <a href="/agents/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Agents
                                 (430)</a>
                             <a href="/architecture/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Architecture</a>
                             <a href="/technologies/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
-                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-700"></div>
                             <a href="/commands/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Commands</a>
                             <a href="/teams/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Color
                                 Teams</a>
                             <a href="/solutions/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Solutions</a>
                             <a href="/registry/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
-                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-700"></div>
                             <a href="/glossary/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Glossary</a>
                             <a href="/faq/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">FAQ</a>
                         </div>
                     </li>
                 </ul>
@@ -621,11 +621,11 @@ end
 </section>
 
 <!-- Advanced Table Section -->
-<section class="bg-white dark:bg-gray-950 py-12 lg:py-16" x-data="osintTable()">
+<section class="bg-gray-950 py-12 lg:py-16" x-data="osintTable()">
     <div class="max-w-screen-xl px-4 mx-auto">
 
         <!-- Controls Bar -->
-        <div class="mb-6 p-4 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
+        <div class="mb-6 p-4 bg-gray-800 rounded-xl border border-gray-700">
             <div class="flex flex-col lg:flex-row gap-4">
                 <!-- Search -->
                 <div class="flex-1">
@@ -638,7 +638,7 @@ end
                             </svg>
                         </div>
                         <input type="text" id="search" x-model="searchQuery" @input="filterSources()"
-                            class="block w-full pl-10 pr-4 py-2.5 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-emerald-500 dark:focus:border-emerald-500"
+                            class="block w-full pl-10 pr-4 py-2.5 text-sm text-white bg-gray-700 border border-gray-600 rounded-lg focus:ring-emerald-500 focus:border-emerald-500"
                             placeholder="Search sources... (fuzzy search enabled)">
                     </div>
                 </div>
@@ -646,7 +646,7 @@ end
                 <!-- Category Filter -->
                 <div class="w-full lg:w-48">
                     <select x-model="categoryFilter" @change="filterSources()"
-                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        class="block w-full py-2.5 px-4 text-sm text-white bg-gray-700 border border-gray-600 rounded-lg focus:ring-emerald-500 focus:border-emerald-500">
                         <option value="">All Categories</option>
                         <option value="czech">Czech</option>
                         <option value="global">Global</option>
@@ -661,7 +661,7 @@ end
                 <!-- Type Filter -->
                 <div class="w-full lg:w-48">
                     <select x-model="typeFilter" @change="filterSources()"
-                        class="block w-full py-2.5 px-4 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                        class="block w-full py-2.5 px-4 text-sm text-white bg-gray-700 border border-gray-600 rounded-lg focus:ring-emerald-500 focus:border-emerald-500">
                         <option value="">All Types</option>
                         <option value="company">Company Registry</option>
                         <option value="threat">Threat Intelligence</option>
@@ -678,9 +678,9 @@ end
 
                 <!-- View Toggle -->
                 <div
-                    class="flex items-center bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden">
+                    class="flex items-center bg-gray-700 border border-gray-600 rounded-lg overflow-hidden">
                     <button @click="viewMode = 'cards'"
-                        :class="viewMode === 'cards' ? 'bg-emerald-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        :class="viewMode === 'cards' ? 'bg-emerald-600 text-white' : 'text-gray-300 hover:bg-gray-600'"
                         class="px-3 py-2.5 text-sm font-medium transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -688,7 +688,7 @@ end
                         </svg>
                     </button>
                     <button @click="viewMode = 'table'"
-                        :class="viewMode === 'table' ? 'bg-emerald-600 text-white' : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'"
+                        :class="viewMode === 'table' ? 'bg-emerald-600 text-white' : 'text-gray-300 hover:bg-gray-600'"
                         class="px-3 py-2.5 text-sm font-medium transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -699,14 +699,14 @@ end
 
                 <!-- Reset -->
                 <button @click="resetFilters()"
-                    class="px-4 py-2.5 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600">
+                    class="px-4 py-2.5 text-sm font-medium text-gray-300 bg-gray-700 border border-gray-600 rounded-lg hover:bg-gray-600">
                     Reset
                 </button>
             </div>
 
             <!-- Results count -->
-            <div class="mt-3 text-sm text-gray-500 dark:text-gray-400">
-                Showing <span class="font-semibold text-emerald-600 dark:text-emerald-400"
+            <div class="mt-3 text-sm text-gray-400">
+                Showing <span class="font-semibold text-emerald-400"
                     x-text="filteredSources.length"></span> of <span x-text="allSources.length"></span> sources
             </div>
         </div>
@@ -715,25 +715,25 @@ end
         <div x-show="viewMode === 'cards'" x-transition class="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             <template x-for="source in paginatedSources" :key="source.id">
                 <a :href="'https://prismatic-reality.com/osint/' + source.slug + '/'"
-                    class="group block p-5 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-emerald-300 dark:hover:border-emerald-700 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                    class="group block p-5 bg-gray-800 rounded-2xl border border-gray-700 hover:shadow-xl hover:border-emerald-700 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                     <div class="flex items-center gap-3 mb-3">
                         <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
                             :class="getCategoryColor(source.category)">
                             <span x-text="source.name.substring(0,2).toUpperCase()"></span>
                         </div>
                         <div class="min-w-0">
-                            <h3 class="font-semibold text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors truncate"
+                            <h3 class="font-semibold text-white group-hover:text-emerald-400 transition-colors truncate"
                                 x-text="source.name"></h3>
                             <span class="text-xs text-gray-500 font-mono" x-text="source.module"></span>
                         </div>
                     </div>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2" x-text="source.description">
+                    <p class="text-sm text-gray-400 mb-3 line-clamp-2" x-text="source.description">
                     </p>
                     <div class="flex items-center justify-between">
                         <span class="px-2 py-0.5 text-xs font-medium rounded-full"
                             :class="getCategoryBadge(source.category)" x-text="source.category"></span>
                         <span x-show="source.hasApi"
-                            class="text-emerald-500 text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded">API</span>
+                            class="text-emerald-500 text-xs font-bold bg-emerald-900/30 px-2 py-0.5 rounded">API</span>
                     </div>
                 </a>
             </template>
@@ -741,11 +741,11 @@ end
 
         <!-- Table -->
         <div x-show="viewMode === 'table'" x-transition
-            class="overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-800 dark:text-gray-400">
+            class="overflow-x-auto rounded-xl border border-gray-700 shadow-lg">
+            <table class="w-full text-sm text-left text-gray-400">
+                <thead class="text-xs uppercase bg-gray-800 text-gray-400">
                     <tr>
-                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-700"
                             @click="sortBy('name')">
                             <div class="flex items-center gap-2">
                                 Source
@@ -757,7 +757,7 @@ end
                                 </svg>
                             </div>
                         </th>
-                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-700"
                             @click="sortBy('category')">
                             <div class="flex items-center gap-2">
                                 Category
@@ -769,7 +769,7 @@ end
                                 </svg>
                             </div>
                         </th>
-                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700"
+                        <th scope="col" class="px-6 py-4 cursor-pointer hover:bg-gray-700"
                             @click="sortBy('type')">
                             <div class="flex items-center gap-2">
                                 Type
@@ -789,7 +789,7 @@ end
                 <tbody>
                     <template x-for="source in paginatedSources" :key="source.id">
                         <tr
-                            class="bg-white border-b dark:bg-gray-900 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                            class="bg-gray-900 border-b border-gray-700 hover:bg-gray-800 transition-colors">
                             <td class="px-6 py-4">
                                 <div class="flex items-center gap-3">
                                     <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
@@ -797,7 +797,7 @@ end
                                         <span x-text="source.name.substring(0,2).toUpperCase()"></span>
                                     </div>
                                     <div>
-                                        <div class="font-semibold text-gray-900 dark:text-white" x-text="source.name">
+                                        <div class="font-semibold text-white" x-text="source.name">
                                         </div>
                                         <div class="text-xs text-gray-500" x-text="source.module"></div>
                                     </div>
@@ -809,7 +809,7 @@ end
                             </td>
                             <td class="px-6 py-4">
                                 <span
-                                    class="px-2.5 py-1 text-xs font-medium rounded-lg bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300"
+                                    class="px-2.5 py-1 text-xs font-medium rounded-lg bg-gray-700 text-gray-300"
                                     x-text="source.type"></span>
                             </td>
                             <td class="px-6 py-4 max-w-xs">
@@ -823,7 +823,7 @@ end
                                             clip-rule="evenodd" />
                                     </svg>
                                 </span>
-                                <span x-show="!source.hasApi" class="text-gray-300 dark:text-gray-600">
+                                <span x-show="!source.hasApi" class="text-gray-600">
                                     <svg class="w-5 h-5 inline" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd"
                                             d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -833,7 +833,7 @@ end
                             </td>
                             <td class="px-6 py-4 text-center">
                                 <a :href="'https://prismatic-reality.com/osint/' + source.slug + '/'"
-                                    class="font-medium text-emerald-600 dark:text-emerald-400 hover:underline">
+                                    class="font-medium text-emerald-400 hover:underline">
                                     Details
                                 </a>
                             </td>
@@ -845,33 +845,33 @@ end
 
         <!-- Pagination -->
         <div class="flex flex-col md:flex-row items-center justify-between mt-6 gap-4">
-            <div class="text-sm text-gray-500 dark:text-gray-400">
+            <div class="text-sm text-gray-400">
                 Page <span class="font-semibold" x-text="currentPage"></span> of <span class="font-semibold"
                     x-text="totalPages"></span>
             </div>
             <div class="flex items-center gap-2">
                 <button @click="prevPage()" :disabled="currentPage === 1"
                     :class="{'opacity-50 cursor-not-allowed': currentPage === 1}"
-                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    class="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-800 border border-gray-600 rounded-lg hover:bg-gray-700">
                     Previous
                 </button>
                 <template x-for="page in visiblePages" :key="page">
                     <button @click="goToPage(page)"
-                        :class="{'bg-emerald-600 text-white border-emerald-600': currentPage === page, 'bg-white text-gray-700 border-gray-300 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600': currentPage !== page}"
-                        class="px-4 py-2 text-sm font-medium border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+                        :class="{'bg-emerald-600 text-white border-emerald-600': currentPage === page, 'bg-gray-800 text-gray-300 border-gray-600': currentPage !== page}"
+                        class="px-4 py-2 text-sm font-medium border rounded-lg hover:bg-gray-700"
                         x-text="page">
                     </button>
                 </template>
                 <button @click="nextPage()" :disabled="currentPage === totalPages"
                     :class="{'opacity-50 cursor-not-allowed': currentPage === totalPages}"
-                    class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-700">
+                    class="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-800 border border-gray-600 rounded-lg hover:bg-gray-700">
                     Next
                 </button>
             </div>
             <div class="flex items-center gap-2">
-                <span class="text-sm text-gray-500 dark:text-gray-400">Per page:</span>
+                <span class="text-sm text-gray-400">Per page:</span>
                 <select x-model.number="perPage" @change="currentPage = 1; filterSources()"
-                    class="py-1 px-2 text-sm border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300">
+                    class="py-1 px-2 text-sm border bg-gray-800 border-gray-600 text-gray-300 rounded-lg">
                     <option value="10">10</option>
                     <option value="25">25</option>
                     <option value="50">50</option>
@@ -883,70 +883,70 @@ end
 </section>
 
 <!-- Category Overview -->
-<section class="bg-gray-50 dark:bg-gray-800 py-16 border-t border-gray-200 dark:border-gray-700">
+<section class="bg-gray-800 py-16 border-t border-gray-700">
     <div class="max-w-screen-xl px-4 mx-auto">
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Source Categories</h2>
+        <h2 class="text-3xl font-bold text-white mb-8 text-center">Source Categories</h2>
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <!-- Czech -->
-            <div class="p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
-                <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor"
+            <div class="p-6 bg-gray-950 rounded-xl border border-gray-700">
+                <div class="w-12 h-12 bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
                     </svg>
                 </div>
-                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Czech Registries</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">29 sources including ARES, Justice.cz, ISIR,
+                <h3 class="text-lg font-bold text-white mb-2">Czech Registries</h3>
+                <p class="text-sm text-gray-400 mb-3">29 sources including ARES, Justice.cz, ISIR,
                     RZP, and more Czech public registries.</p>
-                <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">29</span>
+                <span class="text-2xl font-bold text-blue-400">29</span>
             </div>
 
             <!-- Global -->
-            <div class="p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div class="p-6 bg-gray-950 rounded-xl border border-gray-700">
                 <div
-                    class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor"
+                    class="w-12 h-12 bg-purple-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                 </div>
-                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Global Intelligence</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">84 sources: Shodan, VirusTotal, HIBP, Censys,
+                <h3 class="text-lg font-bold text-white mb-2">Global Intelligence</h3>
+                <p class="text-sm text-gray-400 mb-3">84 sources: Shodan, VirusTotal, HIBP, Censys,
                     SecurityTrails, and more.</p>
-                <span class="text-2xl font-bold text-purple-600 dark:text-purple-400">84</span>
+                <span class="text-2xl font-bold text-purple-400">84</span>
             </div>
 
             <!-- Sanctions -->
-            <div class="p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
-                <div class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor"
+            <div class="p-6 bg-gray-950 rounded-xl border border-gray-700">
+                <div class="w-12 h-12 bg-red-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                     </svg>
                 </div>
-                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Sanctions Lists</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">OFAC SDN, EU Sanctions, UN Sanctions -
+                <h3 class="text-lg font-bold text-white mb-2">Sanctions Lists</h3>
+                <p class="text-sm text-gray-400 mb-3">OFAC SDN, EU Sanctions, UN Sanctions -
                     comprehensive compliance checking.</p>
-                <span class="text-2xl font-bold text-red-600 dark:text-red-400">3</span>
+                <span class="text-2xl font-bold text-red-400">3</span>
             </div>
 
             <!-- Other -->
-            <div class="p-6 bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-700">
+            <div class="p-6 bg-gray-950 rounded-xl border border-gray-700">
                 <div
-                    class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor"
+                    class="w-12 h-12 bg-emerald-900/30 rounded-xl flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor"
                         viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                     </svg>
                 </div>
-                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Regional</h3>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mb-3">UK Companies House, SEC EDGAR, EU Business
+                <h3 class="text-lg font-bold text-white mb-2">Regional</h3>
+                <p class="text-sm text-gray-400 mb-3">UK Companies House, SEC EDGAR, EU Business
                     Registry, and universal adapters.</p>
-                <span class="text-2xl font-bold text-emerald-600 dark:text-emerald-400">5</span>
+                <span class="text-2xl font-bold text-emerald-400">5</span>
             </div>
         </div>
     </div>
@@ -1192,15 +1192,15 @@ end
 
             getCategoryBadge(category) {
                 const badges = {
-                    czech: 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
-                    global: 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400',
-                    sanctions: 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400',
-                    eu: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400',
-                    uk: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400',
-                    us: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400',
-                    universal: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
+                    czech: 'bg-blue-900/30 text-blue-400',
+                    global: 'bg-purple-900/30 text-purple-400',
+                    sanctions: 'bg-red-900/30 text-red-400',
+                    eu: 'bg-yellow-900/30 text-yellow-400',
+                    uk: 'bg-cyan-900/30 text-cyan-400',
+                    us: 'bg-indigo-900/30 text-indigo-400',
+                    universal: 'bg-emerald-900/30 text-emerald-400'
                 };
-                return badges[category] || 'bg-gray-100 text-gray-700';
+                return badges[category] || 'bg-gray-700 text-gray-300';
             }
         };
     }

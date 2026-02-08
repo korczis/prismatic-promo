@@ -91,10 +91,10 @@
     </script>
 </head>
 
-<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+<body class="bg-gray-950 text-white antialiased">
     <!-- Navigation -->
     <nav
-        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-lg border-b border-gray-800">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
             <a href="/" class="flex items-center space-x-3">
                 <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
@@ -102,13 +102,13 @@
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                     </svg>
                 </div>
-                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+                <span class="text-xl font-bold text-white">Prismatic</span>
             </a>
 
             <div class="flex items-center lg:order-2 space-x-3">
                 <!-- Dark Mode Toggle -->
                 <button id="theme-toggle" type="button"
-                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    class="text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-700 rounded-lg text-sm p-2.5">
                     <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                     </svg>
@@ -121,7 +121,7 @@
 
                 <!-- Mobile menu button -->
                 <button data-collapse-toggle="navbar-menu" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -132,27 +132,27 @@
 
             <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
                 <ul
-                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-700 rounded-lg bg-gray-800 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent text-sm">
                     <li>
                         <a href="/platform/"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-emerald-400 lg:p-0">Platform</a>
                     </li>
                     <li>
                         <a href="/products/"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-cyan-400 lg:p-0">Products</a>
                     </li>
                     <li>
                         <a href="/capabilities/"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-red-400 lg:p-0">Doctrine</a>
                     </li>
                     <li>
                         <a href="/osint/"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-blue-400 lg:p-0">OSINT</a>
                     </li>
                     <!-- More dropdown -->
                     <li class="relative" x-data="{ open: false }">
                         <button @click="open = !open" @click.outside="open = false"
-                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            class="flex items-center gap-1 py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-blue-400 lg:p-0">
                             More
                             <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
@@ -164,33 +164,33 @@
                             x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
                             x-transition:leave="transition ease-in duration-75"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            class="absolute right-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-lg border border-gray-700 py-2 z-50"
                             x-cloak>
                             <a href="/apps/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Applications
                                 (89)</a>
                             <a href="/agents/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Agents
                                 (430)</a>
                             <a href="/architecture/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Architecture</a>
                             <a href="/technologies/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
-                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-700"></div>
                             <a href="/commands/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Commands</a>
                             <a href="/teams/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Color
                                 Teams</a>
                             <a href="/solutions/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Solutions</a>
                             <a href="/registry/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
-                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-700"></div>
                             <a href="/glossary/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Glossary</a>
                             <a href="/faq/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">FAQ</a>
                         </div>
                     </li>
                 </ul>
@@ -344,21 +344,21 @@
 </section>
 
 <!-- Content Section -->
-<section class="bg-white dark:bg-gray-950 py-12 lg:py-16">
+<section class="bg-gray-950 py-12 lg:py-16">
     <div class="max-w-screen-xl px-4 mx-auto">
         <div class="grid gap-8 lg:grid-cols-3">
             <!-- Main Content -->
             <div class="lg:col-span-2">
-                <article class="prose prose-lg dark:prose-invert max-w-none
-                    prose-headings:text-gray-900 dark:prose-headings:text-white
-                    prose-p:text-gray-600 dark:prose-p:text-gray-300
-                    prose-a:text-green-600 dark:prose-a:text-green-400
-                    prose-strong:text-gray-900 dark:prose-strong:text-white
-                    prose-code:text-green-600 dark:prose-code:text-green-400
-                    prose-pre:bg-gray-50 dark:prose-pre:bg-gray-800
-                    prose-table:text-gray-600 dark:prose-table:text-gray-300
-                    prose-th:text-gray-900 dark:prose-th:text-white
-                    prose-td:border-gray-200 dark:prose-td:border-gray-700">
+                <article class="prose prose-lg prose-invert max-w-none
+                    prose-headings:text-white
+                    prose-p:text-gray-300
+                    prose-a:text-green-400
+                    prose-strong:text-white
+                    prose-code:text-green-400
+                    prose-pre:bg-gray-800
+                    prose-table:text-gray-300
+                    prose-th:text-white
+                    prose-td:border-gray-700">
                     <h2 id="overview">Overview</h2>
 <p>ViewDNS provides a comprehensive suite of DNS and IP intelligence tools widely used for domain research, infrastructure mapping, and digital forensics. The platform aggregates over 20 individual tools into a single API, making it a versatile resource for OSINT investigations that require DNS-level intelligence.</p>
 <p>The reverse IP lookup capability is particularly valuable -- it reveals all domains hosted on a single IP address, which is essential for identifying shared hosting relationships, mapping threat actor infrastructure, and discovering related domains. The IP history feature tracks how a domain's hosting has changed over time, creating a timeline of infrastructure moves that can reveal organizational changes, migrations, or efforts to evade detection.</p>
@@ -514,29 +514,29 @@ end
             <!-- Sidebar -->
             <div class="space-y-6">
                 <!-- Quick Stats -->
-                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Source Info</h3>
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                    <h3 class="text-lg font-bold text-white mb-4">Source Info</h3>
                     <dl class="space-y-3">
                         <div class="flex justify-between">
-                            <dt class="text-gray-500 dark:text-gray-400">Category</dt>
-                            <dd class="font-medium text-gray-900 dark:text-white">Global</dd>
+                            <dt class="text-gray-400">Category</dt>
+                            <dd class="font-medium text-white">Global</dd>
                         </div>
                         <div class="flex justify-between">
-                            <dt class="text-gray-500 dark:text-gray-400">Type</dt>
-                            <dd class="font-medium text-gray-900 dark:text-white">Domain</dd>
+                            <dt class="text-gray-400">Type</dt>
+                            <dd class="font-medium text-white">Domain</dd>
                         </div>
                         <div class="flex justify-between">
-                            <dt class="text-gray-500 dark:text-gray-400">API Access</dt>
+                            <dt class="text-gray-400">API Access</dt>
                             <dd class="font-medium">
                                 
-                                <span class="text-emerald-600 dark:text-emerald-400">Available</span>
+                                <span class="text-emerald-400">Available</span>
                                 
                             </dd>
                         </div>
                         
                         <div class="flex justify-between">
-                            <dt class="text-gray-500 dark:text-gray-400">Rate Limit</dt>
-                            <dd class="font-medium text-gray-900 dark:text-white">250 req&#x2F;day (free), higher tiers available</dd>
+                            <dt class="text-gray-400">Rate Limit</dt>
+                            <dd class="font-medium text-white">250 req&#x2F;day (free), higher tiers available</dd>
                         </div>
                         
                     </dl>
@@ -544,8 +544,8 @@ end
 
                 <!-- Usage Example -->
                 
-                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Quick Usage</h3>
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                    <h3 class="text-lg font-bold text-white mb-4">Quick Usage</h3>
                     <pre class="text-sm bg-gray-900 text-emerald-400 p-4 rounded-lg overflow-x-auto"><code>alias PrismaticOsintSources.Adapters
 alias Adapters.Global.ViewDns
 
@@ -558,8 +558,8 @@ alias Adapters.Global.ViewDns
                 
 
                 <!-- Chart -->
-                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Sources by Category</h3>
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                    <h3 class="text-lg font-bold text-white mb-4">Sources by Category</h3>
                     <canvas id="osintChart" width="300" height="200"></canvas>
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
@@ -590,637 +590,637 @@ alias Adapters.Global.ViewDns
                 </div>
 
                 <!-- In This Section -->
-                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">In This Section</h3>
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                    <h3 class="text-lg font-bold text-white mb-4">In This Section</h3>
                     <ul class="space-y-2">
                         
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;shodan&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;shodan&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Shodan
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ares&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ares&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 ARES
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;virustotal&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;virustotal&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 VirusTotal
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;abuseipdb&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;abuseipdb&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 AbuseIPDB
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;registr-smluv&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;registr-smluv&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Registr smluv
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;censys&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;censys&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Censys
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;hlidac-statu&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;hlidac-statu&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Hlidac statu
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;cuzk&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;cuzk&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 CUZK
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;haveibeenpwned&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;haveibeenpwned&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Have I Been Pwned
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;cnb&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;cnb&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 CNB
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;greynoise&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;greynoise&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 GreyNoise
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;dph&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;dph&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 DPH
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;urlscan&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;urlscan&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 URLScan
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;cedr&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;cedr&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 CEDR
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;spyse&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;spyse&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Spyse
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;crtsh&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;crtsh&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 crt.sh
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;uohs&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;uohs&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 UOHS
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;verejne-zakazky&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;verejne-zakazky&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Verejne zakazky
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;hunter&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;hunter&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Hunter.io
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;justice-cz&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;justice-cz&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Justice.cz
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;rzp&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;rzp&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 RZP
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;insolvencni-rejstrik&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;insolvencni-rejstrik&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Insolvency Register
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;vr-cz&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;vr-cz&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 VR.cz
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;emailrep&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;emailrep&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 EmailRep
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;fullcontact&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;fullcontact&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 FullContact
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;datove-schranky&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;datove-schranky&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Datove Schranky
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;intelligencex&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;intelligencex&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Intelligence X
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;eu-sanctions&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;eu-sanctions&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 EU Sanctions
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;hunter-io&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;hunter-io&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Hunter.io
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ipqualityscore&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ipqualityscore&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 IPQualityScore
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ofac&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ofac&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 OFAC SDN List
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;res&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;res&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 RES
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;securitytrails&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;securitytrails&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 SecurityTrails
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;alienvault-otx&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;alienvault-otx&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 AlienVault OTX
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;binaryedge&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;binaryedge&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 BinaryEdge
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;sukl&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;sukl&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 SUKL
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;dnsdumpster&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;dnsdumpster&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 DNSdumpster
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;eru&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;eru&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 ERU
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ipinfo&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ipinfo&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 IPinfo
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;passivetotal&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;passivetotal&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 PassiveTotal
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;builtwith&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;builtwith&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 BuiltWith
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ctu&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ctu&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 CTU
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;phishtank&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;phishtank&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 PhishTank
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;pulsedive&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;pulsedive&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Pulsedive
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;nespolehlivy-platce&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;nespolehlivy-platce&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Nespolehlivy Platce
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ripestat&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ripestat&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 RIPEstat
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;threatfox&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;threatfox&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 ThreatFox
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;executors&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;executors&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Executors
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;spamhaus&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;spamhaus&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Spamhaus
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;zoomeye&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;zoomeye&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 ZoomEye
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;open-corporates&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;open-corporates&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 OpenCorporates
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;sslmate&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;sslmate&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 SSLMate Cert Spotter
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;urlhaus&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;urlhaus&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 URLhaus
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;crunchbase&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;crunchbase&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Crunchbase
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;podnikatel&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;podnikatel&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Podnikatel.cz
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;viewdns&#x2F;" class="text-sm text-emerald-600 dark:text-emerald-400 font-semibold transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;viewdns&#x2F;" class="text-sm text-emerald-400 font-semibold transition-colors">
                                 ViewDNS
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;blockchain-com&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;blockchain-com&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Blockchain.com
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;isvs&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;isvs&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 ISVS
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;maltego&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;maltego&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Maltego
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;companies-house&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;companies-house&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Companies House
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;exploit-db&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;exploit-db&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Exploit-DB
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;mitre-attack&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;mitre-attack&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 MITRE ATT&amp;CK
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;nvd&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;nvd&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 NVD
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;sec-edgar&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;sec-edgar&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 SEC EDGAR
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;whoisxml&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;whoisxml&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 WhoisXML API
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;zoominfo&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;zoominfo&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 ZoomInfo
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;clearbit&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;clearbit&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Clearbit
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ebr&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ebr&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 EU Business Registry
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;intelx&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;intelx&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Intelligence X
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;wayback-machine&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;wayback-machine&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Wayback Machine
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;pipl&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;pipl&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Pipl
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;spiderfoot&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;spiderfoot&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 SpiderFoot
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;dehashed&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;dehashed&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 DeHashed
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;social-searcher&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;social-searcher&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Social Searcher
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;linkedin-sales&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;linkedin-sales&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 LinkedIn Sales Navigator
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;nahlizeni-kn&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;nahlizeni-kn&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Nahlizeni do KN
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;databreaches-net&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;databreaches-net&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 DataBreaches.net
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;etherscan&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;etherscan&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Etherscan
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;riskiq&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;riskiq&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 RiskIQ &#x2F; Microsoft Defender TI
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;chainalysis&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;chainalysis&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Chainalysis
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;fullhunt&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;fullhunt&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 FullHunt
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;elliptic&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;elliptic&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Elliptic
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;onyphe&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;onyphe&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 ONYPHE
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;crystal-blockchain&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;crystal-blockchain&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Crystal Blockchain
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;databaze-firem&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;databaze-firem&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Databaze firem
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;katastrofalni-urad&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;katastrofalni-urad&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 ERU &#x2F; Czech Energy Regulator
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ctu-cz&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ctu-cz&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 CTU &#x2F; Czech Telecom Office
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;gdelt&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;gdelt&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 GDELT Project
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;circl-lu&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;circl-lu&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 CIRCL
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;newsapi&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;newsapi&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 NewsAPI
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;netlas&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;netlas&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Netlas.io
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;nuclei&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;nuclei&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Nuclei Templates
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;osv-dev&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;osv-dev&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 OSV.dev
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;czech-nbu&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;czech-nbu&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 NBU &#x2F; Czech Security Authority
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;un-sanctions&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;un-sanctions&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 UN Sanctions List
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;email-intelligence&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;email-intelligence&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Email Intelligence Hub
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;szif&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;szif&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 SZIF
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;passivedns&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;passivedns&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 PassiveDNS
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;common-crawl&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;common-crawl&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Common Crawl
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;maxmind&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;maxmind&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 MaxMind GeoIP
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;domaintools&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;domaintools&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 DomainTools
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;court-cases&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;court-cases&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Court Cases (Czech)
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;github-osint&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;github-osint&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 GitHub OSINT
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;misp&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;misp&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 MISP
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;czech-courts&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;czech-courts&#x2F;" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">
                                 Czech Courts Portal
                             </a>
                         </li>
@@ -1229,39 +1229,39 @@ alias Adapters.Global.ViewDns
                 </div>
 
                 <!-- Related Sections -->
-                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Related Sections</h3>
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                    <h3 class="text-lg font-bold text-white mb-4">Related Sections</h3>
                     <ul class="space-y-2">
-                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Agent Ecosystem</a></li>
-                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Applications</a></li>
-                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Architecture</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">Agent Ecosystem</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">Applications</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="text-sm text-gray-400 hover:text-emerald-400 transition-colors">Architecture</a></li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <!-- Related Content -->
-        <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Related Content</h2>
+        <div class="mt-16 pt-8 border-t border-gray-700">
+            <h2 class="text-2xl font-bold text-white mb-6">Related Content</h2>
             <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Agent Ecosystem</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">430 autonomous agents including 62 OSINT specialists.</p>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-white mb-1">Agent Ecosystem</h3>
+                    <p class="text-sm text-gray-400">430 autonomous agents including 62 OSINT specialists.</p>
                 </a>
-                <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Applications</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">89 umbrella apps powering the Prismatic Platform ecosystem.</p>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/" class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-white mb-1">Applications</h3>
+                    <p class="text-sm text-gray-400">89 umbrella apps powering the Prismatic Platform ecosystem.</p>
                 </a>
-                <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Doctrine</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">NO MERCY, NO DOUBTS - the universal doctrine governing all operations.</p>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/" class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-white mb-1">Doctrine</h3>
+                    <p class="text-sm text-gray-400">NO MERCY, NO DOUBTS - the universal doctrine governing all operations.</p>
                 </a>
             </div>
         </div>
 
         <!-- Back Button -->
-        <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-xl hover:from-emerald-700 hover:to-cyan-700 focus:ring-4 focus:ring-emerald-300 dark:focus:ring-emerald-800 transition-all shadow-lg hover:shadow-xl">
+        <div class="mt-8 pt-8 border-t border-gray-700">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-cyan-600 rounded-xl hover:from-emerald-700 hover:to-cyan-700 focus:ring-4 focus:ring-emerald-800 transition-all shadow-lg hover:shadow-xl">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>

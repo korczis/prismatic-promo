@@ -91,10 +91,10 @@
     </script>
 </head>
 
-<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
+<body class="bg-gray-950 text-white antialiased">
     <!-- Navigation -->
     <nav
-        class="fixed w-full z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-100 dark:border-gray-800">
+        class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-lg border-b border-gray-800">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
             <a href="/" class="flex items-center space-x-3">
                 <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center">
@@ -102,13 +102,13 @@
                         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                     </svg>
                 </div>
-                <span class="text-xl font-bold text-gray-900 dark:text-white">Prismatic</span>
+                <span class="text-xl font-bold text-white">Prismatic</span>
             </a>
 
             <div class="flex items-center lg:order-2 space-x-3">
                 <!-- Dark Mode Toggle -->
                 <button id="theme-toggle" type="button"
-                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    class="text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-700 rounded-lg text-sm p-2.5">
                     <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                     </svg>
@@ -121,7 +121,7 @@
 
                 <!-- Mobile menu button -->
                 <button data-collapse-toggle="navbar-menu" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -132,27 +132,27 @@
 
             <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
                 <ul
-                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent dark:bg-gray-800 lg:dark:bg-transparent dark:border-gray-700 text-sm">
+                    class="flex flex-col p-4 lg:p-0 mt-4 font-medium border border-gray-700 rounded-lg bg-gray-800 lg:space-x-5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent text-sm">
                     <li>
                         <a href="/platform/"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-emerald-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-emerald-400 lg:dark:hover:bg-transparent">Platform</a>
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-emerald-400 lg:p-0">Platform</a>
                     </li>
                     <li>
                         <a href="/products/"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-cyan-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-cyan-400 lg:dark:hover:bg-transparent">Products</a>
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-cyan-400 lg:p-0">Products</a>
                     </li>
                     <li>
                         <a href="/capabilities/"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-red-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-red-400 lg:dark:hover:bg-transparent">Doctrine</a>
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-red-400 lg:p-0">Doctrine</a>
                     </li>
                     <li>
                         <a href="/osint/"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">OSINT</a>
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-blue-400 lg:p-0">OSINT</a>
                     </li>
                     <!-- More dropdown -->
                     <li class="relative" x-data="{ open: false }">
                         <button @click="open = !open" @click.outside="open = false"
-                            class="flex items-center gap-1 py-2 px-3 text-gray-900 rounded hover:bg-gray-100 lg:hover:bg-transparent lg:hover:text-blue-600 lg:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-blue-400 lg:dark:hover:bg-transparent">
+                            class="flex items-center gap-1 py-2 px-3 text-white rounded hover:bg-gray-700 lg:hover:bg-transparent lg:hover:text-blue-400 lg:p-0">
                             More
                             <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
                                 stroke="currentColor" viewBox="0 0 24 24">
@@ -164,33 +164,33 @@
                             x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
                             x-transition:leave="transition ease-in duration-75"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
-                            class="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50"
+                            class="absolute right-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-lg border border-gray-700 py-2 z-50"
                             x-cloak>
                             <a href="/apps/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Applications
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Applications
                                 (89)</a>
                             <a href="/agents/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Agents
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Agents
                                 (430)</a>
                             <a href="/architecture/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Architecture</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Architecture</a>
                             <a href="/technologies/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Technologies</a>
-                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Technologies</a>
+                            <div class="my-1 border-t border-gray-700"></div>
                             <a href="/commands/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Commands</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Commands</a>
                             <a href="/teams/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Color
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Color
                                 Teams</a>
                             <a href="/solutions/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Solutions</a>
                             <a href="/registry/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Registry</a>
-                            <div class="my-1 border-t border-gray-200 dark:border-gray-700"></div>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Registry</a>
+                            <div class="my-1 border-t border-gray-700"></div>
                             <a href="/glossary/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Glossary</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Glossary</a>
                             <a href="/faq/"
-                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">FAQ</a>
+                                class="flex items-center justify-between px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">FAQ</a>
                         </div>
                     </li>
                 </ul>
@@ -264,21 +264,21 @@
 </section>
 
 <!-- Content Section -->
-<section class="bg-white dark:bg-gray-950 py-12 lg:py-16">
+<section class="bg-gray-950 py-12 lg:py-16">
     <div class="max-w-screen-xl px-4 mx-auto">
         <div class="grid gap-8 lg:grid-cols-3">
             <!-- Main Content -->
             <div class="lg:col-span-2">
-                <article class="prose prose-lg dark:prose-invert max-w-none
-                    prose-headings:text-gray-900 dark:prose-headings:text-white
-                    prose-p:text-gray-600 dark:prose-p:text-gray-300
-                    prose-a:text-purple-600 dark:prose-a:text-purple-400
-                    prose-strong:text-gray-900 dark:prose-strong:text-white
-                    prose-code:text-purple-600 dark:prose-code:text-purple-400
-                    prose-pre:bg-gray-50 dark:prose-pre:bg-gray-800
-                    prose-table:text-gray-600 dark:prose-table:text-gray-300
-                    prose-th:text-gray-900 dark:prose-th:text-white
-                    prose-td:border-gray-200 dark:prose-td:border-gray-700">
+                <article class="prose prose-lg prose-invert max-w-none
+                    prose-headings:text-white
+                    prose-p:text-gray-300
+                    prose-a:text-purple-400
+                    prose-strong:text-white
+                    prose-code:text-purple-400
+                    prose-pre:bg-gray-800
+                    prose-table:text-gray-300
+                    prose-th:text-white
+                    prose-td:border-gray-700">
                     <h2 id="abstract">Abstract</h2>
 <p>Prismatic Compliance provides automated compliance assessment against major European regulatory frameworks: the NIS2 Directive (EU 2022/2555), GDPR (EU 2016/679), and the Czech ZKB (Zakon o kyberneticke bezpecnosti, 264/2025 Sb.). The system evaluates organizations against 100+ regulatory controls across these frameworks, collecting evidence automatically from platform intelligence sources -- OSINT scans, security ratings, audit logs, and configuration assessments -- and generating compliance reports with gap analysis, remediation tracking, and deadline management. Compliance assessment results integrate directly into <a href="/apps/prismatic-perimeter/">Prismatic Perimeter</a> security ratings, ensuring that compliance gaps influence security scores. The architecture separates framework definitions (control catalogs with requirement mappings), assessment engines (individual control evaluation with scoring), evidence collection (automated gathering from 15+ platform sources), and reporting (PDF, HTML, and JSON output with remediation recommendations).</p>
 <h2 id="1-introduction">1. Introduction</h2>
@@ -463,35 +463,35 @@ PrismaticCompliance.remediation_progress(&quot;example.com&quot;, :nis2)
             <!-- Sidebar -->
             <div class="space-y-6">
                 <!-- Quick Info Card -->
-                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">App Info</h3>
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                    <h3 class="text-lg font-bold text-white mb-4">App Info</h3>
                     <dl class="space-y-3">
                         <div class="flex justify-between">
-                            <dt class="text-gray-500 dark:text-gray-400">Files</dt>
-                            <dd class="font-medium text-gray-900 dark:text-white">380</dd>
+                            <dt class="text-gray-400">Files</dt>
+                            <dd class="font-medium text-white">380</dd>
                         </div>
                         <div class="flex justify-between">
-                            <dt class="text-gray-500 dark:text-gray-400">Category</dt>
-                            <dd class="font-medium text-gray-900 dark:text-white">Compliance</dd>
+                            <dt class="text-gray-400">Category</dt>
+                            <dd class="font-medium text-white">Compliance</dd>
                         </div>
                         
                         <div class="flex justify-between">
-                            <dt class="text-gray-500 dark:text-gray-400">Status</dt>
-                            <dd class="font-medium text-emerald-600 dark:text-emerald-400">Production</dd>
+                            <dt class="text-gray-400">Status</dt>
+                            <dd class="font-medium text-emerald-400">Production</dd>
                         </div>
                         
                         
                         <div class="flex justify-between">
-                            <dt class="text-gray-500 dark:text-gray-400">Port</dt>
-                            <dd class="font-medium text-gray-900 dark:text-white font-mono">N&#x2F;A</dd>
+                            <dt class="text-gray-400">Port</dt>
+                            <dd class="font-medium text-white font-mono">N&#x2F;A</dd>
                         </div>
                         
                     </dl>
                 </div>
 
                 <!-- Chart -->
-                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Codebase Share</h3>
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                    <h3 class="text-lg font-bold text-white mb-4">Codebase Share</h3>
                     <canvas id="appChart" width="300" height="200"></canvas>
                     <script>
                         document.addEventListener('DOMContentLoaded', function() {
@@ -523,631 +523,631 @@ PrismaticCompliance.remediation_progress(&quot;example.com&quot;, :nis2)
                 </div>
 
                 <!-- In This Section -->
-                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">In This Section</h3>
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                    <h3 class="text-lg font-bold text-white mb-4">In This Section</h3>
                     <ul class="space-y-2">
                         
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-perimeter&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-perimeter&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Perimeter
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-api&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-api&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic API
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;sparkline&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;sparkline&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Sparkline
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-core&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-core&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Core
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-hawkeye&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-hawkeye&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic HAWKEYE
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-agents&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-agents&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Agents
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-kernel&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-kernel&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Kernel
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-nabla&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-nabla&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Nabla
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Storage
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-core&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-core&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic OSINT Core
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-web&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-web&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Web
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-dd&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-dd&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic DD
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-safety&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-safety&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Safety
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-claude&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-claude&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Claude
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-testing&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-testing&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Testing
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-dark&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-dark&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Dark
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-graph&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-graph&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Graph
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-meilisearch&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-meilisearch&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Meilisearch
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-telemetry&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-telemetry&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Telemetry
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-cache&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-cache&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Cache
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-auth&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-auth&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Auth
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-crawler&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-crawler&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Crawler
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-compliance&#x2F;" class="text-sm text-cyan-600 dark:text-cyan-400 font-semibold transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-compliance&#x2F;" class="text-sm text-cyan-400 font-semibold transition-colors">
                                 Prismatic Compliance
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-visitor-intelligence&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-visitor-intelligence&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Visitor Intelligence
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-resilience&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-resilience&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Resilience
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-drift&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-drift&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 AI Drift
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-drift-web&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-drift-web&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 AI Drift Web
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-3nl&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-3nl&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic 3NL
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-algorithms&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-algorithms&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Algorithms
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-audit&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-audit&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Audit
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-ollama&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-ollama&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Ollama
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-lean&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-lean&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Lean
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-monte-carlo&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-monte-carlo&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Monte Carlo
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-browser&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-browser&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Browser
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-signals&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-signals&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Signals
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-blackboard&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-blackboard&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Blackboard
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-meilisearch&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-meilisearch&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Storage Meilisearch
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-network&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-network&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic OSINT Network
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-business-financial&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-business-financial&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic OSINT Business
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-czech-legal&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-czech-legal&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic OSINT Czech Legal
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-social-media&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-social-media&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic OSINT Social Media
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-monitoring&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-monitoring&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic OSINT Monitoring
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-ets&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-ets&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Storage ETS
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-ecto&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-ecto&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Storage Ecto
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-czech-courts&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-czech-courts&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Czech Courts
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-redis&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-redis&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Storage Redis
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-kuzudb&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-kuzudb&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Storage KuzuDB
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-duckdb&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-duckdb&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Storage DuckDB
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-crawler-core&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-crawler-core&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Crawler Core
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-czech-autocrawler&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-czech-autocrawler&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Czech Autocrawler
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-evil&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-evil&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Evil
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-perimeter-core&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-perimeter-core&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Perimeter Core
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-perimeter-web&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-perimeter-web&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Perimeter Web
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-mcp&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-mcp&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic MCP
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-detection-engine&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-detection-engine&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Detection Engine
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-ir-pvm-web&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-ir-pvm-web&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic IR PVM Web
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-influence&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-influence&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Influence
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-narrative&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-narrative&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Narrative
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-bifurcation&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-bifurcation&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Bifurcation
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-deduction&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-deduction&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Deduction
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-lean4&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-lean4&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Lean4
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-tracking&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-tracking&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Tracking
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-traits&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-traits&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Traits
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-quality-intelligence&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-quality-intelligence&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Quality Intelligence
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-presales&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-presales&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Presales
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-property-intelligence&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-property-intelligence&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Property Intelligence
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-manipulation&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-manipulation&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Manipulation
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-labs&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-labs&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Labs
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-tooling&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-tooling&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Tooling
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-suppression&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-suppression&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Suppression
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-annihilation&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-annihilation&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Annihilation
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-override&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-override&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Override
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-compression&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-compression&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Compression
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-transcendence&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-transcendence&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Transcendence
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-embodiment&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-embodiment&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Embodiment
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-eu-institutions&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-eu-institutions&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic OSINT EU Institutions
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-sources&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-osint-sources&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic OSINT Sources
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-hawkeye-web&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-hawkeye-web&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Hawkeye Web
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-tidewave&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-tidewave&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Tidewave
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-logic-prolog&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-logic-prolog&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Logic Prolog
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-agents&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-agents&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Social Agents
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-mycelial-nx&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-mycelial-nx&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Mycelial Nx
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-prisc&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-prisc&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic PRISC
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-core&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-core&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Social Core
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-cer&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-cer&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic CER
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-driver&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-driver&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Social Driver
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-core&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-core&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Storage Core
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-fb&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-fb&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Social FB
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-ir-pvm&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-ir-pvm&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic IR PVM
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-test-support&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-test-support&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Social Test Support
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-modalities&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-modalities&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Modalities
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-ui&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-ui&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Social UI
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-audio&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-audio&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Audio
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-vault&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;social-vault&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Social Vault
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-credo&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-credo&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Credo
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-test-versioning&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-test-versioning&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 Prismatic Test Versioning
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-alignment-core&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-alignment-core&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 AI Alignment Core
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-evo-monitor&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-evo-monitor&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 AI Evolution Monitor
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-interpretability&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-interpretability&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 AI Interpretability
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-metacognitive&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-metacognitive&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 AI Metacognitive
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-safety&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-safety&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 AI Safety
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-transparency&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-transparency&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 AI Transparency
                             </a>
                         </li>
                         
                         <li>
-                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-value-align&#x2F;" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;ai-value-align&#x2F;" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">
                                 AI Value Align
                             </a>
                         </li>
@@ -1156,39 +1156,39 @@ PrismaticCompliance.remediation_progress(&quot;example.com&quot;, :nis2)
                 </div>
 
                 <!-- Related Sections -->
-                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Related Sections</h3>
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                    <h3 class="text-lg font-bold text-white mb-4">Related Sections</h3>
                     <ul class="space-y-2">
-                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Architecture</a></li>
-                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">Agent Ecosystem</a></li>
-                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/" class="text-sm text-gray-600 dark:text-gray-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">OSINT Sources</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Architecture</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">Agent Ecosystem</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors">OSINT Sources</a></li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <!-- Related Content -->
-        <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Related Content</h2>
+        <div class="mt-16 pt-8 border-t border-gray-700">
+            <h2 class="text-2xl font-bold text-white mb-6">Related Content</h2>
             <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Architecture</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">Deterministic event-sourced architecture built on Elixir/OTP and BEAM VM.</p>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-white mb-1">Architecture</h3>
+                    <p class="text-sm text-gray-400">Deterministic event-sourced architecture built on Elixir/OTP and BEAM VM.</p>
                 </a>
-                <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Agent Ecosystem</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">430 autonomous agents across 14 specialized domains.</p>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-white mb-1">Agent Ecosystem</h3>
+                    <p class="text-sm text-gray-400">430 autonomous agents across 14 specialized domains.</p>
                 </a>
-                <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/" class="p-5 bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
-                    <h3 class="font-bold text-gray-900 dark:text-white mb-1">Doctrine</h3>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">NO MERCY, NO DOUBTS - the universal doctrine governing all operations.</p>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/" class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-white mb-1">Doctrine</h3>
+                    <p class="text-sm text-gray-400">NO MERCY, NO DOUBTS - the universal doctrine governing all operations.</p>
                 </a>
             </div>
         </div>
 
         <!-- Back Button -->
-        <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-            <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-700 transition-all shadow-lg hover:shadow-xl">
+        <div class="mt-8 pt-8 border-t border-gray-700">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-gray-900 rounded-xl hover:bg-gray-800 focus:ring-4 focus:ring-gray-700 transition-all shadow-lg hover:shadow-xl">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                 </svg>
