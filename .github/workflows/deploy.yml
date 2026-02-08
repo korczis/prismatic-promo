@@ -23,8 +23,6 @@
 [38;2;248;248;242m    steps:[0m
 [38;2;248;248;242m      - name: Checkout[0m
 [38;2;248;248;242m        uses: actions/checkout@v4[0m
-[38;2;248;248;242m      - name: Setup Pages[0m
-[38;2;248;248;242m        uses: actions/configure-pages@v5[0m
 [38;2;248;248;242m      - name: Upload artifact[0m
 [38;2;248;248;242m        uses: actions/upload-pages-artifact@v3[0m
 [38;2;248;248;242m        with:[0m
