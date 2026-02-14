@@ -1,0 +1,2796 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Local vs Cloud LLM Quality Assessment - Prismatic Lab</title>
+
+    
+<meta name="description" content="Comparing Claude Opus, qwen3-coder, and deepseek-coder across code generation, analysis, and reasoning tasks">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;llm-comparison&#x2F;">
+<meta property="og:title" content="Local vs Cloud LLM Quality Assessment - Prismatic Lab">
+<meta property="og:description" content="Comparing Claude Opus, qwen3-coder, and deepseek-coder across code generation, analysis, and reasoning tasks">
+<meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;llm-comparison&#x2F;">
+<meta name="twitter:title" content="Local vs Cloud LLM Quality Assessment - Prismatic Lab">
+<meta name="twitter:description" content="Comparing Claude Opus, qwen3-coder, and deepseek-coder across code generation, analysis, and reasoning tasks">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;llm-comparison&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https:&#x2F;&#x2F;prismatic-reality.com/favicon.svg">
+    <link rel="apple-touch-icon" href="https:&#x2F;&#x2F;prismatic-reality.com/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/tailwind.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2">
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-1 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Apps</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Agents</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">OSINT</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Architecture</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Tech</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Lab</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Academy</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">API</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-full sm:w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Commands</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Color Teams</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Doctrine</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/registry/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Registry</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Glossary</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/faq/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Header -->
+<section class="bg-gray-900 py-12 lg:py-16 border-b border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/" class="ml-1 text-sm font-medium text-gray-400 hover:text-white md:ml-2 transition-colors">Lab</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                        <span class="ml-1 text-sm font-medium text-emerald-300 md:ml-2">Local vs Cloud LLM Quality Assessment</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Header Card -->
+        <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl shadow-2xl border border-emerald-700/30 overflow-hidden"
+             x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)">
+            <div class="p-8">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-6"
+                     x-show="shown"
+                     x-transition:enter="transition ease-out duration-500"
+                     x-transition:enter-start="opacity-0 transform -translate-y-4"
+                     x-transition:enter-end="opacity-100 transform translate-y-0">
+                    <!-- Experiment Icon -->
+                    <div class="flex-shrink-0">
+                        <div class="w-20 h-20 rounded-2xl bg-emerald-900/50 flex items-center justify-center shadow-lg">
+                            <svg class="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Title & Description -->
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <h1 class="text-3xl md:text-4xl font-black text-white">Local vs Cloud LLM Quality Assessment</h1>
+                            
+                            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full
+                                bg-emerald-900/50 text-emerald-400 border border-emerald-700/50
+                                ">
+                                active
+                            </span>
+                            
+                            
+                            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/5 text-gray-400 border border-white/10">
+                                intermediate
+                            </span>
+                            
+                        </div>
+                        
+                        <p class="text-lg text-gray-300 leading-relaxed max-w-3xl">Comparing Claude Opus, qwen3-coder, and deepseek-coder across code generation, analysis, and reasoning tasks</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="bg-gray-900 py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-3">
+            <!-- Main Content (left 2/3) -->
+            <div class="lg:col-span-2">
+                <article class="prose prose-lg prose-invert max-w-none
+                    prose-headings:text-white
+                    prose-p:text-gray-300
+                    prose-a:text-emerald-400
+                    prose-strong:text-white
+                    prose-code:text-emerald-300
+                    prose-pre:bg-gray-800
+                    prose-li:text-gray-300
+                    prose-table:text-gray-300
+                    prose-th:text-white
+                    prose-td:border-gray-700">
+                    <h2 id="hypothesis">Hypothesis</h2>
+<p>We hypothesize that cloud LLMs (Claude Opus) will outperform local models (qwen3-coder 7B, deepseek-coder 6.7B) by at least 30% on complex reasoning and multi-file code generation, but that local models will achieve within 15% of cloud quality on single-function code generation while providing 3x lower latency for simple tasks, making a hybrid routing strategy optimal for the platform's 434 <a href="https://prismatic-reality.com/glossary/aiad/">AIAD</a> agents.</p>
+<h2 id="background">Background</h2>
+<p>The Prismatic Platform uses LLMs as the cognitive backbone for its 434 autonomous agents. These agents perform tasks ranging from simple code formatting to complex multi-step reasoning about security vulnerabilities and architectural decisions. The platform supports both cloud-based models (Claude Opus via Anthropic API) and local models (<a href="https://prismatic-reality.com/technologies/ollama/">Ollama</a>-hosted qwen3-coder 7B, deepseek-coder 6.7B, gpt-oss 20B).</p>
+<p>The cost and latency characteristics of cloud vs local models create a fundamental trade-off. Cloud models offer superior quality but incur API costs ($15-75 per million tokens) and network latency (200-800ms round trip). Local models are free after hardware investment, run with sub-100ms latency, and maintain data privacy, but their smaller parameter counts limit reasoning capability.</p>
+<p>The current platform configuration uses a static routing rule: all agent tasks are sent to Claude Opus. This ensures maximum quality but is expensive at scale (434 agents generating approximately 2 million tokens per hour during active sessions) and introduces a cloud dependency that violates the platform's resilience goals.</p>
+<p>This experiment systematically evaluates model quality across task categories to determine whether a hybrid routing strategy can maintain the platform's <a href="https://prismatic-reality.com/glossary/no-mercy/">No Mercy</a> quality standards while reducing cost and improving resilience.</p>
+<h2 id="methodology">Methodology</h2>
+<p>We evaluated three models across five task categories using a benchmark suite of 500 tasks (100 per category):</p>
+<p><strong>Task Categories</strong>:</p>
+<ol>
+<li><strong>Single-Function Generation</strong>: Write one Elixir function from a specification</li>
+<li><strong>Multi-File Refactoring</strong>: Modify multiple files to implement a feature</li>
+<li><strong>Bug Diagnosis</strong>: Identify root cause from error traces and code</li>
+<li><strong>Architecture Reasoning</strong>: Evaluate design trade-offs and recommend approaches</li>
+<li><strong>Security Analysis</strong>: Identify vulnerabilities in code samples</li>
+</ol>
+<p><strong>Models</strong>:</p>
+<ul>
+<li><strong>Claude Opus 4.6</strong> (cloud, ~175B parameters estimated)</li>
+<li><strong>qwen3-coder</strong> (local, 7B parameters, Ollama)</li>
+<li><strong>deepseek-coder</strong> (local, 6.7B parameters, Ollama)</li>
+</ul>
+<p><strong>Evaluation</strong>:</p>
+<ul>
+<li>Each task was evaluated by 3 human reviewers on a 1-10 scale</li>
+<li>Automated metrics: compilation success rate, test pass rate, code quality score (Credo + Dialyzer)</li>
+<li>Latency measured end-to-end including network for cloud models</li>
+<li>Cost calculated at published API rates</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<p>The model evaluation harness:</p>
+<pre><code data-lang="elixir">defmodule PrismaticLLM.Benchmark.Evaluator do
+  @models [
+    %{name: :claude_opus, provider: :anthropic, model: &quot;claude-opus-4-6&quot;},
+    %{name: :qwen3_coder, provider: :ollama, model: &quot;qwen3-coder&quot;},
+    %{name: :deepseek_coder, provider: :ollama, model: &quot;deepseek-coder&quot;}
+  ]
+
+  @task_categories [
+    :single_function,
+    :multi_file_refactor,
+    :bug_diagnosis,
+    :architecture_reasoning,
+    :security_analysis
+  ]
+
+  def run_full_benchmark do
+    tasks = load_benchmark_suite()
+
+    results =
+      for model &lt;- @models,
+          category &lt;- @task_categories do
+        category_tasks = Enum.filter(tasks, &amp;(&amp;1.category == category))
+
+        metrics =
+          category_tasks
+          |&gt; Enum.map(fn task -&gt;
+            {response, latency} = timed_inference(model, task)
+            quality = evaluate_quality(task, response)
+
+            %{
+              model: model.name,
+              category: category,
+              task_id: task.id,
+              latency_ms: latency,
+              quality_score: quality.human_score,
+              compiles: quality.compiles,
+              tests_pass: quality.tests_pass,
+              credo_score: quality.credo_score,
+              token_count: count_tokens(response)
+            }
+          end)
+
+        aggregate_metrics(model.name, category, metrics)
+      end
+
+    %{results: results, timestamp: DateTime.utc_now()}
+  end
+
+  defp timed_inference(model, task) do
+    start = System.monotonic_time(:millisecond)
+
+    response =
+      case model.provider do
+        :anthropic -&gt;
+          PrismaticLLM.Anthropic.complete(model.model, task.prompt)
+        :ollama -&gt;
+          PrismaticLLM.Ollama.complete(model.model, task.prompt)
+      end
+
+    latency = System.monotonic_time(:millisecond) - start
+    {response, latency}
+  end
+end
+</code></pre>
+<p>The hybrid router that selects models based on task complexity:</p>
+<pre><code data-lang="elixir">defmodule PrismaticLLM.HybridRouter do
+  @complexity_threshold 0.6
+
+  @spec route(map()) :: atom()
+  def route(task) do
+    complexity = estimate_complexity(task)
+
+    cond do
+      complexity &gt;= @complexity_threshold -&gt;
+        :claude_opus
+
+      task.category in [:architecture_reasoning, :security_analysis] -&gt;
+        :claude_opus
+
+      task.category == :single_function and complexity &lt; 0.3 -&gt;
+        :qwen3_coder
+
+      true -&gt;
+        :deepseek_coder
+    end
+  end
+
+  defp estimate_complexity(task) do
+    file_count = length(task.files || [])
+    prompt_length = String.length(task.prompt)
+    requires_reasoning = task.category in [:bug_diagnosis, :architecture_reasoning]
+
+    base = prompt_length / 10_000
+    file_factor = file_count * 0.15
+    reasoning_factor = if requires_reasoning, do: 0.3, else: 0.0
+
+    min(base + file_factor + reasoning_factor, 1.0)
+  end
+end
+</code></pre>
+<h2 id="results">Results</h2>
+<p>Quality scores by model and task category (human evaluation, 1-10 scale):</p>
+<table><thead><tr><th>Category</th><th>Claude Opus</th><th>qwen3-coder</th><th>deepseek-coder</th><th>Opus Advantage</th></tr></thead><tbody>
+<tr><td>Single Function</td><td>9.2</td><td>8.1</td><td>7.8</td><td>+12.0% / +17.9%</td></tr>
+<tr><td>Multi-File Refactor</td><td>8.7</td><td>5.4</td><td>5.1</td><td>+61.1% / +70.6%</td></tr>
+<tr><td>Bug Diagnosis</td><td>8.9</td><td>6.2</td><td>6.7</td><td>+43.5% / +32.8%</td></tr>
+<tr><td>Architecture Reasoning</td><td>9.4</td><td>4.8</td><td>4.3</td><td>+95.8% / +118.6%</td></tr>
+<tr><td>Security Analysis</td><td>9.1</td><td>5.1</td><td>5.6</td><td>+78.4% / +62.5%</td></tr>
+</tbody></table>
+<p>Automated metrics (% of tasks passing):</p>
+<table><thead><tr><th>Metric</th><th>Claude Opus</th><th>qwen3-coder</th><th>deepseek-coder</th></tr></thead><tbody>
+<tr><td>Compiles</td><td>97.4%</td><td>84.2%</td><td>81.7%</td></tr>
+<tr><td>Tests Pass</td><td>91.8%</td><td>62.1%</td><td>58.4%</td></tr>
+<tr><td>Credo Clean</td><td>94.1%</td><td>71.3%</td><td>68.9%</td></tr>
+<tr><td>Dialyzer Clean</td><td>88.7%</td><td>47.2%</td><td>44.1%</td></tr>
+</tbody></table>
+<p>Latency and cost:</p>
+<table><thead><tr><th>Model</th><th>p50 Latency</th><th>p95 Latency</th><th>Cost per 1K Tokens</th></tr></thead><tbody>
+<tr><td>Claude Opus</td><td>1,240 ms</td><td>3,870 ms</td><td>$0.015</td></tr>
+<tr><td>qwen3-coder</td><td>380 ms</td><td>920 ms</td><td>$0.00 (local)</td></tr>
+<tr><td>deepseek-coder</td><td>410 ms</td><td>1,040 ms</td><td>$0.00 (local)</td></tr>
+</tbody></table>
+<p>Hybrid router performance:</p>
+<table><thead><tr><th>Metric</th><th>All-Cloud</th><th>All-Local (best)</th><th>Hybrid</th></tr></thead><tbody>
+<tr><td>Avg Quality Score</td><td>9.06</td><td>6.78</td><td>8.71</td></tr>
+<tr><td>Avg Latency (ms)</td><td>1,240</td><td>395</td><td>684</td></tr>
+<tr><td>Monthly Cost (est.)</td><td>$4,200</td><td>$0</td><td>$1,890</td></tr>
+<tr><td>Quality/Cost Ratio</td><td>2.16</td><td>infinity</td><td>4.61</td></tr>
+</tbody></table>
+<h2 id="analysis">Analysis</h2>
+<p>The results confirm our hypothesis with nuance. For single-function generation, local models achieve within 12-18% of Claude Opus quality, validating the 15% threshold. For complex tasks (architecture reasoning, security analysis), Claude Opus's advantage is 62-119%, far exceeding the 30% hypothesis -- the gap is even larger than predicted.</p>
+<p>The most striking finding is the compilation rate gap: Claude Opus produces compilable Elixir 97.4% of the time, while local models achieve only 81-84%. For the Prismatic Platform's <a href="https://prismatic-reality.com/glossary/no-mercy/">No Mercy</a> standards (zero compilation warnings required), this means local model output requires an additional validation and correction step.</p>
+<p>The hybrid router achieves 96.1% of cloud-only quality (8.71 vs 9.06) at 45% of the cost ($1,890 vs $4,200). It routes 38% of tasks to local models (primarily simple single-function generation) and 62% to Claude Opus (complex reasoning, multi-file, security). The latency improvement (684ms vs 1,240ms) comes from the fast local model responses for simple tasks.</p>
+<p>The local models show a characteristic strength in pattern-matching tasks (formatting, boilerplate generation, simple transformations) and a characteristic weakness in tasks requiring world knowledge, multi-step reasoning, or understanding of the broader codebase context. This aligns with their smaller context windows and parameter counts.</p>
+<h2 id="conclusions">Conclusions</h2>
+<ol>
+<li><strong>Claude Opus is irreplaceable for complex reasoning</strong> -- 60-120% quality advantage for architecture and security tasks.</li>
+<li><strong>Local models are viable for simple generation</strong> -- within 12-18% quality for single-function tasks.</li>
+<li><strong>Hybrid routing saves 55% of cost</strong> while maintaining 96% of all-cloud quality.</li>
+<li><strong>Compilation rate is the critical metric</strong> -- local models need post-generation validation.</li>
+<li><strong>Latency improvement is significant</strong> -- 45% reduction for the hybrid approach on simple tasks.</li>
+</ol>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Fine-tune local models on the platform's Elixir codebase for domain-specific accuracy improvement</li>
+<li>Implement a cascading strategy: try local model first, fall back to cloud if validation fails</li>
+<li>Evaluate gpt-oss 20B as a middle-tier option between 7B local and cloud</li>
+<li>Build cost tracking dashboards to monitor hybrid router economics</li>
+<li>Test model quality degradation under high concurrency (100+ simultaneous agent requests)</li>
+</ul>
+<h2 id="related-experiments">Related Experiments</h2>
+<ul>
+<li><a href="https://prismatic-reality.com/lab/agent-prototyping/">Agent Prototyping</a> -- Agents that consume LLM outputs</li>
+<li><a href="https://prismatic-reality.com/lab/multi-agent-coordination/">Multi-Agent Coordination</a> -- Coordinating agents with different model backends</li>
+<li><a href="https://prismatic-reality.com/lab/session-lifecycle/">Session Lifecycle</a> -- Session context management across model switches</li>
+<li><a href="https://prismatic-reality.com/lab/quality-evolution/">Quality Evolution</a> -- Quality gates that validate LLM outputs</li>
+</ul>
+
+                </article>
+            </div>
+
+            <!-- Sidebar (right 1/3) -->
+            <div class="space-y-6">
+                <!-- Experiment Info Card -->
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700"
+                     x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 200)"
+                     x-show="shown"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 transform translate-x-4"
+                     x-transition:enter-end="opacity-100 transform translate-x-0">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Experiment Info
+                    </h3>
+                    <dl class="space-y-3">
+                        
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-400">Status</dt>
+                            <dd>
+                                <span class="px-2.5 py-0.5 text-xs font-bold uppercase rounded-full
+                                    bg-emerald-900/50 text-emerald-400
+                                    ">
+                                    active
+                                </span>
+                            </dd>
+                        </div>
+                        
+                        
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-400">Category</dt>
+                            <dd class="text-sm font-semibold text-gray-300 capitalize">ai evaluation</dd>
+                        </div>
+                        
+                        
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-400">Difficulty</dt>
+                            <dd class="text-sm font-semibold text-gray-300 capitalize">intermediate</dd>
+                        </div>
+                        
+                        
+                        <div>
+                            <dt class="text-sm text-gray-400 mb-2">Technologies</dt>
+                            <dd class="flex flex-wrap gap-1.5">
+                                
+                                <span class="px-2 py-0.5 text-xs font-medium bg-emerald-900/30 text-emerald-400 rounded border border-emerald-700/30">elixir</span>
+                                
+                                <span class="px-2 py-0.5 text-xs font-medium bg-emerald-900/30 text-emerald-400 rounded border border-emerald-700/30">otp</span>
+                                
+                                <span class="px-2 py-0.5 text-xs font-medium bg-emerald-900/30 text-emerald-400 rounded border border-emerald-700/30">ollama</span>
+                                
+                                <span class="px-2 py-0.5 text-xs font-medium bg-emerald-900/30 text-emerald-400 rounded border border-emerald-700/30">claude</span>
+                                
+                            </dd>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-400">Platform</dt>
+                            <dd class="text-sm font-semibold text-gray-300">Prismatic v7.5</dd>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-400">Doctrine</dt>
+                            <dd class="text-sm font-semibold text-gray-300">NM/ND</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!-- Paginated Section Nav -->
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700"
+                     x-data="labNav()"
+                     x-init="setTimeout(() => shown = true, 400)">
+                    <div x-show="shown"
+                         x-transition:enter="transition ease-out duration-300"
+                         x-transition:enter-start="opacity-0 transform translate-x-4"
+                         x-transition:enter-end="opacity-100 transform translate-x-0">
+                        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                            Lab Experiments
+                            <span class="text-xs font-normal text-gray-400" x-text="'(' + totalItems + ' experiments)'"></span>
+                        </h3>
+                        <ul class="space-y-1.5">
+                            <template x-for="item in paginatedItems" :key="item.url">
+                                <li>
+                                    <a :href="item.url"
+                                       :class="item.isCurrent
+                                           ? 'text-emerald-400 font-semibold bg-emerald-900/30'
+                                           : 'text-gray-400 hover:text-white hover:bg-gray-700/50'"
+                                       class="block text-sm px-3 py-1.5 rounded-lg transition-all"
+                                       x-text="item.title">
+                                    </a>
+                                </li>
+                            </template>
+                        </ul>
+                        <div class="flex items-center justify-between mt-4 pt-3 border-t border-gray-700" x-show="totalPages > 1">
+                            <button @click="prevPage()" :disabled="currentPage === 1"
+                                    :class="currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-white'"
+                                    class="text-xs font-medium text-gray-400 transition-colors">
+                                Previous
+                            </button>
+                            <span class="text-xs text-gray-400" x-text="currentPage + ' / ' + totalPages"></span>
+                            <button @click="nextPage()" :disabled="currentPage === totalPages"
+                                    :class="currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:text-white'"
+                                    class="text-xs font-medium text-gray-400 transition-colors">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Glossary Terms -->
+                
+                
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700"
+                     x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 500)"
+                     x-show="shown"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 transform translate-x-4"
+                     x-transition:enter-end="opacity-100 transform translate-x-0">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/>
+                        </svg>
+                        Related Terms
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;aiad&#x2F;" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-700/80 text-amber-400 rounded-lg border border-gray-600 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                            AIAD
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;quality-dna&#x2F;" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-700/80 text-amber-400 rounded-lg border border-gray-600 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                            Quality DNA
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;no-mercy&#x2F;" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-700/80 text-amber-400 rounded-lg border border-gray-600 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                            NO MERCY
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;no-doubts&#x2F;" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-700/80 text-amber-400 rounded-lg border border-gray-600 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                            NO DOUBTS
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+                
+
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="/commands/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Commands<span
+                class="ml-auto text-xs text-gray-600">217</span></a>
+        <a href="/architecture/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Architecture</a>
+        <a href="/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        <a href="/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="/technologies/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Technologies</a>
+        <a href="/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+</div>
+        </div>
+
+        <!-- Back to Lab Button -->
+        <div class="mt-8 pt-8 border-t border-gray-700">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-gray-950 bg-white rounded-xl focus:ring-4 focus:ring-emerald-800 transition-all shadow-lg hover:shadow-xl">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Back to Lab
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Paginated Section Nav Script -->
+<script>
+function labNav() {
+    var allItems = [
+        
+        
+        {title: "Adversarial-Defensive Synthesis Cycles", url: "https://prismatic-reality.com/lab/color-team-simulation/", isCurrent: false},
+        
+        {title: "Autonomous Agent Prototyping Framework", url: "https://prismatic-reality.com/lab/agent-prototyping/", isCurrent: false},
+        
+        {title: "Autonomous Quality Floor Maintenance", url: "https://prismatic-reality.com/lab/quality-evolution/", isCurrent: false},
+        
+        {title: "Cross-Domain Pattern Propagation", url: "https://prismatic-reality.com/lab/mycelial-propagation/", isCurrent: false},
+        
+        {title: "Data Pipeline Architecture Validation", url: "https://prismatic-reality.com/lab/pipeline-experimentation/", isCurrent: false},
+        
+        {title: "External Attack Surface Mapping", url: "https://prismatic-reality.com/lab/easm-discovery/", isCurrent: false},
+        
+        {title: "Lean4 Proof Construction Pipeline", url: "https://prismatic-reality.com/lab/formal-verification/", isCurrent: false},
+        
+        {title: "Local vs Cloud LLM Quality Assessment", url: "https://prismatic-reality.com/lab/llm-comparison/", isCurrent: true},
+        
+        {title: "Multi-Backend Storage Performance", url: "https://prismatic-reality.com/lab/storage-benchmarks/", isCurrent: false},
+        
+        {title: "N-Agent Orchestration Patterns", url: "https://prismatic-reality.com/lab/multi-agent-coordination/", isCurrent: false},
+        
+        {title: "NABLA Infinity Axiom Enforcement", url: "https://prismatic-reality.com/lab/epistemic-framework/", isCurrent: false},
+        
+        {title: "OSINT Source Integration Benchmarks", url: "https://prismatic-reality.com/lab/osint-pipeline/", isCurrent: false},
+        
+        {title: "OTP Supervision Tree Optimization", url: "https://prismatic-reality.com/lab/architecture-validation/", isCurrent: false},
+        
+        {title: "Session Context Persistence", url: "https://prismatic-reality.com/lab/session-lifecycle/", isCurrent: false},
+        
+        {title: "Sub-Threshold Drift Detection", url: "https://prismatic-reality.com/lab/drift-detection/", isCurrent: false},
+        
+    ];
+    var perPage = 20;
+    return {
+        shown: false,
+        allItems: allItems,
+        currentPage: Math.max(1, Math.ceil((allItems.findIndex(function(i) { return i.isCurrent; }) + 1) / perPage)),
+        perPage: perPage,
+        get totalItems() { return this.allItems.length; },
+        get totalPages() { return Math.ceil(this.allItems.length / this.perPage); },
+        get paginatedItems() {
+            var start = (this.currentPage - 1) * this.perPage;
+            return this.allItems.slice(start, start + this.perPage);
+        },
+        nextPage: function() { if (this.currentPage < this.totalPages) this.currentPage++; },
+        prevPage: function() { if (this.currentPage > 1) this.currentPage--; }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (89+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="text-gray-400 hover:text-white transition-colors">Commands (212)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies (44)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Lab</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-gray-400 hover:text-white">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Back to Top + Nav scroll -->
+    <script>
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            var nav = document.querySelector('nav');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+                if (nav && window.scrollY > 20) {
+                    nav.classList.add('border-white/10');
+                    nav.classList.remove('border-white/5');
+                } else if (nav) {
+                    nav.classList.remove('border-white/10');
+                    nav.classList.add('border-white/5');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

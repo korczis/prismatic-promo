@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Prismatic Platform</title>
+
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;">
+
+    
+    <meta property="og:title" content="OSINT Sources - Prismatic Platform">
+    <meta name="twitter:title" content="OSINT Sources - Prismatic Platform">
+    
+
+    
+    
+    <meta property="og:description" content="Comprehensive catalog of 121+ Open Source Intelligence providers spanning Czech registries, global infrastructure reconnaissance, threat intelligence feeds, social graph analysis, email verification, domain enumeration, and financial sanctions screening -- all unified through the Prismatic adapter architecture.">
+    <meta name="description" content="Comprehensive catalog of 121+ Open Source Intelligence providers spanning Czech registries, global infrastructure reconnaissance, threat intelligence feeds, social graph analysis, email verification, domain enumeration, and financial sanctions screening -- all unified through the Prismatic adapter architecture.">
+    
+
+    
+    
+    <meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;sections&#x2F;osint.png">
+    <meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;sections&#x2F;osint.png">
+    
+
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Prismatic Platform">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;">
+    
+    <meta name="twitter:description" content="Comprehensive catalog of 121+ Open Source Intelligence providers spanning Czech registries, global infrastructure reconnaissance, threat intelligence feeds, social graph analysis, email verification, domain enumeration, and financial sanctions screening -- all unified through the Prismatic adapter architecture.">
+    
+    <meta name="twitter:creator" content="@korczis">
+    
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https:&#x2F;&#x2F;prismatic-reality.com/favicon.svg">
+    <link rel="apple-touch-icon" href="https:&#x2F;&#x2F;prismatic-reality.com/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/tailwind.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2">
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-1 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Apps</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Agents</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">OSINT</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Architecture</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Tech</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Lab</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Academy</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">API</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-full sm:w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Commands</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Color Teams</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Doctrine</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/registry/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Registry</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Glossary</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/faq/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Section -->
+<section class="bg-gray-900 py-16 lg:py-20 border-b border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="mb-8">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 mb-6 text-xs font-bold tracking-widest text-gray-400 bg-white/5 rounded-full uppercase border border-white/10">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                Intelligence Platform
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6">
+                <span class="text-white">121+</span>
+                OSINT Sources
+            </h1>
+            <div class="prose prose-invert prose-lg max-w-3xl leading-relaxed text-gray-400">
+                <h2 id="abstract">Abstract</h2>
+<p>The Prismatic Platform integrates 121+ Open Source Intelligence (OSINT) providers into a unified, adapter-driven intelligence gathering framework. Organized across seven distinct intelligence categories -- Czech Registries, Global Infrastructure, Threat Intelligence, Social Intelligence, Email Intelligence, Domain Intelligence, and Financial Intelligence -- these sources provide investigators, compliance officers, and security analysts with comprehensive situational awareness from a single programmatic interface.</p>
+<p>Each source is implemented as a standardized adapter conforming to the <code>PrismaticOsintCore.Behaviours.Source</code> behaviour, ensuring consistent error handling, rate limiting, health monitoring, and telemetry across all providers. Intelligence findings from disparate sources are normalized into typed <code>Finding</code> structs with confidence scores ranging from 0.0 to 1.0, enabling downstream epistemic analysis through the NABLA Infinity framework and its Trinity Gate verification pipeline.</p>
+<p>This document presents the technical architecture, catalogues all seven intelligence categories with their constituent sources, describes the rate limiting and credential management infrastructure, and outlines the epistemic verification framework that transforms raw OSINT data into evidence-grade intelligence suitable for due diligence, threat assessment, and regulatory compliance workflows.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Open Source Intelligence gathering has evolved from manual web searches and database queries into a sophisticated discipline requiring automated collection, normalization, cross-referencing, and epistemic evaluation of data from hundreds of heterogeneous sources. Modern OSINT operations face several fundamental challenges: source APIs differ wildly in authentication mechanisms, response formats, rate limits, and data models; individual sources provide partial views that must be correlated to form actionable intelligence; and the reliability of information varies dramatically across providers, necessitating rigorous confidence assessment.</p>
+<p>The Prismatic Platform addresses these challenges through a principled software architecture built on Elixir/OTP, leveraging the BEAM virtual machine's strengths in concurrent processing, fault tolerance, and supervision tree design. Rather than treating OSINT sources as ad-hoc integrations, Prismatic defines a formal adapter contract that every source must satisfy, enabling the platform to treat 121+ sources as interchangeable components within larger investigation pipelines.</p>
+<h3 id="legal-and-ethical-framework">Legal and Ethical Framework</h3>
+<p>All intelligence gathering conducted through the Prismatic Platform operates exclusively within the bounds of publicly available information. The platform does not perform unauthorized access, credential stuffing, social engineering, or any form of active intrusion. Sources are limited to:</p>
+<ul>
+<li><strong>Public registries</strong> maintained by government agencies for the purpose of transparency</li>
+<li><strong>Open APIs</strong> provided by commercial intelligence vendors under their terms of service</li>
+<li><strong>Publicly accessible records</strong> such as WHOIS data, DNS records, and certificate transparency logs</li>
+<li><strong>Voluntarily published information</strong> on social media platforms and professional networks</li>
+<li><strong>Regulatory filings</strong> required by law to be publicly accessible</li>
+</ul>
+<p>The platform enforces GDPR compliance at the infrastructure level, with data minimization principles applied to all collection operations, configurable retention policies, and full audit trails documenting the provenance of every finding.</p>
+<h2 id="source-architecture">Source Architecture</h2>
+<p>The Prismatic OSINT architecture is organized into two complementary OTP applications: <code>prismatic_osint_core</code>, which defines the foundational behaviours, schemas, and infrastructure services; and <code>prismatic_osint_sources</code>, which provides the concrete adapter implementations for each intelligence provider.</p>
+<h3 id="the-adapter-pattern">The Adapter Pattern</h3>
+<p>Every OSINT source in the Prismatic Platform implements one of two core behaviours. The <code>Source</code> behaviour provides a query-oriented interface suitable for search-and-retrieve operations, while the <code>Provider</code> behaviour supports stateful investigation workflows where findings are accumulated over the course of an orchestrated inquiry.</p>
+<p>The <code>Source</code> behaviour defines four mandatory callbacks:</p>
+<pre><code data-lang="elixir">defmodule PrismaticOsintCore.Behaviours.Source do
+  @callback search(query(), options()) ::
+    {:ok, [search_result()]} | {:error, error_reason()}
+
+  @callback get_details(source_id(), options()) ::
+    {:ok, details()} | {:error, error_reason()}
+
+  @callback health_check() :: :ok | {:error, error_reason()}
+
+  @callback rate_limit_info() :: RateLimitStatus.t()
+end
+</code></pre>
+<p>A concrete adapter implementation follows this pattern:</p>
+<pre><code data-lang="elixir">defmodule PrismaticOsintSources.Adapters.Czech.Justice do
+  @behaviour PrismaticOsintCore.Behaviours.Source
+
+  @impl true
+  def search(query, opts \\ []) do
+    with :ok &lt;- RateLimiter.check_rate_limit(&quot;justice_cz&quot;),
+         {:ok, raw} &lt;- fetch_from_registry(query, opts) do
+      {:ok, normalize_results(raw)}
+    end
+  end
+
+  @impl true
+  def get_details(ico, opts \\ []) do
+    case fetch_company_detail(ico, opts) do
+      {:ok, detail} -&gt; {:ok, format_detail(detail)}
+      {:error, :not_found} -&gt; {:error, :not_found}
+      {:error, reason} -&gt; {:error, reason}
+    end
+  end
+
+  @impl true
+  def health_check do
+    case HTTPClient.head(&quot;https://or.justice.cz/ias/ui/rejstrik&quot;) do
+      {:ok, %{status: 200}} -&gt; :ok
+      _ -&gt; {:error, :api_unavailable}
+    end
+  end
+
+  @impl true
+  def rate_limit_info do
+    %RateLimitStatus{
+      limit: 10,
+      remaining: get_remaining_quota(),
+      reset_at: next_window_reset(),
+      current_usage: current_utilization()
+    }
+  end
+end
+</code></pre>
+<h3 id="response-normalization">Response Normalization</h3>
+<p>All source adapters transform their provider-specific response formats into a standardized result structure containing the originating source identifier, a human-readable title, the raw data payload, a confidence score, a UTC timestamp, and arbitrary metadata. This normalization enables downstream consumers -- whether LiveView dashboards, investigation orchestrators, or epistemic evaluation pipelines -- to process results from any source without knowledge of the underlying provider.</p>
+<pre><code data-lang="elixir">%{
+  source: :justice_cz,
+  source_id: &quot;ico_24138819&quot;,
+  title: &quot;Upvest s.r.o. - Active Commercial Entity&quot;,
+  url: &quot;https://or.justice.cz/ias/ui/rejstrik-firma?ico=24138819&quot;,
+  data: %{
+    ico: &quot;24138819&quot;,
+    dic: &quot;CZ24138819&quot;,
+    legal_form: &quot;s.r.o.&quot;,
+    status: :active,
+    registered: ~D[2012-03-15]
+  },
+  confidence: 0.98,
+  timestamp: ~U[2026-02-06 10:30:00Z],
+  metadata: %{registry: &quot;commercial&quot;, court: &quot;Praha&quot;}
+}
+</code></pre>
+<h3 id="the-provider-behaviour">The Provider Behaviour</h3>
+<p>For stateful investigation workflows where a source must be initialized with credentials and maintain internal state across multiple queries, the <code>Provider</code> behaviour offers a more comprehensive contract:</p>
+<pre><code data-lang="elixir">defmodule PrismaticOsintCore.Behaviours.Provider do
+  @callback init(opts :: keyword()) :: {:ok, state()} | {:error, term()}
+  @callback run(subject(), state()) :: {:ok, findings()} | {:error, error_reason()}
+  @callback name() :: atom()
+end
+</code></pre>
+<p>Providers produce <code>Finding</code> structs -- typed intelligence artifacts with risk levels (<code>:low</code>, <code>:medium</code>, <code>:high</code>, <code>:critical</code>), categorization (<code>:identity</code>, <code>:legal</code>, <code>:financial</code>, <code>:reputation</code>, <code>:technical</code>, <code>:relationships</code>, <code>:activity</code>), and source type classification (<code>:registry</code>, <code>:news</code>, <code>:social</code>, <code>:tech_analysis</code>, <code>:court</code>, <code>:financial_records</code>). These findings carry their own confidence scores and provenance metadata, enabling full traceability from raw API response to final intelligence assessment.</p>
+<h2 id="intelligence-categories">Intelligence Categories</h2>
+<p>The 121+ OSINT sources are organized into seven categories, each addressing a distinct intelligence domain. Within each category, adapters are further classified by geographic scope (Czech, EU, Global) and data access pattern (public API, web scraping, bulk data).</p>
+<h3 id="czech-registries">Czech Registries</h3>
+<p>The Czech Republic maintains an unusually comprehensive network of public registries, making it one of the most transparent jurisdictions in the European Union for corporate due diligence. The Prismatic Platform provides deep integration with the following Czech government data sources:</p>
+<table><thead><tr><th>Source</th><th>Registry</th><th>Key Data</th></tr></thead><tbody>
+<tr><td><strong>ARES</strong></td><td>Administrative Register of Economic Subjects</td><td>Company search, ICO/DIC lookup, business activities</td></tr>
+<tr><td><strong>Justice.cz</strong></td><td>Commercial Register (Obchodni rejstrik)</td><td>Company filings, statutory bodies, ownership structure</td></tr>
+<tr><td><strong>RZP</strong></td><td>Trade Licensing Register (Zivnostensky rejstrik)</td><td>Trade licenses, business permits, authorized activities</td></tr>
+<tr><td><strong>ISIR</strong></td><td>Insolvency Register (Insolvencni rejstrik)</td><td>Insolvency proceedings, creditor claims, resolution status</td></tr>
+<tr><td><strong>CEDR</strong></td><td>Central Register of Subsidies</td><td>Government grants, EU funding, subsidy recipients</td></tr>
+<tr><td><strong>CUZK</strong></td><td>Czech Office for Surveying and Cadastre</td><td>Property ownership, land records, encumbrances</td></tr>
+<tr><td><strong>CNB</strong></td><td>Czech National Bank Registry</td><td>Licensed financial entities, regulated institutions</td></tr>
+<tr><td><strong>DPH</strong></td><td>VAT Payer Registry</td><td>VAT registration status, unreliable payer flags</td></tr>
+<tr><td><strong>RES</strong></td><td>Statistical Business Register</td><td>Statistical classification, employee counts, NACE codes</td></tr>
+<tr><td><strong>Hlidac Statu</strong></td><td>Watchdog State</td><td>Public procurement contracts, political donations</td></tr>
+<tr><td><strong>Registr Smluv</strong></td><td>Contract Register</td><td>Public sector contracts above CZK 50,000</td></tr>
+<tr><td><strong>Datove Schranky</strong></td><td>Data Mailboxes</td><td>Official electronic communication addresses</td></tr>
+<tr><td><strong>SZIF</strong></td><td>State Agricultural Intervention Fund</td><td>Agricultural subsidies and payments</td></tr>
+<tr><td><strong>Nespolehlivy Platce</strong></td><td>Unreliable VAT Payer List</td><td>Tax fraud flagging, unreliable payer status</td></tr>
+</tbody></table>
+<p>The Czech adapter suite includes a <code>SmartRouter</code> that automatically selects the optimal combination of registries for a given query, and an <code>MLIntelligence</code> module that applies pattern recognition to detect anomalies across multiple registry responses.</p>
+<h3 id="global-infrastructure-intelligence">Global Infrastructure Intelligence</h3>
+<p>Infrastructure intelligence sources provide visibility into the technical attack surface of organizations, including their network assets, exposed services, and cryptographic posture.</p>
+<table><thead><tr><th>Source</th><th>Capability</th><th>Data Type</th></tr></thead><tbody>
+<tr><td><strong>Shodan</strong></td><td>Internet-wide scanning</td><td>Exposed services, banners, vulnerabilities</td></tr>
+<tr><td><strong>Censys</strong></td><td>Certificate and host search</td><td>TLS certificates, hosts, services</td></tr>
+<tr><td><strong>GreyNoise</strong></td><td>Internet background noise</td><td>Benign scanners vs. targeted activity</td></tr>
+<tr><td><strong>ONYPHE</strong></td><td>Cyber defense search engine</td><td>Geolocation, threat context, CVEs</td></tr>
+<tr><td><strong>BinaryEdge</strong></td><td>Internet scanning platform</td><td>Open ports, services, vulnerabilities</td></tr>
+<tr><td><strong>IPInfo</strong></td><td>IP address intelligence</td><td>Geolocation, ASN, company, privacy detection</td></tr>
+<tr><td><strong>MaxMind</strong></td><td>GeoIP databases</td><td>IP geolocation, anonymizer detection</td></tr>
+<tr><td><strong>RIPEstat</strong></td><td>Regional Internet Registry data</td><td>BGP routing, IP allocations, abuse contacts</td></tr>
+<tr><td><strong>ViewDNS</strong></td><td>DNS intelligence</td><td>Reverse IP, DNS history, port scanning</td></tr>
+<tr><td><strong>BuiltWith</strong></td><td>Technology profiling</td><td>Web technology stack identification</td></tr>
+<tr><td><strong>crt.sh</strong></td><td>Certificate Transparency</td><td>SSL/TLS certificate issuance logs</td></tr>
+<tr><td><strong>SSLMate</strong></td><td>Certificate monitoring</td><td>Certificate inventory, expiry tracking</td></tr>
+<tr><td><strong>URLScan</strong></td><td>URL analysis</td><td>Website screenshots, DOM analysis, indicators</td></tr>
+</tbody></table>
+<p>These sources are particularly valuable for the Prismatic Perimeter EASM (External Attack Surface Management) module, where they feed into automated security rating calculations.</p>
+<h3 id="threat-intelligence">Threat Intelligence</h3>
+<p>Threat intelligence sources aggregate indicators of compromise (IOCs), malware samples, phishing campaigns, and vulnerability disclosures from the global security research community.</p>
+<table><thead><tr><th>Source</th><th>Focus</th><th>Data Type</th></tr></thead><tbody>
+<tr><td><strong>VirusTotal</strong></td><td>Multi-engine malware analysis</td><td>File hashes, URL scanning, domain reputation</td></tr>
+<tr><td><strong>AbuseIPDB</strong></td><td>IP abuse reporting</td><td>Abuse reports, confidence scores, categories</td></tr>
+<tr><td><strong>PhishTank</strong></td><td>Phishing URL database</td><td>Verified phishing sites, submission tracking</td></tr>
+<tr><td><strong>ThreatFox</strong></td><td>IOC sharing platform (abuse.ch)</td><td>Malware IOCs, botnet C2 infrastructure</td></tr>
+<tr><td><strong>URLhaus</strong></td><td>Malware distribution URLs (abuse.ch)</td><td>Active malware URLs, payload hosting</td></tr>
+<tr><td><strong>Spamhaus</strong></td><td>Spam and threat blocklists</td><td>IP/domain reputation, botnet tracking</td></tr>
+<tr><td><strong>AlienVault OTX</strong></td><td>Open Threat Exchange</td><td>Pulses, IOCs, threat actor profiles</td></tr>
+<tr><td><strong>Pulsedive</strong></td><td>Threat intelligence platform</td><td>Indicators, threats, feeds</td></tr>
+<tr><td><strong>NVD</strong></td><td>National Vulnerability Database</td><td>CVE records, CVSS scores, CPE matching</td></tr>
+<tr><td><strong>Exploit-DB</strong></td><td>Exploit archive</td><td>Public exploits, vulnerability proofs</td></tr>
+<tr><td><strong>Malware Bazaar</strong></td><td>Malware sample sharing (abuse.ch)</td><td>Malware samples, YARA rules, tags</td></tr>
+<tr><td><strong>Google Safe Browsing</strong></td><td>Web threat detection</td><td>Unsafe site warnings, social engineering</td></tr>
+</tbody></table>
+<p>Each threat intelligence adapter normalizes IOC data into the platform's finding schema, with risk levels automatically mapped from source-specific severity ratings (CVSS scores, abuse confidence percentages, community votes) to the platform's four-tier risk classification.</p>
+<h3 id="social-intelligence">Social Intelligence</h3>
+<p>Social intelligence sources enable investigation of individuals and organizations through their public digital footprint across professional networks, code repositories, and social media platforms.</p>
+<table><thead><tr><th>Source</th><th>Platform</th><th>Intelligence Type</th></tr></thead><tbody>
+<tr><td><strong>LinkedIn Sales Navigator</strong></td><td>LinkedIn</td><td>Professional profiles, company data, connections</td></tr>
+<tr><td><strong>GitHub OSINT</strong></td><td>GitHub</td><td>Code contributions, organizational membership, activity</td></tr>
+<tr><td><strong>GitLab Code</strong></td><td>GitLab</td><td>Repository analysis, contribution patterns</td></tr>
+<tr><td><strong>Social Searcher</strong></td><td>Multi-platform</td><td>Cross-platform social media monitoring</td></tr>
+<tr><td><strong>FullContact</strong></td><td>Identity resolution</td><td>Person/company enrichment from email/domain</td></tr>
+<tr><td><strong>ZoomInfo</strong></td><td>B2B intelligence</td><td>Company data, org charts, technographics</td></tr>
+<tr><td><strong>Pipl</strong></td><td>People search</td><td>Identity resolution, digital footprint aggregation</td></tr>
+<tr><td><strong>GDELT</strong></td><td>Global event database</td><td>News monitoring, event coding, sentiment analysis</td></tr>
+<tr><td><strong>NewsAPI</strong></td><td>News aggregation</td><td>Real-time news from 150,000+ sources</td></tr>
+</tbody></table>
+<p>Social intelligence adapters implement additional privacy safeguards, including automatic PII redaction in logs and configurable data retention windows that default to 30 days.</p>
+<h3 id="email-intelligence">Email Intelligence</h3>
+<p>Email intelligence sources verify email addresses, detect breaches, assess sender reputation, and map organizational email infrastructure.</p>
+<table><thead><tr><th>Source</th><th>Capability</th><th>Output</th></tr></thead><tbody>
+<tr><td><strong>HaveIBeenPwned</strong></td><td>Breach detection</td><td>Breach history, paste appearances, password exposure</td></tr>
+<tr><td><strong>Hunter.io</strong></td><td>Email finding and verification</td><td>Domain email patterns, deliverability scores</td></tr>
+<tr><td><strong>EmailRep</strong></td><td>Email reputation</td><td>Risk scoring, breach history, domain age</td></tr>
+<tr><td><strong>Dehashed</strong></td><td>Breach search engine</td><td>Leaked credentials, database dumps</td></tr>
+<tr><td><strong>IPQualityScore</strong></td><td>Fraud detection</td><td>Email risk scoring, disposable detection</td></tr>
+<tr><td><strong>IntelligenceX</strong></td><td>Historical data search</td><td>Archived email appearances, dark web mentions</td></tr>
+</tbody></table>
+<p>The platform includes a specialized <code>EmailIntelligence</code> universal adapter that orchestrates queries across multiple email sources simultaneously, deduplicates results, and produces a composite reputation score with confidence intervals.</p>
+<h3 id="domain-intelligence">Domain Intelligence</h3>
+<p>Domain intelligence sources provide comprehensive DNS, WHOIS, and hosting infrastructure analysis for investigating the digital presence of target organizations.</p>
+<table><thead><tr><th>Source</th><th>Capability</th><th>Data Type</th></tr></thead><tbody>
+<tr><td><strong>SecurityTrails</strong></td><td>Historical DNS and WHOIS</td><td>DNS history, WHOIS changes, subdomains</td></tr>
+<tr><td><strong>DNSdumpster</strong></td><td>DNS reconnaissance</td><td>DNS records, host mapping, MX analysis</td></tr>
+<tr><td><strong>DomainTools</strong></td><td>WHOIS and DNS analytics</td><td>Registration history, reverse WHOIS, hosting</td></tr>
+<tr><td><strong>PassiveTotal</strong></td><td>Passive DNS and WHOIS</td><td>Historical resolutions, WHOIS, SSL certificates</td></tr>
+<tr><td><strong>WhoisXML</strong></td><td>WHOIS API</td><td>Registration details, domain availability</td></tr>
+<tr><td><strong>Netlas</strong></td><td>Internet intelligence</td><td>DNS, WHOIS, response bodies, certificates</td></tr>
+<tr><td><strong>FullHunt</strong></td><td>Attack surface discovery</td><td>Exposed assets, subdomains, technologies</td></tr>
+<tr><td><strong>DomainBigData</strong></td><td>Domain analytics</td><td>Registration details, linked domains, hosting</td></tr>
+<tr><td><strong>SpyOnWeb</strong></td><td>Web analytics intelligence</td><td>Shared analytics IDs, AdSense relationships</td></tr>
+<tr><td><strong>PublicWWW</strong></td><td>Source code search</td><td>HTML/JS snippet search across the web</td></tr>
+</tbody></table>
+<p>Domain intelligence is critical for mapping the full attack surface of an organization during external assessment engagements. The Prismatic Perimeter module consumes domain intelligence findings directly to populate its asset inventory.</p>
+<h3 id="financial-intelligence">Financial Intelligence</h3>
+<p>Financial intelligence sources support sanctions screening, beneficial ownership investigation, and regulatory compliance verification across multiple jurisdictions.</p>
+<table><thead><tr><th>Source</th><th>Scope</th><th>Data Type</th></tr></thead><tbody>
+<tr><td><strong>OFAC</strong></td><td>US sanctions</td><td>SDN list, entity screening, sanctions programs</td></tr>
+<tr><td><strong>EU Sanctions</strong></td><td>European Union</td><td>Consolidated sanctions list, restrictive measures</td></tr>
+<tr><td><strong>UN Sanctions</strong></td><td>United Nations</td><td>Security Council sanctions committees</td></tr>
+<tr><td><strong>OpenCorporates</strong></td><td>Global corporate data</td><td>200M+ company records across jurisdictions</td></tr>
+<tr><td><strong>SEC EDGAR</strong></td><td>US securities filings</td><td>10-K, 10-Q, proxy statements, insider trading</td></tr>
+<tr><td><strong>Crunchbase</strong></td><td>Startup ecosystem</td><td>Funding rounds, investors, acquisitions</td></tr>
+<tr><td><strong>Blockchain.com</strong></td><td>Bitcoin analytics</td><td>Transaction tracing, address clustering</td></tr>
+<tr><td><strong>Etherscan</strong></td><td>Ethereum analytics</td><td>Smart contracts, token transfers, address activity</td></tr>
+<tr><td><strong>Elliptic</strong></td><td>Crypto compliance</td><td>Risk scoring, transaction monitoring</td></tr>
+<tr><td><strong>Crystal Blockchain</strong></td><td>Crypto analytics</td><td>Transaction flow analysis, entity attribution</td></tr>
+<tr><td><strong>Chainalysis</strong></td><td>Blockchain analytics</td><td>KYT compliance, entity identification</td></tr>
+<tr><td><strong>Beneficial Ownership Registry</strong></td><td>Global UBO</td><td>Ultimate beneficial owner identification</td></tr>
+</tbody></table>
+<p>Financial intelligence adapters are subject to the strictest rate limiting and audit logging requirements, given the regulatory sensitivity of sanctions screening and anti-money laundering (AML) operations.</p>
+<h2 id="integration-framework">Integration Framework</h2>
+<p>The OSINT source layer does not operate in isolation. Sources feed into a multi-stage pipeline that transforms raw API responses into evidence-grade intelligence through orchestration, enrichment, and verification.</p>
+<h3 id="investigation-orchestrator">Investigation Orchestrator</h3>
+<p>The <code>PrismaticOsintSources.Orchestrator</code> coordinates parallel queries across multiple sources for a given investigation subject. It manages source selection based on the investigation type (company due diligence, person screening, threat assessment), executes queries concurrently using OTP Task supervisors, and aggregates results with deduplication.</p>
+<pre><code data-lang="elixir"># Orchestrated multi-source investigation
+{:ok, findings} = PrismaticOsintSources.Orchestrator.investigate(
+  subject: %{name: &quot;Example s.r.o.&quot;, ico: &quot;12345678&quot;, country: &quot;CZ&quot;},
+  categories: [:czech_registries, :financial, :threat],
+  options: [
+    timeout: 30_000,
+    max_concurrent: 10,
+    dedup_strategy: :source_priority
+  ]
+)
+
+# Returns aggregated findings from all matching sources
+# with duplicates removed and confidence scores normalized
+</code></pre>
+<h3 id="broadway-pipeline">Broadway Pipeline</h3>
+<p>For high-throughput batch operations -- such as screening a portfolio of companies against sanctions lists or monitoring a set of domains for infrastructure changes -- the platform employs Broadway pipelines with built-in backpressure management:</p>
+<pre><code data-lang="elixir">defmodule PrismaticOsintSources.Pipeline.OsintBroadway do
+  use Broadway
+
+  def handle_message(_processor, message, _context) do
+    case process_osint_query(message.data) do
+      {:ok, findings} -&gt;
+        Message.update_data(message, fn _ -&gt; findings end)
+      {:error, _reason} -&gt;
+        Message.failed(message, &quot;source_unavailable&quot;)
+    end
+  end
+end
+</code></pre>
+<h3 id="agent-integration">Agent Integration</h3>
+<p>OSINT findings are consumed by the platform's 400+ AIAD agents, which apply domain-specific reasoning to raw intelligence. For example, the Due Diligence agent combines Czech registry data with financial intelligence and threat indicators to produce comprehensive risk assessments, while the Perimeter Security agent feeds infrastructure intelligence into attack surface scoring algorithms.</p>
+<h2 id="confidence-and-verification">Confidence and Verification</h2>
+<p>Raw OSINT data varies dramatically in reliability. A record from an official government registry (ARES, Justice.cz) carries near-certain accuracy for the data it contains, while a social media mention or an unverified breach database entry may be speculative or fraudulent. The Prismatic Platform addresses this through a layered confidence and verification framework rooted in the NABLA Infinity epistemic doctrine.</p>
+<h3 id="confidence-scoring">Confidence Scoring</h3>
+<p>Every finding produced by an OSINT adapter carries a confidence score between 0.0 and 1.0, assigned based on the source's historical reliability, the specificity of the match, and the freshness of the data:</p>
+<table><thead><tr><th>Source Type</th><th>Typical Confidence Range</th><th>Rationale</th></tr></thead><tbody>
+<tr><td>Government registries</td><td>0.90 -- 0.99</td><td>Official records, legally mandated accuracy</td></tr>
+<tr><td>Commercial APIs (Shodan, Censys)</td><td>0.80 -- 0.95</td><td>Automated scanning, high but not perfect accuracy</td></tr>
+<tr><td>Threat intelligence feeds</td><td>0.70 -- 0.90</td><td>Community-verified, some false positives</td></tr>
+<tr><td>Social media sources</td><td>0.50 -- 0.80</td><td>User-generated content, identity uncertainty</td></tr>
+<tr><td>Breach databases</td><td>0.40 -- 0.75</td><td>Unverified provenance, potential contamination</td></tr>
+</tbody></table>
+<h3 id="multi-source-corroboration">Multi-Source Corroboration</h3>
+<p>The NABLA Infinity framework enforces a <strong>Signal Plurality</strong> axiom: no belief should rest on a single source. When multiple independent sources corroborate a finding, the composite confidence increases according to a Bayesian update model. Conversely, contradictions between sources trigger the <strong>Contradiction Evidence</strong> axiom, which requires both signals to be preserved rather than discarded, and may escalate the finding for human review.</p>
+<h3 id="trinity-gate-verification">Trinity Gate Verification</h3>
+<p>Critical findings pass through the Trinity Gate -- a three-layer verification pipeline that evaluates hypotheses from structural, logical, and formal perspectives:</p>
+<ol>
+<li><strong>Kuzu Layer</strong> (Structural) -- Validates that the finding is consistent with the known entity graph. A company claimed to be headquartered in Prague should have Czech registry entries.</li>
+<li><strong>Prolog Layer</strong> (Logical) -- Applies rule-based inference to detect logical inconsistencies. A company cannot simultaneously be dissolved in one registry and active in another without explanation.</li>
+<li><strong>Lean Layer</strong> (Formal) -- Provides mathematical proof verification for high-stakes assessments where formal guarantees are required.</li>
+</ol>
+<p>The Trinity Gate never "approves" a finding. It can only <strong>hold</strong> (retain for further investigation), <strong>drop</strong> (falsified), or <strong>escalate</strong> (requires human judgment). This conservative design prevents false certainty from propagating through the intelligence pipeline.</p>
+<h2 id="rate-limiting-and-credential-management">Rate Limiting and Credential Management</h2>
+<p>Operating 121+ external sources at scale requires sophisticated rate limiting to maintain compliance with provider terms of service, avoid IP blocking, and ensure fair usage across concurrent investigations.</p>
+<h3 id="rate-limiter-architecture">Rate Limiter Architecture</h3>
+<p>The <code>PrismaticOsintCore.RateLimiter</code> is a production-grade GenServer implementing token bucket rate limiting with the following capabilities:</p>
+<ul>
+<li><strong>Per-source configuration</strong> -- Each source has independently configurable limits (requests per window), burst allowances, and backoff parameters</li>
+<li><strong>Exponential backoff with jitter</strong> -- Failed or rate-limited requests trigger exponential delays with random jitter to prevent thundering herd scenarios</li>
+<li><strong>Circuit breaker integration</strong> -- Sources that consistently fail are temporarily removed from the query pool, with automatic recovery testing</li>
+<li><strong>Broadway/GenStage backpressure</strong> -- High-throughput pipelines automatically slow down when downstream sources approach their rate limits</li>
+<li><strong>Telemetry emission</strong> -- Every rate limit event emits telemetry for real-time monitoring dashboards</li>
+</ul>
+<pre><code data-lang="elixir"># Per-source rate limit configuration examples
+%{
+  &quot;czech_ares&quot;     =&gt; %{limit: 10, period: 60_000, burst: 3},
+  &quot;shodan&quot;         =&gt; %{limit: 100, period: 60_000, burst: 20},
+  &quot;virustotal&quot;     =&gt; %{limit: 4, period: 60_000, burst: 1},
+  &quot;haveibeenpwned&quot; =&gt; %{limit: 10, period: 60_000, burst: 2},
+  &quot;hunter_io&quot;      =&gt; %{limit: 50, period: 60_000, burst: 10},
+  &quot;securitytrails&quot; =&gt; %{limit: 50, period: 60_000, burst: 10}
+}
+</code></pre>
+<h3 id="credential-management">Credential Management</h3>
+<p>API credentials for authenticated sources are managed through environment variables and application configuration, never committed to source control. The platform supports multiple credential tiers (free, professional, enterprise) per source, with automatic fallback to lower tiers when primary quotas are exhausted.</p>
+<p>Credential health is continuously monitored: the <code>health_check/0</code> callback on each adapter validates that stored credentials remain valid, and failed authentication events trigger alerts through the platform's notification infrastructure.</p>
+<h2 id="performance-metrics">Performance Metrics</h2>
+<p>The Prismatic OSINT infrastructure is benchmarked across 419 test scenarios spanning all eight intelligence categories (the seven documented categories plus an IP Intelligence category used internally for infrastructure analysis).</p>
+<h3 id="benchmark-summary">Benchmark Summary</h3>
+<table><thead><tr><th>Category</th><th>Adapters</th><th>Suites</th><th>Scenarios</th><th>P95 Latency</th></tr></thead><tbody>
+<tr><td>Czech Intelligence</td><td>8</td><td>9</td><td>72</td><td>&lt; 800ms</td></tr>
+<tr><td>Threat Intelligence</td><td>7</td><td>8</td><td>56</td><td>&lt; 1,200ms</td></tr>
+<tr><td>Domain Intelligence</td><td>7</td><td>8</td><td>56</td><td>&lt; 1,500ms</td></tr>
+<tr><td>Email Intelligence</td><td>6</td><td>7</td><td>42</td><td>&lt; 1,000ms</td></tr>
+<tr><td>Social Intelligence</td><td>7</td><td>7</td><td>49</td><td>&lt; 2,000ms</td></tr>
+<tr><td>IP Intelligence</td><td>6</td><td>8</td><td>48</td><td>&lt; 1,000ms</td></tr>
+<tr><td>Crypto Intelligence</td><td>6</td><td>8</td><td>48</td><td>&lt; 1,800ms</td></tr>
+<tr><td>Breach Intelligence</td><td>6</td><td>8</td><td>48</td><td>&lt; 1,500ms</td></tr>
+</tbody></table>
+<h3 id="operational-targets">Operational Targets</h3>
+<ul>
+<li><strong>Concurrent queries</strong>: 1,000+ simultaneous source queries via OTP Task supervision</li>
+<li><strong>Connection pooling</strong>: Finch HTTP client with per-host connection reuse</li>
+<li><strong>Cache hit rate</strong>: 60--80% for repeated entity lookups within 24-hour windows</li>
+<li><strong>Source availability</strong>: 95%+ uptime across the source portfolio (measured weekly)</li>
+<li><strong>Result normalization</strong>: &lt; 5ms overhead per response transformation</li>
+<li><strong>Rate limit compliance</strong>: Zero provider bans across all operational deployments</li>
+</ul>
+<h2 id="security-and-compliance">Security and Compliance</h2>
+<h3 id="gdpr-compliance">GDPR Compliance</h3>
+<p>The platform implements data protection by design and by default, in accordance with EU General Data Protection Regulation (GDPR) requirements:</p>
+<ul>
+<li><strong>Data minimization</strong>: Adapters collect only the fields required for the investigation type. Source responses are filtered before storage, discarding irrelevant personal data.</li>
+<li><strong>Purpose limitation</strong>: Collected data is tagged with the investigation identifier and purpose code. Data cannot be repurposed without explicit authorization.</li>
+<li><strong>Storage limitation</strong>: Configurable retention policies automatically purge OSINT findings after their defined TTL (default: 90 days for standard investigations, 7 years for regulatory compliance records).</li>
+<li><strong>Right of access and erasure</strong>: The platform supports data subject access requests and deletion requests, with cascading removal across all storage backends (PostgreSQL, ETS, Meilisearch).</li>
+</ul>
+<h3 id="audit-trail">Audit Trail</h3>
+<p>Every OSINT query generates an immutable audit record containing: the requesting user or agent identity, the queried source, the input parameters, the response status, and the timestamp. These audit records are stored separately from investigation data and are retained for the legally required period (typically 5 years for financial investigations).</p>
+<pre><code data-lang="elixir"># Audit event emitted for every source query
+:telemetry.execute(
+  [:prismatic, :osint, :source, :search],
+  %{duration: duration_ms},
+  %{
+    source: :ares,
+    result: :success,
+    query_hash: hash(query),
+    user_id: current_user_id,
+    investigation_id: investigation_id,
+    timestamp: DateTime.utc_now()
+  }
+)
+</code></pre>
+<h3 id="security-hardening">Security Hardening</h3>
+<ul>
+<li><strong>Credential isolation</strong>: API keys are stored in environment variables and loaded at runtime. No credentials exist in source control, configuration files, or ETS tables.</li>
+<li><strong>TLS enforcement</strong>: All external API calls use HTTPS with certificate verification enabled. Downgrade attacks are rejected at the HTTP client level.</li>
+<li><strong>Input sanitization</strong>: All user-provided query parameters are sanitized before being passed to external APIs to prevent injection attacks against third-party services.</li>
+<li><strong>Output filtering</strong>: Source responses are scanned for sensitive data patterns (credit card numbers, social security numbers) and flagged for review before inclusion in investigation reports.</li>
+</ul>
+<h2 id="conclusion-and-future-expansion">Conclusion and Future Expansion</h2>
+<p>The Prismatic OSINT framework provides a production-grade foundation for multi-source intelligence gathering at scale. By standardizing the adapter interface, normalizing response formats, and integrating epistemic verification through NABLA and the Trinity Gate, the platform transforms the inherently noisy and unreliable landscape of open source intelligence into a structured, confidence-scored evidence base suitable for critical decision-making.</p>
+<h3 id="expansion-roadmap">Expansion Roadmap</h3>
+<p>Near-term development priorities include:</p>
+<ul>
+<li><strong>AI-powered source selection</strong> -- Machine learning models that predict the most informative sources for a given query, reducing unnecessary API calls and improving investigation efficiency</li>
+<li><strong>Real-time monitoring pipelines</strong> -- Continuous surveillance of registered entities using WebSocket and Server-Sent Events for live dashboard updates when source data changes</li>
+<li><strong>Cross-source correlation engine</strong> -- Automatic detection of non-obvious relationships between findings from different sources, leveraging the KuzuDB graph database for entity resolution</li>
+<li><strong>Source reliability scoring</strong> -- Historical accuracy tracking for each source, with automatic confidence adjustment based on measured false positive and false negative rates</li>
+<li><strong>Privacy-preserving queries</strong> -- Anonymized query proxying through Tor and VPN infrastructure for sensitive investigations where query metadata itself constitutes an intelligence signal</li>
+<li><strong>Custom adapter SDK</strong> -- A streamlined toolkit for organizations to implement proprietary source adapters that integrate seamlessly with the Prismatic pipeline</li>
+</ul>
+<p>The intelligence landscape evolves continuously as new data sources emerge, existing APIs change, and regulatory requirements shift. The adapter architecture ensures that Prismatic can absorb these changes incrementally -- adding, updating, or retiring individual sources without disrupting the broader investigation infrastructure. With 121+ sources operational today and a clear expansion path, the platform is positioned to serve as the definitive OSINT integration layer for security, compliance, and due diligence operations across European and global jurisdictions.</p>
+
+            </div>
+        </div>
+
+        <!-- Category Stats -->
+        <div class="flex flex-wrap justify-center gap-4 mt-10">
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-gray-400">29</span>
+                <span class="text-sm text-gray-400 ml-2">Czech</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-gray-400">84</span>
+                <span class="text-sm text-gray-400 ml-2">Global</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-gray-400">3</span>
+                <span class="text-sm text-gray-400 ml-2">Sanctions</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-yellow-400">1</span>
+                <span class="text-sm text-gray-400 ml-2">EU</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-gray-400">2</span>
+                <span class="text-sm text-gray-400 ml-2">UK/US</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Advanced Table Section -->
+<section class="bg-gray-900 py-12 lg:py-16" x-data="osintTable()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-4">
+            <!-- Main Content (3/4) -->
+            <div class="lg:col-span-3">
+
+                <!-- Controls Bar -->
+                <div class="mb-6 p-4 bg-gray-800 rounded-xl border border-gray-700">
+                    <div class="flex flex-col lg:flex-row gap-4">
+                        <!-- Search -->
+                        <div class="flex-1">
+                            <label for="search" class="sr-only">Search</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                </div>
+                                <input type="text" id="search" x-model="searchQuery" @input="filterSources()"
+                                    class="block w-full pl-10 pr-4 py-2.5 text-sm text-white bg-gray-700 border border-gray-600 rounded-lg focus:ring-emerald-500/30 focus:border-emerald-500/50"
+                                    placeholder="Search sources... (fuzzy search enabled)">
+                            </div>
+                        </div>
+
+                        <!-- Category Filter -->
+                        <div class="w-full sm:w-auto lg:w-48">
+                            <select x-model="categoryFilter" @change="filterSources()"
+                                class="block w-full py-2.5 px-4 text-sm text-white bg-gray-700 border border-gray-600 rounded-lg focus:ring-emerald-500/30 focus:border-emerald-500/50">
+                                <option value="">All Categories</option>
+                                <option value="czech">Czech</option>
+                                <option value="global">Global</option>
+                                <option value="sanctions">Sanctions</option>
+                                <option value="eu">EU</option>
+                                <option value="uk">UK</option>
+                                <option value="us">US</option>
+                                <option value="universal">Universal</option>
+                            </select>
+                        </div>
+
+                        <!-- Type Filter -->
+                        <div class="w-full sm:w-auto lg:w-48">
+                            <select x-model="typeFilter" @change="filterSources()"
+                                class="block w-full py-2.5 px-4 text-sm text-white bg-gray-700 border border-gray-600 rounded-lg focus:ring-emerald-500/30 focus:border-emerald-500/50">
+                                <option value="">All Types</option>
+                                <option value="company">Company Registry</option>
+                                <option value="threat">Threat Intelligence</option>
+                                <option value="domain">Domain/DNS</option>
+                                <option value="email">Email</option>
+                                <option value="ip">IP Intelligence</option>
+                                <option value="crypto">Cryptocurrency</option>
+                                <option value="social">Social Media</option>
+                                <option value="sanctions">Sanctions</option>
+                                <option value="legal">Legal/Court</option>
+                                <option value="financial">Financial</option>
+                            </select>
+                        </div>
+
+                        <!-- View Toggle -->
+                        <div class="flex items-center bg-gray-700 border border-gray-600 rounded-lg overflow-hidden">
+                            <button @click="viewMode = 'cards'"
+                                :class="viewMode === 'cards' ? 'bg-emerald-600 text-white' : 'text-gray-300 hover:bg-gray-600'"
+                                class="px-3 py-2.5 text-sm font-medium transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                                </svg>
+                            </button>
+                            <button @click="viewMode = 'table'"
+                                :class="viewMode === 'table' ? 'bg-emerald-600 text-white' : 'text-gray-300 hover:bg-gray-600'"
+                                class="px-3 py-2.5 text-sm font-medium transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Reset -->
+                        <button @click="resetFilters()"
+                            class="px-4 py-2.5 text-sm font-medium text-gray-300 bg-gray-700 border border-gray-600 rounded-lg hover:bg-gray-600 transition-colors">
+                            Reset
+                        </button>
+                    </div>
+
+                    <!-- Results count -->
+                    <div class="mt-3 text-sm text-gray-400">
+                        Showing <span class="font-semibold text-white" x-text="filteredSources.length"></span> of <span
+                            x-text="allSources.length"></span> sources
+                    </div>
+                </div>
+
+                <!-- Card View -->
+                <div x-show="viewMode === 'cards'" x-transition class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    <template x-for="source in paginatedSources" :key="source.id">
+                        <a :href="'https://prismatic-reality.com/osint/' + source.slug + '/'"
+                            class="group block p-5 bg-gray-800 rounded-2xl border border-gray-700 hover:shadow-xl hover:border-emerald-500/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
+                                    :class="getCategoryColor(source.category)">
+                                    <span x-text="source.name.substring(0,2).toUpperCase()"></span>
+                                </div>
+                                <div class="min-w-0">
+                                    <h3 class="font-semibold text-white group-hover:text-emerald-400 transition-colors truncate"
+                                        x-text="source.name"></h3>
+                                    <span class="text-xs text-gray-500 font-mono" x-text="source.module"></span>
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-400 mb-3 line-clamp-2" x-text="source.description">
+                            </p>
+                            <div class="flex items-center justify-between">
+                                <span class="px-2 py-0.5 text-xs font-medium rounded-full"
+                                    :class="getCategoryBadge(source.category)" x-text="source.category"></span>
+                                <span x-show="source.hasApi"
+                                    class="text-emerald-500 text-xs font-bold bg-emerald-500/10 px-2 py-0.5 rounded">API</span>
+                            </div>
+                        </a>
+                    </template>
+                </div>
+
+                <!-- Table -->
+                <div x-show="viewMode === 'table'" x-transition
+                    class="overflow-x-auto rounded-xl border border-gray-700 shadow-lg">
+                    <table class="w-full text-sm text-left text-gray-400">
+                        <thead class="text-xs text-gray-400 uppercase bg-gray-800">
+                            <tr>
+                                <th scope="col" class="px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 cursor-pointer hover:bg-gray-700"
+                                    @click="sortBy('name')">
+                                    <div class="flex items-center gap-2">
+                                        Source
+                                        <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'name' && sortDesc}"
+                                            fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </th>
+                                <th scope="col" class="px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 cursor-pointer hover:bg-gray-700 hidden sm:table-cell"
+                                    @click="sortBy('category')">
+                                    <div class="flex items-center gap-2">
+                                        Category
+                                        <svg class="w-3 h-3"
+                                            :class="{'rotate-180': sortField === 'category' && sortDesc}"
+                                            fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </th>
+                                <th scope="col" class="px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 cursor-pointer hover:bg-gray-700 hidden md:table-cell"
+                                    @click="sortBy('type')">
+                                    <div class="flex items-center gap-2">
+                                        Type
+                                        <svg class="w-3 h-3" :class="{'rotate-180': sortField === 'type' && sortDesc}"
+                                            fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </th>
+                                <th scope="col" class="px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 hidden lg:table-cell">Description</th>
+                                <th scope="col" class="px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 text-center hidden md:table-cell">API</th>
+                                <th scope="col" class="px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template x-for="source in paginatedSources" :key="source.id">
+                                <tr class="bg-gray-900 border-b border-gray-700 hover:bg-gray-800 transition-colors">
+                                    <td class="px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4">
+                                        <div class="flex items-center gap-2 sm:gap-3">
+                                            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-white font-bold text-xs sm:text-sm flex-shrink-0"
+                                                :class="getCategoryColor(source.category)">
+                                                <span x-text="source.name.substring(0,2).toUpperCase()"></span>
+                                            </div>
+                                            <div class="min-w-0">
+                                                <div class="font-semibold text-white truncate" x-text="source.name">
+                                                </div>
+                                                <div class="text-xs text-gray-500 truncate" x-text="source.module"></div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 hidden sm:table-cell">
+                                        <span class="px-2.5 py-1 text-xs font-medium rounded-full"
+                                            :class="getCategoryBadge(source.category)" x-text="source.category"></span>
+                                    </td>
+                                    <td class="px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 hidden md:table-cell">
+                                        <span
+                                            class="px-2.5 py-1 text-xs font-medium rounded-lg bg-gray-700 text-gray-300"
+                                            x-text="source.type"></span>
+                                    </td>
+                                    <td class="px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 max-w-xs hidden lg:table-cell">
+                                        <p class="truncate" x-text="source.description"></p>
+                                    </td>
+                                    <td class="px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 text-center hidden md:table-cell">
+                                        <span x-show="source.hasApi" class="text-emerald-500">
+                                            <svg class="w-5 h-5 inline" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd"
+                                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                        <span x-show="!source.hasApi" class="text-gray-600">
+                                            <svg class="w-5 h-5 inline" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd"
+                                                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </span>
+                                    </td>
+                                    <td class="px-3 py-2 sm:px-4 sm:py-3 lg:px-6 lg:py-4 text-center">
+                                        <a :href="'https://prismatic-reality.com/osint/' + source.slug + '/'"
+                                            class="font-medium text-emerald-400 hover:underline">
+                                            Details
+                                        </a>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex flex-col md:flex-row items-center justify-between mt-6 gap-4">
+                    <div class="text-sm text-gray-400">
+                        Page <span class="font-semibold text-white" x-text="currentPage"></span> of <span
+                            class="font-semibold text-white" x-text="totalPages"></span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button @click="prevPage()" :disabled="currentPage === 1"
+                            :class="{'opacity-50 cursor-not-allowed': currentPage === 1}"
+                            class="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-800 border border-gray-600 rounded-lg hover:bg-gray-700">
+                            Previous
+                        </button>
+                        <template x-for="page in visiblePages" :key="page">
+                            <button @click="goToPage(page)"
+                                :class="{'bg-emerald-600 text-white border-emerald-600': currentPage === page, 'bg-gray-800 text-gray-300 border-gray-600': currentPage !== page}"
+                                class="px-4 py-2 text-sm font-medium border rounded-lg hover:bg-gray-700" x-text="page">
+                            </button>
+                        </template>
+                        <button @click="nextPage()" :disabled="currentPage === totalPages"
+                            :class="{'opacity-50 cursor-not-allowed': currentPage === totalPages}"
+                            class="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-800 border border-gray-600 rounded-lg hover:bg-gray-700">
+                            Next
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-sm text-gray-400">Per page:</span>
+                        <select x-model.number="perPage" @change="currentPage = 1; filterSources()"
+                            class="py-1 px-2 text-sm border border-gray-600 rounded-lg bg-gray-800 text-gray-300">
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Category Overview -->
+                <div class="mt-12">
+                    <h2 class="text-3xl font-bold text-white mb-8 text-center">Source Categories</h2>
+                    <div class="grid gap-6 md:grid-cols-2">
+                        <!-- Czech -->
+                        <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                            <div class="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Czech Registries</h3>
+                            <p class="text-sm text-gray-400 mb-3">29 sources including ARES, Justice.cz, ISIR,
+                                RZP, and more Czech public registries.</p>
+                            <span class="text-2xl font-bold text-emerald-400">29</span>
+                        </div>
+
+                        <!-- Global -->
+                        <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                            <div class="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Global Intelligence</h3>
+                            <p class="text-sm text-gray-400 mb-3">84 sources: Shodan, VirusTotal, HIBP, Censys,
+                                SecurityTrails, and more.</p>
+                            <span class="text-2xl font-bold text-emerald-400">84</span>
+                        </div>
+
+                        <!-- Sanctions -->
+                        <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                            <div class="w-12 h-12 bg-red-600/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Sanctions Lists</h3>
+                            <p class="text-sm text-gray-400 mb-3">OFAC SDN, EU Sanctions, UN Sanctions -
+                                comprehensive compliance checking.</p>
+                            <span class="text-2xl font-bold text-emerald-400">3</span>
+                        </div>
+
+                        <!-- Other -->
+                        <div class="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                            <div class="w-12 h-12 bg-cyan-600/20 rounded-xl flex items-center justify-center mb-4">
+                                <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mb-2">Regional</h3>
+                            <p class="text-sm text-gray-400 mb-3">UK Companies House, SEC EDGAR, EU Business
+                                Registry, and universal adapters.</p>
+                            <span class="text-2xl font-bold text-emerald-400">5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar (1/4) -->
+            <div class="hidden lg:block space-y-6">
+                <!-- Section Topics Card -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6" x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors focus:outline-none focus:bg-gray-750">
+                        <div class="flex items-center gap-2">
+                            <svg
+                    class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                            <span class="font-semibold text-white text-sm">OSINT Sources</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+
+                <div class="max-h-[400px] overflow-y-auto space-y-1 pr-1 scrollbar-thin">
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;shodan&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Shodan
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ares&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        ARES
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;virustotal&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        VirusTotal
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;abuseipdb&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        AbuseIPDB
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;registr-smluv&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Registr smluv
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;censys&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Censys
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;hlidac-statu&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Hlidac statu
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;cuzk&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        CUZK
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;haveibeenpwned&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Have I Been Pwned
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;cnb&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        CNB
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;greynoise&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        GreyNoise
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;dph&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        DPH
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;urlscan&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        URLScan
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;cedr&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        CEDR
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;spyse&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Spyse
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;crtsh&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        crt.sh
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;uohs&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        UOHS
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;verejne-zakazky&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Verejne zakazky
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;hunter&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Hunter.io
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;justice-cz&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Justice.cz
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;rzp&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        RZP
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;insolvencni-rejstrik&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Insolvency Register
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;vr-cz&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        VR.cz
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;emailrep&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        EmailRep
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;fullcontact&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        FullContact
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;datove-schranky&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Datove Schranky
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;intelligencex&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Intelligence X
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;eu-sanctions&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        EU Sanctions
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;hunter-io&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Hunter.io
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ipqualityscore&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        IPQualityScore
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ofac&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        OFAC SDN List
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;res&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        RES
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;securitytrails&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        SecurityTrails
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;alienvault-otx&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        AlienVault OTX
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;binaryedge&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        BinaryEdge
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;sukl&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        SUKL
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;dnsdumpster&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        DNSdumpster
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;eru&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        ERU
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ipinfo&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        IPinfo
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;passivetotal&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        PassiveTotal
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;builtwith&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        BuiltWith
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ctu&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        CTU
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;phishtank&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        PhishTank
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;pulsedive&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Pulsedive
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;nespolehlivy-platce&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Nespolehlivy Platce
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ripestat&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        RIPEstat
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;threatfox&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        ThreatFox
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;executors&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Executors
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;spamhaus&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Spamhaus
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;zoomeye&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        ZoomEye
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;open-corporates&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        OpenCorporates
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;sslmate&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        SSLMate Cert Spotter
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;urlhaus&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        URLhaus
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;crunchbase&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Crunchbase
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;podnikatel&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Podnikatel.cz
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;viewdns&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        ViewDNS
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;blockchain-com&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Blockchain.com
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;isvs&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        ISVS
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;maltego&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Maltego
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;companies-house&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Companies House
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;exploit-db&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Exploit-DB
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;mitre-attack&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        MITRE ATT&amp;CK
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;nvd&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        NVD
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;sec-edgar&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        SEC EDGAR
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;whoisxml&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        WhoisXML API
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;zoominfo&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        ZoomInfo
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;clearbit&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Clearbit
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ebr&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        EU Business Registry
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;intelx&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Intelligence X
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;wayback-machine&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Wayback Machine
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;pipl&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Pipl
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;spiderfoot&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        SpiderFoot
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;dehashed&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        DeHashed
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;social-searcher&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Social Searcher
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;linkedin-sales&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        LinkedIn Sales Navigator
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;nahlizeni-kn&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Nahlizeni do KN
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;databreaches-net&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        DataBreaches.net
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;etherscan&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Etherscan
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;riskiq&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        RiskIQ &#x2F; Microsoft Defender TI
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;chainalysis&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Chainalysis
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;fullhunt&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        FullHunt
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;elliptic&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Elliptic
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;onyphe&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        ONYPHE
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;crystal-blockchain&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Crystal Blockchain
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;databaze-firem&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Databaze firem
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;katastrofalni-urad&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        ERU &#x2F; Czech Energy Regulator
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;ctu-cz&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        CTU &#x2F; Czech Telecom Office
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;gdelt&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        GDELT Project
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;circl-lu&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        CIRCL
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;newsapi&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        NewsAPI
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;netlas&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Netlas.io
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;nuclei&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Nuclei Templates
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;osv-dev&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        OSV.dev
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;czech-nbu&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        NBU &#x2F; Czech Security Authority
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;un-sanctions&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        UN Sanctions List
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;email-intelligence&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Email Intelligence Hub
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;szif&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        SZIF
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;passivedns&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        PassiveDNS
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;common-crawl&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Common Crawl
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;maxmind&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        MaxMind GeoIP
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;domaintools&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        DomainTools
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;court-cases&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Court Cases (Czech)
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;github-osint&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        GitHub OSINT
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;misp&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        MISP
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;osint&#x2F;czech-courts&#x2F;"
+                        class="flex items-center gap-2 px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500/50 flex-shrink-0"></span>
+                        Czech Courts Portal
+                    </a>
+                    
+                </div>
+                
+                    </div>
+                </div>
+
+                <!-- Statistics Card -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6" x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors focus:outline-none focus:bg-gray-750">
+                        <div class="flex items-center gap-2">
+                            <svg
+                    class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                            <span class="font-semibold text-white text-sm">OSINT Statistics</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-400">Total Sources</span>
+                        <span class="font-bold text-white" x-text="allSources.length">0</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-400">Filtered</span>
+                        <span class="font-bold text-white" x-text="filteredSources.length">0</span>
+                    </div>
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-400">With API</span>
+                        <span class="font-bold text-emerald-400"
+                            x-text="allSources.filter(s => s.hasApi).length">0</span>
+                    </div>
+                    <div class="pt-2 border-t border-gray-700">
+                        <div class="flex justify-between items-center text-sm mb-1">
+                            <span class="text-gray-400">Czech</span>
+                            <span class="font-bold text-white">29</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm mb-1">
+                            <span class="text-gray-400">Global</span>
+                            <span class="font-bold text-white">84</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm mb-1">
+                            <span class="text-gray-400">Sanctions</span>
+                            <span class="font-bold text-white">3</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Regional</span>
+                            <span class="font-bold text-white">5</span>
+                        </div>
+                    </div>
+                    <div class="pt-2 border-t border-gray-700">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Categories</span>
+                            <span class="font-bold text-white">7</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Source Types</span>
+                            <span class="font-bold text-white">10</span>
+                        </div>
+                    </div>
+                </div>
+                
+                    </div>
+                </div>
+
+                <!-- Quick Navigation Card -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6"
+                    x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded"
+                        class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors focus:outline-none focus:bg-gray-750">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Quick Navigation</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                <nav class="space-y-1">
+                    <a href="/agents/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span class="text-sm font-medium text-gray-300 group-hover:text-white">Agents</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-0.5 ml-6">434 autonomous agents that consume OSINT data</p>
+                    </a>
+                    <a href="/capabilities/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                            <span class="text-sm font-medium text-gray-300 group-hover:text-white">Capabilities</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-0.5 ml-6">Platform capabilities powered by intelligence
+                            sources</p>
+                    </a>
+                    <a href="/glossary/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                            <span class="text-sm font-medium text-gray-300 group-hover:text-white">Glossary</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-0.5 ml-6">225+ terms including OSINT and intelligence
+                            definitions</p>
+                    </a>
+                    <a href="/teams/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                            <span class="text-sm font-medium text-gray-300 group-hover:text-white">Color Teams</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-0.5 ml-6">6 security teams using OSINT for threat analysis
+                        </p>
+                    </a>
+                    <a href="/architecture/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                            <span class="text-sm font-medium text-gray-300 group-hover:text-white">Architecture</span>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-0.5 ml-6">System design behind the intelligence pipeline</p>
+                    </a>
+                </nav>
+                    </div>
+                </div>
+
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="/commands/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Commands<span
+                class="ml-auto text-xs text-gray-600">217</span></a>
+        <a href="/architecture/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Architecture</a>
+        <a href="/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        
+        <a href="/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="/technologies/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Technologies</a>
+        <a href="/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script id="osint-data" type="application/json">
+[
+    { "id": "ares", "name": "ARES", "module": "Ares", "category": "czech", "type": "company", "description": "Access Register of Economic Subjects - Czech business registry", "hasApi": true },
+    { "id": "justice", "name": "Justice.cz", "module": "Justice", "category": "czech", "type": "company", "description": "Commercial Register and Collection of Deeds", "hasApi": true },
+    { "id": "isir", "name": "ISIR", "module": "Isir", "category": "czech", "type": "legal", "description": "Insolvency Register - bankruptcy and restructuring proceedings", "hasApi": true },
+    { "id": "rzp", "name": "RZP", "module": "Rzp", "category": "czech", "type": "company", "description": "Trade Licensing Register", "hasApi": true },
+    { "id": "registr-smluv", "name": "Registr Smluv", "module": "RegistrSmluv", "category": "czech", "type": "legal", "description": "Contract Register - public sector contracts", "hasApi": true },
+    { "id": "hlidac-statu", "name": "Hlidac Statu", "module": "HlidacStatu", "category": "czech", "type": "company", "description": "State watchdog - contracts, subsidies, insolvencies", "hasApi": true },
+    { "id": "cuzk", "name": "CUZK", "module": "Cuzk", "category": "czech", "type": "legal", "description": "Land Registry - property ownership records", "hasApi": true },
+    { "id": "cedr", "name": "CEDR", "module": "Cedr", "category": "czech", "type": "financial", "description": "Central Register of Subsidies", "hasApi": true },
+    { "id": "cnb", "name": "CNB", "module": "Cnb", "category": "czech", "type": "financial", "description": "Czech National Bank - licensed entities", "hasApi": true },
+    { "id": "datove-schranky", "name": "Datove Schranky", "module": "DatoveSchranky", "category": "czech", "type": "company", "description": "Data Box Register - official communication", "hasApi": true },
+    { "id": "dph", "name": "DPH", "module": "Dph", "category": "czech", "type": "financial", "description": "VAT Payer Registry", "hasApi": true },
+    { "id": "res", "name": "RES", "module": "Res", "category": "czech", "type": "company", "description": "Register of Economic Subjects", "hasApi": true },
+    { "id": "szif", "name": "SZIF", "module": "Szif", "category": "czech", "type": "financial", "description": "Agricultural subsidy register", "hasApi": true },
+    { "id": "sukl", "name": "SUKL", "module": "Sukl", "category": "czech", "type": "company", "description": "Pharmaceutical registry", "hasApi": true },
+    { "id": "uohs", "name": "UOHS", "module": "Uohs", "category": "czech", "type": "legal", "description": "Competition authority decisions", "hasApi": true },
+    { "id": "eru", "name": "ERU", "module": "Eru", "category": "czech", "type": "company", "description": "Energy Regulatory Office licenses", "hasApi": true },
+    { "id": "ctu", "name": "CTU", "module": "Ctu", "category": "czech", "type": "company", "description": "Telecom licenses registry", "hasApi": true },
+    { "id": "verejne-zakazky", "name": "Verejne Zakazky", "module": "VerejneZakazky", "category": "czech", "type": "legal", "description": "Public procurement register", "hasApi": true },
+    { "id": "nespolehlivy-platce", "name": "Nespolehlivy Platce", "module": "NespolehlivyPlatce", "category": "czech", "type": "financial", "description": "Unreliable VAT payer list", "hasApi": true },
+    { "id": "executors", "name": "Executors", "module": "Executors", "category": "czech", "type": "legal", "description": "Bailiff proceedings registry", "hasApi": false },
+    { "id": "court-cases", "name": "Court Cases", "module": "CourtCases", "category": "czech", "type": "legal", "description": "Court case tracking", "hasApi": false },
+    { "id": "podnikatel", "name": "Podnikatel.cz", "module": "Podnikatel", "category": "czech", "type": "company", "description": "Business information aggregator", "hasApi": false },
+    { "id": "isvs", "name": "ISVS", "module": "Isvs", "category": "czech", "type": "company", "description": "Public administration IS registry", "hasApi": true },
+    { "id": "shodan", "name": "Shodan", "module": "Shodan", "category": "global", "type": "ip", "description": "Internet-connected device search engine", "hasApi": true },
+    { "id": "censys", "name": "Censys", "module": "Censys", "category": "global", "type": "ip", "description": "Internet-wide scanning and certificate analysis", "hasApi": true },
+    { "id": "virustotal", "name": "VirusTotal", "module": "Virustotal", "category": "global", "type": "threat", "description": "Malware and URL analysis with 70+ AV engines", "hasApi": true },
+    { "id": "hibp", "name": "Have I Been Pwned", "module": "Hibp", "category": "global", "type": "email", "description": "Data breach notification service", "hasApi": true },
+    { "id": "hunter", "name": "Hunter.io", "module": "Hunter", "category": "global", "type": "email", "description": "Email finder and verification", "hasApi": true },
+    { "id": "securitytrails", "name": "SecurityTrails", "module": "Securitytrails", "category": "global", "type": "domain", "description": "Historical DNS and WHOIS data", "hasApi": true },
+    { "id": "greynoise", "name": "GreyNoise", "module": "Greynoise", "category": "global", "type": "ip", "description": "Internet background noise analysis", "hasApi": true },
+    { "id": "urlscan", "name": "URLScan", "module": "Urlscan", "category": "global", "type": "domain", "description": "Website scanning and screenshot service", "hasApi": true },
+    { "id": "abuseipdb", "name": "AbuseIPDB", "module": "Abuseipdb", "category": "global", "type": "ip", "description": "IP address abuse reporting database", "hasApi": true },
+    { "id": "alienvault-otx", "name": "AlienVault OTX", "module": "AlienvaultOtx", "category": "global", "type": "threat", "description": "Open Threat Exchange intelligence sharing", "hasApi": true },
+    { "id": "binaryedge", "name": "BinaryEdge", "module": "Binaryedge", "category": "global", "type": "ip", "description": "Internet scanning and data collection", "hasApi": true },
+    { "id": "builtwith", "name": "BuiltWith", "module": "Builtwith", "category": "global", "type": "domain", "description": "Technology profiling and web analytics", "hasApi": true },
+    { "id": "crtsh", "name": "crt.sh", "module": "Crtsh", "category": "global", "type": "domain", "description": "Certificate Transparency log search", "hasApi": true },
+    { "id": "dnsdumpster", "name": "DNSDumpster", "module": "Dnsdumpster", "category": "global", "type": "domain", "description": "DNS reconnaissance and research", "hasApi": false },
+    { "id": "dehashed", "name": "DeHashed", "module": "Dehashed", "category": "global", "type": "email", "description": "Breach database search", "hasApi": true },
+    { "id": "emailrep", "name": "EmailRep", "module": "Emailrep", "category": "global", "type": "email", "description": "Email reputation scoring", "hasApi": true },
+    { "id": "fullcontact", "name": "FullContact", "module": "Fullcontact", "category": "global", "type": "social", "description": "Person and company enrichment", "hasApi": true },
+    { "id": "intelligencex", "name": "Intelligence X", "module": "Intelligencex", "category": "global", "type": "threat", "description": "Search engine for leaked data", "hasApi": true },
+    { "id": "ipinfo", "name": "IPInfo", "module": "Ipinfo", "category": "global", "type": "ip", "description": "IP geolocation and ASN data", "hasApi": true },
+    { "id": "ipqualityscore", "name": "IPQualityScore", "module": "Ipqualityscore", "category": "global", "type": "ip", "description": "Fraud prevention and proxy detection", "hasApi": true },
+    { "id": "maxmind", "name": "MaxMind", "module": "Maxmind", "category": "global", "type": "ip", "description": "GeoIP and fraud detection", "hasApi": true },
+    { "id": "onyphe", "name": "ONYPHE", "module": "Onyphe", "category": "global", "type": "ip", "description": "Cyber defense search engine", "hasApi": true },
+    { "id": "open-corporates", "name": "OpenCorporates", "module": "OpenCorporates", "category": "global", "type": "company", "description": "Largest open database of companies", "hasApi": true },
+    { "id": "passivetotal", "name": "PassiveTotal", "module": "Passivetotal", "category": "global", "type": "domain", "description": "Passive DNS and threat intel (RiskIQ)", "hasApi": true },
+    { "id": "phishtank", "name": "PhishTank", "module": "Phishtank", "category": "global", "type": "threat", "description": "Community phishing verification", "hasApi": true },
+    { "id": "pulsedive", "name": "Pulsedive", "module": "Pulsedive", "category": "global", "type": "threat", "description": "Threat intelligence platform", "hasApi": true },
+    { "id": "ripestat", "name": "RIPEstat", "module": "Ripestat", "category": "global", "type": "ip", "description": "RIPE NCC network information", "hasApi": true },
+    { "id": "spamhaus", "name": "Spamhaus", "module": "Spamhaus", "category": "global", "type": "ip", "description": "IP and domain blocklists", "hasApi": true },
+    { "id": "sslmate", "name": "SSLMate", "module": "Sslmate", "category": "global", "type": "domain", "description": "Certificate monitoring", "hasApi": true },
+    { "id": "threatfox", "name": "ThreatFox", "module": "Threatfox", "category": "global", "type": "threat", "description": "IOC sharing platform (abuse.ch)", "hasApi": true },
+    { "id": "urlhaus", "name": "URLhaus", "module": "Urlhaus", "category": "global", "type": "threat", "description": "Malicious URL database (abuse.ch)", "hasApi": true },
+    { "id": "viewdns", "name": "ViewDNS", "module": "Viewdns", "category": "global", "type": "domain", "description": "DNS and IP tools", "hasApi": true },
+    { "id": "zoomeye", "name": "ZoomEye", "module": "Zoomeye", "category": "global", "type": "ip", "description": "Chinese internet device search", "hasApi": true },
+    { "id": "crunchbase", "name": "Crunchbase", "module": "Crunchbase", "category": "global", "type": "company", "description": "Startup and company database", "hasApi": true },
+    { "id": "zoominfo", "name": "ZoomInfo", "module": "Zoominfo", "category": "global", "type": "company", "description": "B2B contact and company data", "hasApi": true },
+    { "id": "clearbit", "name": "Clearbit", "module": "Clearbit", "category": "global", "type": "company", "description": "Company and person enrichment", "hasApi": true },
+    { "id": "pipl", "name": "Pipl", "module": "Pipl", "category": "global", "type": "social", "description": "People search engine", "hasApi": true },
+    { "id": "social-searcher", "name": "Social Searcher", "module": "SocialSearcher", "category": "global", "type": "social", "description": "Social media monitoring", "hasApi": true },
+    { "id": "linkedin-sales", "name": "LinkedIn Sales Nav", "module": "LinkedinSalesNavigator", "category": "global", "type": "social", "description": "Professional network data", "hasApi": true },
+    { "id": "blockchain-com", "name": "Blockchain.com", "module": "BlockchainCom", "category": "global", "type": "crypto", "description": "Bitcoin blockchain explorer", "hasApi": true },
+    { "id": "etherscan", "name": "Etherscan", "module": "Etherscan", "category": "global", "type": "crypto", "description": "Ethereum blockchain explorer", "hasApi": true },
+    { "id": "chainalysis", "name": "Chainalysis", "module": "Chainalysis", "category": "global", "type": "crypto", "description": "Cryptocurrency compliance and investigation", "hasApi": true },
+    { "id": "elliptic", "name": "Elliptic", "module": "Elliptic", "category": "global", "type": "crypto", "description": "Crypto risk management", "hasApi": true },
+    { "id": "crystal-blockchain", "name": "Crystal Blockchain", "module": "CrystalBlockchain", "category": "global", "type": "crypto", "description": "Blockchain analytics", "hasApi": true },
+    { "id": "nvd", "name": "NVD", "module": "Nvd", "category": "global", "type": "threat", "description": "National Vulnerability Database", "hasApi": true },
+    { "id": "exploit-db", "name": "Exploit-DB", "module": "ExploitDb", "category": "global", "type": "threat", "description": "Exploit database archive", "hasApi": true },
+    { "id": "wayback-machine", "name": "Wayback Machine", "module": "WaybackMachine", "category": "global", "type": "domain", "description": "Internet Archive web pages", "hasApi": true },
+    { "id": "common-crawl", "name": "Common Crawl", "module": "CommonCrawl", "category": "global", "type": "domain", "description": "Web crawl data repository", "hasApi": true },
+    { "id": "gdelt", "name": "GDELT", "module": "Gdelt", "category": "global", "type": "social", "description": "Global news and events database", "hasApi": true },
+    { "id": "newsapi", "name": "NewsAPI", "module": "Newsapi", "category": "global", "type": "social", "description": "News article aggregation", "hasApi": true },
+    { "id": "ofac-sdn", "name": "OFAC SDN", "module": "OfacSdn", "category": "sanctions", "type": "sanctions", "description": "US Treasury Specially Designated Nationals list", "hasApi": true },
+    { "id": "eu-sanctions", "name": "EU Sanctions", "module": "EuSanctions", "category": "sanctions", "type": "sanctions", "description": "European Union consolidated sanctions list", "hasApi": true },
+    { "id": "un-sanctions", "name": "UN Sanctions", "module": "UnSanctions", "category": "sanctions", "type": "sanctions", "description": "United Nations Security Council sanctions", "hasApi": true },
+    { "id": "companies-house", "name": "Companies House", "module": "CompaniesHouse", "category": "uk", "type": "company", "description": "UK company registry", "hasApi": true },
+    { "id": "sec-edgar", "name": "SEC EDGAR", "module": "SecEdgar", "category": "us", "type": "financial", "description": "US SEC filings database", "hasApi": true },
+    { "id": "ebr", "name": "EU Business Registry", "module": "Ebr", "category": "eu", "type": "company", "description": "European Business Registry", "hasApi": true },
+    { "id": "email-intelligence", "name": "Email Intelligence", "module": "EmailIntelligence", "category": "universal", "type": "email", "description": "Multi-source email analysis", "hasApi": true }
+]
+</script>
+
+<script>
+    function osintTable() {
+        return {
+            searchQuery: '',
+            categoryFilter: '',
+            typeFilter: '',
+            sortField: 'name',
+            sortDesc: false,
+            viewMode: 'cards',
+            currentPage: 1,
+            perPage: 25,
+            allSources: [],
+            filteredSources: [],
+
+            init() {
+                try {
+                    const data = JSON.parse(document.getElementById('osint-data').textContent);
+                    this.allSources = data.map(s => ({
+                        ...s,
+                        slug: s.id
+                    }));
+                    this.filterSources();
+                } catch (e) {
+                    console.error('Error parsing OSINT data:', e);
+                    this.allSources = [];
+                }
+            },
+
+
+
+            filterSources() {
+                let results = [...this.allSources];
+
+                // Search filter (fuzzy)
+                if (this.searchQuery) {
+                    const query = this.searchQuery.toLowerCase();
+                    results = results.filter(s =>
+                        s.name.toLowerCase().includes(query) ||
+                        s.description.toLowerCase().includes(query) ||
+                        s.module.toLowerCase().includes(query) ||
+                        s.type.toLowerCase().includes(query)
+                    );
+                }
+
+                // Category filter
+                if (this.categoryFilter) {
+                    results = results.filter(s => s.category === this.categoryFilter);
+                }
+
+                // Type filter
+                if (this.typeFilter) {
+                    results = results.filter(s => s.type === this.typeFilter);
+                }
+
+                // Sort
+                results.sort((a, b) => {
+                    let aVal = a[this.sortField];
+                    let bVal = b[this.sortField];
+                    if (typeof aVal === 'string') {
+                        aVal = aVal.toLowerCase();
+                        bVal = bVal.toLowerCase();
+                    }
+                    if (this.sortDesc) {
+                        return bVal > aVal ? 1 : -1;
+                    }
+                    return aVal > bVal ? 1 : -1;
+                });
+
+                this.filteredSources = results;
+            },
+
+            sortBy(field) {
+                if (this.sortField === field) {
+                    this.sortDesc = !this.sortDesc;
+                } else {
+                    this.sortField = field;
+                    this.sortDesc = false;
+                }
+                this.filterSources();
+            },
+
+            resetFilters() {
+                this.searchQuery = '';
+                this.categoryFilter = '';
+                this.typeFilter = '';
+                this.sortField = 'name';
+                this.sortDesc = false;
+                this.currentPage = 1;
+                this.filterSources();
+            },
+
+            get paginatedSources() {
+                const start = (this.currentPage - 1) * this.perPage;
+                return this.filteredSources.slice(start, start + this.perPage);
+            },
+
+            get totalPages() {
+                return Math.ceil(this.filteredSources.length / this.perPage) || 1;
+            },
+
+            get visiblePages() {
+                const pages = [];
+                const total = this.totalPages;
+                const current = this.currentPage;
+                let start = Math.max(1, current - 2);
+                let end = Math.min(total, current + 2);
+
+                if (end - start < 4) { if (start === 1) { end = Math.min(total, 5); } else { start = Math.max(1, total - 4); } } for (let
+                    i = start; i <= end; i++) { pages.push(i); } return pages;
+            }, prevPage() {
+                if (this.currentPage > 1) this.currentPage--;
+            },
+
+            nextPage() {
+                if (this.currentPage < this.totalPages) this.currentPage++;
+            }, goToPage(page) { this.currentPage = page; },
+            getCategoryColor(category) {
+                const colors = {
+                    czech: 'bg-blue-600', global: 'bg-purple-600',
+                    sanctions: 'bg-red-600', eu: 'bg-yellow-600', uk: 'bg-cyan-600', us: 'bg-indigo-600',
+                    universal: 'bg-emerald-600'
+                }; return colors[category] || 'bg-gray-600';
+            }, getCategoryBadge(category) {
+                const
+                    badges = {
+                        czech: 'bg-blue-500/10 text-blue-400', global: 'bg-purple-500/10 text-purple-400',
+                        sanctions: 'bg-red-500/10 text-red-400', eu: 'bg-yellow-500/10 text-yellow-400',
+                        uk: 'bg-cyan-500/10 text-cyan-400', us: 'bg-indigo-500/10 text-indigo-400',
+                        universal: 'bg-emerald-500/10 text-emerald-400'
+                    }; return badges[category] || 'bg-gray-500/10 text-gray-400';
+            }
+        };
+    } </script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (89+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="text-gray-400 hover:text-white transition-colors">Commands (212)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies (44)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Lab</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-gray-400 hover:text-white">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Back to Top + Nav scroll -->
+    <script>
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            var nav = document.querySelector('nav');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+                if (nav && window.scrollY > 20) {
+                    nav.classList.add('border-white/10');
+                    nav.classList.remove('border-white/5');
+                } else if (nav) {
+                    nav.classList.remove('border-white/10');
+                    nav.classList.add('border-white/5');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

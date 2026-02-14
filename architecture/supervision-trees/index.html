@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Supervision Trees - Prismatic Platform Architecture</title>
+
+    
+<meta name="description" content="Self-healing process hierarchies powered by OTP supervisors">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;supervision-trees&#x2F;">
+<meta property="og:title" content="Supervision Trees - Prismatic Platform Architecture">
+<meta property="og:description" content="Self-healing process hierarchies powered by OTP supervisors">
+<meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;supervision-trees&#x2F;">
+<meta name="twitter:title" content="Supervision Trees - Prismatic Platform Architecture">
+<meta name="twitter:description" content="Self-healing process hierarchies powered by OTP supervisors">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;supervision-trees&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https:&#x2F;&#x2F;prismatic-reality.com/favicon.svg">
+    <link rel="apple-touch-icon" href="https:&#x2F;&#x2F;prismatic-reality.com/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/tailwind.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2">
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-1 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Apps</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Agents</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">OSINT</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Architecture</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Tech</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Lab</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Academy</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">API</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-full sm:w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Commands</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Color Teams</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Doctrine</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/registry/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Registry</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Glossary</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/faq/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Header -->
+<section class="bg-gray-900 py-12 lg:py-16 border-b border-gray-700">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com"
+                        class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                            class="ml-1 text-sm font-medium text-gray-400 hover:text-white md:ml-2">Architecture</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-gray-200 md:ml-2">Supervision Trees</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Header Card -->
+        <div class="bg-gray-800 rounded-2xl shadow-xl border border-gray-700 overflow-hidden" x-data="{ shown: false }"
+            x-init="setTimeout(() => shown = true, 100)">
+            <div class="p-8">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-6" x-show="shown"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform -translate-y-4"
+                    x-transition:enter-end="opacity-100 transform translate-y-0">
+                    <!-- Icon Badge -->
+                    <div class="flex-shrink-0">
+                        
+                        <div class="w-24 h-24 bg-gray-700 rounded-2xl flex items-center justify-center shadow-lg">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                            </svg>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Title & Description -->
+                    <div class="flex-grow">
+                        <h1 class="text-3xl md:text-4xl font-black text-white mb-3">Supervision Trees</h1>
+                        <p class="text-lg text-gray-400 leading-relaxed">Self-healing process hierarchies powered by OTP supervisors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="bg-gray-900 py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-4">
+            <!-- Main Content -->
+            <div class="lg:col-span-3">
+                <article class="prose prose-lg prose-invert max-w-none
+                    prose-headings:text-white
+                    prose-p:text-gray-300
+                    prose-a:text-gray-400
+                    prose-strong:text-white
+                    prose-code:text-gray-400
+                    prose-pre:bg-gray-800
+                    prose-table:text-gray-300
+                    prose-th:text-white
+                    prose-td:border-gray-700">
+                    <h2 id="overview">Overview</h2>
+<p><a href="https://prismatic-reality.com/glossary/supervision-tree/">Supervision tree</a>s represent the foundational fault-tolerance mechanism of the Prismatic Platform. Rooted in the Erlang/<a href="https://prismatic-reality.com/glossary/otp/">OTP</a> tradition that has powered telecommunications systems achieving 99.9999999% (nine nines) uptime since the 1980s, supervision trees provide a hierarchical process management structure where every running process is monitored by a parent <a href="https://prismatic-reality.com/glossary/supervisor/">supervisor</a>. When a child process fails -- whether from an unexpected exception, a corrupted state, or a resource exhaustion scenario -- the supervisor detects the failure and applies a predefined restart strategy. This design eliminates the need for pervasive defensive error handling and instead embraces the principle that failure is not exceptional but routine, and that recovery should be automated, deterministic, and fast.</p>
+<p>In the Prismatic Platform, which manages over 400 <a href="https://prismatic-reality.com/glossary/aiad/">AIAD agents</a> across 90 <a href="https://prismatic-reality.com/architecture/umbrella-apps/">umbrella applications</a>, supervision trees are not merely an implementation detail but an architectural cornerstone. Every stateful process -- from agent executors to storage connection pools to <a href="https://prismatic-reality.com/architecture/telemetry/">telemetry</a> handlers -- lives within a supervision hierarchy. This architecture ensures that a single agent crash never cascades into a platform-wide failure, that storage connections are automatically re-established after network partitions, and that the system self-heals without human intervention.</p>
+<h2 id="the-let-it-crash-philosophy-and-its-rationale">The "Let It Crash" Philosophy and Its Rationale</h2>
+<p>The "<a href="https://prismatic-reality.com/glossary/let-it-crash/">let it crash</a>" philosophy, pioneered by Joe Armstrong in his 2003 PhD thesis on reliable <a href="https://prismatic-reality.com/glossary/distributed-system/">distributed system</a>s, represents a fundamental departure from defensive programming. Traditional approaches attempt to anticipate every possible error condition and handle it inline, leading to code where error handling logic often exceeds the business logic it protects. This approach suffers from three critical weaknesses: it cannot anticipate truly unexpected errors, it conflates error detection with error recovery, and it makes code harder to reason about.</p>
+<p>The <a href="https://prismatic-reality.com/glossary/otp/">OTP</a> approach inverts this pattern. Business logic is written for the "happy path" only. When an unexpected condition arises, the process crashes -- a clean, deterministic termination that releases all resources. The supervisor, running in a separate process with separate memory, detects the crash and restarts the child with a clean initial state. This separation of concerns yields several advantages:</p>
+<ol>
+<li><strong>Simplicity</strong>: Business logic remains uncluttered by error handling for conditions that cannot be meaningfully recovered from inline.</li>
+<li><strong>Isolation</strong>: The crash is contained to a single process. Other processes continue operating unaffected, thanks to <a href="https://prismatic-reality.com/glossary/process-isolation/">process isolation</a> guaranteed by the <a href="https://prismatic-reality.com/glossary/beam/">BEAM virtual machine</a>.</li>
+<li><strong>Recovery correctness</strong>: Restarting with a known-good initial state is provably safer than attempting to repair corrupted state in-place.</li>
+<li><strong><a href="https://prismatic-reality.com/glossary/observability/">Observability</a></strong>: Every crash generates a crash report with full stack trace, making debugging straightforward via <a href="https://prismatic-reality.com/architecture/telemetry/">telemetry</a> integration.</li>
+</ol>
+<p>The alternative -- defensive programming in languages without process isolation -- requires every function to handle every possible failure mode of its dependencies. In practice, this leads to "swallowed" exceptions, partially corrupted state, and systems that limp along in degraded modes that are harder to debug than clean crashes. Erlang's per-process garbage collection and share-nothing architecture make the "let it crash" approach both safe and efficient.</p>
+<h2 id="supervision-hierarchy-architecture">Supervision Hierarchy Architecture</h2>
+<p>The Prismatic Platform organizes its supervision trees in a layered hierarchy that mirrors the domain structure of the umbrella architecture. At the top level, each OTP application has its own <code>Application.start/2</code> callback that launches a root supervisor. These root supervisors then create domain-specific subtrees.</p>
+<pre><code>PrismaticPlatform.Application
+    |
+    +-- MainSupervisor (one_for_one)
+    |       |
+    |       +-- AgentSupervisor (one_for_one)
+    |       |       +-- AgentRegistry (Registry)
+    |       |       +-- AgentTaskSupervisor (Task.Supervisor)
+    |       |       +-- AgentCoordinator (GenServer)
+    |       |       +-- AgentDynamicSupervisor (DynamicSupervisor)
+    |       |           +-- Agent:archer_001 (GenServer)
+    |       |           +-- Agent:delta_force_002 (GenServer)
+    |       |           +-- Agent:navy_seal_003 (GenServer)
+    |       |
+    |       +-- StorageSupervisor (rest_for_one)
+    |       |       +-- ConnectionPool (DBConnection)
+    |       |       +-- CacheWarmer (GenServer)
+    |       |       +-- QueryProcessor (GenServer)
+    |       |
+    |       +-- PerimeterSupervisor (one_for_one)
+    |       |       +-- DiscoveryEngine (GenServer)
+    |       |       +-- ScanScheduler (GenServer)
+    |       |       +-- RatingCalculator (GenServer)
+    |       |
+    |       +-- WebSupervisor (one_for_one)
+    |               +-- Endpoint (Phoenix.Endpoint)
+    |               +-- PubSub (Phoenix.PubSub)
+    |               +-- Presence (Phoenix.Presence)
+</code></pre>
+<p>The choice of supervision hierarchy depth is deliberate. Deep trees provide fine-grained isolation: a crash in <code>Agent:archer_001</code> only triggers a restart of that specific agent, not the entire <code>AgentDynamicSupervisor</code>. Shallow trees are simpler but provide coarser isolation. The Prismatic Platform typically uses 3-4 levels of supervision depth, balancing isolation granularity against cognitive complexity.</p>
+<h2 id="restart-strategies-selection-criteria-and-tradeoffs">Restart Strategies: Selection Criteria and Tradeoffs</h2>
+<p>OTP provides four restart strategies, each suited to different dependency patterns among sibling processes. Choosing the correct strategy requires understanding the data and control flow dependencies between children.</p>
+<table><thead><tr><th>Strategy</th><th>Behavior</th><th>When to Use</th><th>Prismatic Usage</th></tr></thead><tbody>
+<tr><td><code>one_for_one</code></td><td>Only restart the crashed child</td><td>Independent siblings with no shared state</td><td>Agent pools, web endpoints</td></tr>
+<tr><td><code>one_for_all</code></td><td>Restart all children when any crashes</td><td>Tightly coupled siblings with shared invariants</td><td>Consensus groups, distributed locks</td></tr>
+<tr><td><code>rest_for_one</code></td><td>Restart crashed child and all children started after it</td><td>Sequential dependency chain</td><td>Storage stack (pool -&gt; cache -&gt; query)</td></tr>
+<tr><td><code>DynamicSupervisor</code></td><td>Dynamic children, same or varying specs</td><td>Runtime-spawned workers</td><td>Agent instances, scan workers</td></tr>
+</tbody></table>
+<p>The <code>rest_for_one</code> strategy for the <code>StorageSupervisor</code> deserves explanation. The <code>QueryProcessor</code> depends on the <code>CacheWarmer</code>, which depends on the <code>ConnectionPool</code>. If the <code>ConnectionPool</code> crashes, both the <code>CacheWarmer</code> and <code>QueryProcessor</code> must restart because their internal state (cached connections, prepared statements) is invalid. However, if only the <code>QueryProcessor</code> crashes, the pool and cache remain valid. The <code>rest_for_one</code> strategy precisely captures this asymmetric dependency.</p>
+<pre><code data-lang="elixir">defmodule PrismaticAgents.Supervisor do
+  @moduledoc &quot;&quot;&quot;
+  Root supervisor for the agent runtime subsystem.
+
+  Uses rest_for_one because the Coordinator depends on the Registry
+  and TaskSupervisor being available, but not vice versa.
+  &quot;&quot;&quot;
+  use Supervisor
+
+  @spec start_link(keyword()) :: Supervisor.on_start()
+  def start_link(init_arg) do
+    Supervisor.start_link(__MODULE__, init_arg, name: __MODULE__)
+  end
+
+  @impl true
+  def init(_init_arg) do
+    children = [
+      {Registry, keys: :unique, name: PrismaticAgents.Registry},
+      {Task.Supervisor, name: PrismaticAgents.TaskSupervisor},
+      {PrismaticAgents.Coordinator, []},
+      {DynamicSupervisor, name: PrismaticAgents.DynamicSupervisor, strategy: :one_for_one}
+    ]
+
+    Supervisor.init(children, strategy: :rest_for_one)
+  end
+end
+</code></pre>
+<h3 id="restart-intensity-and-period">Restart Intensity and Period</h3>
+<p>Beyond strategy selection, supervisors configure <code>max_restarts</code> and <code>max_seconds</code> to prevent restart storms. If a child crashes more than <code>max_restarts</code> times within <code>max_seconds</code>, the supervisor itself terminates, propagating the failure upward to its own supervisor. This escalation mechanism prevents infinite restart loops when a persistent fault (such as a misconfigured dependency or a corrupted database) makes recovery impossible at the current level.</p>
+<pre><code data-lang="elixir"># Conservative settings for storage (persistent faults should escalate quickly)
+Supervisor.init(children,
+  strategy: :rest_for_one,
+  max_restarts: 3,
+  max_seconds: 30
+)
+
+# Liberal settings for agents (transient faults are common and expected)
+Supervisor.init(children,
+  strategy: :one_for_one,
+  max_restarts: 10,
+  max_seconds: 60
+)
+</code></pre>
+<p>The Prismatic Platform uses conservative restart limits (3 restarts in 30 seconds) for infrastructure processes like database connections and liberal limits (10 restarts in 60 seconds) for agent workers where transient failures from network timeouts or <a href="https://prismatic-reality.com/glossary/rate-limiting/">rate limiting</a> are expected and recoverable.</p>
+<h2 id="dynamic-supervision-and-runtime-process-management">Dynamic Supervision and Runtime Process Management</h2>
+<p>Static supervision trees defined at compile time handle processes with known, fixed lifecycles. However, <a href="https://prismatic-reality.com/apps/prismatic-agents/">agents</a> in the Prismatic Platform are spawned dynamically in response to user requests, scheduled tasks, or <a href="https://prismatic-reality.com/architecture/event-sourcing/">event-sourced</a> commands. <code>DynamicSupervisor</code> addresses this requirement by allowing children to be added and removed at runtime.</p>
+<pre><code data-lang="elixir">defmodule PrismaticAgents.DynamicPool do
+  @moduledoc &quot;&quot;&quot;
+  Manages the lifecycle of dynamically spawned agent workers.
+  Provides backpressure through max_children configuration.
+  &quot;&quot;&quot;
+
+  @max_concurrent_agents 500
+
+  @spec start_agent(map()) :: {:ok, pid()} | {:error, :max_children | term()}
+  def start_agent(agent_spec) do
+    child_spec = {PrismaticAgents.Worker, agent_spec}
+
+    case DynamicSupervisor.start_child(__MODULE__, child_spec) do
+      {:ok, pid} -&gt;
+        :telemetry.execute(
+          [:prismatic, :agents, :started],
+          %{system_time: System.monotonic_time()},
+          %{agent_id: agent_spec.id, type: agent_spec.type}
+        )
+        {:ok, pid}
+
+      {:error, :max_children} -&gt;
+        {:error, :max_children}
+
+      {:error, reason} -&gt;
+        {:error, reason}
+    end
+  end
+
+  @spec terminate_agent(pid()) :: :ok | {:error, :not_found}
+  def terminate_agent(pid) do
+    DynamicSupervisor.terminate_child(__MODULE__, pid)
+  end
+
+  @spec count_agents() :: non_neg_integer()
+  def count_agents do
+    DynamicSupervisor.count_children(__MODULE__).active
+  end
+end
+</code></pre>
+<p>The <code>max_children</code> option provides <a href="https://prismatic-reality.com/glossary/backpressure/">backpressure</a>, preventing the system from spawning unbounded processes during traffic spikes. This is critical in the Prismatic Platform where a single <a href="https://prismatic-reality.com/glossary/easm/">EASM</a> discovery operation on <a href="https://prismatic-reality.com/apps/prismatic-perimeter/">Prismatic Perimeter</a> might trigger hundreds of concurrent scan agents.</p>
+<h2 id="process-registry-and-service-discovery">Process Registry and Service Discovery</h2>
+<p>In a system with thousands of dynamic processes, locating a specific process by name is essential. The Prismatic Platform uses the built-in <code>Registry</code> module, which provides O(1) lookups backed by <a href="https://prismatic-reality.com/glossary/ets/">ETS tables</a>, supporting both unique and duplicate key registrations.</p>
+<pre><code data-lang="elixir"># Registration with metadata at agent startup
+defmodule PrismaticAgents.Worker do
+  use GenServer
+
+  def init(spec) do
+    Registry.register(PrismaticAgents.Registry, {:agent, spec.id}, %{
+      type: spec.type,
+      started_at: DateTime.utc_now(),
+      capabilities: spec.capabilities
+    })
+
+    {:ok, %{spec: spec, state: :initializing}}
+  end
+end
+
+# Lookup from any process in any umbrella app
+defmodule PrismaticAgents.Locator do
+  @spec find_agent(String.t()) :: {:ok, pid(), map()} | {:error, :not_found}
+  def find_agent(agent_id) do
+    case Registry.lookup(PrismaticAgents.Registry, {:agent, agent_id}) do
+      [{pid, metadata}] -&gt; {:ok, pid, metadata}
+      [] -&gt; {:error, :not_found}
+    end
+  end
+
+  @spec agents_by_type(atom()) :: [{pid(), map()}]
+  def agents_by_type(type) do
+    Registry.select(PrismaticAgents.Registry, [
+      {{{:agent, :_}, :&quot;$1&quot;, %{type: type}}, [], [:&quot;$1&quot;]}
+    ])
+  end
+end
+</code></pre>
+<p>The choice of <code>Registry</code> over alternatives like <code>:global</code> or <code>:pg</code> is deliberate. <code>:global</code> provides cluster-wide registration but uses a global lock that becomes a bottleneck under high registration churn. <code>:pg</code> (process groups) is designed for pub/sub patterns rather than unique lookups. <code>Registry</code> offers the best performance for the Prismatic Platform's primary use case: fast, node-local unique lookups with metadata.</p>
+<h2 id="failure-recovery-patterns">Failure Recovery Patterns</h2>
+<h3 id="graceful-degradation">Graceful Degradation</h3>
+<p>When a monitored process crashes, the monitoring process receives a <code>{:DOWN, ref, :process, pid, reason}</code> message. The Prismatic Platform uses this to maintain accurate internal bookkeeping while letting the supervisor handle the actual restart.</p>
+<pre><code data-lang="elixir">defmodule PrismaticAgents.Coordinator do
+  use GenServer
+
+  def init(_) do
+    {:ok, %{agents: %{}, monitors: %{}}}
+  end
+
+  def handle_info({:DOWN, ref, :process, pid, reason}, state) do
+    case Map.get(state.monitors, ref) do
+      nil -&gt;
+        {:noreply, state}
+
+      agent_id -&gt;
+        :telemetry.execute(
+          [:prismatic, :agents, :crashed],
+          %{system_time: System.monotonic_time()},
+          %{agent_id: agent_id, reason: reason}
+        )
+
+        new_state = %{state |
+          agents: Map.delete(state.agents, agent_id),
+          monitors: Map.delete(state.monitors, ref)
+        }
+
+        {:noreply, new_state}
+    end
+  end
+end
+</code></pre>
+<h3 id="circuit-breaker-pattern">Circuit Breaker Pattern</h3>
+<p>For external dependencies that may experience prolonged outages, the Prismatic Platform implements the <a href="https://prismatic-reality.com/glossary/circuit-breaker/">circuit breaker</a> pattern as a complement to supervision. While supervision handles transient failures through restarts, the <a href="https://prismatic-reality.com/glossary/circuit-breaker/">circuit breaker</a> prevents repeated calls to a known-failing dependency, reducing latency and resource waste.</p>
+<pre><code data-lang="elixir">defmodule PrismaticAgents.CircuitBreaker do
+  @moduledoc &quot;&quot;&quot;
+  Three-state circuit breaker: closed (normal), open (failing), half-open (probing).
+  Transitions: closed -&gt; open after threshold failures, open -&gt; half-open after
+  cooldown, half-open -&gt; closed on success or back to open on failure.
+  &quot;&quot;&quot;
+  use GenServer
+
+  @failure_threshold 5
+  @cooldown_ms 30_000
+
+  defstruct [:name, :state, :failure_count, :last_failure_at]
+
+  @spec call(atom(), (-&gt; term())) :: {:ok, term()} | {:error, :circuit_open}
+  def call(name, fun) do
+    GenServer.call(via(name), {:call, fun})
+  end
+
+  @impl true
+  def handle_call({:call, fun}, _from, %{state: :closed} = state) do
+    case safe_execute(fun) do
+      {:ok, result} -&gt;
+        {:reply, {:ok, result}, %{state | failure_count: 0}}
+
+      {:error, reason} -&gt;
+        new_count = state.failure_count + 1
+        new_state = if new_count &gt;= @failure_threshold do
+          %{state | state: :open, failure_count: new_count,
+            last_failure_at: System.monotonic_time(:millisecond)}
+        else
+          %{state | failure_count: new_count}
+        end
+        {:reply, {:error, reason}, new_state}
+    end
+  end
+
+  def handle_call({:call, _fun}, _from, %{state: :open} = state) do
+    if System.monotonic_time(:millisecond) - state.last_failure_at &gt; @cooldown_ms do
+      {:reply, {:error, :circuit_open}, %{state | state: :half_open}}
+    else
+      {:reply, {:error, :circuit_open}, state}
+    end
+  end
+end
+</code></pre>
+<h2 id="monitoring-and-observability">Monitoring and Observability</h2>
+<p>Supervision trees integrate tightly with the <a href="https://prismatic-reality.com/architecture/telemetry/">telemetry subsystem</a> to provide <a href="https://prismatic-reality.com/capabilities/real-time-monitoring/">real-time monitoring</a> of process health. The Prismatic Platform emits telemetry events for every supervisor action, enabling dashboards that display restart rates, process counts, and memory consumption per supervision subtree.</p>
+<pre><code data-lang="elixir">:telemetry.attach_many(
+  &quot;supervisor-metrics&quot;,
+  [
+    [:supervisor, :start_child, :stop],
+    [:supervisor, :restart_child, :stop],
+    [:supervisor, :terminate_child, :stop]
+  ],
+  &amp;PrismaticTelemetry.SupervisorHandler.handle_event/4,
+  nil
+)
+</code></pre>
+<h3 id="health-check-thresholds">Health Check Thresholds</h3>
+<table><thead><tr><th>Check</th><th>Interval</th><th>Warning Threshold</th><th>Critical Threshold</th><th>Action</th></tr></thead><tbody>
+<tr><td>Process count per supervisor</td><td>10s</td><td>&gt; 5,000</td><td>&gt; 10,000</td><td>Alert + backpressure</td></tr>
+<tr><td>Restart rate</td><td>1 min</td><td>&gt; 3/min</td><td>&gt; 5/min</td><td>Alert + investigation</td></tr>
+<tr><td>Memory per process</td><td>30s</td><td>&gt; 50 MB</td><td>&gt; 100 MB</td><td>Alert + forced GC</td></tr>
+<tr><td>Message queue depth</td><td>5s</td><td>&gt; 500</td><td>&gt; 1,000</td><td>Alert + load shedding</td></tr>
+<tr><td>Supervisor uptime</td><td>60s</td><td>&lt; 99.9%</td><td>&lt; 99%</td><td>Escalation</td></tr>
+</tbody></table>
+<h2 id="performance-characteristics">Performance Characteristics</h2>
+<p>The overhead of supervision is minimal. Process spawning on the BEAM takes approximately 2-5 microseconds with ~2.5 KB of initial memory. Supervisor monitoring uses Erlang's built-in process linking mechanism, which adds zero runtime overhead for the happy path (no crashes). The cost is paid only on failure: crash detection takes less than 1 microsecond (kernel-level signal), and restart including state initialization typically completes in under 1 millisecond.</p>
+<table><thead><tr><th>Operation</th><th>Latency</th><th>Memory</th></tr></thead><tbody>
+<tr><td>Process spawn</td><td>2-5 us</td><td>~2.5 KB initial</td></tr>
+<tr><td>Crash detection</td><td>&lt; 1 us</td><td>0 (kernel signal)</td></tr>
+<tr><td>Restart (simple <a href="https://prismatic-reality.com/glossary/genserver/">GenServer</a>)</td><td>&lt; 1 ms</td><td>~2.5 KB</td></tr>
+<tr><td>Restart (with ETS state recovery)</td><td>1-5 ms</td><td>Varies</td></tr>
+<tr><td><a href="https://prismatic-reality.com/glossary/registry-otp/">Registry</a> lookup</td><td>&lt; 1 us</td><td>O(1) ETS</td></tr>
+<tr><td>DynamicSupervisor.start_child</td><td>5-10 us</td><td>~2.5 KB</td></tr>
+</tbody></table>
+<p>These numbers mean that the Prismatic Platform can sustain a restart rate of thousands of processes per second without measurable impact on overall system throughput. In practice, the <a href="https://prismatic-reality.com/capabilities/quality-gates/">quality gates</a> ensure restart rates stay well below these theoretical limits.</p>
+<h2 id="comparison-with-alternative-approaches">Comparison with Alternative Approaches</h2>
+<h3 id="supervision-trees-vs-kubernetes-pod-restarts">Supervision Trees vs. Kubernetes Pod Restarts</h3>
+<p>Kubernetes provides process-level restarts through liveness probes and pod recreation. However, pod restarts operate at a much coarser granularity (entire container) and higher latency (seconds to minutes). Supervision trees restart individual processes in microseconds, providing 1000x faster recovery with 1000x finer granularity.</p>
+<h3 id="supervision-trees-vs-try-catch-error-handling">Supervision Trees vs. Try/Catch Error Handling</h3>
+<p>Languages without process isolation must use try/catch for error recovery. This conflates error detection, error handling, and error recovery into a single mechanism, leading to deeply nested code that is difficult to test and reason about. Supervision separates these concerns: business code detects errors by crashing, supervisors handle recovery, and monitoring systems report on failures.</p>
+<h3 id="supervision-trees-vs-actor-frameworks-akka-orleans">Supervision Trees vs. Actor Frameworks (Akka, Orleans)</h3>
+<p>Actor frameworks in the JVM and .NET ecosystems provide similar supervision capabilities. However, they operate within a shared-memory runtime where a single corrupted pointer can crash the entire VM. The BEAM's per-process heap and immutable <a href="https://prismatic-reality.com/glossary/message-passing/">message passing</a> provide stronger isolation guarantees, making supervision restarts truly safe rather than merely hopeful.</p>
+<h2 id="summary">Summary</h2>
+<p>Supervision trees in the Prismatic Platform provide the foundation for <a href="https://prismatic-reality.com/glossary/fault-tolerance/">fault tolerance</a> that scales from individual agent processes to platform-wide resilience. By embracing the <a href="https://prismatic-reality.com/glossary/let-it-crash/">let it crash</a> philosophy, separating error detection from error recovery, and using hierarchical restart strategies matched to dependency patterns, the platform achieves <a href="https://prismatic-reality.com/glossary/self-healing/">self-healing</a> behavior that requires zero human intervention. Combined with <a href="https://prismatic-reality.com/glossary/dynamic-supervisor/">dynamic supervision</a> for runtime process management, <a href="https://prismatic-reality.com/glossary/circuit-breaker/">circuit breakers</a> for external dependency protection, and deep <a href="https://prismatic-reality.com/architecture/telemetry/">telemetry integration</a> for observability, the supervision tree architecture ensures that the Prismatic Platform's 400+ agents and 90 applications operate with the reliability expected of mission-critical intelligence systems.</p>
+
+                </article>
+
+                <!-- Related Content -->
+                <div class="mt-16 pt-8 border-t border-gray-700">
+                    <h2 class="text-2xl font-bold text-white mb-6">Related Content</h2>
+                    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                            class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                            <h3 class="font-bold text-white mb-1">Applications</h3>
+                            <p class="text-sm text-gray-400">89 umbrella apps powering the
+                                Prismatic Platform ecosystem.</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                            class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                            <h3 class="font-bold text-white mb-1">Agent Ecosystem</h3>
+                            <p class="text-sm text-gray-400">430 autonomous agents across 14
+                                specialized domains.</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                            class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                            <h3 class="font-bold text-white mb-1">Color Teams</h3>
+                            <p class="text-sm text-gray-400">6 adversarial-defensive security teams with 20 specialized
+                                agents.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Back Button -->
+                <div class="mt-8 pt-8 border-t border-gray-700">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                        class="inline-flex items-center px-6 py-3 text-sm font-semibold text-gray-950 bg-white rounded-xl focus:ring-4 focus:ring-white/20 transition-all shadow-lg hover:shadow-xl">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Back to Architecture
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+
+                <!-- 1. Architecture Overview (expanded by default) -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6"
+                    x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded"
+                        class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors focus:outline-none focus:bg-gray-750">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Architecture Overview</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                        <dl class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <dt class="text-xs text-gray-400">Total Components</dt>
+                                <dd class="text-xs font-semibold text-emerald-400">6,652 modules</dd>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <dt class="text-xs text-gray-400">Umbrella Apps</dt>
+                                <dd class="text-xs font-semibold text-emerald-400">99</dd>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <dt class="text-xs text-gray-400">Quality Score</dt>
+                                <dd class="text-xs font-semibold text-emerald-400">100/100</dd>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <dt class="text-xs text-gray-400">Evolution</dt>
+                                <dd class="text-xs font-semibold text-emerald-400">Gen 18</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <!-- 2. Related Articles (expanded by default) -->
+                
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6"
+                    x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded"
+                        class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors focus:outline-none focus:bg-gray-750">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Related Articles (12)</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                        <ul class="space-y-1">
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;phoenix-liveview&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Phoenix LiveView
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;postgresql-kuzudb&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    PostgreSQL + KuzuDB
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;ollama&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Local AI (Ollama)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;event-sourcing&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Event Sourcing
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;supervision-trees&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-emerald-400 font-semibold bg-emerald-900/20">
+                                    Supervision Trees
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;storage-adapters&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Storage Adapters
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;umbrella-apps&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Umbrella Architecture
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;meilisearch&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Meilisearch
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;nabla-framework&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    NABLA Framework
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;pubsub&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Phoenix PubSub
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;telemetry&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Telemetry &amp; Metrics
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;graphql&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    GraphQL API
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <!-- Quick Navigation Card -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6" x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors focus:outline-none focus:bg-gray-750">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Quick Navigation</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                        <nav class="space-y-1">
+                            <a href="/agents/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><span>Agents</span></a>
+                            <a href="/capabilities/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0"></span><span>Capabilities</span></a>
+                            <a href="/apps/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><span>Apps</span></a>
+                            <a href="/technologies/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></span><span>Technologies</span></a>
+                            <a href="/glossary/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0"></span><span>Glossary</span></a>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Related Glossary Terms -->
+                
+                <!-- Default Architecture Glossary -->
+                <div class="bg-gray-800/50 rounded-xl border border-white/5 overflow-hidden mb-6" x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-700/50 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                            </svg>
+                            <span class="text-sm font-semibold text-white uppercase tracking-wider">Related Glossary</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            <a href="/glossary/elixir/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Elixir</a>
+                            <a href="/glossary/otp/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">OTP</a>
+                            <a href="/glossary/beam/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">BEAM</a>
+                            <a href="/glossary/phoenix/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Phoenix</a>
+                            <a href="/glossary/supervision-tree/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Supervision Tree</a>
+                            <a href="/glossary/umbrella-project/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Umbrella Project</a>
+                            <a href="/glossary/event-sourcing/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Event Sourcing</a>
+                            <a href="/glossary/ets/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">ETS</a>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="/commands/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Commands<span
+                class="ml-auto text-xs text-gray-600">217</span></a>
+        
+        <a href="/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        <a href="/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="/technologies/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Technologies</a>
+        <a href="/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (89+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="text-gray-400 hover:text-white transition-colors">Commands (212)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies (44)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Lab</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-gray-400 hover:text-white">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Back to Top + Nav scroll -->
+    <script>
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            var nav = document.querySelector('nav');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+                if (nav && window.scrollY > 20) {
+                    nav.classList.add('border-white/10');
+                    nav.classList.remove('border-white/5');
+                } else if (nav) {
+                    nav.classList.remove('border-white/10');
+                    nav.classList.add('border-white/5');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>API Reference - Prismatic Platform</title>
+
+    
+<meta name="description" content="Auto-introspecting REST gateway with OpenAPI 3.0 documentation">
+<meta property="og:title" content="API Reference - Prismatic Platform">
+<meta property="og:description" content="Auto-introspecting REST gateway with OpenAPI 3.0 documentation">
+
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https:&#x2F;&#x2F;prismatic-reality.com/favicon.svg">
+    <link rel="apple-touch-icon" href="https:&#x2F;&#x2F;prismatic-reality.com/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/tailwind.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2">
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-1 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Apps</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Agents</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">OSINT</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Architecture</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Tech</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Lab</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Academy</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">API</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-full sm:w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Commands</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Color Teams</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Doctrine</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/registry/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Registry</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Glossary</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/faq/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Section -->
+<section class="py-16 lg:py-20 border-b border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="mb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 text-xs font-bold tracking-widest text-cyan-400 bg-cyan-900/30 rounded-full uppercase border border-cyan-700/30">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                REST Gateway
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
+                API
+            </h1>
+            <div class="prose prose-invert prose-lg max-w-3xl leading-relaxed text-gray-400">
+                <h2 id="overview">Overview</h2>
+<p>The Prismatic API is a self-discovering REST gateway that eliminates the traditional overhead of API development. Rather than requiring developers to manually define routes, write controllers, maintain schema documentation, and synchronize specifications with implementation, the Prismatic API automatically discovers all public functions across the platform's facade modules using Elixir's introspection capabilities and exposes them as fully documented OpenAPI 3.0 endpoints. The result is an API that is always complete, always accurate, and always in sync with the underlying platform.</p>
+<p>This zero-configuration approach is not a convenience shortcut that trades capability for simplicity. The auto-introspected API supports the full range of features expected of a production REST gateway: role-based access control, request validation, structured error responses, rate limiting, and interactive documentation via SwaggerUI. The difference is that these features are derived from the source code itself rather than maintained as a separate, potentially divergent artifact.</p>
+<p>The API serves as the platform's primary external interface, enabling programmatic access to every capability that the platform exposes through its facade modules. It also functions as the definitive reference layer for the <a href="https://prismatic-reality.com/academy/">Academy</a>, providing precise endpoint specifications that complement the Academy's conceptual teaching. When <a href="https://prismatic-reality.com/lab/">Lab</a> experiments graduate to production, their functions appear as API endpoints automatically, completing the research-to-deployment pipeline without additional integration work.</p>
+<p>The API runs as a standalone Phoenix application on port 4004, separate from the main web interface but sharing the same underlying platform services. This separation allows the API to be scaled, monitored, and secured independently of the web dashboard.</p>
+<h2 id="architecture">Architecture</h2>
+<p>The API's architecture follows a scanner-registry-dispatch pattern that converts Elixir module metadata into HTTP endpoints through a series of well-defined transformations.</p>
+<pre><code>Boot Time:
+  Scanner ──&gt; discovers Prismatic* facade modules
+     │
+     ▼
+  TypeMapper ──&gt; converts @spec AST to OpenAPI JSON Schema
+     │
+     ▼
+  Registry (ETS) ──&gt; caches endpoint metadata for fast lookup
+     │
+     ▼
+  ApiSpec ──&gt; generates OpenAPI 3.0 specification
+     │
+     ▼
+  SwaggerUI ──&gt; serves interactive documentation
+
+Request Time:
+  HTTP Request ──&gt; Router ──&gt; APIAuth Plug ──&gt; RateLimiter
+     │
+     ▼
+  DispatchController ──&gt; resolves {app, action} to {module, function}
+     │
+     ▼
+  safe_apply(module, function, args) ──&gt; with timeout protection
+     │
+     ▼
+  JSON Response ──&gt; with appropriate HTTP status code
+</code></pre>
+<p>The architecture's key insight is that Elixir provides rich module metadata at runtime. Every public function's documentation, type specifications, and arity are accessible through standard library functions. The API exploits this to generate everything a REST gateway needs without requiring any manual specification.</p>
+<h3 id="scanner">Scanner</h3>
+<p>The scanner runs at application boot time and discovers all modules whose name begins with <code>Prismatic</code> that expose public functions with <code>@doc</code> annotations and <code>@spec</code> type specifications. The scanner uses <code>Code.fetch_docs/1</code> to retrieve documentation, <code>Code.Typespec.fetch_specs/1</code> to retrieve type specifications, and <code>Module.__info__(:functions)</code> to enumerate public functions.</p>
+<pre><code data-lang="elixir">defmodule PrismaticApi.Scanner do
+  @spec discover_endpoints() :: [EndpointMeta.t()]
+  def discover_endpoints do
+    :code.all_loaded()
+    |&gt; Enum.filter(&amp;prismatic_facade?/1)
+    |&gt; Enum.flat_map(&amp;extract_endpoints/1)
+    |&gt; Enum.filter(&amp;has_spec_and_doc?/1)
+  end
+
+  defp prismatic_facade?({module, _}) do
+    module
+    |&gt; Atom.to_string()
+    |&gt; String.starts_with?(&quot;Elixir.Prismatic&quot;)
+  end
+
+  defp extract_endpoints({module, _}) do
+    case Code.fetch_docs(module) do
+      {:docs_v1, _, :elixir, _, _, _, docs} -&gt;
+        Enum.map(docs, &amp;build_endpoint_meta(module, &amp;1))
+
+      _ -&gt;
+        []
+    end
+  end
+end
+</code></pre>
+<p>The scanner is idempotent and can be re-executed at runtime to discover newly loaded modules. The <code>mix prismatic_api.rescan</code> task triggers a live rescan without requiring application restart.</p>
+<h3 id="registry">Registry</h3>
+<p>Discovered endpoint metadata is stored in an ETS table for sub-microsecond lookup during request dispatch. The registry maps <code>{app_name, action_name}</code> tuples to full endpoint metadata including the target module, function atom, parameter specifications, documentation text, and OpenAPI schema fragments.</p>
+<pre><code data-lang="elixir"># Registry lookup during dispatch
+case :ets.lookup(:prismatic_api_registry, {app, action}) do
+  [{_, endpoint_meta}] -&gt;
+    {:ok, endpoint_meta}
+
+  [] -&gt;
+    {:error, :endpoint_not_found}
+end
+</code></pre>
+<p>The ETS-based registry provides constant-time lookups regardless of the number of registered endpoints and survives temporary process failures through the registry GenServer's supervision strategy.</p>
+<h3 id="dispatch-controller">Dispatch Controller</h3>
+<p>The dispatch controller is a single Phoenix controller that handles all API requests through generic pattern matching on the <code>app</code> and <code>action</code> path parameters. It resolves these parameters to a module and function through the registry, validates the request parameters against the endpoint's type specification, and invokes the function through <code>safe_apply/3</code>.</p>
+<p>The <code>safe_apply/3</code> wrapper provides timeout protection, error isolation, and structured error reporting. If the target function raises an exception, <code>safe_apply</code> catches it and returns a structured error response rather than allowing the exception to propagate to the HTTP layer.</p>
+<h2 id="auto-discovery-mechanism">Auto-Discovery Mechanism</h2>
+<p>The auto-discovery mechanism is the API's defining capability. It leverages three Elixir introspection functions to extract everything needed to generate a complete REST endpoint from source code alone.</p>
+<h3 id="code-fetch-docs-1">Code.fetch_docs/1</h3>
+<p>This function retrieves the documentation chunk compiled into a module's beam file. The API uses it to extract <code>@moduledoc</code> content (which becomes the endpoint group description) and <code>@doc</code> content for each function (which becomes the endpoint description in the OpenAPI spec). Functions without <code>@doc</code> annotations are excluded from the API surface, providing a natural opt-out mechanism.</p>
+<h3 id="code-typespec-fetch-specs-1">Code.Typespec.fetch_specs/1</h3>
+<p>This function retrieves the compiled type specifications for a module's functions. The API's type mapper converts these specifications from Elixir AST format into OpenAPI JSON Schema definitions. This conversion handles primitive types, common compound types (lists, maps, tuples), custom type references, and union types. The type mapper also extracts return type information to generate response schemas.</p>
+<h3 id="module-info-1">Module.<strong>info</strong>/1</h3>
+<p>This function provides the list of public functions and their arities. Combined with the documentation and type specification data, it provides the complete picture needed to generate an endpoint: the function name becomes the action, the arity determines whether the endpoint uses GET (0-2 parameters) or POST (3+ parameters), the parameter types become the request schema, and the return type becomes the response schema.</p>
+<h2 id="type-mapping-system">Type Mapping System</h2>
+<p>The type mapping system converts Elixir <code>@spec</code> AST nodes into OpenAPI JSON Schema definitions. This conversion is the most technically intricate component of the API, as it must faithfully represent Elixir's type system within the constraints of JSON Schema.</p>
+<pre><code data-lang="elixir">defmodule PrismaticApi.TypeMapper do
+  @spec to_json_schema(type_ast :: term()) :: map()
+
+  # Primitive types
+  def to_json_schema({:type, _, :integer, []}) do
+    %{&quot;type&quot; =&gt; &quot;integer&quot;}
+  end
+
+  def to_json_schema({:type, _, :binary, []}) do
+    %{&quot;type&quot; =&gt; &quot;string&quot;}
+  end
+
+  def to_json_schema({:type, _, :boolean, []}) do
+    %{&quot;type&quot; =&gt; &quot;boolean&quot;}
+  end
+
+  def to_json_schema({:type, _, :float, []}) do
+    %{&quot;type&quot; =&gt; &quot;number&quot;, &quot;format&quot; =&gt; &quot;double&quot;}
+  end
+
+  # List types
+  def to_json_schema({:type, _, :list, [inner_type]}) do
+    %{&quot;type&quot; =&gt; &quot;array&quot;, &quot;items&quot; =&gt; to_json_schema(inner_type)}
+  end
+
+  # Map types
+  def to_json_schema({:type, _, :map, fields}) do
+    %{
+      &quot;type&quot; =&gt; &quot;object&quot;,
+      &quot;properties&quot; =&gt; Map.new(fields, &amp;field_to_property/1)
+    }
+  end
+
+  # Union types (converted to oneOf)
+  def to_json_schema({:type, _, :union, variants}) do
+    %{&quot;oneOf&quot; =&gt; Enum.map(variants, &amp;to_json_schema/1)}
+  end
+end
+</code></pre>
+<p>The type mapper handles the common case where Elixir functions return <code>{:ok, result}</code> or <code>{:error, reason}</code> tuples by extracting the success type for the 200 response schema and the error type for the error response schema. This convention-based extraction means that idiomatic Elixir return types produce idiomatic REST responses without any manual annotation.</p>
+<h2 id="core-endpoints">Core Endpoints</h2>
+<p>The API exposes a set of core infrastructure endpoints alongside the auto-discovered domain endpoints.</p>
+<h3 id="health-check">Health Check</h3>
+<pre><code data-lang="bash"># GET /api/v1/health
+curl http://localhost:4004/api/v1/health
+
+# Response:
+{
+  &quot;status&quot;: &quot;healthy&quot;,
+  &quot;version&quot;: &quot;7.5.0&quot;,
+  &quot;uptime_seconds&quot;: 86400,
+  &quot;endpoints_registered&quot;: 15,
+  &quot;last_scan&quot;: &quot;2026-02-12T10:30:00Z&quot;
+}
+</code></pre>
+<p>The health endpoint reports system status, the number of registered endpoints, and the timestamp of the last scanner run. It is unauthenticated to support load balancer health probes.</p>
+<h3 id="endpoint-discovery">Endpoint Discovery</h3>
+<pre><code data-lang="bash"># GET /api/v1/endpoints
+curl -H &quot;Authorization: Bearer $API_TOKEN&quot; \
+  http://localhost:4004/api/v1/endpoints
+
+# Response:
+{
+  &quot;endpoints&quot;: [
+    {
+      &quot;app&quot;: &quot;perimeter&quot;,
+      &quot;action&quot;: &quot;discover&quot;,
+      &quot;method&quot;: &quot;POST&quot;,
+      &quot;path&quot;: &quot;/api/v1/perimeter/discover&quot;,
+      &quot;description&quot;: &quot;Discover external attack surface for a domain&quot;,
+      &quot;parameters&quot;: [{&quot;name&quot;: &quot;domain&quot;, &quot;type&quot;: &quot;string&quot;, &quot;required&quot;: true}],
+      &quot;response_type&quot;: &quot;AttackSurface&quot;
+    },
+    ...
+  ],
+  &quot;total&quot;: 15
+}
+</code></pre>
+<p>The endpoint discovery route returns a complete listing of all registered endpoints with their metadata, parameter schemas, and response types. This endpoint powers the SwaggerUI interface and can be consumed programmatically by client code generators.</p>
+<h3 id="generic-dispatch">Generic Dispatch</h3>
+<p>The generic dispatch routes (<code>GET /api/v1/:app/:action</code> and <code>POST /api/v1/:app/:action</code>) form the API's primary interface. GET is used for functions with 0-2 parameters (passed as query parameters); POST is used for functions with 3 or more parameters (passed as JSON body). The dispatch controller validates parameters, invokes the target function, and serializes the result as JSON.</p>
+<h3 id="openapi-specification">OpenAPI Specification</h3>
+<pre><code data-lang="bash"># GET /api/openapi
+curl http://localhost:4004/api/openapi
+
+# Returns a complete OpenAPI 3.0 JSON specification
+# auto-generated from discovered endpoints
+</code></pre>
+<p>The OpenAPI specification is regenerated from the registry on every request, ensuring it always reflects the current state of discovered endpoints. The specification includes endpoint paths, request/response schemas, authentication requirements, and descriptive text extracted from module documentation.</p>
+<h3 id="swaggerui">SwaggerUI</h3>
+<p>The interactive SwaggerUI interface at <code>/api/swaggerui</code> renders the OpenAPI specification as a browsable, executable documentation page. Developers can explore endpoints, inspect schemas, and send test requests directly from the browser.</p>
+<h2 id="domain-apis">Domain APIs</h2>
+<p>The auto-discovery mechanism exposes domain-specific APIs that correspond to the platform's major capability areas.</p>
+<p><strong>Perimeter API</strong>: Asset discovery, security rating calculations, compliance assessments, and attack surface analysis. Endpoints include <code>discover</code>, <code>security_rating</code>, <code>assess_compliance</code>, and <code>list_assets</code>.</p>
+<p><strong>Agents API</strong>: Agent status queries, configuration inspection, and lifecycle management. Endpoints include <code>list_agents</code>, <code>agent_status</code>, and <code>agent_metrics</code>.</p>
+<p><strong>Quality API</strong>: Quality gate execution, quality score reporting, and quality DNA inspection. Endpoints include <code>quality_score</code>, <code>gate_status</code>, and <code>quality_history</code>.</p>
+<p><strong>OSINT API</strong>: Open-source intelligence operations including domain reconnaissance, email intelligence, and infrastructure mapping. Endpoints follow the platform's OSINT provider architecture.</p>
+<p>Each domain API inherits the platform's authentication and authorization requirements. Access to specific endpoints is governed by the RBAC system, which maps API tokens to roles and roles to permitted operations.</p>
+<h2 id="authentication-and-authorization">Authentication and Authorization</h2>
+<p>The API implements a layered security model that balances accessibility with protection.</p>
+<h3 id="api-key-management">API Key Management</h3>
+<p>API access requires a bearer token passed in the <code>Authorization</code> header. Tokens are generated through the platform's identity management system and associated with a specific user and role set. Tokens have configurable expiration periods and can be revoked immediately when compromised.</p>
+<pre><code data-lang="bash"># Authenticated request
+curl -H &quot;Authorization: Bearer pk_live_abc123def456&quot; \
+  http://localhost:4004/api/v1/perimeter/discover \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{&quot;domain&quot;: &quot;example.com&quot;}&#39;
+</code></pre>
+<h3 id="role-based-access-control">Role-Based Access Control</h3>
+<p>The RBAC system defines permissions at the endpoint level. Each endpoint specifies the minimum role required for access. The role hierarchy (viewer, operator, admin, supreme) provides progressive access levels. When a request arrives, the <code>APIAuth</code> plug extracts the token, resolves the associated role, and verifies that the role satisfies the endpoint's access requirement.</p>
+<h3 id="token-lifecycle">Token Lifecycle</h3>
+<p>Tokens progress through a defined lifecycle: creation, active use, optional renewal, and eventual expiration or revocation. The API tracks token usage metrics (last used, request count, error rate) to support security auditing and anomaly detection.</p>
+<h2 id="error-handling">Error Handling</h2>
+<p>The API returns structured error responses that provide actionable information for client developers.</p>
+<pre><code data-lang="json">{
+  &quot;error&quot;: {
+    &quot;code&quot;: &quot;VALIDATION_ERROR&quot;,
+    &quot;message&quot;: &quot;Parameter &#39;domain&#39; must be a valid hostname&quot;,
+    &quot;details&quot;: {
+      &quot;parameter&quot;: &quot;domain&quot;,
+      &quot;provided&quot;: &quot;not a domain&quot;,
+      &quot;expected&quot;: &quot;string matching hostname pattern&quot;
+    },
+    &quot;request_id&quot;: &quot;req_abc123&quot;
+  }
+}
+</code></pre>
+<h3 id="http-status-codes">HTTP Status Codes</h3>
+<p>The API uses standard HTTP status codes consistently:</p>
+<table><thead><tr><th>Code</th><th>Meaning</th><th>Usage</th></tr></thead><tbody>
+<tr><td>200</td><td>Success</td><td>Successful operation with response body</td></tr>
+<tr><td>201</td><td>Created</td><td>Resource successfully created</td></tr>
+<tr><td>400</td><td>Bad Request</td><td>Invalid parameters or malformed request</td></tr>
+<tr><td>401</td><td>Unauthorized</td><td>Missing or invalid authentication token</td></tr>
+<tr><td>403</td><td>Forbidden</td><td>Valid token but insufficient permissions</td></tr>
+<tr><td>404</td><td>Not Found</td><td>Endpoint or resource does not exist</td></tr>
+<tr><td>429</td><td>Too Many Requests</td><td>Rate limit exceeded</td></tr>
+<tr><td>500</td><td>Internal Error</td><td>Unexpected server-side failure</td></tr>
+</tbody></table>
+<p>Every error response includes a <code>request_id</code> field that correlates with server-side logs, enabling efficient debugging of reported issues.</p>
+<h2 id="rate-limiting">Rate Limiting</h2>
+<p>The API enforces rate limits to protect platform resources and ensure fair access across consumers.</p>
+<h3 id="per-endpoint-limits">Per-Endpoint Limits</h3>
+<p>Rate limits are configured per endpoint based on the computational cost of the underlying operation. Lightweight operations like health checks and endpoint listing have generous limits. Resource-intensive operations like attack surface discovery have tighter constraints.</p>
+<table><thead><tr><th>Endpoint Category</th><th>Rate Limit</th><th>Burst Allowance</th></tr></thead><tbody>
+<tr><td>Health/Status</td><td>1000/min</td><td>100 burst</td></tr>
+<tr><td>Discovery/Listing</td><td>100/min</td><td>20 burst</td></tr>
+<tr><td>Analysis/Computation</td><td>20/min</td><td>5 burst</td></tr>
+<tr><td>Write Operations</td><td>30/min</td><td>10 burst</td></tr>
+</tbody></table>
+<h3 id="rate-limit-headers">Rate Limit Headers</h3>
+<p>Every response includes standard rate limit headers that inform clients of their current consumption:</p>
+<pre><code>X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 87
+X-RateLimit-Reset: 1707734460
+</code></pre>
+<p>Clients that exceed their rate limit receive a 429 response with a <code>Retry-After</code> header indicating when they can resume making requests.</p>
+<h2 id="openapi-specification-1">OpenAPI Specification</h2>
+<p>The auto-generated OpenAPI 3.0 specification is the API's definitive contract. It is derived entirely from the Elixir source code and is regenerated on each request to ensure accuracy.</p>
+<p>The specification includes complete path definitions with parameter schemas, request body schemas for POST endpoints, response schemas for both success and error cases, authentication scheme definitions, and server information. The specification is valid OpenAPI 3.0 and can be consumed by any OpenAPI-compatible tooling including code generators, documentation platforms, and testing frameworks.</p>
+<pre><code data-lang="bash"># Download and validate the OpenAPI spec
+curl http://localhost:4004/api/openapi -o prismatic-api.json
+
+# Generate a Python client from the spec
+openapi-generator generate -i prismatic-api.json -g python -o ./prismatic-client
+
+# Generate a TypeScript client
+openapi-generator generate -i prismatic-api.json -g typescript-fetch -o ./prismatic-ts-client
+</code></pre>
+<p>The specification's self-generating nature means it never drifts from the implementation. When a developer adds a new public function with a <code>@doc</code> and <code>@spec</code> to a facade module, the OpenAPI specification reflects that addition at the next scanner run without any manual intervention.</p>
+<h2 id="sdk-and-client-libraries">SDK and Client Libraries</h2>
+<p>While the API can be consumed with any HTTP client, the auto-generated OpenAPI specification enables the creation of strongly-typed client libraries for any language with OpenAPI tooling.</p>
+<h3 id="elixir-client">Elixir Client</h3>
+<pre><code data-lang="elixir"># Direct Elixir consumption using standard HTTP client
+defmodule PrismaticClient do
+  @base_url &quot;http://localhost:4004/api/v1&quot;
+
+  @spec discover(String.t(), keyword()) :: {:ok, map()} | {:error, term()}
+  def discover(domain, opts \\ []) do
+    headers = [
+      {&quot;Authorization&quot;, &quot;Bearer #{opts[:token]}&quot;},
+      {&quot;Content-Type&quot;, &quot;application/json&quot;}
+    ]
+
+    body = Jason.encode!(%{domain: domain})
+
+    case HTTPoison.post(&quot;#{@base_url}/perimeter/discover&quot;, body, headers) do
+      {:ok, %{status_code: 200, body: body}} -&gt;
+        {:ok, Jason.decode!(body)}
+
+      {:ok, %{status_code: status, body: body}} -&gt;
+        {:error, {status, Jason.decode!(body)}}
+
+      {:error, reason} -&gt;
+        {:error, reason}
+    end
+  end
+end
+</code></pre>
+<h3 id="curl-examples">curl Examples</h3>
+<pre><code data-lang="bash"># Discover attack surface
+curl -X POST http://localhost:4004/api/v1/perimeter/discover \
+  -H &quot;Authorization: Bearer $API_TOKEN&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{&quot;domain&quot;: &quot;example.com&quot;}&#39;
+
+# Get security rating
+curl http://localhost:4004/api/v1/perimeter/security_rating?domain=example.com \
+  -H &quot;Authorization: Bearer $API_TOKEN&quot;
+
+# List all agents
+curl http://localhost:4004/api/v1/agents/list_agents \
+  -H &quot;Authorization: Bearer $API_TOKEN&quot;
+
+# Check quality score
+curl http://localhost:4004/api/v1/quality/quality_score \
+  -H &quot;Authorization: Bearer $API_TOKEN&quot;
+</code></pre>
+<h3 id="python-client">Python Client</h3>
+<pre><code data-lang="python">import requests
+
+class PrismaticAPI:
+    def __init__(self, base_url=&quot;http://localhost:4004/api/v1&quot;, token=None):
+        self.base_url = base_url
+        self.session = requests.Session()
+        self.session.headers[&quot;Authorization&quot;] = f&quot;Bearer {token}&quot;
+        self.session.headers[&quot;Content-Type&quot;] = &quot;application/json&quot;
+
+    def discover(self, domain):
+        resp = self.session.post(
+            f&quot;{self.base_url}/perimeter/discover&quot;,
+            json={&quot;domain&quot;: domain}
+        )
+        resp.raise_for_status()
+        return resp.json()
+
+    def security_rating(self, domain):
+        resp = self.session.get(
+            f&quot;{self.base_url}/perimeter/security_rating&quot;,
+            params={&quot;domain&quot;: domain}
+        )
+        resp.raise_for_status()
+        return resp.json()
+</code></pre>
+<h2 id="webhooks-and-events">Webhooks and Events</h2>
+<p>The API supports webhook subscriptions for real-time notification of platform events. Consumers register webhook URLs and specify the event types they want to receive. When a matching event occurs, the API delivers a signed JSON payload to the registered URL.</p>
+<h3 id="supported-event-types">Supported Event Types</h3>
+<table><thead><tr><th>Event</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>endpoint.discovered</code></td><td>New endpoint discovered during scanner run</td></tr>
+<tr><td><code>endpoint.removed</code></td><td>Previously discovered endpoint no longer available</td></tr>
+<tr><td><code>perimeter.scan_complete</code></td><td>Attack surface scan completed</td></tr>
+<tr><td><code>quality.gate_result</code></td><td>Quality gate execution completed</td></tr>
+<tr><td><code>agent.status_change</code></td><td>Agent transitioned between states</td></tr>
+</tbody></table>
+<h3 id="webhook-payload-format">Webhook Payload Format</h3>
+<pre><code data-lang="json">{
+  &quot;event&quot;: &quot;perimeter.scan_complete&quot;,
+  &quot;timestamp&quot;: &quot;2026-02-12T14:30:00Z&quot;,
+  &quot;data&quot;: {
+    &quot;domain&quot;: &quot;example.com&quot;,
+    &quot;assets_discovered&quot;: 42,
+    &quot;security_grade&quot;: &quot;B&quot;,
+    &quot;scan_duration_ms&quot;: 3500
+  },
+  &quot;signature&quot;: &quot;sha256=abc123...&quot;
+}
+</code></pre>
+<p>Webhook payloads include an HMAC-SHA256 signature computed from the payload body and a shared secret, allowing consumers to verify payload authenticity and reject tampering attempts.</p>
+<h2 id="lab-integration">Lab Integration</h2>
+<p>The API's auto-discovery mechanism creates a natural integration pathway with the <a href="https://prismatic-reality.com/lab/">Lab</a>. When a Lab experiment graduates to production, its public functions are implemented in the appropriate Prismatic facade module. At the next scanner run (or immediately if a live rescan is triggered), these functions appear as new API endpoints with full documentation and type schemas.</p>
+<p>This integration means that the journey from validated Lab prototype to publicly accessible API endpoint is fully automated. The experiment team does not need to write controller code, define routes, or author OpenAPI annotations. They implement the function with proper <code>@doc</code> and <code>@spec</code> annotations, and the API infrastructure does the rest.</p>
+<p>The <code>endpoint.discovered</code> webhook event notifies interested consumers when new endpoints become available, enabling downstream systems to adapt automatically to expanded API capabilities.</p>
+<h2 id="academy-integration">Academy Integration</h2>
+<p>The API serves as the reference documentation layer for the <a href="https://prismatic-reality.com/academy/">Academy</a>. When the Academy teaches a concept such as epistemic validation or attack surface management, it links to the corresponding API endpoint documentation for precise technical specifications.</p>
+<p>This separation of concerns allows the Academy to focus on teaching why and how concepts work, while the API provides the exact what: parameter names, types, required fields, response formats, and error codes. The Academy teaches understanding; the API provides specification. Together they give learners both the conceptual foundation and the technical reference needed to work effectively with the platform.</p>
+<p>The OpenAPI specification also serves as a practical exercise resource for Academy courses. Learners can import the specification into Postman, Insomnia, or similar tools and interact with the API hands-on while studying the corresponding Academy material.</p>
+<p>The Prismatic API demonstrates that API development does not require a tradeoff between completeness and maintainability. By leveraging Elixir's introspection capabilities, the API achieves both: it is always complete because it discovers everything, and it is always maintainable because there is no separate specification to keep in sync. The source code is the specification.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-12 lg:py-16" x-data="apiFilter()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-4">
+            <!-- Main Content (3/4) -->
+            <div class="lg:col-span-3">
+                <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;agents-list&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('agent registry', 'browse and search the complete registry of 434 aiad agents across 14 operational domains')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Agent Registry</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-green-900/50 text-green-400
+                                ">GET</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Browse and search the complete registry of 434 AIAD agents across 14 operational domains</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;agents-status&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('agent status', 'real-time agent health monitoring, activity metrics, and performance telemetry')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Agent Status</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-green-900/50 text-green-400
+                                ">GET</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Real-time agent health monitoring, activity metrics, and performance telemetry</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;perimeter-discover&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('attack surface discovery', 'domain enumeration, subdomain scanning, and asset fingerprinting for external attack surface mapping')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Attack Surface Discovery</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-blue-900/50 text-blue-400
+                                ">POST</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Domain enumeration, subdomain scanning, and asset fingerprinting for external attack surface mapping</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;authentication&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('authentication &amp; authorization', 'api key management, bearer token lifecycle, role-based access control, and scope enforcement')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Authentication &amp; Authorization</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-gray-700 text-gray-300
+                                ">N&#x2F;A</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">API key management, Bearer token lifecycle, role-based access control, and scope enforcement</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;batch-operations&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('batch api operations', 'bulk endpoint calls, parallel dispatch, transaction boundaries, and result aggregation')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Batch API Operations</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-blue-900/50 text-blue-400
+                                ">POST</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Bulk endpoint calls, parallel dispatch, transaction boundaries, and result aggregation</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;perimeter-compliance&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('compliance assessment', 'nis2 directive and zkb 264&#x2F;2025 sb. compliance assessment from external attack surface data')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Compliance Assessment</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-blue-900/50 text-blue-400
+                                ">POST</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">NIS2 Directive and ZKB 264&#x2F;2025 Sb. compliance assessment from external attack surface data</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;endpoints&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('endpoint discovery', 'auto-discovered endpoint listing with metadata, parameter schemas, and module provenance')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Endpoint Discovery</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-green-900/50 text-green-400
+                                ">GET</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Auto-discovered endpoint listing with metadata, parameter schemas, and module provenance</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;error-handling&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('error handling &amp; response codes', 'standard error response format, http status code semantics, error taxonomy, and troubleshooting guide')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Error Handling &amp; Response Codes</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-gray-700 text-gray-300
+                                ">N&#x2F;A</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Standard error response format, HTTP status code semantics, error taxonomy, and troubleshooting guide</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;dispatch&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('generic dispatch architecture', 'how {app, action} tuples resolve to module function calls via safe_apply with timeout protection')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Generic Dispatch Architecture</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-gray-700 text-gray-300
+                                ">N&#x2F;A</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">How {app, action} tuples resolve to module function calls via safe_apply with timeout protection</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;health&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('health check endpoint', 'system health verification endpoint returning component status, uptime metrics, and platform readiness')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Health Check Endpoint</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-green-900/50 text-green-400
+                                ">GET</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">System health verification endpoint returning component status, uptime metrics, and platform readiness</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;swagger-ui&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('interactive api explorer', 'swagger ui interface for browsing, testing, and experimenting with all prismatic api endpoints')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Interactive API Explorer</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-green-900/50 text-green-400
+                                ">GET</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Swagger UI interface for browsing, testing, and experimenting with all Prismatic API endpoints</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;openapi-spec&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('openapi 3.0 specification', 'auto-generated openapi 3.0 specification derived from elixir @spec type annotations and @doc strings')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">OpenAPI 3.0 Specification</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-green-900/50 text-green-400
+                                ">GET</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Auto-generated OpenAPI 3.0 specification derived from Elixir @spec type annotations and @doc strings</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;rate-limiting&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('rate limiting &amp; throttling', 'per-endpoint rate limits, burst policies, backoff strategies, and throttling headers')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Rate Limiting &amp; Throttling</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-gray-700 text-gray-300
+                                ">N&#x2F;A</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Per-endpoint rate limits, burst policies, backoff strategies, and throttling headers</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;perimeter-rating&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('security rating', 'a-f security grades with numeric scores from 300-900 based on external attack surface analysis')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Security Rating</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-green-900/50 text-green-400
+                                ">GET</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">A-F security grades with numeric scores from 300-900 based on external attack surface analysis</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;webhooks&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('webhook events', 'real-time event notifications for security findings, quality changes, agent activities, and compliance alerts')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-cyan-400 transition-colors font-mono">Webhook Events</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-bold font-mono rounded
+                                bg-blue-900/50 text-blue-400
+                                ">POST</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Real-time event notifications for security findings, quality changes, agent activities, and compliance alerts</p>
+                        
+                    </a>
+                    
+                </div>
+            </div>
+
+            <!-- Right Sidebar (1/4) -->
+            <div class="space-y-6">
+                <!-- Card 1: Section Topics -->
+                <div x-data="{ expanded: true }" class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Section Topics</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-transition class="px-4 pb-4">
+                        <div class="mb-3">
+                            <input type="text" x-model="search" placeholder="Filter endpoints..."
+                                   class="block w-full pl-3 pr-4 py-2 text-xs text-white border border-gray-600 rounded-lg bg-gray-900 focus:ring-cyan-500 focus:border-cyan-500 placeholder-gray-500 font-mono">
+                        </div>
+                        <div class="max-h-[400px] overflow-y-auto space-y-1 pr-1 scrollbar-thin">
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;agents-list&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Agent Registry
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;agents-status&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Agent Status
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;perimeter-discover&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Attack Surface Discovery
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;authentication&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Authentication &amp; Authorization
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;batch-operations&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Batch API Operations
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;perimeter-compliance&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Compliance Assessment
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;endpoints&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Endpoint Discovery
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;error-handling&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Error Handling &amp; Response Codes
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;dispatch&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Generic Dispatch Architecture
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;health&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Health Check Endpoint
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;swagger-ui&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Interactive API Explorer
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;openapi-spec&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                OpenAPI 3.0 Specification
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;rate-limiting&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Rate Limiting &amp; Throttling
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;perimeter-rating&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Security Rating
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;api&#x2F;webhooks&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-cyan-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Webhook Events
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Section Statistics -->
+                <div x-data="{ expanded: true }" class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Section Statistics</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-transition class="px-4 pb-4 space-y-3">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Total Endpoints</span>
+                            <span class="font-bold text-white">15</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Specification</span>
+                            <span class="font-bold text-cyan-400">OpenAPI 3.0</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Gateway Port</span>
+                            <span class="font-bold text-gray-300 font-mono">4004</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Auto-Discovery</span>
+                            <span class="font-bold text-emerald-400">Enabled</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Quick Navigation -->
+                <div x-data="{ expanded: true }" class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Quick Navigation</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-transition class="px-4 pb-4 space-y-1">
+                        <a href="/apps/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">Applications</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">88 umbrella apps whose facades power API endpoints</p>
+                        </a>
+                        <a href="/commands/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">Commands</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">217 slash commands callable through the REST gateway</p>
+                        </a>
+                        <a href="/technologies/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">Technologies</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">Phoenix, OpenApiSpex, and the stack behind the gateway</p>
+                        </a>
+                        <a href="/architecture/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">Architecture</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">System design and auto-introspection architecture patterns</p>
+                        </a>
+                        <a href="/lab/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">Lab</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">Prototype and test new endpoints in the sandbox</p>
+                        </a>
+                    </div>
+                </div>
+
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="/commands/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Commands<span
+                class="ml-auto text-xs text-gray-600">217</span></a>
+        <a href="/architecture/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Architecture</a>
+        <a href="/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        <a href="/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="/technologies/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Technologies</a>
+        <a href="/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+</div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-12 border-t border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid md:grid-cols-2 gap-6">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/" class="p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 transition-all">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">API &rarr; Lab</p>
+                <p class="text-sm text-gray-400">Prototype new endpoints in the Lab sandbox</p>
+            </a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/" class="p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 transition-all">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">API &rarr; Academy</p>
+                <p class="text-sm text-gray-400">Learn the concepts behind each endpoint</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+function apiFilter() {
+    return {
+        search: '',
+        matchesSearch: function(title, description) {
+            if (!this.search) return true;
+            var s = this.search.toLowerCase();
+            return title.includes(s) || description.includes(s);
+        }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (89+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="text-gray-400 hover:text-white transition-colors">Commands (212)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies (44)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Lab</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-gray-400 hover:text-white">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Back to Top + Nav scroll -->
+    <script>
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            var nav = document.querySelector('nav');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+                if (nav && window.scrollY > 20) {
+                    nav.classList.add('border-white/10');
+                    nav.classList.remove('border-white/5');
+                } else if (nav) {
+                    nav.classList.remove('border-white/10');
+                    nav.classList.add('border-white/5');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

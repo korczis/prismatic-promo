@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Meilisearch - Prismatic Platform Architecture</title>
+
+    
+<meta name="description" content="Full-text search engine with sub-50ms response times, typo tolerance, faceted filtering, and real-time index synchronization for the intelligence platform">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;meilisearch&#x2F;">
+<meta property="og:title" content="Meilisearch - Prismatic Platform Architecture">
+<meta property="og:description" content="Full-text search engine with sub-50ms response times, typo tolerance, faceted filtering, and real-time index synchronization for the intelligence platform">
+<meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;meilisearch&#x2F;">
+<meta name="twitter:title" content="Meilisearch - Prismatic Platform Architecture">
+<meta name="twitter:description" content="Full-text search engine with sub-50ms response times, typo tolerance, faceted filtering, and real-time index synchronization for the intelligence platform">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;meilisearch&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https:&#x2F;&#x2F;prismatic-reality.com/favicon.svg">
+    <link rel="apple-touch-icon" href="https:&#x2F;&#x2F;prismatic-reality.com/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/tailwind.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2">
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-1 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Apps</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Agents</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">OSINT</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Architecture</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Tech</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Lab</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Academy</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">API</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-full sm:w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Commands</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Color Teams</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Doctrine</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/registry/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Registry</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Glossary</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/faq/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Header -->
+<section class="bg-gray-900 py-12 lg:py-16 border-b border-gray-700">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com"
+                        class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                            class="ml-1 text-sm font-medium text-gray-400 hover:text-white md:ml-2">Architecture</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-gray-200 md:ml-2">Meilisearch</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Header Card -->
+        <div class="bg-gray-800 rounded-2xl shadow-xl border border-gray-700 overflow-hidden" x-data="{ shown: false }"
+            x-init="setTimeout(() => shown = true, 100)">
+            <div class="p-8">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-6" x-show="shown"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform -translate-y-4"
+                    x-transition:enter-end="opacity-100 transform translate-y-0">
+                    <!-- Icon Badge -->
+                    <div class="flex-shrink-0">
+                        
+                        <div class="w-24 h-24 bg-gray-700 rounded-2xl flex items-center justify-center shadow-lg">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Title & Description -->
+                    <div class="flex-grow">
+                        <h1 class="text-3xl md:text-4xl font-black text-white mb-3">Meilisearch</h1>
+                        <p class="text-lg text-gray-400 leading-relaxed">Full-text search engine with sub-50ms response times, typo tolerance, faceted filtering, and real-time index synchronization for the intelligence platform</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="bg-gray-900 py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-4">
+            <!-- Main Content -->
+            <div class="lg:col-span-3">
+                <article class="prose prose-lg prose-invert max-w-none
+                    prose-headings:text-white
+                    prose-p:text-gray-300
+                    prose-a:text-gray-400
+                    prose-strong:text-white
+                    prose-code:text-gray-400
+                    prose-pre:bg-gray-800
+                    prose-table:text-gray-300
+                    prose-th:text-white
+                    prose-td:border-gray-700">
+                    <h2 id="overview">Overview</h2>
+<p>Meilisearch powers Prismatic Platform's search infrastructure, providing sub-50ms full-text search with typo tolerance, faceted filtering, and real-time index synchronization across the platform's data domains. In an intelligence platform managing hundreds of thousands of assets, agents, documents, and corporate entities, the ability to find the right information instantly is not a convenience feature -- it is an operational necessity.</p>
+<p>The decision to use a dedicated search engine rather than relying solely on <a href="https://prismatic-reality.com/glossary/postgresql/">PostgreSQL's</a> built-in full-text search capabilities was driven by three requirements: sub-50ms response times at scale (PostgreSQL's <code>tsvector</code> approach degrades above 100K documents without careful tuning), typo tolerance (critical for names transliterated between Czech and English alphabets), and faceted filtering (enabling drill-down navigation in the <a href="https://prismatic-reality.com/architecture/phoenix-liveview/">LiveView</a> dashboards). Meilisearch meets all three requirements out of the box, with minimal operational overhead.</p>
+<p>The search subsystem integrates with the platform's <a href="https://prismatic-reality.com/architecture/storage-adapters/">storage adapter layer</a> through a dedicated <a href="https://prismatic-reality.com/apps/prismatic-storage-meilisearch/">Meilisearch adapter</a> and synchronizes with the primary <a href="https://prismatic-reality.com/architecture/postgresql-kuzudb/">PostgreSQL database</a> through an event-driven pipeline that keeps search indexes current within seconds of data changes.</p>
+<h2 id="why-meilisearch-over-alternatives">Why Meilisearch Over Alternatives</h2>
+<p>The search engine landscape is dominated by Elasticsearch, which is the industry default for full-text search. Selecting Meilisearch over Elasticsearch was a deliberate architectural decision based on operational fit.</p>
+<table><thead><tr><th>Criterion</th><th>Meilisearch</th><th>Elasticsearch</th><th>Typesense</th><th>PostgreSQL FTS</th></tr></thead><tbody>
+<tr><td><strong>Deployment complexity</strong></td><td>Single binary</td><td>JVM cluster, Kibana, Logstash</td><td>Single binary</td><td>Built-in</td></tr>
+<tr><td><strong>Memory footprint</strong></td><td>200-500MB</td><td>2-8GB (JVM heap)</td><td>200-500MB</td><td>N/A</td></tr>
+<tr><td><strong>Search latency (10K docs)</strong></td><td>&lt;10ms</td><td>10-50ms</td><td>&lt;10ms</td><td>20-100ms</td></tr>
+<tr><td><strong>Search latency (1M docs)</strong></td><td>&lt;50ms</td><td>50-200ms</td><td>&lt;50ms</td><td>200-2000ms</td></tr>
+<tr><td><strong>Typo tolerance</strong></td><td>Built-in, configurable</td><td>Plugin (phonetic, fuzzy)</td><td>Built-in</td><td>Manual (pg_trgm)</td></tr>
+<tr><td><strong>Faceted filtering</strong></td><td>Native</td><td>Native</td><td>Native</td><td>Manual aggregation</td></tr>
+<tr><td><strong>Real-time indexing</strong></td><td>Yes (sub-second)</td><td>Near-real-time (1s refresh)</td><td>Yes</td><td>Immediate (triggers)</td></tr>
+<tr><td><strong>Operational overhead</strong></td><td>Minimal</td><td>High (cluster management)</td><td>Minimal</td><td>None</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/glossary/elixir/">Elixir</a> ecosystem</strong></td><td>HTTP API (any client)</td><td>elasticsearch-elixir</td><td>HTTP API</td><td><a href="https://prismatic-reality.com/glossary/ecto/">Ecto</a> native</td></tr>
+<tr><td><strong>License</strong></td><td>MIT</td><td>SSPL/Elastic License</td><td>GPL v3</td><td>PostgreSQL License</td></tr>
+</tbody></table>
+<p>Meilisearch was selected because it provides Elasticsearch-class search quality with Typesense-class operational simplicity. For an intelligence platform that already manages <a href="https://prismatic-reality.com/glossary/postgresql/">PostgreSQL</a>, <a href="https://prismatic-reality.com/glossary/kuzudb/">KuzuDB</a>, <a href="https://prismatic-reality.com/apps/prismatic-storage-redis/">Redis</a>, and <a href="https://prismatic-reality.com/glossary/ets/">ETS</a>, adding a JVM-based cluster (Elasticsearch) would create disproportionate operational burden. Meilisearch's single-binary deployment and sub-500MB memory footprint fit the platform's "minimal viable infrastructure" philosophy.</p>
+<p>PostgreSQL's built-in full-text search was rejected not because it is inadequate for simple use cases, but because the platform's search requirements exceed its sweet spot: typo tolerance requires <code>pg_trgm</code> with GIN indexes plus similarity thresholds, which is fragile to configure and slow at scale. Meilisearch handles this natively.</p>
+<h2 id="index-architecture">Index Architecture</h2>
+<p>The platform maintains multiple search indexes, each optimized for its specific data domain. Index configuration includes searchable attributes (which fields to index), filterable attributes (which fields support exact-match filtering), sortable attributes, and custom ranking rules.</p>
+<h3 id="index-configuration">Index Configuration</h3>
+<pre><code data-lang="elixir">defmodule PrismaticSearch.IndexConfig do
+  @moduledoc &quot;&quot;&quot;
+  Centralized search index configuration.
+
+  Defines searchable, filterable, and sortable attributes
+  for each domain index. These settings are applied on
+  index creation and can be updated at runtime.
+  &quot;&quot;&quot;
+
+  @type index_settings :: %{
+    searchableAttributes: [String.t()],
+    filterableAttributes: [String.t()],
+    sortableAttributes: [String.t()],
+    rankingRules: [String.t()],
+    distinctAttribute: String.t() | nil,
+    typoTolerance: map()
+  }
+
+  @spec settings(atom()) :: index_settings()
+  def settings(:agents) do
+    %{
+      searchableAttributes: [
+        &quot;name&quot;,
+        &quot;description&quot;,
+        &quot;commands&quot;,
+        &quot;capabilities&quot;,
+        &quot;domain&quot;
+      ],
+      filterableAttributes: [
+        &quot;type&quot;,
+        &quot;tier&quot;,
+        &quot;status&quot;,
+        &quot;color_team&quot;,
+        &quot;domain&quot;
+      ],
+      sortableAttributes: [
+        &quot;name&quot;,
+        &quot;created_at&quot;,
+        &quot;usage_count&quot;
+      ],
+      rankingRules: [
+        &quot;words&quot;,
+        &quot;typo&quot;,
+        &quot;proximity&quot;,
+        &quot;attribute&quot;,
+        &quot;sort&quot;,
+        &quot;exactness&quot;
+      ],
+      typoTolerance: %{
+        minWordSizeForTypos: %{oneTypo: 4, twoTypos: 8}
+      }
+    }
+  end
+
+  def settings(:assets) do
+    %{
+      searchableAttributes: [
+        &quot;domain&quot;,
+        &quot;ip_addresses&quot;,
+        &quot;technologies&quot;,
+        &quot;services&quot;,
+        &quot;organization_name&quot;
+      ],
+      filterableAttributes: [
+        &quot;security_rating&quot;,
+        &quot;compliance_status&quot;,
+        &quot;asset_type&quot;,
+        &quot;discovered_at&quot;,
+        &quot;organization_id&quot;
+      ],
+      sortableAttributes: [
+        &quot;domain&quot;,
+        &quot;security_score&quot;,
+        &quot;last_scanned&quot;,
+        &quot;risk_score&quot;
+      ],
+      rankingRules: [
+        &quot;words&quot;,
+        &quot;typo&quot;,
+        &quot;proximity&quot;,
+        &quot;attribute&quot;,
+        &quot;sort&quot;,
+        &quot;exactness&quot;,
+        &quot;security_score:desc&quot;
+      ],
+      distinctAttribute: &quot;domain&quot;
+    }
+  end
+
+  def settings(:companies) do
+    %{
+      searchableAttributes: [
+        &quot;name&quot;,
+        &quot;ico&quot;,
+        &quot;registered_address&quot;,
+        &quot;directors&quot;,
+        &quot;legal_form&quot;
+      ],
+      filterableAttributes: [
+        &quot;status&quot;,
+        &quot;legal_form&quot;,
+        &quot;founded_year&quot;,
+        &quot;risk_score&quot;,
+        &quot;region&quot;
+      ],
+      sortableAttributes: [
+        &quot;name&quot;,
+        &quot;founded_date&quot;,
+        &quot;risk_score&quot;
+      ],
+      rankingRules: [
+        &quot;words&quot;,
+        &quot;typo&quot;,
+        &quot;proximity&quot;,
+        &quot;attribute&quot;,
+        &quot;sort&quot;,
+        &quot;exactness&quot;
+      ],
+      typoTolerance: %{
+        # Czech company names need higher typo tolerance
+        minWordSizeForTypos: %{oneTypo: 3, twoTypos: 6}
+      }
+    }
+  end
+end
+</code></pre>
+<h3 id="ranking-rules-and-relevance-tuning">Ranking Rules and Relevance Tuning</h3>
+<p>Meilisearch applies ranking rules in order, using each subsequent rule as a tiebreaker. The default order (<code>words &gt; typo &gt; proximity &gt; attribute &gt; sort &gt; exactness</code>) works well for most queries, but the platform customizes this for specific domains.</p>
+<p>The ranking pipeline operates as follows:</p>
+<ol>
+<li><strong>words</strong>: Documents containing more query words rank higher. A query for "security certificate expired" ranks a document containing all three words above one containing only two.</li>
+<li><strong>typo</strong>: Among documents matching the same number of words, those with fewer typos rank higher. This is critical for Czech name searches where diacritics may be omitted.</li>
+<li><strong>proximity</strong>: Words appearing closer together in the document rank higher. "security certificate" as adjacent words ranks above a document where "security" appears in the title and "certificate" in the footer.</li>
+<li><strong>attribute</strong>: Matches in earlier searchable attributes rank higher. For agents, a match in "name" outranks a match in "capabilities."</li>
+<li><strong>sort</strong>: When an explicit sort is requested, this rule applies the sort order.</li>
+<li><strong>exactness</strong>: Exact matches rank above prefix matches. "archer" outranks "archery."</li>
+</ol>
+<h2 id="client-implementation">Client Implementation</h2>
+<p>The search client provides a typed interface to Meilisearch's HTTP API, with <a href="https://prismatic-reality.com/glossary/connection-pooling/">connection pooling</a>, request batching, and <a href="https://prismatic-reality.com/glossary/telemetry/">telemetry</a> integration.</p>
+<pre><code data-lang="elixir">defmodule PrismaticSearch.Client do
+  @moduledoc &quot;&quot;&quot;
+  Meilisearch client with connection pooling and telemetry.
+
+  All search and indexing operations go through this module,
+  which handles serialization, error mapping, and performance
+  tracking via telemetry events.
+  &quot;&quot;&quot;
+
+  @base_url Application.compile_env(:prismatic_search, :meilisearch_url, &quot;http://localhost:7700&quot;)
+  @api_key Application.compile_env(:prismatic_search, :meilisearch_key, nil)
+
+  @type search_result :: %{
+    hits: [map()],
+    estimatedTotalHits: integer(),
+    processingTimeMs: integer(),
+    facetDistribution: map() | nil
+  }
+
+  @spec search(String.t(), String.t(), keyword()) :: {:ok, search_result()} | {:error, term()}
+  def search(index, query, opts \\ []) do
+    start_time = System.monotonic_time(:microsecond)
+
+    body = %{
+      q: query,
+      limit: Keyword.get(opts, :limit, 20),
+      offset: Keyword.get(opts, :offset, 0),
+      filter: Keyword.get(opts, :filter),
+      facets: Keyword.get(opts, :facets),
+      sort: Keyword.get(opts, :sort),
+      attributesToHighlight: Keyword.get(opts, :highlight, [&quot;*&quot;]),
+      attributesToCrop: Keyword.get(opts, :crop),
+      cropLength: Keyword.get(opts, :crop_length, 200)
+    }
+    |&gt; Enum.reject(fn {_k, v} -&gt; is_nil(v) end)
+    |&gt; Map.new()
+
+    result = post(&quot;/indexes/#{index}/search&quot;, body)
+
+    elapsed = System.monotonic_time(:microsecond) - start_time
+
+    :telemetry.execute(
+      [:prismatic, :search, :query],
+      %{duration_us: elapsed, hits: get_in(result, [:ok, :estimatedTotalHits]) || 0},
+      %{index: index, query_length: String.length(query)}
+    )
+
+    result
+  end
+
+  @spec add_documents(String.t(), [map()], keyword()) :: {:ok, map()} | {:error, term()}
+  def add_documents(index, documents, opts \\ []) do
+    primary_key = Keyword.get(opts, :primary_key)
+    path = &quot;/indexes/#{index}/documents&quot;
+    path = if primary_key, do: &quot;#{path}?primaryKey=#{primary_key}&quot;, else: path
+
+    post(path, documents)
+  end
+
+  @spec delete_document(String.t(), String.t()) :: {:ok, map()} | {:error, term()}
+  def delete_document(index, id) do
+    delete(&quot;/indexes/#{index}/documents/#{id}&quot;)
+  end
+
+  @spec update_settings(String.t(), map()) :: {:ok, map()} | {:error, term()}
+  def update_settings(index, settings) do
+    patch(&quot;/indexes/#{index}/settings&quot;, settings)
+  end
+
+  defp post(path, body) do
+    headers = build_headers()
+
+    case Req.post(&quot;#{@base_url}#{path}&quot;, json: body, headers: headers) do
+      {:ok, %{status: status, body: response}} when status in 200..299 -&gt;
+        {:ok, response}
+
+      {:ok, %{status: status, body: error}} -&gt;
+        {:error, {:meilisearch_error, status, error}}
+
+      {:error, reason} -&gt;
+        {:error, {:connection_error, reason}}
+    end
+  end
+
+  defp build_headers do
+    if @api_key do
+      [{&quot;authorization&quot;, &quot;Bearer #{@api_key}&quot;}]
+    else
+      []
+    end
+  end
+end
+</code></pre>
+<h2 id="real-time-synchronization">Real-Time Synchronization</h2>
+<p>Search indexes must reflect the current state of the platform's data. The synchronization layer uses an event-driven architecture where data changes in <a href="https://prismatic-reality.com/architecture/postgresql-kuzudb/">PostgreSQL</a> trigger index updates through the platform's <a href="https://prismatic-reality.com/architecture/pubsub/">PubSub system</a>.</p>
+<h3 id="event-driven-sync">Event-Driven Sync</h3>
+<pre><code data-lang="elixir">defmodule PrismaticSearch.Sync do
+  @moduledoc &quot;&quot;&quot;
+  Real-time search index synchronization.
+
+  Listens for data change events via PubSub and propagates
+  updates to Meilisearch indexes. Implements batching for
+  bulk operations and immediate sync for individual changes.
+  &quot;&quot;&quot;
+
+  use GenServer
+
+  alias PrismaticSearch.Client
+  alias Phoenix.PubSub
+
+  @pubsub Prismatic.PubSub
+  @batch_size 500
+  @flush_interval 2_000
+
+  def start_link(opts) do
+    GenServer.start_link(__MODULE__, opts, name: __MODULE__)
+  end
+
+  @impl true
+  def init(_opts) do
+    PubSub.subscribe(@pubsub, &quot;data:changes&quot;)
+    schedule_flush()
+    {:ok, %{buffers: %{}, flush_count: 0}}
+  end
+
+  @impl true
+  def handle_info({:entity_created, index, document}, state) do
+    state = buffer_document(state, index, document)
+
+    if buffer_full?(state, index) do
+      state = flush_buffer(state, index)
+      {:noreply, state}
+    else
+      {:noreply, state}
+    end
+  end
+
+  @impl true
+  def handle_info({:entity_updated, index, document}, state) do
+    # Updates use the same add_documents endpoint (upsert semantics)
+    state = buffer_document(state, index, document)
+    {:noreply, state}
+  end
+
+  @impl true
+  def handle_info({:entity_deleted, index, id}, state) do
+    # Deletes are immediate (no batching)
+    Client.delete_document(index, id)
+    {:noreply, state}
+  end
+
+  @impl true
+  def handle_info(:flush, state) do
+    state =
+      state.buffers
+      |&gt; Map.keys()
+      |&gt; Enum.reduce(state, fn index, acc -&gt; flush_buffer(acc, index) end)
+
+    schedule_flush()
+    {:noreply, state}
+  end
+
+  defp buffer_document(state, index, document) do
+    buffer = Map.get(state.buffers, index, [])
+    %{state | buffers: Map.put(state.buffers, index, [document | buffer])}
+  end
+
+  defp buffer_full?(state, index) do
+    length(Map.get(state.buffers, index, [])) &gt;= @batch_size
+  end
+
+  defp flush_buffer(state, index) do
+    buffer = Map.get(state.buffers, index, [])
+
+    if length(buffer) &gt; 0 do
+      :ok = Client.add_documents(index, Enum.reverse(buffer))
+
+      :telemetry.execute(
+        [:prismatic, :search, :sync],
+        %{documents: length(buffer)},
+        %{index: index, operation: :flush}
+      )
+    end
+
+    %{state |
+      buffers: Map.put(state.buffers, index, []),
+      flush_count: state.flush_count + 1
+    }
+  end
+
+  defp schedule_flush do
+    Process.send_after(self(), :flush, @flush_interval)
+  end
+end
+</code></pre>
+<h3 id="full-reindex">Full Reindex</h3>
+<p>For <a href="https://prismatic-reality.com/glossary/disaster-recovery/">disaster recovery</a> or after schema changes, the platform supports full reindexing from PostgreSQL. The reindex process streams records in batches to avoid memory pressure.</p>
+<pre><code data-lang="elixir">defmodule PrismaticSearch.Reindexer do
+  @moduledoc &quot;&quot;&quot;
+  Full reindex from PostgreSQL to Meilisearch.
+
+  Streams records in batches using Ecto&#39;s stream/2 with
+  configurable batch sizes. Emits telemetry for progress
+  tracking during long-running reindex operations.
+  &quot;&quot;&quot;
+
+  import Ecto.Query
+
+  @batch_size 1_000
+
+  @spec reindex(atom()) :: {:ok, %{indexed: integer(), elapsed_ms: integer()}}
+  def reindex(:assets) do
+    start_time = System.monotonic_time(:millisecond)
+
+    count =
+      Asset
+      |&gt; order_by(:id)
+      |&gt; Prismatic.Repo.stream(max_rows: @batch_size)
+      |&gt; Stream.chunk_every(@batch_size)
+      |&gt; Stream.map(fn batch -&gt;
+        documents = Enum.map(batch, &amp;serialize_asset/1)
+        {:ok, _} = PrismaticSearch.Client.add_documents(&quot;assets&quot;, documents)
+
+        :telemetry.execute(
+          [:prismatic, :search, :reindex],
+          %{batch_size: length(documents)},
+          %{index: &quot;assets&quot;}
+        )
+
+        length(documents)
+      end)
+      |&gt; Enum.sum()
+
+    elapsed = System.monotonic_time(:millisecond) - start_time
+    {:ok, %{indexed: count, elapsed_ms: elapsed}}
+  end
+
+  defp serialize_asset(asset) do
+    %{
+      id: asset.id,
+      domain: asset.identifier,
+      asset_type: asset.type,
+      security_rating: asset.security_grade,
+      security_score: asset.risk_score,
+      organization_name: asset.organization.name,
+      technologies: asset.metadata[&quot;technologies&quot;] || [],
+      services: asset.metadata[&quot;services&quot;] || [],
+      last_scanned: DateTime.to_iso8601(asset.last_seen),
+      discovered_at: DateTime.to_iso8601(asset.first_discovered)
+    }
+  end
+end
+</code></pre>
+<h2 id="search-features-in-practice">Search Features in Practice</h2>
+<h3 id="typo-tolerance">Typo Tolerance</h3>
+<p>Typo tolerance is configured per index with word-length thresholds. By default, words of 4+ characters allow one typo, and words of 8+ characters allow two typos. For Czech company names (which tend to be shorter), the platform uses lower thresholds (3/6).</p>
+<pre><code data-lang="elixir"># All queries return the same result -- &quot;Archer Supreme&quot; agent
+PrismaticSearch.Client.search(&quot;agents&quot;, &quot;archar&quot;)     # 1 typo in 6-char word
+PrismaticSearch.Client.search(&quot;agents&quot;, &quot;archer&quot;)     # exact match
+PrismaticSearch.Client.search(&quot;agents&quot;, &quot;archre&quot;)     # transposition
+PrismaticSearch.Client.search(&quot;agents&quot;, &quot;archr&quot;)      # missing character
+
+# Czech company name search with diacritics handling
+PrismaticSearch.Client.search(&quot;companies&quot;, &quot;Ceska sporitelna&quot;)  # missing hacek
+PrismaticSearch.Client.search(&quot;companies&quot;, &quot;Ceska sporitelna&quot;)  # normalized
+</code></pre>
+<p>Meilisearch's typo tolerance algorithm uses a prefix tree (trie) with Levenshtein distance computation. This is fundamentally different from PostgreSQL's <code>pg_trgm</code> approach, which uses trigram similarity. The trie-based approach handles transpositions and missing characters more accurately, while <code>pg_trgm</code> handles substring matches better. For the platform's primary use case (name search), the trie-based approach is superior.</p>
+<h3 id="faceted-search">Faceted Search</h3>
+<p>Faceted search enables drill-down navigation in the <a href="https://prismatic-reality.com/architecture/phoenix-liveview/">LiveView</a> dashboards. Users can search for assets and simultaneously see the distribution of results across <a href="https://prismatic-reality.com/glossary/security-rating/">security rating</a>s, asset types, and compliance statuses.</p>
+<pre><code data-lang="elixir">{:ok, results} = PrismaticSearch.Client.search(&quot;assets&quot;, &quot;example.com&quot;,
+  facets: [&quot;security_rating&quot;, &quot;asset_type&quot;, &quot;compliance_status&quot;],
+  filter: &quot;security_rating = A OR security_rating = B&quot;
+)
+
+# Response includes both hits and facet distribution
+%{
+  &quot;hits&quot; =&gt; [...],
+  &quot;estimatedTotalHits&quot; =&gt; 77,
+  &quot;processingTimeMs&quot; =&gt; 12,
+  &quot;facetDistribution&quot; =&gt; %{
+    &quot;security_rating&quot; =&gt; %{&quot;A&quot; =&gt; 45, &quot;B&quot; =&gt; 32},
+    &quot;asset_type&quot; =&gt; %{&quot;domain&quot; =&gt; 50, &quot;ip&quot; =&gt; 20, &quot;certificate&quot; =&gt; 7},
+    &quot;compliance_status&quot; =&gt; %{&quot;compliant&quot; =&gt; 60, &quot;non_compliant&quot; =&gt; 12, &quot;unknown&quot; =&gt; 5}
+  }
+}
+</code></pre>
+<h3 id="search-result-highlighting">Search Result Highlighting</h3>
+<p>Highlighted search results improve the user experience by showing exactly which terms matched in each result. The platform renders highlights in the LiveView interface using Phoenix's <code>raw/1</code> helper.</p>
+<pre><code data-lang="elixir"># Search results include highlighted matches
+%{
+  &quot;domain&quot; =&gt; &quot;security-scanner.example.com&quot;,
+  &quot;_formatted&quot; =&gt; %{
+    &quot;domain&quot; =&gt; &quot;&lt;em&gt;security&lt;/em&gt;-scanner.&lt;em&gt;example&lt;/em&gt;.com&quot;,
+    &quot;technologies&quot; =&gt; [&quot;nginx&quot;, &quot;&lt;em&gt;security&lt;/em&gt;-headers&quot;]
+  }
+}
+</code></pre>
+<h2 id="liveview-integration">LiveView Integration</h2>
+<p>The search client integrates with <a href="https://prismatic-reality.com/architecture/phoenix-liveview/">Phoenix LiveView</a> for real-time, interactive search experiences. Debounced keystroke handling prevents excessive API calls while maintaining perceived instantaneity.</p>
+<pre><code data-lang="elixir">defmodule PrismaticWeb.AssetSearchLive do
+  @moduledoc &quot;LiveView component for real-time asset search&quot;
+
+  use PrismaticWeb, :live_view
+
+  @debounce_ms 150
+
+  @impl true
+  def mount(_params, _session, socket) do
+    {:ok, assign(socket,
+      query: &quot;&quot;,
+      results: [],
+      facets: %{},
+      filters: %{},
+      total_hits: 0
+    )}
+  end
+
+  @impl true
+  def handle_event(&quot;search&quot;, %{&quot;query&quot; =&gt; query}, socket) do
+    if String.length(query) &gt;= 2 do
+      {:ok, response} = PrismaticSearch.Client.search(&quot;assets&quot;, query,
+        limit: 20,
+        facets: [&quot;security_rating&quot;, &quot;asset_type&quot;],
+        filter: build_filter_string(socket.assigns.filters),
+        highlight: [&quot;domain&quot;, &quot;technologies&quot;, &quot;services&quot;]
+      )
+
+      {:noreply, assign(socket,
+        query: query,
+        results: response[&quot;hits&quot;],
+        facets: response[&quot;facetDistribution&quot;] || %{},
+        total_hits: response[&quot;estimatedTotalHits&quot;]
+      )}
+    else
+      {:noreply, assign(socket, query: query, results: [], facets: %{})}
+    end
+  end
+
+  @impl true
+  def handle_event(&quot;filter&quot;, %{&quot;field&quot; =&gt; field, &quot;value&quot; =&gt; value}, socket) do
+    filters = Map.put(socket.assigns.filters, field, value)
+
+    {:ok, response} = PrismaticSearch.Client.search(&quot;assets&quot;, socket.assigns.query,
+      limit: 20,
+      facets: [&quot;security_rating&quot;, &quot;asset_type&quot;],
+      filter: build_filter_string(filters)
+    )
+
+    {:noreply, assign(socket, filters: filters, results: response[&quot;hits&quot;])}
+  end
+
+  defp build_filter_string(filters) do
+    filters
+    |&gt; Enum.map(fn {field, value} -&gt; &quot;#{field} = &#39;#{value}&#39;&quot; end)
+    |&gt; Enum.join(&quot; AND &quot;)
+    |&gt; case do
+      &quot;&quot; -&gt; nil
+      filter -&gt; filter
+    end
+  end
+end
+</code></pre>
+<h2 id="performance-characteristics-and-benchmarks">Performance Characteristics and Benchmarks</h2>
+<p>All benchmarks measured with Meilisearch 1.6.x on Apple M2 Pro, 32GB RAM.</p>
+<table><thead><tr><th>Metric</th><th>10K Documents</th><th>100K Documents</th><th>1M Documents</th></tr></thead><tbody>
+<tr><td>Search latency (p50)</td><td>3ms</td><td>12ms</td><td>38ms</td></tr>
+<tr><td>Search latency (p99)</td><td>8ms</td><td>28ms</td><td>65ms</td></tr>
+<tr><td>Indexing speed</td><td>15K docs/sec</td><td>12K docs/sec</td><td>10K docs/sec</td></tr>
+<tr><td>Index size (disk)</td><td>15MB</td><td>120MB</td><td>500MB</td></tr>
+<tr><td>Memory usage</td><td>180MB</td><td>350MB</td><td>480MB</td></tr>
+<tr><td>Faceted search overhead</td><td>+2ms</td><td>+5ms</td><td>+12ms</td></tr>
+</tbody></table>
+<p>The sub-50ms p50 latency at 1M documents meets the platform's SLA for interactive search. The p99 at 65ms is acceptable for dashboard use but may require optimization (query caching, index sharding) if the dataset grows beyond 5M documents.</p>
+<h3 id="indexing-pipeline-performance">Indexing Pipeline Performance</h3>
+<table><thead><tr><th>Operation</th><th>Throughput</th><th>Latency</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Single document upsert</td><td>N/A</td><td>3ms (async task creation)</td><td>Returns task ID immediately</td></tr>
+<tr><td>Batch upsert (1K docs)</td><td>12K docs/sec</td><td>80ms</td><td>Optimal batch size</td></tr>
+<tr><td>Batch upsert (10K docs)</td><td>10K docs/sec</td><td>1.0s</td><td>Memory-constrained above this</td></tr>
+<tr><td>Full reindex (100K docs)</td><td>11K docs/sec</td><td>9.1s</td><td>Streamed from PostgreSQL</td></tr>
+<tr><td>Settings update</td><td>N/A</td><td>50ms</td><td>Triggers background re-ranking</td></tr>
+</tbody></table>
+<h2 id="comparison-with-elasticsearch">Comparison with Elasticsearch</h2>
+<p>For teams considering Elasticsearch as an alternative, the key tradeoffs are:</p>
+<table><thead><tr><th>Dimension</th><th>Meilisearch</th><th>Elasticsearch</th></tr></thead><tbody>
+<tr><td><strong>Search quality</strong></td><td>Excellent for user-facing search</td><td>Superior for log analytics, complex aggregations</td></tr>
+<tr><td><strong>Operational cost</strong></td><td>Single binary, &lt;500MB RAM</td><td>JVM cluster, 2-8GB RAM per node</td></tr>
+<tr><td><strong>Query language</strong></td><td>Simple JSON API</td><td>Full Query DSL (powerful but complex)</td></tr>
+<tr><td><strong>Aggregation</strong></td><td>Basic facets only</td><td>Full aggregation framework (histograms, percentiles, nested)</td></tr>
+<tr><td><strong>Geospatial</strong></td><td>Basic geo filtering</td><td>Full geo queries (shapes, distance, bounding box)</td></tr>
+<tr><td><strong>Horizontal scaling</strong></td><td>Limited (single node)</td><td>Excellent (sharding, replication)</td></tr>
+<tr><td><strong>Learning curve</strong></td><td>Minimal (~1 hour to productive)</td><td>Significant (~1 week to productive)</td></tr>
+<tr><td><strong>Index management</strong></td><td>Automatic</td><td>Manual (mapping, analyzers, tokenizers)</td></tr>
+</tbody></table>
+<p>Meilisearch wins for the platform's primary use case (interactive, user-facing search) but would not be suitable for log analytics or complex aggregation workloads. Those workloads are handled by <a href="https://prismatic-reality.com/architecture/postgresql-kuzudb/">PostgreSQL</a> or dedicated analytics tools.</p>
+<h2 id="integration-with-platform-components">Integration with Platform Components</h2>
+<ul>
+<li><strong><a href="https://prismatic-reality.com/architecture/postgresql-kuzudb/">PostgreSQL</a></strong>: Source of truth for all indexed data. Synchronization via PubSub events.</li>
+<li><strong><a href="https://prismatic-reality.com/architecture/storage-adapters/">Storage adapters</a></strong>: Meilisearch adapter implements the platform's <code>AdapterBehaviour</code> for unified query interface.</li>
+<li><strong><a href="https://prismatic-reality.com/architecture/telemetry/">Telemetry</a></strong>: All search and indexing operations emit telemetry events for performance monitoring.</li>
+<li><strong><a href="https://prismatic-reality.com/architecture/phoenix-liveview/">LiveView</a></strong>: Real-time search interface with debounced keystroke handling and faceted filtering.</li>
+<li><strong><a href="https://prismatic-reality.com/architecture/ollama/">Local AI (Ollama)</a></strong>: Semantic search enrichment using local LLM embeddings for query expansion without exposing queries to external APIs.</li>
+<li><strong><a href="https://prismatic-reality.com/apps/prismatic-perimeter/">Perimeter EASM</a></strong>: Asset search powers the <a href="https://prismatic-reality.com/glossary/attack-surface/">attack surface</a> exploration interface.</li>
+<li><strong><a href="https://prismatic-reality.com/apps/prismatic-agents/">Agent registry</a></strong>: Agent discovery search enables finding the right agent for a given task.</li>
+</ul>
+<h2 id="operational-considerations">Operational Considerations</h2>
+<h3 id="backup-and-recovery">Backup and Recovery</h3>
+<p>Meilisearch maintains its indexes on disk at a configurable path. The platform backs up indexes alongside PostgreSQL backups. In case of index corruption, a full reindex from PostgreSQL restores the search service within minutes (proportional to data volume at ~10K docs/sec).</p>
+<h3 id="security">Security</h3>
+<p>Meilisearch supports API key authentication with fine-grained permissions (search-only keys, admin keys, tenant-scoped keys). The platform uses search-only keys for the LiveView frontend and admin keys only for the synchronization service. Meilisearch binds to localhost only; external access is proxied through the platform's <a href="https://prismatic-reality.com/glossary/api-gateway/">API gateway</a>.</p>
+<h3 id="monitoring">Monitoring</h3>
+<p>The <a href="https://prismatic-reality.com/architecture/telemetry/">telemetry system</a> tracks search latency, indexing throughput, and error rates. Alerts fire when search p99 latency exceeds 100ms or when the synchronization backlog exceeds 1,000 pending documents, enabling proactive capacity management before users notice degradation.</p>
+
+                </article>
+
+                <!-- Related Content -->
+                <div class="mt-16 pt-8 border-t border-gray-700">
+                    <h2 class="text-2xl font-bold text-white mb-6">Related Content</h2>
+                    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                            class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                            <h3 class="font-bold text-white mb-1">Applications</h3>
+                            <p class="text-sm text-gray-400">89 umbrella apps powering the
+                                Prismatic Platform ecosystem.</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                            class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                            <h3 class="font-bold text-white mb-1">Agent Ecosystem</h3>
+                            <p class="text-sm text-gray-400">430 autonomous agents across 14
+                                specialized domains.</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                            class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                            <h3 class="font-bold text-white mb-1">Color Teams</h3>
+                            <p class="text-sm text-gray-400">6 adversarial-defensive security teams with 20 specialized
+                                agents.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Back Button -->
+                <div class="mt-8 pt-8 border-t border-gray-700">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                        class="inline-flex items-center px-6 py-3 text-sm font-semibold text-gray-950 bg-white rounded-xl focus:ring-4 focus:ring-white/20 transition-all shadow-lg hover:shadow-xl">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Back to Architecture
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+
+                <!-- 1. Architecture Overview (expanded by default) -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6"
+                    x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded"
+                        class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors focus:outline-none focus:bg-gray-750">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Architecture Overview</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                        <dl class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <dt class="text-xs text-gray-400">Total Components</dt>
+                                <dd class="text-xs font-semibold text-emerald-400">6,652 modules</dd>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <dt class="text-xs text-gray-400">Umbrella Apps</dt>
+                                <dd class="text-xs font-semibold text-emerald-400">99</dd>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <dt class="text-xs text-gray-400">Quality Score</dt>
+                                <dd class="text-xs font-semibold text-emerald-400">100/100</dd>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <dt class="text-xs text-gray-400">Evolution</dt>
+                                <dd class="text-xs font-semibold text-emerald-400">Gen 18</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <!-- 2. Related Articles (expanded by default) -->
+                
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6"
+                    x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded"
+                        class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors focus:outline-none focus:bg-gray-750">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Related Articles (12)</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                        <ul class="space-y-1">
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;phoenix-liveview&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Phoenix LiveView
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;postgresql-kuzudb&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    PostgreSQL + KuzuDB
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;ollama&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Local AI (Ollama)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;event-sourcing&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Event Sourcing
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;supervision-trees&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Supervision Trees
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;storage-adapters&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Storage Adapters
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;umbrella-apps&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Umbrella Architecture
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;meilisearch&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-emerald-400 font-semibold bg-emerald-900/20">
+                                    Meilisearch
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;nabla-framework&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    NABLA Framework
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;pubsub&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Phoenix PubSub
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;telemetry&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Telemetry &amp; Metrics
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;graphql&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    GraphQL API
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <!-- Quick Navigation Card -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6" x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors focus:outline-none focus:bg-gray-750">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Quick Navigation</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                        <nav class="space-y-1">
+                            <a href="/agents/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><span>Agents</span></a>
+                            <a href="/capabilities/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0"></span><span>Capabilities</span></a>
+                            <a href="/apps/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><span>Apps</span></a>
+                            <a href="/technologies/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></span><span>Technologies</span></a>
+                            <a href="/glossary/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0"></span><span>Glossary</span></a>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Related Glossary Terms -->
+                
+                <!-- Default Architecture Glossary -->
+                <div class="bg-gray-800/50 rounded-xl border border-white/5 overflow-hidden mb-6" x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-700/50 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                            </svg>
+                            <span class="text-sm font-semibold text-white uppercase tracking-wider">Related Glossary</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            <a href="/glossary/elixir/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Elixir</a>
+                            <a href="/glossary/otp/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">OTP</a>
+                            <a href="/glossary/beam/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">BEAM</a>
+                            <a href="/glossary/phoenix/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Phoenix</a>
+                            <a href="/glossary/supervision-tree/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Supervision Tree</a>
+                            <a href="/glossary/umbrella-project/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Umbrella Project</a>
+                            <a href="/glossary/event-sourcing/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Event Sourcing</a>
+                            <a href="/glossary/ets/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">ETS</a>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="/commands/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Commands<span
+                class="ml-auto text-xs text-gray-600">217</span></a>
+        
+        <a href="/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        <a href="/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="/technologies/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Technologies</a>
+        <a href="/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (89+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="text-gray-400 hover:text-white transition-colors">Commands (212)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies (44)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Lab</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-gray-400 hover:text-white">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Back to Top + Nav scroll -->
+    <script>
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            var nav = document.querySelector('nav');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+                if (nav && window.scrollY > 20) {
+                    nav.classList.add('border-white/10');
+                    nav.classList.remove('border-white/5');
+                } else if (nav) {
+                    nav.classList.remove('border-white/10');
+                    nav.classList.add('border-white/5');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

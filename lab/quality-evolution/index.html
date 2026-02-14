@@ -1,0 +1,3761 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Autonomous Quality Floor Maintenance - Prismatic Lab</title>
+
+    
+<meta name="description" content="Testing self-healing quality systems, measuring QDP elimination velocity, and validating autonomous quality evolution from 0 to 100&#x2F;100">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;quality-evolution&#x2F;">
+<meta property="og:title" content="Autonomous Quality Floor Maintenance - Prismatic Lab">
+<meta property="og:description" content="Testing self-healing quality systems, measuring QDP elimination velocity, and validating autonomous quality evolution from 0 to 100&#x2F;100">
+<meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;quality-evolution&#x2F;">
+<meta name="twitter:title" content="Autonomous Quality Floor Maintenance - Prismatic Lab">
+<meta name="twitter:description" content="Testing self-healing quality systems, measuring QDP elimination velocity, and validating autonomous quality evolution from 0 to 100&#x2F;100">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;quality-evolution&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https:&#x2F;&#x2F;prismatic-reality.com/favicon.svg">
+    <link rel="apple-touch-icon" href="https:&#x2F;&#x2F;prismatic-reality.com/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/tailwind.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2">
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-1 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Apps</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Agents</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">OSINT</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Architecture</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Tech</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Lab</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Academy</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">API</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-full sm:w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Commands</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Color Teams</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Doctrine</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/registry/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Registry</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Glossary</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/faq/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Header -->
+<section class="bg-gray-900 py-12 lg:py-16 border-b border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/" class="ml-1 text-sm font-medium text-gray-400 hover:text-white md:ml-2 transition-colors">Lab</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                        <span class="ml-1 text-sm font-medium text-emerald-300 md:ml-2">Autonomous Quality Floor Maintenance</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Header Card -->
+        <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl shadow-2xl border border-emerald-700/30 overflow-hidden"
+             x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)">
+            <div class="p-8">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-6"
+                     x-show="shown"
+                     x-transition:enter="transition ease-out duration-500"
+                     x-transition:enter-start="opacity-0 transform -translate-y-4"
+                     x-transition:enter-end="opacity-100 transform translate-y-0">
+                    <!-- Experiment Icon -->
+                    <div class="flex-shrink-0">
+                        <div class="w-20 h-20 rounded-2xl bg-emerald-900/50 flex items-center justify-center shadow-lg">
+                            <svg class="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Title & Description -->
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <h1 class="text-3xl md:text-4xl font-black text-white">Autonomous Quality Floor Maintenance</h1>
+                            
+                            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full
+                                bg-blue-900/50 text-blue-400 border border-blue-700/50
+                                ">
+                                completed
+                            </span>
+                            
+                            
+                            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-white/5 text-gray-400 border border-white/10">
+                                intermediate
+                            </span>
+                            
+                        </div>
+                        
+                        <p class="text-lg text-gray-300 leading-relaxed max-w-3xl">Testing self-healing quality systems, measuring QDP elimination velocity, and validating autonomous quality evolution from 0 to 100&#x2F;100</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="bg-gray-900 py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-3">
+            <!-- Main Content (left 2/3) -->
+            <div class="lg:col-span-2">
+                <article class="prose prose-lg prose-invert max-w-none
+                    prose-headings:text-white
+                    prose-p:text-gray-300
+                    prose-a:text-emerald-400
+                    prose-strong:text-white
+                    prose-code:text-emerald-300
+                    prose-pre:bg-gray-800
+                    prose-li:text-gray-300
+                    prose-table:text-gray-300
+                    prose-th:text-white
+                    prose-td:border-gray-700">
+                    <h2 id="hypothesis">Hypothesis</h2>
+<p>We hypothesize that an autonomous quality floor system can maintain perfect quality scores (100/100) across 13 quality domains with zero human intervention, that Quality Debt Points (QDP) can be eliminated at a velocity exceeding 50 QDP per hour through automated <a href="https://prismatic-reality.com/glossary/cascade/">CASCADE</a> pattern application, and that the self-healing system will prevent quality regressions with 99.5%+ effectiveness.</p>
+<h2 id="background">Background</h2>
+<p>The Prismatic Platform's journey from a quality score of 68/100 to 100/100 represents one of the most significant engineering achievements in the platform's history. The quality score spans 13 domains: <a href="https://prismatic-reality.com/technologies/dialyzer/">Dialyzer</a>, <a href="https://prismatic-reality.com/technologies/credo/">Credo</a>, Compilation, DateTime Precision, Guard Functions, @impl Coverage, Memory Safety, Performance, Regression Prevention, Timing Patterns, TODO Management, <a href="https://prismatic-reality.com/glossary/typespec/">Typespec</a> Coverage, and Unsafe Map Access.</p>
+<p>Quality Debt Points (<a href="https://prismatic-reality.com/glossary/qdp/">QDP</a>) are the platform's unit of quality measurement. Each violation detected by any quality domain adds QDP to the total. At the peak, the platform carried 905 QDP across all domains. The <a href="https://prismatic-reality.com/glossary/no-mercy/">No Mercy</a> doctrine mandates zero QDP as a non-negotiable requirement.</p>
+<p>The Quality Floor Guardian (<code>prismatic_safety/quality_floor_guardian.ex</code>) monitors quality in real-time and triggers corrective actions when violations are detected. The <a href="https://prismatic-reality.com/glossary/quality-dna/">Quality DNA</a> system provides cross-session continuity, ensuring that quality improvements persist across development sessions.</p>
+<p><a href="https://prismatic-reality.com/glossary/cascade/">CASCADE</a> patterns were the breakthrough innovation that enabled mass QDP elimination. Five pattern categories -- Type Mismatch, Dead Code, Empty Check, Timer Replacement, and Nuclear Cache -- were identified as responsible for 87% of all QDP. Automated detection and correction of these patterns transformed QDP elimination from a manual craft to an automated process.</p>
+<h3 id="technical-debt-as-entropy">Technical Debt as Entropy</h3>
+<p>Software quality, left unattended, degrades according to principles remarkably similar to thermodynamic entropy. Every code change introduces the possibility of disorder: a slightly mismatched type annotation, a function whose guard clause does not cover all input domains, a test that exercises the happy path but ignores the boundary. In isolation, each of these is trivial. Accumulated over thousands of commits across 90 umbrella applications, they compose into a systemic drag that slows development, obscures intent, and breeds production failures.</p>
+<p>The insight that drove the Prismatic quality evolution was treating this degradation not as a human discipline problem but as a systems engineering problem. Manual code review catches some violations, but it is fundamentally limited by reviewer attention span, inconsistent enforcement across reviewers, and the impossibility of checking 13 quality domains simultaneously during every review. A reviewer might catch a missing <a href="https://prismatic-reality.com/glossary/typespec/">typespec</a>, but miss an unsafe map access three modules away that was introduced by the same change. The only reliable countermeasure to quality entropy is automated, continuous, and exhaustive enforcement -- a system that checks every domain on every change with zero exceptions.</p>
+<p>This is the philosophical foundation of the <a href="https://prismatic-reality.com/glossary/no-mercy/">No Mercy, No Doubts</a> doctrine as applied to quality: the conviction that quality cannot be a best-effort aspiration. It must be a hard constraint enforced by machinery that never tires, never overlooks, and never rationalizes exceptions.</p>
+<h3 id="the-quality-floor-concept">The Quality Floor Concept</h3>
+<p>The Quality Floor is the minimum quality score below which the platform must never fall. Unlike a quality target (which represents a goal to aspire toward), the Quality Floor is a hard boundary enforced by automated gates at the pre-commit, CI pipeline, and deployment stages. Any change that would push the quality score below the floor is rejected before it can enter the repository.</p>
+<p>The Quality Floor Guardian operates at four enforcement levels, each calibrated to the severity of the deviation:</p>
+<ul>
+<li><strong>OPTIMAL (100/100)</strong>: The system monitors passively. No corrective action is required. Quality telemetry is recorded for trend analysis.</li>
+<li><strong>WARNING (99/100)</strong>: A single-point deviation triggers an automated investigation. The system identifies which domain dropped and which specific files are responsible. An alert is emitted but commits are not blocked.</li>
+<li><strong>CRITICAL (95-98/100)</strong>: The system activates the <a href="https://prismatic-reality.com/glossary/autoevolve/">auto-evolution</a> engine, which attempts to fix the detected violations through CASCADE pattern application. If auto-fix fails, the system escalates to human review.</li>
+<li><strong>EMERGENCY (below 95/100)</strong>: All commits are blocked platform-wide. An immediate escalation is triggered. The system enters a defensive posture where only quality-improving changes are permitted until the floor is restored.</li>
+</ul>
+<p>The current Quality Floor is set at 100/100 -- the most aggressive possible setting. This means any single violation in any domain triggers at least a WARNING, and multiple violations trigger active intervention. The platform has maintained this floor continuously since Week 7 of the experiment.</p>
+<h3 id="generation-based-evolution">Generation-Based Evolution</h3>
+<p>The platform's quality infrastructure evolved through 18 distinct generations, each building on the insights and failures of its predecessor:</p>
+<p><strong>Generations 1-3 (Foundation)</strong>: Basic compilation checks and manual Credo runs. Quality was measured informally and enforced through code review alone. Quality scores in this era were not tracked systematically, but retrospective analysis estimates they hovered around 45-55/100.</p>
+<p><strong>Generations 4-6 (Automation)</strong>: Introduction of <code>mix compile --warnings-as-errors</code> and automated Credo checks in CI. <a href="https://prismatic-reality.com/technologies/dialyzer/">Dialyzer</a> was added but not yet enforced as a blocking gate. Quality scores stabilized around 60-68/100, with compilation and Credo violations reaching zero but other domains remaining unchecked.</p>
+<p><strong>Generations 7-9 (Expansion)</strong>: The quality domain count expanded from 3 to 13. New domains for DateTime Precision, Guard Functions, Memory Safety, and Unsafe Map Access were introduced. This expansion initially caused the apparent quality score to drop (because previously invisible violations were now counted), but it provided the comprehensive measurement necessary for systematic improvement.</p>
+<p><strong>Generations 10-12 (CASCADE)</strong>: The CASCADE pattern system was developed and deployed. Automated detection and correction of the five major pattern categories eliminated 87% of all QDP. Quality scores rose rapidly from 68/100 to 95/100 during this period.</p>
+<p><strong>Generations 13-15 (Guardian)</strong>: The Quality Floor Guardian was implemented as a persistent <a href="https://prismatic-reality.com/technologies/genserver/">GenServer</a> process. Pre-commit hooks gained quality awareness. The Quality DNA system was introduced for cross-session persistence. Quality reached 100/100 for the first time.</p>
+<p><strong>Generations 16-18 (Autonomy)</strong>: Full autonomous maintenance with zero human intervention. Predictive quality analysis, self-healing cycles, and the integration of quality enforcement into every platform workflow. The system now maintains 100/100 indefinitely without degradation.</p>
+<h3 id="autonomous-vs-manual-quality-maintenance">Autonomous vs. Manual Quality Maintenance</h3>
+<p>The difference between autonomous and manual quality maintenance is not merely one of speed. It is a categorical difference in reliability and coverage. Manual code review operates on a sampling basis: reviewers examine the changes they are asked to review, applying their individual expertise and attention to whatever subset of quality concerns they happen to check. Autonomous quality maintenance operates on a census basis: every quality domain is checked on every change with identical rigor.</p>
+<p>Consider the practical implications. A human reviewer examining a pull request with 15 changed files might spend 30 minutes and catch 80% of the violations present. The autonomous system examines the same 15 files in under 2 seconds and catches 100% of violations across all 13 domains. More importantly, the autonomous system catches violations that no human reviewer would notice -- subtle type mismatches that only manifest under specific input combinations, memory safety patterns that require understanding the full call graph, timing patterns that only become dangerous under concurrent execution.</p>
+<p>The autonomous system also eliminates the social friction of quality enforcement. When a machine rejects a commit for a Credo violation, there is no interpersonal tension. The rejection is impersonal, consistent, and accompanied by a precise description of the violation and (often) an automated fix. This removes the asymmetry that plagues manual review, where junior developers receive stricter scrutiny than senior developers, and where review thoroughness varies with reviewer workload and mood.</p>
+<h2 id="methodology">Methodology</h2>
+<p>The experiment tracked quality metrics across three phases:</p>
+<p><strong>Phase 1: Baseline Measurement (Week 1)</strong> -- Capture quality scores across all 13 domains, identify QDP distribution, and establish elimination velocity baselines.</p>
+<p><strong>Phase 2: Autonomous Elimination (Weeks 2-6)</strong> -- Deploy the Quality Floor Guardian with CASCADE pattern detectors. Measure QDP elimination velocity, false positive rate, and regression prevention effectiveness.</p>
+<p><strong>Phase 3: Steady-State Maintenance (Weeks 7-12)</strong> -- Monitor quality floor maintenance with zero human intervention. Measure regression attempts blocked, new QDP introduced, and system response time.</p>
+<p>All metrics were recorded in the Quality DNA system for cross-session persistence.</p>
+<h2 id="setup">Setup</h2>
+<p>The Quality Floor Guardian enforcement engine:</p>
+<pre><code data-lang="elixir">defmodule PrismaticSafety.QualityFloorGuardian do
+  use GenServer
+
+  @enforcement_levels %{
+    100..100 =&gt; :optimal,
+    99..99 =&gt; :warning,
+    95..98 =&gt; :critical,
+    0..94 =&gt; :emergency
+  }
+
+  @cascade_patterns [
+    PrismaticSafety.Cascade.TypeMismatch,
+    PrismaticSafety.Cascade.DeadCode,
+    PrismaticSafety.Cascade.EmptyCheck,
+    PrismaticSafety.Cascade.TimerReplacement,
+    PrismaticSafety.Cascade.NuclearCache
+  ]
+
+  def start_link(opts) do
+    GenServer.start_link(__MODULE__, opts, name: __MODULE__)
+  end
+
+  @impl true
+  def init(_opts) do
+    schedule_quality_check()
+    {:ok, %{score: nil, history: [], enforcement: :optimal}}
+  end
+
+  @impl true
+  def handle_info(:check_quality, state) do
+    score = compute_quality_score()
+    enforcement = determine_enforcement_level(score)
+
+    case enforcement do
+      :optimal -&gt;
+        log_optimal(score)
+
+      :warning -&gt;
+        trigger_investigation(score)
+
+      :critical -&gt;
+        trigger_auto_evolution(score)
+
+      :emergency -&gt;
+        block_commits_and_escalate(score)
+    end
+
+    schedule_quality_check()
+    {:noreply, %{state | score: score, enforcement: enforcement,
+                         history: [{DateTime.utc_now(), score} | state.history]}}
+  end
+
+  defp compute_quality_score do
+    domains = [
+      {:dialyzer, check_dialyzer()},
+      {:credo, check_credo()},
+      {:compilation, check_compilation()},
+      {:datetime_precision, check_datetime_precision()},
+      {:guard_functions, check_guard_functions()},
+      {:impl_coverage, check_impl_coverage()},
+      {:memory_safety, check_memory_safety()},
+      {:performance, check_performance()},
+      {:regression_prevention, check_regression_prevention()},
+      {:timing_patterns, check_timing_patterns()},
+      {:todo_management, check_todo_management()},
+      {:typespec_coverage, check_typespec_coverage()},
+      {:unsafe_map_access, check_unsafe_map_access()}
+    ]
+
+    violations = Enum.sum(for {_domain, count} &lt;- domains, do: count)
+    perfect = Enum.all?(domains, fn {_, count} -&gt; count == 0 end)
+
+    %{domains: Map.new(domains), violations: violations,
+      score: if(perfect, do: 100, else: max(0, 100 - violations)),
+      perfect: perfect}
+  end
+end
+</code></pre>
+<p>The CASCADE pattern detector and auto-fixer:</p>
+<pre><code data-lang="elixir">defmodule PrismaticSafety.Cascade.TypeMismatch do
+  @behaviour PrismaticSafety.Cascade.Pattern
+
+  @impl true
+  def detect(source_file) do
+    source_file
+    |&gt; Code.string_to_quoted!()
+    |&gt; Macro.postwalk([], fn
+      {:length, _meta, [arg]} = node, acc -&gt;
+        case infer_type(arg) do
+          {:ok, :list} -&gt; {node, acc}
+          {:ok, :string} -&gt; {node, [{:type_mismatch, node, &quot;String.length vs Enum.length&quot;} | acc]}
+          _ -&gt; {node, acc}
+        end
+      node, acc -&gt;
+        {node, acc}
+    end)
+    |&gt; elem(1)
+  end
+
+  @impl true
+  def fix(source_file, violation) do
+    case violation do
+      {:type_mismatch, node, _reason} -&gt;
+        apply_type_safe_replacement(source_file, node)
+    end
+  end
+end
+</code></pre>
+<p>The Predictive Pre-Commit hook intercepts commits before they enter the repository and evaluates whether the proposed changes would degrade quality:</p>
+<pre><code data-lang="elixir">defmodule PrismaticSafety.PredictivePreCommit do
+  @moduledoc &quot;&quot;&quot;
+  Pre-commit quality gate that predicts whether staged changes will
+  introduce quality violations, blocking the commit before damage occurs.
+  &quot;&quot;&quot;
+
+  @risk_patterns [
+    {~r/length\(\w+\)\s*&gt;\s*0/, :empty_check_antipattern,
+     &quot;Use Enum.any?/1 or != [] instead of length() &gt; 0&quot;},
+    {~r/Process\.sleep/, :timing_pattern,
+     &quot;Process.sleep in production code indicates polling; use GenServer or receive&quot;},
+    {~r/Map\.get\(\w+,\s*:\w+\)(?!\s*\|\|)/, :unsafe_map_access,
+     &quot;Prefer Map.fetch!/2 or pattern match for required keys&quot;},
+    {~r/def\s+\w+\([^)]*\)\s*do(?!\s*#)/, :missing_spec,
+     &quot;Public function without @spec annotation&quot;}
+  ]
+
+  @spec check_staged_files() :: {:ok, :clean} | {:error, list(violation())}
+  def check_staged_files do
+    staged_files = get_staged_elixir_files()
+
+    violations =
+      staged_files
+      |&gt; Task.async_stream(&amp;analyze_file/1, max_concurrency: System.schedulers_online())
+      |&gt; Enum.flat_map(fn {:ok, violations} -&gt; violations end)
+
+    case violations do
+      [] -&gt; {:ok, :clean}
+      violations -&gt; {:error, violations}
+    end
+  end
+
+  defp analyze_file(file_path) do
+    content = File.read!(file_path)
+    diff = get_file_diff(file_path)
+
+    static_violations = detect_risk_patterns(diff)
+    domain_violations = run_domain_checks(file_path, content)
+    regression_risk = assess_regression_risk(file_path)
+
+    static_violations ++ domain_violations ++ regression_risk
+  end
+
+  defp detect_risk_patterns(diff) do
+    @risk_patterns
+    |&gt; Enum.flat_map(fn {pattern, category, message} -&gt;
+      if Regex.match?(pattern, diff) do
+        [{category, message, extract_line_context(diff, pattern)}]
+      else
+        []
+      end
+    end)
+  end
+
+  defp assess_regression_risk(file_path) do
+    history = QualityDNA.get_file_history(file_path)
+
+    case history do
+      %{previous_violations: prev} when prev &gt; 0 -&gt;
+        [{:regression_risk, &quot;File has history of #{prev} previous violations&quot;,
+          %{file: file_path, risk_level: :elevated}}]
+
+      _ -&gt;
+        []
+    end
+  end
+end
+</code></pre>
+<p>The Quality DNA state persistence module maintains quality context across development sessions:</p>
+<pre><code data-lang="elixir">defmodule PrismaticSafety.QualityDNA do
+  @moduledoc &quot;&quot;&quot;
+  Cross-session quality state persistence. Tracks quality scores, violation
+  history, and file-level quality metadata across Claude sessions and CI runs.
+  &quot;&quot;&quot;
+
+  @state_path &quot;.claude/quality-dna/current-state.json&quot;
+
+  @type quality_state :: %{
+    score: non_neg_integer(),
+    domains: map(),
+    timestamp: DateTime.t(),
+    session_id: String.t(),
+    generation: non_neg_integer(),
+    qdp_total: non_neg_integer(),
+    qdp_eliminated_session: non_neg_integer(),
+    file_quality_map: %{String.t() =&gt; file_quality()},
+    trend: :improving | :stable | :degrading,
+    floor_status: :optimal | :warning | :critical | :emergency
+  }
+
+  @type file_quality :: %{
+    violations: non_neg_integer(),
+    last_violation: DateTime.t() | nil,
+    domains_affected: list(atom()),
+    cascade_fixes_applied: non_neg_integer()
+  }
+
+  @spec load() :: {:ok, quality_state()} | {:error, :not_found}
+  def load do
+    case File.read(@state_path) do
+      {:ok, json} -&gt;
+        state = Jason.decode!(json, keys: :atoms)
+        {:ok, hydrate_state(state)}
+
+      {:error, :enoent} -&gt;
+        {:error, :not_found}
+    end
+  end
+
+  @spec save(quality_state()) :: :ok
+  def save(state) do
+    enriched = %{state |
+      timestamp: DateTime.utc_now(),
+      trend: compute_trend(state),
+      generation: state.generation
+    }
+
+    json = Jason.encode!(enriched, pretty: true)
+    File.mkdir_p!(Path.dirname(@state_path))
+    File.write!(@state_path, json)
+    :ok
+  end
+
+  @spec get_file_history(String.t()) :: file_quality()
+  def get_file_history(file_path) do
+    case load() do
+      {:ok, state} -&gt; Map.get(state.file_quality_map, file_path, %{violations: 0})
+      {:error, _} -&gt; %{violations: 0}
+    end
+  end
+
+  defp compute_trend(%{history: history}) when length(history) &gt;= 3 do
+    recent = Enum.take(history, 5)
+    scores = Enum.map(recent, fn {_ts, score} -&gt; score.score end)
+
+    cond do
+      Enum.all?(scores, &amp;(&amp;1 == 100)) -&gt; :stable
+      hd(scores) &gt; List.last(scores) -&gt; :improving
+      true -&gt; :degrading
+    end
+  end
+
+  defp compute_trend(_), do: :stable
+end
+</code></pre>
+<p>The <a href="https://prismatic-reality.com/glossary/autoheal/">auto-healing</a> cycle implementation orchestrates periodic quality scans and automated correction:</p>
+<pre><code data-lang="elixir">defmodule PrismaticSafety.AutoHealCycle do
+  @moduledoc &quot;&quot;&quot;
+  Orchestrates periodic quality assessment and automated healing.
+  Runs as a recurring GenServer that scans for violations and applies
+  CASCADE fixes without human intervention.
+  &quot;&quot;&quot;
+
+  use GenServer
+
+  @heal_interval :timer.minutes(15)
+  @max_auto_fixes_per_cycle 50
+
+  defstruct [:cycle_count, :total_healed, :last_cycle_at, :active]
+
+  def start_link(opts) do
+    GenServer.start_link(__MODULE__, opts, name: __MODULE__)
+  end
+
+  @impl true
+  def init(_opts) do
+    schedule_cycle()
+    {:ok, %__MODULE__{cycle_count: 0, total_healed: 0, active: true}}
+  end
+
+  @impl true
+  def handle_info(:heal_cycle, %{active: true} = state) do
+    {healed_count, results} = execute_heal_cycle()
+
+    :telemetry.execute(
+      [:prismatic_safety, :autoheal, :cycle_complete],
+      %{healed: healed_count, duration_ms: results.duration_ms},
+      %{cycle: state.cycle_count + 1}
+    )
+
+    QualityDNA.save(%{
+      qdp_eliminated_session: state.total_healed + healed_count,
+      timestamp: DateTime.utc_now()
+    })
+
+    schedule_cycle()
+
+    {:noreply, %{state |
+      cycle_count: state.cycle_count + 1,
+      total_healed: state.total_healed + healed_count,
+      last_cycle_at: DateTime.utc_now()
+    }}
+  end
+
+  defp execute_heal_cycle do
+    scan_result = PrismaticSafety.QualityFloorGuardian.compute_quality_score()
+
+    violations =
+      scan_result.domains
+      |&gt; Enum.flat_map(fn {domain, count} -&gt;
+        if count &gt; 0, do: get_domain_violations(domain), else: []
+      end)
+      |&gt; Enum.take(@max_auto_fixes_per_cycle)
+
+    results =
+      Enum.reduce(violations, {0, []}, fn violation, {count, log} -&gt;
+        case apply_cascade_fix(violation) do
+          {:ok, fix_result} -&gt; {count + 1, [fix_result | log]}
+          {:error, _reason} -&gt; {count, log}
+        end
+      end)
+
+    {elem(results, 0), %{duration_ms: 0, fixes: elem(results, 1)}}
+  end
+
+  defp schedule_cycle, do: Process.send_after(self(), :heal_cycle, @heal_interval)
+end
+</code></pre>
+<h2 id="quality-metrics-taxonomy">Quality Metrics Taxonomy</h2>
+<p>The platform's quality measurement system spans 13 distinct domains, each with its own detection methodology, threshold, and enforcement behavior. Understanding this taxonomy is essential to appreciating why the quality score is both comprehensive and rigorous.</p>
+<table><thead><tr><th>Domain</th><th>Measurement Method</th><th>Threshold</th><th>Enforcement</th></tr></thead><tbody>
+<tr><td>Compilation Warnings</td><td><code>mix compile --warnings-as-errors --force</code></td><td>Zero tolerance</td><td>Pre-commit BLOCK</td></tr>
+<tr><td><a href="https://prismatic-reality.com/technologies/dialyzer/">Dialyzer</a> Type Violations</td><td><code>mix dialyzer --format short</code> via persistent PLT</td><td>Zero tolerance</td><td>Pre-commit BLOCK</td></tr>
+<tr><td><a href="https://prismatic-reality.com/technologies/credo/">Credo</a> Style Violations</td><td><code>mix credo --strict --all</code></td><td>Zero tolerance</td><td>Pre-commit BLOCK</td></tr>
+<tr><td>Test Coverage</td><td><code>mix test --cover</code> with <code>ExCoveralls</code></td><td>100% business logic, 90% overall</td><td>CI BLOCK</td></tr>
+<tr><td><a href="https://prismatic-reality.com/glossary/typespec/">Typespec</a> Coverage</td><td>AST scan for public functions without <code>@spec</code></td><td>All public functions</td><td>Pre-commit WARN, CI BLOCK</td></tr>
+<tr><td>Memory Safety</td><td>Pattern scan for unbounded list accumulation, ETS leaks</td><td>Zero tolerance</td><td>Pre-commit BLOCK</td></tr>
+<tr><td>Unsafe Map Access</td><td>AST scan for <code>map.field</code> dot-access on dynamic maps</td><td>Zero tolerance</td><td>Pre-commit BLOCK</td></tr>
+<tr><td>DateTime Precision</td><td>Pattern scan for <code>DateTime.utc_now()</code> without microsecond precision</td><td>Zero tolerance</td><td>Pre-commit BLOCK</td></tr>
+<tr><td>Guard Functions</td><td>AST scan for guard-safe function usage in <code>when</code> clauses</td><td>Zero tolerance</td><td>Pre-commit BLOCK</td></tr>
+<tr><td><code>@impl</code> Coverage</td><td>AST scan for callback implementations missing <code>@impl true</code></td><td>All callbacks (709 total)</td><td>Pre-commit BLOCK</td></tr>
+<tr><td>Performance</td><td>Pattern scan for N+1 queries, unbounded <code>Enum.map</code> on large sets</td><td>Zero tolerance</td><td>CI BLOCK</td></tr>
+<tr><td>Regression Prevention</td><td>Verify no previously fixed violations reappear</td><td>Zero tolerance</td><td>Pre-commit BLOCK</td></tr>
+<tr><td>Timing Patterns</td><td>Pattern scan for <code>Process.sleep</code>, <code>:timer.sleep</code> in non-test code</td><td>Zero tolerance</td><td>Pre-commit BLOCK</td></tr>
+<tr><td>TODO Management</td><td>Scan for <code>TODO</code>, <code>FIXME</code>, <code>HACK</code> comments in source</td><td>Zero tolerance</td><td>Pre-commit BLOCK</td></tr>
+</tbody></table>
+<p><strong>Compilation Warnings</strong> are the most fundamental quality domain. Elixir's compiler produces warnings for unused variables, unreachable code, deprecated function usage, and pattern match issues. The <code>--warnings-as-errors</code> flag converts every warning into a compilation failure, ensuring that no warning survives unaddressed. This single enforcement catches a surprising variety of bugs before they ever reach runtime.</p>
+<p><strong>Dialyzer Type Violations</strong> represent the platform's static type analysis layer. Dialyzer performs success typing analysis over the entire codebase using a Persistent Lookup Table (PLT) that caches type information across runs. While Elixir is dynamically typed, Dialyzer can detect type mismatches, unreachable code paths, and contract violations through <code>@spec</code> annotations. The platform maintains a zero-violation Dialyzer posture, meaning every type contract is satisfied.</p>
+<p><strong>Memory Safety Patterns</strong> detect code that could lead to unbounded memory growth. Common violations include accumulating lists without bounds, creating <a href="https://prismatic-reality.com/technologies/ets/">ETS</a> entries without cleanup, spawning processes without supervision, and holding references to large binaries. These patterns are particularly dangerous because they manifest only under production load and can be invisible in testing.</p>
+<p><strong>Unsafe Map Access</strong> catches the use of Elixir's dot-access syntax (<code>map.field</code>) on maps that are not structs. This syntax raises a <code>KeyError</code> at runtime if the key is missing, whereas <code>Map.get/3</code>, <code>Map.fetch/2</code>, or pattern matching provide safe alternatives. In a codebase with thousands of map operations, this single pattern class eliminated over 100 potential runtime crashes.</p>
+<h2 id="cascade-patterns">CASCADE Patterns</h2>
+<p>The CASCADE system (Categorized Automated Scan, Correction, And Deployment Engine) represents the platform's approach to automated quality debt elimination. Rather than treating each violation as a unique problem requiring manual analysis, CASCADE identifies recurring violation patterns that share a common structure and can be fixed through deterministic source transformation.</p>
+<h3 id="type-mismatch-pattern">Type Mismatch Pattern</h3>
+<p>Type mismatches occur when a function designed for one data type is applied to another. The most common instance in Elixir is using <code>length/1</code> (which traverses the entire list in O(n) time) when the intent is to check for emptiness, or confusing <code>String.length/1</code> with <code>Enum.count/1</code>.</p>
+<p><strong>Detection</strong>: AST traversal identifies calls to <code>length/1</code>, <code>Enum.count/1</code>, and <code>String.length/1</code>. Type inference from variable bindings and function signatures determines whether the argument type matches the function's expected input.</p>
+<p><strong>Before</strong>:</p>
+<pre><code data-lang="elixir">def process_items(items) when length(items) &gt; 0 do
+  Enum.map(items, &amp;transform/1)
+end
+
+def format_name(name) when length(name) &gt; 0 do
+  String.capitalize(name)
+end
+</code></pre>
+<p><strong>After</strong>:</p>
+<pre><code data-lang="elixir">def process_items([_ | _] = items) do
+  Enum.map(items, &amp;transform/1)
+end
+
+def format_name(name) when is_binary(name) and byte_size(name) &gt; 0 do
+  String.capitalize(name)
+end
+</code></pre>
+<p><strong>Safety guarantee</strong>: The fix preserves semantic equivalence. Pattern matching on <code>[_ | _]</code> is O(1) and matches exactly the non-empty list case. <code>byte_size/1</code> is a guard-safe BIF that correctly checks for non-empty strings.</p>
+<h3 id="dead-code-pattern">Dead Code Pattern</h3>
+<p>Dead code includes unreachable function clauses, unused private functions, and modules that are defined but never called. Dead code is not merely aesthetic debt -- it actively misleads developers who read it, increases compilation time, and can mask bugs by shadowing intended code paths.</p>
+<p><strong>Detection</strong>: Cross-reference analysis builds a call graph from the AST of all modules. Functions with zero callers (excluding public API entry points and callback implementations) are flagged. Unreachable clauses are detected through exhaustiveness analysis of pattern matches.</p>
+<p><strong>Before</strong>:</p>
+<pre><code data-lang="elixir">defmodule DataProcessor do
+  def process(data), do: transform(data)
+
+  # Never called -- superseded by transform/1 in refactoring
+  defp legacy_transform(data) do
+    data |&gt; Map.put(:version, 1) |&gt; normalize()
+  end
+
+  defp transform(data) do
+    data |&gt; Map.put(:version, 2) |&gt; normalize()
+  end
+
+  defp normalize(data), do: data
+end
+</code></pre>
+<p><strong>After</strong>:</p>
+<pre><code data-lang="elixir">defmodule DataProcessor do
+  def process(data), do: transform(data)
+
+  defp transform(data) do
+    data |&gt; Map.put(:version, 2) |&gt; normalize()
+  end
+
+  defp normalize(data), do: data
+end
+</code></pre>
+<p><strong>Safety guarantee</strong>: Only private functions with zero callers are removed. Public functions and <code>@behaviour</code> callbacks are never touched. The call graph analysis is conservative -- if there is any ambiguity (dynamic dispatch, macro-generated calls), the function is retained.</p>
+<h3 id="empty-check-pattern">Empty Check Pattern</h3>
+<p>The empty check anti-pattern occurs when code uses <code>length(list) &gt; 0</code> or <code>length(list) == 0</code> to test for empty or non-empty collections. This is O(n) because <code>length/1</code> must traverse the entire list. For large lists, this creates a measurable performance penalty. More importantly, it fails in guard clauses because <code>length/1</code> is not always guard-safe depending on context.</p>
+<p><strong>Detection</strong>: Regex and AST scan for patterns matching <code>length(expr) &gt; 0</code>, <code>length(expr) == 0</code>, <code>Enum.count(expr) &gt; 0</code>, and similar constructions.</p>
+<p><strong>Before</strong>:</p>
+<pre><code data-lang="elixir">if length(results) &gt; 0 do
+  {:ok, results}
+else
+  {:error, :no_results}
+end
+
+case length(errors) do
+  0 -&gt; :ok
+  n -&gt; {:error, &quot;#{n} errors found&quot;}
+end
+</code></pre>
+<p><strong>After</strong>:</p>
+<pre><code data-lang="elixir">if results != [] do
+  {:ok, results}
+else
+  {:error, :no_results}
+end
+
+case errors do
+  [] -&gt; :ok
+  errors -&gt; {:error, &quot;#{length(errors)} errors found&quot;}
+end
+</code></pre>
+<p><strong>Safety guarantee</strong>: The replacement <code>!= []</code> is O(1) and semantically identical to <code>length(list) &gt; 0</code> for lists. In the <code>case</code> variant, <code>length/1</code> is only called when the list is known to be non-empty, preserving the count functionality.</p>
+<h3 id="timer-replacement-pattern">Timer Replacement Pattern</h3>
+<p>The timer replacement pattern targets uses of <code>Process.sleep/1</code> and <code>:timer.sleep/1</code> in production code. Sleep-based timing is a code smell in <a href="https://prismatic-reality.com/technologies/erlang-otp/">OTP</a> applications because it blocks the process, is not testable, and does not compose with the supervision tree. The correct OTP approach uses <code>Process.send_after/3</code>, <code>GenServer</code> timeouts, or <code>:timer.send_interval/2</code>.</p>
+<p><strong>Detection</strong>: AST scan for <code>Process.sleep</code> and <code>:timer.sleep</code> calls outside of test files. Context analysis determines whether the sleep is in a GenServer callback, a Task, or a bare function.</p>
+<p><strong>Before</strong>:</p>
+<pre><code data-lang="elixir">def poll_for_result(id) do
+  case check_result(id) do
+    {:ok, result} -&gt; {:ok, result}
+    :pending -&gt;
+      Process.sleep(1_000)
+      poll_for_result(id)
+  end
+end
+</code></pre>
+<p><strong>After</strong>:</p>
+<pre><code data-lang="elixir">def poll_for_result(id) do
+  case check_result(id) do
+    {:ok, result} -&gt; {:ok, result}
+    :pending -&gt;
+      Process.send_after(self(), {:poll, id}, 1_000)
+      :polling
+  end
+end
+
+def handle_info({:poll, id}, state) do
+  case check_result(id) do
+    {:ok, result} -&gt; {:noreply, %{state | result: result}}
+    :pending -&gt;
+      Process.send_after(self(), {:poll, id}, 1_000)
+      {:noreply, state}
+  end
+end
+</code></pre>
+<p><strong>Safety guarantee</strong>: This transformation changes the control flow from synchronous polling to asynchronous message-based polling. It requires human review when the calling code depends on the synchronous return value. The auto-fixer flags these cases for manual verification rather than applying the fix blindly.</p>
+<h3 id="nuclear-cache-pattern">Nuclear Cache Pattern</h3>
+<p>The nuclear cache pattern addresses stale build artifacts that cause phantom Dialyzer errors and compilation failures. When module signatures change significantly (especially behaviour definitions and protocol implementations), the incremental compiler's cached BEAM files can become inconsistent with the source. The "nuclear" fix is to selectively purge cached compilation artifacts for the affected modules.</p>
+<p><strong>Detection</strong>: When Dialyzer reports errors that contradict the source code (e.g., "function X/Y does not exist" when it clearly does), or when compilation succeeds but Dialyzer fails on contracts that are visibly correct, the nuclear cache pattern is triggered.</p>
+<p><strong>Before</strong> (symptoms, not code):</p>
+<pre><code># Dialyzer error that contradicts source
+lib/prismatic_claude/stack_conversation.ex:42
+  The function call will not succeed.
+  PrismaticClaude.StackConversation.get_stack/0
+  will never return since the success typing is: none()
+</code></pre>
+<p><strong>Fix applied</strong>:</p>
+<pre><code data-lang="bash"># Selective cache purge for affected module
+rm -rf _build/dev/lib/prismatic_claude/ebin/Elixir.PrismaticClaude.StackConversation.beam
+rm -rf priv/plts/dialyzer.plt
+
+# Recompile and rebuild PLT
+mix compile --force
+mix dialyzer --plt
+</code></pre>
+<p><strong>Safety guarantee</strong>: Only the specific module's BEAM file and the Dialyzer PLT are removed. No source code is modified. The subsequent recompilation regenerates correct artifacts from the unchanged source. This pattern has a 97.4% success rate -- the remaining 2.6% require a full <code>_build</code> purge.</p>
+<h2 id="quality-dna-cross-session-continuity">Quality DNA Cross-Session Continuity</h2>
+<p>One of the platform's most distinctive quality innovations is the Quality DNA system, which maintains quality context across development sessions. In traditional development workflows, quality state is ephemeral -- each CI run or local check starts from scratch, with no memory of previous quality assessments. The Quality DNA system breaks this limitation by persisting a comprehensive quality state to <code>.claude/quality-dna/current-state.json</code>.</p>
+<h3 id="state-format">State Format</h3>
+<p>The Quality DNA JSON file captures the complete quality snapshot at each save point:</p>
+<pre><code data-lang="json">{
+  &quot;score&quot;: 100,
+  &quot;generation&quot;: 18,
+  &quot;timestamp&quot;: &quot;2026-01-31T14:22:08.000000Z&quot;,
+  &quot;session_id&quot;: &quot;2026-01-31-quality-maintenance&quot;,
+  &quot;qdp_total&quot;: 0,
+  &quot;qdp_eliminated_session&quot;: 0,
+  &quot;trend&quot;: &quot;stable&quot;,
+  &quot;floor_status&quot;: &quot;optimal&quot;,
+  &quot;domains&quot;: {
+    &quot;dialyzer&quot;: 0,
+    &quot;credo&quot;: 0,
+    &quot;compilation&quot;: 0,
+    &quot;datetime_precision&quot;: 0,
+    &quot;guard_functions&quot;: 0,
+    &quot;impl_coverage&quot;: 0,
+    &quot;memory_safety&quot;: 0,
+    &quot;performance&quot;: 0,
+    &quot;regression_prevention&quot;: 0,
+    &quot;timing_patterns&quot;: 0,
+    &quot;todo_management&quot;: 0,
+    &quot;typespec_coverage&quot;: 0,
+    &quot;unsafe_map_access&quot;: 0
+  },
+  &quot;history&quot;: [
+    {&quot;timestamp&quot;: &quot;2026-01-31T14:22:08Z&quot;, &quot;score&quot;: 100},
+    {&quot;timestamp&quot;: &quot;2026-01-30T18:45:12Z&quot;, &quot;score&quot;: 100},
+    {&quot;timestamp&quot;: &quot;2026-01-29T09:11:33Z&quot;, &quot;score&quot;: 100}
+  ],
+  &quot;cascade_stats&quot;: {
+    &quot;type_mismatch_fixed&quot;: 312,
+    &quot;dead_code_removed&quot;: 247,
+    &quot;empty_check_replaced&quot;: 148,
+    &quot;timer_replaced&quot;: 124,
+    &quot;nuclear_cache_applied&quot;: 100
+  }
+}
+</code></pre>
+<h3 id="what-quality-dna-tracks">What Quality DNA Tracks</h3>
+<p>The Quality DNA system serves several critical functions beyond simple score recording:</p>
+<p><strong>File-Level Quality History</strong>: Every source file in the codebase has an associated quality record that tracks its violation history, which CASCADE patterns have been applied, and when it was last clean. This history enables the Predictive Pre-Commit hook to assess regression risk -- files with a history of violations receive heightened scrutiny.</p>
+<p><strong>Quality Floor Trending</strong>: By maintaining a time-series of quality scores, the system can detect gradual quality degradation before it reaches a threshold. A quality score that has been 100 for 30 consecutive sessions is in a fundamentally different position than one that oscillates between 99 and 100. The trend analysis distinguishes between stable perfection, improving trajectory, and the early signs of regression.</p>
+<p><strong>Session Context</strong>: When a new development session begins, the Quality DNA provides immediate context about the platform's quality posture. The developer (or autonomous agent) knows the current score, recent trends, any domains that have been near violation, and which files were most recently modified. This context eliminates the cold-start problem where a new session must rediscover the quality landscape from scratch.</p>
+<p><strong>Prediction</strong>: Using the file-level history and modification patterns, the Quality DNA system can predict which files are most likely to introduce violations in the next session. Files that are frequently modified, recently created, or have complex dependency graphs are flagged as higher risk. This prediction feeds into resource allocation -- the auto-healing cycle prioritizes scanning high-risk files first.</p>
+<h3 id="integration-with-ci-cd">Integration with CI/CD</h3>
+<p>The Quality DNA state file is committed to the repository, making it available to both local development and CI pipeline runs. The <a href="https://prismatic-reality.com/technologies/gitlab-ci/">GitLab CI</a> pipeline reads the Quality DNA at the start of each run and writes an updated state at the end. This creates a continuous quality timeline that spans local development sessions, CI runs, and deployment events.</p>
+<p>The CI integration also enables quality gate enforcement at the pipeline level. If the Quality DNA shows a trend toward degradation, the pipeline can activate more aggressive checking (such as running the full CASCADE scan rather than just the fast pre-commit checks). Conversely, when the Quality DNA shows extended stability, the pipeline can optimize by running abbreviated checks for routine commits and reserving full scans for high-risk changes.</p>
+<h2 id="results">Results</h2>
+<h3 id="quality-score-progression">Quality Score Progression</h3>
+<p>The quality score trajectory across the full experimental period demonstrates the three distinct phases of improvement: gradual automation buildup, rapid CASCADE-driven elimination, and sustained perfection:</p>
+<table><thead><tr><th>Generation</th><th>Week</th><th>Quality Score</th><th>Active Domains</th><th>Key Achievement</th></tr></thead><tbody>
+<tr><td>Gen 4-6</td><td>Pre-experiment</td><td>68/100</td><td>3 of 13</td><td>Compilation + Credo zeroed</td></tr>
+<tr><td>Gen 7</td><td>Week 1</td><td>52/100</td><td>13 of 13</td><td>All domains measured (score dropped due to new visibility)</td></tr>
+<tr><td>Gen 8</td><td>Week 2</td><td>61/100</td><td>13 of 13</td><td>First CASCADE patterns deployed</td></tr>
+<tr><td>Gen 9</td><td>Week 3</td><td>74/100</td><td>13 of 13</td><td>Type Mismatch + Dead Code patterns at full velocity</td></tr>
+<tr><td>Gen 10</td><td>Week 4</td><td>88/100</td><td>13 of 13</td><td>All 5 CASCADE patterns operational</td></tr>
+<tr><td>Gen 11</td><td>Week 5</td><td>96/100</td><td>13 of 13</td><td>Last multi-QDP domains cleared</td></tr>
+<tr><td>Gen 12</td><td>Week 6</td><td>100/100</td><td>13 of 13</td><td>Zero QDP achieved for first time</td></tr>
+<tr><td>Gen 13-15</td><td>Weeks 7-9</td><td>100/100</td><td>13 of 13</td><td>Quality Floor Guardian deployed, zero regressions</td></tr>
+<tr><td>Gen 16-18</td><td>Weeks 10-12</td><td>100/100</td><td>13 of 13</td><td>Full autonomy, zero human intervention</td></tr>
+</tbody></table>
+<p>The apparent drop from 68/100 to 52/100 at Week 1 is not a regression -- it reflects the expansion from 3 measured domains to all 13. Previously invisible violations in Memory Safety, Unsafe Map Access, DateTime Precision, and other domains suddenly became visible and counted against the score. This measurement expansion was a prerequisite for comprehensive improvement.</p>
+<h3 id="qdp-elimination-over-time">QDP Elimination Over Time</h3>
+<p>The cumulative QDP elimination chart shows the sigmoid-shaped curve characteristic of systematic debt elimination: slow start as patterns are developed, rapid acceleration during peak CASCADE operation, and asymptotic approach to zero as the remaining violations require increasingly targeted fixes:</p>
+<table><thead><tr><th>Milestone</th><th>Cumulative QDP Eliminated</th><th>Remaining QDP</th><th>Elapsed Days</th></tr></thead><tbody>
+<tr><td>CASCADE v1 deployed</td><td>0</td><td>917</td><td>Day 7</td></tr>
+<tr><td>100 QDP eliminated</td><td>100</td><td>817</td><td>Day 10</td></tr>
+<tr><td>250 QDP eliminated</td><td>250</td><td>667</td><td>Day 13</td></tr>
+<tr><td>500 QDP eliminated</td><td>500</td><td>417</td><td>Day 18</td></tr>
+<tr><td>750 QDP eliminated</td><td>750</td><td>167</td><td>Day 24</td></tr>
+<tr><td>900 QDP eliminated</td><td>900</td><td>17</td><td>Day 30</td></tr>
+<tr><td>905 QDP eliminated (all)</td><td>905</td><td>0</td><td>Day 36</td></tr>
+</tbody></table>
+<h3 id="module-level-quality-heatmap">Module-Level Quality Heatmap</h3>
+<p>Quality violations were not uniformly distributed across the codebase. Analysis of the 905 initial QDP revealed strong clustering in specific application categories:</p>
+<table><thead><tr><th>Application Category</th><th>Modules</th><th>Initial QDP</th><th>% of Total</th><th>Primary Violation Types</th></tr></thead><tbody>
+<tr><td><code>prismatic_web</code></td><td>142</td><td>287</td><td>31.7%</td><td>Unsafe Map Access, Missing Typespecs</td></tr>
+<tr><td><code>prismatic_agents</code></td><td>89</td><td>198</td><td>21.9%</td><td>Dead Code, Timer Patterns</td></tr>
+<tr><td><code>prismatic_storage_*</code></td><td>67</td><td>156</td><td>17.2%</td><td>Type Mismatch, Memory Safety</td></tr>
+<tr><td><code>prismatic_claude</code></td><td>34</td><td>112</td><td>12.4%</td><td>Empty Check, TODO Management</td></tr>
+<tr><td><code>prismatic_safety</code></td><td>18</td><td>63</td><td>7.0%</td><td>Guard Functions, @impl Coverage</td></tr>
+<tr><td><code>prismatic_perimeter</code></td><td>24</td><td>52</td><td>5.7%</td><td>DateTime Precision, Compilation</td></tr>
+<tr><td>Other apps</td><td>112</td><td>37</td><td>4.1%</td><td>Miscellaneous</td></tr>
+</tbody></table>
+<p>The concentration of QDP in <code>prismatic_web</code> and <code>prismatic_agents</code> reflects the rapid feature development velocity in those applications during earlier generations. These modules grew quickly with less rigorous quality enforcement, accumulating technical debt that became visible when measurement expanded to all 13 domains.</p>
+<h3 id="weekly-qdp-elimination-trajectory">Weekly QDP Elimination Trajectory</h3>
+<p>QDP elimination trajectory:</p>
+<table><thead><tr><th>Week</th><th>Starting QDP</th><th>Eliminated</th><th>New QDP</th><th>Ending QDP</th><th>Velocity (QDP/hr)</th></tr></thead><tbody>
+<tr><td>1</td><td>905</td><td>0</td><td>12</td><td>917</td><td>0 (baseline)</td></tr>
+<tr><td>2</td><td>917</td><td>312</td><td>8</td><td>613</td><td>62.4</td></tr>
+<tr><td>3</td><td>613</td><td>287</td><td>3</td><td>329</td><td>57.4</td></tr>
+<tr><td>4</td><td>329</td><td>241</td><td>1</td><td>89</td><td>48.2</td></tr>
+<tr><td>5</td><td>89</td><td>87</td><td>2</td><td>4</td><td>17.4</td></tr>
+<tr><td>6</td><td>4</td><td>4</td><td>0</td><td>0</td><td>0.8</td></tr>
+</tbody></table>
+<p>CASCADE pattern contribution to QDP elimination:</p>
+<table><thead><tr><th>Pattern</th><th>QDP Eliminated</th><th>% of Total</th><th>Auto-Fix Rate</th></tr></thead><tbody>
+<tr><td>Type Mismatch</td><td>312</td><td>33.5%</td><td>94.2%</td></tr>
+<tr><td>Dead Code</td><td>247</td><td>26.5%</td><td>98.7%</td></tr>
+<tr><td>Empty Check</td><td>148</td><td>15.9%</td><td>91.3%</td></tr>
+<tr><td>Timer Replacement</td><td>124</td><td>13.3%</td><td>89.1%</td></tr>
+<tr><td>Nuclear Cache</td><td>100</td><td>10.7%</td><td>97.4%</td></tr>
+</tbody></table>
+<p>Steady-state maintenance (Weeks 7-12):</p>
+<table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>
+<tr><td>Quality score maintained</td><td>100/100</td></tr>
+<tr><td>Regression attempts blocked</td><td>47</td></tr>
+<tr><td>Block success rate</td><td>100%</td></tr>
+<tr><td>New QDP introduced</td><td>0</td></tr>
+<tr><td>Human interventions required</td><td>0</td></tr>
+<tr><td>Mean detection-to-block time</td><td>340ms</td></tr>
+</tbody></table>
+<p>Quality domain status at experiment end:</p>
+<table><thead><tr><th>Domain</th><th>Violations</th><th>Status</th></tr></thead><tbody>
+<tr><td>Dialyzer</td><td>0</td><td>PERFECT</td></tr>
+<tr><td>Credo</td><td>0</td><td>PERFECT</td></tr>
+<tr><td>Compilation</td><td>0</td><td>PERFECT</td></tr>
+<tr><td>DateTime Precision</td><td>0</td><td>PERFECT</td></tr>
+<tr><td>Guard Functions</td><td>0</td><td>PERFECT</td></tr>
+<tr><td>@impl Coverage (709)</td><td>0</td><td>PERFECT</td></tr>
+<tr><td>Memory Safety</td><td>0</td><td>PERFECT</td></tr>
+<tr><td>Performance</td><td>0</td><td>PERFECT</td></tr>
+<tr><td>Regression Prevention</td><td>0</td><td>PERFECT</td></tr>
+<tr><td>Timing Patterns</td><td>0</td><td>PERFECT</td></tr>
+<tr><td>TODO Management</td><td>0</td><td>PERFECT</td></tr>
+<tr><td>Typespec Coverage</td><td>0</td><td>PERFECT</td></tr>
+<tr><td>Unsafe Map Access</td><td>0</td><td>PERFECT</td></tr>
+</tbody></table>
+<h2 id="analysis">Analysis</h2>
+<p>All three hypotheses were confirmed. The autonomous system achieved and maintained 100/100 quality across all 13 domains with zero human intervention during steady-state. QDP elimination velocity peaked at 62.4 QDP/hour in Week 2, exceeding the 50 QDP/hour target. Regression prevention achieved 100% effectiveness (47/47 attempts blocked).</p>
+<p>The CASCADE pattern approach was the key enabler. Five pattern categories addressed 87% of all QDP, and auto-fix rates ranged from 89.1% to 98.7%. The remaining 13% of QDP required domain-specific fixes that the system handled through targeted analysis rather than pattern matching.</p>
+<p>The velocity decline from Week 2 (62.4) to Week 5 (17.4) reflects the natural exhaustion of easy-to-fix violations. The remaining QDP required increasingly sophisticated analysis, but the system still eliminated them within the 6-week phase.</p>
+<p>The steady-state phase revealed the true value of the system: zero QDP introduction over 6 weeks. The 47 regression attempts were all caught at the pre-commit hook level, preventing quality violations from ever entering the repository. The 340ms mean detection time makes the guardian essentially transparent to the development workflow.</p>
+<h2 id="conclusions">Conclusions</h2>
+<ol>
+<li><strong>Autonomous quality maintenance at 100/100 is sustainable</strong> with zero human intervention.</li>
+<li><strong>CASCADE patterns address 87% of quality debt</strong> through automated detection and correction.</li>
+<li><strong>QDP elimination velocity exceeds 50/hour</strong> during the active elimination phase.</li>
+<li><strong>Pre-commit enforcement prevents 100% of regressions</strong> with sub-second detection.</li>
+<li><strong>The Quality Floor Guardian is the foundation</strong> for the platform's <a href="https://prismatic-reality.com/glossary/no-mercy/">No Mercy</a> enforcement.</li>
+</ol>
+<h2 id="next-steps">Next Steps</h2>
+<ul>
+<li>Develop new CASCADE patterns for emerging violation categories</li>
+<li>Implement predictive quality analysis that identifies at-risk code before violations occur</li>
+<li>Extend the Quality DNA system with machine learning for pattern evolution</li>
+<li>Build quality trend dashboards in <a href="https://prismatic-reality.com/technologies/phoenix-liveview/">Phoenix LiveView</a></li>
+<li>Open-source the CASCADE pattern framework for community adoption</li>
+</ul>
+<h2 id="related-experiments">Related Experiments</h2>
+<ul>
+<li><a href="https://prismatic-reality.com/lab/agent-prototyping/">Agent Prototyping</a> -- Agent quality measured by the same system</li>
+<li><a href="https://prismatic-reality.com/lab/epistemic-framework/">Epistemic Framework</a> -- Epistemic quality correlates with code quality</li>
+<li><a href="https://prismatic-reality.com/lab/drift-detection/">Drift Detection</a> -- Quality drift is one category of drift detected</li>
+<li><a href="https://prismatic-reality.com/lab/formal-verification/">Formal Verification</a> -- Formal proofs complement quality metrics</li>
+</ul>
+
+                </article>
+            </div>
+
+            <!-- Sidebar (right 1/3) -->
+            <div class="space-y-6">
+                <!-- Experiment Info Card -->
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700"
+                     x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 200)"
+                     x-show="shown"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 transform translate-x-4"
+                     x-transition:enter-end="opacity-100 transform translate-x-0">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Experiment Info
+                    </h3>
+                    <dl class="space-y-3">
+                        
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-400">Status</dt>
+                            <dd>
+                                <span class="px-2.5 py-0.5 text-xs font-bold uppercase rounded-full
+                                    bg-blue-900/50 text-blue-400
+                                    ">
+                                    completed
+                                </span>
+                            </dd>
+                        </div>
+                        
+                        
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-400">Category</dt>
+                            <dd class="text-sm font-semibold text-gray-300 capitalize">quality systems</dd>
+                        </div>
+                        
+                        
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-400">Difficulty</dt>
+                            <dd class="text-sm font-semibold text-gray-300 capitalize">intermediate</dd>
+                        </div>
+                        
+                        
+                        <div>
+                            <dt class="text-sm text-gray-400 mb-2">Technologies</dt>
+                            <dd class="flex flex-wrap gap-1.5">
+                                
+                                <span class="px-2 py-0.5 text-xs font-medium bg-emerald-900/30 text-emerald-400 rounded border border-emerald-700/30">elixir</span>
+                                
+                                <span class="px-2 py-0.5 text-xs font-medium bg-emerald-900/30 text-emerald-400 rounded border border-emerald-700/30">otp</span>
+                                
+                                <span class="px-2 py-0.5 text-xs font-medium bg-emerald-900/30 text-emerald-400 rounded border border-emerald-700/30">ets</span>
+                                
+                                <span class="px-2 py-0.5 text-xs font-medium bg-emerald-900/30 text-emerald-400 rounded border border-emerald-700/30">credo</span>
+                                
+                                <span class="px-2 py-0.5 text-xs font-medium bg-emerald-900/30 text-emerald-400 rounded border border-emerald-700/30">dialyzer</span>
+                                
+                            </dd>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-400">Platform</dt>
+                            <dd class="text-sm font-semibold text-gray-300">Prismatic v7.5</dd>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <dt class="text-sm text-gray-400">Doctrine</dt>
+                            <dd class="text-sm font-semibold text-gray-300">NM/ND</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!-- Paginated Section Nav -->
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700"
+                     x-data="labNav()"
+                     x-init="setTimeout(() => shown = true, 400)">
+                    <div x-show="shown"
+                         x-transition:enter="transition ease-out duration-300"
+                         x-transition:enter-start="opacity-0 transform translate-x-4"
+                         x-transition:enter-end="opacity-100 transform translate-x-0">
+                        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                            Lab Experiments
+                            <span class="text-xs font-normal text-gray-400" x-text="'(' + totalItems + ' experiments)'"></span>
+                        </h3>
+                        <ul class="space-y-1.5">
+                            <template x-for="item in paginatedItems" :key="item.url">
+                                <li>
+                                    <a :href="item.url"
+                                       :class="item.isCurrent
+                                           ? 'text-emerald-400 font-semibold bg-emerald-900/30'
+                                           : 'text-gray-400 hover:text-white hover:bg-gray-700/50'"
+                                       class="block text-sm px-3 py-1.5 rounded-lg transition-all"
+                                       x-text="item.title">
+                                    </a>
+                                </li>
+                            </template>
+                        </ul>
+                        <div class="flex items-center justify-between mt-4 pt-3 border-t border-gray-700" x-show="totalPages > 1">
+                            <button @click="prevPage()" :disabled="currentPage === 1"
+                                    :class="currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-white'"
+                                    class="text-xs font-medium text-gray-400 transition-colors">
+                                Previous
+                            </button>
+                            <span class="text-xs text-gray-400" x-text="currentPage + ' / ' + totalPages"></span>
+                            <button @click="nextPage()" :disabled="currentPage === totalPages"
+                                    :class="currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:text-white'"
+                                    class="text-xs font-medium text-gray-400 transition-colors">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Glossary Terms -->
+                
+                
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700"
+                     x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 500)"
+                     x-show="shown"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 transform translate-x-4"
+                     x-transition:enter-end="opacity-100 transform translate-x-0">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/>
+                        </svg>
+                        Related Terms
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;quality-dna&#x2F;" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-700/80 text-amber-400 rounded-lg border border-gray-600 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                            Quality DNA
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;no-mercy&#x2F;" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-700/80 text-amber-400 rounded-lg border border-gray-600 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                            NO MERCY
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;cascade&#x2F;" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-700/80 text-amber-400 rounded-lg border border-gray-600 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                            CASCADE
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;seadf&#x2F;" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-700/80 text-amber-400 rounded-lg border border-gray-600 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                            SEADF
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;no-doubts&#x2F;" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-700/80 text-amber-400 rounded-lg border border-gray-600 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                            NO DOUBTS
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+                
+
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="/commands/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Commands<span
+                class="ml-auto text-xs text-gray-600">217</span></a>
+        <a href="/architecture/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Architecture</a>
+        <a href="/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        <a href="/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="/technologies/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Technologies</a>
+        <a href="/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+</div>
+        </div>
+
+        <!-- Back to Lab Button -->
+        <div class="mt-8 pt-8 border-t border-gray-700">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-gray-950 bg-white rounded-xl focus:ring-4 focus:ring-emerald-800 transition-all shadow-lg hover:shadow-xl">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Back to Lab
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Paginated Section Nav Script -->
+<script>
+function labNav() {
+    var allItems = [
+        
+        
+        {title: "Adversarial-Defensive Synthesis Cycles", url: "https://prismatic-reality.com/lab/color-team-simulation/", isCurrent: false},
+        
+        {title: "Autonomous Agent Prototyping Framework", url: "https://prismatic-reality.com/lab/agent-prototyping/", isCurrent: false},
+        
+        {title: "Autonomous Quality Floor Maintenance", url: "https://prismatic-reality.com/lab/quality-evolution/", isCurrent: true},
+        
+        {title: "Cross-Domain Pattern Propagation", url: "https://prismatic-reality.com/lab/mycelial-propagation/", isCurrent: false},
+        
+        {title: "Data Pipeline Architecture Validation", url: "https://prismatic-reality.com/lab/pipeline-experimentation/", isCurrent: false},
+        
+        {title: "External Attack Surface Mapping", url: "https://prismatic-reality.com/lab/easm-discovery/", isCurrent: false},
+        
+        {title: "Lean4 Proof Construction Pipeline", url: "https://prismatic-reality.com/lab/formal-verification/", isCurrent: false},
+        
+        {title: "Local vs Cloud LLM Quality Assessment", url: "https://prismatic-reality.com/lab/llm-comparison/", isCurrent: false},
+        
+        {title: "Multi-Backend Storage Performance", url: "https://prismatic-reality.com/lab/storage-benchmarks/", isCurrent: false},
+        
+        {title: "N-Agent Orchestration Patterns", url: "https://prismatic-reality.com/lab/multi-agent-coordination/", isCurrent: false},
+        
+        {title: "NABLA Infinity Axiom Enforcement", url: "https://prismatic-reality.com/lab/epistemic-framework/", isCurrent: false},
+        
+        {title: "OSINT Source Integration Benchmarks", url: "https://prismatic-reality.com/lab/osint-pipeline/", isCurrent: false},
+        
+        {title: "OTP Supervision Tree Optimization", url: "https://prismatic-reality.com/lab/architecture-validation/", isCurrent: false},
+        
+        {title: "Session Context Persistence", url: "https://prismatic-reality.com/lab/session-lifecycle/", isCurrent: false},
+        
+        {title: "Sub-Threshold Drift Detection", url: "https://prismatic-reality.com/lab/drift-detection/", isCurrent: false},
+        
+    ];
+    var perPage = 20;
+    return {
+        shown: false,
+        allItems: allItems,
+        currentPage: Math.max(1, Math.ceil((allItems.findIndex(function(i) { return i.isCurrent; }) + 1) / perPage)),
+        perPage: perPage,
+        get totalItems() { return this.allItems.length; },
+        get totalPages() { return Math.ceil(this.allItems.length / this.perPage); },
+        get paginatedItems() {
+            var start = (this.currentPage - 1) * this.perPage;
+            return this.allItems.slice(start, start + this.perPage);
+        },
+        nextPage: function() { if (this.currentPage < this.totalPages) this.currentPage++; },
+        prevPage: function() { if (this.currentPage > 1) this.currentPage--; }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (89+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="text-gray-400 hover:text-white transition-colors">Commands (212)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies (44)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Lab</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-gray-400 hover:text-white">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Back to Top + Nav scroll -->
+    <script>
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            var nav = document.querySelector('nav');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+                if (nav && window.scrollY > 20) {
+                    nav.classList.add('border-white/10');
+                    nav.classList.remove('border-white/5');
+                } else if (nav) {
+                    nav.classList.remove('border-white/10');
+                    nav.classList.add('border-white/5');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

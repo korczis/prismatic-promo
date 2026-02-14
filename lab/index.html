@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Lab - Prismatic Platform</title>
+
+    
+<meta name="description" content="Experimental sandbox for prototyping agent workflows and validating hypotheses">
+<meta property="og:title" content="Lab - Prismatic Platform">
+<meta property="og:description"
+    content="Experimental sandbox for prototyping agent workflows and validating hypotheses">
+
+
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    <meta name="author" content="Prismatic Platform Team">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https:&#x2F;&#x2F;prismatic-reality.com/favicon.svg">
+    <link rel="apple-touch-icon" href="https:&#x2F;&#x2F;prismatic-reality.com/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/tailwind.css">
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="https:&#x2F;&#x2F;prismatic-reality.com/css/prose.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2">
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-1 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Apps</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Agents</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">OSINT</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Architecture</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Tech</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Lab</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Academy</a>
+                    </li>
+                    <li>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">API</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-full sm:w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Commands</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Color Teams</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Doctrine</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/registry/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Registry</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Glossary</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/faq/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Section -->
+<section class="py-16 lg:py-20 border-b border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="mb-8">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 mb-6 text-xs font-bold tracking-widest text-emerald-400 bg-emerald-900/30 rounded-full uppercase border border-emerald-700/30">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+                Experimental Sandbox
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
+                Lab
+            </h1>
+            <div class="prose prose-invert prose-lg max-w-3xl leading-relaxed text-gray-400">
+                <h2 id="overview">Overview</h2>
+<p>The Prismatic Lab is the platform's dedicated research and development environment, a controlled sandbox where new agent workflows, intelligence pipelines, architectural patterns, and epistemic validation strategies are prototyped, stress-tested, and validated before they are considered for production deployment. Unlike ad-hoc experimentation that might occur in feature branches or developer sandboxes, the Lab provides a structured, repeatable, and auditable framework for turning hypotheses into proven capabilities.</p>
+<p>The Lab occupies a unique position within the Prismatic ecosystem. It bridges the gap between theoretical design and production reality by providing the infrastructure to run experiments at meaningful scale without risking the stability of the live platform. Every experiment operates within strict resource boundaries, uses only synthetic data, and produces artifacts that can be independently reviewed and reproduced by any team member.</p>
+<p>What distinguishes the Prismatic Lab from conventional R&amp;D environments is its deep integration with the platform's quality and evolution systems. Experiments are not simply run and forgotten. They follow a rigorous lifecycle that demands clear hypotheses, measurable success criteria, peer review, and formal graduation gates. An experiment that proves its value earns the right to be promoted to production through the <a href="https://prismatic-reality.com/api/">API</a> gateway. An experiment that fails provides equally valuable data that is captured, analyzed, and fed back into the <a href="https://prismatic-reality.com/academy/">Academy</a> as lessons learned.</p>
+<p>The Lab currently maintains 15 registered experiments, 12 of which are actively producing results. The graduation rate of 78% reflects the platform's commitment to promoting only thoroughly validated patterns while preserving the freedom to explore ideas that may not succeed on first attempt.</p>
+<h2 id="experiment-lifecycle">Experiment Lifecycle</h2>
+<p>Every experiment in the Lab follows a structured five-phase lifecycle designed to maximize scientific rigor while minimizing overhead. This lifecycle is not merely a suggestion; it is enforced by the Lab's infrastructure through automated checks at each phase transition.</p>
+<h3 id="phase-1-hypothesis">Phase 1: Hypothesis</h3>
+<p>Every experiment begins with a clearly articulated hypothesis. This is not a vague aspiration like "improve agent performance" but a falsifiable statement with measurable boundaries. A well-formed hypothesis follows the template: "Given [preconditions], when [action], then [expected outcome] within [constraints]."</p>
+<pre><code data-lang="elixir">%Experiment.Hypothesis{
+  id: &quot;EXP-2026-042&quot;,
+  statement: &quot;A pipeline with parallel NABLA axiom validation will process
+              epistemic claims 3x faster than sequential validation while
+              maintaining identical correctness guarantees&quot;,
+  preconditions: [&quot;Minimum 1000 claims per batch&quot;, &quot;All 7 axioms active&quot;],
+  success_metric: {:throughput_ratio, :gte, 3.0},
+  correctness_invariant: {:axiom_violations, :eq, 0},
+  max_duration: {:days, 14},
+  author: &quot;epistemic-research-team&quot;,
+  review_status: :approved
+}
+</code></pre>
+<p>The hypothesis phase requires sign-off from at least one domain expert before the experiment can proceed. This prevents resource waste on poorly defined investigations and ensures that the experiment's success criteria are unambiguous.</p>
+<h3 id="phase-2-design">Phase 2: Design</h3>
+<p>During the design phase, the experiment's architecture is specified in detail. This includes the agents involved, the data sources (always synthetic), the pipeline topology, the monitoring hooks, and the resource limits. The design document serves as both a blueprint and a contract: it defines exactly what the experiment will do and what it will not do.</p>
+<p>Design artifacts include a supervision tree diagram, a data flow specification, resource allocation requests, and a rollback plan. The Lab's infrastructure validates the design against platform constraints before allowing execution to begin.</p>
+<h3 id="phase-3-execute">Phase 3: Execute</h3>
+<p>Execution occurs within the Lab's sandboxed environment. Each experiment receives its own OTP application context with dedicated supervision trees, isolated ETS tables, and independent telemetry streams. The sandbox enforces strict boundaries: no network access to external systems, no access to production data, and hard limits on memory and CPU consumption.</p>
+<p>During execution, the Lab's monitoring system captures fine-grained telemetry data including throughput metrics, latency distributions, error rates, resource consumption, and any NABLA axiom interactions. This data is persisted in a structured format that supports both real-time dashboards and post-hoc analysis.</p>
+<h3 id="phase-4-analyze">Phase 4: Analyze</h3>
+<p>Analysis transforms raw execution data into actionable conclusions. The Lab provides automated analysis tools that compare observed metrics against the hypothesis's success criteria, generate statistical summaries, identify anomalies, and produce visualization-ready datasets.</p>
+<p>Analysis is not purely automated. Every experiment requires a human-authored analysis report that interprets the results, identifies confounding factors, acknowledges limitations, and recommends next steps. This report undergoes peer review before the experiment can proceed to the graduation decision.</p>
+<h3 id="phase-5-graduate">Phase 5: Graduate</h3>
+<p>Graduation is the formal transition from experiment to production candidate. Not every experiment graduates, and that is by design. The graduation decision considers not only whether the hypothesis was confirmed but also whether the implementation meets the platform's quality standards, whether the pattern is generalizable, and whether the maintenance burden is acceptable.</p>
+<p>Experiments that graduate are packaged as standard platform modules with full test suites, documentation, and AIAD agent specifications. They enter the production codebase through the normal quality gate process and become discoverable through the <a href="https://prismatic-reality.com/api/">API</a> gateway's auto-introspection mechanism.</p>
+<h2 id="research-domains">Research Domains</h2>
+<p>The Lab organizes its research activities across five primary domains, each addressing a distinct aspect of the platform's capability development.</p>
+<h3 id="agent-prototyping">Agent Prototyping</h3>
+<p>Agent prototyping experiments explore new patterns for autonomous agent design, including novel coordination strategies, decision-making algorithms, and self-healing behaviors. This domain has produced several production agents, including improvements to the orchestration layer and new specialist agent archetypes. Agent experiments typically involve designing a new AIAD-compliant agent specification, implementing its core behavior in an isolated OTP process, and validating its interactions with synthetic workloads.</p>
+<h3 id="pipeline-architecture">Pipeline Architecture</h3>
+<p>Pipeline experiments investigate data flow patterns, transformation strategies, and processing topologies. The platform's multi-stage processing pipelines handle everything from OSINT data collection to epistemic claim validation, and the Lab provides a safe space to explore optimizations, alternative topologies, and new pipeline stages. Recent work has focused on parallel axiom validation pipelines and streaming analytics integration.</p>
+<h3 id="epistemic-validation">Epistemic Validation</h3>
+<p>The NABLA Infinity framework's seven axioms and the Trinity Gate form the epistemic backbone of the platform. Lab experiments in this domain test edge cases in axiom enforcement, explore relaxation strategies for exploratory contexts, benchmark validation performance, and prototype new epistemic tools. This is one of the most active research areas, reflecting the platform's commitment to evidence-based decision making.</p>
+<h3 id="security-simulation">Security Simulation</h3>
+<p>Security experiments leverage the Color Team framework to test new attack simulation scenarios, defensive strategies, and threat models in a completely isolated environment. The Lab's security sandbox provides even stricter isolation than the standard sandbox, with additional controls to prevent any security research artifacts from escaping the experimental context. All security experiments use synthetic threat models and simulated attack surfaces.</p>
+<h3 id="storage-benchmarks">Storage Benchmarks</h3>
+<p>Storage experiments evaluate adapter performance, caching strategies, query optimization patterns, and data model alternatives across the platform's diverse storage backends including PostgreSQL, ETS, KuzuDB, and Meilisearch. These experiments generate the benchmark data that informs production storage decisions and capacity planning.</p>
+<h2 id="sandbox-architecture">Sandbox Architecture</h2>
+<p>The Lab's sandbox architecture provides hermetic isolation for experiments while maintaining enough platform fidelity to produce meaningful results. The isolation model operates at multiple levels.</p>
+<h3 id="process-isolation">Process Isolation</h3>
+<p>Each experiment runs within its own OTP application boundary with a dedicated supervision tree. The experiment's root supervisor is started as a child of the Lab's master supervisor, which monitors resource consumption and enforces limits. If an experiment exceeds its allocated resources or crashes repeatedly, the master supervisor terminates it cleanly and logs the failure.</p>
+<pre><code data-lang="elixir">defmodule PrismaticLab.ExperimentSupervisor do
+  use Supervisor
+
+  def start_experiment(experiment_id, config) do
+    child_spec = %{
+      id: experiment_id,
+      start: {PrismaticLab.ExperimentRunner, :start_link, [config]},
+      restart: :temporary,
+      shutdown: :timer.seconds(30),
+      type: :supervisor
+    }
+
+    Supervisor.start_child(__MODULE__, child_spec)
+  end
+end
+</code></pre>
+<h3 id="data-isolation">Data Isolation</h3>
+<p>Experiments have no access to production data. The Lab provides a synthetic data generation framework that can produce realistic datasets matching the statistical properties of production data without containing any real information. Each experiment receives its own ETS tables and, when needed, its own isolated PostgreSQL schema. Data generated during an experiment is tagged with the experiment ID and retained for the configured retention period before automatic cleanup.</p>
+<h3 id="resource-limits">Resource Limits</h3>
+<p>Every experiment declares its resource requirements during the design phase. The Lab enforces these limits through OTP process monitoring and periodic resource audits. Limits cover memory consumption, CPU time, ETS table size, disk I/O, and experiment duration. Hard limits trigger automatic termination; soft limits trigger warnings that are surfaced in the experiment's dashboard.</p>
+<h3 id="monitoring">Monitoring</h3>
+<p>The Lab integrates with the platform's telemetry system to provide real-time visibility into experiment execution. Each experiment emits structured telemetry events under the <code>[:prismatic_lab, :experiment, *]</code> namespace. These events feed into both the Lab's internal dashboards and the platform's general observability infrastructure. Experiment authors can define custom telemetry events for domain-specific metrics.</p>
+<h2 id="graduation-criteria">Graduation Criteria</h2>
+<p>An experiment must satisfy a comprehensive set of criteria before it can graduate to production. These criteria ensure that graduated experiments meet the platform's quality, security, and maintainability standards.</p>
+<p><strong>Functional Criteria</strong>: The experiment's hypothesis must be confirmed with statistical significance. Success metrics must meet or exceed their defined thresholds. The implementation must handle edge cases identified during execution. Error handling must follow the <code>{:ok, _}</code> / <code>{:error, _}</code> pattern consistently.</p>
+<p><strong>Quality Criteria</strong>: The graduated module must compile with zero warnings under <code>--warnings-as-errors</code>. Credo strict mode must report zero violations. Dialyzer must produce zero warnings. Test coverage must reach 100% for business logic and 90% overall. All typespecs must be present and accurate.</p>
+<p><strong>Documentation Criteria</strong>: The module must include complete <code>@moduledoc</code> and <code>@doc</code> annotations. An AIAD agent specification must be authored if the experiment involves a new agent. Usage examples must be included in the documentation. A post-mortem report summarizing the experiment's journey from hypothesis to graduation must be filed.</p>
+<p><strong>Security Criteria</strong>: The graduated code must pass the platform's security review checklist. No hardcoded credentials, no unsafe external calls, no unbounded resource allocation. If the experiment involves security-sensitive functionality, a Color Team review is required.</p>
+<h2 id="integration-points">Integration Points</h2>
+<p>The Lab does not exist in isolation. It maintains active integration pathways with other platform components that amplify its value.</p>
+<h3 id="lab-to-academy-feedback-loop">Lab to Academy Feedback Loop</h3>
+<p>Every graduated experiment produces learning materials for the <a href="https://prismatic-reality.com/academy/">Academy</a>. The experiment's hypothesis, methodology, results, and lessons learned are distilled into tutorial content that teaches the underlying concepts. Failed experiments are equally valuable for the Academy, as they document what does not work and why, preventing others from repeating unsuccessful approaches.</p>
+<p>The Academy's curriculum is directly influenced by Lab activity. When the Lab identifies a new pattern that proves successful, the Academy team creates corresponding learning materials. When Academy students encounter questions that existing materials cannot answer, those questions may seed new Lab experiments.</p>
+<h3 id="lab-to-api-promotion">Lab to API Promotion</h3>
+<p>When an experiment graduates, its public functions are implemented in the appropriate Prismatic facade module. The <a href="https://prismatic-reality.com/api/">API</a> gateway's auto-introspection scanner discovers these new functions at boot time and exposes them as documented REST endpoints. This means that a successful Lab experiment can go from validated prototype to publicly accessible API endpoint through a well-defined, automated pathway.</p>
+<h3 id="lab-to-architecture-influence">Lab to Architecture Influence</h3>
+<p>Lab experiments frequently inform architectural decisions documented in the <a href="https://prismatic-reality.com/architecture/">architecture</a> section. When an experiment reveals that a particular approach scales better, handles failures more gracefully, or integrates more cleanly with existing systems, those findings influence the platform's architectural evolution.</p>
+<h2 id="active-research-areas">Active Research Areas</h2>
+<p>The Lab maintains several active research threads that reflect the platform's current strategic priorities.</p>
+<p><strong>Parallel Epistemic Validation</strong>: Investigating concurrent evaluation of NABLA Infinity axioms to improve throughput in high-volume claim processing scenarios. Early results suggest a 2.5x to 4x speedup is achievable without compromising validation correctness.</p>
+<p><strong>Adaptive Agent Coordination</strong>: Exploring dynamic agent topology adjustment based on workload characteristics. Rather than static orchestration graphs, these experiments test agents that can negotiate coordination strategies at runtime.</p>
+<p><strong>Graph-Based Threat Modeling</strong>: Leveraging KuzuDB's graph storage capabilities to represent attack surface relationships and compute risk propagation paths. This research supports the Perimeter EASM module's security rating calculations.</p>
+<p><strong>Streaming Pipeline Optimization</strong>: Benchmarking GenStage and Flow-based pipeline architectures for continuous data processing workloads, with particular focus on backpressure handling and graceful degradation under load.</p>
+<p><strong>Cross-Domain Knowledge Transfer</strong>: Investigating mechanisms for agents to share learned patterns across domain boundaries while respecting the NABLA Infinity source independence axiom.</p>
+<h2 id="methodology-standards">Methodology Standards</h2>
+<p>The Lab enforces rigorous methodology standards to ensure that experimental results are trustworthy, reproducible, and comparable.</p>
+<h3 id="reproducibility">Reproducibility</h3>
+<p>Every experiment must be fully reproducible from its specification. This means that all configuration, synthetic data generation seeds, agent specifications, and environmental parameters are versioned and stored alongside the experiment's results. Any team member should be able to re-execute a past experiment and obtain statistically equivalent results.</p>
+<h3 id="documentation-requirements">Documentation Requirements</h3>
+<p>Experiments must maintain living documentation throughout their lifecycle. The hypothesis document is written before execution begins. Execution logs are captured automatically. Analysis reports are authored by the experiment team and reviewed by peers. Graduation proposals include a complete narrative of the experiment's journey.</p>
+<h3 id="peer-review">Peer Review</h3>
+<p>All experiments undergo peer review at two critical junctures: before execution begins (design review) and before graduation is approved (results review). Design reviews verify that the hypothesis is well-formed, the methodology is sound, and the resource requests are reasonable. Results reviews verify that the analysis is accurate, the conclusions are supported by data, and the graduation criteria are genuinely met.</p>
+<h3 id="statistical-rigor">Statistical Rigor</h3>
+<p>Quantitative claims must be supported by appropriate statistical analysis. The Lab provides standard analysis templates for common experimental patterns including A/B comparisons, throughput benchmarks, and latency distribution analysis. Experiments that make performance claims must report confidence intervals, not just point estimates.</p>
+<h2 id="infrastructure">Infrastructure</h2>
+<p>The Lab's infrastructure is built on Elixir/OTP primitives, leveraging the platform's supervision and process isolation capabilities to provide robust experiment management.</p>
+<h3 id="otp-process-isolation">OTP Process Isolation</h3>
+<p>Each experiment runs as an independent OTP application with its own supervision tree. The <code>PrismaticLab.MasterSupervisor</code> manages all active experiments and enforces platform-level resource policies. Experiment processes communicate with the rest of the platform only through well-defined message-passing interfaces, preventing unintended coupling.</p>
+<h3 id="ets-sandboxes">ETS Sandboxes</h3>
+<p>Experiments that require fast in-memory state use dedicated ETS tables created by the Lab's table manager. These tables are owned by the experiment's supervisor and are automatically cleaned up when the experiment terminates. The table manager enforces size limits and provides access control to prevent cross-experiment data leakage.</p>
+<h3 id="telemetry-integration">Telemetry Integration</h3>
+<p>The Lab emits structured telemetry events for every significant lifecycle transition: experiment creation, phase transitions, resource limit warnings, and termination. These events integrate with the platform's standard telemetry infrastructure, enabling Lab activity to be monitored through the same dashboards used for production systems.</p>
+<pre><code data-lang="elixir">:telemetry.execute(
+  [:prismatic_lab, :experiment, :phase_transition],
+  %{duration_ms: elapsed},
+  %{
+    experiment_id: experiment.id,
+    from_phase: :execute,
+    to_phase: :analyze,
+    metrics_collected: length(experiment.metrics)
+  }
+)
+</code></pre>
+<h3 id="persistent-storage">Persistent Storage</h3>
+<p>Experiment artifacts, including configuration, results, analysis reports, and telemetry data, are persisted in a structured format that supports long-term retention and cross-experiment analysis. The Lab's storage layer uses PostgreSQL for relational data and the filesystem for large artifacts, with a configurable retention policy that defaults to 90 days for completed experiments.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>Proposing and running a Lab experiment involves a straightforward process designed to minimize bureaucratic overhead while maintaining methodological rigor.</p>
+<p><strong>Step 1: Draft a Hypothesis</strong>. Write a clear, falsifiable statement of what you want to investigate. Include preconditions, expected outcomes, and measurable success criteria. Use the hypothesis template provided in the Lab's documentation.</p>
+<p><strong>Step 2: Design the Experiment</strong>. Specify the agents, pipelines, data sources, and monitoring hooks your experiment requires. Declare resource limits. Identify potential risks and define a rollback plan. Submit the design for peer review.</p>
+<p><strong>Step 3: Request Approval</strong>. Once the design review is complete, submit your experiment for approval. The Lab coordinator reviews resource availability and scheduling constraints. Most experiments are approved within one business day.</p>
+<p><strong>Step 4: Execute and Monitor</strong>. Launch your experiment using the Lab CLI. Monitor progress through the Lab dashboard. The infrastructure handles process management, data collection, and resource enforcement automatically.</p>
+<pre><code data-lang="bash"># Submit a new experiment proposal
+mix lab.propose --hypothesis experiments/EXP-2026-042.md
+
+# Start an approved experiment
+mix lab.start EXP-2026-042
+
+# Check experiment status
+mix lab.status EXP-2026-042
+
+# View experiment dashboard
+mix lab.dashboard
+</code></pre>
+<p><strong>Step 5: Analyze and Report</strong>. When execution completes, use the Lab's analysis tools to process your results. Author an analysis report interpreting the findings. Submit the report for peer review.</p>
+<p><strong>Step 6: Graduate or Archive</strong>. Based on the analysis, propose graduation to production or archive the experiment with lessons learned. Either outcome contributes to the platform's knowledge base and feeds into <a href="https://prismatic-reality.com/academy/">Academy</a> learning materials.</p>
+<p>The Lab welcomes experiments of all scales, from quick validation tests that run in minutes to extended research campaigns that span weeks. The structured lifecycle ensures that every experiment, regardless of scale, produces value for the platform.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-12 lg:py-16" x-data="labFilter()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-4">
+            <!-- Main Content (3/4) -->
+            <div class="lg:col-span-3">
+                <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;color-team-simulation&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('adversarial-defensive synthesis cycles', 'simulating red vs blue engagement patterns, measuring purple closure rates, and validating epistemic security through adversarial-defensive synthesis')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                Adversarial-Defensive Synthesis Cycles</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Simulating Red vs Blue engagement patterns, measuring Purple closure rates, and validating epistemic security through adversarial-defensive synthesis</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;agent-prototyping&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('autonomous agent prototyping framework', 'testing new agent configurations, measuring response quality, and evaluating decision trees across the aiad agent ecosystem')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                Autonomous Agent Prototyping Framework</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Testing new agent configurations, measuring response quality, and evaluating decision trees across the AIAD agent ecosystem</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;quality-evolution&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('autonomous quality floor maintenance', 'testing self-healing quality systems, measuring qdp elimination velocity, and validating autonomous quality evolution from 0 to 100&#x2F;100')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                Autonomous Quality Floor Maintenance</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-blue-900/50 text-blue-400
+                                ">completed</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Testing self-healing quality systems, measuring QDP elimination velocity, and validating autonomous quality evolution from 0 to 100&#x2F;100</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;mycelial-propagation&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('cross-domain pattern propagation', 'testing mycelial network pattern transfer between umbrella apps, measuring propagation success rates and adaptation fidelity')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                Cross-Domain Pattern Propagation</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Testing mycelial network pattern transfer between umbrella apps, measuring propagation success rates and adaptation fidelity</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;pipeline-experimentation&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('data pipeline architecture validation', 'testing etl pipelines, stream processing, and batch vs real-time processing benchmarks across the prismatic data infrastructure')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                Data Pipeline Architecture Validation</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Testing ETL pipelines, stream processing, and batch vs real-time processing benchmarks across the Prismatic data infrastructure</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;easm-discovery&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('external attack surface mapping', 'testing discovery algorithms, subdomain enumeration, certificate transparency analysis, and security rating accuracy for easm')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                External Attack Surface Mapping</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Testing discovery algorithms, subdomain enumeration, certificate transparency analysis, and security rating accuracy for EASM</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;formal-verification&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('lean4 proof construction pipeline', 'testing formal verification throughput, proof complexity vs construction time, and automated lean4 proof generation for platform invariants')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                Lean4 Proof Construction Pipeline</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Testing formal verification throughput, proof complexity vs construction time, and automated Lean4 proof generation for platform invariants</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;llm-comparison&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('local vs cloud llm quality assessment', 'comparing claude opus, qwen3-coder, and deepseek-coder across code generation, analysis, and reasoning tasks')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                Local vs Cloud LLM Quality Assessment</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Comparing Claude Opus, qwen3-coder, and deepseek-coder across code generation, analysis, and reasoning tasks</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;storage-benchmarks&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('multi-backend storage performance', 'benchmarking ets vs postgresql vs meilisearch vs kuzudb across read-heavy, write-heavy, and mixed workloads')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                Multi-Backend Storage Performance</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Benchmarking ETS vs PostgreSQL vs Meilisearch vs KuzuDB across read-heavy, write-heavy, and mixed workloads</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;multi-agent-coordination&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('n-agent orchestration patterns', 'testing coordination protocols for 5, 20, 100, and 400+ agent swarms with varying communication topologies')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                N-Agent Orchestration Patterns</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Testing coordination protocols for 5, 20, 100, and 400+ agent swarms with varying communication topologies</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;epistemic-framework&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('nabla infinity axiom enforcement', 'validating the 7 non-negotiable axioms, measuring epistemic drift, and testing trinity gate passage rates across platform operations')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                NABLA Infinity Axiom Enforcement</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Validating the 7 non-negotiable axioms, measuring epistemic drift, and testing Trinity Gate passage rates across platform operations</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;osint-pipeline&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('osint source integration benchmarks', 'testing 250+ osint providers for accuracy, latency, and coverage across intelligence gathering domains')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                OSINT Source Integration Benchmarks</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Testing 250+ OSINT providers for accuracy, latency, and coverage across intelligence gathering domains</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;architecture-validation&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('otp supervision tree optimization', 'testing different supervision strategies, restart policies, and process topologies across 90 umbrella applications')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                OTP Supervision Tree Optimization</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Testing different supervision strategies, restart policies, and process topologies across 90 umbrella applications</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;session-lifecycle&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('session context persistence', 'testing stack-based conversation state management across sessions, measuring context recovery accuracy and persistence overhead')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                Session Context Persistence</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Testing stack-based conversation state management across sessions, measuring context recovery accuracy and persistence overhead</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;drift-detection&#x2F;"
+                        class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                        x-show="matchesSearch('sub-threshold drift detection', 'testing behavioral, configuration, and dependency drift detection sensitivity below conventional alerting thresholds')"
+                        x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0"
+                        x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3
+                                class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                                Sub-Threshold Drift Detection</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-emerald-900/50 text-emerald-400
+                                ">active</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Testing behavioral, configuration, and dependency drift detection sensitivity below conventional alerting thresholds</p>
+                        
+                    </a>
+                    
+                </div>
+            </div>
+
+            <!-- Right Sidebar (1/4) -->
+            <div class="space-y-6">
+                <!-- Card 1: Section Topics -->
+                <div x-data="{ expanded: true }" class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                    <button @click="expanded = !expanded"
+                        class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Section Topics</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{'rotate-180': !expanded}"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-transition class="px-4 pb-4">
+                        <div class="mb-3">
+                            <input type="text" x-model="search" placeholder="Filter experiments..."
+                                class="block w-full pl-3 pr-4 py-2 text-xs text-white border border-gray-600 rounded-lg bg-gray-900 focus:ring-emerald-500 focus:border-emerald-500 placeholder-gray-500">
+                        </div>
+                        <div class="max-h-[400px] overflow-y-auto space-y-1 pr-1 scrollbar-thin">
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;color-team-simulation&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Adversarial-Defensive Synthesis Cycles
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;agent-prototyping&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Autonomous Agent Prototyping Framework
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;quality-evolution&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Autonomous Quality Floor Maintenance
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;mycelial-propagation&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Cross-Domain Pattern Propagation
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;pipeline-experimentation&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Data Pipeline Architecture Validation
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;easm-discovery&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                External Attack Surface Mapping
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;formal-verification&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Lean4 Proof Construction Pipeline
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;llm-comparison&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Local vs Cloud LLM Quality Assessment
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;storage-benchmarks&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Multi-Backend Storage Performance
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;multi-agent-coordination&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                N-Agent Orchestration Patterns
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;epistemic-framework&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                NABLA Infinity Axiom Enforcement
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;osint-pipeline&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                OSINT Source Integration Benchmarks
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;architecture-validation&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                OTP Supervision Tree Optimization
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;session-lifecycle&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Session Context Persistence
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;lab&#x2F;drift-detection&#x2F;"
+                                class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Sub-Threshold Drift Detection
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Section Statistics -->
+                <div x-data="{ expanded: true }" class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                    <button @click="expanded = !expanded"
+                        class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Section Statistics</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{'rotate-180': !expanded}"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-transition class="px-4 pb-4 space-y-3">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Total Experiments</span>
+                            <span class="font-bold text-white">15</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Section Type</span>
+                            <span class="font-bold text-emerald-400">Experimental</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Platform</span>
+                            <span class="font-bold text-gray-300">Prismatic v7.5</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Sandbox</span>
+                            <span class="font-bold text-emerald-400">Isolated</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Quick Navigation -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6" x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-700/50 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                            </svg>
+                            <h3 class="text-sm font-semibold text-white">Quick Navigation</h3>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="expanded ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                        <div class="space-y-1">
+                            <a href="/academy/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                                <div class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                                    </svg>
+                                    <span class="text-sm font-medium text-gray-300 group-hover:text-white">Academy</span>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-0.5 ml-6">Structured learning paths that build on lab results</p>
+                            </a>
+                            <a href="/technologies/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                                <div class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                    <span class="text-sm font-medium text-gray-300 group-hover:text-white">Technologies</span>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-0.5 ml-6">The technology stack powering experimental workflows</p>
+                            </a>
+                            <a href="/architecture/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                                <div class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                    </svg>
+                                    <span class="text-sm font-medium text-gray-300 group-hover:text-white">Architecture</span>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-0.5 ml-6">Design patterns validated through lab experimentation</p>
+                            </a>
+                            <a href="/api/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                                <div class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                    </svg>
+                                    <span class="text-sm font-medium text-gray-300 group-hover:text-white">API Reference</span>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-0.5 ml-6">Graduated experiments exposed as REST API endpoints</p>
+                            </a>
+                            <a href="/agents/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                                <div class="flex items-center gap-2">
+                                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                    <span class="text-sm font-medium text-gray-300 group-hover:text-white">Agents</span>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-0.5 ml-6">434 agents that orchestrate and execute experiments</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Sidebar -->
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="/commands/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Commands<span
+                class="ml-auto text-xs text-gray-600">217</span></a>
+        <a href="/architecture/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Architecture</a>
+        <a href="/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        <a href="/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="/technologies/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Technologies</a>
+        <a href="/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-12 border-t border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid md:grid-cols-2 gap-6">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                class="p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 transition-all">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Lab &rarr; Academy</p>
+                <p class="text-sm text-gray-400">Validated experiments become Academy learning materials</p>
+            </a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                class="p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 transition-all">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Lab &rarr; API</p>
+                <p class="text-sm text-gray-400">Graduated experiments are exposed as API endpoints</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+    function labFilter() {
+        return {
+            search: '',
+            matchesSearch: function (title, description) {
+                if (!this.search) return true;
+                var s = this.search.toLowerCase();
+                return title.includes(s) || description.includes(s);
+            }
+        };
+    }
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Enterprise-grade AI orchestration platform. 430 autonomous agents. 89 umbrella apps.
+                        Self-evolving, deterministic, unstoppable.
+                    </p>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (89+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (430)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/commands/"
+                                class="text-gray-400 hover:text-white transition-colors">Commands (212)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies (44)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Resources</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Lab</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Prismatic Platform. Built with <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-mercy/"
+                        class="text-gray-400 hover:text-white">NO MERCY</a>, <a
+                        href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/no-doubts/"
+                        class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                </p>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm text-gray-500">v7.5.0</span>
+                    <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Back to Top + Nav scroll -->
+    <script>
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            var nav = document.querySelector('nav');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+                if (nav && window.scrollY > 20) {
+                    nav.classList.add('border-white/10');
+                    nav.classList.remove('border-white/5');
+                } else if (nav) {
+                    nav.classList.remove('border-white/10');
+                    nav.classList.add('border-white/5');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>
