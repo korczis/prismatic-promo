@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Introducing Prismatic SDK: Open Source Intelligence Development Kit - Prismatic Blog</title>
+
+    
+
+<meta name="description" content="Prismatic SDK is now available as an open-source, MIT-licensed client library for TypeScript, Python, Elixir, and Go. Build intelligence applications with type-safe APIs, built-in retry logic, and streaming support.">
+<meta property="og:description" content="Prismatic SDK is now available as an open-source, MIT-licensed client library for TypeScript, Python, Elixir, and Go. Build intelligence applications with type-safe APIs, built-in retry logic, and streaming support.">
+<meta name="twitter:description" content="Prismatic SDK is now available as an open-source, MIT-licensed client library for TypeScript, Python, Elixir, and Go. Build intelligence applications with type-safe APIs, built-in retry logic, and streaming support.">
+
+<meta property="og:title" content="Introducing Prismatic SDK: Open Source Intelligence Development Kit - Prismatic Blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;blog&#x2F;introducing-prismatic-sdk&#x2F;">
+
+<meta property="article:published_time" content="2026-02-21T00:00:00+00:00">
+
+
+<meta property="article:author" content="Tomáš Korcak (korczis)">
+
+
+
+<meta property="article:tag" content="sdk">
+
+<meta property="article:tag" content="open-source">
+
+<meta property="article:tag" content="typescript">
+
+<meta property="article:tag" content="python">
+
+<meta property="article:tag" content="elixir">
+
+<meta property="article:tag" content="developer-tools">
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Introducing Prismatic SDK: Open Source Intelligence Development Kit - Prismatic Blog">
+
+
+    
+    
+    <meta name="keywords" content="prismatic sdk, open source intelligence sdk, OSINT developer tools, intelligence API client, TypeScript SDK, Python SDK, Elixir SDK">
+    
+
+    
+    
+    
+    <meta property="article:tag" content="sdk">
+    
+    <meta property="article:tag" content="open-source">
+    
+    <meta property="article:tag" content="typescript">
+    
+    <meta property="article:tag" content="python">
+    
+    <meta property="article:tag" content="elixir">
+    
+    <meta property="article:tag" content="developer-tools">
+    
+    
+    <meta property="article:author" content="Tomáš Korcak">
+    <meta property="article:section" content="blog&#x2F;_index.md">
+    <meta name="author" content="Tomáš Korcak">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;blog&#x2F;introducing-prismatic-sdk&#x2F;">
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Prismatic Platform Feed" href="/atom.xml">
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prismatic Platform",
+        "url": "https://prismatic-reality.com",
+        "description": "Open Source AI-Orchestrated Intelligence Platform | 530 Agents | 115 Apps | Community-Driven",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://prismatic-reality.com/search/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://prismatic-reality.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://prismatic-reality.com/blog/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Introducing Prismatic SDK: Open Source Intelligence Development Kit"
+            }
+        ]
+    }
+    </script>
+    
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Introducing Prismatic SDK: Open Source Intelligence Development Kit",
+        "description": "Prismatic SDK is now available as an open-source, MIT-licensed client library for TypeScript, Python, Elixir, and Go. Build intelligence applications with type-safe APIs, built-in retry logic, and streaming support.",
+        "url": "https://prismatic-reality.com/blog/introducing-prismatic-sdk/",
+        "author": {
+            "@type": "Person",
+            "name": "Tomáš Korcak",
+            "url": "https:&#x2F;&#x2F;github.com&#x2F;korczis",
+            "sameAs": [
+                "https:&#x2F;&#x2F;github.com&#x2F;korczis",
+                "https:&#x2F;&#x2F;gitlab.com&#x2F;korczis",
+                "https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis",
+                "https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://prismatic-reality.com/blog/introducing-prismatic-sdk/"
+        },
+        "inLanguage": "en",
+        "keywords": "prismatic sdk, open source intelligence sdk, OSINT developer tools, intelligence API client, TypeScript SDK, Python SDK, Elixir SDK",
+        "wordCount": 267
+    }
+    </script>
+    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <!-- Zola/Giallo Server-Side Syntax Highlighting -->
+    <link rel="stylesheet" href="/giallo.css">
+
+    <!-- Diagram Toggle (Mermaid Source/Interactive) -->
+    <link rel="stylesheet" href="/css/diagram-toggle.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Introducing Prismatic SDK: Open Source Intelligence Development Kit",
+    "description": "Prismatic SDK is now available as an open-source, MIT-licensed client library for TypeScript, Python, Elixir, and Go. Build intelligence applications with type-safe APIs, built-in retry logic, and streaming support.",
+    "url": "https://prismatic-reality.com/blog/introducing-prismatic-sdk/",
+    "author": {
+        "@type": "Organization",
+        "name": "Tomáš Korcak (korczis)"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "Prismatic Platform",
+        "url": "https://prismatic-reality.com"
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://prismatic-reality.com/blog/introducing-prismatic-sdk/"
+    },
+    "inLanguage": "en",
+    "datePublished": "2026-02-21T00:00:00+00:00",
+    "keywords": "prismatic sdk, open source intelligence sdk, OSINT developer tools, intelligence API client, TypeScript SDK, Python SDK, Elixir SDK",
+    "wordCount": 267
+}
+</script>
+
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2">
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-1 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+                    <li>
+                        <a href="/executive/"
+                            class="block py-2 px-3 text-purple-400 font-semibold rounded-lg hover:text-purple-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Executive</a>
+                    </li>
+                    <li>
+                        <a href="/developers/"
+                            class="block py-2 px-3 text-blue-400 font-semibold rounded-lg hover:text-blue-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Developers</a>
+                    </li>
+                    <li>
+                        <a href="/developers/sdk/"
+                            class="block py-2 px-3 text-green-400 font-semibold rounded-lg hover:text-green-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">SDK</a>
+                    </li>
+                    <li>
+                        <a href="/dd/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Due Diligence</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">OSINT</a>
+                    </li>
+                    <li>
+                        <a href="/lab/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Interactive Labs</a>
+                    </li>
+                    <li>
+                        <a href="/academy/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Academy</a>
+                    </li>
+                    <li>
+                        <a href="/agents/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Agents</a>
+                    </li>
+                    <li>
+                        <a href="/apps/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Apps</a>
+                    </li>
+                    <li>
+                        <a href="/api/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">API</a>
+                    </li>
+                    <li>
+                        <a href="/about/author/"
+                            class="block py-2 px-3 text-yellow-400 font-semibold rounded-lg hover:text-yellow-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Author</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-full sm:w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/capabilities/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Capabilities</a>
+                            <a href="/architecture/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Architecture</a>
+                            <a href="/technologies/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Technologies</a>
+                            <a href="/teams/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Color Teams</a>
+                            <a href="/commands/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Commands</a>
+                            <a href="/registry/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Registry</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="/glossary/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Glossary</a>
+                            <a href="/faq/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">FAQ</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="/blog/"
+                                class="block px-4 py-2 text-sm text-green-400 hover:text-green-300 hover:bg-white/5">Blog</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<article class="py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-4">
+            <!-- Main Content (3/4) -->
+            <div class="lg:col-span-3">
+                
+<nav class="flex mb-8" aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 md:space-x-3">
+        <li class="inline-flex items-center">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+                Home
+            </a>
+        </li>
+        <li>
+            <div class="flex items-center">
+                <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                <a href="&#x2F;blog&#x2F;" class="ml-1 text-sm font-medium text-gray-400 hover:text-white md:ml-2 transition-colors">Blog</a>
+            </div>
+        </li>
+        <li aria-current="page">
+            <div class="flex items-center">
+                <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                <span class="ml-1 text-sm font-medium text-gray-300 md:ml-2">Introducing Prismatic SDK: Open Source Intelligence Development Kit</span>
+            </div>
+        </li>
+    </ol>
+</nav>
+
+
+                <!-- Article Header -->
+                <header class="mb-10">
+                    <div class="flex items-center gap-3 mb-4">
+                        
+                        <span class="px-3 py-1 text-xs font-medium rounded-full
+                            bg-blue-900/50 text-blue-400 border border-blue-700/30
+                            ">announcement</span>
+                        
+                        
+                        <span class="text-sm text-gray-500">5 min read</span>
+                        
+                    </div>
+
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 tracking-tight leading-tight">
+                        Introducing Prismatic SDK: Open Source Intelligence Development Kit
+                    </h1>
+
+                    
+                    <p class="text-lg text-gray-400 leading-relaxed max-w-3xl">Prismatic SDK is now available as an open-source, MIT-licensed client library for TypeScript, Python, Elixir, and Go. Build intelligence applications with type-safe APIs, built-in retry logic, and streaming support.</p>
+                    
+
+                    <div class="flex items-center gap-4 mt-6 pt-6 border-t border-white/5">
+                        
+                        <span class="text-sm text-gray-300 font-medium">Tomáš Korcak (korczis)</span>
+                        
+                        
+                        <time datetime="2026-02-21" class="text-sm text-gray-500">
+                            February 21, 2026
+                        </time>
+                        
+                        
+                        <span class="text-sm text-gray-600">267 words</span>
+                        
+                    </div>
+                </header>
+
+                <!-- Article Body -->
+                <div class="prose prose-invert prose-lg max-w-none
+                    prose-headings:font-bold prose-headings:tracking-tight
+                    prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
+                    prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+                    prose-p:text-gray-300 prose-p:leading-relaxed
+                    prose-a:text-green-400 prose-a:no-underline hover:prose-a:text-green-300
+                    prose-strong:text-white
+                    prose-code:text-green-400 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+                    prose-pre:bg-gray-900 prose-pre:border prose-pre:border-white/10
+                    prose-blockquote:border-green-500/50 prose-blockquote:text-gray-400
+                    prose-li:text-gray-300
+                    prose-table:text-sm
+                    prose-th:text-white prose-th:font-semibold
+                    prose-td:text-gray-300">
+                    <p>We are excited to announce the general availability of <a href="/developers/sdk/">Prismatic SDK</a> -- an open-source, MIT-licensed client library that makes it easy to integrate intelligence capabilities into any application.</p>
+<h2 id="why-we-built-the-sdk">Why We Built the SDK</h2>
+<p>Intelligence tooling has historically been locked behind enterprise APIs with opaque interfaces. Developers building security dashboards, due diligence workflows, or OSINT aggregators had to reverse-engineer proprietary protocols or build fragile integrations from scratch.</p>
+<p>Prismatic SDK changes this. It provides a unified, type-safe interface to the platform's intelligence capabilities across four languages:</p>
+<ul>
+<li><strong>TypeScript/JavaScript</strong> -- Full type definitions, async/await, streaming support</li>
+<li><strong>Python</strong> -- Pythonic API with dataclass models, async support via <code>asyncio</code></li>
+<li><strong>Elixir</strong> -- Native OTP integration, GenServer-backed connection pooling</li>
+<li><strong>Go</strong> -- Idiomatic Go with context propagation and structured errors</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<p>Install the SDK in your language of choice:</p>
+<pre class="giallo z-code"><code data-lang="shellscript"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># TypeScript</span></span>
+<span class="giallo-l"><span class="z-entity z-name">npm</span><span class="z-string"> install @prismatic/sdk</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Python</span></span>
+<span class="giallo-l"><span class="z-entity z-name">pip</span><span class="z-string"> install prismatic-sdk</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Elixir</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Add to mix.exs: {:prismatic_sdk, &quot;~&gt; 0.8.0&quot;}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Go</span></span>
+<span class="giallo-l"><span class="z-entity z-name">go</span><span class="z-string"> get github.com/prismatic-platform/sdk-go</span></span></code></pre><h2 id="key-features">Key Features</h2>
+<h3 id="type-safe-entity-resolution">Type-Safe Entity Resolution</h3>
+<p>Every API response is fully typed. No more <code>any</code> or <code>Dict[str, Any]</code> -- you get autocompletion and compile-time validation:</p>
+<pre class="giallo z-code"><code data-lang="typescript"><span class="giallo-l"><span class="z-storage z-type">const</span><span class="z-variable"> result</span><span class="z-keyword"> =</span><span class="z-keyword z-control"> await</span><span class="z-variable"> prismatic</span><span class="z-punctuation">.</span><span class="z-variable">entities</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">resolve</span><span>(</span><span class="z-punctuation">{</span></span>
+<span class="giallo-l"><span class="z-meta z-object-literal z-key">  name</span><span class="z-punctuation">: &quot;</span><span class="z-string">Navigara AI s.r.o.</span><span class="z-punctuation">&quot;,</span></span>
+<span class="giallo-l"><span class="z-meta z-object-literal z-key">  jurisdiction</span><span class="z-punctuation">: &quot;</span><span class="z-string">CZ</span><span class="z-punctuation">&quot;,</span></span>
+<span class="giallo-l"><span class="z-meta z-object-literal z-key">  identifiers</span><span class="z-punctuation">: {</span><span class="z-meta z-object-literal z-key"> ico</span><span class="z-punctuation">: &quot;</span><span class="z-string">21893641</span><span class="z-punctuation">&quot; }</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span><span>)</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// result.entity.type is EntityType.COMPANY</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// result.confidence is a number between 0 and 1</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">// result.evidence is Evidence[]</span></span></code></pre><h3 id="built-in-retry-and-circuit-breaking">Built-in Retry and Circuit Breaking</h3>
+<p>Network failures happen. The SDK handles transient errors with configurable exponential backoff and circuit breaker patterns -- the same patterns we use in our 530-agent production deployment.</p>
+<h3 id="streaming-results">Streaming Results</h3>
+<p>For large-scale intelligence gathering, stream results as they arrive instead of waiting for the full response:</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-keyword z-control">async for</span><span> entity</span><span class="z-keyword z-control"> in</span><span> prismatic</span><span class="z-punctuation">.</span><span class="z-meta z-member z-access z-python">osint</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">stream_search</span><span class="z-punctuation">(&quot;</span><span class="z-string">example.com</span><span class="z-punctuation">&quot;):</span></span>
+<span class="giallo-l"><span class="z-support z-function">    print</span><span class="z-punctuation">(</span><span class="z-storage z-type">f</span><span class="z-string">&quot;Found: </span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments">entity</span><span class="z-punctuation">.</span><span class="z-meta z-member z-access z-python">name</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string"> (</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments">entity</span><span class="z-punctuation">.</span><span class="z-meta z-member z-access z-python">type</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">)&quot;</span><span class="z-punctuation">)</span></span></code></pre><h2 id="what-s-next">What's Next</h2>
+<ul>
+<li><strong>Plugin Kit integration</strong> -- Build custom adapters that plug directly into the SDK's type system</li>
+<li><strong>Interactive Labs</strong> -- Try SDK functions in our <a href="/lab/">sandboxed lab environment</a></li>
+<li><strong>Academy courses</strong> -- Structured <a href="/academy/">learning paths</a> for SDK development</li>
+</ul>
+<p>Start building at <a href="/developers/sdk/">prismatic-reality.com/developers/sdk/</a>.</p>
+<hr />
+<p><em>Prismatic SDK is MIT licensed. Contributions welcome on GitHub.</em></p>
+
+                </div>
+
+                <!-- Tags -->
+                
+                <div class="mt-12 pt-8 border-t border-white/5">
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-3">Tags</h3>
+                    <div class="flex flex-wrap gap-2">
+                        
+                        <span class="px-3 py-1.5 text-xs text-gray-400 bg-white/5 rounded-lg border border-white/5">sdk</span>
+                        
+                        <span class="px-3 py-1.5 text-xs text-gray-400 bg-white/5 rounded-lg border border-white/5">open-source</span>
+                        
+                        <span class="px-3 py-1.5 text-xs text-gray-400 bg-white/5 rounded-lg border border-white/5">typescript</span>
+                        
+                        <span class="px-3 py-1.5 text-xs text-gray-400 bg-white/5 rounded-lg border border-white/5">python</span>
+                        
+                        <span class="px-3 py-1.5 text-xs text-gray-400 bg-white/5 rounded-lg border border-white/5">elixir</span>
+                        
+                        <span class="px-3 py-1.5 text-xs text-gray-400 bg-white/5 rounded-lg border border-white/5">developer-tools</span>
+                        
+                    </div>
+                </div>
+                
+
+                <!-- Navigation -->
+                <nav class="mt-12 pt-8 border-t border-white/5">
+                    <div class="flex items-center justify-between">
+                        
+                        <div></div>
+                        
+
+                        <a href="/blog/" class="text-sm text-gray-500 hover:text-white transition-colors">All Posts</a>
+
+                        
+                        <div></div>
+                        
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Right Sidebar (1/4) -->
+            <div class="hidden lg:block sticky top-20 space-y-6 self-start">
+                <!-- Table of Contents -->
+                
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                    <div class="p-4 border-b border-gray-700">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/>
+                            </svg>
+                            <span class="font-semibold text-white text-sm">On This Page</span>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <nav class="space-y-1">
+                            
+                            <a href="#why-we-built-the-sdk" class="block py-1 text-xs text-gray-400 hover:text-green-400 transition-colors truncate">Why We Built the SDK</a>
+                            
+                            
+                            <a href="#getting-started" class="block py-1 text-xs text-gray-400 hover:text-green-400 transition-colors truncate">Getting Started</a>
+                            
+                            
+                            <a href="#key-features" class="block py-1 text-xs text-gray-400 hover:text-green-400 transition-colors truncate">Key Features</a>
+                            
+                            
+                            <a href="#type-safe-entity-resolution" class="block py-1 pl-3 text-xs text-gray-500 hover:text-green-400 transition-colors truncate">Type-Safe Entity Resolution</a>
+                            
+                            <a href="#built-in-retry-and-circuit-breaking" class="block py-1 pl-3 text-xs text-gray-500 hover:text-green-400 transition-colors truncate">Built-in Retry and Circuit Breaking</a>
+                            
+                            <a href="#streaming-results" class="block py-1 pl-3 text-xs text-gray-500 hover:text-green-400 transition-colors truncate">Streaming Results</a>
+                            
+                            
+                            
+                            <a href="#what-s-next" class="block py-1 text-xs text-gray-400 hover:text-green-400 transition-colors truncate">What&#x27;s Next</a>
+                            
+                            
+                        </nav>
+                    </div>
+                </div>
+                
+
+                <!-- Article Info -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 p-4 space-y-3">
+                    
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-400">Author</span>
+                        <span class="font-medium text-white">Tomáš Korcak (korczis)</span>
+                    </div>
+                    
+                    
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-400">Published</span>
+                        <span class="text-gray-300">Feb 21, 2026</span>
+                    </div>
+                    
+                    
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-400">Words</span>
+                        <span class="text-gray-300">267</span>
+                    </div>
+                    
+                    
+                    <div class="flex justify-between items-center text-sm">
+                        <span class="text-gray-400">Reading Time</span>
+                        <span class="text-gray-300">5 min</span>
+                    </div>
+                    
+                </div>
+
+                <!-- Quick Navigation -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                    <div class="p-4 border-b border-gray-700">
+                        <span class="font-semibold text-white text-sm">Related</span>
+                    </div>
+                    <div class="p-4 space-y-1">
+                        <a href="/developers/sdk/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors">
+                            <span class="text-sm font-medium text-gray-300">SDK</span>
+                        </a>
+                        <a href="/lab/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors">
+                            <span class="text-sm font-medium text-gray-300">Labs</span>
+                        </a>
+                        <a href="/academy/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors">
+                            <span class="text-sm font-medium text-gray-300">Academy</span>
+                        </a>
+                        <a href="/developers/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors">
+                            <span class="text-sm font-medium text-gray-300">Developers</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- RSS -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 p-4">
+                    <a href="/atom.xml" class="flex items-center gap-3 text-sm text-gray-300 hover:text-green-400 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6.18 15.64a2.18 2.18 0 010 4.36 2.18 2.18 0 010-4.36M4 4.44A15.56 15.56 0 0119.56 20h-2.83A12.73 12.73 0 004 7.27V4.44m0 5.66a9.9 9.9 0 019.9 9.9h-2.83A7.07 7.07 0 004 12.93v-2.83z"/>
+                        </svg>
+                        Subscribe via RSS
+                    </a>
+                </div>
+
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/dd/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Due Diligence<span
+                class="ml-auto text-xs text-gray-600">122 src</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Interactive Labs<span
+                class="ml-auto text-xs text-gray-600">15 exp</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Academy<span
+                class="ml-auto text-xs text-gray-600">15 courses</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>API Reference</a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+</article>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Open source AI orchestration platform. 530 autonomous agents. 115 umbrella apps.
+                        Community-driven, self-evolving, unstoppable.
+                    </p>
+                    <div class="flex items-center space-x-4 mt-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitLab">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0L8.26 11.26H3.74L12 24l8.26-12.74H15.74L12 0zM3.74 11.26l4.52 7.41L12 0 8.26 11.26H3.74zM20.26 11.26l-4.52 7.41L12 0l3.74 11.26h4.52z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Connect on LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Follow on Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Executive</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/about/author/"
+                                class="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold">Meet the Creator</a></li>
+                        <li><a href="/executive/"
+                                class="text-gray-400 hover:text-white transition-colors">Value Proposition</a></li>
+                        <li><a href="/executive/roi-calculator/"
+                                class="text-gray-400 hover:text-white transition-colors">ROI Calculator</a></li>
+                        <li><a href="/executive/competitive-analysis/"
+                                class="text-gray-400 hover:text-white transition-colors">Competitive Analysis</a></li>
+                        <li><a href="/executive/case-studies/"
+                                class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Intelligence -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Intelligence</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/dd/"
+                                class="text-gray-400 hover:text-white transition-colors">Due Diligence</a></li>
+                        <li><a href="/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Interactive Labs</a></li>
+                        <li><a href="/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="/developers/sdk/"
+                                class="text-gray-400 hover:text-white transition-colors">SDK</a></li>
+                        <li><a href="/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="/blog/"
+                                class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Capabilities</a></li>
+                        <li><a href="/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (530)</a></li>
+                        <li><a href="/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (115+)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                        <li><a href="/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                        <p class="text-sm text-gray-500">
+                            &copy; 2026 <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis" class="text-gray-400 hover:text-white">Tomáš Korcak</a>.
+                            Licensed under <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform/blob/main/LICENSE" class="text-gray-400 hover:text-white">GHL</a>.
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Built with <a href="/capabilities/no-mercy/" class="text-gray-400 hover:text-white">NO MERCY</a>,
+                            <a href="/capabilities/no-doubts/" class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                        <span class="text-sm text-gray-500">v8.0.0</span>
+                        <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                        <span class="text-sm text-gray-400">Gen 19</span>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                    <div class="flex items-center space-x-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitHub</a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitLab</a>
+                        <a href="/blog/" class="hover:text-gray-400">Blog</a>
+                        <a href="/faq/" class="hover:text-gray-400">FAQ</a>
+                    </div>
+                    <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                        <span>530 agents</span>
+                        <span>•</span>
+                        <span>115 apps</span>
+                        <span>•</span>
+                        <span>2.8M LOC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Code Copy Buttons -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/code-copy.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Back to Top + Nav scroll -->
+    <script>
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            var nav = document.querySelector('nav');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+                if (nav && window.scrollY > 20) {
+                    nav.classList.add('border-white/10');
+                    nav.classList.remove('border-white/5');
+                } else if (nav) {
+                    nav.classList.remove('border-white/10');
+                    nav.classList.add('border-white/5');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

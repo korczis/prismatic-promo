@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Developer Community - Prismatic Platform</title>
+
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;developers&#x2F;community&#x2F;">
+
+    
+    <meta property="og:title" content="Developer Community - Prismatic Platform">
+    <meta name="twitter:title" content="Developer Community - Prismatic Platform">
+    
+
+    
+    
+    <meta property="og:description" content="Join thousands of developers building the future of AI-orchestrated intelligence. Contribute code, share knowledge, and collaborate on open source projects.">
+    <meta name="description" content="Join thousands of developers building the future of AI-orchestrated intelligence. Contribute code, share knowledge, and collaborate on open source projects.">
+    
+
+    
+    
+    <meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;community-collaboration.png">
+    <meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;community-collaboration.png">
+    
+
+    
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <meta property="og:image:alt" content="Developer Community - Prismatic Platform">
+    
+    <meta property="og:site_name" content="Prismatic Platform">
+    <meta property="og:locale" content="en_US">
+
+    
+    
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;developers&#x2F;community&#x2F;">
+    
+    <meta name="twitter:description" content="Join thousands of developers building the future of AI-orchestrated intelligence. Contribute code, share knowledge, and collaborate on open source projects.">
+    
+    
+    <meta name="twitter:image:alt" content="Developer Community - Prismatic Platform">
+    
+    <meta name="twitter:creator" content="@korczis">
+
+    
+
+    
+    
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    
+
+    
+    
+    <meta property="article:author" content="Tomáš Korcak">
+    <meta property="article:section" content="Developer Community">
+    <meta name="author" content="Tomáš Korcak">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;developers&#x2F;community&#x2F;">
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Prismatic Platform Feed" href="/atom.xml">
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prismatic Platform",
+        "url": "https://prismatic-reality.com",
+        "description": "Open Source AI-Orchestrated Intelligence Platform | 530 Agents | 115 Apps | Community-Driven",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://prismatic-reality.com/search/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://prismatic-reality.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Developer Community"
+            }
+        ]
+    }
+    </script>
+    
+
+    
+    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <!-- Zola/Giallo Server-Side Syntax Highlighting -->
+    <link rel="stylesheet" href="/giallo.css">
+
+    <!-- Diagram Toggle (Mermaid Source/Interactive) -->
+    <link rel="stylesheet" href="/css/diagram-toggle.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2">
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-1 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+                    <li>
+                        <a href="/executive/"
+                            class="block py-2 px-3 text-purple-400 font-semibold rounded-lg hover:text-purple-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Executive</a>
+                    </li>
+                    <li>
+                        <a href="/developers/"
+                            class="block py-2 px-3 text-blue-400 font-semibold rounded-lg hover:text-blue-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Developers</a>
+                    </li>
+                    <li>
+                        <a href="/developers/sdk/"
+                            class="block py-2 px-3 text-green-400 font-semibold rounded-lg hover:text-green-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">SDK</a>
+                    </li>
+                    <li>
+                        <a href="/dd/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Due Diligence</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">OSINT</a>
+                    </li>
+                    <li>
+                        <a href="/lab/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Interactive Labs</a>
+                    </li>
+                    <li>
+                        <a href="/academy/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Academy</a>
+                    </li>
+                    <li>
+                        <a href="/agents/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Agents</a>
+                    </li>
+                    <li>
+                        <a href="/apps/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Apps</a>
+                    </li>
+                    <li>
+                        <a href="/api/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">API</a>
+                    </li>
+                    <li>
+                        <a href="/about/author/"
+                            class="block py-2 px-3 text-yellow-400 font-semibold rounded-lg hover:text-yellow-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Author</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-full sm:w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/capabilities/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Capabilities</a>
+                            <a href="/architecture/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Architecture</a>
+                            <a href="/technologies/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Technologies</a>
+                            <a href="/teams/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Color Teams</a>
+                            <a href="/commands/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Commands</a>
+                            <a href="/registry/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Registry</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="/glossary/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Glossary</a>
+                            <a href="/faq/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">FAQ</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="/blog/"
+                                class="block px-4 py-2 text-sm text-green-400 hover:text-green-300 hover:bg-white/5">Blog</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<div class="min-h-screen bg-gray-950">
+    <!-- Hero Section -->
+    <section class="relative py-16 sm:py-24">
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
+        <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-4xl text-center">
+                
+                <div class="mb-8">
+                    <img src="&#x2F;images&#x2F;community-collaboration.png" alt="Prismatic Platform Developer Community - Collaborative Intelligence Development" class="mx-auto h-32 w-32 rounded-lg shadow-2xl">
+                </div>
+                
+
+                <div class="mb-6 flex justify-center">
+                    <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-300 ring-1 ring-white/10 hover:ring-white/20">
+                        
+                            Open Source Developer Tools
+                        
+                        <a href="#content" class="font-semibold text-blue-400"><span class="absolute inset-0" aria-hidden="true"></span> Learn More <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                    Developer Community
+                </h1>
+
+                
+                <p class="mt-6 text-xl leading-8 text-gray-300 max-w-3xl mx-auto">
+                    Join thousands of developers building the future of AI-orchestrated intelligence. Contribute code, share knowledge, and collaborate on open source projects.
+                </p>
+                
+
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    
+
+                    
+                </div>
+
+                <!-- Tech Stack Badges -->
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Tabs (if subsections exist) -->
+    
+
+    <!-- Main Content -->
+    <section id="content" class="py-16 sm:py-24">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-none">
+                <div class="prose prose-invert prose-lg max-w-none">
+                    <h1 id="prismatic-platform-developer-community">Prismatic Platform Developer Community</h1>
+<h2 id="building-the-future-together">Building the Future Together</h2>
+<p>Join over 25,000 developers, security researchers, and intelligence analysts who are collaborating to build the next generation of AI-orchestrated intelligence tools. Our community thrives on open collaboration, technical excellence, and shared commitment to advancing cybersecurity and intelligence capabilities.</p>
+<h3 id="community-vision">Community Vision</h3>
+<p><strong>"Democratizing Intelligence Development"</strong> - Making sophisticated OSINT tools, security analysis, and threat intelligence accessible to developers worldwide through open source collaboration and knowledge sharing.</p>
+<h3 id="core-values">Core Values</h3>
+<ul>
+<li><strong>🔓 Open Source First</strong>: Transparency, accessibility, and collaborative development</li>
+<li><strong>🏆 Technical Excellence</strong>: High standards for code quality, security, and performance</li>
+<li><strong>🤝 Inclusive Collaboration</strong>: Welcoming environment for developers of all backgrounds and skill levels</li>
+<li><strong>🔬 Innovation Through Research</strong>: Advancing the state of the art in intelligence and security</li>
+<li><strong>📚 Knowledge Sharing</strong>: Learning together and lifting up the entire community</li>
+</ul>
+<hr />
+<h2 id="community-platforms">Community Platforms</h2>
+<h3 id="github-organization">GitHub Organization</h3>
+<p><strong>Primary Hub</strong>: <a rel="external" href="https://github.com/prismatic-platform"><code>github.com/prismatic-platform</code></a></p>
+<p><strong>Active Repositories</strong>:</p>
+<ul>
+<li><strong>prismatic-sdk</strong> ⭐ 2,847 stars - Multi-language SDK</li>
+<li><strong>prismatic-plugin-kit</strong> ⭐ 1,203 stars - Plugin development framework</li>
+<li><strong>prismatic-ui-components</strong> ⭐ 891 stars - React/Vue/Web components</li>
+<li><strong>prismatic-adapters</strong> ⭐ 567 stars - OSINT adapter collection</li>
+<li><strong>prismatic-docs</strong> ⭐ 324 stars - Community documentation</li>
+<li><strong>prismatic-examples</strong> ⭐ 289 stars - Sample projects and tutorials</li>
+</ul>
+<p><strong>GitHub Statistics</strong> (February 2026):</p>
+<ul>
+<li>📊 <strong>15,000+</strong> total stars across repositories</li>
+<li>🔀 <strong>2,400+</strong> forks and contributions</li>
+<li>🐛 <strong>450+</strong> issues resolved monthly</li>
+<li>📦 <strong>180+</strong> releases and versions</li>
+<li>👥 <strong>500+</strong> active contributors</li>
+</ul>
+<h3 id="discord-server">Discord Server</h3>
+<p><strong>Real-time Collaboration</strong>: <a rel="external" href="https://discord.gg/prismatic-platform"><code>discord.gg/prismatic-platform</code></a></p>
+<p><strong>Active Channels</strong>:</p>
+<ul>
+<li><strong>#general</strong> - Community announcements and general discussion</li>
+<li><strong>#sdk-support</strong> - SDK installation, usage, and troubleshooting</li>
+<li><strong>#plugin-development</strong> - Plugin creation and sharing</li>
+<li><strong>#ui-components</strong> - Frontend component discussions</li>
+<li><strong>#osint-techniques</strong> - Intelligence gathering methods and tools</li>
+<li><strong>#security-research</strong> - Vulnerability research and responsible disclosure</li>
+<li><strong>#show-and-tell</strong> - Community project showcases</li>
+<li><strong>#job-board</strong> - Career opportunities in security and intelligence</li>
+<li><strong>#contributors</strong> - Contribution coordination and recognition</li>
+</ul>
+<p><strong>Discord Community Stats</strong>:</p>
+<ul>
+<li>👥 <strong>8,500+</strong> members across all channels</li>
+<li>💬 <strong>15,000+</strong> messages exchanged monthly</li>
+<li>🎯 <strong>85%</strong> question response rate within 4 hours</li>
+<li>🌍 <strong>40+</strong> countries represented</li>
+<li>📅 <strong>Weekly</strong> community calls and workshops</li>
+</ul>
+<h3 id="stack-overflow">Stack Overflow</h3>
+<p><strong>Technical Q&amp;A</strong>: Tag questions with <code>prismatic-platform</code></p>
+<ul>
+<li>📋 <strong>850+</strong> questions answered</li>
+<li>⭐ <strong>4.7/5</strong> average answer rating</li>
+<li>⚡ <strong>2.3 hours</strong> average response time</li>
+<li>🏅 <strong>120+</strong> community experts providing answers</li>
+</ul>
+<hr />
+<h2 id="contribution-opportunities">Contribution Opportunities</h2>
+<h3 id="code-contributions">Code Contributions</h3>
+<p><strong>Priority Areas for Contributors</strong>:</p>
+<p><strong>1. SDK Enhancements</strong></p>
+<ul>
+<li>Language bindings (Rust, PHP, Ruby, Java)</li>
+<li>Performance optimizations and caching</li>
+<li>Error handling and retry mechanisms</li>
+<li>Documentation and code examples</li>
+</ul>
+<p><strong>2. Plugin Ecosystem</strong></p>
+<ul>
+<li>New OSINT source adapters</li>
+<li>Threat intelligence feed integrations</li>
+<li>Custom analysis algorithms</li>
+<li>Data transformation pipelines</li>
+</ul>
+<p><strong>3. UI Component Library</strong></p>
+<ul>
+<li>Framework support (Angular, Svelte)</li>
+<li>Accessibility improvements (WCAG 2.1 AA)</li>
+<li>Performance optimizations</li>
+<li>Mobile-responsive design enhancements</li>
+</ul>
+<p><strong>4. Documentation &amp; Tutorials</strong></p>
+<ul>
+<li>Getting started guides</li>
+<li>Advanced integration patterns</li>
+<li>Video tutorials and screencasts</li>
+<li>API reference improvements</li>
+</ul>
+<h3 id="contribution-workflow">Contribution Workflow</h3>
+<pre class="giallo z-code"><code data-lang="shellscript"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># 1. Fork repository</span></span>
+<span class="giallo-l"><span class="z-entity z-name">git</span><span class="z-string"> clone https://github.com/your-username/prismatic-sdk</span></span>
+<span class="giallo-l"><span class="z-support z-function">cd</span><span class="z-string"> prismatic-sdk</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># 2. Create feature branch</span></span>
+<span class="giallo-l"><span class="z-entity z-name">git</span><span class="z-string"> checkout -b feature/custom-adapter-example</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># 3. Implement changes with tests</span></span>
+<span class="giallo-l"><span class="z-entity z-name">npm</span><span class="z-string"> test</span></span>
+<span class="giallo-l"><span class="z-entity z-name">npm</span><span class="z-string"> run lint</span></span>
+<span class="giallo-l"><span class="z-entity z-name">npm</span><span class="z-string"> run type-check</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># 4. Commit with conventional format</span></span>
+<span class="giallo-l"><span class="z-entity z-name">git</span><span class="z-string"> commit -m</span><span class="z-punctuation"> &quot;</span><span class="z-string">feat(adapters): add example custom threat feed adapter</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-string">- Implement CustomThreatFeed adapter with rate limiting</span></span>
+<span class="giallo-l"><span class="z-string">- Add comprehensive test coverage</span></span>
+<span class="giallo-l"><span class="z-string">- Include documentation and usage examples</span></span>
+<span class="giallo-l"><span class="z-string">- Benchmark performance: &lt;100ms average response time</span><span class="z-punctuation">&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># 5. Open pull request with:</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># - Clear description of changes</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># - Test coverage report</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># - Performance benchmarks (if applicable)</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># - Breaking change notes (if any)</span></span></code></pre><h3 id="code-quality-standards">Code Quality Standards</h3>
+<p>All contributions must meet our quality standards:</p>
+<ul>
+<li>✅ <strong>100% test coverage</strong> for new functionality</li>
+<li>✅ <strong>TypeScript</strong> with strict mode enabled</li>
+<li>✅ <strong>ESLint + Prettier</strong> formatting</li>
+<li>✅ <strong>Security scanning</strong> with automated tools</li>
+<li>✅ <strong>Performance benchmarks</strong> for critical paths</li>
+<li>✅ <strong>Documentation</strong> with examples</li>
+<li>✅ <strong>Backwards compatibility</strong> or migration guide</li>
+</ul>
+<hr />
+<h2 id="recognition-programs">Recognition Programs</h2>
+<h3 id="contributor-spotlight">Contributor Spotlight</h3>
+<p><strong>Monthly recognition</strong> of outstanding community contributors:</p>
+<p><strong>February 2026 Contributors</strong>:</p>
+<ul>
+<li><strong>@security_researcher_alex</strong> - Contributed 15 new OSINT adapters for European business registries</li>
+<li><strong>@frontend_dev_sara</strong> - Led accessibility improvements across all UI components</li>
+<li><strong>@threat_hunter_mike</strong> - Developed advanced threat correlation algorithms</li>
+<li><strong>@docs_ninja_jen</strong> - Created comprehensive plugin development tutorial series</li>
+</ul>
+<h3 id="bug-bounty-program">Bug Bounty Program</h3>
+<p><strong>Security-focused rewards</strong> for responsible vulnerability disclosure:</p>
+<p><strong>Reward Tiers</strong>:</p>
+<ul>
+<li>🔴 <strong>Critical</strong> ($2,000 - $5,000): Remote code execution, data breaches</li>
+<li>🟠 <strong>High</strong> ($500 - $2,000): Authentication bypasses, privilege escalation</li>
+<li>🟡 <strong>Medium</strong> ($100 - $500): Information disclosure, denial of service</li>
+<li>🔵 <strong>Low</strong> ($50 - $100): Configuration issues, minor information leaks</li>
+</ul>
+<p><strong>Requirements</strong>:</p>
+<ul>
+<li>Responsible disclosure with 90-day embargo</li>
+<li>Clear proof of concept and reproduction steps</li>
+<li>No testing on production systems</li>
+<li>Coordination through HackerOne program</li>
+</ul>
+<p><strong>Recent Bounties Paid</strong> (Q1 2026): <strong>$18,500</strong> across 24 valid reports</p>
+<h3 id="community-speaker-program">Community Speaker Program</h3>
+<p><strong>Conference speaking opportunities</strong> for active contributors:</p>
+<p><strong>2026 Speaking Opportunities</strong>:</p>
+<ul>
+<li><strong>BSides Las Vegas</strong> - OSINT automation techniques</li>
+<li><strong>DEF CON</strong> - Open source threat intelligence</li>
+<li><strong>Black Hat</strong> - Plugin development security</li>
+<li><strong>OSINT Summit</strong> - Community-driven intelligence tools</li>
+</ul>
+<p><strong>Speaker Benefits</strong>:</p>
+<ul>
+<li>Travel and accommodation expenses covered</li>
+<li>Professional speaker training and coaching</li>
+<li>Prismatic Platform swag and recognition</li>
+<li>Networking with industry leaders</li>
+</ul>
+<h3 id="developer-certification-program">Developer Certification Program</h3>
+<p><strong>Progressive certification</strong> demonstrating expertise:</p>
+<p><strong>Certification Levels</strong>:</p>
+<p><strong>Associate Developer</strong> (Entry Level)</p>
+<ul>
+<li>SDK installation and basic usage</li>
+<li>Simple plugin development</li>
+<li>UI component integration</li>
+<li>40 hours of study + exam</li>
+</ul>
+<p><strong>Professional Developer</strong> (Intermediate)</p>
+<ul>
+<li>Advanced plugin architectures</li>
+<li>Custom UI component development</li>
+<li>Performance optimization techniques</li>
+<li>80 hours + practical project + exam</li>
+</ul>
+<p><strong>Expert Developer</strong> (Advanced)</p>
+<ul>
+<li>Platform architecture understanding</li>
+<li>Security best practices implementation</li>
+<li>Community mentoring and contribution</li>
+<li>120 hours + major contribution + peer review</li>
+</ul>
+<p><strong>Master Instructor</strong> (Leadership)</p>
+<ul>
+<li>Community teaching and workshop delivery</li>
+<li>Open source project leadership</li>
+<li>Technical writing and documentation</li>
+<li>Ongoing community service requirement</li>
+</ul>
+<hr />
+<h2 id="community-events">Community Events</h2>
+<h3 id="monthly-community-calls">Monthly Community Calls</h3>
+<p><strong>First Wednesday of each month</strong> - 6 PM UTC</p>
+<p><strong>Typical Agenda</strong>:</p>
+<ul>
+<li>Platform updates and roadmap announcements</li>
+<li>Community contributor spotlights</li>
+<li>Technical deep dives and demonstrations</li>
+<li>Q&amp;A with core development team</li>
+<li>Open discussion and feedback</li>
+</ul>
+<p><strong>Recent Call Topics</strong>:</p>
+<ul>
+<li>February 2026: "Building High-Performance OSINT Adapters"</li>
+<li>January 2026: "UI Component Accessibility Best Practices"</li>
+<li>December 2025: "Scaling Intelligence Operations with Plugins"</li>
+</ul>
+<h3 id="workshops-training">Workshops &amp; Training</h3>
+<p><strong>Quarterly hands-on workshops</strong> for skill development:</p>
+<p><strong>Upcoming Workshops</strong>:</p>
+<ul>
+<li><strong>March 2026</strong>: "Advanced Plugin Development Patterns"</li>
+<li><strong>May 2026</strong>: "Building Real-time Intelligence Dashboards"</li>
+<li><strong>August 2026</strong>: "Security Research with Open Source Tools"</li>
+<li><strong>November 2026</strong>: "Contributing to Open Source Projects"</li>
+</ul>
+<h3 id="annual-prismaticcon">Annual PrismaticCon</h3>
+<p><strong>Community conference</strong> bringing together developers, researchers, and analysts:</p>
+<p><strong>PrismaticCon 2026</strong> - September 15-17, San Francisco</p>
+<ul>
+<li>200+ attendees expected</li>
+<li>30+ technical presentations</li>
+<li>Hands-on workshops and training</li>
+<li>Networking events and social activities</li>
+<li>Open source project showcases</li>
+</ul>
+<p><strong>Call for Papers</strong> opens April 1, 2026</p>
+<hr />
+<h2 id="learning-resources">Learning Resources</h2>
+<h3 id="official-documentation">Official Documentation</h3>
+<p><strong>Comprehensive guides</strong> for all skill levels:</p>
+<ul>
+<li><strong>Getting Started</strong> - Zero to production in 30 minutes</li>
+<li><strong>SDK Deep Dive</strong> - Advanced integration patterns</li>
+<li><strong>Plugin Development</strong> - From concept to deployment</li>
+<li><strong>UI Components</strong> - Building beautiful dashboards</li>
+<li><strong>Security Best Practices</strong> - Secure development guidelines</li>
+</ul>
+<h3 id="community-created-content">Community-Created Content</h3>
+<p><strong>Blog posts, tutorials, and examples</strong> from community members:</p>
+<p><strong>Top Community Tutorials</strong> (by engagement):</p>
+<ol>
+<li>"Building a Custom Threat Intelligence Dashboard" - 15,000 views</li>
+<li>"Integrating 50+ OSINT Sources in One Hour" - 12,000 views</li>
+<li>"Security Rating Components with Real-time Updates" - 9,000 views</li>
+<li>"Advanced Plugin Testing Strategies" - 7,000 views</li>
+</ol>
+<h3 id="video-content">Video Content</h3>
+<p><strong>YouTube channel</strong> with technical content:</p>
+<ul>
+<li>Weekly "Developer Office Hours" livestreams</li>
+<li>Monthly "Plugin Spotlight" deep dives</li>
+<li>Quarterly "State of the Platform" updates</li>
+<li>Conference talk recordings and keynotes</li>
+</ul>
+<p><strong>Channel Stats</strong>:</p>
+<ul>
+<li>📺 <strong>4,200+</strong> subscribers</li>
+<li>⏰ <strong>120+</strong> hours of content</li>
+<li>👍 <strong>98%</strong> positive rating</li>
+<li>🌍 <strong>85+</strong> countries viewing</li>
+</ul>
+<hr />
+<h2 id="collaboration-tools">Collaboration Tools</h2>
+<h3 id="github-project-boards">GitHub Project Boards</h3>
+<p><strong>Transparent project management</strong> with community visibility:</p>
+<ul>
+<li><strong>Roadmap Board</strong> - Long-term feature planning</li>
+<li><strong>Bug Triage</strong> - Issue prioritization and assignment</li>
+<li><strong>Community Contributions</strong> - Tracking external contributions</li>
+<li><strong>Documentation</strong> - Content creation and maintenance</li>
+</ul>
+<h3 id="shared-development-environment">Shared Development Environment</h3>
+<p><strong>Gitpod integration</strong> for instant development setup:</p>
+<pre class="giallo z-code"><code data-lang="shellscript"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># One-click development environment</span></span>
+<span class="giallo-l"><span class="z-entity z-name">https://gitpod.io/#https://github.com/prismatic-platform/prismatic-sdk</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Includes:</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># - Pre-configured development environment</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># - All dependencies installed</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># - Test data and API keys for development</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># - VS Code with recommended extensions</span></span></code></pre><h3 id="code-review-process">Code Review Process</h3>
+<p><strong>Collaborative review</strong> ensuring code quality:</p>
+<p><strong>Review Requirements</strong>:</p>
+<ul>
+<li>✅ At least 2 approving reviews for core changes</li>
+<li>✅ Automated CI/CD pipeline passing</li>
+<li>✅ Security scan results clear</li>
+<li>✅ Performance benchmark results within limits</li>
+<li>✅ Documentation updated appropriately</li>
+</ul>
+<p><strong>Review Priorities</strong>:</p>
+<ol>
+<li><strong>Functionality</strong> - Does it work as intended?</li>
+<li><strong>Security</strong> - Are there any vulnerabilities?</li>
+<li><strong>Performance</strong> - Does it meet performance requirements?</li>
+<li><strong>Maintainability</strong> - Is the code clear and well-structured?</li>
+<li><strong>Documentation</strong> - Is it properly documented?</li>
+</ol>
+<hr />
+<h2 id="community-guidelines">Community Guidelines</h2>
+<h3 id="code-of-conduct">Code of Conduct</h3>
+<p><strong>Inclusive and respectful environment</strong> for all contributors:</p>
+<p><strong>Our Standards</strong>:</p>
+<ul>
+<li>Using welcoming and inclusive language</li>
+<li>Being respectful of differing viewpoints and experiences</li>
+<li>Gracefully accepting constructive criticism</li>
+<li>Focusing on what is best for the community</li>
+<li>Showing empathy towards other community members</li>
+</ul>
+<p><strong>Unacceptable Behavior</strong>:</p>
+<ul>
+<li>Harassment, trolling, or discriminatory language</li>
+<li>Publishing others' private information without consent</li>
+<li>Conduct that could reasonably be considered inappropriate</li>
+</ul>
+<p><strong>Enforcement</strong>: Community moderators and core team members ensure guidelines are followed</p>
+<h3 id="contribution-license-agreement">Contribution License Agreement</h3>
+<p><strong>Legal framework</strong> for community contributions:</p>
+<ul>
+<li>All contributions licensed under <strong>MIT License</strong></li>
+<li>Contributors retain copyright to their contributions</li>
+<li>Prismatic Platform granted perpetual license to use contributions</li>
+<li>Clear intellectual property guidelines</li>
+</ul>
+<h3 id="open-source-governance">Open Source Governance</h3>
+<p><strong>Democratic decision-making</strong> for major platform decisions:</p>
+<p><strong>Governance Structure</strong>:</p>
+<ul>
+<li><strong>Core Team</strong> (5 members) - Day-to-day decisions and code review</li>
+<li><strong>Technical Steering Committee</strong> (12 members) - Architecture and roadmap decisions</li>
+<li><strong>Community Council</strong> (20+ members) - Community feedback and representation</li>
+</ul>
+<p><strong>Decision Process</strong>:</p>
+<ol>
+<li><strong>Proposal</strong> - RFC (Request for Comments) submitted</li>
+<li><strong>Discussion</strong> - Community feedback and iteration</li>
+<li><strong>Vote</strong> - Steering committee formal voting</li>
+<li><strong>Implementation</strong> - Development and deployment</li>
+</ol>
+<hr />
+<h2 id="getting-help">Getting Help</h2>
+<h3 id="community-support-channels">Community Support Channels</h3>
+<p><strong>Multiple ways to get help</strong> from the community:</p>
+<p><strong>Real-time Support</strong>:</p>
+<ul>
+<li>💬 <strong>Discord #support</strong> - Immediate help from community members</li>
+<li>📹 <strong>Weekly Office Hours</strong> - Direct access to core team members</li>
+</ul>
+<p><strong>Asynchronous Support</strong>:</p>
+<ul>
+<li>🐛 <strong>GitHub Issues</strong> - Bug reports and feature requests</li>
+<li>📚 <strong>Stack Overflow</strong> - Technical questions with <code>prismatic-platform</code> tag</li>
+<li>📧 <strong>Mailing List</strong> - Development discussions and announcements</li>
+</ul>
+<h3 id="enterprise-support">Enterprise Support</h3>
+<p><strong>Professional support</strong> for commercial deployments:</p>
+<ul>
+<li>🚀 <strong>Priority Support</strong> - 4-hour response SLA for critical issues</li>
+<li>👨‍💻 <strong>Dedicated Engineering</strong> - Direct access to core developers</li>
+<li>🏆 <strong>Custom Development</strong> - Tailored solutions and integrations</li>
+<li>📋 <strong>Training Programs</strong> - On-site workshops and certification</li>
+</ul>
+<p><strong>Contact</strong>: enterprise@prismatic-platform.org</p>
+<hr />
+<h2 id="community-metrics-impact">Community Metrics &amp; Impact</h2>
+<h3 id="growth-statistics">Growth Statistics</h3>
+<p><strong>Rapid community expansion</strong> across all platforms:</p>
+<p><strong>Year-over-Year Growth</strong> (2025 → 2026):</p>
+<ul>
+<li>GitHub stars: +285% (5,200 → 15,000+)</li>
+<li>Discord members: +190% (3,000 → 8,500+)</li>
+<li>Active contributors: +150% (200 → 500+)</li>
+<li>Plugin downloads: +400% (50k → 250k+ monthly)</li>
+</ul>
+<h3 id="project-impact">Project Impact</h3>
+<p><strong>Real-world usage</strong> demonstrating community value:</p>
+<p><strong>Production Deployments</strong>:</p>
+<ul>
+<li>🏢 <strong>150+</strong> organizations using open source components</li>
+<li>🌐 <strong>40+</strong> countries with active deployments</li>
+<li>📊 <strong>2M+</strong> monthly API calls to community-built plugins</li>
+<li>🔍 <strong>500k+</strong> OSINT queries processed daily</li>
+</ul>
+<p><strong>Security Research Impact</strong>:</p>
+<ul>
+<li>🛡️ <strong>25+</strong> CVEs discovered through community research</li>
+<li>🚨 <strong>150+</strong> threat actors identified and tracked</li>
+<li>📈 <strong>85%</strong> improvement in threat detection accuracy</li>
+<li>⚡ <strong>3x</strong> faster incident response times</li>
+</ul>
+<hr />
+<h2 id="roadmap-future-vision">Roadmap &amp; Future Vision</h2>
+<h3 id="community-driven-development">Community-Driven Development</h3>
+<p><strong>Community input</strong> shaping platform direction:</p>
+<p><strong>Q2 2026 Community Priorities</strong>:</p>
+<ol>
+<li><strong>Mobile SDK</strong> - React Native and Flutter support</li>
+<li><strong>GraphQL API</strong> - Modern API interface with real-time subscriptions</li>
+<li><strong>Browser Extensions</strong> - Real-time intelligence for web browsing</li>
+<li><strong>Jupyter Notebooks</strong> - Data science and research integrations</li>
+</ol>
+<h3 id="long-term-vision">Long-term Vision</h3>
+<p><strong>5-year community goals</strong> (2026-2031):</p>
+<ul>
+<li><strong>📈 Scale</strong>: 100,000+ community members worldwide</li>
+<li><strong>🌐 Global Impact</strong>: Intelligence tools deployed in every major security operation</li>
+<li><strong>🎓 Education</strong>: University partnerships and academic research programs</li>
+<li><strong>🏆 Recognition</strong>: Industry-leading open source intelligence platform</li>
+<li><strong>🤝 Ecosystem</strong>: Thriving marketplace of community-built solutions</li>
+</ul>
+<hr />
+<h2 id="join-the-community-today">Join the Community Today</h2>
+<h3 id="quick-start-checklist">Quick Start Checklist</h3>
+<p>Ready to become part of the Prismatic Platform community?</p>
+<ul>
+<li>✅ <strong>Star our repositories</strong> on GitHub</li>
+<li>✅ <strong>Join Discord server</strong> for real-time collaboration</li>
+<li>✅ <strong>Follow @PrismaticPlatform</strong> on Twitter for updates</li>
+<li>✅ <strong>Subscribe to newsletter</strong> for monthly community highlights</li>
+<li>✅ <strong>Attend community call</strong> - first Wednesday monthly</li>
+<li>✅ <strong>Make your first contribution</strong> - documentation, bug fix, or feature</li>
+</ul>
+<h3 id="first-contribution-ideas">First Contribution Ideas</h3>
+<p><strong>Perfect for newcomers</strong>:</p>
+<ul>
+<li>📝 Fix typos or improve documentation</li>
+<li>🐛 Report bugs with detailed reproduction steps</li>
+<li>🧪 Add test cases for existing functionality</li>
+<li>💡 Suggest new features or improvements</li>
+<li>🎨 Improve UI/UX of components or documentation</li>
+<li>📹 Create tutorial videos or blog posts</li>
+</ul>
+<hr />
+<p><strong>Welcome to the future of collaborative intelligence development!</strong></p>
+<p><a rel="external" href="https://discord.gg/prismatic-platform"><strong>Join Discord →</strong></a>
+<a rel="external" href="https://github.com/prismatic-platform"><strong>Browse GitHub →</strong></a>
+<a rel="external" href="https://calendar.google.com/calendar/u/0?cid=prismatic-platform-community"><strong>Attend Community Call →</strong></a>
+<a rel="external" href="https://docs.prismatic-platform.org/contributing"><strong>Start Contributing →</strong></a></p>
+
+                </div>
+
+                <!-- Related Resources -->
+                
+                <div class="mt-16 border-t border-gray-800 pt-16">
+                    <h3 class="text-xl font-bold text-white mb-6">Related Resources</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        
+                        <a href="/developers/sdk/" class="block p-4 bg-gray-900 border border-gray-700 rounded-lg hover:border-blue-500/50 transition-colors">
+                            <div class="font-medium text-white capitalize">sdk</div>
+                            <div class="text-sm text-gray-400 mt-1">Learn more about sdk</div>
+                        </a>
+                        
+                        <a href="/developers/plugins/" class="block p-4 bg-gray-900 border border-gray-700 rounded-lg hover:border-blue-500/50 transition-colors">
+                            <div class="font-medium text-white capitalize">plugins</div>
+                            <div class="text-sm text-gray-400 mt-1">Learn more about plugins</div>
+                        </a>
+                        
+                        <a href="/developers/ui-components/" class="block p-4 bg-gray-900 border border-gray-700 rounded-lg hover:border-blue-500/50 transition-colors">
+                            <div class="font-medium text-white capitalize">ui-components</div>
+                            <div class="text-sm text-gray-400 mt-1">Learn more about ui-components</div>
+                        </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation/Quick Start (if applicable) -->
+    
+
+    <!-- Community Links -->
+    <section class="py-16 border-t border-gray-800">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl mb-8">
+                    Join the Developer Community
+                </h2>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    
+
+                    <a href="//discord.gg/prismatic-platform" class="inline-flex items-center justify-center px-6 py-3 border border-blue-600 text-blue-400 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 2.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.197.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-2.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418Z"/>
+                        </svg>
+                        Discord Community
+                    </a>
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Open source AI orchestration platform. 530 autonomous agents. 115 umbrella apps.
+                        Community-driven, self-evolving, unstoppable.
+                    </p>
+                    <div class="flex items-center space-x-4 mt-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitLab">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0L8.26 11.26H3.74L12 24l8.26-12.74H15.74L12 0zM3.74 11.26l4.52 7.41L12 0 8.26 11.26H3.74zM20.26 11.26l-4.52 7.41L12 0l3.74 11.26h4.52z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Connect on LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Follow on Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Executive</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/about/author/"
+                                class="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold">Meet the Creator</a></li>
+                        <li><a href="/executive/"
+                                class="text-gray-400 hover:text-white transition-colors">Value Proposition</a></li>
+                        <li><a href="/executive/roi-calculator/"
+                                class="text-gray-400 hover:text-white transition-colors">ROI Calculator</a></li>
+                        <li><a href="/executive/competitive-analysis/"
+                                class="text-gray-400 hover:text-white transition-colors">Competitive Analysis</a></li>
+                        <li><a href="/executive/case-studies/"
+                                class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Intelligence -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Intelligence</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/dd/"
+                                class="text-gray-400 hover:text-white transition-colors">Due Diligence</a></li>
+                        <li><a href="/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Interactive Labs</a></li>
+                        <li><a href="/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="/developers/sdk/"
+                                class="text-gray-400 hover:text-white transition-colors">SDK</a></li>
+                        <li><a href="/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="/blog/"
+                                class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Capabilities</a></li>
+                        <li><a href="/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (530)</a></li>
+                        <li><a href="/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (115+)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                        <li><a href="/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                        <p class="text-sm text-gray-500">
+                            &copy; 2026 <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis" class="text-gray-400 hover:text-white">Tomáš Korcak</a>.
+                            Licensed under <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform/blob/main/LICENSE" class="text-gray-400 hover:text-white">GHL</a>.
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Built with <a href="/capabilities/no-mercy/" class="text-gray-400 hover:text-white">NO MERCY</a>,
+                            <a href="/capabilities/no-doubts/" class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                        <span class="text-sm text-gray-500">v8.0.0</span>
+                        <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                        <span class="text-sm text-gray-400">Gen 19</span>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                    <div class="flex items-center space-x-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitHub</a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitLab</a>
+                        <a href="/blog/" class="hover:text-gray-400">Blog</a>
+                        <a href="/faq/" class="hover:text-gray-400">FAQ</a>
+                    </div>
+                    <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                        <span>530 agents</span>
+                        <span>•</span>
+                        <span>115 apps</span>
+                        <span>•</span>
+                        <span>2.8M LOC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Code Copy Buttons -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/code-copy.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Back to Top + Nav scroll -->
+    <script>
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            var nav = document.querySelector('nav');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+                if (nav && window.scrollY > 20) {
+                    nav.classList.add('border-white/10');
+                    nav.classList.remove('border-white/5');
+                } else if (nav) {
+                    nav.classList.remove('border-white/10');
+                    nav.classList.add('border-white/5');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

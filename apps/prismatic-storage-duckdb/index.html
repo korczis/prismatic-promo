@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Prismatic Storage DuckDB - Prismatic Platform Applications</title>
+
+    
+<meta name="description" content="DuckDB adapter for analytical queries and columnar data processing">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-duckdb&#x2F;">
+<meta property="og:title" content="Prismatic Storage DuckDB - Prismatic Platform Applications">
+<meta property="og:description" content="DuckDB adapter for analytical queries and columnar data processing">
+<meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-duckdb&#x2F;">
+<meta name="twitter:title" content="Prismatic Storage DuckDB - Prismatic Platform Applications">
+<meta name="twitter:description" content="DuckDB adapter for analytical queries and columnar data processing">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    
+    
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    
+
+    
+    
+    <meta property="article:author" content="Tomáš Korcak">
+    <meta property="article:section" content="apps&#x2F;_index.md">
+    <meta name="author" content="Tomáš Korcak">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;apps&#x2F;prismatic-storage-duckdb&#x2F;">
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Prismatic Platform Feed" href="/atom.xml">
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prismatic Platform",
+        "url": "https://prismatic-reality.com",
+        "description": "Open Source AI-Orchestrated Intelligence Platform | 530 Agents | 115 Apps | Community-Driven",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://prismatic-reality.com/search/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://prismatic-reality.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Applications",
+                "item": "https://prismatic-reality.com/apps/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Prismatic Storage DuckDB"
+            }
+        ]
+    }
+    </script>
+    
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Prismatic Storage DuckDB",
+        "description": "DuckDB adapter for analytical queries and columnar data processing",
+        "url": "https://prismatic-reality.com/apps/prismatic-storage-duckdb/",
+        "author": {
+            "@type": "Person",
+            "name": "Tomáš Korcak",
+            "url": "https:&#x2F;&#x2F;github.com&#x2F;korczis",
+            "sameAs": [
+                "https:&#x2F;&#x2F;github.com&#x2F;korczis",
+                "https:&#x2F;&#x2F;gitlab.com&#x2F;korczis",
+                "https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis",
+                "https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://prismatic-reality.com/apps/prismatic-storage-duckdb/"
+        },
+        "inLanguage": "en",
+        "wordCount": 1375
+    }
+    </script>
+    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <!-- Zola/Giallo Server-Side Syntax Highlighting -->
+    <link rel="stylesheet" href="/giallo.css">
+
+    <!-- Diagram Toggle (Mermaid Source/Interactive) -->
+    <link rel="stylesheet" href="/css/diagram-toggle.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2">
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-1 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+                    <li>
+                        <a href="/executive/"
+                            class="block py-2 px-3 text-purple-400 font-semibold rounded-lg hover:text-purple-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Executive</a>
+                    </li>
+                    <li>
+                        <a href="/developers/"
+                            class="block py-2 px-3 text-blue-400 font-semibold rounded-lg hover:text-blue-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Developers</a>
+                    </li>
+                    <li>
+                        <a href="/developers/sdk/"
+                            class="block py-2 px-3 text-green-400 font-semibold rounded-lg hover:text-green-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">SDK</a>
+                    </li>
+                    <li>
+                        <a href="/dd/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Due Diligence</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">OSINT</a>
+                    </li>
+                    <li>
+                        <a href="/lab/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Interactive Labs</a>
+                    </li>
+                    <li>
+                        <a href="/academy/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Academy</a>
+                    </li>
+                    <li>
+                        <a href="/agents/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Agents</a>
+                    </li>
+                    <li>
+                        <a href="/apps/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Apps</a>
+                    </li>
+                    <li>
+                        <a href="/api/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">API</a>
+                    </li>
+                    <li>
+                        <a href="/about/author/"
+                            class="block py-2 px-3 text-yellow-400 font-semibold rounded-lg hover:text-yellow-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Author</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-full sm:w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/capabilities/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Capabilities</a>
+                            <a href="/architecture/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Architecture</a>
+                            <a href="/technologies/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Technologies</a>
+                            <a href="/teams/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Color Teams</a>
+                            <a href="/commands/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Commands</a>
+                            <a href="/registry/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Registry</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="/glossary/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Glossary</a>
+                            <a href="/faq/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">FAQ</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="/blog/"
+                                class="block px-4 py-2 text-sm text-green-400 hover:text-green-300 hover:bg-white/5">Blog</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Header -->
+<section class="bg-gray-900 py-12 lg:py-16 border-b border-gray-700">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com"
+                        class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                            class="ml-1 text-sm font-medium text-gray-400 hover:text-white md:ml-2">Applications</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-gray-200 md:ml-2">Prismatic Storage DuckDB</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Header Card -->
+        <div class="bg-gray-800 rounded-2xl shadow-xl border border-gray-700 overflow-hidden" x-data="{ shown: false }"
+            x-init="setTimeout(() => shown = true, 100)">
+            <div class="p-8">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-6" x-show="shown"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform -translate-y-4"
+                    x-transition:enter-end="opacity-100 transform translate-y-0">
+                    <!-- App Icon -->
+                    <div class="flex-shrink-0">
+                        <div class="w-24 h-24 bg-gray-700 rounded-2xl flex items-center justify-center shadow-lg">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Title & Description -->
+                    <div class="flex-grow">
+                        <h1 class="text-3xl md:text-4xl font-black text-white font-mono mb-3">Prismatic Storage DuckDB</h1>
+                        <p class="text-lg text-gray-400 leading-relaxed">DuckDB adapter for analytical queries and columnar data processing</p>
+                        <div class="mt-4 flex items-center gap-4 text-sm">
+                            <span class="text-gray-500"><strong>75</strong> files</span>
+                            <span class="px-3 py-1 bg-white/10 text-gray-300 rounded-lg">Storage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="bg-gray-900 py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-3">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <article class="prose prose-lg prose-invert max-w-none
+                    prose-headings:text-white
+                    prose-p:text-gray-300
+                    prose-a:text-gray-400
+                    prose-strong:text-white
+                    prose-code:text-gray-400
+                    prose-pre:bg-gray-800
+                    prose-table:text-gray-300
+                    prose-th:text-white
+                    prose-td:border-gray-700">
+                    <h2 id="overview">Overview</h2>
+<p><a href="https://prismatic-reality.com/glossary/prismatic-storage/">Prismatic Storage</a> <a href="https://prismatic-reality.com/glossary/duckdb/">DuckDB</a> implements the platform's storage adapter <a href="https://prismatic-reality.com/glossary/protocol/">protocol</a> using DuckDB, an embedded analytical database optimized for columnar storage and vectorized query execution. It serves analytical workloads such as log analysis, time-series aggregation, <a href="https://prismatic-reality.com/glossary/osint/">OSINT</a> data exploration, and large-scale security metric computation -- use cases where the columnar layout and parallel query engine deliver orders-of-magnitude performance improvements over row-oriented databases.</p>
+<p>DuckDB fills a specific niche in the platform's storage architecture. Datasets that are too large for in-memory <a href="https://prismatic-reality.com/glossary/ets/">ETS</a> processing but do not warrant the operational overhead of a dedicated <a href="https://prismatic-reality.com/glossary/postgresql/">PostgreSQL</a> instance can be served efficiently by DuckDB's embedded engine. The adapter supports zero-copy integration with Parquet and CSV files, enabling direct analytical queries over data exports from other platform components without requiring explicit import steps. The <code>duckdbex</code> library provides native NIF bindings to the DuckDB C library, with query execution managed through a supervised <a href="https://prismatic-reality.com/glossary/otp/">OTP</a> process pool.</p>
+<p>The adapter implements the Storable, Identifiable, Queryable, and Streamable traits defined in <a href="https://prismatic-reality.com/apps/prismatic-storage-core/">Prismatic Storage Core</a>, making it interchangeable with other storage backends through the platform's <a href="https://prismatic-reality.com/glossary/adapter-pattern/">adapter pattern</a>. Applications can switch between ETS, <a href="https://prismatic-reality.com/glossary/ecto/">Ecto</a>/PostgreSQL, and DuckDB storage by changing a configuration value, without modifying business logic.</p>
+<h2 id="architecture">Architecture</h2>
+<pre class="giallo z-code"><code data-lang="plain"><span class="giallo-l"><span>Application Layer --&gt; Storage Adapter Protocol --&gt; DuckDB Adapter</span></span>
+<span class="giallo-l"><span>        |                    |                       |</span></span>
+<span class="giallo-l"><span>  Business Logic      Protocol Dispatch        DuckDB Engine (duckdbex NIF)</span></span>
+<span class="giallo-l"><span>  Query Interface     Adapter Selection        Columnar Storage</span></span>
+<span class="giallo-l"><span>  Result Mapping      Error Handling           Vectorized Execution</span></span>
+<span class="giallo-l"><span>        |                                          |</span></span>
+<span class="giallo-l"><span>  External Data &lt;-- Zero-Copy Integration --&gt; Parquet/CSV/Arrow</span></span></code></pre>
+<p>The adapter is implemented as an OTP application (<code>PrismaticStorage.DuckDB.Application</code>) with a supervised connection pool. The connection pool manages access to the embedded DuckDB database file, serializing write operations while allowing concurrent read access through DuckDB's MVCC isolation. The query engine translates both structured API calls and raw SQL queries into DuckDB operations, with results serialized back through the adapter protocol's standard <code>{:ok, result}</code> / <code>{:error, reason}</code> tuple pattern.</p>
+<h2 id="adapter-pattern-and-prismaticstoragecore-behaviour">Adapter Pattern and PrismaticStorageCore.Behaviour</h2>
+<p>The DuckDB adapter follows the contract-first design mandated by <a href="https://prismatic-reality.com/apps/prismatic-storage-core/">Prismatic Storage Core</a>. At the module level, it declares <code>use PrismaticStorageCore.Adapter, traits: [Storable, Identifiable, Queryable, Streamable]</code>, which triggers compile-time verification that all required callbacks are implemented. This declaration serves as both documentation and enforcement -- Dialyzer catches missing callbacks during compilation rather than allowing runtime failures.</p>
+<p>The Storable trait implementation handles the translation between Elixir maps and DuckDB's columnar representation. Unlike row-oriented adapters where entities map naturally to individual records, the DuckDB adapter batches entities into column-oriented chunks for efficient insertion. The <code>to_storage/1</code> callback decomposes entity maps into column arrays, while <code>from_storage/2</code> reconstructs entities from columnar query results. This translation layer is invisible to application code, which continues to work with standard Elixir maps through the protocol interface.</p>
+<p>The Queryable trait implementation deserves particular attention because DuckDB's SQL dialect supports analytical functions that other adapters cannot match. Window functions, common table expressions with recursive queries, and vectorized aggregations are exposed through the trait's <code>aggregate/3</code> and <code>query/2</code> callbacks. When application code requests aggregations through the standard trait interface, the DuckDB adapter generates optimized SQL that leverages the columnar engine's parallel execution capabilities.</p>
+<p>The Streamable trait enables memory-efficient processing of large result sets. Rather than materializing entire query results into memory, the adapter returns lazy <code>Stream</code> values that fetch rows in configurable batch sizes. This is essential for analytical workloads where result sets may contain millions of rows -- the streaming interface allows downstream processing pipelines to consume results incrementally without memory pressure.</p>
+<p>Contract compliance is verified through the shared test suite provided by <code>PrismaticStorageCore.ContractTest</code>. The DuckDB adapter's test module includes <code>use PrismaticStorageCore.ContractTest, adapter_module: PrismaticStorage.DuckDB</code>, which generates test cases for every callback in every declared trait. Additional backend-specific tests cover DuckDB-unique features such as Parquet integration, columnar compression, and vectorized execution performance.</p>
+<h2 id="columnar-storage-and-vectorized-execution">Columnar Storage and Vectorized Execution</h2>
+<p>DuckDB's columnar storage model fundamentally differs from the row-oriented storage used by PostgreSQL and ETS. In a row-oriented store, each record's fields are stored contiguously in memory, making individual record access fast but aggregation over many records slow due to poor cache utilization. In DuckDB's columnar model, values for each column are stored contiguously, enabling the CPU's SIMD (Single Instruction, Multiple Data) instructions to process entire columns in parallel.</p>
+<p>This architectural difference has profound implications for query performance. Aggregation queries -- counting records, computing averages, finding minimums and maximums -- operate on contiguous memory regions that fit efficiently in CPU cache lines. For the Prismatic Platform's analytical workloads, which frequently involve computing statistics over millions of OSINT findings or security scan results, the columnar layout delivers 10-100x performance improvements compared to equivalent queries against PostgreSQL.</p>
+<p>The vectorized execution engine processes data in batches of 1,024 values rather than one row at a time. Each operator in the query plan -- filter, project, aggregate, sort -- operates on these fixed-size vectors, maximizing CPU pipeline utilization and minimizing branch misprediction overhead. The adapter exposes this vectorized execution transparently through the standard query interface; application code benefits from the performance without awareness of the underlying execution model.</p>
+<h2 id="key-modules">Key Modules</h2>
+<table><thead><tr><th>Module</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><code>PrismaticStorage.DuckDB</code></td><td>Main adapter module implementing Storage Core traits</td></tr>
+<tr><td><code>PrismaticStorage.DuckDB.Application</code></td><td>OTP Application with supervised connection pool</td></tr>
+<tr><td><code>PrismaticStorage.DuckDB.Connection</code></td><td>Managed DuckDB connection lifecycle</td></tr>
+<tr><td><code>PrismaticStorage.DuckDB.Query</code></td><td>SQL query builder and result parser</td></tr>
+<tr><td><code>PrismaticStorage.DuckDB.Import</code></td><td>Parquet/CSV import with schema detection</td></tr>
+<tr><td><code>PrismaticStorage.DuckDB.Export</code></td><td>Query result export to Parquet/CSV formats</td></tr>
+</tbody></table>
+<h2 id="configuration">Configuration</h2>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span>config </span><span class="z-punctuation z-constant z-other z-symbol">:prismatic_storage_duckdb,</span><span class="z-entity z-name z-type z-class"> PrismaticStorage</span><span class="z-punctuation">.</span><span class="z-entity z-name z-type z-class">DuckDB</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>  path</span><span class="z-punctuation">: &quot;</span><span class="z-string">priv/data/analytics.duckdb</span><span class="z-punctuation">&quot;,</span></span>
+<span class="giallo-l"><span>  memory_limit</span><span class="z-punctuation">: &quot;</span><span class="z-string">4GB</span><span class="z-punctuation">&quot;,</span></span>
+<span class="giallo-l"><span>  threads</span><span class="z-punctuation">:</span><span class="z-constant z-numeric"> 4</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>  timeout</span><span class="z-punctuation">:</span><span class="z-constant z-numeric"> 15_000</span></span></code></pre><h2 id="external-data-integration">External Data Integration</h2>
+<p>One of DuckDB's most powerful features for the Prismatic Platform is its ability to query external files directly without importing them into the database. The <code>read_parquet()</code>, <code>read_csv()</code>, and <code>read_json()</code> functions enable zero-copy queries over data exports from other platform components. This means that OSINT collection results exported as Parquet files by the <a href="https://prismatic-reality.com/apps/prismatic-osint-core/">Prismatic OSINT Core</a> can be analyzed immediately without a separate ingestion step.</p>
+<p>The Import module provides automatic schema detection for external files. When a Parquet file is first queried, DuckDB reads the file's embedded schema metadata and creates an appropriate virtual table. For CSV files without embedded schema, the Import module samples the first 10,000 rows to infer column types. This schema detection is cached in ETS for subsequent queries, avoiding repeated inference overhead.</p>
+<p>Export capabilities complete the analytical pipeline. After computing aggregations, trend analyses, or statistical summaries, results can be exported to Parquet with configurable compression (Snappy, Zstd, or LZ4). These exports integrate with the platform's reporting infrastructure, where <a href="https://prismatic-reality.com/apps/prismatic-web/">Prismatic Web</a> dashboards visualize analytical results and <a href="https://prismatic-reality.com/apps/prismatic-api/">Prismatic API</a> endpoints serve them as downloadable reports.</p>
+<h2 id="api-reference">API Reference</h2>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Analytical query with aggregation</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">{:ok,</span><span> results</span><span class="z-punctuation z-keyword">} =</span><span class="z-entity z-name z-type z-class"> PrismaticStorageDuckdb</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">query</span><span class="z-punctuation">(&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-string">  SELECT date_trunc(&#39;day&#39;, created_at) as day,</span></span>
+<span class="giallo-l"><span class="z-string">         count(*) as signals,</span></span>
+<span class="giallo-l"><span class="z-string">         avg(severity_score) as avg_severity</span></span>
+<span class="giallo-l"><span class="z-string">  FROM signals</span></span>
+<span class="giallo-l"><span class="z-string">  WHERE entity = &#39;example.com&#39;</span></span>
+<span class="giallo-l"><span class="z-string">  GROUP BY 1</span></span>
+<span class="giallo-l"><span class="z-string">  ORDER BY 1</span></span>
+<span class="giallo-l"><span class="z-punctuation">&quot;&quot;&quot;)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Direct query over external Parquet without import</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">{:ok,</span><span> results</span><span class="z-punctuation z-keyword">} =</span><span class="z-entity z-name z-type z-class"> PrismaticStorageDuckdb</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">query</span><span class="z-punctuation">(&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-string">  SELECT * FROM read_parquet(&#39;exports/osint_*.parquet&#39;)</span></span>
+<span class="giallo-l"><span class="z-string">  WHERE severity &gt;= 7</span></span>
+<span class="giallo-l"><span class="z-punctuation">&quot;&quot;&quot;)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Import from Parquet file</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">{:ok,</span><span class="z-comment"> _</span><span class="z-punctuation z-keyword">} =</span><span class="z-entity z-name z-type z-class"> PrismaticStorageDuckdb</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">import</span><span class="z-punctuation">(&quot;</span><span class="z-string">signals.parquet</span><span class="z-punctuation z-constant z-other z-symbol">&quot;, :signals)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Export query results to Parquet with compression</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">{:ok,</span><span> path</span><span class="z-punctuation z-keyword">} =</span><span class="z-entity z-name z-type z-class"> PrismaticStorageDuckdb</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">export</span><span class="z-punctuation z-constant z-other z-symbol">(:signals, &quot;</span><span class="z-string">output.parquet</span><span class="z-punctuation">&quot;,</span></span>
+<span class="giallo-l"><span>  format</span><span class="z-punctuation z-constant z-other z-symbol">: :parquet,</span><span> compression</span><span class="z-punctuation z-constant z-other z-symbol">: :zstd)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Standard adapter protocol operations</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol z-keyword">:ok =</span><span class="z-entity z-name z-type z-class"> PrismaticStorageDuckdb</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">put</span><span class="z-punctuation">(</span><span>adapter</span><span class="z-punctuation">, &quot;</span><span class="z-string">metrics:2024-01</span><span class="z-punctuation">&quot;,</span><span> %</span><span class="z-punctuation">{</span><span>visits</span><span class="z-punctuation">:</span><span class="z-constant z-numeric"> 10_000</span><span class="z-punctuation">})</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">{:ok,</span><span> data</span><span class="z-punctuation z-keyword">} =</span><span class="z-entity z-name z-type z-class"> PrismaticStorageDuckdb</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">get</span><span class="z-punctuation">(</span><span>adapter</span><span class="z-punctuation">, &quot;</span><span class="z-string">metrics:2024-01</span><span class="z-punctuation">&quot;)</span></span></code></pre><h2 id="testing">Testing</h2>
+<pre class="giallo z-code"><code data-lang="shellscript"><span class="giallo-l"><span class="z-entity z-name">mix</span><span class="z-string"> test apps/prismatic_storage_duckdb/test</span></span>
+<span class="giallo-l"><span class="z-entity z-name">mix</span><span class="z-string"> test apps/prismatic_storage_duckdb/test --cover</span></span></code></pre><table><thead><tr><th>Test Category</th><th>Tests</th><th>What It Verifies</th></tr></thead><tbody>
+<tr><td>Adapter Contract</td><td>Shared suite</td><td>Storable, Identifiable, Queryable, Streamable compliance</td></tr>
+<tr><td>SQL Queries</td><td>12</td><td>Aggregation, window functions, CTEs</td></tr>
+<tr><td>Parquet I/O</td><td>8</td><td>Import/export correctness, compression</td></tr>
+<tr><td>Concurrency</td><td>6</td><td>Read/write isolation under concurrent access</td></tr>
+<tr><td>Schema Detection</td><td>6</td><td>Automatic type inference for CSV and JSON sources</td></tr>
+<tr><td>Streaming</td><td>4</td><td>Memory-efficient iteration over large result sets</td></tr>
+</tbody></table>
+<h2 id="integration-points">Integration Points</h2>
+<ul>
+<li><strong><a href="https://prismatic-reality.com/apps/prismatic-storage-core/">Prismatic Storage Core</a></strong> -- Implements the core storage adapter behaviour and trait contracts</li>
+<li><strong><a href="https://prismatic-reality.com/apps/prismatic-signals/">Prismatic Signals</a></strong> -- Analytical queries over historical signal data</li>
+<li><strong><a href="https://prismatic-reality.com/apps/prismatic-osint-core/">Prismatic OSINT Core</a></strong> -- Large-scale OSINT data exploration and aggregation</li>
+<li><strong><a href="https://prismatic-reality.com/apps/prismatic-monte-carlo/">Prismatic Monte Carlo</a></strong> -- Simulation result storage and statistical analysis</li>
+</ul>
+<h2 id="nabla-compliance">NABLA Compliance</h2>
+<p>DuckDB operations carry full provenance metadata through telemetry events. Query results include source file paths for Parquet-based queries and table identifiers for internal queries, satisfying the Provenance Mandatory axiom. The analytical nature of DuckDB queries inherently supports Signal Plurality by enabling aggregation across multiple data sources in a single query. Time Decay is naturally modeled through SQL temporal functions (<code>date_trunc</code>, window functions) that weight recent observations appropriately.</p>
+<h2 id="performance">Performance</h2>
+<table><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>
+<tr><td>Analytical queries vs row-based DBs</td><td>10-100x faster</td></tr>
+<tr><td>Data compression ratio</td><td>5-10x</td></tr>
+<tr><td>Parallel query threads</td><td>Configurable (default: 4)</td></tr>
+<tr><td>Parquet read throughput</td><td>Hundreds of MB/s</td></tr>
+<tr><td>Memory-efficient streaming</td><td>Constant memory for large datasets</td></tr>
+<tr><td>Vectorized batch size</td><td>1,024 values per operation</td></tr>
+</tbody></table>
+<h2 id="related-resources">Related Resources</h2>
+<ul>
+<li><a href="https://prismatic-reality.com/apps/prismatic-storage-ets/">Prismatic Storage ETS</a> -- In-memory adapter for hot path data</li>
+<li><a href="https://prismatic-reality.com/apps/prismatic-storage-ecto/">Prismatic Storage Ecto</a> -- PostgreSQL adapter for transactional workloads</li>
+<li><a href="https://prismatic-reality.com/apps/prismatic-storage/">Prismatic Storage</a> -- Unified storage coordination layer</li>
+</ul>
+<hr />
+<h2 id="connect-contribute">Connect &amp; Contribute</h2>
+<p><strong>Created by <a rel="external" href="https://github.com/korczis">Tomáš Korcak (korczis)</a></strong> | Open Source under <a rel="external" href="https://github.com/korczis/prismatic-platform/blob/main/LICENSE">GHL</a></p>
+<ul>
+<li><a rel="external" href="https://github.com/korczis/prismatic-platform">GitHub</a> | <a rel="external" href="https://gitlab.com/korczis/prismatic-platform">GitLab</a> | <a rel="external" href="https://linkedin.com/in/korczis">LinkedIn</a> | <a href="mailto:korczis@gmail.com">Contact</a></li>
+<li><a href="/developers/">Developer Portal</a> | <a href="/architecture/">Architecture</a> | <a href="/about/author/">Meet the Creator</a></li>
+</ul>
+
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="hidden lg:block sticky top-4 space-y-6 self-start">
+                <!-- App Info Card -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6">
+                    <div class="p-4">
+                        <div class="mt-4">
+                <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    App Info
+                </h3>
+                <dl class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <dt class="text-sm text-gray-400">Files</dt>
+                        <dd class="text-sm font-semibold text-white">75</dd>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <dt class="text-sm text-gray-400">Category</dt>
+                        <dd class="text-sm font-semibold text-gray-300 capitalize">Storage</dd>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <dt class="text-sm text-gray-400">Status</dt>
+                        <dd class="text-sm font-semibold text-gray-300">Development</dd>
+                    </div>
+                    
+                    
+                    <div class="flex justify-between items-center">
+                        <dt class="text-sm text-gray-400">Platform</dt>
+                        <dd class="text-sm font-semibold text-gray-300">Prismatic v7.5</dd>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <dt class="text-sm text-gray-400">Doctrine</dt>
+                        <dd class="text-sm font-semibold text-gray-300">NM/ND</dd>
+                    </div>
+                </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Codebase Share Chart -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6">
+                    <div class="p-4">
+                        <div class="mt-4">
+                <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                    </svg>
+                    Codebase Share
+                </h3>
+                <canvas id="appChart" width="300" height="200"
+                    data-files="75"></canvas>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        if (typeof Chart !== 'undefined') {
+                            var ctx = document.getElementById('appChart');
+                            if (ctx) {
+                                var files = parseInt(ctx.dataset.files) || 0;
+                                new Chart(ctx, {
+                                    type: 'doughnut',
+                                    data: {
+                                        labels: ['This App', 'Other Apps'],
+                                        datasets: [{
+                                            data: [files, Math.max(0, 6652 - files)],
+                                            backgroundColor: ['#f59e0b', '#374151'],
+                                            borderWidth: 0
+                                        }]
+                                    },
+                                    options: {
+                                        responsive: true,
+                                        plugins: {
+                                            legend: { position: 'bottom', labels: { color: '#9ca3af', font: { size: 11 } } }
+                                        }
+                                    }
+                                });
+                            }
+                        }
+                    });
+                </script>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- In This Section (Paginated) -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6">
+                    <div class="p-4">
+                        <div class="mt-4">
+                <div x-data="sectionNav()">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                        Applications
+                        <span class="text-xs font-normal text-gray-400" x-text="'(' + totalItems + ' apps)'"></span>
+                    </h3>
+                    <ul class="space-y-1.5">
+                        <template x-for="item in paginatedItems" :key="item.url">
+                            <li>
+                                <a :href="item.url" :class="item.isCurrent
+                                       ? 'text-amber-400 font-semibold bg-amber-900/20'
+                                       : 'text-gray-400 hover:text-white hover:bg-gray-700/50'"
+                                    class="block text-sm px-3 py-1.5 rounded-lg transition-all font-mono"
+                                    x-text="item.title">
+                                </a>
+                            </li>
+                        </template>
+                    </ul>
+                    <div class="flex items-center justify-between mt-4 pt-3 border-t border-gray-700"
+                        x-show="totalPages > 1">
+                        <button @click="prevPage()" :disabled="currentPage === 1"
+                            :class="currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-white'"
+                            class="text-xs font-medium text-gray-400 transition-colors">Previous</button>
+                        <span class="text-xs text-gray-500" x-text="currentPage + ' / ' + totalPages"></span>
+                        <button @click="nextPage()" :disabled="currentPage === totalPages"
+                            :class="currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:text-white'"
+                            class="text-xs font-medium text-gray-400 transition-colors">Next</button>
+                    </div>
+                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Glossary Terms -->
+                
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/dd/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Due Diligence<span
+                class="ml-auto text-xs text-gray-600">122 src</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Interactive Labs<span
+                class="ml-auto text-xs text-gray-600">15 exp</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Academy<span
+                class="ml-auto text-xs text-gray-600">15 courses</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>API Reference</a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+
+        <!-- Related Content -->
+        <div class="mt-16 pt-8 border-t border-gray-700">
+            <h2 class="text-2xl font-bold text-white mb-6">Related Content</h2>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                    class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-white mb-1">Architecture</h3>
+                    <p class="text-sm text-gray-400">Deterministic event-sourced architecture built on Elixir/OTP and
+                        BEAM VM.</p>
+                </a>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                    class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-white mb-1">Agent Ecosystem</h3>
+                    <p class="text-sm text-gray-400">530 autonomous agents across 14
+                        specialized domains.</p>
+                </a>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/"
+                    class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-white mb-1">Doctrine</h3>
+                    <p class="text-sm text-gray-400">NO MERCY, NO DOUBTS - the universal doctrine governing all
+                        operations.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="mt-8 pt-8 border-t border-gray-700">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                class="inline-flex items-center px-6 py-3 text-sm font-semibold text-gray-950 bg-white rounded-xl focus:ring-4 focus:ring-white/20 transition-all shadow-lg hover:shadow-xl">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Applications
+            </a>
+        </div>
+    </div>
+</section>
+<script id="apps-section-data" type="application/json">
+[
+    
+    
+    {
+        "title": "Prismatic Perimeter",
+        "url": "https://prismatic-reality.com/apps/prismatic-perimeter/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic API",
+        "url": "https://prismatic-reality.com/apps/prismatic-api/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Core",
+        "url": "https://prismatic-reality.com/apps/prismatic-core/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic HAWKEYE",
+        "url": "https://prismatic-reality.com/apps/prismatic-hawkeye/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Agents",
+        "url": "https://prismatic-reality.com/apps/prismatic-agents/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Kernel",
+        "url": "https://prismatic-reality.com/apps/prismatic-kernel/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Nabla",
+        "url": "https://prismatic-reality.com/apps/prismatic-nabla/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Storage",
+        "url": "https://prismatic-reality.com/apps/prismatic-storage/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic OSINT Core",
+        "url": "https://prismatic-reality.com/apps/prismatic-osint-core/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Web",
+        "url": "https://prismatic-reality.com/apps/prismatic-web/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic DD",
+        "url": "https://prismatic-reality.com/apps/prismatic-dd/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Safety",
+        "url": "https://prismatic-reality.com/apps/prismatic-safety/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Claude",
+        "url": "https://prismatic-reality.com/apps/prismatic-claude/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Testing",
+        "url": "https://prismatic-reality.com/apps/prismatic-testing/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Dark",
+        "url": "https://prismatic-reality.com/apps/prismatic-dark/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Graph",
+        "url": "https://prismatic-reality.com/apps/prismatic-graph/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Meilisearch",
+        "url": "https://prismatic-reality.com/apps/prismatic-meilisearch/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Telemetry",
+        "url": "https://prismatic-reality.com/apps/prismatic-telemetry/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Cache",
+        "url": "https://prismatic-reality.com/apps/prismatic-cache/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Auth",
+        "url": "https://prismatic-reality.com/apps/prismatic-auth/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Crawler",
+        "url": "https://prismatic-reality.com/apps/prismatic-crawler/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Compliance",
+        "url": "https://prismatic-reality.com/apps/prismatic-compliance/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Visitor Intelligence",
+        "url": "https://prismatic-reality.com/apps/prismatic-visitor-intelligence/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Resilience",
+        "url": "https://prismatic-reality.com/apps/prismatic-resilience/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "AI Drift",
+        "url": "https://prismatic-reality.com/apps/ai-drift/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "AI Drift Web",
+        "url": "https://prismatic-reality.com/apps/ai-drift-web/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic 3NL",
+        "url": "https://prismatic-reality.com/apps/prismatic-3nl/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Algorithms",
+        "url": "https://prismatic-reality.com/apps/prismatic-algorithms/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic",
+        "url": "https://prismatic-reality.com/apps/prismatic/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Audit",
+        "url": "https://prismatic-reality.com/apps/prismatic-audit/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Ollama",
+        "url": "https://prismatic-reality.com/apps/prismatic-ollama/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Lean",
+        "url": "https://prismatic-reality.com/apps/prismatic-lean/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Monte Carlo",
+        "url": "https://prismatic-reality.com/apps/prismatic-monte-carlo/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Browser",
+        "url": "https://prismatic-reality.com/apps/prismatic-browser/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Signals",
+        "url": "https://prismatic-reality.com/apps/prismatic-signals/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Blackboard",
+        "url": "https://prismatic-reality.com/apps/prismatic-blackboard/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Storage Meilisearch",
+        "url": "https://prismatic-reality.com/apps/prismatic-storage-meilisearch/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic OSINT Network",
+        "url": "https://prismatic-reality.com/apps/prismatic-osint-network/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic OSINT Business",
+        "url": "https://prismatic-reality.com/apps/prismatic-osint-business-financial/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic OSINT Czech Legal",
+        "url": "https://prismatic-reality.com/apps/prismatic-osint-czech-legal/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic OSINT Social Media",
+        "url": "https://prismatic-reality.com/apps/prismatic-osint-social-media/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic OSINT Monitoring",
+        "url": "https://prismatic-reality.com/apps/prismatic-osint-monitoring/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Storage ETS",
+        "url": "https://prismatic-reality.com/apps/prismatic-storage-ets/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Storage Ecto",
+        "url": "https://prismatic-reality.com/apps/prismatic-storage-ecto/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Czech Courts",
+        "url": "https://prismatic-reality.com/apps/prismatic-czech-courts/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Storage Redis",
+        "url": "https://prismatic-reality.com/apps/prismatic-storage-redis/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Storage KuzuDB",
+        "url": "https://prismatic-reality.com/apps/prismatic-storage-kuzudb/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Storage DuckDB",
+        "url": "https://prismatic-reality.com/apps/prismatic-storage-duckdb/",
+        "isCurrent": true
+    },
+    
+    {
+        "title": "Prismatic Crawler Core",
+        "url": "https://prismatic-reality.com/apps/prismatic-crawler-core/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Czech Autocrawler",
+        "url": "https://prismatic-reality.com/apps/prismatic-czech-autocrawler/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Evil",
+        "url": "https://prismatic-reality.com/apps/prismatic-evil/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Perimeter Core",
+        "url": "https://prismatic-reality.com/apps/prismatic-perimeter-core/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Perimeter Web",
+        "url": "https://prismatic-reality.com/apps/prismatic-perimeter-web/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic MCP",
+        "url": "https://prismatic-reality.com/apps/prismatic-mcp/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Detection Engine",
+        "url": "https://prismatic-reality.com/apps/prismatic-detection-engine/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic IR PVM Web",
+        "url": "https://prismatic-reality.com/apps/prismatic-ir-pvm-web/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Influence",
+        "url": "https://prismatic-reality.com/apps/prismatic-influence/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Narrative",
+        "url": "https://prismatic-reality.com/apps/prismatic-narrative/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Bifurcation",
+        "url": "https://prismatic-reality.com/apps/prismatic-bifurcation/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Deduction",
+        "url": "https://prismatic-reality.com/apps/prismatic-deduction/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Lean4",
+        "url": "https://prismatic-reality.com/apps/prismatic-lean4/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Tracking",
+        "url": "https://prismatic-reality.com/apps/prismatic-tracking/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Traits",
+        "url": "https://prismatic-reality.com/apps/prismatic-traits/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Quality Intelligence",
+        "url": "https://prismatic-reality.com/apps/prismatic-quality-intelligence/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Presales",
+        "url": "https://prismatic-reality.com/apps/prismatic-presales/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Property Intelligence",
+        "url": "https://prismatic-reality.com/apps/prismatic-property-intelligence/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Manipulation",
+        "url": "https://prismatic-reality.com/apps/prismatic-manipulation/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Labs",
+        "url": "https://prismatic-reality.com/apps/prismatic-labs/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Tooling",
+        "url": "https://prismatic-reality.com/apps/prismatic-tooling/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Suppression",
+        "url": "https://prismatic-reality.com/apps/prismatic-suppression/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Annihilation",
+        "url": "https://prismatic-reality.com/apps/prismatic-annihilation/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Override",
+        "url": "https://prismatic-reality.com/apps/prismatic-override/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Compression",
+        "url": "https://prismatic-reality.com/apps/prismatic-compression/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Transcendence",
+        "url": "https://prismatic-reality.com/apps/prismatic-transcendence/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Embodiment",
+        "url": "https://prismatic-reality.com/apps/prismatic-embodiment/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic OSINT EU Institutions",
+        "url": "https://prismatic-reality.com/apps/prismatic-osint-eu-institutions/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic OSINT Sources",
+        "url": "https://prismatic-reality.com/apps/prismatic-osint-sources/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Hawkeye Web",
+        "url": "https://prismatic-reality.com/apps/prismatic-hawkeye-web/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Tidewave",
+        "url": "https://prismatic-reality.com/apps/prismatic-tidewave/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Logic Prolog",
+        "url": "https://prismatic-reality.com/apps/prismatic-logic-prolog/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Mycelial Nx",
+        "url": "https://prismatic-reality.com/apps/prismatic-mycelial-nx/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic PRISC",
+        "url": "https://prismatic-reality.com/apps/prismatic-prisc/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic CER",
+        "url": "https://prismatic-reality.com/apps/prismatic-cer/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Storage Core",
+        "url": "https://prismatic-reality.com/apps/prismatic-storage-core/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic IR PVM",
+        "url": "https://prismatic-reality.com/apps/prismatic-ir-pvm/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Modalities",
+        "url": "https://prismatic-reality.com/apps/prismatic-modalities/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Audio",
+        "url": "https://prismatic-reality.com/apps/prismatic-audio/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Credo",
+        "url": "https://prismatic-reality.com/apps/prismatic-credo/",
+        "isCurrent": false
+    }
+    
+]
+</script>
+<script>
+    function sectionNav() {
+        var allItems = JSON.parse(document.getElementById('apps-section-data').textContent);
+        var perPage = 20;
+        return {
+            shown: false,
+            allItems: allItems,
+            currentPage: Math.max(1, Math.ceil((allItems.findIndex(function (i) { return i.isCurrent; }) + 1) / perPage)),
+            perPage: perPage,
+            get totalItems() { return this.allItems.length; },
+            get totalPages() { return Math.ceil(this.allItems.length / this.perPage); },
+            get paginatedItems() {
+                var start = (this.currentPage - 1) * this.perPage;
+                return this.allItems.slice(start, start + this.perPage);
+            },
+            nextPage: function () { if (this.currentPage < this.totalPages) this.currentPage++; },
+            prevPage: function () { if (this.currentPage > 1) this.currentPage--; }
+        };
+    }
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Open source AI orchestration platform. 530 autonomous agents. 115 umbrella apps.
+                        Community-driven, self-evolving, unstoppable.
+                    </p>
+                    <div class="flex items-center space-x-4 mt-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitLab">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0L8.26 11.26H3.74L12 24l8.26-12.74H15.74L12 0zM3.74 11.26l4.52 7.41L12 0 8.26 11.26H3.74zM20.26 11.26l-4.52 7.41L12 0l3.74 11.26h4.52z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Connect on LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Follow on Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Executive</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/about/author/"
+                                class="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold">Meet the Creator</a></li>
+                        <li><a href="/executive/"
+                                class="text-gray-400 hover:text-white transition-colors">Value Proposition</a></li>
+                        <li><a href="/executive/roi-calculator/"
+                                class="text-gray-400 hover:text-white transition-colors">ROI Calculator</a></li>
+                        <li><a href="/executive/competitive-analysis/"
+                                class="text-gray-400 hover:text-white transition-colors">Competitive Analysis</a></li>
+                        <li><a href="/executive/case-studies/"
+                                class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Intelligence -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Intelligence</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/dd/"
+                                class="text-gray-400 hover:text-white transition-colors">Due Diligence</a></li>
+                        <li><a href="/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Interactive Labs</a></li>
+                        <li><a href="/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="/developers/sdk/"
+                                class="text-gray-400 hover:text-white transition-colors">SDK</a></li>
+                        <li><a href="/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="/blog/"
+                                class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Capabilities</a></li>
+                        <li><a href="/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (530)</a></li>
+                        <li><a href="/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (115+)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                        <li><a href="/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                        <p class="text-sm text-gray-500">
+                            &copy; 2026 <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis" class="text-gray-400 hover:text-white">Tomáš Korcak</a>.
+                            Licensed under <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform/blob/main/LICENSE" class="text-gray-400 hover:text-white">GHL</a>.
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Built with <a href="/capabilities/no-mercy/" class="text-gray-400 hover:text-white">NO MERCY</a>,
+                            <a href="/capabilities/no-doubts/" class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                        <span class="text-sm text-gray-500">v8.0.0</span>
+                        <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                        <span class="text-sm text-gray-400">Gen 19</span>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                    <div class="flex items-center space-x-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitHub</a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitLab</a>
+                        <a href="/blog/" class="hover:text-gray-400">Blog</a>
+                        <a href="/faq/" class="hover:text-gray-400">FAQ</a>
+                    </div>
+                    <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                        <span>530 agents</span>
+                        <span>•</span>
+                        <span>115 apps</span>
+                        <span>•</span>
+                        <span>2.8M LOC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Code Copy Buttons -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/code-copy.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Back to Top + Nav scroll -->
+    <script>
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            var nav = document.querySelector('nav');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+                if (nav && window.scrollY > 20) {
+                    nav.classList.add('border-white/10');
+                    nav.classList.remove('border-white/5');
+                } else if (nav) {
+                    nav.classList.remove('border-white/10');
+                    nav.classList.add('border-white/5');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

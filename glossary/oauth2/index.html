@@ -1,0 +1,5427 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>OAuth2 - Prismatic Platform Glossary</title>
+
+    
+<meta name="description" content="Authorization framework enabling secure delegated access to resources without sharing credentials">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;oauth2&#x2F;">
+<meta property="og:title" content="OAuth2 - Prismatic Platform Glossary">
+<meta property="og:description"
+    content="Authorization framework enabling secure delegated access to resources without sharing credentials">
+<meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;oauth2&#x2F;">
+<meta name="twitter:title" content="OAuth2 - Prismatic Platform Glossary">
+<meta name="twitter:description"
+    content="Authorization framework enabling secure delegated access to resources without sharing credentials">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    
+    
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    
+
+    
+    
+    <meta property="article:author" content="Tomáš Korcak">
+    <meta property="article:section" content="glossary&#x2F;_index.md">
+    <meta name="author" content="Tomáš Korcak">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;oauth2&#x2F;">
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Prismatic Platform Feed" href="/atom.xml">
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prismatic Platform",
+        "url": "https://prismatic-reality.com",
+        "description": "Open Source AI-Orchestrated Intelligence Platform | 530 Agents | 115 Apps | Community-Driven",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://prismatic-reality.com/search/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://prismatic-reality.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Glossary",
+                "item": "https://prismatic-reality.com/glossary/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "OAuth2"
+            }
+        ]
+    }
+    </script>
+    
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "OAuth2",
+        "description": "Authorization framework enabling secure delegated access to resources without sharing credentials",
+        "url": "https://prismatic-reality.com/glossary/oauth2/",
+        "author": {
+            "@type": "Person",
+            "name": "Tomáš Korcak",
+            "url": "https:&#x2F;&#x2F;github.com&#x2F;korczis",
+            "sameAs": [
+                "https:&#x2F;&#x2F;github.com&#x2F;korczis",
+                "https:&#x2F;&#x2F;gitlab.com&#x2F;korczis",
+                "https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis",
+                "https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://prismatic-reality.com/glossary/oauth2/"
+        },
+        "inLanguage": "en",
+        "wordCount": 1321
+    }
+    </script>
+    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <!-- Zola/Giallo Server-Side Syntax Highlighting -->
+    <link rel="stylesheet" href="/giallo.css">
+
+    <!-- Diagram Toggle (Mermaid Source/Interactive) -->
+    <link rel="stylesheet" href="/css/diagram-toggle.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2">
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-1 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+                    <li>
+                        <a href="/executive/"
+                            class="block py-2 px-3 text-purple-400 font-semibold rounded-lg hover:text-purple-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Executive</a>
+                    </li>
+                    <li>
+                        <a href="/developers/"
+                            class="block py-2 px-3 text-blue-400 font-semibold rounded-lg hover:text-blue-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Developers</a>
+                    </li>
+                    <li>
+                        <a href="/developers/sdk/"
+                            class="block py-2 px-3 text-green-400 font-semibold rounded-lg hover:text-green-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">SDK</a>
+                    </li>
+                    <li>
+                        <a href="/dd/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Due Diligence</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">OSINT</a>
+                    </li>
+                    <li>
+                        <a href="/lab/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Interactive Labs</a>
+                    </li>
+                    <li>
+                        <a href="/academy/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Academy</a>
+                    </li>
+                    <li>
+                        <a href="/agents/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Agents</a>
+                    </li>
+                    <li>
+                        <a href="/apps/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Apps</a>
+                    </li>
+                    <li>
+                        <a href="/api/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">API</a>
+                    </li>
+                    <li>
+                        <a href="/about/author/"
+                            class="block py-2 px-3 text-yellow-400 font-semibold rounded-lg hover:text-yellow-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Author</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-full sm:w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/capabilities/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Capabilities</a>
+                            <a href="/architecture/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Architecture</a>
+                            <a href="/technologies/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Technologies</a>
+                            <a href="/teams/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Color Teams</a>
+                            <a href="/commands/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Commands</a>
+                            <a href="/registry/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Registry</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="/glossary/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Glossary</a>
+                            <a href="/faq/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">FAQ</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="/blog/"
+                                class="block px-4 py-2 text-sm text-green-400 hover:text-green-300 hover:bg-white/5">Blog</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Header -->
+<section class="bg-gray-900 py-12 lg:py-16 border-b border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com"
+                        class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-gray-400 transition-colors">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                            class="ml-1 text-sm font-medium text-gray-400 hover:text-gray-400 md:ml-2 transition-colors">Glossary</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-amber-300 md:ml-2">OAuth2</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Header Card -->
+        <div class="bg-gray-800/60 backdrop-blur-sm rounded-2xl shadow-2xl border border-amber-700/30 overflow-hidden"
+            x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)">
+            <div class="p-8">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-6" x-show="shown"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform -translate-y-4"
+                    x-transition:enter-end="opacity-100 transform translate-y-0">
+                    <!-- Term Icon -->
+                    <div class="flex-shrink-0">
+                        <div class="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg 
+                            bg-gray-700
+                            ">
+                            
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Title & Description -->
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <h1 class="text-3xl md:text-4xl font-black text-white">OAuth2</h1>
+                            
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/?category=security"
+                                title="View all security terms" class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full hover:opacity-80 transition-opacity
+                                bg-white/5 text-gray-400 border border-white/10
+                                ">
+                                security
+                            </a>
+                            
+                        </div>
+                        
+                        <p class="text-lg text-gray-300 leading-relaxed max-w-3xl">Authorization framework enabling secure delegated access to resources without sharing credentials</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="bg-gray-900 py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-3">
+            <!-- Main Content (left 2/3) -->
+            <div class="lg:col-span-2">
+                <article class="prose prose-lg prose-invert max-w-none
+                    prose-headings:text-white
+                    prose-p:text-gray-300
+                    prose-a:text-gray-400
+                    prose-strong:text-white
+                    prose-code:text-gray-400
+                    prose-pre:bg-gray-800
+                    prose-li:text-gray-300
+                    prose-table:text-gray-300
+                    prose-th:text-white
+                    prose-td:border-gray-700">
+                    <h2 id="definition">Definition</h2>
+<p>OAuth 2.0 is an authorization framework defined in RFC 6749 that enables applications to obtain limited access to user accounts on third-party services without exposing user credentials. Rather than sharing passwords between applications, OAuth2 defines a series of authorization flows -- called grant types -- that issue scoped access tokens representing specific permissions. The requesting application receives a token that grants only the access it needs, for a limited time, without ever seeing the user's actual credentials.</p>
+<p>OAuth2 draws a sharp distinction between authentication (proving who you are) and authorization (proving what you are allowed to do). While OAuth2 is strictly an authorization protocol, it is frequently extended with OpenID Connect (OIDC) to provide authentication capabilities as well. This layered design allows systems to compose authentication and authorization independently, choosing the right mechanism for each concern.</p>
+<p>The protocol has become the de facto standard for API authorization across the industry, used by virtually every major platform including Google, GitHub, Microsoft, and Facebook. Its widespread adoption means that integrating third-party services almost always involves implementing an OAuth2 flow, making it essential knowledge for any platform that consumes or exposes APIs.</p>
+<h2 id="grant-types">Grant Types</h2>
+<p>OAuth2 defines several grant types, each designed for a specific use case and threat model. The choice of grant type depends on the client type (confidential vs. public), the deployment context (server-side vs. mobile vs. SPA), and the trust relationship between parties.</p>
+<table><thead><tr><th>Grant Type</th><th>RFC</th><th>Client Type</th><th>Use Case</th><th>Security Level</th></tr></thead><tbody>
+<tr><td><strong>Authorization Code</strong></td><td>RFC 6749</td><td>Confidential</td><td>Server-side web applications</td><td>High</td></tr>
+<tr><td><strong>Authorization Code + PKCE</strong></td><td>RFC 7636</td><td>Public</td><td>Mobile apps, SPAs, CLIs</td><td>High</td></tr>
+<tr><td><strong>Client Credentials</strong></td><td>RFC 6749</td><td>Confidential</td><td>Service-to-service (M2M)</td><td>High</td></tr>
+<tr><td><strong>Device Code</strong></td><td>RFC 8628</td><td>Public</td><td>Input-constrained devices (smart TV, CLI)</td><td>Medium</td></tr>
+<tr><td><strong>Refresh Token</strong></td><td>RFC 6749</td><td>Both</td><td>Token renewal without re-authentication</td><td>High</td></tr>
+<tr><td><del>Implicit</del></td><td>RFC 6749</td><td>Public</td><td><del>Browser-based apps</del> <strong>DEPRECATED</strong></td><td>Low</td></tr>
+<tr><td><del>Resource Owner Password</del></td><td>RFC 6749</td><td>Confidential</td><td><del>Legacy migration</del> <strong>DEPRECATED</strong></td><td>Low</td></tr>
+</tbody></table>
+<p>The implicit and resource owner password grants are formally deprecated in the OAuth 2.1 draft (draft-ietf-oauth-v2-1) due to inherent security weaknesses. Modern applications should use Authorization Code with PKCE for all public client scenarios.</p>
+<h2 id="authorization-code-flow">Authorization Code Flow</h2>
+<p>The authorization code flow is the most common and most secure OAuth2 grant type for user-facing applications. It involves a three-party exchange between the user's browser, the authorization server, and the client application:</p>
+<pre class="giallo z-code"><code data-lang="plain"><span class="giallo-l"><span>+--------+                               +---------------+</span></span>
+<span class="giallo-l"><span>|        |--(1) Authorization Request ---&gt;|               |</span></span>
+<span class="giallo-l"><span>|        |                                | Authorization |</span></span>
+<span class="giallo-l"><span>| User   |&lt;-(2) Authorization Grant ------|    Server     |</span></span>
+<span class="giallo-l"><span>| Agent  |                                |               |</span></span>
+<span class="giallo-l"><span>|        |                                +---------------+</span></span>
+<span class="giallo-l"><span>+--------+                                       |</span></span>
+<span class="giallo-l"><span>    |                                             |</span></span>
+<span class="giallo-l"><span>    v                                             |</span></span>
+<span class="giallo-l"><span>+--------+                                        |</span></span>
+<span class="giallo-l"><span>|        |--(3) Authorization Code + Verifier ----&gt;|</span></span>
+<span class="giallo-l"><span>| Client |                                        |</span></span>
+<span class="giallo-l"><span>|        |&lt;-(4) Access Token + Refresh Token ------|</span></span>
+<span class="giallo-l"><span>|        |                                        |</span></span>
+<span class="giallo-l"><span>|        |--(5) API Request + Access Token -------&gt;+---------------+</span></span>
+<span class="giallo-l"><span>|        |                                        |   Resource    |</span></span>
+<span class="giallo-l"><span>|        |&lt;-(6) Protected Resource ---------------|    Server     |</span></span>
+<span class="giallo-l"><span>+--------+                                        +---------------+</span></span></code></pre>
+<p>The critical security property is that the access token is never exposed to the user agent (browser). The authorization code is exchanged server-side, where the client secret (or PKCE verifier) proves the client's identity.</p>
+<h2 id="pkce-extension">PKCE Extension</h2>
+<p>Proof Key for Code Exchange (PKCE, pronounced "pixy") was introduced in RFC 7636 to protect the authorization code flow against interception attacks, particularly on mobile platforms where custom URL schemes can be intercepted by malicious applications.</p>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># PKCE implementation in Elixir</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">defmodule</span><span class="z-entity z-other z-inherited-class"> PrismaticAuth</span><span>.</span><span class="z-entity z-name z-type z-class">PKCE</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-comment">  @doc &quot;Generate a cryptographically random code verifier&quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">spec</span><span class="z-entity z-name z-function"> generate_verifier</span><span class="z-punctuation z-keyword">() ::</span><span class="z-entity z-name z-type z-class"> String</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">t</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> generate_verifier</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-constant z-other z-symbol z-punctuation">    :crypto.</span><span class="z-entity z-name z-function">strong_rand_bytes</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">32</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword">    |&gt;</span><span class="z-entity z-name z-type z-class"> Base</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">url_encode64</span><span class="z-punctuation">(</span><span>padding</span><span class="z-punctuation z-constant z-language">: false)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-comment">  @doc &quot;Derive the code challenge from the verifier using S256&quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">spec</span><span class="z-entity z-name z-function"> generate_challenge</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type z-class">String</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">t</span><span class="z-punctuation z-keyword">()) ::</span><span class="z-entity z-name z-type z-class"> String</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">t</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> generate_challenge</span><span class="z-punctuation">(</span><span>verifier</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-constant z-other z-symbol z-punctuation">    :crypto.</span><span class="z-entity z-name z-function">hash</span><span class="z-punctuation z-constant z-other z-symbol">(:sha256,</span><span> verifier</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword">    |&gt;</span><span class="z-entity z-name z-type z-class"> Base</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">url_encode64</span><span class="z-punctuation">(</span><span>padding</span><span class="z-punctuation z-constant z-language">: false)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-comment">  @doc &quot;Verify a code verifier against a stored challenge&quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">spec</span><span class="z-entity z-name z-function"> verify</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type z-class">String</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">t</span><span class="z-punctuation">(),</span><span class="z-entity z-name z-type z-class"> String</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">t</span><span class="z-punctuation z-keyword">()) ::</span><span class="z-entity z-name z-function"> boolean</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> verify</span><span class="z-punctuation">(</span><span>verifier</span><span class="z-punctuation">,</span><span> stored_challenge</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">    generate_challenge</span><span class="z-punctuation">(</span><span>verifier</span><span class="z-punctuation z-keyword">) ==</span><span> stored_challenge</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">end</span></span></code></pre>
+<p>PKCE works by having the client generate a random <code>code_verifier</code>, derive a <code>code_challenge</code> from it (SHA-256 hash), send the challenge with the authorization request, and later prove possession of the verifier when exchanging the code for a token. Even if the authorization code is intercepted, the attacker cannot exchange it without the original verifier.</p>
+<h2 id="token-lifecycle">Token Lifecycle</h2>
+<p>OAuth2 tokens follow a defined lifecycle from issuance through expiration or revocation:</p>
+<table><thead><tr><th>Phase</th><th>Description</th><th>Typical Duration</th></tr></thead><tbody>
+<tr><td><strong>Issuance</strong></td><td>Token generated after successful grant exchange</td><td>Instantaneous</td></tr>
+<tr><td><strong>Active</strong></td><td>Token valid for API requests within scope</td><td>15 min - 1 hour</td></tr>
+<tr><td><strong>Refresh</strong></td><td>New access token obtained using refresh token</td><td>Seconds</td></tr>
+<tr><td><strong>Expiration</strong></td><td>Token becomes invalid after <code>exp</code> timestamp</td><td>Automatic</td></tr>
+<tr><td><strong>Revocation</strong></td><td>Token explicitly invalidated before expiration (RFC 7009)</td><td>Immediate</td></tr>
+</tbody></table>
+<p>Access tokens are intentionally short-lived (typically 15-60 minutes) to limit the damage window if a token is compromised. Refresh tokens have longer lifetimes (hours to days) but are stored securely server-side and can be individually revoked.</p>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Token lifecycle management</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">defmodule</span><span class="z-entity z-other z-inherited-class"> PrismaticAuth</span><span>.</span><span class="z-entity z-name z-type z-class">TokenManager</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">access_token_ttl</span><span class="z-constant z-numeric"> 3600</span><span class="z-punctuation z-definition z-comment z-comment">       # 1 hour</span></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">refresh_token_ttl</span><span class="z-constant z-numeric"> 604_800</span><span class="z-punctuation z-definition z-comment z-comment">   # 7 days</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">spec</span><span class="z-entity z-name z-function"> issue_tokens</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type z-class">User</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">t</span><span class="z-punctuation">(),</span><span class="z-entity z-name z-function"> list</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type z-class">String</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">t</span><span class="z-punctuation z-keyword">())) ::</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:ok,</span><span> %</span><span class="z-punctuation">{</span><span>access_token</span><span class="z-punctuation">:</span><span class="z-entity z-name z-type z-class"> String</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">t</span><span class="z-punctuation">(),</span><span> refresh_token</span><span class="z-punctuation">:</span><span class="z-entity z-name z-type z-class"> String</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">t</span><span class="z-punctuation">()}}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> issue_tokens</span><span class="z-punctuation">(</span><span>user</span><span class="z-punctuation">,</span><span> scopes</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span>    access_token </span><span class="z-keyword">=</span><span class="z-entity z-name z-type z-class"> Guardian</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">encode_and_sign</span><span class="z-punctuation">(</span><span>user</span><span class="z-punctuation">,</span><span> %</span><span class="z-punctuation">{</span></span>
+<span class="giallo-l"><span>      scopes</span><span class="z-punctuation">:</span><span> scopes</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>      roles</span><span class="z-punctuation">:</span><span> user</span><span class="z-punctuation">.</span><span>roles</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>      typ</span><span class="z-punctuation">: &quot;</span><span class="z-string">access</span><span class="z-punctuation">&quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation">    },</span><span> ttl</span><span class="z-punctuation">: {@</span><span class="z-variable">access_token_ttl</span><span class="z-punctuation z-constant z-other z-symbol">, :second})</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    refresh_token </span><span class="z-keyword">=</span><span class="z-entity z-name z-type z-class"> Guardian</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">encode_and_sign</span><span class="z-punctuation">(</span><span>user</span><span class="z-punctuation">,</span><span> %</span><span class="z-punctuation">{</span></span>
+<span class="giallo-l"><span>      typ</span><span class="z-punctuation">: &quot;</span><span class="z-string">refresh</span><span class="z-punctuation">&quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation">    },</span><span> ttl</span><span class="z-punctuation">: {@</span><span class="z-variable">refresh_token_ttl</span><span class="z-punctuation z-constant z-other z-symbol">, :second})</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:ok,</span><span> %</span><span class="z-punctuation">{</span><span>access_token</span><span class="z-punctuation">:</span><span> access_token</span><span class="z-punctuation">,</span><span> refresh_token</span><span class="z-punctuation">:</span><span> refresh_token</span><span class="z-punctuation">}}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">spec</span><span class="z-entity z-name z-function"> refresh</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type z-class">String</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">t</span><span class="z-punctuation z-keyword z-constant z-other z-symbol">()) :: {:ok,</span><span class="z-entity z-name z-type z-class"> String</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">t</span><span class="z-punctuation z-keyword z-constant z-other z-symbol">()} | {:error, :invalid_token}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> refresh</span><span class="z-punctuation">(</span><span>refresh_token</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">    case</span><span class="z-entity z-name z-type z-class"> Guardian</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">decode_and_verify</span><span class="z-punctuation">(</span><span>refresh_token</span><span class="z-punctuation">,</span><span> %</span><span class="z-punctuation">{&quot;</span><span class="z-string">typ</span><span class="z-punctuation z-keyword">&quot; =&gt; &quot;</span><span class="z-string">refresh</span><span class="z-punctuation">&quot;})</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">      {:ok,</span><span> claims</span><span class="z-punctuation z-keyword">} -&gt;</span><span class="z-entity z-name z-function"> issue_access_token</span><span class="z-punctuation">(</span><span>claims</span><span class="z-punctuation">[&quot;</span><span class="z-string">sub</span><span class="z-punctuation">&quot;])</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">      {:error,</span><span class="z-comment"> _reason</span><span class="z-punctuation z-keyword z-constant z-other z-symbol">} -&gt; {:error, :invalid_token}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">    end</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">end</span></span></code></pre><h2 id="scopes-and-permission-mapping">Scopes and Permission Mapping</h2>
+<p>OAuth2 scopes define the boundaries of access that a token grants. Scopes are strings that represent specific capabilities, and they map to the platform's <a href="https://prismatic-reality.com/glossary/rbac/">RBAC</a> permission model:</p>
+<table><thead><tr><th>OAuth2 Scope</th><th>RBAC Permission</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>assets:read</code></td><td>Viewer role</td><td>Read asset inventory</td></tr>
+<tr><td><code>assets:write</code></td><td>Operator role</td><td>Create and modify assets</td></tr>
+<tr><td><code>scans:execute</code></td><td>Operator role</td><td>Execute OSINT/EASM scans</td></tr>
+<tr><td><code>reports:read</code></td><td>Analyst role</td><td>Access security reports</td></tr>
+<tr><td><code>compliance:assess</code></td><td>Analyst role</td><td>Run compliance assessments</td></tr>
+<tr><td><code>admin:manage</code></td><td>Admin role</td><td>System administration</td></tr>
+</tbody></table>
+<p>Scope validation occurs at two points: when the token is issued (ensuring the requested scopes are within the user's authorized set) and when the token is used (ensuring the requested operation falls within the token's granted scopes). This double-check prevents both scope escalation and scope drift.</p>
+<h2 id="context-in-prismatic">Context in Prismatic</h2>
+<p>The Prismatic Platform supports OAuth2 for third-party integrations and API access delegation. External services accessing Prismatic API endpoints authenticate through the client credentials flow, receiving <a href="https://prismatic-reality.com/glossary/jwt/">JWT</a> access tokens with scoped permissions. The <a href="https://prismatic-reality.com/glossary/rbac/">RBAC</a> system maps OAuth2 scopes to platform roles, ensuring that delegated access respects the same permission boundaries as direct authentication.</p>
+<p>For user-facing authentication, the platform integrates with the <a rel="external" href="https://hex.pm/packages/ueberauth">Ueberauth</a> library, which provides a composable, strategy-based approach to OAuth2 authentication with external providers. Each provider (GitHub, Google, GitLab) is configured as a separate Ueberauth strategy, and successful authentication results in a platform <a href="https://prismatic-reality.com/glossary/jwt/">JWT</a> being issued with the appropriate role claims.</p>
+<p>The <a href="https://prismatic-reality.com/glossary/api-gateway/">API Gateway</a> validates all incoming tokens through <a href="https://prismatic-reality.com/glossary/plug/">Plug</a> middleware, checking token signature, expiration, and scope before routing to backend services. All token exchange occurs over <a href="https://prismatic-reality.com/glossary/tls/">TLS</a> to prevent interception.</p>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Ueberauth configuration for OAuth2 providers</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># config/config.exs</span></span>
+<span class="giallo-l"><span>config </span><span class="z-punctuation z-constant z-other z-symbol">:ueberauth,</span><span class="z-entity z-name z-type z-class"> Ueberauth</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>  providers</span><span class="z-punctuation">: [</span></span>
+<span class="giallo-l"><span>    github</span><span class="z-punctuation">: {</span><span class="z-entity z-name z-type z-class">Ueberauth</span><span class="z-punctuation">.</span><span class="z-entity z-name z-type z-class">Strategy</span><span class="z-punctuation">.</span><span class="z-entity z-name z-type z-class">Github</span><span class="z-punctuation">, [</span><span>default_scope</span><span class="z-punctuation">: &quot;</span><span class="z-string">user:email,read:org</span><span class="z-punctuation">&quot;]},</span></span>
+<span class="giallo-l"><span>    google</span><span class="z-punctuation">: {</span><span class="z-entity z-name z-type z-class">Ueberauth</span><span class="z-punctuation">.</span><span class="z-entity z-name z-type z-class">Strategy</span><span class="z-punctuation">.</span><span class="z-entity z-name z-type z-class">Google</span><span class="z-punctuation">, [</span><span>default_scope</span><span class="z-punctuation">: &quot;</span><span class="z-string">email profile</span><span class="z-punctuation">&quot;]},</span></span>
+<span class="giallo-l"><span>    gitlab</span><span class="z-punctuation">: {</span><span class="z-entity z-name z-type z-class">Ueberauth</span><span class="z-punctuation">.</span><span class="z-entity z-name z-type z-class">Strategy</span><span class="z-punctuation">.</span><span class="z-entity z-name z-type z-class">Gitlab</span><span class="z-punctuation">, [</span><span>default_scope</span><span class="z-punctuation">: &quot;</span><span class="z-string">read_user openid</span><span class="z-punctuation">&quot;]}</span></span>
+<span class="giallo-l"><span class="z-punctuation">  ]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># OAuth2 callback controller</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">defmodule</span><span class="z-entity z-other z-inherited-class"> PrismaticWeb</span><span>.</span><span class="z-entity z-name z-type z-class">AuthController</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  use</span><span class="z-entity z-name z-type z-class"> PrismaticWeb</span><span class="z-punctuation z-constant z-other z-symbol">, :controller</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> callback</span><span class="z-punctuation">(</span><span>%</span><span class="z-punctuation">{</span><span>assigns</span><span class="z-punctuation">:</span><span> %</span><span class="z-punctuation">{</span><span>ueberauth_auth</span><span class="z-punctuation">:</span><span> auth</span><span class="z-punctuation z-keyword">}} =</span><span> conn</span><span class="z-punctuation">,</span><span class="z-comment"> _params</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span>    user_params </span><span class="z-keyword">=</span><span> %</span><span class="z-punctuation">{</span></span>
+<span class="giallo-l"><span>      email</span><span class="z-punctuation">:</span><span> auth</span><span class="z-punctuation">.</span><span>info</span><span class="z-punctuation">.</span><span>email</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>      provider</span><span class="z-punctuation">:</span><span class="z-entity z-name z-function"> to_string</span><span class="z-punctuation">(</span><span>auth</span><span class="z-punctuation">.</span><span>provider</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span>      provider_uid</span><span class="z-punctuation">:</span><span> auth</span><span class="z-punctuation">.</span><span>uid</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control">    case</span><span class="z-entity z-name z-type z-class"> Accounts</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">find_or_create_user</span><span class="z-punctuation">(</span><span>user_params</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">      {:ok,</span><span> user</span><span class="z-punctuation z-keyword">} -&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">        {:ok,</span><span> token</span><span class="z-punctuation">,</span><span class="z-comment"> _claims</span><span class="z-punctuation z-keyword">} =</span><span class="z-entity z-name z-type z-class"> Guardian</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">encode_and_sign</span><span class="z-punctuation">(</span><span>user</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">        json</span><span class="z-punctuation">(</span><span>conn</span><span class="z-punctuation">,</span><span> %</span><span class="z-punctuation">{</span><span>access_token</span><span class="z-punctuation">:</span><span> token</span><span class="z-punctuation">})</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">      {:error,</span><span> reason</span><span class="z-punctuation z-keyword">} -&gt;</span></span>
+<span class="giallo-l"><span>        conn </span><span class="z-keyword">|&gt;</span><span class="z-entity z-name z-function"> put_status</span><span class="z-punctuation z-constant z-other z-symbol z-keyword">(:unauthorized) |&gt;</span><span class="z-entity z-name z-function"> json</span><span class="z-punctuation">(</span><span>%</span><span class="z-punctuation">{</span><span>error</span><span class="z-punctuation">:</span><span> reason</span><span class="z-punctuation">})</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">    end</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">end</span></span></code></pre><h2 id="security-considerations">Security Considerations</h2>
+<p>OAuth2 implementations must address several security concerns to prevent token theft, replay attacks, and privilege escalation:</p>
+<table><thead><tr><th>Threat</th><th>Mitigation</th><th>Prismatic Implementation</th></tr></thead><tbody>
+<tr><td><strong>Authorization code interception</strong></td><td>PKCE (RFC 7636)</td><td>Mandatory for all public clients</td></tr>
+<tr><td><strong>Token theft via XSS</strong></td><td>HttpOnly, Secure, SameSite cookies</td><td>Tokens stored server-side, not in localStorage</td></tr>
+<tr><td><strong>Redirect URI manipulation</strong></td><td>Exact URI matching (no wildcards)</td><td>Strict redirect URI validation</td></tr>
+<tr><td><strong>Token replay</strong></td><td>Short TTL + refresh tokens</td><td>1-hour access tokens, 7-day refresh</td></tr>
+<tr><td><strong>Scope escalation</strong></td><td>Server-side scope validation</td><td>Double-check at issuance and usage</td></tr>
+<tr><td><strong>CSRF on authorization endpoint</strong></td><td><code>state</code> parameter with HMAC</td><td>Mandatory for all flows</td></tr>
+<tr><td><strong>Refresh token theft</strong></td><td>Token rotation (RFC 6819)</td><td>New refresh token on each use</td></tr>
+</tbody></table>
+<p>All OAuth2 token exchange MUST occur over <a href="https://prismatic-reality.com/glossary/tls/">TLS</a>. The Prismatic Platform enforces HTTPS for all OAuth2 endpoints and rejects plain HTTP requests at the <a href="https://prismatic-reality.com/glossary/api-gateway/">API Gateway</a> level.</p>
+<h2 id="oauth-2-1-and-future-direction">OAuth 2.1 and Future Direction</h2>
+<p>The OAuth 2.1 draft specification (draft-ietf-oauth-v2-1) consolidates OAuth 2.0, its extensions, and current best practices into a single document. Key changes include:</p>
+<ul>
+<li><strong>PKCE required</strong> for all authorization code grants (not just public clients)</li>
+<li><strong>Implicit grant removed</strong> entirely</li>
+<li><strong>Resource Owner Password grant removed</strong> entirely</li>
+<li><strong>Redirect URI exact matching</strong> mandatory (no pattern matching)</li>
+<li><strong>Refresh token rotation</strong> recommended for all clients</li>
+<li><strong>Bearer token usage</strong> consolidated from RFC 6750</li>
+</ul>
+<p>These changes align with what the Prismatic Platform already enforces, as the platform was designed with OAuth 2.1 best practices from the start.</p>
+<h2 id="related-terms">Related Terms</h2>
+<ul>
+<li><a href="https://prismatic-reality.com/glossary/jwt/">JWT</a> - Token format commonly used for OAuth2 access tokens</li>
+<li><a href="https://prismatic-reality.com/glossary/rbac/">RBAC</a> - Permission model mapping OAuth2 scopes to platform roles</li>
+<li><a href="https://prismatic-reality.com/glossary/rest-api/">REST API</a> - API interface secured with OAuth2 tokens</li>
+<li><a href="https://prismatic-reality.com/glossary/tls/">TLS</a> - Transport encryption protecting OAuth2 token exchange</li>
+<li><a href="https://prismatic-reality.com/glossary/api-gateway/">API Gateway</a> - Centralized token validation and routing</li>
+<li><a href="https://prismatic-reality.com/glossary/plug/">Plug</a> - Elixir middleware implementing OAuth2 validation</li>
+<li><a href="https://prismatic-reality.com/glossary/rate-limiting/">Rate Limiting</a> - Per-client throttling using OAuth2 client identity</li>
+<li><a href="https://prismatic-reality.com/glossary/encryption-at-rest/">Encryption at Rest</a> - Protection of stored refresh tokens and client secrets</li>
+<li><a href="https://prismatic-reality.com/glossary/observability/">Observability</a> - Monitoring OAuth2 flows and token usage</li>
+<li><a href="https://prismatic-reality.com/glossary/openapi/">OpenAPI</a> - API specification documenting OAuth2 security schemes</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="https://prismatic-reality.com/architecture/">Architecture</a> - Authentication architecture</li>
+<li><a href="https://prismatic-reality.com/apps/">Apps</a> - Prismatic API application with OAuth2 support</li>
+<li><a href="https://prismatic-reality.com/agents/">Agents</a> - Agent authentication and authorization</li>
+</ul>
+<hr />
+<h2 id="connect-contribute">Connect &amp; Contribute</h2>
+<p><strong>Created by <a rel="external" href="https://github.com/korczis">Tomáš Korcak (korczis)</a></strong> | Open Source under <a rel="external" href="https://github.com/korczis/prismatic-platform/blob/main/LICENSE">GHL</a></p>
+<ul>
+<li><a rel="external" href="https://github.com/korczis/prismatic-platform">GitHub</a> | <a rel="external" href="https://gitlab.com/korczis/prismatic-platform">GitLab</a> | <a rel="external" href="https://linkedin.com/in/korczis">LinkedIn</a> | <a href="mailto:korczis@gmail.com">Contact</a></li>
+<li><a href="/developers/">Developer Portal</a> | <a href="/architecture/">Architecture</a> | <a href="/about/author/">Meet the Creator</a></li>
+</ul>
+
+                </article>
+            </div>
+
+            <!-- Sidebar (right 1/3) -->
+            <div class="hidden lg:block sticky top-4 space-y-6 self-start">
+                <!-- Term Info Card -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6">
+                    <div class="p-4">
+                        <div class="mt-4">
+                <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Term Info
+                </h3>
+                <dl class="space-y-3">
+                    
+                    
+                    <div class="flex justify-between items-center">
+                        <dt class="text-sm text-gray-400">Category</dt>
+                        <dd class="text-sm font-semibold text-gray-300 capitalize"><a
+                                href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/?category=security"
+                                title="View all security terms"
+                                class="hover:underline hover:text-white transition-colors">security</a></dd>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <dt class="text-sm text-gray-400">Platform</dt>
+                        <dd class="text-sm font-semibold text-gray-300">Prismatic v7.5</dd>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <dt class="text-sm text-gray-400">Doctrine</dt>
+                        <dd class="text-sm font-semibold text-gray-300">NM/ND</dd>
+                    </div>
+                </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- In This Section -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6">
+                    <div class="p-4">
+                        <div class="mt-4">
+                <div x-data="glossaryNav()">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        Glossary Terms
+                        <span class="text-xs font-normal text-gray-400" x-text="'(' + totalItems + ' terms)'"></span>
+                    </h3>
+                    <ul class="space-y-1.5">
+                        <template x-for="item in paginatedItems" :key="item.url">
+                            <li>
+                                <a :href="item.url" :class="item.isCurrent
+                                       ? 'text-gray-400 font-semibold bg-amber-900/30'
+                                       : 'text-gray-400 hover:text-gray-400 hover:bg-gray-700/50'"
+                                    class="block text-sm px-3 py-1.5 rounded-lg transition-all" x-text="item.title">
+                                </a>
+                            </li>
+                        </template>
+                    </ul>
+                    <div class="flex items-center justify-between mt-4 pt-3 border-t border-gray-700"
+                        x-show="totalPages > 1">
+                        <button @click="prevPage()" :disabled="currentPage === 1"
+                            :class="currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-gray-400'"
+                            class="text-xs font-medium text-gray-400 transition-colors">
+                            Previous
+                        </button>
+                        <span class="text-xs text-gray-400" x-text="currentPage + ' / ' + totalPages"></span>
+                        <button @click="nextPage()" :disabled="currentPage === totalPages"
+                            :class="currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:text-gray-400'"
+                            class="text-xs font-medium text-gray-400 transition-colors">
+                            Next
+                        </button>
+                    </div>
+                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Agents Card -->
+                
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6">
+                    <div class="p-4">
+                        <div class="mt-4">
+                <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    Related Agents
+                </h3>
+                <p class="text-xs text-gray-400 mb-3">Agents relevant to <span class="font-semibold text-gray-400">OAuth2</span></p>
+                <div class="space-y-2">
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                        class="flex items-center gap-3 p-2.5 bg-gray-800/80 rounded-lg border border-white/5 hover:border-white/20 transition-all group">
+                        <div class="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-xs font-black text-gray-400">RC</span>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-white group-hover:text-gray-300">Red Commander</div>
+                            <div class="text-xs text-gray-400">Adversarial simulation</div>
+                        </div>
+                    </a>
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                        class="flex items-center gap-3 p-2.5 bg-gray-800/80 rounded-lg border border-white/5 hover:border-white/20 transition-all group">
+                        <div class="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-xs font-black text-gray-400">BC</span>
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-white group-hover:text-gray-300">Blue Commander</div>
+                            <div class="text-xs text-gray-400">Defensive posture</div>
+                        </div>
+                    </a>
+                    
+                </div>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                    class="mt-3 inline-flex items-center text-xs font-semibold text-gray-400 hover:text-white transition-colors">
+                    View all agents
+                    <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- See Also -- Related Glossary Terms -->
+                
+                
+                <!-- See Also -- Related Glossary Terms -->
+                
+                
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6">
+                    <div class="p-4">
+                        <div class="mt-4">
+                <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                    <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                    </svg>
+                    See Also
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;jwt&#x2F;"
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-800/80 text-gray-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                        JWT
+                    </a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;rbac&#x2F;"
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-800/80 text-gray-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                        RBAC
+                    </a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;rest-api&#x2F;"
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-800/80 text-gray-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                        REST API
+                    </a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;api-gateway&#x2F;"
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-800/80 text-gray-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                        API Gateway
+                    </a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;tls&#x2F;"
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-800/80 text-gray-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                        TLS
+                    </a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;plug&#x2F;"
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium bg-gray-800/80 text-gray-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                        </svg>
+                        Plug
+                    </a>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/dd/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Due Diligence<span
+                class="ml-auto text-xs text-gray-600">122 src</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Interactive Labs<span
+                class="ml-auto text-xs text-gray-600">15 exp</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Academy<span
+                class="ml-auto text-xs text-gray-600">15 courses</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>API Reference</a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+
+        <!-- Back to Glossary Button -->
+        <div class="mt-8 pt-8 border-t border-gray-700">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+                class="inline-flex items-center px-6 py-3 text-sm font-semibold text-gray-950 bg-white rounded-xl focus:ring-4 focus:ring-amber-800 transition-all shadow-lg hover:shadow-xl">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Glossary
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- In This Section: Paginated Navigation (Alpine.js) -->
+<script id="glossary-section-data" type="application/json">
+[
+    
+    
+    {
+        "title": "3NL",
+        "url": "https://prismatic-reality.com/glossary/3nl/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "3NL Framework",
+        "url": "https://prismatic-reality.com/glossary/three-nl/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Adapter Pattern",
+        "url": "https://prismatic-reality.com/glossary/adapter-pattern/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Agent",
+        "url": "https://prismatic-reality.com/glossary/agent/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Agent Module",
+        "url": "https://prismatic-reality.com/glossary/agent-module/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Agent Registry",
+        "url": "https://prismatic-reality.com/glossary/agent-registry/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Agent Tier",
+        "url": "https://prismatic-reality.com/glossary/agent-tier/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "AIAD",
+        "url": "https://prismatic-reality.com/glossary/aiad/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "AML (Anti-Money Laundering)",
+        "url": "https://prismatic-reality.com/glossary/aml/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "API Gateway",
+        "url": "https://prismatic-reality.com/glossary/api-gateway/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Application",
+        "url": "https://prismatic-reality.com/glossary/application/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Archer Supreme",
+        "url": "https://prismatic-reality.com/glossary/archer-supreme/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Attack Surface",
+        "url": "https://prismatic-reality.com/glossary/attack-surface/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Audit Trail",
+        "url": "https://prismatic-reality.com/glossary/audit-trail/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "AutoEvolve",
+        "url": "https://prismatic-reality.com/glossary/autoevolve/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "AutoHeal",
+        "url": "https://prismatic-reality.com/glossary/autoheal/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Backpressure",
+        "url": "https://prismatic-reality.com/glossary/backpressure/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "BEAM",
+        "url": "https://prismatic-reality.com/glossary/beam/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Behaviour",
+        "url": "https://prismatic-reality.com/glossary/behaviour/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Belief Graph",
+        "url": "https://prismatic-reality.com/glossary/belief-graph/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Beneficial Ownership",
+        "url": "https://prismatic-reality.com/glossary/beneficial-ownership/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Black Team",
+        "url": "https://prismatic-reality.com/glossary/black-team/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Blackboard",
+        "url": "https://prismatic-reality.com/glossary/blackboard/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Blue Team",
+        "url": "https://prismatic-reality.com/glossary/blue-team/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Blue-Green Deployment",
+        "url": "https://prismatic-reality.com/glossary/blue-green-deployment/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Bounded Context",
+        "url": "https://prismatic-reality.com/glossary/bounded-context/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Broadway",
+        "url": "https://prismatic-reality.com/glossary/broadway/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Bulkhead Pattern",
+        "url": "https://prismatic-reality.com/glossary/bulkhead-pattern/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Canary Release",
+        "url": "https://prismatic-reality.com/glossary/canary-release/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "CAP Theorem",
+        "url": "https://prismatic-reality.com/glossary/cap-theorem/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "CASCADE",
+        "url": "https://prismatic-reality.com/glossary/cascade/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "CASCADE Pattern",
+        "url": "https://prismatic-reality.com/glossary/cascade-pattern/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Censys",
+        "url": "https://prismatic-reality.com/glossary/censys/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Certificate Transparency",
+        "url": "https://prismatic-reality.com/glossary/certificate-transparency/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Channel",
+        "url": "https://prismatic-reality.com/glossary/channel/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Chaos Engineering",
+        "url": "https://prismatic-reality.com/glossary/chaos-engineering/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Cherry Picking",
+        "url": "https://prismatic-reality.com/glossary/cherry-picking/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Circuit Breaker",
+        "url": "https://prismatic-reality.com/glossary/circuit-breaker/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Clean Run",
+        "url": "https://prismatic-reality.com/glossary/clean-run/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Cluster",
+        "url": "https://prismatic-reality.com/glossary/cluster/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Code Coverage",
+        "url": "https://prismatic-reality.com/glossary/code-coverage/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Color Teams",
+        "url": "https://prismatic-reality.com/glossary/color-teams/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Compliance Framework",
+        "url": "https://prismatic-reality.com/glossary/compliance-framework/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Comprehension",
+        "url": "https://prismatic-reality.com/glossary/comprehension/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Confidence Scoring",
+        "url": "https://prismatic-reality.com/glossary/confidence-scoring/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Confidence Threshold",
+        "url": "https://prismatic-reality.com/glossary/confidence-threshold/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Connection Pooling",
+        "url": "https://prismatic-reality.com/glossary/connection-pooling/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Consciousness Traits",
+        "url": "https://prismatic-reality.com/glossary/consciousness-traits/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Consensus Algorithm",
+        "url": "https://prismatic-reality.com/glossary/consensus-algorithm/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Continuous Deployment",
+        "url": "https://prismatic-reality.com/glossary/continuous-deployment/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Continuous Integration",
+        "url": "https://prismatic-reality.com/glossary/continuous-integration/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Contradiction Preservation",
+        "url": "https://prismatic-reality.com/glossary/contradiction-preservation/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Cosine Similarity",
+        "url": "https://prismatic-reality.com/glossary/cosine-similarity/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "CQRS",
+        "url": "https://prismatic-reality.com/glossary/cqrs/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Credo",
+        "url": "https://prismatic-reality.com/glossary/credo/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "CVE",
+        "url": "https://prismatic-reality.com/glossary/cve/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Cyber Threat Intelligence",
+        "url": "https://prismatic-reality.com/glossary/cyber-threat-intelligence/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Data Pipeline",
+        "url": "https://prismatic-reality.com/glossary/data-pipeline/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Dependency Injection",
+        "url": "https://prismatic-reality.com/glossary/dependency-injection/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Dialyzer",
+        "url": "https://prismatic-reality.com/glossary/dialyzer/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Disaster Recovery",
+        "url": "https://prismatic-reality.com/glossary/disaster-recovery/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Distributed System",
+        "url": "https://prismatic-reality.com/glossary/distributed-system/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Distributed Tracing",
+        "url": "https://prismatic-reality.com/glossary/distributed-tracing/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "DNS Enumeration",
+        "url": "https://prismatic-reality.com/glossary/dns-enumeration/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Docker",
+        "url": "https://prismatic-reality.com/glossary/docker/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Domain-Driven Design",
+        "url": "https://prismatic-reality.com/glossary/domain-driven-design/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "DuckDB",
+        "url": "https://prismatic-reality.com/glossary/duckdb/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Due Diligence",
+        "url": "https://prismatic-reality.com/glossary/due-diligence/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "DynamicSupervisor",
+        "url": "https://prismatic-reality.com/glossary/dynamic-supervisor/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "EASM",
+        "url": "https://prismatic-reality.com/glossary/easm/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Ecto",
+        "url": "https://prismatic-reality.com/glossary/ecto/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Elixir",
+        "url": "https://prismatic-reality.com/glossary/elixir/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Embedding",
+        "url": "https://prismatic-reality.com/glossary/embedding/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Encryption at Rest",
+        "url": "https://prismatic-reality.com/glossary/encryption-at-rest/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Endpoint",
+        "url": "https://prismatic-reality.com/glossary/endpoint/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Entity Resolution",
+        "url": "https://prismatic-reality.com/glossary/entity-resolution/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Epistemic Pipeline",
+        "url": "https://prismatic-reality.com/glossary/epistemic-pipeline/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Epistemic Robustness",
+        "url": "https://prismatic-reality.com/glossary/epistemic-robustness/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "ETL",
+        "url": "https://prismatic-reality.com/glossary/etl/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "ETS",
+        "url": "https://prismatic-reality.com/glossary/ets/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "ETS Table",
+        "url": "https://prismatic-reality.com/glossary/ets-table/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Event Sourcing",
+        "url": "https://prismatic-reality.com/glossary/event-sourcing/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Eventual Consistency",
+        "url": "https://prismatic-reality.com/glossary/eventual-consistency/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "ExUnit",
+        "url": "https://prismatic-reality.com/glossary/exunit/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Fault Tolerance",
+        "url": "https://prismatic-reality.com/glossary/fault-tolerance/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Feature Flag",
+        "url": "https://prismatic-reality.com/glossary/feature-flag/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Fine-Tuning",
+        "url": "https://prismatic-reality.com/glossary/fine-tuning/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Fitness Score",
+        "url": "https://prismatic-reality.com/glossary/fitness-score/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Flowbite",
+        "url": "https://prismatic-reality.com/glossary/flowbite/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Fly.io",
+        "url": "https://prismatic-reality.com/glossary/fly-io/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Formal Verification",
+        "url": "https://prismatic-reality.com/glossary/formal-verification/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "GARDEN",
+        "url": "https://prismatic-reality.com/glossary/garden/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "GDPR",
+        "url": "https://prismatic-reality.com/glossary/gdpr/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Generation",
+        "url": "https://prismatic-reality.com/glossary/generation/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "GenServer",
+        "url": "https://prismatic-reality.com/glossary/genserver/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "GenStage",
+        "url": "https://prismatic-reality.com/glossary/genstage/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "GenStatem",
+        "url": "https://prismatic-reality.com/glossary/gen-statem/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Git Trees",
+        "url": "https://prismatic-reality.com/glossary/git-trees/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "GitLab CI/CD",
+        "url": "https://prismatic-reality.com/glossary/gitlab-ci/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "GitOps",
+        "url": "https://prismatic-reality.com/glossary/gitops/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "GraphQL",
+        "url": "https://prismatic-reality.com/glossary/graphql/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Gray Team",
+        "url": "https://prismatic-reality.com/glossary/gray-team/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "GreyNoise",
+        "url": "https://prismatic-reality.com/glossary/greynoise/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "HAWKEYE",
+        "url": "https://prismatic-reality.com/glossary/hawkeye/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Hex",
+        "url": "https://prismatic-reality.com/glossary/hex/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Hot Code Reload",
+        "url": "https://prismatic-reality.com/glossary/hot-code-reload/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Idempotency",
+        "url": "https://prismatic-reality.com/glossary/idempotency/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Immutability",
+        "url": "https://prismatic-reality.com/glossary/immutability/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Incident Response",
+        "url": "https://prismatic-reality.com/glossary/incident-response/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Inference",
+        "url": "https://prismatic-reality.com/glossary/inference/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Intelligence Fusion",
+        "url": "https://prismatic-reality.com/glossary/intelligence-fusion/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "ISO 27001",
+        "url": "https://prismatic-reality.com/glossary/iso-27001/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "JWT",
+        "url": "https://prismatic-reality.com/glossary/jwt/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Knowledge Graph",
+        "url": "https://prismatic-reality.com/glossary/knowledge-graph/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "KuzuDB",
+        "url": "https://prismatic-reality.com/glossary/kuzudb/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "KYC (Know Your Customer)",
+        "url": "https://prismatic-reality.com/glossary/kyc/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Lean4",
+        "url": "https://prismatic-reality.com/glossary/lean4/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Let It Crash",
+        "url": "https://prismatic-reality.com/glossary/let-it-crash/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "LiveView",
+        "url": "https://prismatic-reality.com/glossary/liveview/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Load Balancing",
+        "url": "https://prismatic-reality.com/glossary/load-balancing/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Macro",
+        "url": "https://prismatic-reality.com/glossary/macro/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Meilisearch",
+        "url": "https://prismatic-reality.com/glossary/meilisearch/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Message Passing",
+        "url": "https://prismatic-reality.com/glossary/message-passing/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Metrics",
+        "url": "https://prismatic-reality.com/glossary/metrics/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Microservices",
+        "url": "https://prismatic-reality.com/glossary/microservices/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Mix",
+        "url": "https://prismatic-reality.com/glossary/mix/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Mix Task",
+        "url": "https://prismatic-reality.com/glossary/mix-task/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Mnesia",
+        "url": "https://prismatic-reality.com/glossary/mnesia/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Modal Logic",
+        "url": "https://prismatic-reality.com/glossary/modal-logic/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Monte Carlo Verification",
+        "url": "https://prismatic-reality.com/glossary/monte-carlo-verification/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Mycelial Network",
+        "url": "https://prismatic-reality.com/glossary/mycelial-network/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "NABLA Infinity",
+        "url": "https://prismatic-reality.com/glossary/nabla-infinity/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "NIS2 Directive",
+        "url": "https://prismatic-reality.com/glossary/nis2/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "NM/ND Doctrine",
+        "url": "https://prismatic-reality.com/glossary/nm-nd/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "NO DOUBTS",
+        "url": "https://prismatic-reality.com/glossary/no-doubts/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "NO MERCY",
+        "url": "https://prismatic-reality.com/glossary/no-mercy/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "No Mercy, No Doubts",
+        "url": "https://prismatic-reality.com/glossary/no-mercy-no-doubts/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Node",
+        "url": "https://prismatic-reality.com/glossary/node/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "OAuth2",
+        "url": "https://prismatic-reality.com/glossary/oauth2/",
+        "isCurrent": true
+    },
+    
+    {
+        "title": "Observability",
+        "url": "https://prismatic-reality.com/glossary/observability/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Observer",
+        "url": "https://prismatic-reality.com/glossary/observer/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Ollama",
+        "url": "https://prismatic-reality.com/glossary/ollama/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Ontology",
+        "url": "https://prismatic-reality.com/glossary/ontology/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "OpenAPI",
+        "url": "https://prismatic-reality.com/glossary/openapi/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "OpenAPI Specification",
+        "url": "https://prismatic-reality.com/glossary/openapi-spec/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "OSINT",
+        "url": "https://prismatic-reality.com/glossary/osint/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "OTP",
+        "url": "https://prismatic-reality.com/glossary/otp/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Outbox Pattern",
+        "url": "https://prismatic-reality.com/glossary/outbox-pattern/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "OWASP",
+        "url": "https://prismatic-reality.com/glossary/owasp/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Pattern Matching",
+        "url": "https://prismatic-reality.com/glossary/pattern-matching/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Penetration Testing",
+        "url": "https://prismatic-reality.com/glossary/penetration-testing/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Phoenix",
+        "url": "https://prismatic-reality.com/glossary/phoenix/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Phoenix LiveView",
+        "url": "https://prismatic-reality.com/glossary/phoenix-liveview/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Pipe Operator",
+        "url": "https://prismatic-reality.com/glossary/pipe-operator/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Plug",
+        "url": "https://prismatic-reality.com/glossary/plug/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "PostgreSQL",
+        "url": "https://prismatic-reality.com/glossary/postgresql/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Pre-Commit Hooks",
+        "url": "https://prismatic-reality.com/glossary/pre-commit-hooks/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Agents",
+        "url": "https://prismatic-reality.com/glossary/prismatic-agents/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic API",
+        "url": "https://prismatic-reality.com/glossary/prismatic-api/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Perimeter",
+        "url": "https://prismatic-reality.com/glossary/prismatic-perimeter/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Storage",
+        "url": "https://prismatic-reality.com/glossary/prismatic-storage/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prismatic Web",
+        "url": "https://prismatic-reality.com/glossary/prismatic-web/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Process Isolation",
+        "url": "https://prismatic-reality.com/glossary/process-isolation/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Prompt Engineering",
+        "url": "https://prismatic-reality.com/glossary/prompt-engineering/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Property-Based Testing",
+        "url": "https://prismatic-reality.com/glossary/property-based-testing/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Protocol",
+        "url": "https://prismatic-reality.com/glossary/protocol/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Provenance Mandatory",
+        "url": "https://prismatic-reality.com/glossary/provenance-mandatory/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "PubSub",
+        "url": "https://prismatic-reality.com/glossary/pubsub/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Pure Function",
+        "url": "https://prismatic-reality.com/glossary/pure-function/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Purple Team",
+        "url": "https://prismatic-reality.com/glossary/purple-team/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "PVM",
+        "url": "https://prismatic-reality.com/glossary/pvm/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "QDP",
+        "url": "https://prismatic-reality.com/glossary/qdp/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "QEVE",
+        "url": "https://prismatic-reality.com/glossary/qeve/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Quality Debt",
+        "url": "https://prismatic-reality.com/glossary/quality-debt/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Quality DNA",
+        "url": "https://prismatic-reality.com/glossary/quality-dna/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Quality Floor Guardian",
+        "url": "https://prismatic-reality.com/glossary/quality-floor-guardian/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Quality Gates",
+        "url": "https://prismatic-reality.com/glossary/quality-gates/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "RAG",
+        "url": "https://prismatic-reality.com/glossary/rag/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Rate Limiting",
+        "url": "https://prismatic-reality.com/glossary/rate-limiting/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "RBAC",
+        "url": "https://prismatic-reality.com/glossary/rbac/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Red Team",
+        "url": "https://prismatic-reality.com/glossary/red-team/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Redis",
+        "url": "https://prismatic-reality.com/glossary/redis/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Registry (OTP)",
+        "url": "https://prismatic-reality.com/glossary/registry-otp/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Regression Test",
+        "url": "https://prismatic-reality.com/glossary/regression-test/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Release",
+        "url": "https://prismatic-reality.com/glossary/release/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Releases (Elixir)",
+        "url": "https://prismatic-reality.com/glossary/releases-elixir/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "REST API",
+        "url": "https://prismatic-reality.com/glossary/rest-api/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Retry Pattern",
+        "url": "https://prismatic-reality.com/glossary/retry-pattern/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Risk Score",
+        "url": "https://prismatic-reality.com/glossary/risk-score/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Saga Pattern",
+        "url": "https://prismatic-reality.com/glossary/saga-pattern/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Sanctions Screening",
+        "url": "https://prismatic-reality.com/glossary/sanctions-screening/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "SEADF",
+        "url": "https://prismatic-reality.com/glossary/seadf/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Security Rating",
+        "url": "https://prismatic-reality.com/glossary/security-rating/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Self-Healing",
+        "url": "https://prismatic-reality.com/glossary/self-healing/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Server-Sent Events",
+        "url": "https://prismatic-reality.com/glossary/server-sent-events/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Session Discipline",
+        "url": "https://prismatic-reality.com/glossary/session-discipline/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Shodan",
+        "url": "https://prismatic-reality.com/glossary/shodan/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Sidecar Pattern",
+        "url": "https://prismatic-reality.com/glossary/sidecar-pattern/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "SIEM",
+        "url": "https://prismatic-reality.com/glossary/siem/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Signal Plurality",
+        "url": "https://prismatic-reality.com/glossary/signal-plurality/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "SOC 2",
+        "url": "https://prismatic-reality.com/glossary/soc2/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Socket.IO",
+        "url": "https://prismatic-reality.com/glossary/socket-io/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Sparkline",
+        "url": "https://prismatic-reality.com/glossary/sparkline/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Strategic Command",
+        "url": "https://prismatic-reality.com/glossary/strategic-command/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Stream Processing",
+        "url": "https://prismatic-reality.com/glossary/stream-processing/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Structured Logging",
+        "url": "https://prismatic-reality.com/glossary/structured-logging/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Supervision Tree",
+        "url": "https://prismatic-reality.com/glossary/supervision-tree/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Supervisor",
+        "url": "https://prismatic-reality.com/glossary/supervisor/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Supreme Commander",
+        "url": "https://prismatic-reality.com/glossary/supreme-commander/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Tactical Execution",
+        "url": "https://prismatic-reality.com/glossary/tactical-execution/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "TailwindCSS",
+        "url": "https://prismatic-reality.com/glossary/tailwindcss/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Task Module",
+        "url": "https://prismatic-reality.com/glossary/task-module/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Telemetry",
+        "url": "https://prismatic-reality.com/glossary/telemetry/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Theorem Proving",
+        "url": "https://prismatic-reality.com/glossary/theorem-proving/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Threat Intelligence",
+        "url": "https://prismatic-reality.com/glossary/threat-intelligence/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Time Decay",
+        "url": "https://prismatic-reality.com/glossary/time-decay/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "TimescaleDB",
+        "url": "https://prismatic-reality.com/glossary/timescaledb/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "TLS",
+        "url": "https://prismatic-reality.com/glossary/tls/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Tokenization",
+        "url": "https://prismatic-reality.com/glossary/tokenization/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Trinity Gate",
+        "url": "https://prismatic-reality.com/glossary/trinity-gate/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Triple-Check Validation",
+        "url": "https://prismatic-reality.com/glossary/triple-check/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Typespec",
+        "url": "https://prismatic-reality.com/glossary/typespec/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Umbrella Application",
+        "url": "https://prismatic-reality.com/glossary/umbrella-application/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Umbrella Application",
+        "url": "https://prismatic-reality.com/glossary/umbrella/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Vector Database",
+        "url": "https://prismatic-reality.com/glossary/vector-database/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Violation Protocol",
+        "url": "https://prismatic-reality.com/glossary/violation-protocol/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Vulnerability Assessment",
+        "url": "https://prismatic-reality.com/glossary/vulnerability-assessment/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "WebSocket",
+        "url": "https://prismatic-reality.com/glossary/websocket/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "White Team",
+        "url": "https://prismatic-reality.com/glossary/white-team/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "WHOIS",
+        "url": "https://prismatic-reality.com/glossary/whois/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Zero Trust",
+        "url": "https://prismatic-reality.com/glossary/zero-trust/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Zero Warning Policy",
+        "url": "https://prismatic-reality.com/glossary/zero-warning-policy/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "ZKB",
+        "url": "https://prismatic-reality.com/glossary/zkb/",
+        "isCurrent": false
+    }
+    
+]
+</script>
+<script>
+    function glossaryNav() {
+        var allItems = JSON.parse(document.getElementById('glossary-section-data').textContent);
+        var perPage = 20;
+
+        return {
+            shown: false,
+            allItems: allItems,
+            currentPage: Math.max(1, Math.ceil((allItems.findIndex(function (i) { return i.isCurrent; }) + 1) / perPage)),
+            perPage: perPage,
+            get totalItems() { return this.allItems.length; },
+            get totalPages() { return Math.ceil(this.allItems.length / this.perPage); },
+            get paginatedItems() {
+                var start = (this.currentPage - 1) * this.perPage;
+                return this.allItems.slice(start, start + this.perPage);
+            },
+            nextPage: function () { if (this.currentPage < this.totalPages) this.currentPage++; },
+            prevPage: function () { if (this.currentPage > 1) this.currentPage--; }
+        };
+    }
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Open source AI orchestration platform. 530 autonomous agents. 115 umbrella apps.
+                        Community-driven, self-evolving, unstoppable.
+                    </p>
+                    <div class="flex items-center space-x-4 mt-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitLab">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0L8.26 11.26H3.74L12 24l8.26-12.74H15.74L12 0zM3.74 11.26l4.52 7.41L12 0 8.26 11.26H3.74zM20.26 11.26l-4.52 7.41L12 0l3.74 11.26h4.52z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Connect on LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Follow on Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Executive</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/about/author/"
+                                class="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold">Meet the Creator</a></li>
+                        <li><a href="/executive/"
+                                class="text-gray-400 hover:text-white transition-colors">Value Proposition</a></li>
+                        <li><a href="/executive/roi-calculator/"
+                                class="text-gray-400 hover:text-white transition-colors">ROI Calculator</a></li>
+                        <li><a href="/executive/competitive-analysis/"
+                                class="text-gray-400 hover:text-white transition-colors">Competitive Analysis</a></li>
+                        <li><a href="/executive/case-studies/"
+                                class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Intelligence -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Intelligence</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/dd/"
+                                class="text-gray-400 hover:text-white transition-colors">Due Diligence</a></li>
+                        <li><a href="/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Interactive Labs</a></li>
+                        <li><a href="/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="/developers/sdk/"
+                                class="text-gray-400 hover:text-white transition-colors">SDK</a></li>
+                        <li><a href="/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="/blog/"
+                                class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Capabilities</a></li>
+                        <li><a href="/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (530)</a></li>
+                        <li><a href="/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (115+)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                        <li><a href="/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                        <p class="text-sm text-gray-500">
+                            &copy; 2026 <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis" class="text-gray-400 hover:text-white">Tomáš Korcak</a>.
+                            Licensed under <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform/blob/main/LICENSE" class="text-gray-400 hover:text-white">GHL</a>.
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Built with <a href="/capabilities/no-mercy/" class="text-gray-400 hover:text-white">NO MERCY</a>,
+                            <a href="/capabilities/no-doubts/" class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                        <span class="text-sm text-gray-500">v8.0.0</span>
+                        <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                        <span class="text-sm text-gray-400">Gen 19</span>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                    <div class="flex items-center space-x-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitHub</a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitLab</a>
+                        <a href="/blog/" class="hover:text-gray-400">Blog</a>
+                        <a href="/faq/" class="hover:text-gray-400">FAQ</a>
+                    </div>
+                    <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                        <span>530 agents</span>
+                        <span>•</span>
+                        <span>115 apps</span>
+                        <span>•</span>
+                        <span>2.8M LOC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Code Copy Buttons -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/code-copy.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Back to Top + Nav scroll -->
+    <script>
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            var nav = document.querySelector('nav');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+                if (nav && window.scrollY > 20) {
+                    nav.classList.add('border-white/10');
+                    nav.classList.remove('border-white/5');
+                } else if (nav) {
+                    nav.classList.remove('border-white/10');
+                    nav.classList.add('border-white/5');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>

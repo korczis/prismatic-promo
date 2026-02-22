@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Due Diligence Intelligence - Prismatic Platform</title>
+
+    
+<meta name="description" content="Comprehensive due diligence platform with 122 OSINT sources, graph analysis, and triple-checked cross-validation">
+<meta property="og:title" content="Due Diligence Intelligence - Prismatic Platform">
+<meta property="og:description" content="Comprehensive due diligence platform with 122 OSINT sources, graph analysis, and triple-checked cross-validation">
+<meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Due Diligence Intelligence - Prismatic Platform">
+<meta name="twitter:description" content="Comprehensive due diligence platform with 122 OSINT sources, graph analysis, and triple-checked cross-validation">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    
+    
+    <meta name="keywords"
+        content="AI orchestration, Elixir, OSINT, security, intelligence platform, autonomous agents, Phoenix LiveView, enterprise AI, self-evolving systems">
+    
+
+    
+    
+    <meta property="article:author" content="Tomáš Korcak">
+    <meta property="article:section" content="Due Diligence Intelligence">
+    <meta name="author" content="Tomáš Korcak">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;">
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Prismatic Platform Feed" href="/atom.xml">
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prismatic Platform",
+        "url": "https://prismatic-reality.com",
+        "description": "Open Source AI-Orchestrated Intelligence Platform | 530 Agents | 115 Apps | Community-Driven",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://prismatic-reality.com/search/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://prismatic-reality.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Due Diligence Intelligence"
+            }
+        ]
+    }
+    </script>
+    
+
+    
+    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <!-- Zola/Giallo Server-Side Syntax Highlighting -->
+    <link rel="stylesheet" href="/giallo.css">
+
+    <!-- Diagram Toggle (Mermaid Source/Interactive) -->
+    <link rel="stylesheet" href="/css/diagram-toggle.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-950/70 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-3">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2">
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-1 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+                    <li>
+                        <a href="/executive/"
+                            class="block py-2 px-3 text-purple-400 font-semibold rounded-lg hover:text-purple-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Executive</a>
+                    </li>
+                    <li>
+                        <a href="/developers/"
+                            class="block py-2 px-3 text-blue-400 font-semibold rounded-lg hover:text-blue-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Developers</a>
+                    </li>
+                    <li>
+                        <a href="/developers/sdk/"
+                            class="block py-2 px-3 text-green-400 font-semibold rounded-lg hover:text-green-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">SDK</a>
+                    </li>
+                    <li>
+                        <a href="/dd/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Due Diligence</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">OSINT</a>
+                    </li>
+                    <li>
+                        <a href="/lab/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Interactive Labs</a>
+                    </li>
+                    <li>
+                        <a href="/academy/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Academy</a>
+                    </li>
+                    <li>
+                        <a href="/agents/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Agents</a>
+                    </li>
+                    <li>
+                        <a href="/apps/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Apps</a>
+                    </li>
+                    <li>
+                        <a href="/api/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">API</a>
+                    </li>
+                    <li>
+                        <a href="/about/author/"
+                            class="block py-2 px-3 text-yellow-400 font-semibold rounded-lg hover:text-yellow-300 hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Author</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-full sm:w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/capabilities/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Capabilities</a>
+                            <a href="/architecture/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Architecture</a>
+                            <a href="/technologies/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Technologies</a>
+                            <a href="/teams/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Color Teams</a>
+                            <a href="/commands/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Commands</a>
+                            <a href="/registry/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Registry</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="/glossary/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Glossary</a>
+                            <a href="/faq/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">FAQ</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="/blog/"
+                                class="block px-4 py-2 text-sm text-green-400 hover:text-green-300 hover:bg-white/5">Blog</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+
+    <main>
+        
+<!-- Hero Section -->
+<section class="py-16 lg:py-20 border-b border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        
+<nav class="flex mb-6" aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 md:space-x-2">
+        <li class="inline-flex items-center">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+                Home
+            </a>
+        </li>
+        <li aria-current="page">
+            <div class="flex items-center">
+                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                <span class="ml-1 text-sm font-medium text-gray-300 md:ml-2">Due Diligence Intelligence</span>
+            </div>
+        </li>
+    </ol>
+</nav>
+
+        <div class="mb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 text-xs font-bold tracking-widest text-emerald-400 bg-emerald-900/30 rounded-full uppercase border border-emerald-700/30">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+                Due Diligence Platform
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
+                Due Diligence Intelligence
+            </h1>
+            <div class="prose prose-invert prose-lg max-w-3xl leading-relaxed text-gray-400">
+                <h2 id="abstract">Abstract</h2>
+<p>The Prismatic Platform provides a comprehensive Due Diligence (DD) Intelligence capability that transforms raw open-source intelligence into actionable investigative insights. By integrating 122 OSINT source adapters, deep Czech registry connectivity, graph-based entity relationship analysis, and a rigorous triple-checked cross-validation methodology, the platform enables compliance officers, M&amp;A analysts, legal professionals, and investigators to conduct thorough due diligence at unprecedented speed and depth.</p>
+<p>This document presents the architectural foundations of the DD Intelligence subsystem, its core methodologies for entity verification and risk assessment, the integration framework connecting dozens of Czech public registries with global intelligence sources, and the case management system that orchestrates complex multi-entity investigations from inception through final report delivery.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Due diligence -- the systematic investigation and evaluation of a business, individual, or asset prior to a transaction or engagement -- has evolved from a predominantly manual, document-review process into a data-intensive discipline requiring real-time access to hundreds of intelligence sources, sophisticated entity resolution algorithms, and evidence-grade verification pipelines. Modern due diligence demands not merely the collection of data, but its rigorous cross-validation across independent sources, temporal analysis for pattern detection, and structured risk assessment that can withstand regulatory scrutiny.</p>
+<p>The Prismatic Platform addresses these demands through a purpose-built DD Intelligence architecture that treats due diligence as a first-class investigative workflow rather than an afterthought bolted onto generic search tools. Every component -- from entity creation through graph traversal to final report generation -- has been designed with the specific requirements of compliance, legal, and financial due diligence in mind.</p>
+<h3 id="the-due-diligence-challenge">The Due Diligence Challenge</h3>
+<p>Organizations conducting due diligence face several fundamental challenges that conventional tools fail to address adequately:</p>
+<p><strong>Data Fragmentation</strong>: Relevant information about investigation targets is scattered across dozens of registries, databases, and public records systems. A single Czech company might have records in ARES, the Commercial Register at Justice.cz, the Insolvency Register (ISIR), the Trade Licensing Register (RZP), the Land Registry (CUZK), the Contract Register, the VAT Payer Registry, and multiple sector-specific regulatory databases. Manually querying each system, normalizing response formats, and cross-referencing results is prohibitively time-consuming and error-prone.</p>
+<p><strong>Entity Resolution</strong>: Real-world entities frequently appear under variations of their names, addresses, and identification numbers across different systems. A company may be registered under its full legal name in one registry, a trade name in another, and an abbreviated form in a third. Natural persons may have different name orderings, diacritical marks, or transliterations across Czech and international systems. Resolving these variations into a single canonical entity requires sophisticated matching algorithms that balance precision against recall.</p>
+<p><strong>Verification Depth</strong>: Surface-level data collection without cross-validation produces due diligence reports of questionable reliability. A company's self-reported ownership structure may differ from what the Commercial Register shows, which may in turn differ from what beneficial ownership registries reveal. Only by systematically triangulating information across independent sources can an analyst establish confidence in their findings.</p>
+<p><strong>Temporal Dynamics</strong>: Due diligence is not a point-in-time snapshot but a temporal investigation. Ownership changes, insolvency proceedings, sanctions designations, and regulatory actions unfold over time. An effective DD platform must capture and present the temporal dimension of entity data, enabling analysts to identify patterns such as rapid ownership changes preceding financial distress, or the sudden appearance of politically exposed persons in corporate structures.</p>
+<p><strong>Regulatory Compliance</strong>: Due diligence reports must satisfy specific regulatory requirements that vary by jurisdiction and context. European financial institutions must comply with the EU's Anti-Money Laundering Directives (AMLD), the NIS2 Directive for cybersecurity, and national implementations such as the Czech ZKB 264/2025 Sb. The DD platform must structure its outputs to map cleanly onto these regulatory frameworks.</p>
+<h2 id="platform-architecture">Platform Architecture</h2>
+<p>The Prismatic DD Intelligence subsystem is built on the Elixir/OTP stack, leveraging the BEAM virtual machine's strengths in concurrent processing, fault tolerance, and distributed state management. The architecture comprises six primary subsystems that work together to deliver end-to-end due diligence capability.</p>
+<h3 id="entity-management-layer">Entity Management Layer</h3>
+<p>At the core of the DD architecture is the Entity Management Layer, which provides a typed, versioned representation of all investigation subjects. The platform supports eight primary entity types:</p>
+<table><thead><tr><th>Entity Type</th><th>Description</th><th>Primary Identifiers</th><th>Key Registries</th></tr></thead><tbody>
+<tr><td><strong>Person</strong></td><td>Natural persons under investigation</td><td>Name, date of birth, national ID</td><td>Justice.cz, ISIR, CUZK</td></tr>
+<tr><td><strong>Company</strong></td><td>Legal entities including corporations, LLCs, and partnerships</td><td>ICO, DIC, trade name</td><td>ARES, Justice.cz, RZP</td></tr>
+<tr><td><strong>Domain</strong></td><td>Internet domain names and associated infrastructure</td><td>Domain name, registrar</td><td>WHOIS, DNS, CT logs</td></tr>
+<tr><td><strong>Email</strong></td><td>Email addresses linked to entities</td><td>Email address</td><td>HIBP, Hunter.io, EmailRep</td></tr>
+<tr><td><strong>Phone</strong></td><td>Phone numbers associated with entities</td><td>Phone number, country code</td><td>Carrier lookup, OSINT</td></tr>
+<tr><td><strong>IP Address</strong></td><td>Network addresses linked to infrastructure</td><td>IPv4/IPv6 address, ASN</td><td>Shodan, Censys, AbuseIPDB</td></tr>
+<tr><td><strong>Cryptocurrency</strong></td><td>Blockchain addresses and wallets</td><td>Wallet address, chain</td><td>Chainalysis, Etherscan</td></tr>
+<tr><td><strong>Document</strong></td><td>Legal documents, contracts, filings</td><td>Document reference, court</td><td>Registr Smluv, Justice.cz</td></tr>
+</tbody></table>
+<p>Each entity instance maintains a complete audit trail of how it was discovered, which sources contributed data, the confidence level of each data point, and the temporal history of changes. Entities are stored in PostgreSQL with full-text search indexing via Meilisearch and relationship traversal via KuzuDB's graph engine.</p>
+<h3 id="osint-integration-framework">OSINT Integration Framework</h3>
+<p>The DD platform integrates 122 OSINT source adapters organized into seven intelligence categories. Each adapter conforms to the <code>PrismaticOsintCore.Behaviours.Source</code> behaviour contract, ensuring consistent error handling, rate limiting, credential management, and telemetry across all sources.</p>
+<p>The integration framework operates on a pull-based model: when an entity is created or updated, the platform's orchestration engine determines which OSINT sources are relevant for that entity type and triggers parallel collection across all applicable adapters. Results are normalized into typed <code>Finding</code> structs with confidence scores, source attribution, and temporal metadata before being merged into the entity's profile.</p>
+<p><strong>Czech Registry Deep Integration</strong>: The platform maintains specialized adapters for 30+ Czech public registries and information systems, including ARES, Justice.cz, ISIR, RZP, CUZK, Registr Smluv, Hlidac Statu, CEDR, CNB, and sector-specific regulators. These adapters understand the specific data models, query patterns, and update cadences of each Czech system, enabling richer data extraction than generic web scraping approaches.</p>
+<p><strong>Global Intelligence Sources</strong>: Beyond Czech registries, the platform integrates 84+ global intelligence sources spanning infrastructure reconnaissance (Shodan, Censys), threat intelligence (VirusTotal, AlienVault OTX), social intelligence (FullContact, LinkedIn), email verification (Hunter.io, HIBP), domain analysis (SecurityTrails, crt.sh), financial intelligence (SEC EDGAR, OpenCorporates), and cryptocurrency tracking (Chainalysis, Etherscan).</p>
+<p><strong>Sanctions and Compliance</strong>: Three dedicated sanctions screening adapters cover OFAC SDN (US), EU Consolidated Sanctions, and UN Security Council sanctions lists, enabling automated PEP (Politically Exposed Persons) and sanctions screening as part of every investigation.</p>
+<h3 id="triple-check-cross-validation-engine">Triple-Check Cross-Validation Engine</h3>
+<p>The platform's signature methodology is triple-checked cross-validation -- a systematic process for establishing confidence in investigative findings by requiring corroboration from at least three independent sources before marking any claim as verified. This methodology is implemented through the NABLA Infinity epistemic framework and its Trinity Gate verification pipeline.</p>
+<p>The triple-check process operates at three levels:</p>
+<ol>
+<li>
+<p><strong>Source-Level Validation</strong>: Each individual OSINT source returns data with an initial confidence score based on the source's historical reliability, data freshness, and query specificity. Sources with official authority (e.g., government registries) receive higher base confidence than aggregator services.</p>
+</li>
+<li>
+<p><strong>Cross-Source Corroboration</strong>: When multiple independent sources return consistent information about the same entity attribute (e.g., a company's registered address), the platform applies Bayesian confidence updating to compute a composite confidence score. Consistency across three or more independent sources significantly elevates confidence, while contradictions between sources trigger investigator alerts.</p>
+</li>
+<li>
+<p><strong>Temporal Consistency</strong>: The third validation layer examines whether findings are consistent across time. A company address that has been stable for five years across multiple registry snapshots receives higher confidence than one that appears to have changed recently in some sources but not others.</p>
+</li>
+</ol>
+<h3 id="graph-analysis-engine">Graph Analysis Engine</h3>
+<p>Due diligence investigations inherently involve relationship networks -- the connections between persons, companies, addresses, and assets that reveal ownership structures, control patterns, and risk indicators. The Prismatic DD platform models these relationships as a property graph stored in KuzuDB, enabling sophisticated traversal queries that would be prohibitively complex in relational databases.</p>
+<p>The graph engine supports several investigation-critical query patterns:</p>
+<ul>
+<li><strong>Ownership Chain Traversal</strong>: Starting from a target company, traverse upward through the ownership hierarchy to identify ultimate beneficial owners (UBOs), including through multi-layered holding company structures spanning multiple jurisdictions.</li>
+<li><strong>Shared Director Networks</strong>: Identify all companies sharing common directors or statutory body members with a target entity, revealing potential conflicts of interest, nominee director patterns, or corporate group structures.</li>
+<li><strong>Address Clustering</strong>: Detect entities registered at the same address, which may indicate shell companies, virtual office usage, or legitimate shared service arrangements.</li>
+<li><strong>Temporal Relationship Evolution</strong>: Analyze how entity relationships have changed over time, identifying patterns such as pre-transaction corporate restructuring or post-sanction ownership transfers.</li>
+</ul>
+<h3 id="case-management-system">Case Management System</h3>
+<p>The Case Management System provides the organizational framework for DD investigations, managing the lifecycle of cases from creation through assignment, investigation, review, and closure. Each case maintains a structured record of the investigation scope, assigned entities, collected evidence, analyst notes, and final assessment.</p>
+<p>Cases support hierarchical organization -- a parent M&amp;A due diligence case may contain child cases for individual target entities, each with their own entity graphs and evidence collections. The system enforces role-based access control, ensuring that sensitive investigation details are visible only to authorized analysts and reviewers.</p>
+<h3 id="risk-assessment-framework">Risk Assessment Framework</h3>
+<p>The platform's Risk Assessment Framework translates raw investigative findings into structured risk evaluations using a multi-dimensional scoring model. Risk is assessed across seven dimensions:</p>
+<table><thead><tr><th>Risk Dimension</th><th>Assessment Criteria</th><th>Weight</th></tr></thead><tbody>
+<tr><td><strong>Financial</strong></td><td>Insolvency history, unpaid taxes, subsidy dependency</td><td>20%</td></tr>
+<tr><td><strong>Legal</strong></td><td>Court proceedings, regulatory actions, sanctions</td><td>20%</td></tr>
+<tr><td><strong>Ownership</strong></td><td>Beneficial ownership opacity, nominee structures, PEP connections</td><td>15%</td></tr>
+<tr><td><strong>Operational</strong></td><td>Business continuity, key person dependency, supply chain</td><td>15%</td></tr>
+<tr><td><strong>Compliance</strong></td><td>Regulatory compliance history, licensing status</td><td>10%</td></tr>
+<tr><td><strong>Reputational</strong></td><td>Media sentiment, social signals, industry reputation</td><td>10%</td></tr>
+<tr><td><strong>Cyber</strong></td><td>Digital footprint security, data breach history, infrastructure</td><td>10%</td></tr>
+</tbody></table>
+<p>Each dimension produces a normalized score from 0 (minimal risk) to 100 (critical risk), which are weighted and combined into an overall risk rating expressed as a letter grade from A (excellent) through F (critical concern), with a numeric score on a 300-900 scale comparable to industry standards from SecurityScorecard and BitSight.</p>
+<h2 id="czech-registry-ecosystem">Czech Registry Ecosystem</h2>
+<p>The Prismatic Platform's competitive advantage in the Central European market stems from its deep integration with the Czech registry ecosystem -- the most comprehensive set of public data sources available for entity verification in the Czech Republic.</p>
+<h3 id="core-registries">Core Registries</h3>
+<p>The platform connects to the following core Czech registries through dedicated, purpose-built adapters:</p>
+<ul>
+<li><strong>ARES</strong> (Administrativni registr ekonomickych subjektu): The meta-registry aggregating data from multiple Czech registries into a unified interface. Provides ICO lookup, company search, and basic entity profiles.</li>
+<li><strong>Justice.cz</strong> (Obchodni rejstrik): The Commercial Register maintained by the Ministry of Justice, containing company formation documents, statutory body composition, registered capital, and historical filings.</li>
+<li><strong>ISIR</strong> (Insolvencni rejstrik): The Insolvency Register tracking bankruptcy proceedings, restructuring plans, and creditor claims.</li>
+<li><strong>RZP</strong> (Zivnostensky rejstrik): The Trade Licensing Register documenting business activity licenses, responsible representatives, and trade suspensions.</li>
+<li><strong>CUZK</strong> (Cesky urad zemericky a katastralni): The Land Registry providing property ownership records, encumbrances, and cadastral data.</li>
+<li><strong>Registr Smluv</strong>: The Contract Register containing public sector contracts above CZK 50,000, enabling analysis of government contractor relationships.</li>
+<li><strong>Hlidac Statu</strong>: An independent watchdog aggregating contracts, subsidies, and insolvency data with analytical overlays.</li>
+<li><strong>CEDR</strong> (Centralni evidence dotaci): The Central Register of Subsidies tracking EU and national subsidy allocations.</li>
+<li><strong>CNB</strong> (Ceska narodni banka): The Czech National Bank's registry of licensed financial entities.</li>
+</ul>
+<h3 id="regulatory-and-sector-specific-registries">Regulatory and Sector-Specific Registries</h3>
+<p>Beyond the core registries, the platform integrates with sector-specific regulatory databases:</p>
+<ul>
+<li><strong>DPH Registry</strong>: VAT payer registration and unreliable payer identification</li>
+<li><strong>SUKL</strong>: Pharmaceutical licensing and product registry</li>
+<li><strong>ERU</strong>: Energy Regulatory Office license database</li>
+<li><strong>CTU</strong>: Telecommunications license registry</li>
+<li><strong>UOHS</strong>: Competition authority decisions and rulings</li>
+<li><strong>SZIF</strong>: Agricultural subsidy disbursements</li>
+<li><strong>Verejne zakazky</strong>: Public procurement tender registry</li>
+</ul>
+<h2 id="m-a-due-diligence-workflow">M&amp;A Due Diligence Workflow</h2>
+<p>The platform supports end-to-end M&amp;A due diligence through a structured workflow that guides analysts from initial target identification through comprehensive investigation to final deal assessment.</p>
+<h3 id="workflow-phases">Workflow Phases</h3>
+<ol>
+<li><strong>Target Identification</strong>: Create the target entity profile, trigger initial OSINT collection, and establish the entity graph foundation.</li>
+<li><strong>Scope Definition</strong>: Define investigation scope, including entity types to investigate, registries to query, and risk dimensions to assess.</li>
+<li><strong>Automated Collection</strong>: The platform executes parallel OSINT queries across all relevant sources, normalizing and cross-validating results through the triple-check engine.</li>
+<li><strong>Graph Expansion</strong>: Starting from the target entity, the graph engine traverses ownership chains, director networks, and address clusters to identify related entities requiring investigation.</li>
+<li><strong>Analyst Review</strong>: Human analysts review automated findings, add contextual notes, and conduct targeted deep-dive investigations on flagged areas.</li>
+<li><strong>Risk Assessment</strong>: The Risk Assessment Framework computes dimensional scores and overall risk ratings based on accumulated evidence.</li>
+<li><strong>Report Generation</strong>: The platform generates structured DD reports in multiple formats (PDF, HTML, JSON), with findings mapped to relevant regulatory frameworks (NIS2, ZKB, AMLD).</li>
+<li><strong>Monitoring</strong>: Post-deal, the platform supports continuous monitoring of investigated entities, alerting analysts to material changes in ownership, financial status, or regulatory standing.</li>
+</ol>
+<h2 id="compliance-framework-integration">Compliance Framework Integration</h2>
+<p>The DD Intelligence subsystem maps its outputs to two primary compliance frameworks relevant to the Central European market:</p>
+<h3 id="nis2-directive-eu-2022-2555">NIS2 Directive (EU 2022/2555)</h3>
+<p>The Network and Information Security Directive requires entities in critical sectors to implement supply chain risk management, including due diligence on suppliers and partners. The Prismatic DD platform directly supports NIS2 compliance by providing structured risk assessments for supply chain entities, with specific attention to cybersecurity posture, operational resilience, and incident history.</p>
+<h3 id="zkb-264-2025-sb-czech-implementation">ZKB 264/2025 Sb. (Czech Implementation)</h3>
+<p>The Czech implementation of the EU cybersecurity framework adds national requirements for entity verification, critical infrastructure supplier assessment, and incident reporting. The platform's DD reports include ZKB-specific compliance sections that map investigation findings to the regulatory requirements defined in Czech law.</p>
+<h2 id="technical-implementation">Technical Implementation</h2>
+<p>The DD subsystem is implemented as a set of Elixir/OTP applications within the Prismatic umbrella:</p>
+<ul>
+<li><code>prismatic_dd</code> -- Core DD business logic, entity management, and case orchestration</li>
+<li><code>prismatic_osint_core</code> -- OSINT adapter framework and source behaviour contracts</li>
+<li><code>prismatic_osint_sources</code> -- 122 individual OSINT source adapter implementations</li>
+<li><code>prismatic_storage_kuzudb</code> -- Graph storage and traversal engine integration</li>
+<li><code>prismatic_storage_meilisearch</code> -- Full-text search indexing for entity and finding data</li>
+<li><code>prismatic_perimeter</code> -- External attack surface management and security ratings</li>
+</ul>
+<p>Each component follows the platform's NO MERCY, NO DOUBTS doctrine: zero compilation warnings, comprehensive test coverage, typed function specifications, and production-ready code from the first commit.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Prismatic DD Intelligence subsystem represents a purpose-built due diligence platform that combines the breadth of 122 OSINT sources with the depth of 30+ Czech registry integrations, the rigor of triple-checked cross-validation, and the analytical power of graph-based relationship analysis. By automating the data collection and cross-validation phases of due diligence while preserving human judgment for interpretation and risk assessment, the platform enables organizations to conduct more thorough investigations in significantly less time, with higher confidence in the reliability of their findings.</p>
+<p>The platform's compliance-aware design ensures that DD reports satisfy the requirements of NIS2, ZKB, and AML/KYC regulations, making it suitable for deployment in regulated industries including financial services, critical infrastructure, and government contracting.</p>
+<h2 id="related-resources">Related Resources</h2>
+<ul>
+<li><a href="https://prismatic-reality.com/osint/">OSINT Intelligence Sources</a> -- The 122 OSINT adapters powering DD collection</li>
+<li><a href="https://prismatic-reality.com/academy/dd-investigation/">Academy: DD Investigation Techniques</a> -- Structured learning path for DD platform mastery</li>
+<li><a href="https://prismatic-reality.com/glossary/due-diligence/">Glossary: Due Diligence</a> -- Formal definition and cross-references</li>
+<li><a href="https://prismatic-reality.com/glossary/entity-resolution/">Glossary: Entity Resolution</a> -- Record linkage methodology</li>
+<li><a href="https://prismatic-reality.com/glossary/kyc/">Glossary: KYC</a> -- Know Your Customer compliance</li>
+<li><a href="https://prismatic-reality.com/glossary/aml/">Glossary: AML</a> -- Anti-Money Laundering regulatory framework</li>
+<li><a href="https://prismatic-reality.com/glossary/triple-check/">Glossary: Triple-Check</a> -- Cross-validation methodology</li>
+<li><a href="https://prismatic-reality.com/glossary/beneficial-ownership/">Glossary: Beneficial Ownership</a> -- UBO identification</li>
+<li><a href="https://prismatic-reality.com/glossary/sanctions-screening/">Glossary: Sanctions Screening</a> -- Regulatory list checking</li>
+<li><a href="https://prismatic-reality.com/lab/osint-pipeline/">Lab: OSINT Pipeline</a> -- OSINT pipeline experimentation</li>
+<li><a href="https://prismatic-reality.com/academy/easm-development/">Building EASM Features</a> -- Related security assessment development</li>
+</ul>
+<hr />
+<h2 id="connect-contribute">Connect &amp; Contribute</h2>
+<p><strong>Created by <a rel="external" href="https://github.com/korczis">Tomas Korcak (korczis)</a></strong> | Open Source under <a rel="external" href="https://github.com/korczis/prismatic-platform/blob/main/LICENSE">GHL</a></p>
+<ul>
+<li><a rel="external" href="https://github.com/korczis/prismatic-platform">GitHub</a> | <a rel="external" href="https://gitlab.com/korczis/prismatic-platform">GitLab</a> | <a rel="external" href="https://linkedin.com/in/korczis">LinkedIn</a> | <a href="mailto:korczis@gmail.com">Contact</a></li>
+<li><a href="/developers/">Developer Portal</a> | <a href="/architecture/">Architecture</a> | <a href="/about/author/">Meet the Creator</a></li>
+</ul>
+
+            </div>
+        </div>
+
+        <!-- Key Stats -->
+        <div class="flex flex-wrap justify-center gap-4 mt-10">
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-emerald-400">122</span>
+                <span class="text-sm text-gray-400 ml-2">OSINT Sources</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-emerald-400">30+</span>
+                <span class="text-sm text-gray-400 ml-2">Czech Registries</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-emerald-400">3x</span>
+                <span class="text-sm text-gray-400 ml-2">Cross-Validation</span>
+            </div>
+            <div class="px-4 py-2 bg-gray-800/50 rounded-lg border border-gray-700">
+                <span class="text-2xl font-bold text-emerald-400">A-F</span>
+                <span class="text-sm text-gray-400 ml-2">Risk Grades</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-12 lg:py-16" x-data="ddFilter()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-4">
+            <!-- Main Content (3/4) -->
+            <div class="lg:col-span-3">
+                <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;methodology&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('triple-check cross-validation methodology', '')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">Triple-Check Cross-Validation Methodology</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-purple-900/50 text-purple-400
+                                ">advanced</span>
+                            
+                        </div>
+                        
+                        
+                        <span class="inline-block mt-3 text-xs text-gray-500">12 min</span>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;entity-management&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('entity management system', '')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">Entity Management System</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-blue-900/50 text-blue-400
+                                ">intermediate</span>
+                            
+                        </div>
+                        
+                        
+                        <span class="inline-block mt-3 text-xs text-gray-500">14 min</span>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;czech-registries&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('czech registry deep integration', '')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">Czech Registry Deep Integration</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-purple-900/50 text-purple-400
+                                ">advanced</span>
+                            
+                        </div>
+                        
+                        
+                        <span class="inline-block mt-3 text-xs text-gray-500">15 min</span>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;graph-analysis&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('graph analysis and relationship traversal', '')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">Graph Analysis and Relationship Traversal</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-purple-900/50 text-purple-400
+                                ">advanced</span>
+                            
+                        </div>
+                        
+                        
+                        <span class="inline-block mt-3 text-xs text-gray-500">13 min</span>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;case-management&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('case management and investigation workflow', '')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">Case Management and Investigation Workflow</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-blue-900/50 text-blue-400
+                                ">intermediate</span>
+                            
+                        </div>
+                        
+                        
+                        <span class="inline-block mt-3 text-xs text-gray-500">13 min</span>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;risk-assessment&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('risk assessment framework', '')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">Risk Assessment Framework</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-purple-900/50 text-purple-400
+                                ">advanced</span>
+                            
+                        </div>
+                        
+                        
+                        <span class="inline-block mt-3 text-xs text-gray-500">14 min</span>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;compliance&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('compliance framework integration', '')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">Compliance Framework Integration</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-purple-900/50 text-purple-400
+                                ">advanced</span>
+                            
+                        </div>
+                        
+                        
+                        <span class="inline-block mt-3 text-xs text-gray-500">14 min</span>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;osint-integration&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('osint source integration framework', '')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">OSINT Source Integration Framework</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-purple-900/50 text-purple-400
+                                ">advanced</span>
+                            
+                        </div>
+                        
+                        
+                        <span class="inline-block mt-3 text-xs text-gray-500">14 min</span>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;ma-due-diligence&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('m&amp;a due diligence workflow', '')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">M&amp;A Due Diligence Workflow</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-purple-900/50 text-purple-400
+                                ">advanced</span>
+                            
+                        </div>
+                        
+                        
+                        <span class="inline-block mt-3 text-xs text-gray-500">14 min</span>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;platform-architecture&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('platform architecture and technical implementation', '')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-emerald-400 transition-colors">Platform Architecture and Technical Implementation</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-purple-900/50 text-purple-400
+                                ">advanced</span>
+                            
+                        </div>
+                        
+                        
+                        <span class="inline-block mt-3 text-xs text-gray-500">14 min</span>
+                        
+                    </a>
+                    
+                </div>
+            </div>
+
+            <!-- Right Sidebar (1/4) -->
+            <div class="hidden lg:block sticky top-4 space-y-6 self-start">
+                <!-- Section Topics -->
+                <div x-data="{ expanded: true }" class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                            <span class="font-semibold text-white text-sm">DD Topics</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-transition class="px-4 pb-4">
+                        <div class="mb-3">
+                            <input type="text" x-model="search" placeholder="Filter topics..."
+                                   class="block w-full pl-3 pr-4 py-2 text-xs text-white border border-gray-600 rounded-lg bg-gray-900 focus:ring-emerald-500 focus:border-emerald-500 placeholder-gray-500">
+                        </div>
+                        <div class="max-h-[400px] overflow-y-auto space-y-1 pr-1 scrollbar-thin">
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;methodology&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Triple-Check Cross-Validation Methodology
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;entity-management&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Entity Management System
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;czech-registries&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Czech Registry Deep Integration
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;graph-analysis&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Graph Analysis and Relationship Traversal
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;case-management&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Case Management and Investigation Workflow
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;risk-assessment&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Risk Assessment Framework
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;compliance&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Compliance Framework Integration
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;osint-integration&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                OSINT Source Integration Framework
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;ma-due-diligence&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                M&amp;A Due Diligence Workflow
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;dd&#x2F;platform-architecture&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-emerald-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Platform Architecture and Technical Implementation
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section Statistics -->
+                <div x-data="{ expanded: true }" class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                            <span class="font-semibold text-white text-sm">DD Statistics</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-transition class="px-4 pb-4 space-y-3">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Total Topics</span>
+                            <span class="font-bold text-white">10</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">OSINT Sources</span>
+                            <span class="font-bold text-emerald-400">122</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Czech Registries</span>
+                            <span class="font-bold text-white">30+</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Entity Types</span>
+                            <span class="font-bold text-white">8</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Platform</span>
+                            <span class="font-bold text-gray-300">Prismatic v7.5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation -->
+                <div x-data="{ expanded: true }" class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Quick Navigation</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-transition class="px-4 pb-4 space-y-1">
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">OSINT Sources</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">122 intelligence sources powering DD</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">Academy</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">Learn DD investigation techniques step by step</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">Lab</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">Experiment with OSINT pipelines and graph analysis</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">API Reference</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">Programmatic access to DD and OSINT endpoints</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">Agents</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">434 autonomous agents driving investigations</p>
+                        </a>
+                    </div>
+                </div>
+
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Interactive Labs<span
+                class="ml-auto text-xs text-gray-600">15 exp</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Academy<span
+                class="ml-auto text-xs text-gray-600">15 courses</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>API Reference</a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-12 border-t border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <h3 class="text-lg font-semibold text-white mb-6">See Also</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/" class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 transition-all">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">DD &rarr; OSINT Sources</p>
+                <p class="text-sm text-gray-400">122 intelligence sources powering due diligence</p>
+            </a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/" class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 transition-all">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">DD &rarr; Academy</p>
+                <p class="text-sm text-gray-400">Learn DD investigation techniques and platform mastery</p>
+            </a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/" class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 transition-all">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">DD &rarr; Lab</p>
+                <p class="text-sm text-gray-400">Experiment with OSINT pipelines and graph analysis</p>
+            </a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/" class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 transition-all">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">DD &rarr; API</p>
+                <p class="text-sm text-gray-400">Programmatic access to DD and OSINT endpoints</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script>
+function ddFilter() {
+    return {
+        search: '',
+        matchesSearch: function(title, description) {
+            if (!this.search) return true;
+            var s = this.search.toLowerCase();
+            return title.includes(s) || description.includes(s);
+        }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Open source AI orchestration platform. 530 autonomous agents. 115 umbrella apps.
+                        Community-driven, self-evolving, unstoppable.
+                    </p>
+                    <div class="flex items-center space-x-4 mt-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitLab">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0L8.26 11.26H3.74L12 24l8.26-12.74H15.74L12 0zM3.74 11.26l4.52 7.41L12 0 8.26 11.26H3.74zM20.26 11.26l-4.52 7.41L12 0l3.74 11.26h4.52z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Connect on LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Follow on Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Executive</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/about/author/"
+                                class="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold">Meet the Creator</a></li>
+                        <li><a href="/executive/"
+                                class="text-gray-400 hover:text-white transition-colors">Value Proposition</a></li>
+                        <li><a href="/executive/roi-calculator/"
+                                class="text-gray-400 hover:text-white transition-colors">ROI Calculator</a></li>
+                        <li><a href="/executive/competitive-analysis/"
+                                class="text-gray-400 hover:text-white transition-colors">Competitive Analysis</a></li>
+                        <li><a href="/executive/case-studies/"
+                                class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Intelligence -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Intelligence</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/dd/"
+                                class="text-gray-400 hover:text-white transition-colors">Due Diligence</a></li>
+                        <li><a href="/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Interactive Labs</a></li>
+                        <li><a href="/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="/developers/sdk/"
+                                class="text-gray-400 hover:text-white transition-colors">SDK</a></li>
+                        <li><a href="/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="/blog/"
+                                class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Capabilities</a></li>
+                        <li><a href="/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (530)</a></li>
+                        <li><a href="/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (115+)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                        <li><a href="/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                        <p class="text-sm text-gray-500">
+                            &copy; 2026 <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis" class="text-gray-400 hover:text-white">Tomáš Korcak</a>.
+                            Licensed under <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform/blob/main/LICENSE" class="text-gray-400 hover:text-white">GHL</a>.
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Built with <a href="/capabilities/no-mercy/" class="text-gray-400 hover:text-white">NO MERCY</a>,
+                            <a href="/capabilities/no-doubts/" class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                        <span class="text-sm text-gray-500">v8.0.0</span>
+                        <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                        <span class="text-sm text-gray-400">Gen 19</span>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                    <div class="flex items-center space-x-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitHub</a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitLab</a>
+                        <a href="/blog/" class="hover:text-gray-400">Blog</a>
+                        <a href="/faq/" class="hover:text-gray-400">FAQ</a>
+                    </div>
+                    <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                        <span>530 agents</span>
+                        <span>•</span>
+                        <span>115 apps</span>
+                        <span>•</span>
+                        <span>2.8M LOC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Code Copy Buttons -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/code-copy.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Back to Top + Nav scroll -->
+    <script>
+        (function () {
+            var btn = document.getElementById('back-to-top');
+            var nav = document.querySelector('nav');
+            if (!btn) return;
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 400) {
+                    btn.classList.remove('hidden');
+                    btn.classList.add('flex');
+                } else {
+                    btn.classList.add('hidden');
+                    btn.classList.remove('flex');
+                }
+                if (nav && window.scrollY > 20) {
+                    nav.classList.add('border-white/10');
+                    nav.classList.remove('border-white/5');
+                } else if (nav) {
+                    nav.classList.remove('border-white/10');
+                    nav.classList.add('border-white/5');
+                }
+            });
+            btn.addEventListener('click', function () {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+</body>
+
+</html>
