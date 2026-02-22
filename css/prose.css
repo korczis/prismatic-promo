@@ -1,0 +1,555 @@
+/* Prismatic Platform - Prose Typography System
+ *
+ * Typographic principles applied:
+ * - Type scale: Major Third (1.25) for harmonious hierarchy
+ * - Measure: 60-75ch optimal line length for readability
+ * - Vertical rhythm: consistent spacing based on 1.5rem baseline
+ * - Contrast: WCAG AA compliant text/background ratios
+ * - Tracking: tighter on headings (-0.02em), neutral on body
+ * - Leading: 1.65-1.7 for body text (optimal for 45-75ch measure)
+ */
+
+/* ==================== CSS Variables ==================== */
+:root {
+    --prose-body: #374151;
+    --prose-heading: #111827;
+    --prose-muted: #6b7280;
+    --prose-link: #2563eb;
+    --prose-link-hover: #1d4ed8;
+    --prose-code-bg: #f3f4f6;
+    --prose-code-text: #d946ef;
+    --prose-pre-bg: #0f172a;
+    --prose-pre-text: #e2e8f0;
+    --prose-border: #e5e7eb;
+    --prose-table-header: #f9fafb;
+    --prose-table-stripe: rgba(0, 0, 0, 0.02);
+    --prose-blockquote-bg: #f0f9ff;
+    --prose-blockquote-border: #3b82f6;
+    --prose-blockquote-text: #475569;
+    /* Spacing scale (based on 0.25rem = 4px) */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+}
+
+.dark {
+    --prose-body: #94a3b8;
+    --prose-heading: #e2e8f0;
+    --prose-muted: #64748b;
+    --prose-link: #60a5fa;
+    --prose-link-hover: #93c5fd;
+    --prose-code-bg: rgba(255, 255, 255, 0.06);
+    --prose-code-text: #c084fc;
+    --prose-pre-bg: #0d1117;
+    --prose-pre-text: #e6edf3;
+    --prose-border: rgba(255, 255, 255, 0.06);
+    --prose-table-header: rgba(255, 255, 255, 0.03);
+    --prose-table-stripe: rgba(255, 255, 255, 0.02);
+    --prose-blockquote-bg: rgba(59, 130, 246, 0.06);
+    --prose-blockquote-border: #3b82f6;
+    --prose-blockquote-text: #94a3b8;
+}
+
+/* ==================== Base Prose ==================== */
+.prose {
+    color: var(--prose-body);
+    font-size: 1rem;               /* 16px base */
+    line-height: 1.65;             /* Optimal for 60-75ch measure */
+    max-width: 72ch;               /* Optimal measure for readability */
+    letter-spacing: -0.011em;      /* Slight negative for Inter at body size */
+    word-spacing: 0.01em;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    hanging-punctuation: first last;
+}
+
+/* ==================== Headings ==================== */
+/* Major Third scale: 1rem -> 1.25 -> 1.563 -> 1.953 -> 2.441 */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    color: var(--prose-heading);
+    font-weight: 600;
+    line-height: 1.2;             /* Tighter leading for headings */
+    letter-spacing: -0.025em;     /* Tighter tracking for headings */
+    margin-top: var(--space-10);  /* Clear separation from previous content */
+    margin-bottom: var(--space-4);/* Proximity to following content */
+}
+
+.prose h1 {
+    font-size: 1.953rem;          /* Major Third^3 */
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-top: 0;
+    padding-bottom: var(--space-3);
+    border-bottom: 1px solid var(--prose-border);
+}
+
+.prose h2 {
+    font-size: 1.563rem;          /* Major Third^2 */
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--prose-border);
+}
+
+.prose h3 {
+    font-size: 1.25rem;           /* Major Third^1 */
+    margin-top: var(--space-8);
+}
+
+.prose h4 {
+    font-size: 1rem;              /* Base size, weight differentiates */
+    font-weight: 600;
+    letter-spacing: -0.015em;
+}
+
+.prose h5 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;       /* Wider tracking for small caps style */
+    color: var(--prose-muted);
+}
+
+.prose h6 {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--prose-muted);
+}
+
+/* Heading proximity: reduce gap when headings follow headings */
+.prose h1 + h2,
+.prose h2 + h3,
+.prose h3 + h4 {
+    margin-top: var(--space-4);
+}
+
+/* ==================== Paragraphs ==================== */
+.prose p {
+    margin-bottom: var(--space-6); /* One baseline unit between paragraphs */
+}
+
+.prose p:last-child {
+    margin-bottom: 0;
+}
+
+/* Lead paragraph - first paragraph after h1 */
+.prose h1 + p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--prose-muted);
+}
+
+/* ==================== Links ==================== */
+.prose a {
+    color: var(--prose-link);
+    text-decoration: underline;
+    text-decoration-color: rgba(96, 165, 250, 0.3);
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 1px;
+    font-weight: inherit;          /* Don't bold links - disrupts reading flow */
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.prose a:hover {
+    color: var(--prose-link-hover);
+    text-decoration-color: currentColor;
+}
+
+/* ==================== Lists ==================== */
+.prose ul,
+.prose ol {
+    margin-bottom: var(--space-6);
+    padding-left: 1.625rem;
+}
+
+.prose li {
+    margin-bottom: var(--space-2);
+    line-height: 1.65;
+    padding-left: var(--space-1);
+}
+
+.prose li::marker {
+    color: var(--prose-muted);
+}
+
+.prose li > p {
+    margin-bottom: var(--space-2);
+}
+
+.prose ul ul,
+.prose ol ol,
+.prose ul ol,
+.prose ol ul {
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-2);
+}
+
+/* Tight lists (no p tags inside li) */
+.prose li + li {
+    margin-top: 0;
+}
+
+/* ==================== Inline Code ==================== */
+.prose code {
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    font-size: 0.8125em;          /* ~13px at 16px base - clear size distinction */
+    font-weight: 400;
+    padding: 0.125em 0.375em;
+    background: var(--prose-code-bg);
+    color: var(--prose-code-text);
+    border-radius: 0.25rem;
+    border: 1px solid var(--prose-border);
+    word-break: break-word;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+.prose code::before,
+.prose code::after {
+    content: none;
+}
+
+/* ==================== Code Blocks ==================== */
+.prose pre {
+    margin: var(--space-8) 0;
+    padding: var(--space-4) var(--space-6);
+    background: var(--prose-pre-bg);
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    border: 1px solid var(--prose-border);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+}
+
+.prose pre code {
+    padding: 0;
+    background: transparent;
+    font-size: 0.8125rem;         /* 13px - standard for code */
+    line-height: 1.65;            /* Match body rhythm */
+    font-weight: 400;
+    border: none;
+    letter-spacing: 0;            /* Neutral for monospace */
+    tab-size: 2;
+    word-break: normal;
+}
+
+/* Fallback text color for code blocks without syntax highlighting */
+.prose pre code {
+    color: var(--prose-pre-text);
+}
+
+/* Zola/Giallo server-side highlighting overrides */
+.prose pre.z-code {
+    background-color: #0F111A;
+}
+
+.prose pre.z-code code {
+    color: #BABED8;
+}
+
+/* Language badge on code blocks */
+.prose pre code[data-lang]::before {
+    content: attr(data-lang);
+    position: absolute;
+    top: 0.5rem;
+    right: 3rem;
+    font-size: 0.625rem;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.25rem;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.35);
+    pointer-events: none;
+}
+
+/* ==================== Tables ==================== */
+.prose table {
+    width: 100%;
+    margin: var(--space-8) 0;
+    border-collapse: collapse;
+    font-size: 0.875rem;          /* Slightly smaller for data density */
+    line-height: 1.5;
+}
+
+.prose thead {
+    background: var(--prose-table-header);
+}
+
+.prose th {
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--prose-muted);
+    border-bottom: 1px solid var(--prose-border);
+}
+
+.prose td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--prose-border);
+    vertical-align: top;
+}
+
+.prose tbody tr:nth-child(even) {
+    background: var(--prose-table-stripe);
+}
+
+.prose tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ==================== Blockquotes ==================== */
+.prose blockquote {
+    margin: var(--space-8) 0;
+    padding: var(--space-4) var(--space-6);
+    border-left: 3px solid var(--prose-blockquote-border);
+    background: var(--prose-blockquote-bg);
+    border-radius: 0 0.375rem 0.375rem 0;
+    color: var(--prose-blockquote-text);
+    font-style: normal;
+}
+
+.prose blockquote p {
+    margin-bottom: 0;
+}
+
+.prose blockquote p:not(:last-child) {
+    margin-bottom: var(--space-4);
+}
+
+/* Nested blockquotes */
+.prose blockquote blockquote {
+    margin-top: var(--space-4);
+    border-left-color: var(--prose-muted);
+}
+
+/* ==================== Horizontal Rule ==================== */
+.prose hr {
+    margin: var(--space-12) 0;
+    border: none;
+    border-top: 1px solid var(--prose-border);
+}
+
+/* ==================== Strong & Emphasis ==================== */
+.prose strong {
+    color: var(--prose-heading);
+    font-weight: 600;
+}
+
+.prose em {
+    font-style: italic;
+}
+
+/* ==================== Images ==================== */
+.prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: var(--space-8) auto;
+    display: block;
+}
+
+.prose figure {
+    margin: var(--space-8) 0;
+}
+
+.prose figcaption {
+    font-size: 0.8125rem;
+    color: var(--prose-muted);
+    text-align: center;
+    margin-top: var(--space-2);
+    line-height: 1.5;
+}
+
+/* ==================== Definition Lists ==================== */
+.prose dl {
+    margin-bottom: var(--space-6);
+}
+
+.prose dt {
+    font-weight: 600;
+    color: var(--prose-heading);
+    margin-top: var(--space-4);
+}
+
+.prose dd {
+    margin-left: var(--space-6);
+    margin-bottom: var(--space-2);
+}
+
+/* ==================== Mermaid Diagrams ==================== */
+.prose .mermaid {
+    margin: var(--space-8) 0;
+    padding: var(--space-6);
+    background: var(--prose-code-bg);
+    border-radius: 0.5rem;
+    overflow-x: auto;
+}
+
+.dark .prose .mermaid {
+    background: var(--prose-pre-bg);
+}
+
+/* ==================== Task Lists ==================== */
+.prose input[type="checkbox"] {
+    margin-right: var(--space-2);
+    width: 0.875rem;
+    height: 0.875rem;
+    accent-color: var(--prose-link);
+    vertical-align: middle;
+}
+
+/* ==================== Footnotes ==================== */
+.prose .footnote-ref {
+    font-size: 0.75rem;
+    vertical-align: super;
+    color: var(--prose-link);
+    line-height: 0;              /* Prevent footnote refs from affecting line height */
+}
+
+.prose .footnotes {
+    margin-top: var(--space-12);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--prose-border);
+    font-size: 0.8125rem;
+    color: var(--prose-muted);
+}
+
+/* ==================== Abbreviations ==================== */
+.prose abbr {
+    cursor: help;
+    text-decoration: underline dotted;
+    text-decoration-color: var(--prose-muted);
+    text-underline-offset: 0.15em;
+}
+
+/* ==================== Keyboard Input ==================== */
+.prose kbd {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 0.8125em;
+    padding: 0.1em 0.35em;
+    background: var(--prose-table-header);
+    border: 1px solid var(--prose-border);
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 0 var(--prose-border);
+    white-space: nowrap;
+}
+
+/* ==================== Mark/Highlight ==================== */
+.prose mark {
+    background: rgba(250, 204, 21, 0.25);
+    padding: 0.05em 0.2em;
+    border-radius: 0.15em;
+}
+
+.dark .prose mark {
+    background: rgba(250, 204, 21, 0.15);
+    color: #fef3c7;
+}
+
+/* ==================== Details/Summary ==================== */
+.prose details {
+    margin: var(--space-6) 0;
+    padding: var(--space-4) var(--space-6);
+    background: var(--prose-table-header);
+    border-radius: 0.5rem;
+    border: 1px solid var(--prose-border);
+}
+
+.prose summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--prose-heading);
+    user-select: none;
+}
+
+.prose details[open] summary {
+    margin-bottom: var(--space-4);
+}
+
+/* ==================== Responsive Typography ==================== */
+@media (max-width: 640px) {
+    .prose {
+        font-size: 0.9375rem;     /* 15px on mobile - slightly smaller */
+        line-height: 1.7;         /* Slightly more leading for smaller screens */
+    }
+
+    .prose h1 {
+        font-size: 1.5rem;
+    }
+
+    .prose h2 {
+        font-size: 1.25rem;
+    }
+
+    .prose h3 {
+        font-size: 1.125rem;
+    }
+
+    .prose pre {
+        padding: var(--space-3) var(--space-4);
+        border-radius: 0.375rem;
+        font-size: 0.75rem;
+    }
+
+    .prose table {
+        font-size: 0.8125rem;
+    }
+
+    .prose th,
+    .prose td {
+        padding: var(--space-2) var(--space-3);
+    }
+}
+
+/* ==================== Print ==================== */
+@media print {
+    .prose {
+        font-size: 11pt;
+        line-height: 1.5;
+        color: #000;
+        max-width: none;
+    }
+
+    .prose h1, .prose h2, .prose h3 {
+        page-break-after: avoid;
+        color: #000;
+    }
+
+    .prose pre, .prose blockquote, .prose table {
+        page-break-inside: avoid;
+    }
+
+    .prose pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        border: 1px solid #ccc;
+    }
+
+    .prose a {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    .prose a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+}

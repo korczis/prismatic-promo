@@ -1,0 +1,3579 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Glossary - Prismatic Platform</title>
+
+    
+<meta name="description" content="Comprehensive terminology reference for the Prismatic Platform">
+<meta property="og:title" content="Glossary - Prismatic Platform">
+<meta property="og:description"
+    content="200+ terms covering architecture, doctrine, agents, OSINT, security, and epistemic frameworks">
+
+
+    
+    
+    <meta name="keywords" content="platform terminology reference, technical glossary definitions, OSINT terminology guide, Elixir OTP glossary, cybersecurity terms defined, epistemic framework vocabulary, distributed systems glossary, AI agent terminology">
+    
+
+    
+    
+    <meta property="article:author" content="Tomáš Korcak">
+    <meta property="article:section" content="Glossary">
+    <meta name="author" content="Tomáš Korcak">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;glossary&#x2F;">
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Prismatic Platform Feed" href="/atom.xml">
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prismatic Platform",
+        "url": "https://prismatic-reality.com",
+        "description": "Open Source AI-Orchestrated Intelligence Platform | 530+ Agents | 115 Apps | Community-Driven",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://prismatic-reality.com/search/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://prismatic-reality.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Glossary"
+            }
+        ]
+    }
+    </script>
+    
+
+    
+    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <!-- Zola/Giallo Server-Side Syntax Highlighting -->
+    <link rel="stylesheet" href="/giallo.css">
+
+    <!-- Diagram Toggle (Mermaid Source/Interactive) -->
+    <link rel="stylesheet" href="/css/diagram-toggle.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Horizontal Navigation Bar (Flowbite navbar pattern) -->
+    <nav class="fixed top-0 z-50 w-full bg-gray-950/80 backdrop-blur-xl border-b border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <!-- Brand -->
+            <a href="/" class="flex items-center space-x-3 group">
+                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 gap-2">
+                <!-- GitHub Link -->
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                   class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-400 hover:text-white bg-gray-800/50 hover:bg-gray-800 rounded-lg border border-gray-700 transition-colors"
+                   title="View on GitHub">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <!-- Version Badge -->
+                <span class="hidden md:inline-flex items-center px-2.5 py-1 text-xs font-semibold text-emerald-400 bg-emerald-900/20 rounded-full border border-emerald-500/20">v8.0.0</span>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-1 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+                    <li>
+                        <a href="/executive/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Executive</a>
+                    </li>
+                    <li>
+                        <a href="/developers/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Developers</a>
+                    </li>
+                    <li>
+                        <a href="/developers/sdk/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">SDK</a>
+                    </li>
+                    <li>
+                        <a href="/dd/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Due Diligence</a>
+                    </li>
+                    <li>
+                        <a href="/osint/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">OSINT</a>
+                    </li>
+                    <li>
+                        <a href="/lab/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Interactive Labs</a>
+                    </li>
+                    <li>
+                        <a href="/academy/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Academy</a>
+                    </li>
+                    <li>
+                        <a href="/agents/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Agents</a>
+                    </li>
+                    <li>
+                        <a href="/apps/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Apps</a>
+                    </li>
+                    <li>
+                        <a href="/api/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">API</a>
+                    </li>
+                    <li>
+                        <a href="/about/author/"
+                            class="block py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">Author</a>
+                    </li>
+                    <!-- More dropdown -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1 py-2 px-3 text-gray-300 rounded-lg hover:text-white hover:bg-white/5 lg:px-3 lg:py-1.5 transition-colors">
+                            More
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-full sm:w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/capabilities/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Capabilities</a>
+                            <a href="/architecture/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Architecture</a>
+                            <a href="/technologies/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Technologies</a>
+                            <a href="/teams/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Color Teams</a>
+                            <a href="/commands/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Commands</a>
+                            <a href="/registry/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Registry</a>
+                            <div class="my-1 border-t border-white/5"></div>
+                            <a href="/glossary/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Glossary</a>
+                            <a href="/faq/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">FAQ</a>
+                            <a href="/blog/"
+                                class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">Blog</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation (Flowbite sidebar pattern) -->
+    
+
+
+<aside id="site-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-16 transition-transform -translate-x-full lg:translate-x-0 bg-gray-900 border-r border-gray-800" aria-label="Sidebar">
+    <div class="h-full px-3 pb-4 overflow-y-auto pt-5">
+        
+        <ul class="space-y-1 font-medium">
+            <li>
+                <a href="/"
+                    class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                    <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
+                    <span class="ms-3 text-sm">Home</span>
+                </a>
+            </li>
+        </ul>
+
+        
+        <div class="pt-4 mt-4 border-t border-gray-800">
+            <p class="px-2 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Executive</p>
+            <ul class="space-y-1">
+                <li>
+                    <a href="/executive/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                        <span class="ms-3 text-sm">Value Proposition</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/dd/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                        <span class="ms-3 text-sm">Due Diligence</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/blog/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+                        </svg>
+                        <span class="ms-3 text-sm">Blog</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        
+        <div class="pt-4 mt-4 border-t border-gray-800">
+            <p class="px-2 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Intelligence</p>
+            <ul class="space-y-1">
+                <li>
+                    <a href="/osint/"
+                        class="flex items-center justify-between p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                            <span class="ms-3 text-sm">OSINT Sources</span>
+                        </div>
+                        <span class="inline-flex items-center justify-center px-2 py-0.5 text-xs font-medium text-gray-500 bg-gray-800 rounded-full">121+</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/lab/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                        </svg>
+                        <span class="ms-3 text-sm">Interactive Labs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/academy/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                        <span class="ms-3 text-sm">Academy</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        
+        <div class="pt-4 mt-4 border-t border-gray-800">
+            <p class="px-2 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Developers</p>
+            <ul class="space-y-1">
+                <li>
+                    <a href="/developers/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                        <span class="ms-3 text-sm">Developer Portal</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/developers/sdk/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        </svg>
+                        <span class="ms-3 text-sm">SDK</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/api/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <span class="ms-3 text-sm">API Reference</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        
+        <div class="pt-4 mt-4 border-t border-gray-800">
+            <p class="px-2 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Platform</p>
+            <ul class="space-y-1">
+                <li>
+                    <a href="/agents/"
+                        class="flex items-center justify-between p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span class="ms-3 text-sm">Agents</span>
+                        </div>
+                        <span class="inline-flex items-center justify-center px-2 py-0.5 text-xs font-medium text-gray-500 bg-gray-800 rounded-full">530</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/apps/"
+                        class="flex items-center justify-between p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                            </svg>
+                            <span class="ms-3 text-sm">Applications</span>
+                        </div>
+                        <span class="inline-flex items-center justify-center px-2 py-0.5 text-xs font-medium text-gray-500 bg-gray-800 rounded-full">115</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/commands/"
+                        class="flex items-center justify-between p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <span class="ms-3 text-sm">Commands</span>
+                        </div>
+                        <span class="inline-flex items-center justify-center px-2 py-0.5 text-xs font-medium text-gray-500 bg-gray-800 rounded-full">214</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/capabilities/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        <span class="ms-3 text-sm">Capabilities</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/architecture/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                        </svg>
+                        <span class="ms-3 text-sm">Architecture</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/technologies/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        <span class="ms-3 text-sm">Technologies</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/teams/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                        </svg>
+                        <span class="ms-3 text-sm">Color Teams</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        
+        <div class="pt-4 mt-4 border-t border-gray-800">
+            <p class="px-2 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Reference</p>
+            <ul class="space-y-1">
+                <li>
+                    <a href="/glossary/"
+                        class="flex items-center p-2 rounded-lg bg-gray-800 text-white transition-colors group">
+                        <svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                        <span class="ms-3 text-sm">Glossary</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/registry/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                        </svg>
+                        <span class="ms-3 text-sm">Registry</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/faq/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span class="ms-3 text-sm">FAQ</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        
+        <div class="pt-4 mt-4 border-t border-gray-800">
+            <ul class="space-y-1">
+                <li>
+                    <a href="/about/author/"
+                        class="flex items-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors group">
+                        <svg class="w-5 h-5 text-gray-500 group-hover:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                        </svg>
+                        <span class="ms-3 text-sm">Meet the Creator</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        
+        <div class="pt-4 mt-4 border-t border-gray-800">
+            <div class="p-3 bg-gray-800/50 rounded-lg">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs text-gray-500">Quality</span>
+                    <span class="text-xs font-bold text-emerald-400">100/100</span>
+                </div>
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs text-gray-500">Generation</span>
+                    <span class="text-xs font-bold text-gray-300">Gen 19</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-xs text-gray-500">LOC</span>
+                    <span class="text-xs font-bold text-gray-300">2.8M</span>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="pt-4 mt-4 border-t border-gray-800">
+            <div class="flex items-center gap-3 px-2">
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform" class="text-gray-500 hover:text-white transition-colors" title="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform" class="text-gray-500 hover:text-white transition-colors" title="GitLab">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0L8.26 11.26H3.74L12 24l8.26-12.74H15.74L12 0zM3.74 11.26l4.52 7.41L12 0 8.26 11.26H3.74zM20.26 11.26l-4.52 7.41L12 0l3.74 11.26h4.52z"/>
+                    </svg>
+                </a>
+                <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis" class="text-gray-500 hover:text-white transition-colors" title="LinkedIn">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</aside>
+
+
+    <!-- Sidebar backdrop (mobile) -->
+    <div id="sidebar-backdrop" class="fixed inset-0 z-30 bg-gray-900/80 hidden lg:hidden"></div>
+
+    <!-- Main content area with sidebar offset -->
+    <div class="lg:ml-64 pt-14">
+        <main>
+            
+<!-- Hero Section -->
+<section class="bg-gray-900 py-16 lg:py-20 border-b border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+                
+<nav class="flex mb-6" aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 md:space-x-2">
+        <li class="inline-flex items-center">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+                Home
+            </a>
+        </li>
+        <li aria-current="page">
+            <div class="flex items-center">
+                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                <span class="ml-1 text-sm font-medium text-gray-300 md:ml-2">Glossary</span>
+            </div>
+        </li>
+    </ol>
+</nav>
+
+<div class="mb-8">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 mb-6 text-xs font-bold tracking-widest text-gray-400 bg-teal-900/30 rounded-full uppercase border border-white/10">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                Reference
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6">
+                Platform <span class="text-teal-400">Glossary</span>
+            </h1>
+            <div class="prose prose-invert prose-lg max-w-3xl leading-relaxed text-gray-400">
+                <p>Comprehensive terminology reference for the Prismatic Platform. 225+ defined terms spanning architecture, doctrine, agents, intelligence, security, epistemic frameworks, and core technologies -- each with formal definitions, contextual usage, and cross-references to related concepts.</p>
+<h2 id="abstract">Abstract</h2>
+<p>The Prismatic Platform operates at the intersection of multiple technical domains: distributed systems engineering, open-source intelligence, epistemic reasoning, autonomous agent orchestration, and external attack surface management. Each domain brings its own vocabulary, and the platform itself introduces novel concepts that have no established definitions elsewhere. This glossary serves as the authoritative terminology reference, providing precise definitions for 225+ terms organized across seven categories. Every term page follows a uniform structure -- Definition, Context, See Also -- ensuring that readers can navigate from any entry point to a coherent understanding of the platform's conceptual landscape.</p>
+<p>The glossary is not a static dictionary. It is a living reference that evolves alongside the platform. New terms are added as capabilities emerge, existing definitions are refined as understanding deepens, and cross-references are maintained to preserve the semantic network that connects individual concepts into a unified whole.</p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="why-terminology-matters">Why Terminology Matters</h3>
+<p>Large-scale software platforms accumulate terminology at a rate that outpaces informal documentation. Without a structured glossary, the same concept acquires multiple names across different subsystems, new contributors misinterpret established terms, and architectural discussions devolve into disagreements about definitions rather than substance.</p>
+<p>The Prismatic Platform is particularly susceptible to terminological drift for three reasons. First, it spans multiple technical domains -- Elixir/OTP, OSINT, cybersecurity, epistemic logic, formal verification -- each with its own established vocabulary. Second, the platform introduces novel concepts (NABLA Infinity, Trinity Gate, 3NL Framework, Color Teams) that have no external definitions to reference. Third, the platform's 404+ autonomous agents, 210+ commands, and 90 OTP applications create a combinatorial explosion of named entities that must be distinguished from one another.</p>
+<p>This glossary addresses these challenges by providing a single, authoritative source of definitions. Each term is assigned to exactly one of seven categories, given a formal definition grounded in its implementation, and linked to related terms through explicit cross-references.</p>
+<h3 id="knowledge-management-architecture">Knowledge Management Architecture</h3>
+<p>The glossary operates as the terminological layer of a broader knowledge management system. Terms defined here are referenced throughout all platform documentation -- architecture guides, capability descriptions, agent specifications, and tutorial content. The cross-reference system ensures that a reader encountering an unfamiliar term in any document can trace it back to its canonical definition and from there navigate to related concepts.</p>
+<p>The relationship between the glossary and other documentation sections is bidirectional. Architecture pages reference glossary terms for precise definitions. Glossary term pages reference architecture pages for deeper technical context. This bidirectional linking creates a navigable knowledge graph rather than a linear document hierarchy.</p>
+<h2 id="term-categories">Term Categories</h2>
+<p>The 225+ glossary terms are organized into seven categories. Each category represents a distinct conceptual domain within the platform, though significant cross-referencing exists between categories.</p>
+<h3 id="1-architecture-22-terms">1. Architecture (22 terms)</h3>
+<p>Terms describing the platform's structural design, runtime environment, and deployment topology. This category covers the foundational building blocks -- from the BEAM virtual machine and OTP supervision trees up through the umbrella application structure and storage adapter layer.</p>
+<p><strong>Representative terms</strong>: <a href="/glossary/beam/">BEAM</a>, <a href="/glossary/otp/">OTP</a>, <a href="/glossary/supervisor/">Supervisor</a>, <a href="/glossary/genserver/">GenServer</a>, <a href="/glossary/ets/">ETS</a>, <a href="/glossary/three-nl/">3NL Framework</a>, <a href="/glossary/adapter-pattern/">Adapter Pattern</a>, <a href="/glossary/umbrella/">Umbrella Application</a>, <a href="/glossary/process-isolation/">Process Isolation</a>, <a href="/glossary/message-passing/">Message Passing</a></p>
+<p>Architecture terms form the vocabulary needed to understand how the platform's 90 OTP applications are organized, supervised, and interconnected. A reader who understands these terms can follow any architectural discussion in the platform documentation.</p>
+<h3 id="2-doctrine-15-terms">2. Doctrine (15 terms)</h3>
+<p>Terms describing the platform's operational philosophy, quality enforcement, and governance principles. The doctrine category defines the rules under which all development, testing, and deployment occurs -- from the NO MERCY/NO DOUBTS quality mandate to the specific violation protocols that enforce it.</p>
+<p><strong>Representative terms</strong>: <a href="/glossary/nm-nd/">NM/ND (No Mercy, No Doubts)</a>, <a href="/glossary/clean-run/">Clean Run</a>, <a href="/glossary/zero-warning-policy/">Zero-Warning Policy</a>, <a href="/glossary/violation-protocol/">Violation Protocol</a>, <a href="/glossary/regression-test/">Regression Test</a>, <a href="/glossary/session-discipline/">Session Discipline</a>, <a href="/glossary/quality-debt/">Quality Debt</a>, <a href="/glossary/qdp/">QDP</a></p>
+<p>Doctrine terms are essential for understanding why certain development practices are enforced. They describe not just what the platform does, but the principles that govern how it is built and maintained.</p>
+<h3 id="3-agent-18-terms">3. Agent (18 terms)</h3>
+<p>Terms describing the platform's autonomous agent ecosystem, including agent classification, orchestration patterns, and the AIAD specification standard. The Prismatic Platform operates 404+ agents across 14 domains, each defined by a formal AIAD specification that declares its authority level, capabilities, and operational constraints.</p>
+<p><strong>Representative terms</strong>: <a href="/glossary/aiad/">AIAD</a>, <a href="/glossary/agent/">Agent</a>, <a href="/glossary/agent-tier/">Agent Tier</a>, <a href="/glossary/agent-registry/">Agent Registry</a>, <a href="/glossary/archer-supreme/">Archer Supreme</a>, <a href="/glossary/supreme-commander/">Supreme Commander</a>, <a href="/glossary/strategic-command/">Strategic Command</a>, <a href="/glossary/tactical-execution/">Tactical Execution</a>, <a href="/glossary/autoevolve/">Autoevolve</a>, <a href="/glossary/autoheal/">Autoheal</a></p>
+<p>Agent terms describe the platform's most distinctive capability: a hierarchical system of autonomous agents that range from L1 tactical specialists to L5 supreme authority commanders, all governed by a uniform specification standard.</p>
+<h3 id="4-intelligence-16-terms">4. Intelligence (16 terms)</h3>
+<p>Terms from the open-source intelligence (OSINT) and due diligence domains, covering data collection methodologies, source types, analytical techniques, and intelligence fusion patterns. These terms originate from the intelligence community but are adapted for the platform's automated OSINT operations.</p>
+<p><strong>Representative terms</strong>: <a href="/glossary/osint/">OSINT</a>, <a href="/glossary/easm/">EASM</a>, <a href="/glossary/hawkeye/">HAWKEYE</a>, <a href="/glossary/intelligence-fusion/">Intelligence Fusion</a>, <a href="/glossary/entity-resolution/">Entity Resolution</a>, <a href="/glossary/sanctions-screening/">Sanctions Screening</a>, <a href="/glossary/risk-score/">Risk Score</a>, <a href="/glossary/shodan/">Shodan</a>, <a href="/glossary/censys/">Censys</a>, <a href="/glossary/greynoise/">GreyNoise</a></p>
+<p>Intelligence terms bridge the gap between traditional OSINT methodology and the platform's automated implementation. A reader familiar with intelligence analysis will recognize these terms; a reader from a software engineering background will find them defined in implementable terms.</p>
+<h3 id="5-security-14-terms">5. Security (14 terms)</h3>
+<p>Terms describing the platform's security architecture, including the Color Team adversarial-defensive framework, role-based access control, attack surface analysis, and epistemic security concepts. Security terms in this glossary extend beyond traditional application security to include the epistemic dimension -- protecting the integrity of the platform's knowledge and belief systems.</p>
+<p><strong>Representative terms</strong>: <a href="/glossary/color-teams/">Color Teams</a>, <a href="/glossary/red-team/">Red Team</a>, <a href="/glossary/blue-team/">Blue Team</a>, <a href="/glossary/purple-team/">Purple Team</a>, <a href="/glossary/gray-team/">Gray Team</a>, <a href="/glossary/white-team/">White Team</a>, <a href="/glossary/black-team/">Black Team</a>, <a href="/glossary/rbac/">RBAC</a>, <a href="/glossary/attack-surface/">Attack Surface</a></p>
+<p>The Color Team terms deserve particular attention. While Red Team and Blue Team are established security concepts, the platform extends the model to six teams (Gray, Red, Blue, Purple, White, Black) with specific epistemic functions that go beyond traditional penetration testing and defense.</p>
+<h3 id="6-epistemic-18-terms">6. Epistemic (18 terms)</h3>
+<p>Terms from the platform's epistemic framework, covering belief formation, knowledge validation, formal verification, and the NABLA Infinity axiom system. This category contains the most novel terminology in the glossary -- concepts that are specific to the Prismatic Platform's approach to computational epistemology.</p>
+<p><strong>Representative terms</strong>: <a href="/glossary/nabla-infinity/">NABLA Infinity</a>, <a href="/glossary/trinity-gate/">Trinity Gate</a>, <a href="/glossary/epistemic-pipeline/">Epistemic Pipeline</a>, <a href="/glossary/confidence-threshold/">Confidence Threshold</a>, <a href="/glossary/signal-plurality/">Signal Plurality</a>, <a href="/glossary/provenance-mandatory/">Provenance Mandatory</a>, <a href="/glossary/consciousness-traits/">Consciousness Traits</a>, <a href="/glossary/qeve/">QEVE</a>, <a href="/glossary/fitness-score/">Fitness Score</a></p>
+<p>Epistemic terms are foundational for understanding how the platform differs from conventional software systems. Traditional platforms process data; the Prismatic Platform forms beliefs about data and subjects those beliefs to formal verification before acting on them.</p>
+<h3 id="7-technology-24-terms">7. Technology (24 terms)</h3>
+<p>Terms describing the specific technologies, libraries, tools, and external services that compose the platform's technology stack. This category covers everything from programming languages and frameworks to databases, search engines, and deployment infrastructure.</p>
+<p><strong>Representative terms</strong>: <a href="/glossary/elixir/">Elixir</a>, <a href="/glossary/phoenix/">Phoenix</a>, <a href="/glossary/liveview/">LiveView</a>, <a href="/glossary/ecto/">Ecto</a>, <a href="/glossary/postgresql/">PostgreSQL</a>, <a href="/glossary/meilisearch/">Meilisearch</a>, <a href="/glossary/kuzudb/">KuzuDB</a>, <a href="/glossary/redis/">Redis</a>, <a href="/glossary/docker/">Docker</a>, <a href="/glossary/lean4/">Lean4</a>, <a href="/glossary/ollama/">Ollama</a>, <a href="/glossary/hex/">Hex</a>, <a href="/glossary/mix/">Mix</a>, <a href="/glossary/credo/">Credo</a>, <a href="/glossary/dialyzer/">Dialyzer</a></p>
+<p>Technology terms serve as a bridge between the platform's domain-specific vocabulary and the broader software engineering ecosystem. A developer joining the project can start with these familiar terms and navigate outward to the platform-specific concepts they connect to.</p>
+<h2 id="architecture-terms-expanded-overview">Architecture Terms -- Expanded Overview</h2>
+<p>Architecture terms define the structural vocabulary of the platform. The most fundamental term is <strong>BEAM</strong> (Bogdan/Bjorn's Erlang Abstract Machine), the virtual machine on which all Elixir code executes. The BEAM provides preemptive scheduling, per-process garbage collection, and soft real-time guarantees that underpin every other architectural decision.</p>
+<p>Built on the BEAM is <strong>OTP</strong> (Open Telecom Platform), the framework library that provides supervision trees, generic server behaviours, and distributed systems primitives. OTP is not optional infrastructure -- it is the defining architectural pattern. Every stateful component in the platform lives inside a supervised process tree.</p>
+<p>The <strong>3NL Framework</strong> (Three Nested Levels) organizes these architectural components into three abstraction tiers: Level 1 (operational compliance), Level 2 (strategic coordination), and Level 3 (systemic emergence). This layering ensures that implementation details do not leak across boundaries and that each level interacts only with appropriate abstractions.</p>
+<p>Key OTP primitives in the glossary include <strong>GenServer</strong> (the generic server behaviour for stateful processes), <strong>Supervisor</strong> (the process that monitors and restarts child processes), <strong>Dynamic Supervisor</strong> (for runtime-spawned children), <strong>ETS</strong> (Erlang Term Storage for in-memory key-value operations), and <strong>Registry</strong> (process name registration and lookup).</p>
+<h2 id="doctrine-terms-expanded-overview">Doctrine Terms -- Expanded Overview</h2>
+<p>The platform's doctrine vocabulary centers on <strong>NO MERCY, NO DOUBTS (NM/ND)</strong>, the quality enforcement philosophy that governs all development. NO MERCY mandates zero tolerance for incomplete implementations, untested code, and quality violations. NO DOUBTS mandates full investigation before action and evidence-based verification of all results.</p>
+<p>Supporting NM/ND are operational terms like <strong>Clean Run</strong> (compilation with zero warnings, all tests passing, all quality gates satisfied), <strong>Zero-Warning Policy</strong> (the compile-time enforcement that treats warnings as errors), and <strong>Violation Protocol</strong> (the L1-L4 escalation ladder for doctrine breaches).</p>
+<p><strong>Quality Debt (QDP)</strong> refers to accumulated quality violations tracked and eliminated through automated scanning. The platform maintains zero QDP through continuous enforcement. <strong>Regression Test</strong> describes the mandatory protocol requiring every bug fix to include a test that would have caught the original bug.</p>
+<h2 id="agent-terms-expanded-overview">Agent Terms -- Expanded Overview</h2>
+<p>The <strong>AIAD</strong> (AI-Agent Interface Definition) standard governs all 404+ agents. Each agent is classified into an <strong>Agent Tier</strong> from L1 (tactical specialist) through L5 (supreme authority). The <strong>Agent Registry</strong> serves as the central catalog, ETS-cached for O(1) lookup at runtime.</p>
+<p>At the apex of the agent hierarchy sits <strong>Archer Supreme</strong>, the L5 strategic analysis agent that coordinates multi-domain operations. Below it, <strong>Supreme Commander</strong> agents direct domain-level strategy, while <strong>Strategic Command</strong> and <strong>Tactical Execution</strong> agents handle progressively more focused operations.</p>
+<p><strong>Autoevolve</strong> and <strong>Autoheal</strong> describe the platform's self-improvement mechanisms. Autoevolve scans for optimization opportunities and applies them autonomously. Autoheal detects quality regressions and repairs them without human intervention.</p>
+<h2 id="intelligence-terms-expanded-overview">Intelligence Terms -- Expanded Overview</h2>
+<p><strong>OSINT</strong> (Open Source Intelligence) is the collection and analysis of publicly available information. The platform automates OSINT through 250+ data source adapters, combining results through <strong>Intelligence Fusion</strong> -- the synthesis of signals from multiple independent sources into unified analytical products.</p>
+<p><strong>EASM</strong> (External Attack Surface Management) is the security discipline implemented by the Prismatic Perimeter application. It discovers, catalogs, and monitors an organization's internet-facing assets, assigning <strong>Risk Scores</strong> based on observed vulnerabilities and configuration weaknesses.</p>
+<p><strong>Entity Resolution</strong> addresses the challenge of determining whether records from different sources refer to the same real-world entity. <strong>Sanctions Screening</strong> checks resolved entities against regulatory sanctions lists. Together, these capabilities form the due diligence pipeline.</p>
+<p>External intelligence services referenced in the glossary include <strong>Shodan</strong> (internet-connected device search), <strong>Censys</strong> (internet-wide scanning and certificate transparency), and <strong>GreyNoise</strong> (internet background noise analysis).</p>
+<h2 id="security-terms-expanded-overview">Security Terms -- Expanded Overview</h2>
+<p>The <strong>Color Teams</strong> framework organizes security operations into six specialized teams, each with distinct responsibilities:</p>
+<table><thead><tr><th>Team</th><th>Function</th><th>Glossary Entry</th></tr></thead><tbody>
+<tr><td><strong>Gray</strong></td><td>Boundary exploration, edge case discovery</td><td><a href="/glossary/gray-team/">Gray Team</a></td></tr>
+<tr><td><strong>Red</strong></td><td>Adversarial simulation, epistemic attacks</td><td><a href="/glossary/red-team/">Red Team</a></td></tr>
+<tr><td><strong>Blue</strong></td><td>Defensive posture, signal aggregation</td><td><a href="/glossary/blue-team/">Blue Team</a></td></tr>
+<tr><td><strong>Purple</strong></td><td>Red-Blue synthesis, closure analysis</td><td><a href="/glossary/purple-team/">Purple Team</a></td></tr>
+<tr><td><strong>White</strong></td><td>Constructive verification, formal proofs</td><td><a href="/glossary/white-team/">White Team</a></td></tr>
+<tr><td><strong>Black</strong></td><td>Theoretical threat modeling (maximum isolation)</td><td><a href="/glossary/black-team/">Black Team</a></td></tr>
+</tbody></table>
+<p><strong>RBAC</strong> (Role-Based Access Control) governs API and dashboard access. <strong>Attack Surface</strong> refers to the totality of externally reachable endpoints, services, and assets that an adversary could target.</p>
+<h2 id="technology-terms-expanded-overview">Technology Terms -- Expanded Overview</h2>
+<p>The technology stack vocabulary spans five layers. At the language level: <strong>Elixir</strong> (the functional programming language), <strong>Erlang</strong> (the underlying runtime language), and <strong>Lean4</strong> (the theorem prover used for formal verification in the QEVE pipeline).</p>
+<p>At the framework level: <strong>Phoenix</strong> (the web framework), <strong>LiveView</strong> (real-time server-rendered UI), <strong>Ecto</strong> (the database wrapper and query generator), and <strong>Broadway</strong> (the concurrent data processing pipeline library).</p>
+<p>At the tooling level: <strong>Mix</strong> (the build tool), <strong>Hex</strong> (the package manager), <strong>Credo</strong> (the static analysis linter), <strong>Dialyzer</strong> (the type-checking tool), and <strong>ExUnit</strong> (the test framework).</p>
+<p>At the infrastructure level: <strong>PostgreSQL</strong> (primary relational database), <strong>Redis</strong> (distributed cache), <strong>Meilisearch</strong> (full-text search), <strong>KuzuDB</strong> (embedded graph database), <strong>Docker</strong> (containerization), and <strong>Fly.io</strong> (deployment platform).</p>
+<p>At the AI level: <strong>Ollama</strong> (local AI inference server) provides sub-3-second response times for code generation and analysis tasks.</p>
+<h2 id="cross-reference-system">Cross-Reference System</h2>
+<p>Every glossary term page includes a "See Also" section linking to 3-5 related terms. These cross-references form a navigable graph that allows readers to explore conceptual neighborhoods rather than reading terms in isolation.</p>
+<p>The cross-reference topology follows three patterns:</p>
+<p><strong>Hierarchical references</strong> link terms to their parent concepts. For example, <a href="/glossary/genserver/">GenServer</a> references <a href="/glossary/otp/">OTP</a>, which references <a href="/glossary/beam/">BEAM</a>. A reader can follow these links upward to broader concepts or downward to specific implementations.</p>
+<p><strong>Lateral references</strong> link terms at the same abstraction level. For example, <a href="/glossary/red-team/">Red Team</a> references <a href="/glossary/blue-team/">Blue Team</a> and <a href="/glossary/purple-team/">Purple Team</a>. These links help readers understand how peer concepts relate to and complement each other.</p>
+<p><strong>Cross-domain references</strong> link terms across category boundaries. For example, <a href="/glossary/nabla-infinity/">NABLA Infinity</a> (epistemic) references <a href="/glossary/trinity-gate/">Trinity Gate</a> (epistemic) but also connects to <a href="/glossary/color-teams/">Color Teams</a> (security) and <a href="/glossary/three-nl/">3NL Framework</a> (architecture). These links reveal the integrative nature of the platform's design.</p>
+<h3 id="example-cross-reference-network">Example Cross-Reference Network</h3>
+<p>Starting from the term <strong>EASM</strong>, a reader can navigate:</p>
+<pre class="giallo z-code"><code data-lang="plain"><span class="giallo-l"><span>EASM (intelligence)</span></span>
+<span class="giallo-l"><span>  --&gt; Attack Surface (security) --&gt; Color Teams (security) --&gt; Red Team (security)</span></span>
+<span class="giallo-l"><span>  --&gt; Security Rating (security) --&gt; Risk Score (intelligence)</span></span>
+<span class="giallo-l"><span>  --&gt; NIS2 (security) --&gt; RBAC (security)</span></span>
+<span class="giallo-l"><span>  --&gt; HAWKEYE (intelligence) --&gt; OSINT (intelligence)</span></span></code></pre>
+<p>This network spans three categories (intelligence, security, architecture) and connects a single starting term to eight related concepts, each with its own cross-references extending the graph further.</p>
+<h2 id="term-page-structure">Term Page Structure</h2>
+<p>Every glossary term follows a consistent three-section structure. This uniformity ensures that readers develop predictable expectations about what information each page provides.</p>
+<h3 id="canonical-structure">Canonical Structure</h3>
+<pre class="giallo z-code"><code data-lang="markdown"><span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"><span>title = &quot;Term Name&quot;</span></span>
+<span class="giallo-l"><span>weight = 10</span></span>
+<span class="giallo-l"><span class="z-punctuation">[</span><span class="z-string">extra</span><span class="z-punctuation">]</span></span>
+<span class="giallo-l"><span>description = &quot;One-sentence summary of the term&quot;</span></span>
+<span class="giallo-l"><span>category = &quot;category_name&quot;</span></span>
+<span class="giallo-l"><span>abbreviation = &quot;ABBR&quot;</span></span>
+<span class="giallo-l"><span>related_terms = [&quot;term-a&quot;, &quot;term-b&quot;, &quot;term-c&quot;]</span></span>
+<span class="giallo-l"><span>+++</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">##</span><span class="z-entity z-name"> Definition</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>A precise, implementation-grounded definition of the term. Typically</span></span>
+<span class="giallo-l"><span>two to four sentences. States what the thing IS, not what it does</span></span>
+<span class="giallo-l"><span>or why it matters. Uses present tense and active voice.</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">##</span><span class="z-entity z-name"> Context</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>How this term manifests within the Prismatic Platform specifically.</span></span>
+<span class="giallo-l"><span>References concrete applications, modules, routes, or configurations.</span></span>
+<span class="giallo-l"><span>Provides the bridge between abstract definition and practical usage.</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">##</span><span class="z-entity z-name"> See Also</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">- [</span><span class="z-string">Related Term A</span><span class="z-punctuation">](</span><span class="z-meta z-link z-inline">/glossary/related-term-a/</span><span class="z-punctuation">)</span><span> - Brief relationship note</span></span>
+<span class="giallo-l"><span class="z-punctuation">- [</span><span class="z-string">Related Term B</span><span class="z-punctuation">](</span><span class="z-meta z-link z-inline">/glossary/related-term-b/</span><span class="z-punctuation">)</span><span> - Brief relationship note</span></span>
+<span class="giallo-l"><span class="z-punctuation">- [</span><span class="z-string">Related Term C</span><span class="z-punctuation">](</span><span class="z-meta z-link z-inline">/glossary/related-term-c/</span><span class="z-punctuation">)</span><span> - Brief relationship note</span></span></code></pre>
+<p>The <strong>Definition</strong> section answers "what is this?" in domain-neutral terms when possible. The <strong>Context</strong> section answers "how does Prismatic use this?" with specific implementation references. The <strong>See Also</strong> section answers "what should I read next?" with curated navigation paths.</p>
+<h3 id="metadata-fields">Metadata Fields</h3>
+<p>Each term page carries structured metadata in its TOML frontmatter:</p>
+<table><thead><tr><th>Field</th><th>Purpose</th><th>Example</th></tr></thead><tbody>
+<tr><td><code>title</code></td><td>Display name</td><td><code>"NABLA Infinity"</code></td></tr>
+<tr><td><code>weight</code></td><td>Sort order within the glossary</td><td><code>31</code></td></tr>
+<tr><td><code>description</code></td><td>One-sentence summary for listing pages</td><td><code>"Epistemic framework with 7 axioms"</code></td></tr>
+<tr><td><code>category</code></td><td>One of the seven category slugs</td><td><code>"epistemic"</code></td></tr>
+<tr><td><code>abbreviation</code></td><td>Short form if applicable</td><td><code>"NABLA"</code></td></tr>
+<tr><td><code>related_terms</code></td><td>Slugs of cross-referenced terms</td><td><code>["trinity-gate", "three-nl"]</code></td></tr>
+</tbody></table>
+<h2 id="contributing-new-terms">Contributing New Terms</h2>
+<p>The glossary grows as the platform evolves. New terms should be added when any of the following conditions are met:</p>
+<ol>
+<li>
+<p><strong>A new concept is introduced</strong> that does not map to an existing term. For example, when the QEVE verification pipeline was added, it required its own glossary entry because no existing term covered the combination of Lean4, NABLA, and Monte Carlo verification.</p>
+</li>
+<li>
+<p><strong>An existing concept is referenced in three or more documents</strong> without a glossary definition. This threshold indicates that the concept has sufficient usage density to warrant formal definition.</p>
+</li>
+<li>
+<p><strong>A term is ambiguous across domains</strong>. When the same word means different things in different contexts (e.g., "agent" in OTP versus "agent" in AIAD), separate glossary entries disambiguate the usages.</p>
+</li>
+</ol>
+<h3 id="adding-a-term">Adding a Term</h3>
+<p>To add a new term, create a Markdown file at <code>sites/promo/content/glossary/&lt;slug&gt;.md</code> following the canonical structure described above. Assign it to one of the seven categories, provide 3-5 cross-references, and set a weight value that places it in appropriate alphabetical proximity to related terms.</p>
+<p>After creating the term page:</p>
+<ol>
+<li>Verify cross-references point to existing term pages</li>
+<li>Add reciprocal cross-references in the related term pages</li>
+<li>Update the term count in this index page's frontmatter</li>
+<li>Rebuild the site to verify template rendering</li>
+</ol>
+<h3 id="quality-criteria-for-terms">Quality Criteria for Terms</h3>
+<p>A well-written glossary entry satisfies four criteria:</p>
+<ul>
+<li><strong>Precision</strong>: The definition is specific enough to distinguish this term from all other terms in the glossary</li>
+<li><strong>Groundedness</strong>: The context section references concrete platform artifacts (modules, routes, configurations)</li>
+<li><strong>Navigability</strong>: The cross-references create useful paths to related concepts, not just superficially similar terms</li>
+<li><strong>Brevity</strong>: The entire entry fits on a single screen without scrolling. Detailed explanations belong in architecture or capability pages, not in the glossary</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Prismatic Platform glossary is a structured knowledge artifact that serves three audiences simultaneously. For newcomers, it provides a curated entry point into the platform's conceptual landscape -- start with any term and navigate outward through cross-references until the relevant domain is understood. For active contributors, it provides a shared vocabulary that eliminates ambiguity in architectural discussions, code reviews, and documentation. For the platform itself, it provides the terminological foundation on which all other documentation is built.</p>
+<p>The 225+ terms across seven categories represent the current state of the platform's vocabulary. As the platform continues to evolve -- new applications, new agents, new epistemic capabilities -- the glossary evolves in parallel, ensuring that the gap between what the platform does and what its documentation explains remains as close to zero as possible.</p>
+<h2 id="references">References</h2>
+<h3 id="related-sections">Related Sections</h3>
+<ul>
+<li><a href="https://prismatic-reality.com/architecture/">Architecture</a> -- Technical deep-dive using architecture terms</li>
+<li><a href="https://prismatic-reality.com/capabilities/">Platform Capabilities</a> -- Doctrine and quality enforcement terms in action</li>
+<li><a href="https://prismatic-reality.com/apps/">Applications</a> -- OTP application catalog referencing technology terms</li>
+</ul>
+<h3 id="external-references">External References</h3>
+<ul>
+<li><a rel="external" href="https://hexdocs.pm/elixir/">Elixir Documentation</a> -- Canonical definitions for Elixir/OTP terms</li>
+<li><a rel="external" href="https://hexdocs.pm/phoenix/">Phoenix Framework Guides</a> -- LiveView, PubSub, Channel terminology</li>
+<li><a rel="external" href="https://owasp.org/www-community/">OWASP Glossary</a> -- Security terminology baselines</li>
+<li><a rel="external" href="https://osintframework.com/">OSINT Framework</a> -- Intelligence collection terminology</li>
+</ul>
+<hr />
+<p><em>Glossary maintained as of 2026-02-12. Term count: 225. Categories: 7. All cross-references verified against existing term pages.</em></p>
+<hr />
+<h2 id="connect-contribute">Connect &amp; Contribute</h2>
+<p><strong>Created by <a rel="external" href="https://github.com/korczis">Tomas Korcak (korczis)</a></strong> | Open Source under <a rel="external" href="https://github.com/korczis/prismatic-platform/blob/main/LICENSE">GHL</a></p>
+<ul>
+<li><a rel="external" href="https://github.com/korczis/prismatic-platform">GitHub</a> | <a rel="external" href="https://gitlab.com/korczis/prismatic-platform">GitLab</a> | <a rel="external" href="https://linkedin.com/in/korczis">LinkedIn</a> | <a href="mailto:korczis@gmail.com">Contact</a></li>
+<li><a href="/developers/">Developer Portal</a> | <a href="/architecture/">Architecture</a> | <a href="/about/author/">Meet the Creator</a></li>
+</ul>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Glossary Registry Section -->
+<section class="bg-gray-900 py-12 lg:py-16" x-data="glossaryRegistry()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-4">
+            <!-- Main Content (3/4) -->
+            <div class="lg:col-span-3">
+                <!-- Stats Summary -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <div class="p-4 bg-white/[0.03] rounded-xl border border-white/5 text-center">
+                        <div class="text-3xl font-black text-teal-400" x-text="items.length">0</div>
+                        <div class="text-sm text-gray-400 mt-1">Total Terms</div>
+                    </div>
+                    <div class="p-4 bg-white/[0.03] rounded-xl border border-white/5 text-center">
+                        <div class="text-3xl font-black text-teal-400" x-text="uniqueCategories">0</div>
+                        <div class="text-sm text-gray-400 mt-1">Categories</div>
+                    </div>
+                    <div class="p-4 bg-white/[0.03] rounded-xl border border-white/5 text-center">
+                        <div class="text-3xl font-black text-teal-400">90</div>
+                        <div class="text-sm text-gray-400 mt-1">Apps Referenced</div>
+                    </div>
+                    <div class="p-4 bg-white/[0.03] rounded-xl border border-white/5 text-center">
+                        <div class="text-3xl font-black text-teal-400" x-text="filteredItems.length">0</div>
+                        <div class="text-sm text-gray-400 mt-1">Showing</div>
+                    </div>
+                </div>
+
+                <!-- Controls Bar -->
+                <div class="mb-6 p-4 bg-gray-800 rounded-xl border border-gray-700">
+                    <div class="flex flex-col lg:flex-row gap-4">
+                        <!-- Search -->
+                        <div class="flex-1">
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                    </svg>
+                                </div>
+                                <input type="text" x-model="searchTerm" @input="currentPage = 1"
+                                    class="block w-full pl-10 pr-4 py-2.5 text-sm text-white bg-gray-700 border border-gray-600 rounded-lg focus:ring-teal-500/30 focus:border-teal-500/50"
+                                    placeholder="Search glossary terms...">
+                            </div>
+                        </div>
+
+                        <!-- Category Filter -->
+                        <div class="w-full sm:w-auto lg:w-48">
+                            <select x-model="selectedCategory" @change="currentPage = 1"
+                                class="block w-full py-2.5 px-4 text-sm text-white bg-gray-700 border border-gray-600 rounded-lg focus:ring-teal-500/30 focus:border-teal-500/50">
+                                <option value="">All Categories</option>
+                                <template x-for="cat in categories" :key="cat">
+                                    <option :value="cat" x-text="cat"></option>
+                                </template>
+                            </select>
+                        </div>
+
+                        <!-- Sort -->
+                        <div class="w-full sm:w-auto lg:w-48">
+                            <select x-model="sortField"
+                                class="block w-full py-2.5 px-4 text-sm text-white bg-gray-700 border border-gray-600 rounded-lg focus:ring-teal-500/30 focus:border-teal-500/50">
+                                <option value="title">Sort: Name</option>
+                                <option value="category">Sort: Category</option>
+                            </select>
+                        </div>
+
+                        <!-- Reset -->
+                        <button @click="searchTerm = ''; selectedCategory = ''; sortField = 'title'; currentPage = 1"
+                            class="px-4 py-2.5 text-sm font-medium text-gray-300 bg-gray-700 border border-gray-600 rounded-lg hover:bg-gray-600">
+                            Reset
+                        </button>
+                    </div>
+
+                    <div class="mt-3 text-sm text-gray-400">
+                        Showing <span class="font-semibold text-gray-300" x-text="paginatedItems.length"></span> of
+                        <span class="font-semibold" x-text="filteredItems.length"></span> terms
+                    </div>
+                </div>
+
+                <!-- Alphabet Navigation -->
+                <div class="flex flex-wrap gap-1 mb-6 justify-center">
+                    <button @click="jumpToLetter('')"
+                        :class="activeLetter === '' ? 'bg-teal-600 text-white' : 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white'"
+                        class="w-8 h-8 text-xs font-bold rounded-lg transition-colors">All</button>
+                    <template x-for="letter in alphabet" :key="letter">
+                        <button @click="jumpToLetter(letter)"
+                            :class="activeLetter === letter ? 'bg-teal-600 text-white' : (letterCounts[letter] > 0 ? 'bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white' : 'bg-gray-800/50 text-gray-600 cursor-not-allowed')"
+                            :disabled="letterCounts[letter] === 0"
+                            class="w-8 h-8 text-xs font-bold rounded-lg transition-colors" x-text="letter"></button>
+                    </template>
+                </div>
+
+                <!-- Term Cards -->
+                <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    <template x-for="item in paginatedItems" :key="item.title">
+                        <a :href="item.url"
+                            class="group block p-5 bg-gray-800 rounded-2xl border border-gray-700 hover:shadow-xl hover:border-teal-500/30 transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-start justify-between mb-2">
+                                <h3 class="text-lg font-bold text-white group-hover:text-teal-400 transition-colors truncate"
+                                    x-text="item.title"></h3>
+                                <span x-show="item.abbreviation"
+                                    class="px-2 py-0.5 text-xs font-mono font-bold text-teal-400 bg-teal-900/30 rounded"
+                                    x-text="item.abbreviation"></span>
+                            </div>
+                            <p class="text-sm text-gray-400 mb-3 line-clamp-2" x-text="item.description"></p>
+                            <div class="flex items-center justify-between text-xs text-gray-500">
+                                <span class="px-2 py-1 bg-white/5 text-gray-300 rounded font-medium"
+                                    x-text="item.category"></span>
+                                <span x-show="item.relatedCount > 0" x-text="item.relatedCount + ' related'"></span>
+                            </div>
+                        </a>
+                    </template>
+                </div>
+
+                <!-- Empty State -->
+                <div x-show="filteredItems.length === 0" class="text-center py-16">
+                    <svg class="w-16 h-16 mx-auto text-gray-600 mb-4" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    <p class="text-gray-400 text-lg">No glossary terms match your search criteria.</p>
+                </div>
+
+                <!-- Pagination -->
+                <div x-show="totalPages > 1" class="flex flex-col md:flex-row items-center justify-between mt-8 gap-4">
+                    <div class="text-sm text-gray-400">
+                        Page <span class="font-semibold" x-text="currentPage"></span> of <span class="font-semibold"
+                            x-text="totalPages"></span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button @click="currentPage = Math.max(1, currentPage - 1)" :disabled="currentPage === 1"
+                            :class="{'opacity-50 cursor-not-allowed': currentPage === 1}"
+                            class="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-800 border border-gray-600 rounded-lg hover:bg-gray-700">
+                            Previous
+                        </button>
+                        <template x-for="page in visiblePages" :key="page">
+                            <button @click="currentPage = page"
+                                :class="currentPage === page ? 'bg-teal-600 text-white border-teal-500' : 'bg-gray-800 text-gray-300 border-gray-600'"
+                                class="px-4 py-2 text-sm font-medium border rounded-lg hover:bg-gray-700" x-text="page">
+                            </button>
+                        </template>
+                        <button @click="currentPage = Math.min(totalPages, currentPage + 1)"
+                            :disabled="currentPage === totalPages"
+                            :class="{'opacity-50 cursor-not-allowed': currentPage === totalPages}"
+                            class="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-800 border border-gray-600 rounded-lg hover:bg-gray-700">
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Sidebar (1/4) -->
+            <div class="hidden lg:block sticky top-4 space-y-6 self-start">
+                <!-- Glossary Section Nav -->
+                <div class="p-6 bg-gray-800 rounded-xl border border-gray-700"
+                     x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 200)"
+                     x-show="shown"
+                     x-transition:enter="transition ease-out duration-300"
+                     x-transition:enter-start="opacity-0 transform translate-x-4"
+                     x-transition:enter-end="opacity-100 transform translate-x-0">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                        </svg>
+                        Categories
+                    </h3>
+                    <div class="max-h-[400px] overflow-y-auto space-y-1.5 pr-1 scrollbar-thin">
+                        <button @click="selectedCategory = ''; currentPage = 1"
+                            :class="selectedCategory === '' ? 'text-amber-400 font-semibold bg-amber-900/30' : 'text-gray-400 hover:text-white hover:bg-gray-700/50'"
+                            class="w-full text-left text-sm px-3 py-1.5 rounded-lg transition-all flex items-center justify-between">
+                            <span>All Terms</span>
+                            <span class="text-xs text-gray-500" x-text="items.length"></span>
+                        </button>
+                        <template x-for="cat in categories" :key="cat">
+                            <button @click="selectedCategory = cat; currentPage = 1"
+                                :class="selectedCategory === cat ? 'text-amber-400 font-semibold bg-amber-900/30' : 'text-gray-400 hover:text-white hover:bg-gray-700/50'"
+                                class="w-full text-left text-sm px-3 py-1.5 rounded-lg transition-all flex items-center justify-between">
+                                <span x-text="cat" class="capitalize"></span>
+                                <span class="text-xs text-gray-500"
+                                    x-text="items.filter(i => i.category === cat).length"></span>
+                            </button>
+                        </template>
+                    </div>
+                </div>
+
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/dd/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Due Diligence<span
+                class="ml-auto text-xs text-gray-600">122 src</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Interactive Labs<span
+                class="ml-auto text-xs text-gray-600">15 exp</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Academy<span
+                class="ml-auto text-xs text-gray-600">15 courses</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>API Reference</a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script id="glossary-data" type="application/json">
+[
+    
+    {
+        "title": "3NL",
+        "url": "https://prismatic-reality.com/glossary/3nl/",
+        "description": "Three Nested Levels architecture organizing the platform into hierarchical layers of abstraction for agents, knowledge, and system operations.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "3NL Framework",
+        "url": "https://prismatic-reality.com/glossary/three-nl/",
+        "description": "Three Nested Levels: a hierarchical epistemic integration framework that bridges NABLA Infinity axioms to AIAD agent operations across operational, strategic, and emergent systemic layers",
+        "category": "epistemic",
+        "abbreviation": "3NL",
+        "relatedCount": 21
+    },
+    
+    {
+        "title": "Actor Model",
+        "url": "https://prismatic-reality.com/glossary/actor-model/",
+        "description": "Concurrent computation model where actors are the universal primitives of computation",
+        "category": "elixir",
+        "abbreviation": "",
+        "relatedCount": 12
+    },
+    
+    {
+        "title": "Adapter Pattern",
+        "url": "https://prismatic-reality.com/glossary/adapter-pattern/",
+        "description": "Unified storage interface abstracting 7 backend technologies",
+        "category": "storage",
+        "abbreviation": "",
+        "relatedCount": 12
+    },
+    
+    {
+        "title": "Adversarial Architecture",
+        "url": "https://prismatic-reality.com/glossary/adversarial-architecture/",
+        "description": "System design methodology that builds resilience through structured opposition and red-blue team dynamics",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 12
+    },
+    
+    {
+        "title": "Agent",
+        "url": "https://prismatic-reality.com/glossary/agent/",
+        "description": "Autonomous software entity within the AIAD ecosystem that performs specialized tasks with defined authority levels and doctrine compliance.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 12
+    },
+    
+    {
+        "title": "Agent Module",
+        "url": "https://prismatic-reality.com/glossary/agent-module/",
+        "description": "Elixir module for simple state management around a process",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Agent Registry",
+        "url": "https://prismatic-reality.com/glossary/agent-registry/",
+        "description": "Central catalog of all 404+ AIAD agents with capabilities and authority levels",
+        "category": "agents",
+        "abbreviation": "",
+        "relatedCount": 15
+    },
+    
+    {
+        "title": "Agent Tier",
+        "url": "https://prismatic-reality.com/glossary/agent-tier/",
+        "description": "L1-L5 authority classification system for AIAD agents",
+        "category": "agents",
+        "abbreviation": "",
+        "relatedCount": 16
+    },
+    
+    {
+        "title": "AIAD",
+        "url": "https://prismatic-reality.com/glossary/aiad/",
+        "description": "AI-Agent Interface Definition standard governing 404+ platform agents",
+        "category": "agents",
+        "abbreviation": "AIAD",
+        "relatedCount": 14
+    },
+    
+    {
+        "title": "AML (Anti-Money Laundering)",
+        "url": "https://prismatic-reality.com/glossary/aml/",
+        "description": "Regulatory framework of laws, regulations, and procedures designed to prevent criminals from disguising illegally obtained funds as legitimate income through the financial system.",
+        "category": "intelligence",
+        "abbreviation": "AML",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "API",
+        "url": "https://prismatic-reality.com/glossary/api/",
+        "description": "Application Programming Interface - contract defining how software components communicate",
+        "category": "architecture",
+        "abbreviation": "API",
+        "relatedCount": 11
+    },
+    
+    {
+        "title": "API Gateway",
+        "url": "https://prismatic-reality.com/glossary/api-gateway/",
+        "description": "Single entry point that routes, aggregates, and secures API requests to backend services",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Application",
+        "url": "https://prismatic-reality.com/glossary/application/",
+        "description": "OTP packaging unit with supervised process trees and lifecycle management",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Archer Supreme",
+        "url": "https://prismatic-reality.com/glossary/archer-supreme/",
+        "description": "L5 Supreme authority agent for impossible mission execution and crisis resolution",
+        "category": "agents",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Attack Surface",
+        "url": "https://prismatic-reality.com/glossary/attack-surface/",
+        "description": "The sum of all points where an attacker can attempt to enter or extract data from a system, including exposed services, APIs, domains, certificates, and cloud resources.",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "Audit Trail",
+        "url": "https://prismatic-reality.com/glossary/audit-trail/",
+        "description": "Immutable, append-only record of all epistemic events, belief graph mutations, confidence score computations, and enforcement actions across the platform.",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 13
+    },
+    
+    {
+        "title": "AutoEvolve",
+        "url": "https://prismatic-reality.com/glossary/autoevolve/",
+        "description": "Autonomous platform improvement system for continuous quality advancement",
+        "category": "evolution",
+        "abbreviation": "",
+        "relatedCount": 13
+    },
+    
+    {
+        "title": "AutoHeal",
+        "url": "https://prismatic-reality.com/glossary/autoheal/",
+        "description": "Automatic platform self-repair mechanism for quality regression recovery",
+        "category": "evolution",
+        "abbreviation": "",
+        "relatedCount": 12
+    },
+    
+    {
+        "title": "Backpressure",
+        "url": "https://prismatic-reality.com/glossary/backpressure/",
+        "description": "Flow control mechanism where consumers signal producers to slow down when overwhelmed, preventing buffer overflow and memory exhaustion in data pipelines.",
+        "category": "pattern",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "BEAM",
+        "url": "https://prismatic-reality.com/glossary/beam/",
+        "description": "Bogdan/Bjorn's Erlang Abstract Machine - the virtual machine that executes Erlang and Elixir code, providing lightweight processes, preemptive scheduling, and fault tolerance.",
+        "category": "otp",
+        "abbreviation": "",
+        "relatedCount": 13
+    },
+    
+    {
+        "title": "Behaviour",
+        "url": "https://prismatic-reality.com/glossary/behaviour/",
+        "description": "Elixir callback specification for polymorphic module contracts",
+        "category": "elixir",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Belief Graph",
+        "url": "https://prismatic-reality.com/glossary/belief-graph/",
+        "description": "Directed acyclic graph representing the platform's knowledge structure with weighted signals, provenance chains, and contradiction mappings.",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 11
+    },
+    
+    {
+        "title": "Beneficial Ownership",
+        "url": "https://prismatic-reality.com/glossary/beneficial-ownership/",
+        "description": "The identification of natural persons who ultimately own or control a legal entity, either directly through shareholding or indirectly through chains of corporate ownership, nominee arrangements, or other means of control.",
+        "category": "intelligence",
+        "abbreviation": "UBO",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Black Team",
+        "url": "https://prismatic-reality.com/glossary/black-team/",
+        "description": "Maximum isolation theoretical threat modeling team producing abstract models only",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 14
+    },
+    
+    {
+        "title": "Blackboard",
+        "url": "https://prismatic-reality.com/glossary/blackboard/",
+        "description": "Shared knowledge store enabling multi-agent coordination and reasoning",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 9
+    },
+    
+    {
+        "title": "Blue Team",
+        "url": "https://prismatic-reality.com/glossary/blue-team/",
+        "description": "Epistemic defense team producing structured evidence through signal aggregation",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 13
+    },
+    
+    {
+        "title": "Blue-Green Deployment",
+        "url": "https://prismatic-reality.com/glossary/blue-green-deployment/",
+        "description": "Zero-downtime deployment strategy using two identical production environments",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Bounded Context",
+        "url": "https://prismatic-reality.com/glossary/bounded-context/",
+        "description": "Explicit boundary within which a domain model is defined and consistent",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Broadway",
+        "url": "https://prismatic-reality.com/glossary/broadway/",
+        "description": "Concurrent, multi-stage data ingestion and processing framework built on GenStage for building robust data pipelines.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 3
+    },
+    
+    {
+        "title": "Bulkhead Pattern",
+        "url": "https://prismatic-reality.com/glossary/bulkhead-pattern/",
+        "description": "Failure isolation through resource compartmentalization preventing cascade failures",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Canary Release",
+        "url": "https://prismatic-reality.com/glossary/canary-release/",
+        "description": "Gradual rollout strategy routing a small percentage of traffic to a new version first",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "CAP Theorem",
+        "url": "https://prismatic-reality.com/glossary/cap-theorem/",
+        "description": "Theorem stating distributed systems can guarantee at most two of consistency, availability, and partition tolerance",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 9
+    },
+    
+    {
+        "title": "CASCADE",
+        "url": "https://prismatic-reality.com/glossary/cascade/",
+        "description": "Quality pattern elimination methodology that identified and removed 905 Quality Debt Points through systematic detection of common anti-patterns.",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 11
+    },
+    
+    {
+        "title": "CASCADE Pattern",
+        "url": "https://prismatic-reality.com/glossary/cascade-pattern/",
+        "description": "Systematic quality fix patterns: Type Mismatch, Dead Code, Empty Check, Timer, Cache",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 12
+    },
+    
+    {
+        "title": "Censys",
+        "url": "https://prismatic-reality.com/glossary/censys/",
+        "description": "Internet-wide scan data platform providing comprehensive visibility into hosts, certificates, and services across the public internet.",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Certificate Transparency",
+        "url": "https://prismatic-reality.com/glossary/certificate-transparency/",
+        "description": "Public logging framework for TLS certificate issuance accountability",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Channel",
+        "url": "https://prismatic-reality.com/glossary/channel/",
+        "description": "Phoenix abstraction for real-time bidirectional communication over WebSockets between server and clients.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Chaos Engineering",
+        "url": "https://prismatic-reality.com/glossary/chaos-engineering/",
+        "description": "Controlled failure injection methodology for testing system resilience and validating fault tolerance under adverse conditions.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 9
+    },
+    
+    {
+        "title": "Cherry Picking",
+        "url": "https://prismatic-reality.com/glossary/cherry-picking/",
+        "description": "Epistemic anti-pattern of selectively presenting evidence that supports a predetermined conclusion while suppressing or downweighting contradictory signals.",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 13
+    },
+    
+    {
+        "title": "Circuit Breaker",
+        "url": "https://prismatic-reality.com/glossary/circuit-breaker/",
+        "description": "Resilience pattern that prevents cascading failures by temporarily halting requests to a failing service, allowing it time to recover before resuming normal operation.",
+        "category": "pattern",
+        "abbreviation": "",
+        "relatedCount": 11
+    },
+    
+    {
+        "title": "Clean Run",
+        "url": "https://prismatic-reality.com/glossary/clean-run/",
+        "description": "Zero runtime warnings, zero info/debug logs, --warnings-as-errors compilation",
+        "category": "doctrine",
+        "abbreviation": "",
+        "relatedCount": 11
+    },
+    
+    {
+        "title": "Cluster",
+        "url": "https://prismatic-reality.com/glossary/cluster/",
+        "description": "Distributed Erlang cluster enabling transparent process communication and fault tolerance across multiple nodes.",
+        "category": "infrastructure",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Code Coverage",
+        "url": "https://prismatic-reality.com/glossary/code-coverage/",
+        "description": "Measurement of which code lines and branches are exercised by the test suite, enforced at 100% for all new code.",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Color Teams",
+        "url": "https://prismatic-reality.com/glossary/color-teams/",
+        "description": "Six adversarial-defensive security teams for epistemic security through synthesis",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 21
+    },
+    
+    {
+        "title": "Compliance Framework",
+        "url": "https://prismatic-reality.com/glossary/compliance-framework/",
+        "description": "Structured set of regulatory requirements and controls organizations must satisfy",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Comprehension",
+        "url": "https://prismatic-reality.com/glossary/comprehension/",
+        "description": "Elixir for/into construct for generating and transforming collections",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Concurrent Programming",
+        "url": "https://prismatic-reality.com/glossary/concurrent-programming/",
+        "description": "Programming paradigm for executing multiple computations simultaneously with coordination",
+        "category": "elixir",
+        "abbreviation": "",
+        "relatedCount": 12
+    },
+    
+    {
+        "title": "Confidence Scoring",
+        "url": "https://prismatic-reality.com/glossary/confidence-scoring/",
+        "description": "QEVE multiplicative formula computing final confidence from belief strength, robustness score, and contradiction index -- ensuring no single weak dimension is masked by strengths in others.",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 13
+    },
+    
+    {
+        "title": "Confidence Threshold",
+        "url": "https://prismatic-reality.com/glossary/confidence-threshold/",
+        "description": "Tau values defining required confidence for decisions (0.95 critical to 0.50 research)",
+        "category": "epistemic",
+        "abbreviation": "tau",
+        "relatedCount": 28
+    },
+    
+    {
+        "title": "Connection Pooling",
+        "url": "https://prismatic-reality.com/glossary/connection-pooling/",
+        "description": "Managed database connection reuse for performance and resource efficiency",
+        "category": "storage",
+        "abbreviation": "",
+        "relatedCount": 9
+    },
+    
+    {
+        "title": "Consciousness Traits",
+        "url": "https://prismatic-reality.com/glossary/consciousness-traits/",
+        "description": "11 emergent platform properties tracked at 0.998 fitness",
+        "category": "evolution",
+        "abbreviation": "",
+        "relatedCount": 19
+    },
+    
+    {
+        "title": "Consensus Algorithm",
+        "url": "https://prismatic-reality.com/glossary/consensus-algorithm/",
+        "description": "Protocol enabling distributed nodes to agree on a single value or sequence of operations despite partial failures and network partitions.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Continuous Deployment",
+        "url": "https://prismatic-reality.com/glossary/continuous-deployment/",
+        "description": "Automated release of validated code changes to production environments after CI passes",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Continuous Integration",
+        "url": "https://prismatic-reality.com/glossary/continuous-integration/",
+        "description": "Practice of automatically building and testing code on every commit to detect issues early",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Contradiction Preservation",
+        "url": "https://prismatic-reality.com/glossary/contradiction-preservation/",
+        "description": "NABLA axiom requiring that contradictory signals be preserved rather than resolved, ensuring epistemic honesty in the knowledge pipeline.",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "Cosine Similarity",
+        "url": "https://prismatic-reality.com/glossary/cosine-similarity/",
+        "description": "Vector distance metric measuring angular proximity for semantic comparison",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "CQRS",
+        "url": "https://prismatic-reality.com/glossary/cqrs/",
+        "description": "Command Query Responsibility Segregation separates read and write models for scalability",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 9
+    },
+    
+    {
+        "title": "Credo",
+        "url": "https://prismatic-reality.com/glossary/credo/",
+        "description": "Elixir static code analysis tool enforced in strict mode",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "CVE",
+        "url": "https://prismatic-reality.com/glossary/cve/",
+        "description": "Standardized identifiers for publicly known cybersecurity vulnerabilities",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Cyber Threat Intelligence",
+        "url": "https://prismatic-reality.com/glossary/cyber-threat-intelligence/",
+        "description": "Evidence-based knowledge about threats enabling informed defensive decisions",
+        "category": "intelligence",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Data Pipeline",
+        "url": "https://prismatic-reality.com/glossary/data-pipeline/",
+        "description": "Automated sequence of data processing stages moving data from sources to destinations",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Dependency Injection",
+        "url": "https://prismatic-reality.com/glossary/dependency-injection/",
+        "description": "Design pattern providing dependencies externally rather than creating them internally",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Dialyzer",
+        "url": "https://prismatic-reality.com/glossary/dialyzer/",
+        "description": "Erlang/Elixir type analysis via success typing for type safety verification",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Disaster Recovery",
+        "url": "https://prismatic-reality.com/glossary/disaster-recovery/",
+        "description": "Strategies and procedures for restoring systems and data after catastrophic failures",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Distributed System",
+        "url": "https://prismatic-reality.com/glossary/distributed-system/",
+        "description": "Computing system where components on networked computers coordinate through message passing",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "Distributed Tracing",
+        "url": "https://prismatic-reality.com/glossary/distributed-tracing/",
+        "description": "Technique tracking request flow across multiple services and processes with correlation IDs",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "DNS Enumeration",
+        "url": "https://prismatic-reality.com/glossary/dns-enumeration/",
+        "description": "Systematic discovery of DNS records to map an organization's infrastructure",
+        "category": "intelligence",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Docker",
+        "url": "https://prismatic-reality.com/glossary/docker/",
+        "description": "Container runtime platform used for packaging, distributing, and running Prismatic Platform releases in isolated environments.",
+        "category": "infrastructure",
+        "abbreviation": "",
+        "relatedCount": 4
+    },
+    
+    {
+        "title": "Domain-Driven Design",
+        "url": "https://prismatic-reality.com/glossary/domain-driven-design/",
+        "description": "Software design approach aligning code structure with business domain boundaries",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 9
+    },
+    
+    {
+        "title": "DuckDB",
+        "url": "https://prismatic-reality.com/glossary/duckdb/",
+        "description": "Embedded analytical database for columnar OLAP queries",
+        "category": "storage",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Due Diligence",
+        "url": "https://prismatic-reality.com/glossary/due-diligence/",
+        "description": "Systematic investigation and evaluation of a business, individual, or asset prior to a transaction or engagement, combining OSINT collection, entity resolution, and cross-validated risk assessment.",
+        "category": "intelligence",
+        "abbreviation": "DD",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "DynamicSupervisor",
+        "url": "https://prismatic-reality.com/glossary/dynamic-supervisor/",
+        "description": "OTP supervisor that starts child processes on demand at runtime, enabling dynamic process creation for agents, sessions, and task workers.",
+        "category": "otp",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "EASM",
+        "url": "https://prismatic-reality.com/glossary/easm/",
+        "description": "External Attack Surface Management for continuous security posture monitoring",
+        "category": "security",
+        "abbreviation": "EASM",
+        "relatedCount": 14
+    },
+    
+    {
+        "title": "Ecto",
+        "url": "https://prismatic-reality.com/glossary/ecto/",
+        "description": "Elixir database toolkit providing schema definitions, composable queries, changesets for data validation, and migration management for PostgreSQL and other databases.",
+        "category": "framework",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Elixir",
+        "url": "https://prismatic-reality.com/glossary/elixir/",
+        "description": "Functional programming language built on the BEAM virtual machine, designed for scalable and fault-tolerant applications",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "Embedding",
+        "url": "https://prismatic-reality.com/glossary/embedding/",
+        "description": "Dense vector representation of data for semantic similarity computation",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Encryption at Rest",
+        "url": "https://prismatic-reality.com/glossary/encryption-at-rest/",
+        "description": "Protecting stored data by encrypting it on disk so unauthorized access yields only ciphertext",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Endpoint",
+        "url": "https://prismatic-reality.com/glossary/endpoint/",
+        "description": "Phoenix entry point that handles all incoming HTTP connections, configuring plugs, sockets, and serving static assets.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "Entity Resolution",
+        "url": "https://prismatic-reality.com/glossary/entity-resolution/",
+        "description": "Intelligence process of determining whether multiple data records from different sources refer to the same real-world entity, enabling identity consolidation across disparate datasets.",
+        "category": "intelligence",
+        "abbreviation": "",
+        "relatedCount": 9
+    },
+    
+    {
+        "title": "Epistemic Pipeline",
+        "url": "https://prismatic-reality.com/glossary/epistemic-pipeline/",
+        "description": "16-level processing pipeline from raw data (L0) through Meta and Consciousness that transforms unstructured signals into formally verified knowledge",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 23
+    },
+    
+    {
+        "title": "Epistemic Robustness",
+        "url": "https://prismatic-reality.com/glossary/epistemic-robustness/",
+        "description": "Quantified measure of how stable a conclusion remains under systematic perturbation of input signals and assumptions.",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "ETL",
+        "url": "https://prismatic-reality.com/glossary/etl/",
+        "description": "Extract-Transform-Load pattern for moving data between systems with transformation",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "ETS",
+        "url": "https://prismatic-reality.com/glossary/ets/",
+        "description": "Erlang Term Storage for high-performance in-memory key-value data",
+        "category": "elixir",
+        "abbreviation": "ETS",
+        "relatedCount": 9
+    },
+    
+    {
+        "title": "ETS Table",
+        "url": "https://prismatic-reality.com/glossary/ets-table/",
+        "description": "In-memory key-value storage with concurrent read access on the BEAM",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Event Sourcing",
+        "url": "https://prismatic-reality.com/glossary/event-sourcing/",
+        "description": "Persistence pattern storing state changes as an immutable sequence of domain events",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "Eventual Consistency",
+        "url": "https://prismatic-reality.com/glossary/eventual-consistency/",
+        "description": "Distributed systems guarantee that all nodes converge to the same state given sufficient time, trading strong consistency for availability and partition tolerance.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 9
+    },
+    
+    {
+        "title": "ExUnit",
+        "url": "https://prismatic-reality.com/glossary/exunit/",
+        "description": "Elixir's built-in test framework providing assertions, async test execution, doctests, and comprehensive test organization.",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Fault Tolerance",
+        "url": "https://prismatic-reality.com/glossary/fault-tolerance/",
+        "description": "System ability to continue operating correctly despite component failures",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 11
+    },
+    
+    {
+        "title": "Feature Flag",
+        "url": "https://prismatic-reality.com/glossary/feature-flag/",
+        "description": "Runtime toggle enabling or disabling features without code deployment",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Fine-Tuning",
+        "url": "https://prismatic-reality.com/glossary/fine-tuning/",
+        "description": "Specializing a pre-trained AI model on domain-specific data",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Fitness Score",
+        "url": "https://prismatic-reality.com/glossary/fitness-score/",
+        "description": "Evolution quality metric on 0.0-1.0 scale (current: 0.999 apex)",
+        "category": "evolution",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Flowbite",
+        "url": "https://prismatic-reality.com/glossary/flowbite/",
+        "description": "TailwindCSS component library used across all platform dashboards",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Fly.io",
+        "url": "https://prismatic-reality.com/glossary/fly-io/",
+        "description": "Edge deployment platform hosting Prismatic production and staging environments with global distribution and automatic scaling.",
+        "category": "infrastructure",
+        "abbreviation": "",
+        "relatedCount": 4
+    },
+    
+    {
+        "title": "Formal Verification",
+        "url": "https://prismatic-reality.com/glossary/formal-verification/",
+        "description": "Mathematical proof-based verification of system properties using Lean4 theorem proving within the QEVE framework.",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "GARDEN",
+        "url": "https://prismatic-reality.com/glossary/garden/",
+        "description": "22-repo legacy knowledge base with 3,050+ files and 55+ reusable patterns",
+        "category": "evolution",
+        "abbreviation": "GARDEN",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "GDPR",
+        "url": "https://prismatic-reality.com/glossary/gdpr/",
+        "description": "EU General Data Protection Regulation governing personal data processing and privacy rights",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Generation",
+        "url": "https://prismatic-reality.com/glossary/generation/",
+        "description": "Platform evolution epoch marking discrete advancement milestones (currently Gen 18)",
+        "category": "evolution",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "GenServer",
+        "url": "https://prismatic-reality.com/glossary/genserver/",
+        "description": "OTP generic server behaviour for building stateful processes",
+        "category": "elixir",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "GenStage",
+        "url": "https://prismatic-reality.com/glossary/genstage/",
+        "description": "Elixir library for building data processing pipelines with built-in backpressure, enabling producers, consumers, and producer-consumers to exchange events at sustainable rates.",
+        "category": "otp",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "GenStatem",
+        "url": "https://prismatic-reality.com/glossary/gen-statem/",
+        "description": "OTP state machine behaviour for modeling complex stateful protocols",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Git Trees",
+        "url": "https://prismatic-reality.com/glossary/git-trees/",
+        "description": "Optimized codebase exploration using git ls-tree (~100x faster than find)",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "GitLab CI/CD",
+        "url": "https://prismatic-reality.com/glossary/gitlab-ci/",
+        "description": "Continuous integration and deployment pipeline for automated quality enforcement",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "GitOps",
+        "url": "https://prismatic-reality.com/glossary/gitops/",
+        "description": "Operational framework using Git as the single source of truth for infrastructure and deployment",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "GraphQL",
+        "url": "https://prismatic-reality.com/glossary/graphql/",
+        "description": "Query language for APIs enabling clients to request exactly the data they need with a strongly-typed schema.",
+        "category": "api",
+        "abbreviation": "",
+        "relatedCount": 4
+    },
+    
+    {
+        "title": "Gray Team",
+        "url": "https://prismatic-reality.com/glossary/gray-team/",
+        "description": "Boundary exploration team for specification gaps, edge cases, and affordance drift",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "GreyNoise",
+        "url": "https://prismatic-reality.com/glossary/greynoise/",
+        "description": "Internet noise analysis platform that identifies benign scanners and background noise to reduce false positives in threat detection.",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "HAWKEYE",
+        "url": "https://prismatic-reality.com/glossary/hawkeye/",
+        "description": "Visitor Intelligence system with behavioral analysis and threat detection",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Hex",
+        "url": "https://prismatic-reality.com/glossary/hex/",
+        "description": "Package manager for the Erlang/Elixir ecosystem providing dependency resolution, publishing, and package hosting.",
+        "category": "infrastructure",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Hot Code Reload",
+        "url": "https://prismatic-reality.com/glossary/hot-code-reload/",
+        "description": "BEAM capability to replace running module code at runtime without stopping the system, enabling zero-downtime deployments and live debugging in production.",
+        "category": "otp",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Idempotency",
+        "url": "https://prismatic-reality.com/glossary/idempotency/",
+        "description": "Property where repeating an operation produces the same result as executing it once",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Immutability",
+        "url": "https://prismatic-reality.com/glossary/immutability/",
+        "description": "Property where data cannot be modified after creation, ensuring referential transparency",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Incident Response",
+        "url": "https://prismatic-reality.com/glossary/incident-response/",
+        "description": "Structured approach to detecting, containing, and recovering from security incidents",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Inference",
+        "url": "https://prismatic-reality.com/glossary/inference/",
+        "description": "Executing a trained AI model to generate predictions or outputs",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Intelligence Fusion",
+        "url": "https://prismatic-reality.com/glossary/intelligence-fusion/",
+        "description": "Multi-source correlation and confidence scoring for intelligence products",
+        "category": "osint",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "ISO 27001",
+        "url": "https://prismatic-reality.com/glossary/iso-27001/",
+        "description": "International standard for information security management systems and controls",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "JWT",
+        "url": "https://prismatic-reality.com/glossary/jwt/",
+        "description": "JSON Web Token standard for compact, self-contained authentication and authorization claims",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Knowledge Graph",
+        "url": "https://prismatic-reality.com/glossary/knowledge-graph/",
+        "description": "Graph-structured knowledge representation connecting entities through typed relationships",
+        "category": "intelligence",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "KuzuDB",
+        "url": "https://prismatic-reality.com/glossary/kuzudb/",
+        "description": "Embedded graph database for relationship queries and knowledge graphs",
+        "category": "storage",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "KYC (Know Your Customer)",
+        "url": "https://prismatic-reality.com/glossary/kyc/",
+        "description": "Regulatory compliance process requiring businesses to verify the identity and assess the risk profile of their customers before and during business relationships.",
+        "category": "intelligence",
+        "abbreviation": "KYC",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Lean4",
+        "url": "https://prismatic-reality.com/glossary/lean4/",
+        "description": "Functional programming language and interactive theorem prover used for formal verification, enabling machine-checked mathematical proofs of system properties and invariants.",
+        "category": "verification",
+        "abbreviation": "",
+        "relatedCount": 13
+    },
+    
+    {
+        "title": "Let It Crash",
+        "url": "https://prismatic-reality.com/glossary/let-it-crash/",
+        "description": "OTP philosophy where processes are allowed to fail and supervisors handle recovery",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "LiveView",
+        "url": "https://prismatic-reality.com/glossary/liveview/",
+        "description": "Phoenix real-time UI framework enabling server-rendered interactive interfaces over WebSockets without custom JavaScript.",
+        "category": "framework",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Load Balancing",
+        "url": "https://prismatic-reality.com/glossary/load-balancing/",
+        "description": "Distributing incoming requests across multiple server instances to optimize throughput, reduce latency, and increase reliability through redundancy.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 9
+    },
+    
+    {
+        "title": "Macro",
+        "url": "https://prismatic-reality.com/glossary/macro/",
+        "description": "Elixir compile-time metaprogramming construct for code generation",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Meilisearch",
+        "url": "https://prismatic-reality.com/glossary/meilisearch/",
+        "description": "Full-text search engine with typo tolerance and instant results",
+        "category": "storage",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Message Passing",
+        "url": "https://prismatic-reality.com/glossary/message-passing/",
+        "description": "BEAM's fundamental communication mechanism where processes exchange data by sending immutable messages to each other's mailboxes, enforcing isolation and enabling distribution.",
+        "category": "otp",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Metrics",
+        "url": "https://prismatic-reality.com/glossary/metrics/",
+        "description": "Numeric measurements collected over time to quantify system behavior and performance",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Microservices",
+        "url": "https://prismatic-reality.com/glossary/microservices/",
+        "description": "Architectural style decomposing applications into small, independently deployable services",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Mix",
+        "url": "https://prismatic-reality.com/glossary/mix/",
+        "description": "Elixir build tool providing project creation, compilation, testing, dependency management, and custom task execution.",
+        "category": "infrastructure",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Mix Task",
+        "url": "https://prismatic-reality.com/glossary/mix-task/",
+        "description": "Elixir build tool command for development, testing, and platform workflows",
+        "category": "elixir",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Mnesia",
+        "url": "https://prismatic-reality.com/glossary/mnesia/",
+        "description": "Distributed real-time database built into the Erlang/OTP runtime",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Modal Logic",
+        "url": "https://prismatic-reality.com/glossary/modal-logic/",
+        "description": "Formal logical system distinguishing necessity from possibility, used in Trinity Gate's third verification layer.",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 9
+    },
+    
+    {
+        "title": "Monte Carlo Verification",
+        "url": "https://prismatic-reality.com/glossary/monte-carlo-verification/",
+        "description": "Probabilistic robustness testing through randomized scenario simulation in the QEVE pipeline.",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "Multi-Agent System",
+        "url": "https://prismatic-reality.com/glossary/multi-agent-system/",
+        "description": "System where multiple autonomous agents interact to solve problems beyond individual agent capabilities",
+        "category": "ai",
+        "abbreviation": "MAS",
+        "relatedCount": 11
+    },
+    
+    {
+        "title": "Mycelial Network",
+        "url": "https://prismatic-reality.com/glossary/mycelial-network/",
+        "description": "Cross-domain pattern propagation system with 99.8% success rate",
+        "category": "evolution",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "NABLA Infinity",
+        "url": "https://prismatic-reality.com/glossary/nabla-infinity/",
+        "description": "Epistemic framework with 7 non-negotiable axioms governing all belief formation, knowledge validation, and evidence handling across the platform.",
+        "category": "epistemic",
+        "abbreviation": "nabla",
+        "relatedCount": 19
+    },
+    
+    {
+        "title": "NIS2 Directive",
+        "url": "https://prismatic-reality.com/glossary/nis2/",
+        "description": "EU cybersecurity directive (2022/2555) for network and information security",
+        "category": "security",
+        "abbreviation": "NIS2",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "NM/ND Doctrine",
+        "url": "https://prismatic-reality.com/glossary/nm-nd/",
+        "description": "Combined NO MERCY, NO DOUBTS enforcement framework governing all platform operations",
+        "category": "doctrine",
+        "abbreviation": "NM/ND",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "NO DOUBTS",
+        "url": "https://prismatic-reality.com/glossary/no-doubts/",
+        "description": "Full investigation before action, decisive execution after decision",
+        "category": "doctrine",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "NO MERCY",
+        "url": "https://prismatic-reality.com/glossary/no-mercy/",
+        "description": "Zero tolerance for incomplete implementations, untested code, quality violations",
+        "category": "doctrine",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "No Mercy, No Doubts",
+        "url": "https://prismatic-reality.com/glossary/no-mercy-no-doubts/",
+        "description": "The universal doctrine governing all Prismatic Platform operations: zero tolerance for incomplete work combined with full investigation before decisive action",
+        "category": "doctrine",
+        "abbreviation": "NM/ND",
+        "relatedCount": 16
+    },
+    
+    {
+        "title": "Node",
+        "url": "https://prismatic-reality.com/glossary/node/",
+        "description": "A running instance of the BEAM virtual machine in a distributed system",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "OAuth2",
+        "url": "https://prismatic-reality.com/glossary/oauth2/",
+        "description": "Authorization framework enabling secure delegated access to resources without sharing credentials",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Observability",
+        "url": "https://prismatic-reality.com/glossary/observability/",
+        "description": "Ability to understand a system's internal state from its external outputs and telemetry",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 4
+    },
+    
+    {
+        "title": "Observer",
+        "url": "https://prismatic-reality.com/glossary/observer/",
+        "description": "Erlang/OTP graphical system monitoring tool providing real-time visibility into processes, ETS tables, application trees, and system metrics on the BEAM VM.",
+        "category": "otp",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Ollama",
+        "url": "https://prismatic-reality.com/glossary/ollama/",
+        "description": "Local AI model runtime enabling on-premise execution of large language models, providing API-compatible inference without external cloud dependencies.",
+        "category": "ai",
+        "abbreviation": "",
+        "relatedCount": 4
+    },
+    
+    {
+        "title": "Ontology",
+        "url": "https://prismatic-reality.com/glossary/ontology/",
+        "description": "Formal specification of entity types, properties, and relationships within a domain",
+        "category": "intelligence",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "OpenAPI",
+        "url": "https://prismatic-reality.com/glossary/openapi/",
+        "description": "Specification standard for describing REST APIs in machine-readable format, enabling automatic documentation generation, client SDK creation, and API validation.",
+        "category": "api",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "OpenAPI Specification",
+        "url": "https://prismatic-reality.com/glossary/openapi-spec/",
+        "description": "REST API documentation standard (v3.0) used for auto-generated API specs",
+        "category": "architecture",
+        "abbreviation": "OAS",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "OSINT",
+        "url": "https://prismatic-reality.com/glossary/osint/",
+        "description": "Open Source Intelligence gathering and analysis from publicly available sources",
+        "category": "osint",
+        "abbreviation": "OSINT",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "OTP",
+        "url": "https://prismatic-reality.com/glossary/otp/",
+        "description": "Open Telecom Platform - Erlang/Elixir application framework for fault-tolerant systems",
+        "category": "elixir",
+        "abbreviation": "OTP",
+        "relatedCount": 31
+    },
+    
+    {
+        "title": "Outbox Pattern",
+        "url": "https://prismatic-reality.com/glossary/outbox-pattern/",
+        "description": "Reliable event publishing through transactional outbox table polling",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "OWASP",
+        "url": "https://prismatic-reality.com/glossary/owasp/",
+        "description": "Open Web Application Security Project providing security standards and tools",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Pattern Matching",
+        "url": "https://prismatic-reality.com/glossary/pattern-matching/",
+        "description": "Language feature matching data structures against patterns for destructuring and control flow",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Penetration Testing",
+        "url": "https://prismatic-reality.com/glossary/penetration-testing/",
+        "description": "Authorized simulated attack testing system defenses by actively exploiting vulnerabilities",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Phoenix",
+        "url": "https://prismatic-reality.com/glossary/phoenix/",
+        "description": "Elixir web framework built on OTP providing real-time capabilities through channels and LiveView, with fault-tolerant request handling via BEAM processes.",
+        "category": "framework",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "Phoenix LiveView",
+        "url": "https://prismatic-reality.com/glossary/phoenix-liveview/",
+        "description": "Server-rendered reactive UI framework for real-time dashboards",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Pipe Operator",
+        "url": "https://prismatic-reality.com/glossary/pipe-operator/",
+        "description": "Elixir operator (|>) passing the result of one expression as the first argument to the next",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Plug",
+        "url": "https://prismatic-reality.com/glossary/plug/",
+        "description": "Composable module specification for building request processing pipelines in Phoenix web applications.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "PostgreSQL",
+        "url": "https://prismatic-reality.com/glossary/postgresql/",
+        "description": "Advanced open-source relational database providing ACID transactions, extensible type system, full-text search, JSON support, and TimescaleDB extension for time-series data.",
+        "category": "database",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Pre-Commit Hooks",
+        "url": "https://prismatic-reality.com/glossary/pre-commit-hooks/",
+        "description": "Automated quality enforcement executed before each git commit",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Prismatic Agents",
+        "url": "https://prismatic-reality.com/glossary/prismatic-agents/",
+        "description": "Agent runtime engine managing 434 AIAD agents across 14 domains",
+        "category": "agents",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Prismatic API",
+        "url": "https://prismatic-reality.com/glossary/prismatic-api/",
+        "description": "Auto-introspecting REST gateway exposing all facade modules via OpenAPI 3.0",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Prismatic Perimeter",
+        "url": "https://prismatic-reality.com/glossary/prismatic-perimeter/",
+        "description": "External Attack Surface Management application with security ratings and compliance",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Prismatic Storage",
+        "url": "https://prismatic-reality.com/glossary/prismatic-storage/",
+        "description": "Pluggable storage layer with adapter pattern for multiple backends",
+        "category": "storage",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Prismatic Web",
+        "url": "https://prismatic-reality.com/glossary/prismatic-web/",
+        "description": "Phoenix LiveView web interface serving platform dashboards on port 4000",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Process Isolation",
+        "url": "https://prismatic-reality.com/glossary/process-isolation/",
+        "description": "BEAM property ensuring each process has its own memory heap, garbage collector, and failure boundary, preventing one process from corrupting or crashing another.",
+        "category": "otp",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Prompt Engineering",
+        "url": "https://prismatic-reality.com/glossary/prompt-engineering/",
+        "description": "Systematic techniques for optimizing AI model input to improve output quality",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Property-Based Testing",
+        "url": "https://prismatic-reality.com/glossary/property-based-testing/",
+        "description": "Testing methodology that verifies properties hold for randomly generated inputs rather than hand-written examples, discovering edge cases that example-based tests miss.",
+        "category": "testing",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Protocol",
+        "url": "https://prismatic-reality.com/glossary/protocol/",
+        "description": "Elixir mechanism for type-based polymorphic dispatch",
+        "category": "elixir",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Provenance Mandatory",
+        "url": "https://prismatic-reality.com/glossary/provenance-mandatory/",
+        "description": "NABLA axiom requiring all beliefs and knowledge claims to maintain complete traceability back to their original sources.",
+        "category": "doctrine",
+        "abbreviation": "",
+        "relatedCount": 13
+    },
+    
+    {
+        "title": "PubSub",
+        "url": "https://prismatic-reality.com/glossary/pubsub/",
+        "description": "Publish-subscribe messaging system enabling decoupled communication between processes and distributed nodes.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Pure Function",
+        "url": "https://prismatic-reality.com/glossary/pure-function/",
+        "description": "Function with no side effects whose output depends only on its inputs",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Purple Team",
+        "url": "https://prismatic-reality.com/glossary/purple-team/",
+        "description": "Central synthesis hub with sole authority for Red-Blue loop closure",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "PVM",
+        "url": "https://prismatic-reality.com/glossary/pvm/",
+        "description": "Platform Virtual Machine - the conceptual execution environment abstracting the BEAM VM with Prismatic-specific process topologies and agent runtime.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 15
+    },
+    
+    {
+        "title": "QDP",
+        "url": "https://prismatic-reality.com/glossary/qdp/",
+        "description": "Quality Debt Points - metric tracking code quality issues where each violation counts as debt. Current platform total: 0 QDP (complete elimination).",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 9
+    },
+    
+    {
+        "title": "QEVE",
+        "url": "https://prismatic-reality.com/glossary/qeve/",
+        "description": "Quantified Epistemic Verification Engine combining Lean4 theorem proving, NABLA axioms, and Monte Carlo simulation for formal verification of platform beliefs.",
+        "category": "ai-ml",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "Quality Debt",
+        "url": "https://prismatic-reality.com/glossary/quality-debt/",
+        "description": "Quality Debt Points tracked, measured, and systematically eliminated",
+        "category": "quality",
+        "abbreviation": "QDP",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Quality DNA",
+        "url": "https://prismatic-reality.com/glossary/quality-dna/",
+        "description": "Cross-session quality state persistence for continuous improvement tracking",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Quality Floor Guardian",
+        "url": "https://prismatic-reality.com/glossary/quality-floor-guardian/",
+        "description": "Autonomous quality monitoring system preventing score regression",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Quality Gates",
+        "url": "https://prismatic-reality.com/glossary/quality-gates/",
+        "description": "Automated enforcement pipeline: compile, lint, test, analyze, verify",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 21
+    },
+    
+    {
+        "title": "RAG",
+        "url": "https://prismatic-reality.com/glossary/rag/",
+        "description": "Retrieval-Augmented Generation combining search with LLM generation",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Rate Limiting",
+        "url": "https://prismatic-reality.com/glossary/rate-limiting/",
+        "description": "Technique controlling the frequency of requests to prevent abuse and ensure fair resource usage",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "RBAC",
+        "url": "https://prismatic-reality.com/glossary/rbac/",
+        "description": "Role-Based Access Control - authorization model that assigns permissions to roles rather than individual users, simplifying access management and enforcing least-privilege principles.",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Red Team",
+        "url": "https://prismatic-reality.com/glossary/red-team/",
+        "description": "Adversarial simulation team using 5 epistemic attack primitives in sandboxed environments",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Redis",
+        "url": "https://prismatic-reality.com/glossary/redis/",
+        "description": "In-memory data store used for caching, session management, and PubSub messaging in the Prismatic Platform.",
+        "category": "infrastructure",
+        "abbreviation": "",
+        "relatedCount": 4
+    },
+    
+    {
+        "title": "Registry (OTP)",
+        "url": "https://prismatic-reality.com/glossary/registry-otp/",
+        "description": "Process registry enabling name-based lookup and dispatch of dynamically created processes in OTP applications.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 9
+    },
+    
+    {
+        "title": "Regression Test",
+        "url": "https://prismatic-reality.com/glossary/regression-test/",
+        "description": "Mandatory test proving a bug fix prevents recurrence of the specific defect",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Release",
+        "url": "https://prismatic-reality.com/glossary/release/",
+        "description": "OTP release packaging that bundles compiled application, ERTS runtime, and configuration into a self-contained deployable unit.",
+        "category": "infrastructure",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Releases (Elixir)",
+        "url": "https://prismatic-reality.com/glossary/releases-elixir/",
+        "description": "Self-contained deployment bundles with embedded BEAM runtime",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "REST API",
+        "url": "https://prismatic-reality.com/glossary/rest-api/",
+        "description": "Representational State Transfer architectural style for stateless HTTP service interfaces with resource-oriented URLs and standard HTTP methods.",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "Retry Pattern",
+        "url": "https://prismatic-reality.com/glossary/retry-pattern/",
+        "description": "Transient failure recovery through configurable request retry strategies",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Risk Score",
+        "url": "https://prismatic-reality.com/glossary/risk-score/",
+        "description": "Numeric assessment quantifying the security risk of individual assets or findings with confidence levels and evidence chains.",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 13
+    },
+    
+    {
+        "title": "Saga Pattern",
+        "url": "https://prismatic-reality.com/glossary/saga-pattern/",
+        "description": "Distributed transaction coordination through compensating actions",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Sanctions Screening",
+        "url": "https://prismatic-reality.com/glossary/sanctions-screening/",
+        "description": "Automated checking against EU, US, UK, and UN sanctions lists",
+        "category": "osint",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "SEADF",
+        "url": "https://prismatic-reality.com/glossary/seadf/",
+        "description": "Self-Evolving Autonomous Development Framework with 7 subsystems",
+        "category": "evolution",
+        "abbreviation": "SEADF",
+        "relatedCount": 12
+    },
+    
+    {
+        "title": "Security Rating",
+        "url": "https://prismatic-reality.com/glossary/security-rating/",
+        "description": "A-F grading system with numeric scores (300-900) for organization security posture",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Self-Healing",
+        "url": "https://prismatic-reality.com/glossary/self-healing/",
+        "description": "Autonomous fault recovery system that detects, diagnoses, and corrects system issues without human intervention.",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 11
+    },
+    
+    {
+        "title": "Server-Sent Events",
+        "url": "https://prismatic-reality.com/glossary/server-sent-events/",
+        "description": "HTTP-based protocol for unidirectional real-time server-to-client event streaming",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Session Discipline",
+        "url": "https://prismatic-reality.com/glossary/session-discipline/",
+        "description": "Mandatory GitLab tracking, continuous commits, push enforcement for all sessions",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Shodan",
+        "url": "https://prismatic-reality.com/glossary/shodan/",
+        "description": "Internet-wide search engine for discovering connected devices, open ports, services, and vulnerabilities across the global attack surface.",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Sidecar Pattern",
+        "url": "https://prismatic-reality.com/glossary/sidecar-pattern/",
+        "description": "Auxiliary process co-deployed alongside a primary service for cross-cutting concerns",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "SIEM",
+        "url": "https://prismatic-reality.com/glossary/siem/",
+        "description": "Security Information and Event Management for centralized threat detection",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Signal Plurality",
+        "url": "https://prismatic-reality.com/glossary/signal-plurality/",
+        "description": "NABLA axiom requiring minimum 2 independent signals for any belief",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "SOC 2",
+        "url": "https://prismatic-reality.com/glossary/soc2/",
+        "description": "Service Organization Control Type 2 audit framework for trust services",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Socket.IO",
+        "url": "https://prismatic-reality.com/glossary/socket-io/",
+        "description": "Real-time bidirectional event-based communication library providing automatic transport fallback, reconnection, and room-based broadcasting across client and server.",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Sparkline",
+        "url": "https://prismatic-reality.com/glossary/sparkline/",
+        "description": "Contract-locked integration component with canonicalized interfaces",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Strategic Command",
+        "url": "https://prismatic-reality.com/glossary/strategic-command/",
+        "description": "L4 Multi-domain coordination agent tier for cross-cutting operations",
+        "category": "agents",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Stream Processing",
+        "url": "https://prismatic-reality.com/glossary/stream-processing/",
+        "description": "Continuous processing of data records as they arrive rather than in accumulated batches",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Structured Logging",
+        "url": "https://prismatic-reality.com/glossary/structured-logging/",
+        "description": "Logging practice using machine-parseable formats with consistent key-value metadata",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 4
+    },
+    
+    {
+        "title": "Supervision Tree",
+        "url": "https://prismatic-reality.com/glossary/supervision-tree/",
+        "description": "Hierarchical process monitoring with configurable restart strategies",
+        "category": "elixir",
+        "abbreviation": "",
+        "relatedCount": 12
+    },
+    
+    {
+        "title": "Supervisor",
+        "url": "https://prismatic-reality.com/glossary/supervisor/",
+        "description": "OTP behavior that monitors and automatically restarts child processes according to configurable restart strategies.",
+        "category": "otp",
+        "abbreviation": "",
+        "relatedCount": 11
+    },
+    
+    {
+        "title": "Supreme Commander",
+        "url": "https://prismatic-reality.com/glossary/supreme-commander/",
+        "description": "L5 Platform-wide strategic coordination agent with full orchestration authority",
+        "category": "agents",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "Tactical Execution",
+        "url": "https://prismatic-reality.com/glossary/tactical-execution/",
+        "description": "L2 Focused domain execution agent tier for specialized operations",
+        "category": "agents",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "TailwindCSS",
+        "url": "https://prismatic-reality.com/glossary/tailwindcss/",
+        "description": "Utility-first CSS framework, mandatory for all platform UI components",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Task Module",
+        "url": "https://prismatic-reality.com/glossary/task-module/",
+        "description": "Elixir abstraction for spawning and awaiting asynchronous computations",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Telemetry",
+        "url": "https://prismatic-reality.com/glossary/telemetry/",
+        "description": "Lightweight metrics and instrumentation library for BEAM applications",
+        "category": "elixir",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Theorem Proving",
+        "url": "https://prismatic-reality.com/glossary/theorem-proving/",
+        "description": "Constructing mathematical proofs to verify that properties hold for all possible inputs",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Threat Intelligence",
+        "url": "https://prismatic-reality.com/glossary/threat-intelligence/",
+        "description": "Structured information about cyber threats, threat actors, and attack patterns",
+        "category": "osint",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Time Decay",
+        "url": "https://prismatic-reality.com/glossary/time-decay/",
+        "description": "NABLA axiom enforcing mandatory timestamps on beliefs with configurable decay functions reducing signal weight over time.",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 10
+    },
+    
+    {
+        "title": "TimescaleDB",
+        "url": "https://prismatic-reality.com/glossary/timescaledb/",
+        "description": "PostgreSQL extension optimized for time-series data with automatic partitioning, compression, and continuous aggregates.",
+        "category": "infrastructure",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "TLS",
+        "url": "https://prismatic-reality.com/glossary/tls/",
+        "description": "Transport Layer Security protocol encrypting data in transit between client and server",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Tokenization",
+        "url": "https://prismatic-reality.com/glossary/tokenization/",
+        "description": "Converting text into discrete token units for AI model processing",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Trinity Gate",
+        "url": "https://prismatic-reality.com/glossary/trinity-gate/",
+        "description": "4-layer verification gate requiring structural, logical, and formal necessity checks before any platform belief is accepted.",
+        "category": "epistemic",
+        "abbreviation": "",
+        "relatedCount": 18
+    },
+    
+    {
+        "title": "Triple-Check Validation",
+        "url": "https://prismatic-reality.com/glossary/triple-check/",
+        "description": "Cross-validation methodology requiring corroboration from at least three independent sources before marking any investigative claim as verified, implemented through the NABLA Infinity epistemic framework.",
+        "category": "intelligence",
+        "abbreviation": "",
+        "relatedCount": 7
+    },
+    
+    {
+        "title": "Typespec",
+        "url": "https://prismatic-reality.com/glossary/typespec/",
+        "description": "Elixir type specification annotations (@spec, @type) that document function signatures and enable static analysis via Dialyzer.",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Umbrella Application",
+        "url": "https://prismatic-reality.com/glossary/umbrella-application/",
+        "description": "Elixir/OTP project structure with 90 interconnected apps under a single repository",
+        "category": "architecture",
+        "abbreviation": "",
+        "relatedCount": 8
+    },
+    
+    {
+        "title": "Umbrella Application",
+        "url": "https://prismatic-reality.com/glossary/umbrella/",
+        "description": "Elixir project structure that contains multiple OTP applications under a single repository with shared configuration",
+        "category": "architecture",
+        "abbreviation": "Umbrella",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Vector Database",
+        "url": "https://prismatic-reality.com/glossary/vector-database/",
+        "description": "Database optimized for storing and querying high-dimensional vector embeddings",
+        "category": "storage",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Violation Protocol",
+        "url": "https://prismatic-reality.com/glossary/violation-protocol/",
+        "description": "L1-L4 escalation levels for NM/ND doctrine breaches",
+        "category": "doctrine",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Vulnerability Assessment",
+        "url": "https://prismatic-reality.com/glossary/vulnerability-assessment/",
+        "description": "Systematic identification and evaluation of security weaknesses in systems and networks",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "WebSocket",
+        "url": "https://prismatic-reality.com/glossary/websocket/",
+        "description": "Full-duplex communication protocol enabling persistent bidirectional connections over HTTP",
+        "category": "technology",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "White Team",
+        "url": "https://prismatic-reality.com/glossary/white-team/",
+        "description": "Constructive verification team for formal proofs and contract validation",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "WHOIS",
+        "url": "https://prismatic-reality.com/glossary/whois/",
+        "description": "Domain registration lookup protocol for ownership and infrastructure data",
+        "category": "intelligence",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Zero Trust",
+        "url": "https://prismatic-reality.com/glossary/zero-trust/",
+        "description": "Security model requiring continuous verification of every access request",
+        "category": "security",
+        "abbreviation": "",
+        "relatedCount": 6
+    },
+    
+    {
+        "title": "Zero Warning Policy",
+        "url": "https://prismatic-reality.com/glossary/zero-warning-policy/",
+        "description": "All code must compile with --warnings-as-errors producing zero warnings",
+        "category": "quality",
+        "abbreviation": "",
+        "relatedCount": 5
+    },
+    
+    {
+        "title": "ZKB",
+        "url": "https://prismatic-reality.com/glossary/zkb/",
+        "description": "Czech cybersecurity regulation 264/2025 Sb. for national security compliance",
+        "category": "security",
+        "abbreviation": "ZKB",
+        "relatedCount": 5
+    }
+    
+]
+</script>
+
+<script>
+    function glossaryRegistry() {
+        return {
+            searchTerm: '',
+            selectedCategory: '',
+            activeLetter: '',
+            sortField: 'title',
+            sortDesc: false,
+            currentPage: 1,
+            perPage: 24,
+            alphabet: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''),
+            items: JSON.parse(document.getElementById('glossary-data').textContent),
+
+            get uniqueCategories() {
+                return [...new Set(this.items.map(i => i.category))].length;
+            },
+            get categories() {
+                return [...new Set(this.items.map(i => i.category))].sort();
+            },
+            get letterCounts() {
+                var counts = {};
+                this.alphabet.forEach(function(l) { counts[l] = 0; });
+                this.items.forEach(function(i) {
+                    var first = i.title.charAt(0).toUpperCase();
+                    if (counts[first] !== undefined) counts[first]++;
+                });
+                return counts;
+            },
+            jumpToLetter(letter) {
+                this.activeLetter = letter;
+                this.currentPage = 1;
+            },
+            get filteredItems() {
+                var result = this.items.slice();
+                if (this.searchTerm) {
+                    var q = this.searchTerm.toLowerCase();
+                    result = result.filter(function(i) {
+                        return i.title.toLowerCase().includes(q) ||
+                            i.description.toLowerCase().includes(q) ||
+                            i.category.toLowerCase().includes(q);
+                    });
+                }
+                if (this.selectedCategory) {
+                    var cat = this.selectedCategory;
+                    result = result.filter(function(i) { return i.category === cat; });
+                }
+                if (this.activeLetter) {
+                    var letter = this.activeLetter;
+                    result = result.filter(function(i) {
+                        return i.title.charAt(0).toUpperCase() === letter;
+                    });
+                }
+                var field = this.sortField;
+                var desc = this.sortDesc;
+                result.sort(function(a, b) {
+                    var av = a[field], bv = b[field];
+                    if (typeof av === 'string') { av = av.toLowerCase(); bv = bv.toLowerCase(); }
+                    if (desc) return bv > av ? 1 : bv < av ? -1 : 0;
+                    return av > bv ? 1 : av < bv ? -1 : 0;
+                });
+                return result;
+            },
+            get paginatedItems() {
+                var start = (this.currentPage - 1) * this.perPage;
+                return this.filteredItems.slice(start, start + this.perPage);
+            },
+            get totalPages() {
+                return Math.ceil(this.filteredItems.length / this.perPage) || 1;
+            },
+            get visiblePages() {
+                var pages = [];
+                var total = this.totalPages;
+                var current = this.currentPage;
+                var start = Math.max(1, current - 2);
+                var end = Math.min(total, current + 2);
+                if (end - start < 4) {
+                    if (start === 1) end = Math.min(total, 5);
+                    else start = Math.max(1, total - 4);
+                }
+                for (var i = start; i <= end; i++) pages.push(i);
+                return pages;
+            }
+        };
+    }
+</script>
+
+        </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Open source AI orchestration platform. 530 autonomous agents. 115 umbrella apps.
+                        Community-driven, self-evolving, unstoppable.
+                    </p>
+                    <div class="flex items-center space-x-4 mt-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitLab">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0L8.26 11.26H3.74L12 24l8.26-12.74H15.74L12 0zM3.74 11.26l4.52 7.41L12 0 8.26 11.26H3.74zM20.26 11.26l-4.52 7.41L12 0l3.74 11.26h4.52z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Connect on LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Follow on Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Executive</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/about/author/"
+                                class="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold">Meet the Creator</a></li>
+                        <li><a href="/executive/"
+                                class="text-gray-400 hover:text-white transition-colors">Value Proposition</a></li>
+                        <li><a href="/executive/roi-calculator/"
+                                class="text-gray-400 hover:text-white transition-colors">ROI Calculator</a></li>
+                        <li><a href="/executive/competitive-analysis/"
+                                class="text-gray-400 hover:text-white transition-colors">Competitive Analysis</a></li>
+                        <li><a href="/executive/case-studies/"
+                                class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Intelligence -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Intelligence</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/dd/"
+                                class="text-gray-400 hover:text-white transition-colors">Due Diligence</a></li>
+                        <li><a href="/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Interactive Labs</a></li>
+                        <li><a href="/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="/developers/sdk/"
+                                class="text-gray-400 hover:text-white transition-colors">SDK</a></li>
+                        <li><a href="/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="/blog/"
+                                class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Capabilities</a></li>
+                        <li><a href="/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (530)</a></li>
+                        <li><a href="/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (115+)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                        <li><a href="/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                        <p class="text-sm text-gray-500">
+                            &copy; 2026 <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis" class="text-gray-400 hover:text-white">Tomáš Korcak</a>.
+                            Licensed under <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform/blob/main/LICENSE" class="text-gray-400 hover:text-white">GHL</a>.
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Built with <a href="/capabilities/no-mercy/" class="text-gray-400 hover:text-white">NO MERCY</a>,
+                            <a href="/capabilities/no-doubts/" class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                        <span class="text-sm text-gray-500">v8.0.0</span>
+                        <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                        <span class="text-sm text-gray-400">Gen 19</span>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                    <div class="flex items-center space-x-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitHub</a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitLab</a>
+                        <a href="/blog/" class="hover:text-gray-400">Blog</a>
+                        <a href="/faq/" class="hover:text-gray-400">FAQ</a>
+                    </div>
+                    <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                        <span>530 agents</span>
+                        <span>•</span>
+                        <span>115 apps</span>
+                        <span>•</span>
+                        <span>2.8M LOC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    </div> <!-- Close lg:ml-64 wrapper -->
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Code Copy Buttons -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/code-copy.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Sidebar Toggle + Back to Top -->
+    <script>
+        (function () {
+            // Sidebar toggle for mobile
+            var sidebar = document.getElementById('site-sidebar');
+            var toggle = document.getElementById('sidebar-toggle');
+            var backdrop = document.getElementById('sidebar-backdrop');
+
+            function openSidebar() {
+                if (sidebar) sidebar.classList.remove('-translate-x-full');
+                if (backdrop) backdrop.classList.remove('hidden');
+            }
+            function closeSidebar() {
+                if (sidebar) sidebar.classList.add('-translate-x-full');
+                if (backdrop) backdrop.classList.add('hidden');
+            }
+
+            if (toggle) toggle.addEventListener('click', function () {
+                if (sidebar && sidebar.classList.contains('-translate-x-full')) {
+                    openSidebar();
+                } else {
+                    closeSidebar();
+                }
+            });
+            if (backdrop) backdrop.addEventListener('click', closeSidebar);
+
+            // Back to top
+            var btn = document.getElementById('back-to-top');
+            if (btn) {
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > 400) {
+                        btn.classList.remove('hidden');
+                        btn.classList.add('flex');
+                    } else {
+                        btn.classList.add('hidden');
+                        btn.classList.remove('flex');
+                    }
+                });
+                btn.addEventListener('click', function () {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>
