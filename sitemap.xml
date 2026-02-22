@@ -5609,16 +5609,40 @@
         <loc>https://prismatic-reality.com/glossary/3nl/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/acid-transactions/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/actor-model/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/adapter-pattern/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/addiction-recovery/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/adversarial-architecture/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/adversarial-conditions/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/adversarial-drift/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/adversarial-simulation/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/adversarial-testing/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/adversarial-thinking/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/agent-module/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/agent-orchestration/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/agent-registry/</loc>
@@ -5630,13 +5654,34 @@
         <loc>https://prismatic-reality.com/glossary/agent/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/ai-agent/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/ai-inference/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/ai-model/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/aiad/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/algorithmic-consistency/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/algorithmic-decision-making/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/aml/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/analytics/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/api-gateway/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/api-integration/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/api/</loc>
@@ -5648,10 +5693,49 @@
         <loc>https://prismatic-reality.com/glossary/archer-supreme/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/architectural-decision/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/architectural-insights/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/architectural-pattern/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/architectural-thinking/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/architecture-consulting/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/architecture-excellence/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/artificial-intelligence/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/assessment/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/attack-surface/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/audit-logging/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/audit-trail/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/authentication/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/authority-level/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/authority-structure/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/authorization/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/autoevolve/</loc>
@@ -5660,10 +5744,58 @@
         <loc>https://prismatic-reality.com/glossary/autoheal/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/automate-relentlessly/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/automated-checkpoints/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/automated-decision-making/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/automated-diagnostics/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/automated-self-improvement/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/autonomous-agent/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/autonomous-decision-making/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/autonomous-evolution/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/autonomous-operation/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/autonomous-platforms/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/autonomous-quality/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/autonomous-software-entities/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/axiom-enforcement/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/backpressure/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/bayesian-reasoning/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/beam-vm/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/beam/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/behaviour-pattern/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/behaviour/</loc>
@@ -5673,6 +5805,9 @@
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/beneficial-ownership/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/black-box-intelligence/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/black-team/</loc>
@@ -5693,7 +5828,13 @@
         <loc>https://prismatic-reality.com/glossary/broadway/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/building-software/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/bulkhead-pattern/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/caching/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/canary-release/</loc>
@@ -5714,16 +5855,37 @@
         <loc>https://prismatic-reality.com/glossary/certificate-transparency/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/certification-programs/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/chain-of-command/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/channel/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/chaos-engineering/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/cherry-pick-evidence/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/cherry-picking/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/ci-cd/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/circuit-breaker/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/circular-dependency/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/claude-ai/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/claude-code/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/clean-run/</loc>
@@ -5732,25 +5894,127 @@
         <loc>https://prismatic-reality.com/glossary/cluster/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/code-as-hypothesis/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/code-as-truth/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/code-change/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/code-coverage/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/code-example/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/code-quality/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/code-reviews/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/codebase/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/collaborative-development/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/collaborative-effort/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/collaborative-intelligence/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/collective-intelligence/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/collective-progress/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/color-teams/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/command/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/community-building/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/community-contributions/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/community-engagement/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/community-impact/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/community-interaction/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/community-over-corporation/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/community-owned-innovation/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/community-ownership/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/compilation/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/complete-transparency/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/complex-system-designs/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/compliance-framework/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/component-failures/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/composability/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/comprehension/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/comprehensive-security-modeling/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/comprehensive-verification/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/concepts/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/conceptual-framework/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/conclusions/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/concurrency/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/concurrent-programming/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/conference-speaking/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/confidence-scoring/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/confidence-threshold/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/conflicting-signals/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/connection-pooling/</loc>
@@ -5762,13 +6026,40 @@
         <loc>https://prismatic-reality.com/glossary/consensus-algorithm/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/constant-time/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/containerization/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/continued-operation/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/continuous-deployment/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/continuous-evolution/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/continuous-integration/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/continuous-validation/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/contradiction-preservation/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/controlled-failures/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/cooperative-systems/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/corporate-interests/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/corporate-isolation/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/cosine-similarity/</loc>
@@ -5777,7 +6068,19 @@
         <loc>https://prismatic-reality.com/glossary/cqrs/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/credential-management/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/credo/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/crisis-intervention/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/crisis-resolution/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/curriculum/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/cve/</loc>
@@ -5786,19 +6089,64 @@
         <loc>https://prismatic-reality.com/glossary/cyber-threat-intelligence/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/data-minimization/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/data-pipeline/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/data-protection/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/data-provenance/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/database/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/decision-making-hierarchy/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/decisive-action/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/defensive-posture/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/defensive-security/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/dependency-injection/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/developer-community/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/developer-experience/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/developer-portal/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/development-workflow/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/dialyzer/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/digital-inequality/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/disaster-recovery/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/disciplined-approach/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/distributed-system/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/distributed-systems/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/distributed-tracing/</loc>
@@ -5813,6 +6161,12 @@
         <loc>https://prismatic-reality.com/glossary/domain-driven-design/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/domain-specialization/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/domain/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/duckdb/</loc>
     </url>
     <url>
@@ -5825,7 +6179,16 @@
         <loc>https://prismatic-reality.com/glossary/easm/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/ecosystem-expansion/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/ecosystem/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/ecto/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/elixir-otp-training/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/elixir/</loc>
@@ -5837,17 +6200,56 @@
         <loc>https://prismatic-reality.com/glossary/encryption-at-rest/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/encryption/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/endpoint/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/enforcement-policy/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/enterprise-architecture/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/enterprise-software/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/entity-graph/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/entity-resolution/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/epistemic-attack/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/epistemic-coordination/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/epistemic-developers/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/epistemic-development/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/epistemic-pipeline/</loc>
         <lastmod>2026-02-14</lastmod>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/epistemic-reasoning/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/epistemic-robustness/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/epistemic-validation/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/erlang/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/error-handling/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/etl/</loc>
@@ -5865,7 +6267,25 @@
         <loc>https://prismatic-reality.com/glossary/eventual-consistency/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/evidence-over-opinion/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/evidence/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/evolves-by-necessity/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/executable-code/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/exponential-backoff/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/exunit/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/fast-safe-iteration/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/fault-tolerance/</loc>
@@ -5886,7 +6306,28 @@
         <loc>https://prismatic-reality.com/glossary/fly-io/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/focused-applications/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/formal-necessity/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/formal-proof/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/formal-verification/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/foundation-building/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/full-text-search/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/functional-programming-language/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/functionally-correct/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/garden/</loc>
@@ -5898,6 +6339,9 @@
         <loc>https://prismatic-reality.com/glossary/gen-statem/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/generation-evolution/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/generation/</loc>
     </url>
     <url>
@@ -5907,6 +6351,9 @@
         <loc>https://prismatic-reality.com/glossary/genstage/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/ghl-license/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/git-trees/</loc>
     </url>
     <url>
@@ -5914,6 +6361,12 @@
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/gitops/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/graph-database/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/graph-theory/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/graphql/</loc>
@@ -5928,10 +6381,16 @@
         <loc>https://prismatic-reality.com/glossary/hawkeye/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/health-monitoring/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/hex/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/hot-code-reload/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/human-intervention/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/idempotency/</loc>
@@ -5940,22 +6399,61 @@
         <loc>https://prismatic-reality.com/glossary/immutability/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/impossible-mission-execution/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/incident-response/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/inference/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/information-asymmetry/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/injection-vulnerability/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/input-sanitization/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/intelligence-analysis/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/intelligence-fusion/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/intelligence-platform/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/intelligence-tools/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/intelligent-platforms/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/iso-27001/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/iterate-rapidly/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/jwt/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/key-value-store/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/knowledge-graph/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/knowledge-hoarding/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/knowledge-representation/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/kuzu-db/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/kuzudb/</loc>
@@ -5964,31 +6462,112 @@
         <loc>https://prismatic-reality.com/glossary/kyc/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/l1-operational-units/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/l2-tactical-specialists/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/l3-strategic-commanders/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/l5-supreme-authority/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/laboratory/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/large-systems/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/latency/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/layered-architecture/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/lean4/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/learning-path/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/learning-resource/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/let-it-crash/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/lifecycle-management/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/lines-of-code/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/liveview/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/living-systems/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/llm/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/load-balancing/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/logical-consistency/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/logical-reasoning/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/machine-like-precision/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/machine-readable/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/macro/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/maintainability/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/malicious-actors/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/manual-processes/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/manual-quality-assurance/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/mapping-uncertainty/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/measure-continuously/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/meilisearch/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/mentorship/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/message-passing/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/metadata-management/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/metrics/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/microservices/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/minimum-viable-product/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/mix-task/</loc>
@@ -6003,13 +6582,28 @@
         <loc>https://prismatic-reality.com/glossary/modal-logic/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/modularity/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/monitoring/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/monte-carlo-verification/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/multi-agent-system/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/multi-agent-systems/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/multiple-dimensions/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/mycelial-network/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/nabla-axioms/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/nabla-infinity/</loc>
@@ -6042,10 +6636,31 @@
         <loc>https://prismatic-reality.com/glossary/observer/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/office-hours/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/ollama/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/ontology/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/open-source-advocacy/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/open-source-intelligence/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/open-source-leadership/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/open-source-strategy/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/open-source-superiority/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/open-source/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/openapi-spec/</loc>
@@ -6054,7 +6669,16 @@
         <loc>https://prismatic-reality.com/glossary/openapi/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/orchestration/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/osint/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/otp-application/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/otp-behaviour/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/otp/</loc>
@@ -6066,10 +6690,40 @@
         <loc>https://prismatic-reality.com/glossary/owasp/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/paradigm-shift/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/pattern-matching/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/penetration-testing/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/perfect-software/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/perfect-systems/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/perfection-over-profit/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/perfection-unacceptable/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/performance/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/philosophical-concepts/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/philosophical-statement/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/philosophically-sound/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/phoenix-framework/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/phoenix-liveview/</loc>
@@ -6081,7 +6735,19 @@
         <loc>https://prismatic-reality.com/glossary/pipe-operator/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/platform-enhancements/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/platform-strategy/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/plug/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/policy/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/polyglot-persistence/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/postgresql/</loc>
@@ -6105,19 +6771,46 @@
         <loc>https://prismatic-reality.com/glossary/prismatic-web/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/privilege-escalation/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/process-isolation/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/process-restart/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/production-environment/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/progressive-disclosure/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/project-structure/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/prolog/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/prompt-engineering/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/proof-of-concept/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/property-based-testing/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/proprietary-solutions/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/protocol/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/provenance-mandatory/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/proves-before-claiming/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/pubsub/</loc>
@@ -6138,16 +6831,49 @@
         <loc>https://prismatic-reality.com/glossary/qeve/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/quality-and-transparency/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/quality-assurance/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/quality-debt/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/quality-dna/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/quality-evidence-truth/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/quality-floor-guardian/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/quality-gate/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/quality-gates/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/quality-innovation/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/quality-measurement-system/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/quality-monitoring/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/quality-standard/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/quality-systems/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/quantitative-measure/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/question-everything/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/rag/</loc>
@@ -6156,7 +6882,16 @@
         <loc>https://prismatic-reality.com/glossary/rate-limiting/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/rationalize-evidence/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/rbac/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/real-world-chaos/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/reasoning-error/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/red-team/</loc>
@@ -6165,16 +6900,37 @@
         <loc>https://prismatic-reality.com/glossary/redis/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/reference-documentation/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/registry-otp/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/registry/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/regression-test/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/regression-testing/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/relational-database/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/release/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/releases-elixir/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/reliability/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/repair-mechanisms/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/research-partnerships/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/rest-api/</loc>
@@ -6186,16 +6942,52 @@
         <loc>https://prismatic-reality.com/glossary/risk-score/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/rule-based-reasoning/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/saga-pattern/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/sanctions-screening/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/scalability/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/schema/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/scientific-rigor/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/seadf/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/security-analyst/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/security-assessment/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/security-audit/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/security-modeling/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/security-operations/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/security-rating/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/security-synthesis/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/security-verification/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/self-coordinating/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/self-healing/</loc>
@@ -6205,6 +6997,9 @@
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/session-discipline/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/share-openly/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/shodan/</loc>
@@ -6219,19 +7014,58 @@
         <loc>https://prismatic-reality.com/glossary/signal-plurality/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/simulation/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/slash-command/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/soc2/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/socket-io/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/software-architecture/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/software-development-future/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/software-industry-transformation/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/sparkline/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/specialized-variants/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/specification/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/state-machine/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/static-analysis/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/storage-pattern/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/strategic-advising/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/strategic-command/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/strategic-supreme/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/stream-processing/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/structural-consistency/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/structured-logging/</loc>
@@ -6246,6 +7080,42 @@
         <loc>https://prismatic-reality.com/glossary/supreme-commander/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/sustainable-funding-models/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/synthetic-data/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/system-analysis/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/system-architecture/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/system-complexity-chaos/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/system-design-principle/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/system-health/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/system-migration/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/system-monitoring/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/system-optimization/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/system-weaknesses/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/systematic-self-analysis/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/tactical-execution/</loc>
     </url>
     <url>
@@ -6255,10 +7125,34 @@
         <loc>https://prismatic-reality.com/glossary/task-module/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/taxonomy/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/technical-debt/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/technical-mediocrity/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/technical-perfection/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/technical-vocabulary/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/telemetry/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/theorem-proving/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/theoretical-threat-modeling/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/thinks-before-acting/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/threat-assessment/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/threat-intelligence/</loc>
@@ -6266,6 +7160,9 @@
     <url>
         <loc>https://prismatic-reality.com/glossary/three-nl/</loc>
         <lastmod>2026-02-14</lastmod>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/throughput/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/time-decay/</loc>
@@ -6277,13 +7174,28 @@
         <loc>https://prismatic-reality.com/glossary/tls/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/token-bucket/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/tokenization/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/transition-protocol/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/transparency-builds-trust/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/trinity-gate/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/trinity-passage/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/triple-check/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/truth-over-convenience/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/typespec/</loc>
@@ -6295,13 +7207,34 @@
         <loc>https://prismatic-reality.com/glossary/umbrella/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/unexpected-conditions/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/validation/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/vector-database/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/verifiable-evidence/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/verification-gate/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/verification/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/violation-protocol/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/virtual-machine/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/vulnerability-assessment/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/vulnerability/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/websocket/</loc>
@@ -6311,6 +7244,21 @@
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/whois/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/workflow/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/workshop-facilitation/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/zero-compromise-quality/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/zero-tolerance-quality/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/zero-tolerance/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/zero-trust/</loc>
