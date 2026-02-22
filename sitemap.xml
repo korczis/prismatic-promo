@@ -5645,6 +5645,9 @@
         <loc>https://prismatic-reality.com/glossary/agent-orchestration/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/agent-pool/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/agent-registry/</loc>
     </url>
     <url>
@@ -5822,7 +5825,13 @@
         <loc>https://prismatic-reality.com/glossary/blue-team/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/boot-time/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/bounded-context/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/breach-database/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/broadway/</loc>
@@ -5874,6 +5883,9 @@
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/ci-cd/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/ci/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/circuit-breaker/</loc>
@@ -6080,6 +6092,9 @@
         <loc>https://prismatic-reality.com/glossary/crisis-resolution/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/ctf/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/curriculum/</loc>
     </url>
     <url>
@@ -6156,6 +6171,9 @@
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/docker/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/doctrine/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/domain-driven-design/</loc>
@@ -6271,6 +6289,9 @@
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/evidence/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/evolution/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/evolves-by-necessity/</loc>
@@ -6417,6 +6438,9 @@
         <loc>https://prismatic-reality.com/glossary/input-sanitization/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/integration-testing/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/intelligence-analysis/</loc>
     </url>
     <url>
@@ -6427,6 +6451,9 @@
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/intelligence-tools/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/intelligence/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/intelligent-platforms/</loc>
@@ -6870,6 +6897,9 @@
         <loc>https://prismatic-reality.com/glossary/quality-systems/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/quality/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/quantitative-measure/</loc>
     </url>
     <url>
@@ -6898,6 +6928,9 @@
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/redis/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/refactoring/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/reference-documentation/</loc>
@@ -6951,6 +6984,9 @@
         <loc>https://prismatic-reality.com/glossary/sanctions-screening/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/sandbox/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/scalability/</loc>
     </url>
     <url>
@@ -6985,6 +7021,9 @@
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/security-verification/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/security/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/self-coordinating/</loc>
@@ -7143,6 +7182,12 @@
         <loc>https://prismatic-reality.com/glossary/telemetry/</loc>
     </url>
     <url>
+        <loc>https://prismatic-reality.com/glossary/test-coverage/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/testing/</loc>
+    </url>
+    <url>
         <loc>https://prismatic-reality.com/glossary/theorem-proving/</loc>
     </url>
     <url>
@@ -7208,6 +7253,9 @@
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/unexpected-conditions/</loc>
+    </url>
+    <url>
+        <loc>https://prismatic-reality.com/glossary/unit-testing/</loc>
     </url>
     <url>
         <loc>https://prismatic-reality.com/glossary/validation/</loc>
