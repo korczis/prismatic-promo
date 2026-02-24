@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>BEAM VM - Prismatic Platform Technologies</title>
+
+    
+<meta name="description" content="The Bogdan&#x2F;Bjorn&#x27;s Erlang Abstract Machine - virtual machine powering Elixir and Erlang with lightweight process concurrency">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;technologies&#x2F;beam&#x2F;">
+<meta property="og:title" content="BEAM VM - Prismatic Platform Technologies">
+<meta property="og:description" content="The Bogdan&#x2F;Bjorn&#x27;s Erlang Abstract Machine - virtual machine powering Elixir and Erlang with lightweight process concurrency">
+<meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;technologies&#x2F;beam&#x2F;">
+<meta name="twitter:title" content="BEAM VM - Prismatic Platform Technologies">
+<meta name="twitter:description" content="The Bogdan&#x2F;Bjorn&#x27;s Erlang Abstract Machine - virtual machine powering Elixir and Erlang with lightweight process concurrency">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    
+    
+    <meta name="keywords" content="BEAM, BogdanBjorns, Erlang, Abstract, Machine, Elixir, technologies, language, Prismatic Platform, The BEAM">
+    
+
+    
+    
+    
+    <meta property="article:tag" content="technologies">
+    
+    <meta property="article:tag" content="language">
+    
+    <meta property="article:tag" content="beam-vm">
+    
+    <meta property="article:tag" content="prismatic">
+    
+    
+    <meta property="article:author" content="Tomáš Korcak">
+    <meta property="article:section" content="technologies&#x2F;_index.md">
+    <meta name="author" content="Tomáš Korcak">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;technologies&#x2F;beam&#x2F;">
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Prismatic Platform Feed" href="/atom.xml">
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prismatic Platform",
+        "url": "https://prismatic-reality.com",
+        "description": "Open Source AI-Orchestrated Intelligence Platform | 530+ Agents | 115 Apps | Community-Driven",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://prismatic-reality.com/search/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://prismatic-reality.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Technologies",
+                "item": "https://prismatic-reality.com/technologies/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "BEAM VM"
+            }
+        ]
+    }
+    </script>
+    
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "BEAM VM",
+        "description": "The Bogdan/Bjorn's Erlang Abstract Machine - virtual machine powering Elixir and Erlang with lightweight process concurrency",
+        "url": "https://prismatic-reality.com/technologies/beam/",
+        "author": {
+            "@type": "Person",
+            "name": "Tomáš Korcak",
+            "url": "https:&#x2F;&#x2F;github.com&#x2F;korczis",
+            "sameAs": [
+                "https:&#x2F;&#x2F;github.com&#x2F;korczis",
+                "https:&#x2F;&#x2F;gitlab.com&#x2F;korczis",
+                "https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis",
+                "https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://prismatic-reality.com/technologies/beam/"
+        },
+        "inLanguage": "en",
+        "keywords": "BEAM, BogdanBjorns, Erlang, Abstract, Machine, Elixir, technologies, language, Prismatic Platform, The BEAM",
+        "wordCount": 1322
+    }
+    </script>
+    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <!-- Zola/Giallo Server-Side Syntax Highlighting -->
+    <link rel="stylesheet" href="/giallo.css">
+
+    <!-- Diagram Toggle (Mermaid Source/Interactive) -->
+    <link rel="stylesheet" href="/css/diagram-toggle.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        .glossary-hover-card {
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.98) 0%, rgba(17, 24, 39, 0.98) 100%);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(79, 70, 229, 0.3);
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            max-width: 320px;
+            z-index: 1000;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Horizontal Navigation Bar (Flowbite navbar pattern) -->
+    <nav class="fixed top-0 z-50 w-full bg-gray-950/80 backdrop-blur-xl border-b border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <!-- Brand -->
+            <a href="/" class="flex items-center space-x-3 group">
+                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 gap-2">
+                <!-- GitHub Link -->
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                   class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-400 hover:text-white bg-gray-800/50 hover:bg-gray-800 rounded-lg border border-gray-700 transition-colors"
+                   title="View on GitHub">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <!-- Version Badge -->
+                <span class="hidden md:inline-flex items-center px-2.5 py-1 text-xs font-semibold text-emerald-400 bg-emerald-900/20 rounded-full border border-emerald-500/20">v8.0.0</span>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Menu - Grouped Information Architecture -->
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-0.5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+
+                    <!-- Platform dropdown - indigo: core product features -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-indigo-300 rounded-lg hover:text-white hover:bg-indigo-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                            Platform
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute left-0 mt-2 w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-indigo-400 uppercase tracking-wider">Intelligence</div>
+                            <a href="/dd/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                Due Diligence
+                            </a>
+                            <a href="/osint/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                OSINT
+                            </a>
+                            <a href="/lab/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 00.659 1.591L19 14.5m0 0l-1.47 4.409a2.25 2.25 0 01-2.133 1.541H8.603a2.25 2.25 0 01-2.134-1.541L5 14.5m14 0H5"/></svg>
+                                Interactive Labs
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-indigo-400 uppercase tracking-wider">Ecosystem</div>
+                            <a href="/agents/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                Agents
+                            </a>
+                            <a href="/apps/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                                Apps
+                            </a>
+                            <a href="/applications/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-indigo-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                Applications
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-indigo-400 uppercase tracking-wider">Hub</div>
+                            <a href="/hub/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                                Dashboard Hub
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Developers dropdown - blue: technical resources -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-blue-300 rounded-lg hover:text-white hover:bg-blue-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                            Developers
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute left-0 mt-2 w-52 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/developers/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                                Developer Portal
+                            </a>
+                            <a href="/developers/sdk/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                                SDK
+                            </a>
+                            <a href="/api/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-teal-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                API Reference
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <a href="/commands/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                                Commands
+                            </a>
+                            <a href="/registry/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+                                Registry
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <a href="/developers/plugins/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-orange-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"/></svg>
+                                Plugins
+                            </a>
+                            <a href="/developers/ui-components/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-pink-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                                UI Components
+                            </a>
+                            <a href="/developers/community/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-yellow-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                Community
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Learn dropdown - emerald: educational & knowledge -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-emerald-300 rounded-lg hover:text-white hover:bg-emerald-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                            Learn
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute left-0 mt-2 w-52 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/academy/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                                Academy
+                            </a>
+                            <a href="/capabilities/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                Capabilities
+                            </a>
+                            <a href="/philosophy/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                                Philosophy
+                            </a>
+                            <a href="/architecture/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-lime-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                Architecture
+                            </a>
+                            <a href="/technologies/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+                                Technologies
+                            </a>
+                            <a href="/glossary/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-teal-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                                Glossary
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <a href="/blog/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                                Blog
+                            </a>
+                            <a href="/faq/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                FAQ
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Company dropdown - violet: about & business -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-violet-300 rounded-lg hover:text-white hover:bg-violet-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                            Company
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-52 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/executive/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                                Executive Overview
+                            </a>
+                            <a href="/teams/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                                Color Teams
+                            </a>
+                            <a href="/about/author/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-violet-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                                Author
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-violet-400 uppercase tracking-wider">For You</div>
+                            <a href="/about/for-executives/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                For Executives
+                            </a>
+                            <a href="/about/for-architects/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                For Architects
+                            </a>
+                            <a href="/about/for-developers/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                                For Developers
+                            </a>
+                            <a href="/about/for-security/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-red-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                For Security
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+    <main>
+        
+<!-- Hero Header -->
+<section class="bg-gray-900 py-12 lg:py-16 border-b border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com"
+                        class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                            class="ml-1 text-sm font-medium text-gray-400 hover:text-white md:ml-2">Technologies</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-gray-200 md:ml-2">BEAM VM</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Header Card -->
+        <div class="bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-700 overflow-hidden"
+            x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)">
+            <div class="p-8">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-6" x-show="shown"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform -translate-y-4"
+                    x-transition:enter-end="opacity-100 transform translate-y-0">
+                    <!-- Icon -->
+                    <div class="flex-shrink-0">
+                        <div class="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg text-white font-bold text-2xl
+                            
+                            bg-gray-700
+                            
+                        ">
+                            BE
+                        </div>
+                    </div>
+
+                    <!-- Title & Meta -->
+                    <div class="flex-grow">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <h1 class="text-3xl md:text-4xl font-black text-white">BEAM VM</h1>
+                            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full
+                                
+                                bg-white/5 text-gray-400 border border-white/10
+                                
+                            ">
+                                language
+                            </span>
+                            
+                            <span
+                                class="px-3 py-1 text-xs font-bold uppercase tracking-wider bg-gray-700/50 text-gray-300 rounded-full border border-gray-600">
+                                vOTP 27
+                            </span>
+                            
+                        </div>
+                        <p class="text-lg text-gray-400 leading-relaxed">The Bogdan&#x2F;Bjorn&#x27;s Erlang Abstract Machine - virtual machine powering Elixir and Erlang with lightweight process concurrency</p>
+
+                        <!-- Quick Info -->
+                        <div class="mt-4 flex flex-wrap gap-4">
+                            
+                            <div class="text-sm text-gray-500">
+                                <span class="font-semibold text-gray-300">Version:</span>
+                                <span class="ml-1 px-2 py-0.5 bg-gray-700 rounded">OTP 27</span>
+                            </div>
+                            
+                            
+                            <div class="text-sm">
+                                <a href="https:&#x2F;&#x2F;www.erlang.org&#x2F;blog&#x2F;a-brief-beam-primer&#x2F;" target="_blank" rel="noopener"
+                                    class="text-gray-400 hover:text-white hover:underline">
+                                    <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                    Official Website
+                                </a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="bg-gray-900 py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-3">
+            <!-- Main Content -->
+            <div class="lg:col-span-2">
+                <article class="prose prose-lg prose-invert max-w-none
+                    prose-headings:text-white
+                    prose-p:text-gray-300
+                    prose-a:text-gray-400
+                    prose-strong:text-white
+                    prose-code:text-gray-400
+                    prose-pre:bg-gray-800
+                    prose-table:text-gray-300
+                    prose-th:text-white
+                    prose-td:border-gray-700">
+                    <h2 id="overview">Overview</h2>
+<p>The BEAM (Bogdan/Bjorn's Erlang Abstract Machine) is the virtual machine that executes both Erlang and <a href="https://prismatic-reality.com/technologies/elixir/">Elixir</a> code. It is the critical infrastructure layer that gives the Prismatic Platform its exceptional concurrency, fault tolerance, and real-time capabilities. Unlike the JVM or V8, the BEAM was purpose-built for massive concurrency with soft real-time guarantees, originally designed at Ericsson for telecommunications systems that demanded five-nines (99.999%) availability.</p>
+<p>The BEAM implements a preemptive scheduler that allocates CPU time fairly across all processes using reduction counting. Each BEAM process is extremely lightweight (~2KB initial heap) and fully isolated -- a crashing process cannot corrupt another process's memory. This isolation model is fundamental to the Prismatic Platform's architecture where 404+ agents operate independently, each as a supervised BEAM process that can fail and restart without affecting the rest of the system. The platform routinely runs tens of thousands of concurrent processes handling agent operations, web requests, background jobs, and real-time subscriptions simultaneously.</p>
+<p>The BEAM's garbage collection operates per-process, meaning GC pauses affect only individual processes rather than the entire system. This property is critical for the platform's real-time intelligence processing pipelines where latency spikes are unacceptable. While a JVM application might experience stop-the-world GC pauses affecting all threads, a BEAM application's GC activity is distributed across its process population, with each process independently collecting its own heap. The result is predictable, low-latency behavior even under heavy load.</p>
+<h2 id="key-features">Key Features</h2>
+<p>The BEAM provides a set of runtime capabilities that are unmatched by conventional virtual machines for building concurrent, fault-tolerant systems.</p>
+<ul>
+<li><strong>Per-Process GC</strong>: Garbage collection isolated to individual processes, no global stop-the-world pauses affecting system latency</li>
+<li><strong>Preemptive Scheduling</strong>: Reduction-based fair scheduling across all processes, preventing any single process from monopolizing CPU</li>
+<li><strong>SMP Support</strong>: Symmetric multi-processing with one scheduler per CPU core, automatically distributing work across available hardware</li>
+<li><strong>Process Isolation</strong>: Complete memory isolation between processes -- a crash in one process cannot corrupt another's state</li>
+<li><strong>Distribution Protocol</strong>: Native clustering with transparent inter-node communication for horizontal scaling</li>
+<li><strong>JIT Compilation</strong>: Just-in-time compilation (OTP 24+) for improved performance without sacrificing startup time</li>
+<li><strong>NIFs</strong>: Native Implemented Functions for performance-critical operations with controlled integration points</li>
+<li><strong>Hot Code Loading</strong>: Replace running code without stopping the system, enabling zero-downtime deployments</li>
+<li><strong>Port System</strong>: Safe integration with external programs through OS-level process isolation</li>
+<li><strong>Observer</strong>: Built-in runtime introspection tools for monitoring process counts, memory usage, and message queues</li>
+</ul>
+<table><thead><tr><th>Capability</th><th>BEAM</th><th>JVM</th><th>V8 (Node.js)</th><th>Go Runtime</th></tr></thead><tbody>
+<tr><td>Process model</td><td>Lightweight actors (~2KB)</td><td>OS threads (~1MB)</td><td>Event loop (single)</td><td>Goroutines (~8KB)</td></tr>
+<tr><td>Scheduling</td><td>Preemptive (reduction-based)</td><td>Preemptive (OS)</td><td>Cooperative</td><td>Cooperative</td></tr>
+<tr><td>GC strategy</td><td>Per-process</td><td>Global (G1/ZGC)</td><td>Generational global</td><td>Concurrent global</td></tr>
+<tr><td>Process isolation</td><td>Complete memory isolation</td><td>Shared memory</td><td>Shared memory</td><td>Shared memory</td></tr>
+<tr><td>Distribution</td><td>Built-in clustering</td><td>External (Akka, etc.)</td><td>External</td><td>External</td></tr>
+<tr><td>Hot code loading</td><td>Native</td><td>Limited (classloading)</td><td>None</td><td>None</td></tr>
+<tr><td>Fault tolerance</td><td>Supervision trees</td><td>Try/catch</td><td>Try/catch</td><td>Panic/recover</td></tr>
+</tbody></table>
+<h2 id="platform-integration">Platform Integration</h2>
+<p>The BEAM's process model underpins every Prismatic agent and service. The platform leverages BEAM capabilities extensively for agent orchestration, real-time event processing, and fault-tolerant operation.</p>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-keyword z-control">defmodule</span><span class="z-entity z-other z-inherited-class"> PrismaticAgents</span><span>.</span><span class="z-entity z-name z-type z-class">ProcessMetrics</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-comment">  @moduledoc &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-comment">  BEAM runtime metrics collection for platform monitoring.</span></span>
+<span class="giallo-l"><span class="z-comment">  Demonstrates the introspection capabilities of the BEAM VM.</span></span>
+<span class="giallo-l"><span class="z-comment">  &quot;&quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">spec</span><span class="z-entity z-name z-function"> platform_metrics</span><span class="z-punctuation z-keyword">() ::</span><span class="z-entity z-name z-function"> map</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> platform_metrics</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span>    %</span><span class="z-punctuation">{</span></span>
+<span class="giallo-l"><span>      total_processes</span><span class="z-punctuation z-constant z-other z-symbol">: :erlang.</span><span class="z-entity z-name z-function">system_info</span><span class="z-punctuation z-constant z-other z-symbol">(:process_count),</span></span>
+<span class="giallo-l"><span>      process_limit</span><span class="z-punctuation z-constant z-other z-symbol">: :erlang.</span><span class="z-entity z-name z-function">system_info</span><span class="z-punctuation z-constant z-other z-symbol">(:process_limit),</span></span>
+<span class="giallo-l"><span>      schedulers</span><span class="z-punctuation z-constant z-other z-symbol">: :erlang.</span><span class="z-entity z-name z-function">system_info</span><span class="z-punctuation z-constant z-other z-symbol">(:schedulers_online),</span></span>
+<span class="giallo-l"><span>      memory_total</span><span class="z-punctuation z-constant z-other z-symbol">: :erlang.</span><span class="z-entity z-name z-function">memory</span><span class="z-punctuation z-constant z-other z-symbol">(:total),</span></span>
+<span class="giallo-l"><span>      memory_processes</span><span class="z-punctuation z-constant z-other z-symbol">: :erlang.</span><span class="z-entity z-name z-function">memory</span><span class="z-punctuation z-constant z-other z-symbol">(:processes),</span></span>
+<span class="giallo-l"><span>      memory_ets</span><span class="z-punctuation z-constant z-other z-symbol">: :erlang.</span><span class="z-entity z-name z-function">memory</span><span class="z-punctuation z-constant z-other z-symbol">(:ets),</span></span>
+<span class="giallo-l"><span>      memory_binary</span><span class="z-punctuation z-constant z-other z-symbol">: :erlang.</span><span class="z-entity z-name z-function">memory</span><span class="z-punctuation z-constant z-other z-symbol">(:binary),</span></span>
+<span class="giallo-l"><span>      run_queue</span><span class="z-punctuation z-constant z-other z-symbol">: :erlang.</span><span class="z-entity z-name z-function">statistics</span><span class="z-punctuation z-constant z-other z-symbol">(:run_queue),</span></span>
+<span class="giallo-l"><span>      reductions</span><span class="z-punctuation">:</span><span class="z-entity z-name z-function"> elem</span><span class="z-punctuation z-constant z-other z-symbol">(:erlang.</span><span class="z-entity z-name z-function">statistics</span><span class="z-punctuation z-constant z-other z-symbol">(:reductions),</span><span class="z-constant z-numeric"> 0</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span>      atom_count</span><span class="z-punctuation z-constant z-other z-symbol">: :erlang.</span><span class="z-entity z-name z-function">system_info</span><span class="z-punctuation z-constant z-other z-symbol">(:atom_count),</span></span>
+<span class="giallo-l"><span>      port_count</span><span class="z-punctuation z-constant z-other z-symbol">: :erlang.</span><span class="z-entity z-name z-function">system_info</span><span class="z-punctuation z-constant z-other z-symbol">(:port_count)</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">spec</span><span class="z-entity z-name z-function"> process_info_summary</span><span class="z-punctuation">(</span><span class="z-entity z-name z-function">pid</span><span class="z-punctuation z-keyword">()) ::</span><span class="z-entity z-name z-function"> map</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> process_info_summary</span><span class="z-punctuation">(</span><span>pid</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span>    info </span><span class="z-keyword">=</span><span class="z-entity z-name z-type z-class"> Process</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">info</span><span class="z-punctuation">(</span><span>pid</span><span class="z-punctuation z-constant z-other z-symbol">, [:memory, :message_queue_len, :reductions, :status])</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type z-class">    Map</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">new</span><span class="z-punctuation">(</span><span>info</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">end</span></span></code></pre>
+<p>The BEAM's scheduler is the reason the Prismatic Platform can handle thousands of concurrent WebSocket connections for <a href="https://prismatic-reality.com/technologies/phoenix-liveview/">Phoenix LiveView</a> dashboards while simultaneously running agent computations, database queries, and background processing -- all without explicit thread pool configuration or async/await boilerplate.</p>
+<h2 id="architecture">Architecture</h2>
+<p>The BEAM's internal architecture is built around a set of cooperating schedulers, each running on its own OS thread, with a shared process table and distribution layer for clustering.</p>
+<table><thead><tr><th>Component</th><th>Function</th><th>Platform Impact</th></tr></thead><tbody>
+<tr><td>Schedulers</td><td>One per CPU core, preemptive execution</td><td>Automatic parallelism for all 90 apps</td></tr>
+<tr><td>Process Table</td><td>Global registry of all BEAM processes</td><td>Agent tracking, service discovery</td></tr>
+<tr><td>Run Queues</td><td>Per-scheduler work queues</td><td>Fair distribution of agent workload</td></tr>
+<tr><td>Distribution</td><td>Inter-node communication protocol</td><td>Cluster support for horizontal scaling</td></tr>
+<tr><td>Code Server</td><td>Module loading and versioning</td><td>Hot code deployment, version management</td></tr>
+<tr><td><a href="https://prismatic-reality.com/technologies/ets/">ETS</a></td><td>Shared in-memory term storage</td><td>Agent registries, caches, metrics</td></tr>
+<tr><td>Port Drivers</td><td>External program integration</td><td>NIF bindings, OS command execution</td></tr>
+</tbody></table>
+<p>The scheduler architecture ensures that no single agent or request can starve others. Each BEAM process receives a budget of 4,000 reductions (roughly equivalent to 4,000 function calls) before being preempted, guaranteeing fair scheduling even when some processes are CPU-intensive. This is fundamentally different from Node.js's cooperative event loop or Go's goroutine scheduling, where a computationally expensive task can block others.</p>
+<pre class="giallo z-code"><code data-lang="plain"><span class="giallo-l"><span>BEAM Runtime Architecture:</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>CPU Core 0     CPU Core 1     CPU Core 2     CPU Core 3</span></span>
+<span class="giallo-l"><span>    |              |              |              |</span></span>
+<span class="giallo-l"><span>Scheduler 0   Scheduler 1   Scheduler 2   Scheduler 3</span></span>
+<span class="giallo-l"><span>    |              |              |              |</span></span>
+<span class="giallo-l"><span>Run Queue 0   Run Queue 1   Run Queue 2   Run Queue 3</span></span>
+<span class="giallo-l"><span>    |              |              |              |</span></span>
+<span class="giallo-l"><span>[P1][P2]...   [P5][P6]...   [P9][P10]..   [P13][P14]..</span></span>
+<span class="giallo-l"><span>                                |</span></span>
+<span class="giallo-l"><span>                          Migration logic</span></span>
+<span class="giallo-l"><span>                      (work stealing between queues)</span></span></code></pre><h2 id="performance-characteristics">Performance Characteristics</h2>
+<p>The BEAM is optimized for consistent latency and massive concurrency rather than raw throughput on single-threaded benchmarks. This trade-off is ideal for the Prismatic Platform's workload profile.</p>
+<table><thead><tr><th>Metric</th><th>Typical Value</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Process creation</td><td>~3 microseconds</td><td>300,000+ processes/second</td></tr>
+<tr><td>Process memory (initial)</td><td>~2KB</td><td>Heap grows as needed</td></tr>
+<tr><td>Context switch</td><td>~0.1 microseconds</td><td>100x faster than OS threads</td></tr>
+<tr><td>Message send (local)</td><td>~0.3 microseconds</td><td>Including copy to target heap</td></tr>
+<tr><td>Max processes</td><td>1,000,000 (configured)</td><td>Platform limit in vm.args</td></tr>
+<tr><td>GC pause (per process)</td><td>&lt; 1ms typical</td><td>Only affects the individual process</td></tr>
+<tr><td>Scheduler count</td><td>Matches CPU cores</td><td>Automatic SMP utilization</td></tr>
+<tr><td>JIT compilation speedup</td><td>10-30% over interpreted</td><td>OTP 24+ feature</td></tr>
+</tbody></table>
+<p>The platform configures the BEAM for its specific workload profile, increasing default limits and tuning scheduler behavior for the agent-heavy workload.</p>
+<h2 id="configuration">Configuration</h2>
+<p>BEAM runtime parameters are configured through <code>vm.args</code> for release deployments and through environment configuration for development.</p>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># vm.args - BEAM VM configuration for Prismatic production</span></span>
+<span class="giallo-l"><span class="z-keyword">+</span><span class="z-entity z-name z-type z-class">P</span><span class="z-constant z-numeric"> 1000000</span><span class="z-punctuation z-definition z-comment z-comment">    # Max processes (default 262,144)</span></span>
+<span class="giallo-l"><span class="z-keyword">+</span><span class="z-entity z-name z-type z-class">Q</span><span class="z-constant z-numeric"> 1000000</span><span class="z-punctuation z-definition z-comment z-comment">    # Max ports (file handles, sockets)</span></span>
+<span class="giallo-l"><span class="z-keyword">+</span><span class="z-entity z-name z-type z-class">S</span><span class="z-constant z-numeric"> 8</span><span class="z-punctuation">:</span><span class="z-constant z-numeric">8</span><span class="z-punctuation z-definition z-comment z-comment">        # Schedulers online : total</span></span>
+<span class="giallo-l"><span class="z-keyword">+</span><span>stbt db      </span><span class="z-punctuation z-definition z-comment z-comment"># Scheduler bind type (distribute, balance)</span></span>
+<span class="giallo-l"><span class="z-keyword">+</span><span>sub </span><span class="z-constant z-language">true</span><span class="z-punctuation z-definition z-comment z-comment">     # Scheduler utilization balancing</span></span>
+<span class="giallo-l"><span class="z-keyword">+</span><span class="z-entity z-name z-type z-class">Bi</span><span class="z-punctuation z-definition z-comment z-comment">           # Break handler ignore (production)</span></span>
+<span class="giallo-l"><span class="z-keyword">+</span><span class="z-entity z-name z-type z-class">A</span><span class="z-constant z-numeric"> 16</span><span class="z-punctuation z-definition z-comment z-comment">         # Async thread pool size for NIF operations</span></span>
+<span class="giallo-l"><span class="z-keyword">+</span><span class="z-entity z-name z-type z-class">K</span><span class="z-constant z-language"> true</span><span class="z-punctuation z-definition z-comment z-comment">       # Enable kernel poll (epoll/kqueue)</span></span>
+<span class="giallo-l"><span class="z-keyword">+</span><span>spp </span><span class="z-constant z-language">true</span><span class="z-punctuation z-definition z-comment z-comment">     # Sub-process priority</span></span></code></pre><pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Runtime BEAM tuning via application config</span></span>
+<span class="giallo-l"><span>config </span><span class="z-punctuation z-constant z-other z-symbol">:prismatic, :beam_config,</span></span>
+<span class="giallo-l"><span>  process_limit</span><span class="z-punctuation">:</span><span class="z-constant z-numeric"> 1_000_000</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>  port_limit</span><span class="z-punctuation">:</span><span class="z-constant z-numeric"> 1_000_000</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>  scheduler_count</span><span class="z-punctuation">:</span><span class="z-entity z-name z-type z-class"> System</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">schedulers_online</span><span class="z-punctuation">(),</span></span>
+<span class="giallo-l"><span>  async_threads</span><span class="z-punctuation">:</span><span class="z-constant z-numeric"> 16</span></span></code></pre><h2 id="best-practices">Best Practices</h2>
+<p>The platform follows BEAM-specific operational practices that maximize the runtime's strengths and avoid common pitfalls.</p>
+<ul>
+<li><strong>Never block a scheduler</strong> -- long-running NIF operations must yield back to the scheduler or use dirty schedulers to avoid disrupting the preemptive scheduling guarantee</li>
+<li><strong>Monitor process counts</strong> -- unexpected process growth often indicates a resource leak; the platform tracks this via Telemetry</li>
+<li><strong>Use process isolation for fault domains</strong> -- each agent runs in its own process so failures are contained and recoverable via supervision</li>
+<li><strong>Leverage per-process GC</strong> -- design processes to have short-lived state when possible, enabling fast GC cycles</li>
+<li><strong>Configure process limits explicitly</strong> -- the default 262,144 limit may be insufficient for large platforms; Prismatic sets 1,000,000</li>
+<li><strong>Enable kernel poll</strong> -- the <code>+K true</code> flag enables epoll/kqueue for efficient I/O multiplexing on production systems</li>
+<li><strong>Profile with Observer</strong> -- use <code>:observer.start()</code> during development to visualize process trees, message queues, and memory distribution</li>
+<li><strong>Use dirty schedulers for CPU-bound NIFs</strong> -- prevents NIF operations from blocking normal schedulers and degrading system responsiveness</li>
+</ul>
+<h2 id="comparison">Comparison</h2>
+<p>The BEAM was chosen as the Prismatic Platform's runtime because its design properties align precisely with the platform's requirements for concurrent agent operation, fault isolation, and real-time responsiveness.</p>
+<table><thead><tr><th>Requirement</th><th>BEAM Solution</th><th>Alternative (JVM/Go/Node)</th></tr></thead><tbody>
+<tr><td>404+ concurrent agents</td><td>Lightweight processes (~2KB each)</td><td>Thread pools, goroutines, or event loop</td></tr>
+<tr><td>Agent crash isolation</td><td>Per-process memory isolation</td><td>Shared memory requires manual guards</td></tr>
+<tr><td>Real-time dashboards</td><td>Per-process GC, no global pauses</td><td>Stop-the-world GC causes latency spikes</td></tr>
+<tr><td>Hot deployment</td><td>Native code loading</td><td>Requires restart or complex classloading</td></tr>
+<tr><td>Cluster scaling</td><td>Built-in distribution protocol</td><td>External middleware (Kafka, gRPC, etc.)</td></tr>
+<tr><td>Fair scheduling</td><td>Preemptive reduction counting</td><td>Cooperative scheduling risks starvation</td></tr>
+</tbody></table>
+<h2 id="related-technologies">Related Technologies</h2>
+<ul>
+<li><a href="https://prismatic-reality.com/technologies/elixir/">Elixir</a> - Primary language running on the BEAM, providing modern syntax and metaprogramming</li>
+<li><a href="https://prismatic-reality.com/technologies/erlang-otp/">Erlang/OTP</a> - Runtime system, standard library, and OTP behaviours</li>
+<li><a href="https://prismatic-reality.com/technologies/ets/">ETS</a> - BEAM's built-in in-memory term storage for high-speed data access</li>
+<li><a href="https://prismatic-reality.com/technologies/genserver/">GenServer</a> - OTP process abstraction built on the BEAM's process model</li>
+<li><a href="https://prismatic-reality.com/technologies/supervisor/">Supervisor</a> - Fault tolerance through BEAM process supervision trees</li>
+</ul>
+<h2 id="related-apps">Related Apps</h2>
+<ul>
+<li>All 90 Prismatic Platform applications run on the BEAM virtual machine</li>
+<li><a href="https://prismatic-reality.com/apps/prismatic-agents/">prismatic_agents</a> - 404+ agents running as supervised BEAM processes</li>
+<li><a href="https://prismatic-reality.com/apps/prismatic-web/">prismatic_web</a> - Phoenix web server leveraging BEAM's concurrent connection handling</li>
+<li><a href="https://prismatic-reality.com/apps/prismatic-safety/">prismatic_safety</a> - Quality monitoring processes using BEAM's Observer integration</li>
+</ul>
+<hr />
+<h2 id="connect-contribute">Connect &amp; Contribute</h2>
+<p><strong>Created by <a rel="external" href="https://github.com/korczis">Tomáš Korcak (korczis)</a></strong> | Open Source under <a rel="external" href="https://github.com/korczis/prismatic-platform/blob/main/LICENSE">GHL</a></p>
+<ul>
+<li><a rel="external" href="https://github.com/korczis/prismatic-platform">GitHub</a> | <a rel="external" href="https://gitlab.com/korczis/prismatic-platform">GitLab</a> | <a rel="external" href="https://linkedin.com/in/korczis">LinkedIn</a> | <a href="mailto:korczis@gmail.com">Contact</a></li>
+<li><a href="/developers/">Developer Portal</a> | <a href="/architecture/">Architecture</a> | <a href="/about/author/">Meet the Creator</a></li>
+</ul>
+
+                </article>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="hidden lg:block sticky top-4 space-y-6 self-start">
+                <!-- Technology Info Card -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6">
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-3">
+                            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Technology Info</span>
+                        </div>
+                        <div class="mt-4">
+                            <dl class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-sm text-gray-400">Category</dt>
+                                    <dd class="text-sm font-semibold text-gray-300">Language</dd>
+                                </div>
+                                
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-sm text-gray-400">Version</dt>
+                                    <dd class="text-sm font-semibold text-gray-300">OTP 27</dd>
+                                </div>
+                                
+                                
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-sm text-gray-400">Website</dt>
+                                    <dd class="text-sm font-semibold">
+                                        <a href="https:&#x2F;&#x2F;www.erlang.org&#x2F;blog&#x2F;a-brief-beam-primer&#x2F;" target="_blank" rel="noopener"
+                                            class="text-amber-400 hover:text-amber-300 hover:underline">Visit</a>
+                                    </dd>
+                                </div>
+                                
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-sm text-gray-400">Platform</dt>
+                                    <dd class="text-sm font-semibold text-gray-300">Prismatic v8.0</dd>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <dt class="text-sm text-gray-400">Doctrine</dt>
+                                    <dd class="text-sm font-semibold text-gray-300">NM/ND</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology Stack Stats -->
+                <div class="bg-gray-800/50 rounded-xl border border-white/5 p-5">
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Technology Stack</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between text-xs mb-1">
+                                <span class="text-gray-400">Reading Time</span>
+                                <span class="text-white font-bold">7 min</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-1.5">
+                                <div class="bg-teal-500 h-1.5 rounded-full" style="width: 35%"></div>
+                            </div>
+                        </div>
+                        <div class="pt-2 border-t border-gray-700">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-400">Stack</span>
+                                <span class="font-bold text-white">Elixir/OTP</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Web Framework</span>
+                            <span class="font-bold text-white">Phoenix</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Frontend</span>
+                            <span class="font-bold text-white">LiveView</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Database</span>
+                            <span class="font-bold text-white">PostgreSQL</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Graph DB</span>
+                            <span class="font-bold text-white">KuzuDB</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Search</span>
+                            <span class="font-bold text-white">Meilisearch</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Local AI</span>
+                            <span class="font-bold text-white">Ollama</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paginated Section Navigation -->
+                
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6">
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-3">
+                            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Technologies (47)</span>
+                        </div>
+                        <div class="mt-4">
+                            <div x-data="sectionNav()">
+                                <ul class="space-y-1.5">
+                                    <template x-for="item in paginatedItems" :key="item.url">
+                                        <li><a :href="item.url"
+                                                :class="item.isCurrent ? 'text-amber-400 font-semibold bg-amber-900/20' : 'text-gray-400 hover:text-white hover:bg-gray-700/50'"
+                                                class="block text-sm px-3 py-1.5 rounded-lg transition-all" x-text="item.title"></a>
+                                        </li>
+                                    </template>
+                                </ul>
+                                <div class="flex items-center justify-between mt-4 pt-3 border-t border-gray-700"
+                                    x-show="totalPages > 1">
+                                    <button @click="prevPage()" :disabled="currentPage === 1"
+                                        :class="currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:text-white'"
+                                        class="text-xs font-medium text-gray-400 transition-colors">Previous</button>
+                                    <span class="text-xs text-gray-500" x-text="currentPage + ' / ' + totalPages"></span>
+                                    <button @click="nextPage()" :disabled="currentPage === totalPages"
+                                        :class="currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:text-white'"
+                                        class="text-xs font-medium text-gray-400 transition-colors">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related Glossary Terms -->
+                
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/dd/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Due Diligence<span
+                class="ml-auto text-xs text-gray-600">122 src</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Interactive Labs<span
+                class="ml-auto text-xs text-gray-600">15 exp</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Academy<span
+                class="ml-auto text-xs text-gray-600">15 courses</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>API Reference</a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+
+        <!-- Related Content -->
+        <div class="mt-16 pt-8 border-t border-gray-700">
+            <h2 class="text-2xl font-bold text-white mb-6">Related Content</h2>
+            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                    class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-white mb-1">Architecture</h3>
+                    <p class="text-sm text-gray-400">Platform architecture and system design documentation.</p>
+                </a>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                    class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-white mb-1">Applications</h3>
+                    <p class="text-sm text-gray-400">115 umbrella apps powering the Prismatic
+                        Platform ecosystem.</p>
+                </a>
+                <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                    class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                    <h3 class="font-bold text-white mb-1">Agent Ecosystem</h3>
+                    <p class="text-sm text-gray-400">530 autonomous agents across 14
+                        operational domains.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="mt-8 pt-8 border-t border-gray-700">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/"
+                class="inline-flex items-center px-6 py-3 text-sm font-semibold text-gray-950 bg-white rounded-xl focus:ring-4 focus:ring-teal-800 transition-all shadow-lg hover:shadow-xl">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Technologies
+            </a>
+        </div>
+    </div>
+</section>
+<script id="section-nav-data" type="application/json">
+[
+    
+    
+    {
+        "title": "Elixir",
+        "url": "https://prismatic-reality.com/technologies/elixir/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Erlang/OTP",
+        "url": "https://prismatic-reality.com/technologies/erlang-otp/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "BEAM VM",
+        "url": "https://prismatic-reality.com/technologies/beam/",
+        "isCurrent": true
+    },
+    
+    {
+        "title": "Adaptive System Architecture",
+        "url": "https://prismatic-reality.com/technologies/adaptive-system-architecture/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Phoenix Framework",
+        "url": "https://prismatic-reality.com/technologies/phoenix/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Phoenix LiveView",
+        "url": "https://prismatic-reality.com/technologies/phoenix-liveview/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Ecto",
+        "url": "https://prismatic-reality.com/technologies/ecto/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Plug",
+        "url": "https://prismatic-reality.com/technologies/plug/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Absinthe",
+        "url": "https://prismatic-reality.com/technologies/absinthe/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "TailwindCSS",
+        "url": "https://prismatic-reality.com/technologies/tailwindcss/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Zero-Downtime Evolution System",
+        "url": "https://prismatic-reality.com/technologies/zero-downtime-evolution/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Flowbite",
+        "url": "https://prismatic-reality.com/technologies/flowbite/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Alpine.js",
+        "url": "https://prismatic-reality.com/technologies/alpinejs/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Chart.js",
+        "url": "https://prismatic-reality.com/technologies/chartjs/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Three.js",
+        "url": "https://prismatic-reality.com/technologies/threejs/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Mermaid.js",
+        "url": "https://prismatic-reality.com/technologies/mermaidjs/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "PostgreSQL",
+        "url": "https://prismatic-reality.com/technologies/postgresql/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Quantum-Inspired Optimization Engine",
+        "url": "https://prismatic-reality.com/technologies/quantum-inspired-optimization/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "ETS",
+        "url": "https://prismatic-reality.com/technologies/ets/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Redis",
+        "url": "https://prismatic-reality.com/technologies/redis/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Meilisearch",
+        "url": "https://prismatic-reality.com/technologies/meilisearch/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "KuzuDB",
+        "url": "https://prismatic-reality.com/technologies/kuzudb/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "TimescaleDB",
+        "url": "https://prismatic-reality.com/technologies/timescaledb/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Ollama",
+        "url": "https://prismatic-reality.com/technologies/ollama/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Claude (Anthropic)",
+        "url": "https://prismatic-reality.com/technologies/claude/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Lean 4",
+        "url": "https://prismatic-reality.com/technologies/lean4/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "OpenAI",
+        "url": "https://prismatic-reality.com/technologies/openai/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Docker",
+        "url": "https://prismatic-reality.com/technologies/docker/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Fly.io",
+        "url": "https://prismatic-reality.com/technologies/flyio/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "GitLab CI/CD",
+        "url": "https://prismatic-reality.com/technologies/gitlab-ci/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Nginx",
+        "url": "https://prismatic-reality.com/technologies/nginx/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Dialyzer",
+        "url": "https://prismatic-reality.com/technologies/dialyzer/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Credo",
+        "url": "https://prismatic-reality.com/technologies/credo/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "ExUnit",
+        "url": "https://prismatic-reality.com/technologies/exunit/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Mix",
+        "url": "https://prismatic-reality.com/technologies/mix/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "OpenAPI/Swagger",
+        "url": "https://prismatic-reality.com/technologies/openapi/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "GraphQL",
+        "url": "https://prismatic-reality.com/technologies/graphql/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "WebSockets",
+        "url": "https://prismatic-reality.com/technologies/websockets/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "GenServer",
+        "url": "https://prismatic-reality.com/technologies/genserver/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Supervisor",
+        "url": "https://prismatic-reality.com/technologies/supervisor/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Phoenix PubSub",
+        "url": "https://prismatic-reality.com/technologies/pubsub/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "JOSE",
+        "url": "https://prismatic-reality.com/technologies/jose/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Argon2",
+        "url": "https://prismatic-reality.com/technologies/argon2/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "SSL/TLS",
+        "url": "https://prismatic-reality.com/technologies/ssl-tls/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Zola",
+        "url": "https://prismatic-reality.com/technologies/zola/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "Git",
+        "url": "https://prismatic-reality.com/technologies/git/",
+        "isCurrent": false
+    },
+    
+    {
+        "title": "asdf",
+        "url": "https://prismatic-reality.com/technologies/asdf/",
+        "isCurrent": false
+    }
+    
+]
+</script>
+<script>
+    function sectionNav() {
+        var allItems = JSON.parse(document.getElementById('section-nav-data').textContent);
+    var perPage = 20;
+    return {
+        shown: false,
+        allItems: allItems,
+        currentPage: Math.max(1, Math.ceil((allItems.findIndex(function (i) { return i.isCurrent; }) + 1) / perPage)),
+        perPage: perPage,
+        get totalItems() { return this.allItems.length; },
+        get totalPages() { return Math.ceil(this.allItems.length / this.perPage); },
+        get paginatedItems() {
+            var start = (this.currentPage - 1) * this.perPage;
+            return this.allItems.slice(start, start + this.perPage);
+        },
+        nextPage: function () { if (this.currentPage < this.totalPages) this.currentPage++; },
+        prevPage: function () { if (this.currentPage > 1) this.currentPage--; }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Open source AI orchestration platform. 530 autonomous agents. 115 umbrella apps.
+                        Community-driven, self-evolving, unstoppable.
+                    </p>
+                    <div class="flex items-center space-x-4 mt-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitLab">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0L8.26 11.26H3.74L12 24l8.26-12.74H15.74L12 0zM3.74 11.26l4.52 7.41L12 0 8.26 11.26H3.74zM20.26 11.26l-4.52 7.41L12 0l3.74 11.26h4.52z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Connect on LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Follow on Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Executive</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/about/author/"
+                                class="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold">Meet the Creator</a></li>
+                        <li><a href="/executive/"
+                                class="text-gray-400 hover:text-white transition-colors">Value Proposition</a></li>
+                        <li><a href="/executive/roi-calculator/"
+                                class="text-gray-400 hover:text-white transition-colors">ROI Calculator</a></li>
+                        <li><a href="/executive/competitive-analysis/"
+                                class="text-gray-400 hover:text-white transition-colors">Competitive Analysis</a></li>
+                        <li><a href="/executive/case-studies/"
+                                class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Intelligence -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Intelligence</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/dd/"
+                                class="text-gray-400 hover:text-white transition-colors">Due Diligence</a></li>
+                        <li><a href="/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Interactive Labs</a></li>
+                        <li><a href="/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="/developers/sdk/"
+                                class="text-gray-400 hover:text-white transition-colors">SDK</a></li>
+                        <li><a href="/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="/blog/"
+                                class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Capabilities</a></li>
+                        <li><a href="/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (530)</a></li>
+                        <li><a href="/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (115+)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                        <li><a href="/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                        <p class="text-sm text-gray-500">
+                            &copy; 2026 <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis" class="text-gray-400 hover:text-white">Tomáš Korcak</a>.
+                            Licensed under <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform/blob/main/LICENSE" class="text-gray-400 hover:text-white">GHL</a>.
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Built with <a href="/capabilities/no-mercy/" class="text-gray-400 hover:text-white">NO MERCY</a>,
+                            <a href="/capabilities/no-doubts/" class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                        <span class="text-sm text-gray-500">v8.0.0</span>
+                        <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                        <span class="text-sm text-gray-400">Gen 19</span>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                    <div class="flex items-center space-x-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitHub</a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitLab</a>
+                        <a href="/blog/" class="hover:text-gray-400">Blog</a>
+                        <a href="/faq/" class="hover:text-gray-400">FAQ</a>
+                    </div>
+                    <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                        <span>530 agents</span>
+                        <span>•</span>
+                        <span>115 apps</span>
+                        <span>•</span>
+                        <span>2.8M LOC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Global Glossary Hover Card -->
+    <div x-data="glossaryHover()" x-init="init()">
+        <template x-teleport="body">
+            <div x-show="term"
+                 x-transition:enter="transition ease-out duration-200"
+                 x-transition:enter-start="opacity-0 scale-95"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition ease-in duration-150"
+                 x-transition:leave-start="opacity-100 scale-100"
+                 x-transition:leave-end="opacity-0 scale-95"
+                 class="fixed glossary-hover-card rounded-lg p-4"
+                 :style="`left: ${pos.x}px; top: ${pos.y}px;`"
+                 @mouseenter="clearHide()"
+                 @mouseleave="startHide()">
+                <div class="flex items-center gap-2 mb-2">
+                    <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+                    <h4 class="font-semibold text-white text-sm" x-text="term?.title"></h4>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed" x-text="term?.description"></p>
+                <div class="flex items-center gap-1 mt-2 text-xs text-gray-400">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                    </svg>
+                    <span>Click to explore</span>
+                </div>
+            </div>
+        </template>
+    </div>
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/glossary-data.js"></script>
+    <script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('glossaryHover', () => ({
+            term: null,
+            pos: { x: 0, y: 0 },
+            _timeout: null,
+            init() {
+                this.$nextTick(() => {
+                    document.querySelectorAll('a[href*="/glossary/"]').forEach(link => {
+                        link.addEventListener('mouseenter', (e) => this.show(e));
+                        link.addEventListener('mouseleave', () => this.startHide());
+                    });
+                });
+            },
+            show(event) {
+                this.clearHide();
+                const link = event.target.closest('a');
+                if (!link) return;
+                const rect = link.getBoundingClientRect();
+                const href = link.getAttribute('href');
+                const slug = href.split('/glossary/')[1]?.replace(/\/$/, '').split('/')[0];
+                if (!slug) return;
+                const data = window.__GLOSSARY_DATA__ || {};
+                this.term = data[slug] || {
+                    title: link.textContent.trim(),
+                    description: 'Explore this concept in the glossary'
+                };
+                this.pos = {
+                    x: Math.min(rect.left, window.innerWidth - 340),
+                    y: rect.bottom + 8
+                };
+                if (this.pos.y + 120 > window.innerHeight) {
+                    this.pos.y = rect.top - 120;
+                }
+            },
+            startHide() {
+                this._timeout = setTimeout(() => { this.term = null; }, 200);
+            },
+            clearHide() {
+                if (this._timeout) { clearTimeout(this._timeout); this._timeout = null; }
+            }
+        }));
+    });
+    </script>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Code Copy Buttons -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/code-copy.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Mobile Menu Toggle + Back to Top -->
+    <script>
+        (function () {
+            // Mobile menu toggle
+            var menu = document.getElementById('navbar-menu');
+            var toggle = document.querySelector('[data-collapse-toggle="navbar-menu"]');
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function () {
+                    menu.classList.toggle('hidden');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+                        menu.classList.add('hidden');
+                    }
+                });
+
+                // Close menu on window resize to large screens
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth >= 1024) {
+                        menu.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Back to top
+            var btn = document.getElementById('back-to-top');
+            if (btn) {
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > 400) {
+                        btn.classList.remove('hidden');
+                        btn.classList.add('flex');
+                    } else {
+                        btn.classList.add('hidden');
+                        btn.classList.remove('flex');
+                    }
+                });
+                btn.addEventListener('click', function () {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>

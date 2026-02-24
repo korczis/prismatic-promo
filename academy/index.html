@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Academy - Prismatic Platform</title>
+
+    
+<meta name="description" content="Structured learning paths for mastering the Prismatic Platform">
+<meta property="og:title" content="Academy - Prismatic Platform">
+<meta property="og:description" content="Structured learning paths for mastering the Prismatic Platform">
+
+
+    
+    
+    <meta name="keywords" content="structured learning paths, autonomous agent development, epistemic framework training, Elixir OTP curriculum, platform architecture courses, hands-on coding tutorials, progressive skill development, developer certification program">
+    
+
+    
+    
+    <meta property="article:author" content="Tomáš Korcak">
+    <meta property="article:section" content="Academy">
+    <meta name="author" content="Tomáš Korcak">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;">
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Prismatic Platform Feed" href="/atom.xml">
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prismatic Platform",
+        "url": "https://prismatic-reality.com",
+        "description": "Open Source AI-Orchestrated Intelligence Platform | 530+ Agents | 115 Apps | Community-Driven",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://prismatic-reality.com/search/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://prismatic-reality.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Academy"
+            }
+        ]
+    }
+    </script>
+    
+
+    
+    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <!-- Zola/Giallo Server-Side Syntax Highlighting -->
+    <link rel="stylesheet" href="/giallo.css">
+
+    <!-- Diagram Toggle (Mermaid Source/Interactive) -->
+    <link rel="stylesheet" href="/css/diagram-toggle.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        .glossary-hover-card {
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.98) 0%, rgba(17, 24, 39, 0.98) 100%);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(79, 70, 229, 0.3);
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            max-width: 320px;
+            z-index: 1000;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Horizontal Navigation Bar (Flowbite navbar pattern) -->
+    <nav class="fixed top-0 z-50 w-full bg-gray-950/80 backdrop-blur-xl border-b border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <!-- Brand -->
+            <a href="/" class="flex items-center space-x-3 group">
+                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 gap-2">
+                <!-- GitHub Link -->
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                   class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-400 hover:text-white bg-gray-800/50 hover:bg-gray-800 rounded-lg border border-gray-700 transition-colors"
+                   title="View on GitHub">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <!-- Version Badge -->
+                <span class="hidden md:inline-flex items-center px-2.5 py-1 text-xs font-semibold text-emerald-400 bg-emerald-900/20 rounded-full border border-emerald-500/20">v8.0.0</span>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Menu - Grouped Information Architecture -->
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-0.5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+
+                    <!-- Platform dropdown - indigo: core product features -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-indigo-300 rounded-lg hover:text-white hover:bg-indigo-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                            Platform
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute left-0 mt-2 w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-indigo-400 uppercase tracking-wider">Intelligence</div>
+                            <a href="/dd/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                Due Diligence
+                            </a>
+                            <a href="/osint/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                OSINT
+                            </a>
+                            <a href="/lab/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 00.659 1.591L19 14.5m0 0l-1.47 4.409a2.25 2.25 0 01-2.133 1.541H8.603a2.25 2.25 0 01-2.134-1.541L5 14.5m14 0H5"/></svg>
+                                Interactive Labs
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-indigo-400 uppercase tracking-wider">Ecosystem</div>
+                            <a href="/agents/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                Agents
+                            </a>
+                            <a href="/apps/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                                Apps
+                            </a>
+                            <a href="/applications/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-indigo-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                Applications
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-indigo-400 uppercase tracking-wider">Hub</div>
+                            <a href="/hub/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                                Dashboard Hub
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Developers dropdown - blue: technical resources -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-blue-300 rounded-lg hover:text-white hover:bg-blue-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                            Developers
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute left-0 mt-2 w-52 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/developers/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                                Developer Portal
+                            </a>
+                            <a href="/developers/sdk/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                                SDK
+                            </a>
+                            <a href="/api/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-teal-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                API Reference
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <a href="/commands/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                                Commands
+                            </a>
+                            <a href="/registry/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+                                Registry
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <a href="/developers/plugins/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-orange-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"/></svg>
+                                Plugins
+                            </a>
+                            <a href="/developers/ui-components/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-pink-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                                UI Components
+                            </a>
+                            <a href="/developers/community/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-yellow-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                Community
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Learn dropdown - emerald: educational & knowledge -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-emerald-300 rounded-lg hover:text-white hover:bg-emerald-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                            Learn
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute left-0 mt-2 w-52 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/academy/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                                Academy
+                            </a>
+                            <a href="/capabilities/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                Capabilities
+                            </a>
+                            <a href="/philosophy/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                                Philosophy
+                            </a>
+                            <a href="/architecture/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-lime-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                Architecture
+                            </a>
+                            <a href="/technologies/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+                                Technologies
+                            </a>
+                            <a href="/glossary/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-teal-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                                Glossary
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <a href="/blog/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                                Blog
+                            </a>
+                            <a href="/faq/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                FAQ
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Company dropdown - violet: about & business -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-violet-300 rounded-lg hover:text-white hover:bg-violet-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                            Company
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-52 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/executive/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                                Executive Overview
+                            </a>
+                            <a href="/teams/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                                Color Teams
+                            </a>
+                            <a href="/about/author/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-violet-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                                Author
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-violet-400 uppercase tracking-wider">For You</div>
+                            <a href="/about/for-executives/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                For Executives
+                            </a>
+                            <a href="/about/for-architects/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                For Architects
+                            </a>
+                            <a href="/about/for-developers/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                                For Developers
+                            </a>
+                            <a href="/about/for-security/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-red-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                For Security
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+    <main>
+        
+<!-- Hero Section -->
+<section class="py-16 lg:py-20 border-b border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+                
+<nav class="flex mb-6" aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 md:space-x-2">
+        <li class="inline-flex items-center">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+                Home
+            </a>
+        </li>
+        <li aria-current="page">
+            <div class="flex items-center">
+                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                <span class="ml-1 text-sm font-medium text-gray-300 md:ml-2">Academy</span>
+            </div>
+        </li>
+    </ol>
+</nav>
+
+<div class="mb-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 text-xs font-bold tracking-widest text-blue-400 bg-blue-900/30 rounded-full uppercase border border-blue-700/30">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+                Learning Paths
+            </div>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">
+                Academy
+            </h1>
+            <p class="text-lg text-gray-400 max-w-3xl leading-relaxed">
+                17 hands-on courses spanning beginner to advanced, built on progressive disclosure and production realism.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-12 lg:py-16" x-data="academyFilter()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-4">
+            <!-- Main Content (3/4) -->
+            <div class="lg:col-span-3">
+                <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;api-integration&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('api integration guide', 'using the auto-introspecting rest api, authentication, openapi spec, and sdk patterns')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">API Integration Guide</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-blue-900/50 text-blue-400
+                                ">intermediate</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Using the auto-introspecting REST API, authentication, OpenAPI spec, and SDK patterns</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;nabla-infinity-guide&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('applying nabla infinity axioms', 'practical guide to the 7 epistemic axioms, trinity gate validation, and confidence thresholds')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Applying NABLA Infinity Axioms</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-blue-900/50 text-blue-400
+                                ">intermediate</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Practical guide to the 7 epistemic axioms, Trinity Gate validation, and confidence thresholds</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;easm-development&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('building easm features', 'external attack surface management development with security ratings, compliance assessment, and asset discovery')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Building EASM Features</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-purple-900/50 text-purple-400
+                                ">advanced</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">External Attack Surface Management development with security ratings, compliance assessment, and asset discovery</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;liveview-dashboards&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('building liveview dashboards', 'real-time monitoring interfaces with phoenix liveview, flowbite components, and tailwindcss')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Building LiveView Dashboards</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-blue-900/50 text-blue-400
+                                ">intermediate</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Real-time monitoring interfaces with Phoenix LiveView, Flowbite components, and TailwindCSS</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;first-agent&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('building your first autonomous agent', 'step-by-step guide to creating an aiad-compliant agent from scratch')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Building Your First Autonomous Agent</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-green-900/50 text-green-400
+                                ">beginner</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Step-by-step guide to creating an AIAD-compliant agent from scratch</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;color-team-security&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('color team security operations', 'understanding the 6 color teams, adversarial-defensive synthesis, and simulation setup')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Color Team Security Operations</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-purple-900/50 text-purple-400
+                                ">advanced</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Understanding the 6 color teams, adversarial-defensive synthesis, and simulation setup</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;development-workflow&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('development workflow &amp; ci&#x2F;cd', 'setting up your environment, git hooks, pre-commit checks, and the deployment pipeline')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Development Workflow &amp; CI&#x2F;CD</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-green-900/50 text-green-400
+                                ">beginner</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Setting up your environment, Git hooks, pre-commit checks, and the deployment pipeline</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;dd-investigation&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('due diligence investigation techniques', 'comprehensive guide to conducting due diligence investigations using the prismatic dd platform with entity resolution, graph analysis, and triple-check validation')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Due Diligence Investigation Techniques</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-purple-900/50 text-purple-400
+                                ">advanced</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Comprehensive guide to conducting due diligence investigations using the Prismatic DD Platform with entity resolution, graph analysis, and triple-check validation</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;formal-verification-guide&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('formal verification with lean4', 'using qeve for property-based testing, proof construction, and invariant verification')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Formal Verification with Lean4</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-purple-900/50 text-purple-400
+                                ">advanced</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Using QEVE for property-based testing, proof construction, and invariant verification</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;getting-started&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('getting started with prismatic platform', 'your first steps into the prismatic platform umbrella architecture and otp foundations')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Getting Started with Prismatic Platform</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-green-900/50 text-green-400
+                                ">beginner</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Your first steps into the Prismatic Platform umbrella architecture and OTP foundations</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;monte-carlo-fundamentals&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('monte carlo fundamentals - probabilistic analysis and risk assessment', '')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Monte Carlo Fundamentals - Probabilistic Analysis and Risk Assessment</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-blue-900/50 text-blue-400
+                                ">intermediate</span>
+                            
+                        </div>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;agent-orchestration&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('multi-agent orchestration patterns', 'supreme orchestrators, agent hierarchies, coordination protocols, and distributed decision-making')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Multi-Agent Orchestration Patterns</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-blue-900/50 text-blue-400
+                                ">intermediate</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Supreme orchestrators, agent hierarchies, coordination protocols, and distributed decision-making</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;otp-fundamentals&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('otp design patterns for prismatic', 'genserver, supervisor, application patterns, process topology, and fault tolerance in the prismatic context')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">OTP Design Patterns for Prismatic</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-green-900/50 text-green-400
+                                ">beginner</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">GenServer, Supervisor, Application patterns, process topology, and fault tolerance in the Prismatic context</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;evolution-patterns&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('self-evolving agent ecosystems', 'understanding darwinian evolution, fitness functions, generation progression, and autonomous improvement')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Self-Evolving Agent Ecosystems</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-purple-900/50 text-purple-400
+                                ">advanced</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Understanding Darwinian evolution, fitness functions, generation progression, and autonomous improvement</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;storage-patterns&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('storage architecture &amp; adapters', 'working with postgresql, ets, kuzudb, and meilisearch through the trait-based storage layer')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Storage Architecture &amp; Adapters</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-blue-900/50 text-blue-400
+                                ">intermediate</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Working with PostgreSQL, ETS, KuzuDB, and Meilisearch through the trait-based storage layer</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;aiad-standard&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('the aiad standard explained', 'agent-command-pipeline-policy architecture, writing compliant components, and the aiad specification format')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">The AIAD Standard Explained</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-blue-900/50 text-blue-400
+                                ">intermediate</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Agent-Command-Pipeline-Policy architecture, writing compliant components, and the AIAD specification format</p>
+                        
+                    </a>
+                    
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;quality-standards&#x2F;"
+                       class="group p-6 bg-gray-800 rounded-xl border border-gray-700 hover:border-blue-700/50 hover:bg-gray-800/80 transition-all duration-200"
+                       x-show="matchesSearch('understanding no mercy, no doubts', 'deep dive into the quality doctrine, enforcement levels, and violation protocols')"
+                       x-transition:enter="transition ease-out duration-200"
+                       x-transition:enter-start="opacity-0"
+                       x-transition:enter-end="opacity-100">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-base font-semibold text-white group-hover:text-blue-400 transition-colors">Understanding NO MERCY, NO DOUBTS</h3>
+                            
+                            <span class="shrink-0 ml-2 px-2 py-0.5 text-xs font-medium rounded
+                                bg-green-900/50 text-green-400
+                                ">beginner</span>
+                            
+                        </div>
+                        
+                        <p class="text-sm text-gray-400 leading-relaxed line-clamp-2">Deep dive into the quality doctrine, enforcement levels, and violation protocols</p>
+                        
+                    </a>
+                    
+                </div>
+
+                <!-- Section Content -->
+                <div class="mt-10 prose prose-invert prose-lg max-w-none text-gray-300 leading-relaxed">
+                    <h2 id="perex">Perex</h2>
+<p>The Prismatic Academy provides comprehensive structured <a href="https://prismatic-reality.com/glossary/learning-path/">learning paths</a> that take developers from initial platform orientation through mastery of <a href="https://prismatic-reality.com/glossary/autonomous-agent/">autonomous agent</a> development, <a href="https://prismatic-reality.com/glossary/epistemic-reasoning/">epistemic reasoning</a> systems, and production-grade <a href="https://prismatic-reality.com/glossary/software-architecture/">architecture</a>. This living <a href="https://prismatic-reality.com/glossary/curriculum/">curriculum</a> evolves with the platform itself, incorporating lessons from <a href="https://prismatic-reality.com/glossary/laboratory/">Lab</a> experiments, production patterns, and <a href="https://prismatic-reality.com/glossary/developer-community/">developer community</a> feedback.</p>
+<p>Built on <a href="https://prismatic-reality.com/glossary/progressive-disclosure/">progressive disclosure</a>, hands-on primacy, and production realism, every theoretical concept includes <a href="https://prismatic-reality.com/glossary/executable-code/">executable code</a> with observable results using the same <a href="https://prismatic-reality.com/glossary/quality-standard/">quality standards</a> that govern the <a href="https://prismatic-reality.com/glossary/production-environment/">production platform</a>.</p>
+<h2 id="key-academy-resources">Key Academy Resources</h2>
+<p><strong>15+ Courses</strong> • <strong>3 Learning Tracks</strong> • <strong>40+ Hours Content</strong> • <strong>60% Hands-On</strong></p>
+<p>The Academy spans beginner through advanced tracks with progressive skill development, comprehensive assessments, and certification pathways. Each course integrates with Lab experimentation and API documentation, forming a triangle of learning resources that reinforces understanding from multiple angles.</p>
+<h3 id="learning-track-structure">Learning Track Structure</h3>
+<table><thead><tr><th>Track</th><th>Duration</th><th>Focus Area</th><th>Skills Developed</th></tr></thead><tbody>
+<tr><td><strong>Beginner</strong></td><td>12 hours</td><td>Platform foundations</td><td>First <a href="https://prismatic-reality.com/glossary/agent/">agent</a>, <a href="https://prismatic-reality.com/glossary/quality-standard/">quality standards</a>, <a href="https://prismatic-reality.com/glossary/otp/">OTP</a> fundamentals</td></tr>
+<tr><td><strong>Intermediate</strong></td><td>16 hours</td><td><a href="https://prismatic-reality.com/glossary/agent-orchestration/">Agent orchestration</a></td><td><a href="https://prismatic-reality.com/glossary/multi-agent-system/">Multi-agent systems</a>, <a href="https://prismatic-reality.com/glossary/nabla-infinity/">NABLA Infinity</a>, <a href="https://prismatic-reality.com/glossary/aiad/">AIAD</a> standard</td></tr>
+<tr><td><strong>Advanced</strong></td><td>12+ hours</td><td>Advanced systems</td><td><a href="https://prismatic-reality.com/glossary/color-teams/">Color Team</a> security, <a href="https://prismatic-reality.com/glossary/easm/">EASM</a>, <a href="https://prismatic-reality.com/glossary/formal-verification/">formal verification</a></td></tr>
+</tbody></table>
+<h3 id="academy-statistics">Academy Statistics</h3>
+<ul>
+<li><strong>Total Courses</strong>: 15+ comprehensive learning modules</li>
+<li><strong>Learning Tracks</strong>: 3 progressive skill development paths</li>
+<li><strong>Content Duration</strong>: 40+ hours of structured educational content</li>
+<li><strong>Hands-On Ratio</strong>: 60% practical exercises and code examples</li>
+<li><strong>Assessment System</strong>: Prerequisite enforcement with proficiency verification</li>
+<li><strong>Certification</strong>: Available for completed track mastery</li>
+<li><strong>Integration</strong>: Tight coupling with Lab and API resources</li>
+</ul>
+<h3 id="quick-navigation">Quick Navigation</h3>
+<ul>
+<li><strong><a href="https://prismatic-reality.com/lab/">Lab Experiments</a></strong> - Hands-on experimentation complementing Academy theory</li>
+<li><strong><a href="https://prismatic-reality.com/api/">API Reference</a></strong> - Technical documentation for Academy concepts</li>
+<li><strong><a href="https://prismatic-reality.com/agents/">Agent System</a></strong> - 531 agents that students learn to build and orchestrate</li>
+<li><strong><a href="https://prismatic-reality.com/capabilities/">Platform Capabilities</a></strong> - Core doctrines taught throughout curriculum</li>
+<li><strong><a href="https://prismatic-reality.com/developers/">Developer Portal</a></strong> - Tools and resources for Academy students</li>
+</ul>
+<h3 id="explore-platform">Explore Platform</h3>
+<table><thead><tr><th>Component</th><th>Count</th><th>Description</th></tr></thead><tbody>
+<tr><td><strong>Learning Courses</strong></td><td>15+</td><td>Comprehensive modules from foundations to advanced systems</td></tr>
+<tr><td><strong>Practical Exercises</strong></td><td>60%</td><td>Hands-on coding with executable examples and assessments</td></tr>
+<tr><td><strong>Agent Integration</strong></td><td>531</td><td>Students learn to build and coordinate autonomous agents</td></tr>
+<tr><td><strong>Quality Standards</strong></td><td>100/100</td><td>All examples meet production platform quality requirements</td></tr>
+<tr><td><strong>Certification Tracks</strong></td><td>3</td><td>Beginner → Intermediate → Advanced progression</td></tr>
+</tbody></table>
+<h3 id="want-to-know-more">Want to Know More?</h3>
+<p>Start with the <a href="https://prismatic-reality.com/academy/#beginner-track">beginner track</a> for platform foundations, explore <a href="https://prismatic-reality.com/academy/#intermediate-track">intermediate concepts</a> for multi-agent orchestration, or dive into <a href="https://prismatic-reality.com/academy/#advanced-track">advanced topics</a> for security and formal verification.</p>
+<p><strong>About Academy</strong>: <a href="https://prismatic-reality.com/academy/#learning-path-architecture">Learning Philosophy</a> • Track Structure • Assessment System</p>
+<hr />
+<h2 id="overview">Overview</h2>
+<p>The <a href="https://prismatic-reality.com/glossary/curriculum/">curriculum</a> spans 15 courses organized across three tracks, totaling over 40 hours of structured content. Each course combines explanatory text, annotated <a href="https://prismatic-reality.com/glossary/code-example/">code examples</a>, guided exercises, and <a href="https://prismatic-reality.com/glossary/assessment/">assessment</a> checkpoints. The Academy integrates tightly with the <a href="https://prismatic-reality.com/lab/">Lab</a> for hands-on experimentation and the <a href="https://prismatic-reality.com/api/">API</a> for <a href="https://prismatic-reality.com/glossary/reference-documentation/">reference documentation</a>, forming a triangle of <a href="https://prismatic-reality.com/glossary/learning-resource/">learning resources</a> that reinforces understanding from multiple angles.</p>
+<p>The Academy does not assume prior experience with the Prismatic Platform, but it does assume baseline programming competence. Developers comfortable with at least one general-purpose programming language and familiar with basic concepts like version control, HTTP APIs, and relational databases will find the beginner track immediately accessible.</p>
+<h2 id="learning-path-architecture">Learning Path Architecture</h2>
+<p>The Academy organizes its curriculum into three progressive tracks. Each track builds on the knowledge established by the previous one, though experienced developers may skip ahead if they can demonstrate proficiency through the assessment system.</p>
+<p>The track structure is not merely organizational convenience. It reflects a deliberate pedagogical design that matches the cognitive load of each topic to the learner's preparation. Agent orchestration, for example, requires understanding individual agent behavior first; NABLA Infinity requires understanding why epistemic rigor matters before diving into axiom enforcement. The tracks encode these dependencies.</p>
+<p><strong>Beginner Track</strong> (12 hours): Platform foundations, first <a href="https://prismatic-reality.com/glossary/agent/">agent</a>, <a href="https://prismatic-reality.com/glossary/quality-standard/">quality standards</a>, <a href="https://prismatic-reality.com/glossary/development-workflow/">development workflow</a>, <a href="https://prismatic-reality.com/glossary/otp/">OTP</a> fundamentals. The learner emerges able to navigate the <a href="https://prismatic-reality.com/glossary/codebase/">codebase</a>, build simple <a href="https://prismatic-reality.com/glossary/agent/">agents</a>, and contribute code that passes <a href="https://prismatic-reality.com/glossary/quality-gate/">quality gates</a>.</p>
+<p><strong>Intermediate Track</strong> (16 hours): <a href="https://prismatic-reality.com/glossary/agent-orchestration/">Agent orchestration</a>, <a href="https://prismatic-reality.com/glossary/nabla-infinity/">NABLA Infinity</a>, <a href="https://prismatic-reality.com/glossary/storage-pattern/">storage patterns</a>, <a href="https://prismatic-reality.com/glossary/liveview/">LiveView</a> dashboards, <a href="https://prismatic-reality.com/glossary/aiad/">AIAD</a> standard. The learner emerges able to design <a href="https://prismatic-reality.com/glossary/multi-agent-system/">multi-agent systems</a>, implement <a href="https://prismatic-reality.com/glossary/epistemic-validation/">epistemic validation</a>, and build production dashboards.</p>
+<p><strong>Advanced Track</strong> (12+ hours): <a href="https://prismatic-reality.com/glossary/color-teams/">Color Team</a> security, <a href="https://prismatic-reality.com/glossary/easm/">EASM</a> development, <a href="https://prismatic-reality.com/glossary/formal-verification/">formal verification</a>, evolution patterns, <a href="https://prismatic-reality.com/glossary/api-integration/">API integration</a>. The learner emerges able to contribute to the platform's most sophisticated subsystems and lead architectural decisions.</p>
+<h2 id="beginner-track">Beginner Track</h2>
+<p>The beginner track establishes the foundational knowledge required to work productively within the Prismatic Platform. It assumes no prior platform experience and introduces concepts in a carefully sequenced order.</p>
+<h3 id="platform-overview">Platform Overview</h3>
+<p>The opening course orients learners to the platform's umbrella architecture, the role of OTP in providing fault tolerance and concurrency, and the organization of the 90+ applications that comprise the system. Learners explore the codebase structure, understand how applications depend on each other, and learn to navigate using the git-trees tooling that provides fast indexed access to the entire file tree.</p>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Understanding umbrella structure</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Each app in apps/ is an independent OTP application</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># with its own supervision tree, configuration, and tests</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># List all applications</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type z-class">Mix</span><span class="z-punctuation">.</span><span class="z-entity z-name z-type z-class">Project</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">apps_paths</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># =&gt; %{prismatic: &quot;apps/prismatic&quot;, prismatic_web: &quot;apps/prismatic_web&quot;, ...}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Each app declares its dependencies explicitly</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">defp</span><span class="z-entity z-name z-function"> deps</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation">  [</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:prismatic_storage_core,</span><span> in_umbrella</span><span class="z-punctuation z-constant z-language">: true},</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:prismatic_agents,</span><span> in_umbrella</span><span class="z-punctuation z-constant z-language">: true}</span></span>
+<span class="giallo-l"><span class="z-punctuation">  ]</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">end</span></span></code></pre><h3 id="first-agent">First Agent</h3>
+<p>This course guides learners through building their first AIAD-compliant autonomous agent. Starting from the agent specification format, learners implement a simple agent that monitors a data source, applies a transformation, and emits results. The course emphasizes OTP process design, supervision strategies, and the message-passing patterns that agents use to communicate.</p>
+<h3 id="quality-standards">Quality Standards</h3>
+<p>The quality standards course introduces the NO MERCY, NO DOUBTS doctrine and its practical implications. Learners understand why the platform maintains zero-warning compilation, 100% typespec coverage, and mandatory regression tests. They practice running the quality gate toolchain (<code>mix compile --warnings-as-errors</code>, <code>mix credo --strict</code>, <code>mix test --cover</code>) and learn to interpret and resolve violations.</p>
+<h3 id="development-workflow">Development Workflow</h3>
+<p>This course covers the practical mechanics of contributing to the platform: git workflow conventions, commit message standards, the CI/CD pipeline, pre-commit hooks, and the session discipline protocol. Learners set up their development environment, make a practice contribution, and verify that it passes all quality gates.</p>
+<h3 id="otp-fundamentals">OTP Fundamentals</h3>
+<p>The <a href="https://prismatic-reality.com/glossary/otp/">OTP</a> fundamentals course provides a focused introduction to the <a href="https://prismatic-reality.com/glossary/otp-behaviour/">OTP behaviours</a> that underpin the platform: <a href="https://prismatic-reality.com/glossary/genserver/">GenServer</a> for stateful processes, <a href="https://prismatic-reality.com/glossary/supervisor/">Supervisor</a> for <a href="https://prismatic-reality.com/glossary/fault-tolerance/">fault tolerance</a>, and Application for <a href="https://prismatic-reality.com/glossary/lifecycle-management/">lifecycle management</a>. Rather than covering <a href="https://prismatic-reality.com/glossary/otp/">OTP</a> in abstract, this course teaches it through platform-specific examples, showing how real Prismatic modules use these patterns.</p>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-keyword z-control">defmodule</span><span class="z-entity z-other z-inherited-class"> MyAgent</span><span>.</span><span class="z-entity z-name z-type z-class">Server</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  use</span><span class="z-entity z-name z-type z-class"> GenServer</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">impl</span><span class="z-constant z-language"> true</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> init</span><span class="z-punctuation">(</span><span>config</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">    schedule_check</span><span class="z-punctuation">(</span><span>config</span><span class="z-punctuation">.</span><span>interval</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:ok,</span><span> %</span><span class="z-punctuation">{</span><span>config</span><span class="z-punctuation">:</span><span> config</span><span class="z-punctuation">,</span><span> last_check</span><span class="z-punctuation z-constant z-language">: nil,</span><span> findings</span><span class="z-punctuation">: []}}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">impl</span><span class="z-constant z-language"> true</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> handle_info</span><span class="z-punctuation z-constant z-other z-symbol">(:check,</span><span> state</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">    case</span><span class="z-entity z-name z-function"> perform_check</span><span class="z-punctuation">(</span><span>state</span><span class="z-punctuation">.</span><span>config</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">      {:ok,</span><span> findings</span><span class="z-punctuation z-keyword">} -&gt;</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">        schedule_check</span><span class="z-punctuation">(</span><span>state</span><span class="z-punctuation">.</span><span>config</span><span class="z-punctuation">.</span><span>interval</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">        {:noreply,</span><span> %</span><span class="z-punctuation">{</span><span>state </span><span class="z-keyword">|</span><span> last_check</span><span class="z-punctuation">:</span><span class="z-entity z-name z-type z-class"> DateTime</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">utc_now</span><span class="z-punctuation">(),</span><span> findings</span><span class="z-punctuation">:</span><span> findings</span><span class="z-punctuation">}}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">      {:error,</span><span> reason</span><span class="z-punctuation z-keyword">} -&gt;</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type z-class">        Logger</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">warning</span><span class="z-punctuation">(&quot;</span><span class="z-string">Check failed: </span><span class="z-punctuation">#{</span><span class="z-entity z-name z-function">inspect</span><span class="z-punctuation">(</span><span class="z-meta z-embedded">reason</span><span class="z-punctuation">)}&quot;)</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">        schedule_check</span><span class="z-punctuation">(</span><span>state</span><span class="z-punctuation">.</span><span>config</span><span class="z-punctuation">.</span><span>retry_interval</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">        {:noreply,</span><span> state</span><span class="z-punctuation">}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">    end</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control">  defp</span><span class="z-entity z-name z-function"> schedule_check</span><span class="z-punctuation">(</span><span>interval</span><span class="z-punctuation">),</span><span> do:</span><span class="z-entity z-name z-type z-class"> Process</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">send_after</span><span class="z-punctuation">(</span><span class="z-entity z-name z-function">self</span><span class="z-punctuation z-constant z-other z-symbol">(), :check,</span><span> interval</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">end</span></span></code></pre><h2 id="intermediate-track">Intermediate Track</h2>
+<p>The intermediate track builds on the beginner foundation to address production-scale concerns: multi-agent coordination, epistemic validation, diverse storage backends, real-time interfaces, and the AIAD standard that governs all autonomous components.</p>
+<h3 id="agent-orchestration">Agent Orchestration</h3>
+<p>This course teaches the patterns for coordinating multiple agents to accomplish complex objectives. Topics include the supreme orchestrator pattern, agent dependency graphs, message routing strategies, and failure handling in multi-agent workflows. Learners implement a multi-agent pipeline that processes data through several specialized agents and produces a consolidated result.</p>
+<h3 id="nabla-infinity">NABLA Infinity</h3>
+<p>The <a href="https://prismatic-reality.com/glossary/nabla-infinity/">NABLA Infinity</a> course is one of the Academy's most distinctive offerings. It teaches the platform's <a href="https://prismatic-reality.com/glossary/epistemic-pipeline/">epistemic framework</a>: the seven non-negotiable <a href="https://prismatic-reality.com/glossary/nabla-axioms/">axioms</a> (<a href="https://prismatic-reality.com/glossary/signal-plurality/">Signal Plurality</a>, <a href="https://prismatic-reality.com/glossary/contradiction-preservation/">Contradiction Preservation</a>, Absence Informative, Time Decay, Unknown Valid, Source Independence, Provenance Mandatory), the <a href="https://prismatic-reality.com/glossary/trinity-gate/">Trinity Gate's</a> three-layer <a href="https://prismatic-reality.com/glossary/validation/">validation</a>, and the <a href="https://prismatic-reality.com/glossary/confidence-scoring/">confidence threshold</a> system. Learners implement <a href="https://prismatic-reality.com/glossary/axiom-enforcement/">axiom enforcement</a> in practice scenarios and experience firsthand how the framework prevents common <a href="https://prismatic-reality.com/glossary/reasoning-error/">reasoning errors</a>.</p>
+<h3 id="storage-patterns">Storage Patterns</h3>
+<p>This course covers the platform's multi-backend storage architecture. Learners work with PostgreSQL for relational data, ETS for fast in-memory state, KuzuDB for graph relationships, and Meilisearch for full-text search. The course emphasizes the adapter pattern that provides a uniform interface across backends, and teaches learners to select the appropriate storage technology for different data characteristics.</p>
+<h3 id="liveview-dashboards">LiveView Dashboards</h3>
+<p>The LiveView dashboards course teaches the construction of real-time monitoring interfaces using Phoenix LiveView, TailwindCSS, and Flowbite components. Learners build a dashboard that displays live telemetry data, handles user interactions, and updates in real-time without page reloads. The course covers LiveView lifecycle, socket assigns, live components, and the platform's dashboard design conventions.</p>
+<h3 id="aiad-standard">AIAD Standard</h3>
+<p>This course provides a comprehensive introduction to the Autonomous Intelligence Agent Design standard that governs all autonomous components on the platform. Topics include agent specification format, command specification format, pipeline design, policy enforcement, and the relationship between AIAD specifications and their runtime implementations. Learners author complete AIAD specifications for agents they have built.</p>
+<h2 id="advanced-track">Advanced Track</h2>
+<p>The advanced track addresses the platform's most sophisticated subsystems and prepares learners to make architectural contributions. Courses at this level assume solid understanding of the beginner and intermediate material.</p>
+<h3 id="color-team-security">Color Team Security</h3>
+<p>This course teaches the platform's adversarial-defensive security model. Learners understand the roles of all six color teams (Gray, Red, Blue, Purple, White, Black), the signal flow architecture between teams, and the safety protocols that constrain security research. Practical exercises involve designing Gray team boundary explorations, simulating Red team scenarios with synthetic data, and evaluating Blue team defensive postures.</p>
+<h3 id="easm-development">EASM Development</h3>
+<p>The External Attack Surface Management course covers the Perimeter module's architecture: asset discovery, security rating calculations (A-F grading with numeric scores), compliance assessment against NIS2 and ZKB frameworks, and the LiveView dashboard that presents findings. Learners implement a custom scanner that discovers a new asset type and integrates it into the rating pipeline.</p>
+<h3 id="formal-verification">Formal Verification</h3>
+<p>This course introduces the platform's formal verification capabilities, including property-based testing with StreamData, the QEVE (Lean4 + NABLA + Monte Carlo) verification engine, and the White Team's progressive verification methodology (L0-L5). Learners write property-based tests for existing modules and explore how formal proofs complement traditional testing.</p>
+<h3 id="evolution-patterns">Evolution Patterns</h3>
+<p>The evolution patterns course examines the platform's self-evolving capabilities: the autoheal system, the autoevolve scanner, quality floor guardians, and the generation-based fitness tracking that has carried the platform from Generation 1 to Generation 18. Learners understand how the platform identifies improvement opportunities and applies them autonomously.</p>
+<h3 id="api-integration">API Integration</h3>
+<p>This course teaches advanced usage of the platform's <a href="https://prismatic-reality.com/api/">auto-introspecting API</a>, covering topics beyond basic endpoint consumption: custom type mapping, webhook integration, rate limit management, batch operations, and the process by which <a href="https://prismatic-reality.com/lab/">Lab</a> experiments graduate to become API endpoints. Learners build a client library that consumes the API programmatically.</p>
+<h2 id="pedagogical-approach">Pedagogical Approach</h2>
+<p>The Academy's pedagogical approach has been refined through iterative application and draws on established principles of technical education.</p>
+<h3 id="progressive-disclosure">Progressive Disclosure</h3>
+<p>Concepts are introduced at the level of abstraction appropriate to the learner's current understanding. The beginner track, for example, teaches agents as "processes that do work on a schedule" before revealing the full OTP supervision machinery underneath. Each layer of abstraction is only peeled back when the learner has demonstrated competence at the current level.</p>
+<h3 id="hands-on-primacy">Hands-On Primacy</h3>
+<p>Every course maintains a minimum 60% hands-on ratio. Theory sections are kept concise and are immediately followed by executable examples. Learners are expected to run code, observe results, modify parameters, and verify their understanding through experimentation. The <a href="https://prismatic-reality.com/lab/">Lab</a> provides the sandboxed environment for experiments that exceed the scope of inline exercises.</p>
+<h3 id="spaced-repetition">Spaced Repetition</h3>
+<p>Key concepts are revisited across multiple courses at increasing levels of sophistication. OTP supervision, for example, is introduced in the beginner track, applied to multi-agent systems in the intermediate track, and analyzed in the context of self-healing evolution in the advanced track. This repetition ensures deep retention of fundamental concepts.</p>
+<h3 id="real-world-grounding">Real-World Grounding</h3>
+<p>All examples use production patterns. There are no toy examples that teach techniques inapplicable to real work. When a course demonstrates an agent, it uses the AIAD specification format. When it demonstrates a query, it uses the platform's actual storage adapter interface. This ensures that skills transfer seamlessly from Academy exercises to production contributions.</p>
+<h2 id="prerequisites-and-skill-matrix">Prerequisites and Skill Matrix</h2>
+<p>Each track defines clear prerequisites that learners should satisfy before beginning.</p>
+<p><strong>Beginner Track Prerequisites</strong>: Proficiency in at least one programming language. Familiarity with git version control. Basic understanding of HTTP and REST APIs. Comfort with a terminal/command-line environment. No Elixir experience required; the track teaches the necessary Elixir/OTP concepts.</p>
+<p><strong>Intermediate Track Prerequisites</strong>: Completion of the beginner track or equivalent demonstrated knowledge. Working familiarity with Elixir syntax and OTP basics. Ability to build and test simple GenServer processes. Understanding of the platform's quality gate workflow.</p>
+<p><strong>Advanced Track Prerequisites</strong>: Completion of the intermediate track or equivalent demonstrated knowledge. Ability to design multi-agent systems. Understanding of the NABLA Infinity axioms. Familiarity with at least two storage backends. Experience with LiveView or equivalent real-time web framework.</p>
+<p>The Academy provides a self-assessment tool that evaluates a learner's current skill level and recommends the appropriate starting point. Learners who believe they can skip a track can take the track's final assessment; a passing score grants credit and advancement.</p>
+<h2 id="interactive-livebook-ecosystem">Interactive Livebook Ecosystem</h2>
+<p>The Academy is complemented by a <strong>100-notebook interactive Livebook ecosystem</strong> spanning all platform domains. These computational notebooks provide hands-on practice with real-time visualization, live BEAM VM introspection, and distributed node connectivity.</p>
+<h3 id="livebook-learning-paths-by-domain">Livebook Learning Paths by Domain</h3>
+<table><thead><tr><th>Domain</th><th>Livebooks</th><th>Key Topics</th><th>Difficulty Range</th></tr></thead><tbody>
+<tr><td><strong>OSINT &amp; Intelligence</strong></td><td>10</td><td>Command Center, Social Media, Domain Intel, Financial Intel, Threat Feeds, Geolocation, Dark Web, Email Intel, Sanctions, Real-time Monitoring</td><td>Intermediate → Expert</td></tr>
+<tr><td><strong>Storage &amp; Data</strong></td><td>10</td><td>Adapter Benchmarks, Multi-Query Studio, ETS Deep Dive, PostgreSQL Analytics, Meilisearch, KuzuDB Graph, Migration, Caching, Pipeline Monitor, Backup/Recovery</td><td>Beginner → Expert</td></tr>
+<tr><td><strong>AI &amp; Agents</strong></td><td>10</td><td>Orchestration Center, Behavior Analysis, Color Team Ops, LLM Integration, NABLA Epistemic, Evolution Tracker, Supervision Trees, Prompt Engineering, AIAD Registry, Communication Monitor</td><td>Intermediate → Expert</td></tr>
+<tr><td><strong>Academy &amp; Learning</strong></td><td>10</td><td>Learning Path Designer, Topic Registry, Quiz Builder, Progress Tracker, GRACE Framework, Knowledge Graph, Skill Assessment, Interconnection Mapper, Certification, Collaborative Notebook</td><td>Beginner → Expert</td></tr>
+<tr><td><strong>Quality &amp; Testing</strong></td><td>10</td><td>Quality Gates Dashboard, Coverage Analyzer, Property-Based Testing, Credo Studio, Dialyzer Explorer, Regression Runner, Forbidden Patterns, Benchmarks, Mutation Testing, Quality DNA</td><td>Intermediate → Expert</td></tr>
+<tr><td><strong>Performance &amp; Monitoring</strong></td><td>10</td><td>Telemetry Dashboard, Page Load Profiler, Process Inspector, Memory Profiler, Scheduler Utilization, DB Query Analyzer, HTTP Traffic, ETS Inspector, Distributed Nodes, Alerting Rules</td><td>Intermediate → Expert</td></tr>
+<tr><td><strong>Security &amp; Compliance</strong></td><td>10</td><td>Security Audit, Vulnerability Scanner, OWASP Compliance, Auth Tester, Encryption Analyzer, RBAC Editor, NIS2 Dashboard, GDPR Mapper, Pentest Planner, Incident Responder</td><td>Intermediate → Expert</td></tr>
+<tr><td><strong>API &amp; Integration</strong></td><td>10</td><td>Gateway Explorer, OpenAPI Builder, REST Tester, Webhooks, GraphQL Playground, Rate Limiter, Versioning, MCP Browser, Performance Profiler, Integration Health</td><td>Intermediate → Expert</td></tr>
+<tr><td><strong>Data Analysis</strong></td><td>10</td><td>Statistical Studio, Visualization Builder, CSV/JSON Transformer, Time Series, Anomaly Detection, Correlation Explorer, Report Generator, Pivot Tables, ML Evaluator, Data Quality</td><td>Beginner → Expert</td></tr>
+<tr><td><strong>Platform Administration</strong></td><td>10</td><td>System Health, User Management, Configuration, Deployment Pipeline, Log Analyzer, Database Admin, Release Manager, Environment Comparator, Audit Logs, Platform Diagnostics</td><td>Intermediate → Expert</td></tr>
+</tbody></table>
+<h3 id="livebook-academy-integration">Livebook-Academy Integration</h3>
+<p>Every livebook connects to the platform via distributed Erlang (<code>Node.connect/1</code>), enabling real-time introspection of running systems. Features include:</p>
+<ul>
+<li><strong>Interactive Kino Widgets</strong>: Dropdowns, sliders, buttons, text inputs for parameter configuration</li>
+<li><strong>Real-time VegaLite Charts</strong>: Live-updating visualizations with push-based data streaming</li>
+<li><strong>BEAM VM Introspection</strong>: Direct access to <code>:erlang.memory/0</code>, <code>Process.list/0</code>, <code>:ets.all/0</code></li>
+<li><strong>Cross-Domain References</strong>: Each livebook links to related <a href="https://prismatic-reality.com/glossary/">Glossary</a> terms, <a href="https://prismatic-reality.com/lab/">Lab</a> experiments, and Academy courses</li>
+<li><strong>Platform Connectivity</strong>: <code>Node.connect(:"prismatic@127.0.0.1")</code> for live distributed operation</li>
+</ul>
+<h3 id="recommended-livebook-sequences">Recommended Livebook Sequences</h3>
+<p><strong>For Beginners</strong>: Start with Storage &amp; Data → Platform Administration → Data Analysis
+<strong>For Security Focus</strong>: Security &amp; Compliance → OSINT &amp; Intelligence → AI &amp; Agents (Color Team)
+<strong>For Developers</strong>: API &amp; Integration → Quality &amp; Testing → Performance &amp; Monitoring
+<strong>For Data Scientists</strong>: Data Analysis → OSINT &amp; Intelligence → Academy &amp; Learning</p>
+<p>All livebooks are located in <code>livebooks/domains/</code> within the platform repository.</p>
+<h2 id="lab-integration">Lab Integration</h2>
+<p>The Academy maintains a bidirectional integration with the <a href="https://prismatic-reality.com/lab/">Lab</a> that enriches both components.</p>
+<p>Academy courses reference real Lab experiments as case studies. When a course teaches pipeline optimization, it can point to a specific Lab experiment that benchmarked different pipeline topologies, showing real data and real conclusions. This grounding in actual experimental results gives Academy content an authority that purely theoretical material lacks.</p>
+<p>In the reverse direction, when Academy students encounter questions that existing materials cannot answer, those questions may seed new Lab experiments. If multiple students ask "how does axiom enforcement perform at 10x the normal load?" and no existing data addresses this, the question becomes a Lab hypothesis.</p>
+<p>Intermediate and advanced courses include Lab exercises where learners design and execute experiments in the Lab's sandboxed environment. These exercises teach not only the course's subject matter but also the experimental methodology skills that the Lab demands: hypothesis formulation, controlled execution, rigorous analysis, and clear reporting.</p>
+<h2 id="api-integration-1">API Integration</h2>
+<p>The <a href="https://prismatic-reality.com/api/">API</a> serves as the Academy's definitive reference layer. Every concept taught in the Academy has a corresponding API surface that learners can explore interactively.</p>
+<p>When an Academy course introduces a capability such as security rating calculation, it teaches the concepts, motivation, and design behind the feature. The API reference then provides the precise endpoint specification, request/response schemas, error codes, and usage examples. This two-layer approach separates understanding (Academy) from specification (API), allowing each to serve its purpose without compromise.</p>
+<pre class="giallo z-code"><code data-lang="shellscript"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># Academy teaches the concept of asset discovery</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># API provides the executable specification</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># After learning about EASM in the Academy, learners can immediately</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># interact with the real API:</span></span>
+<span class="giallo-l"><span class="z-entity z-name">curl</span><span class="z-string"> -X POST http://localhost:4004/api/v1/perimeter/discover</span><span class="z-constant z-character z-escape"> \</span></span>
+<span class="giallo-l"><span class="z-string">  -H</span><span class="z-punctuation"> &quot;</span><span class="z-string">Authorization: Bearer </span><span class="z-variable">$API_TOKEN</span><span class="z-punctuation">&quot;</span><span class="z-constant z-character z-escape"> \</span></span>
+<span class="giallo-l"><span class="z-string">  -H</span><span class="z-punctuation"> &quot;</span><span class="z-string">Content-Type: application/json</span><span class="z-punctuation">&quot;</span><span class="z-constant z-character z-escape"> \</span></span>
+<span class="giallo-l"><span class="z-string">  -d</span><span class="z-punctuation"> &#39;</span><span class="z-string">{&quot;domain&quot;: &quot;example.com&quot;}</span><span class="z-punctuation">&#39;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># The API&#39;s auto-generated OpenAPI spec at /api/openapi</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># serves as the authoritative reference for every endpoint</span></span></code></pre>
+<p>Academy courses that involve API interaction include a "Reference" sidebar that links directly to the relevant API endpoint documentation. This tight coupling ensures that learners always know where to find precise specifications for the concepts they are studying.</p>
+<h2 id="assessment-and-certification">Assessment and Certification</h2>
+<p>The Academy employs a multi-layered assessment approach to verify genuine understanding rather than surface familiarity.</p>
+<h3 id="knowledge-checks">Knowledge Checks</h3>
+<p>Each course section concludes with brief knowledge checks that verify comprehension of the material just covered. These are not graded formally but serve as self-assessment tools that help learners identify gaps before proceeding.</p>
+<h3 id="practical-exercises">Practical Exercises</h3>
+<p>Each course includes practical exercises that require learners to write code, run experiments, or analyze scenarios. Exercises are auto-graded where possible, with manual review for open-ended submissions. The exercise system provides immediate feedback with explanations of correct approaches.</p>
+<h3 id="track-assessments">Track Assessments</h3>
+<p>At the conclusion of each track, learners complete a comprehensive assessment that covers the entire track's material. Track assessments combine multiple-choice questions for concept verification with practical coding challenges that test applied skill. A minimum score of 80% is required to earn track completion credit.</p>
+<h3 id="certification">Certification</h3>
+<p>Learners who complete all three tracks and pass their assessments receive Prismatic Platform certification. Certification indicates demonstrated competence across the full spectrum of platform capabilities, from basic agent construction through advanced security operations and formal verification. Certification is valid for one year, after which learners must pass an updated assessment to renew, ensuring that certified practitioners remain current with platform evolution.</p>
+<h3 id="proficiency-levels">Proficiency Levels</h3>
+<p>The certification system recognizes three proficiency levels that correspond to the tracks:</p>
+<table><thead><tr><th>Level</th><th>Track</th><th>Demonstrated Capability</th></tr></thead><tbody>
+<tr><td><strong>Practitioner</strong></td><td>Beginner</td><td>Navigate codebase, build agents, pass quality gates</td></tr>
+<tr><td><strong>Engineer</strong></td><td>Intermediate</td><td>Design multi-agent systems, implement epistemic validation, build dashboards</td></tr>
+<tr><td><strong>Architect</strong></td><td>Advanced</td><td>Lead architectural decisions, conduct security operations, formal verification</td></tr>
+</tbody></table>
+<h2 id="community-and-contribution">Community and Contribution</h2>
+<p>The Academy is a community resource, and its quality depends on contributions from practitioners across the platform ecosystem.</p>
+<h3 id="contributing-tutorials">Contributing Tutorials</h3>
+<p>Developers who discover effective patterns, resolve non-obvious problems, or develop novel approaches are encouraged to contribute Academy content. Contributed tutorials follow the same structure as core courses: clear learning objectives, progressive concept introduction, executable code examples, and assessment checkpoints.</p>
+<h3 id="feedback-and-improvement">Feedback and Improvement</h3>
+<p>Every Academy page includes a feedback mechanism that captures learner experience. Common areas of confusion are flagged for content revision. Suggestions for new courses are reviewed quarterly and prioritized based on demand and strategic alignment.</p>
+<h3 id="mentorship">Mentorship</h3>
+<p>The Academy supports a mentorship model where advanced-track graduates can volunteer as mentors for learners in earlier tracks. Mentors provide guidance on exercises, review practical submissions, and share production experience that enriches the Academy's theoretical content.</p>
+<h3 id="content-freshness">Content Freshness</h3>
+<p>Academy content is reviewed and updated on a quarterly cycle to reflect platform changes. When the platform introduces new capabilities, the Academy team assesses which courses need updating and creates new content where necessary. The <a href="https://prismatic-reality.com/lab/">Lab</a> provides a continuous stream of new experimental results that feed into course updates, and the <a href="https://prismatic-reality.com/api/">API</a> reference layer updates automatically as new endpoints are discovered.</p>
+<p>The Academy's goal is not merely to document the platform but to accelerate mastery. Every design decision, from track structure to assessment methodology, serves this goal. Developers who complete the Academy curriculum are not just informed about the platform; they are prepared to contribute to its evolution.</p>
+<hr />
+<h2 id="connect-contribute">Connect &amp; Contribute</h2>
+<p><strong>Created by <a rel="external" href="https://github.com/korczis">Tomas Korcak (korczis)</a></strong> | Open Source under <a rel="external" href="https://github.com/korczis/prismatic-platform/blob/main/LICENSE">GHL</a></p>
+<ul>
+<li><a rel="external" href="https://github.com/korczis/prismatic-platform">GitHub</a> | <a rel="external" href="https://gitlab.com/korczis/prismatic-platform">GitLab</a> | <a rel="external" href="https://linkedin.com/in/korczis">LinkedIn</a> | <a href="mailto:korczis@gmail.com">Contact</a></li>
+<li><a href="/developers/">Developer Portal</a> | <a href="/architecture/">Architecture</a> | <a href="/about/author/">Meet the Creator</a></li>
+</ul>
+
+                </div>
+            </div>
+
+            <!-- Right Sidebar (1/4) -->
+            <div class="hidden lg:block sticky top-4 space-y-6 self-start">
+                <!-- Card 1: Section Topics -->
+                <div x-data="{ expanded: true }" class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Section Topics</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-transition class="px-4 pb-4">
+                        <div class="mb-3">
+                            <input type="text" x-model="search" placeholder="Filter courses..."
+                                   class="block w-full pl-3 pr-4 py-2 text-xs text-white border border-gray-600 rounded-lg bg-gray-900 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-500">
+                        </div>
+                        <div class="max-h-[400px] overflow-y-auto space-y-1 pr-1 scrollbar-thin">
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;api-integration&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                API Integration Guide
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;nabla-infinity-guide&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Applying NABLA Infinity Axioms
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;easm-development&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Building EASM Features
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;liveview-dashboards&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Building LiveView Dashboards
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;first-agent&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Building Your First Autonomous Agent
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;color-team-security&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Color Team Security Operations
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;development-workflow&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Development Workflow &amp; CI&#x2F;CD
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;dd-investigation&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Due Diligence Investigation Techniques
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;formal-verification-guide&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Formal Verification with Lean4
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;getting-started&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Getting Started with Prismatic Platform
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;monte-carlo-fundamentals&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Monte Carlo Fundamentals - Probabilistic Analysis and Risk Assessment
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;agent-orchestration&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Multi-Agent Orchestration Patterns
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;otp-fundamentals&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                OTP Design Patterns for Prismatic
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;evolution-patterns&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Self-Evolving Agent Ecosystems
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;storage-patterns&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Storage Architecture &amp; Adapters
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;aiad-standard&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                The AIAD Standard Explained
+                            </a>
+                            
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;academy&#x2F;quality-standards&#x2F;" class="block px-3 py-1.5 text-xs text-gray-400 hover:text-blue-400 hover:bg-gray-700/50 rounded-lg transition-colors truncate">
+                                Understanding NO MERCY, NO DOUBTS
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Section Statistics -->
+                <div x-data="{ expanded: true }" class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Section Statistics</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-transition class="px-4 pb-4 space-y-3">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Total Courses</span>
+                            <span class="font-bold text-white">17</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Section Type</span>
+                            <span class="font-bold text-blue-400">Learning Paths</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Platform</span>
+                            <span class="font-bold text-gray-300">Prismatic v8.0</span>
+                        </div>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-400">Difficulty Levels</span>
+                            <span class="font-bold text-purple-400">3 tiers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Quick Navigation -->
+                <div x-data="{ expanded: true }" class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Quick Navigation</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-transition class="px-4 pb-4 space-y-1">
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/dd/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">Due Diligence</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">Apply Academy skills to real DD investigations</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">Lab</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">Apply what you learn in sandboxed experiments</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">API Reference</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">Precise endpoint specs complementing Academy concepts</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">OSINT Sources</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">122 intelligence sources for hands-on practice</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="block p-2 rounded-lg hover:bg-gray-700/50 transition-colors group">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                <span class="text-sm font-medium text-gray-300 group-hover:text-white">Agents</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-0.5 ml-6">434 autonomous agents driving platform intelligence</p>
+                        </a>
+                    </div>
+                </div>
+
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/dd/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Due Diligence<span
+                class="ml-auto text-xs text-gray-600">122 src</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Interactive Labs<span
+                class="ml-auto text-xs text-gray-600">15 exp</span></a>
+        
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>API Reference</a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-12 border-t border-white/5">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <h3 class="text-lg font-semibold text-white mb-6">See Also</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/" class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 transition-all">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Academy &rarr; Lab</p>
+                <p class="text-sm text-gray-400">Apply what you learn in sandboxed experiments</p>
+            </a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/dd/" class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:border-emerald-700/50 transition-all">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Academy &rarr; Due Diligence</p>
+                <p class="text-sm text-gray-400">Apply investigation skills to real DD workflows</p>
+            </a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/" class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:border-cyan-700/50 transition-all">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-2">Academy &rarr; API</p>
+                <p class="text-sm text-gray-400">Auto-generated endpoint reference for every module</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+<script>
+function academyFilter() {
+    return {
+        search: '',
+        matchesSearch: function(title, description) {
+            if (!this.search) return true;
+            var s = this.search.toLowerCase();
+            return title.includes(s) || description.includes(s);
+        }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Open source AI orchestration platform. 530 autonomous agents. 115 umbrella apps.
+                        Community-driven, self-evolving, unstoppable.
+                    </p>
+                    <div class="flex items-center space-x-4 mt-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitLab">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0L8.26 11.26H3.74L12 24l8.26-12.74H15.74L12 0zM3.74 11.26l4.52 7.41L12 0 8.26 11.26H3.74zM20.26 11.26l-4.52 7.41L12 0l3.74 11.26h4.52z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Connect on LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Follow on Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Executive</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/about/author/"
+                                class="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold">Meet the Creator</a></li>
+                        <li><a href="/executive/"
+                                class="text-gray-400 hover:text-white transition-colors">Value Proposition</a></li>
+                        <li><a href="/executive/roi-calculator/"
+                                class="text-gray-400 hover:text-white transition-colors">ROI Calculator</a></li>
+                        <li><a href="/executive/competitive-analysis/"
+                                class="text-gray-400 hover:text-white transition-colors">Competitive Analysis</a></li>
+                        <li><a href="/executive/case-studies/"
+                                class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Intelligence -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Intelligence</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/dd/"
+                                class="text-gray-400 hover:text-white transition-colors">Due Diligence</a></li>
+                        <li><a href="/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Interactive Labs</a></li>
+                        <li><a href="/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="/developers/sdk/"
+                                class="text-gray-400 hover:text-white transition-colors">SDK</a></li>
+                        <li><a href="/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="/blog/"
+                                class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Capabilities</a></li>
+                        <li><a href="/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (530)</a></li>
+                        <li><a href="/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (115+)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                        <li><a href="/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                        <p class="text-sm text-gray-500">
+                            &copy; 2026 <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis" class="text-gray-400 hover:text-white">Tomáš Korcak</a>.
+                            Licensed under <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform/blob/main/LICENSE" class="text-gray-400 hover:text-white">GHL</a>.
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Built with <a href="/capabilities/no-mercy/" class="text-gray-400 hover:text-white">NO MERCY</a>,
+                            <a href="/capabilities/no-doubts/" class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                        <span class="text-sm text-gray-500">v8.0.0</span>
+                        <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                        <span class="text-sm text-gray-400">Gen 19</span>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                    <div class="flex items-center space-x-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitHub</a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitLab</a>
+                        <a href="/blog/" class="hover:text-gray-400">Blog</a>
+                        <a href="/faq/" class="hover:text-gray-400">FAQ</a>
+                    </div>
+                    <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                        <span>530 agents</span>
+                        <span>•</span>
+                        <span>115 apps</span>
+                        <span>•</span>
+                        <span>2.8M LOC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Global Glossary Hover Card -->
+    <div x-data="glossaryHover()" x-init="init()">
+        <template x-teleport="body">
+            <div x-show="term"
+                 x-transition:enter="transition ease-out duration-200"
+                 x-transition:enter-start="opacity-0 scale-95"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition ease-in duration-150"
+                 x-transition:leave-start="opacity-100 scale-100"
+                 x-transition:leave-end="opacity-0 scale-95"
+                 class="fixed glossary-hover-card rounded-lg p-4"
+                 :style="`left: ${pos.x}px; top: ${pos.y}px;`"
+                 @mouseenter="clearHide()"
+                 @mouseleave="startHide()">
+                <div class="flex items-center gap-2 mb-2">
+                    <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+                    <h4 class="font-semibold text-white text-sm" x-text="term?.title"></h4>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed" x-text="term?.description"></p>
+                <div class="flex items-center gap-1 mt-2 text-xs text-gray-400">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                    </svg>
+                    <span>Click to explore</span>
+                </div>
+            </div>
+        </template>
+    </div>
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/glossary-data.js"></script>
+    <script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('glossaryHover', () => ({
+            term: null,
+            pos: { x: 0, y: 0 },
+            _timeout: null,
+            init() {
+                this.$nextTick(() => {
+                    document.querySelectorAll('a[href*="/glossary/"]').forEach(link => {
+                        link.addEventListener('mouseenter', (e) => this.show(e));
+                        link.addEventListener('mouseleave', () => this.startHide());
+                    });
+                });
+            },
+            show(event) {
+                this.clearHide();
+                const link = event.target.closest('a');
+                if (!link) return;
+                const rect = link.getBoundingClientRect();
+                const href = link.getAttribute('href');
+                const slug = href.split('/glossary/')[1]?.replace(/\/$/, '').split('/')[0];
+                if (!slug) return;
+                const data = window.__GLOSSARY_DATA__ || {};
+                this.term = data[slug] || {
+                    title: link.textContent.trim(),
+                    description: 'Explore this concept in the glossary'
+                };
+                this.pos = {
+                    x: Math.min(rect.left, window.innerWidth - 340),
+                    y: rect.bottom + 8
+                };
+                if (this.pos.y + 120 > window.innerHeight) {
+                    this.pos.y = rect.top - 120;
+                }
+            },
+            startHide() {
+                this._timeout = setTimeout(() => { this.term = null; }, 200);
+            },
+            clearHide() {
+                if (this._timeout) { clearTimeout(this._timeout); this._timeout = null; }
+            }
+        }));
+    });
+    </script>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Code Copy Buttons -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/code-copy.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Mobile Menu Toggle + Back to Top -->
+    <script>
+        (function () {
+            // Mobile menu toggle
+            var menu = document.getElementById('navbar-menu');
+            var toggle = document.querySelector('[data-collapse-toggle="navbar-menu"]');
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function () {
+                    menu.classList.toggle('hidden');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+                        menu.classList.add('hidden');
+                    }
+                });
+
+                // Close menu on window resize to large screens
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth >= 1024) {
+                        menu.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Back to top
+            var btn = document.getElementById('back-to-top');
+            if (btn) {
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > 400) {
+                        btn.classList.remove('hidden');
+                        btn.classList.add('flex');
+                    } else {
+                        btn.classList.add('hidden');
+                        btn.classList.remove('flex');
+                    }
+                });
+                btn.addEventListener('click', function () {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>

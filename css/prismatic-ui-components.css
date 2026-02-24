@@ -1,0 +1,413 @@
+/* Prismatic UI Components - Interactive Demonstrations Styles */
+
+.prismatic-component-card {
+  @apply bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg transition-all duration-200 hover:shadow-xl;
+}
+
+.prismatic-component-header {
+  @apply flex items-center justify-between mb-6 p-6 border-b border-gray-200 dark:border-gray-700;
+}
+
+.prismatic-component-title {
+  @apply text-xl font-bold text-gray-900 dark:text-white;
+}
+
+.prismatic-component-subtitle {
+  @apply text-sm text-gray-600 dark:text-gray-400;
+}
+
+/* Security Rating Components */
+.security-rating-grade {
+  @apply inline-flex items-center justify-center w-12 h-12 rounded-full text-2xl font-bold;
+}
+
+.security-rating-grade.grade-a {
+  @apply bg-green-100 text-green-700 border-2 border-green-200;
+}
+
+.security-rating-grade.grade-b {
+  @apply bg-blue-100 text-blue-700 border-2 border-blue-200;
+}
+
+.security-rating-grade.grade-c {
+  @apply bg-yellow-100 text-yellow-700 border-2 border-yellow-200;
+}
+
+.security-rating-grade.grade-d {
+  @apply bg-orange-100 text-orange-700 border-2 border-orange-200;
+}
+
+.security-rating-grade.grade-f {
+  @apply bg-red-100 text-red-700 border-2 border-red-200;
+}
+
+.security-factor {
+  @apply flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 rounded-lg transition-all duration-200;
+}
+
+.security-factor:hover {
+  @apply bg-gray-100 dark:bg-gray-600 transform translate-y-px;
+}
+
+.security-factor.severity-low {
+  @apply border-l-4 border-green-500;
+}
+
+.security-factor.severity-medium {
+  @apply border-l-4 border-yellow-500;
+}
+
+.security-factor.severity-high {
+  @apply border-l-4 border-red-500;
+}
+
+.security-factor.severity-critical {
+  @apply border-l-4 border-red-700;
+}
+
+/* Intelligence Grid Components */
+.intelligence-row {
+  @apply flex items-center justify-between p-4 border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200 cursor-pointer;
+}
+
+.intelligence-indicator {
+  @apply flex items-center space-x-3;
+}
+
+.intelligence-type {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.intelligence-type.type-ip {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+}
+
+.intelligence-type.type-domain {
+  @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200;
+}
+
+.intelligence-type.type-hash {
+  @apply bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200;
+}
+
+.intelligence-type.type-email {
+  @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+}
+
+.threat-score-bar {
+  @apply w-20 h-2 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden;
+}
+
+.threat-score-fill {
+  @apply h-full rounded-full transition-all duration-500;
+}
+
+.threat-score-fill.score-high {
+  @apply bg-red-500;
+}
+
+.threat-score-fill.score-medium {
+  @apply bg-yellow-500;
+}
+
+.threat-score-fill.score-low {
+  @apply bg-green-500;
+}
+
+.confidence-bar {
+  @apply w-16 h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden;
+}
+
+.confidence-fill {
+  @apply h-full bg-blue-500 rounded-full transition-all duration-500;
+}
+
+/* Risk Heatmap Components */
+.risk-heatmap-grid {
+  @apply grid gap-1;
+}
+
+.risk-cell {
+  @apply relative w-16 h-16 rounded-lg transition-all duration-200 hover:scale-105 cursor-pointer flex items-center justify-center text-white text-sm font-medium;
+}
+
+.risk-cell-tooltip {
+  @apply absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 whitespace-nowrap;
+}
+
+.risk-cell-tooltip::after {
+  content: '';
+  @apply absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-gray-900;
+}
+
+/* Network Graph Components */
+.network-graph-container {
+  @apply relative bg-gray-50 dark:bg-gray-900 rounded-lg overflow-hidden;
+}
+
+.network-controls {
+  @apply absolute top-4 right-4 flex flex-col space-y-2 z-10;
+}
+
+.network-control-btn {
+  @apply p-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors;
+}
+
+.network-node {
+  @apply cursor-pointer transition-all duration-200;
+}
+
+.network-node:hover {
+  filter: brightness(1.2);
+  transform: scale(1.1);
+}
+
+.network-edge {
+  @apply stroke-gray-400 transition-all duration-200;
+}
+
+.network-edge:hover {
+  @apply stroke-gray-600;
+}
+
+/* Component Showcase */
+.framework-tab {
+  @apply flex-1 py-2 px-4 text-sm font-medium rounded-md transition-all duration-200;
+}
+
+.framework-tab.active {
+  @apply bg-white dark:bg-gray-700 text-blue-600 dark:text-blue-400 shadow-sm;
+}
+
+.framework-tab:not(.active) {
+  @apply text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white;
+}
+
+.code-block {
+  @apply bg-gray-900 rounded-lg overflow-hidden;
+}
+
+.code-header {
+  @apply flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700;
+}
+
+.code-filename {
+  @apply text-sm text-gray-300 font-mono;
+}
+
+.code-copy-btn {
+  @apply text-sm text-blue-400 hover:text-blue-300 transition-colors;
+}
+
+.code-content {
+  @apply p-4 overflow-x-auto text-sm text-gray-300 font-mono leading-relaxed;
+}
+
+/* Interactive Elements */
+.interactive-btn {
+  @apply px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.interactive-btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500;
+}
+
+.interactive-btn-secondary {
+  @apply border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 focus:ring-blue-500;
+}
+
+.interactive-btn-danger {
+  @apply bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+}
+
+.interactive-btn-success {
+  @apply bg-green-600 text-white hover:bg-green-700 focus:ring-green-500;
+}
+
+/* Status Indicators */
+.status-indicator {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.status-active {
+  @apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200;
+}
+
+.status-blocked {
+  @apply bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200;
+}
+
+.status-analyzing {
+  @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200;
+}
+
+.status-monitoring {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200;
+}
+
+/* Progress Bars */
+.progress-bar {
+  @apply w-full bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full rounded-full transition-all duration-700 ease-out;
+}
+
+.progress-fill.gradient-blue {
+  @apply bg-gradient-to-r from-blue-500 to-blue-600;
+}
+
+.progress-fill.gradient-green {
+  @apply bg-gradient-to-r from-green-500 to-green-600;
+}
+
+.progress-fill.gradient-red {
+  @apply bg-gradient-to-r from-red-500 to-red-600;
+}
+
+.progress-fill.gradient-yellow {
+  @apply bg-gradient-to-r from-yellow-500 to-yellow-600;
+}
+
+/* Loading States */
+.loading-skeleton {
+  @apply animate-pulse bg-gray-300 dark:bg-gray-600 rounded;
+}
+
+.loading-spinner {
+  @apply animate-spin rounded-full border-4 border-gray-300 border-t-blue-600;
+}
+
+/* Responsive Design */
+@screen sm {
+  .security-rating-grade {
+    @apply w-14 h-14 text-3xl;
+  }
+
+  .risk-cell {
+    @apply w-20 h-20;
+  }
+
+  .threat-score-bar {
+    @apply w-24;
+  }
+}
+
+@screen lg {
+  .security-rating-grade {
+    @apply w-16 h-16 text-4xl;
+  }
+
+  .risk-cell {
+    @apply w-24 h-24;
+  }
+
+  .threat-score-bar {
+    @apply w-32;
+  }
+}
+
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+  .risk-cell-tooltip::after {
+    @apply border-t-gray-800;
+  }
+}
+
+/* Animation Utilities */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.3s ease-out;
+}
+
+.bounce-in {
+  animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Component Demo Grid */
+.component-demo-grid {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12;
+}
+
+@screen xl {
+  .component-demo-grid {
+    @apply grid-cols-2;
+  }
+}
+
+/* Notification System */
+.notification {
+  @apply fixed top-4 right-4 z-50 px-6 py-3 rounded-lg shadow-lg text-white font-medium transition-transform duration-300 transform translate-x-full;
+}
+
+.notification.show {
+  @apply translate-x-0;
+}
+
+.notification.info {
+  @apply bg-blue-600;
+}
+
+.notification.success {
+  @apply bg-green-600;
+}
+
+.notification.warning {
+  @apply bg-yellow-600;
+}
+
+.notification.error {
+  @apply bg-red-600;
+}
+
+/* Accessibility Improvements */
+.interactive-btn:focus,
+.network-control-btn:focus,
+.framework-tab:focus {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-800;
+}
+
+.security-factor:focus,
+.intelligence-row:focus,
+.risk-cell:focus,
+.network-node:focus {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 ring-offset-white dark:ring-offset-gray-800;
+}

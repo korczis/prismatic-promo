@@ -1,0 +1,280 @@
+/**
+ * Prismatic Code Components - Theme System
+ *
+ * CSS custom properties and theme definitions for syntax highlighting
+ * components that work across both static and dynamic contexts.
+ */
+
+/* Base theme variables */
+:root {
+  --prismatic-code-font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  --prismatic-code-font-size: 0.875rem;
+  --prismatic-code-line-height: 1.5;
+
+  /* Animation timing */
+  --prismatic-transition-duration: 0.2s;
+  --prismatic-copy-feedback-duration: 2s;
+}
+
+/* GitHub Dark Theme (Default) */
+.prismatic-theme-github-dark {
+  --prismatic-bg-primary: #0d1117;
+  --prismatic-bg-secondary: #161b22;
+  --prismatic-bg-header: #21262d;
+  --prismatic-border-color: #30363d;
+
+  --prismatic-text-primary: #e6edf3;
+  --prismatic-text-secondary: #8b949e;
+  --prismatic-text-muted: #6e7681;
+
+  /* Syntax colors */
+  --prismatic-syntax-keyword: #ff7b72;
+  --prismatic-syntax-string: #a5d6ff;
+  --prismatic-syntax-comment: #8b949e;
+  --prismatic-syntax-number: #79c0ff;
+  --prismatic-syntax-function: #d2a8ff;
+  --prismatic-syntax-operator: #ff7b72;
+  --prismatic-syntax-punctuation: #e6edf3;
+  --prismatic-syntax-variable: #ffa657;
+
+  /* Interactive elements */
+  --prismatic-button-hover: #30363d;
+  --prismatic-button-active: #21262d;
+  --prismatic-copy-success: #238636;
+  --prismatic-copy-error: #da3633;
+
+  /* Line highlighting */
+  --prismatic-line-highlight-bg: rgba(255, 235, 59, 0.1);
+  --prismatic-line-highlight-border: rgba(255, 235, 59, 0.3);
+}
+
+/* GitHub Light Theme */
+.prismatic-theme-github-light {
+  --prismatic-bg-primary: #ffffff;
+  --prismatic-bg-secondary: #f6f8fa;
+  --prismatic-bg-header: #f6f8fa;
+  --prismatic-border-color: #d1d9e0;
+
+  --prismatic-text-primary: #24292f;
+  --prismatic-text-secondary: #656d76;
+  --prismatic-text-muted: #8c959f;
+
+  /* Syntax colors */
+  --prismatic-syntax-keyword: #d73a49;
+  --prismatic-syntax-string: #032f62;
+  --prismatic-syntax-comment: #6a737d;
+  --prismatic-syntax-number: #005cc5;
+  --prismatic-syntax-function: #6f42c1;
+  --prismatic-syntax-operator: #d73a49;
+  --prismatic-syntax-punctuation: #24292f;
+  --prismatic-syntax-variable: #e36209;
+
+  /* Interactive elements */
+  --prismatic-button-hover: #f3f4f6;
+  --prismatic-button-active: #e5e7eb;
+  --prismatic-copy-success: #28a745;
+  --prismatic-copy-error: #dc3545;
+
+  /* Line highlighting */
+  --prismatic-line-highlight-bg: rgba(255, 235, 59, 0.2);
+  --prismatic-line-highlight-border: rgba(255, 193, 7, 0.5);
+}
+
+/* Prismatic Purple Theme */
+.prismatic-theme-prismatic-purple {
+  --prismatic-bg-primary: #1a0f2e;
+  --prismatic-bg-secondary: #2d1b4e;
+  --prismatic-bg-header: #3d2b5e;
+  --prismatic-border-color: #4c3b6e;
+
+  --prismatic-text-primary: #e0d4f7;
+  --prismatic-text-secondary: #b19cd9;
+  --prismatic-text-muted: #8972a8;
+
+  /* Syntax colors */
+  --prismatic-syntax-keyword: #c084fc;
+  --prismatic-syntax-string: #a78bfa;
+  --prismatic-syntax-comment: #8972a8;
+  --prismatic-syntax-number: #f0abfc;
+  --prismatic-syntax-function: #ddd6fe;
+  --prismatic-syntax-operator: #c084fc;
+  --prismatic-syntax-punctuation: #e0d4f7;
+  --prismatic-syntax-variable: #fbbf24;
+
+  /* Interactive elements */
+  --prismatic-button-hover: #4c3b6e;
+  --prismatic-button-active: #3d2b5e;
+  --prismatic-copy-success: #10b981;
+  --prismatic-copy-error: #ef4444;
+
+  /* Line highlighting */
+  --prismatic-line-highlight-bg: rgba(192, 132, 252, 0.15);
+  --prismatic-line-highlight-border: rgba(192, 132, 252, 0.3);
+}
+
+/* High Contrast Theme (WCAG Compliant) */
+.prismatic-theme-high-contrast {
+  --prismatic-bg-primary: #000000;
+  --prismatic-bg-secondary: #1a1a1a;
+  --prismatic-bg-header: #2d2d2d;
+  --prismatic-border-color: #ffffff;
+
+  --prismatic-text-primary: #ffffff;
+  --prismatic-text-secondary: #cccccc;
+  --prismatic-text-muted: #999999;
+
+  /* High contrast syntax colors */
+  --prismatic-syntax-keyword: #ffff00;
+  --prismatic-syntax-string: #00ff00;
+  --prismatic-syntax-comment: #cccccc;
+  --prismatic-syntax-number: #ff00ff;
+  --prismatic-syntax-function: #00ffff;
+  --prismatic-syntax-operator: #ffff00;
+  --prismatic-syntax-punctuation: #ffffff;
+  --prismatic-syntax-variable: #ffa500;
+
+  /* Interactive elements */
+  --prismatic-button-hover: #333333;
+  --prismatic-button-active: #1a1a1a;
+  --prismatic-copy-success: #00ff00;
+  --prismatic-copy-error: #ff0000;
+
+  /* Line highlighting */
+  --prismatic-line-highlight-bg: rgba(255, 255, 0, 0.2);
+  --prismatic-line-highlight-border: #ffff00;
+}
+
+/* Base component styles */
+.prismatic-code-block {
+  background-color: var(--prismatic-bg-primary);
+  border-color: var(--prismatic-border-color);
+  color: var(--prismatic-text-primary);
+  font-family: var(--prismatic-code-font-family);
+}
+
+.prismatic-code-block .prismatic-pre {
+  background-color: var(--prismatic-bg-primary);
+  color: var(--prismatic-text-primary);
+  font-size: var(--prismatic-code-font-size);
+  line-height: var(--prismatic-code-line-height);
+}
+
+.prismatic-code-block .prismatic-code {
+  color: var(--prismatic-text-primary);
+}
+
+/* Header styles */
+.prismatic-code-block .bg-gray-800 {
+  background-color: var(--prismatic-bg-header) !important;
+  border-color: var(--prismatic-border-color) !important;
+}
+
+/* Copy button styles */
+.prismatic-copy-button {
+  transition: background-color var(--prismatic-transition-duration) ease;
+}
+
+.prismatic-copy-button:hover {
+  background-color: var(--prismatic-button-hover);
+}
+
+.prismatic-copy-button:active {
+  background-color: var(--prismatic-button-active);
+}
+
+.prismatic-copy-button.text-green-400 {
+  color: var(--prismatic-copy-success) !important;
+}
+
+.prismatic-copy-button.text-red-400 {
+  color: var(--prismatic-copy-error) !important;
+}
+
+/* Language badge styles */
+.prismatic-code-block .bg-gray-700 {
+  background-color: var(--prismatic-bg-secondary) !important;
+  color: var(--prismatic-text-secondary) !important;
+}
+
+/* Line highlighting */
+.prismatic-line-highlight {
+  background-color: var(--prismatic-line-highlight-bg);
+  border-left: 2px solid var(--prismatic-line-highlight-border);
+  display: block;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+
+/* Line numbers support */
+.prismatic-line-numbers {
+  counter-reset: line-number;
+}
+
+.prismatic-line-numbers .prismatic-code::before {
+  counter-increment: line-number;
+  content: counter(line-number);
+  color: var(--prismatic-text-muted);
+  display: inline-block;
+  width: 2.5rem;
+  text-align: right;
+  margin-right: 1rem;
+  border-right: 1px solid var(--prismatic-border-color);
+  padding-right: 0.5rem;
+  user-select: none;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .prismatic-code-block {
+    font-size: 0.75rem;
+  }
+
+  .prismatic-code-block .prismatic-pre {
+    padding: 0.75rem;
+  }
+
+  /* Make copy button more touch-friendly */
+  .prismatic-copy-button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.5rem;
+  }
+
+  /* Optimize line numbers for mobile */
+  .prismatic-line-numbers .prismatic-code::before {
+    width: 2rem;
+    margin-right: 0.5rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .prismatic-copy-button {
+    transition: none;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.prismatic-copy-button:focus {
+  outline: 2px solid var(--prismatic-syntax-keyword);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .prismatic-code-block {
+    background: white !important;
+    color: black !important;
+    border: 1px solid #000 !important;
+  }
+
+  .prismatic-copy-button {
+    display: none !important;
+  }
+
+  .prismatic-code-block .bg-gray-800 {
+    background: #f5f5f5 !important;
+    color: black !important;
+  }
+}

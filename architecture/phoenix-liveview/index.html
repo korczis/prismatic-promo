@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Phoenix LiveView - Prismatic Platform Architecture</title>
+
+    
+<meta name="description" content="Real-time dashboards with server-rendered reactivity">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;phoenix-liveview&#x2F;">
+<meta property="og:title" content="Phoenix LiveView - Prismatic Platform Architecture">
+<meta property="og:description" content="Real-time dashboards with server-rendered reactivity">
+<meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Prismatic Platform">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;phoenix-liveview&#x2F;">
+<meta name="twitter:title" content="Phoenix LiveView - Prismatic Platform Architecture">
+<meta name="twitter:description" content="Real-time dashboards with server-rendered reactivity">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com/images/twitter-card.png">
+<meta name="twitter:creator" content="@korczis">
+
+
+    
+    
+    <meta name="keywords" content="Phoenix, LiveView, Real-time, architecture, Prismatic Platform, JavaScript, BEAM">
+    
+
+    
+    
+    
+    <meta property="article:tag" content="phoenix">
+    
+    <meta property="article:tag" content="liveview">
+    
+    <meta property="article:tag" content="real-time">
+    
+    <meta property="article:tag" content="websocket">
+    
+    <meta property="article:tag" content="beam">
+    
+    <meta property="article:tag" content="elixir">
+    
+    <meta property="article:tag" content="dashboards">
+    
+    
+    <meta property="article:author" content="Tomáš Korcak">
+    <meta property="article:section" content="architecture&#x2F;_index.md">
+    <meta name="author" content="Tomáš Korcak">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;phoenix-liveview&#x2F;">
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Prismatic Platform Feed" href="/atom.xml">
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prismatic Platform",
+        "url": "https://prismatic-reality.com",
+        "description": "Open Source AI-Orchestrated Intelligence Platform | 530+ Agents | 115 Apps | Community-Driven",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://prismatic-reality.com/search/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://prismatic-reality.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Architecture",
+                "item": "https://prismatic-reality.com/architecture/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Phoenix LiveView"
+            }
+        ]
+    }
+    </script>
+    
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Phoenix LiveView",
+        "description": "Real-time dashboards with server-rendered reactivity",
+        "url": "https://prismatic-reality.com/architecture/phoenix-liveview/",
+        "author": {
+            "@type": "Person",
+            "name": "Tomáš Korcak",
+            "url": "https:&#x2F;&#x2F;github.com&#x2F;korczis",
+            "sameAs": [
+                "https:&#x2F;&#x2F;github.com&#x2F;korczis",
+                "https:&#x2F;&#x2F;gitlab.com&#x2F;korczis",
+                "https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis",
+                "https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://prismatic-reality.com/architecture/phoenix-liveview/"
+        },
+        "inLanguage": "en",
+        "keywords": "Phoenix, LiveView, Real-time, architecture, Prismatic Platform, JavaScript, BEAM",
+        "wordCount": 1722
+    }
+    </script>
+    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <!-- Zola/Giallo Server-Side Syntax Highlighting -->
+    <link rel="stylesheet" href="/giallo.css">
+
+    <!-- Diagram Toggle (Mermaid Source/Interactive) -->
+    <link rel="stylesheet" href="/css/diagram-toggle.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        .glossary-hover-card {
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.98) 0%, rgba(17, 24, 39, 0.98) 100%);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(79, 70, 229, 0.3);
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            max-width: 320px;
+            z-index: 1000;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Horizontal Navigation Bar (Flowbite navbar pattern) -->
+    <nav class="fixed top-0 z-50 w-full bg-gray-950/80 backdrop-blur-xl border-b border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <!-- Brand -->
+            <a href="/" class="flex items-center space-x-3 group">
+                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 gap-2">
+                <!-- GitHub Link -->
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                   class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-400 hover:text-white bg-gray-800/50 hover:bg-gray-800 rounded-lg border border-gray-700 transition-colors"
+                   title="View on GitHub">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <!-- Version Badge -->
+                <span class="hidden md:inline-flex items-center px-2.5 py-1 text-xs font-semibold text-emerald-400 bg-emerald-900/20 rounded-full border border-emerald-500/20">v8.0.0</span>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Menu - Grouped Information Architecture -->
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-0.5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+
+                    <!-- Platform dropdown - indigo: core product features -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-indigo-300 rounded-lg hover:text-white hover:bg-indigo-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                            Platform
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute left-0 mt-2 w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-indigo-400 uppercase tracking-wider">Intelligence</div>
+                            <a href="/dd/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                Due Diligence
+                            </a>
+                            <a href="/osint/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                OSINT
+                            </a>
+                            <a href="/lab/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 00.659 1.591L19 14.5m0 0l-1.47 4.409a2.25 2.25 0 01-2.133 1.541H8.603a2.25 2.25 0 01-2.134-1.541L5 14.5m14 0H5"/></svg>
+                                Interactive Labs
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-indigo-400 uppercase tracking-wider">Ecosystem</div>
+                            <a href="/agents/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                Agents
+                            </a>
+                            <a href="/apps/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                                Apps
+                            </a>
+                            <a href="/applications/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-indigo-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                Applications
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-indigo-400 uppercase tracking-wider">Hub</div>
+                            <a href="/hub/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                                Dashboard Hub
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Developers dropdown - blue: technical resources -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-blue-300 rounded-lg hover:text-white hover:bg-blue-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                            Developers
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute left-0 mt-2 w-52 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/developers/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                                Developer Portal
+                            </a>
+                            <a href="/developers/sdk/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                                SDK
+                            </a>
+                            <a href="/api/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-teal-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                API Reference
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <a href="/commands/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                                Commands
+                            </a>
+                            <a href="/registry/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+                                Registry
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <a href="/developers/plugins/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-orange-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"/></svg>
+                                Plugins
+                            </a>
+                            <a href="/developers/ui-components/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-pink-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                                UI Components
+                            </a>
+                            <a href="/developers/community/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-yellow-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                Community
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Learn dropdown - emerald: educational & knowledge -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-emerald-300 rounded-lg hover:text-white hover:bg-emerald-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                            Learn
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute left-0 mt-2 w-52 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/academy/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                                Academy
+                            </a>
+                            <a href="/capabilities/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                Capabilities
+                            </a>
+                            <a href="/philosophy/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                                Philosophy
+                            </a>
+                            <a href="/architecture/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-lime-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                Architecture
+                            </a>
+                            <a href="/technologies/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+                                Technologies
+                            </a>
+                            <a href="/glossary/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-teal-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                                Glossary
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <a href="/blog/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                                Blog
+                            </a>
+                            <a href="/faq/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                FAQ
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Company dropdown - violet: about & business -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-violet-300 rounded-lg hover:text-white hover:bg-violet-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                            Company
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-52 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/executive/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                                Executive Overview
+                            </a>
+                            <a href="/teams/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                                Color Teams
+                            </a>
+                            <a href="/about/author/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-violet-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                                Author
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-violet-400 uppercase tracking-wider">For You</div>
+                            <a href="/about/for-executives/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                For Executives
+                            </a>
+                            <a href="/about/for-architects/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                For Architects
+                            </a>
+                            <a href="/about/for-developers/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                                For Developers
+                            </a>
+                            <a href="/about/for-security/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-red-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                For Security
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+    <main>
+        
+<!-- Hero Header -->
+<section class="bg-gray-900 py-12 lg:py-16 border-b border-gray-700">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com"
+                        class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                            class="ml-1 text-sm font-medium text-gray-400 hover:text-white md:ml-2">Architecture</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="ml-1 text-sm font-medium text-gray-200 md:ml-2">Phoenix LiveView</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <!-- Header Card -->
+        <div class="bg-gray-800 rounded-2xl shadow-xl border border-gray-700 overflow-hidden" x-data="{ shown: false }"
+            x-init="setTimeout(() => shown = true, 100)">
+            <div class="p-8">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-6" x-show="shown"
+                    x-transition:enter="transition ease-out duration-500"
+                    x-transition:enter-start="opacity-0 transform -translate-y-4"
+                    x-transition:enter-end="opacity-100 transform translate-y-0">
+                    <!-- Icon Badge -->
+                    <div class="flex-shrink-0">
+                        
+                        <div class="w-24 h-24 bg-gray-700 rounded-2xl flex items-center justify-center shadow-lg">
+                            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Title & Description -->
+                    <div class="flex-grow">
+                        <h1 class="text-3xl md:text-4xl font-black text-white mb-3">Phoenix LiveView</h1>
+                        <p class="text-lg text-gray-400 leading-relaxed">Real-time dashboards with server-rendered reactivity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="bg-gray-900 py-12 lg:py-16">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-4">
+            <!-- Main Content -->
+            <div class="lg:col-span-3">
+                <article class="prose prose-lg prose-invert max-w-none
+                    prose-headings:text-white
+                    prose-p:text-gray-300
+                    prose-a:text-gray-400
+                    prose-strong:text-white
+                    prose-code:text-gray-400
+                    prose-pre:bg-gray-800
+                    prose-table:text-gray-300
+                    prose-th:text-white
+                    prose-td:border-gray-700">
+                    <h2 id="overview">Overview</h2>
+<p><a href="https://prismatic-reality.com/glossary/phoenix/">Phoenix</a> <a href="https://prismatic-reality.com/glossary/liveview/">LiveView</a> represents a fundamental departure from the dominant single-page application paradigm that has governed web development since the mid-2010s. Rather than shipping a JavaScript runtime to the browser and managing client-side state through frameworks like React, Vue, or Angular, LiveView keeps all application state on the server inside lightweight <a href="https://prismatic-reality.com/glossary/beam/">BEAM</a> processes, communicating with the browser exclusively through a persistent <a href="https://prismatic-reality.com/glossary/websocket/">WebSocket</a> connection that transmits minimal DOM diffs.</p>
+<p>This architectural decision was not made arbitrarily. The Prismatic Platform manages hundreds of concurrent real-time dashboards -- from <a href="https://prismatic-reality.com/apps/prismatic-perimeter/">Perimeter security monitoring</a> to <a href="https://prismatic-reality.com/apps/prismatic-agents/">agent coordination</a> -- where the traditional SPA approach would impose three compounding costs: a large JavaScript bundle for each dashboard variant, a complex client-side state synchronization layer, and an API surface that duplicates server-side business logic. LiveView eliminates all three by treating the browser as a thin rendering target rather than an application host.</p>
+<p>The result is a system where adding a new real-time dashboard requires writing only server-side <a href="https://prismatic-reality.com/glossary/elixir/">Elixir</a> code, with no API endpoints to design, no JavaScript components to build, and no state synchronization bugs to chase. Every dashboard in the Prismatic Platform -- across <a href="https://prismatic-reality.com/apps/prismatic-perimeter-web/">security perimeter monitoring</a>, deal pipeline tracking, and <a href="https://prismatic-reality.com/apps/prismatic-agents/">agent orchestration</a> -- is built entirely with LiveView.</p>
+<h2 id="architecture-and-request-lifecycle">Architecture and Request Lifecycle</h2>
+<p>The LiveView lifecycle begins with a standard HTTP request that renders an initial HTML page. This page contains a small JavaScript client (~30KB) that immediately establishes a WebSocket connection back to the server. Once connected, a dedicated <a href="https://prismatic-reality.com/glossary/beam/">BEAM</a> process is spawned for that user session, and all subsequent interaction flows through this persistent connection.</p>
+<pre class="giallo z-code"><code data-lang="plain"><span class="giallo-l"><span>Browser                              Server (BEAM VM)</span></span>
+<span class="giallo-l"><span>  │                                       │</span></span>
+<span class="giallo-l"><span>  ├── HTTP GET /perimeter ───────────────&gt;│</span></span>
+<span class="giallo-l"><span>  │                                       ├── Render initial HTML</span></span>
+<span class="giallo-l"><span>  │&lt;── Full HTML page ───────────────────┤</span></span>
+<span class="giallo-l"><span>  │                                       │</span></span>
+<span class="giallo-l"><span>  ├── WebSocket connect ─────────────────&gt;│</span></span>
+<span class="giallo-l"><span>  │                                       ├── Spawn LiveView process</span></span>
+<span class="giallo-l"><span>  │                                       ├── mount/3 callback</span></span>
+<span class="giallo-l"><span>  │                                       ├── Render + compute diff</span></span>
+<span class="giallo-l"><span>  │&lt;── DOM patch (initial state) ────────┤</span></span>
+<span class="giallo-l"><span>  │                                       │</span></span>
+<span class="giallo-l"><span>  ├── User click event ─────────────────&gt;│</span></span>
+<span class="giallo-l"><span>  │                                       ├── handle_event/3</span></span>
+<span class="giallo-l"><span>  │                                       ├── Update assigns</span></span>
+<span class="giallo-l"><span>  │                                       ├── Re-render + diff</span></span>
+<span class="giallo-l"><span>  │&lt;── DOM patch (minimal diff) ────────┤</span></span>
+<span class="giallo-l"><span>  │                                       │</span></span>
+<span class="giallo-l"><span>  │   (PubSub message arrives)            │</span></span>
+<span class="giallo-l"><span>  │                                       ├── handle_info/2</span></span>
+<span class="giallo-l"><span>  │                                       ├── Update assigns</span></span>
+<span class="giallo-l"><span>  │&lt;── DOM patch (server push) ─────────┤</span></span></code></pre>
+<p>This architecture means every LiveView instance is a <a href="https://prismatic-reality.com/glossary/genserver/">GenServer</a> process with its own isolated heap, its own garbage collection cycle, and its own failure boundary. When one user's session crashes, no other session is affected. The <a href="https://prismatic-reality.com/glossary/beam/">BEAM's preemptive scheduler</a> ensures fair CPU distribution across all connected sessions, preventing any single user from monopolizing server resources.</p>
+<h3 id="why-not-a-traditional-spa">Why Not a Traditional SPA?</h3>
+<p>The decision to use LiveView over a React/Vue SPA involved evaluating several architectural tradeoffs:</p>
+<table><thead><tr><th>Criterion</th><th>SPA (React/Vue)</th><th>LiveView</th><th>Prismatic Decision</th></tr></thead><tbody>
+<tr><td>Initial bundle size</td><td>200-500KB JS</td><td>~30KB JS</td><td>LiveView: smaller payload</td></tr>
+<tr><td>State management</td><td>Client-side (Redux/Pinia)</td><td>Server-side (process)</td><td>LiveView: single source of truth</td></tr>
+<tr><td>API surface</td><td>REST/<a href="https://prismatic-reality.com/glossary/graphql/">GraphQL</a> endpoints required</td><td>None (direct data access)</td><td>LiveView: less code duplication</td></tr>
+<tr><td>Real-time updates</td><td>WebSocket + client reconciliation</td><td>Built-in via <a href="https://prismatic-reality.com/glossary/pubsub/">PubSub</a></td><td>LiveView: native integration</td></tr>
+<tr><td>SEO</td><td>Requires SSR setup</td><td>Server-rendered by default</td><td>LiveView: zero configuration</td></tr>
+<tr><td>Offline support</td><td>Possible with service workers</td><td>Requires connection</td><td>SPA: advantage for offline</td></tr>
+<tr><td>Latency sensitivity</td><td>Client-side instant</td><td>Network round-trip</td><td>SPA: advantage for &lt;50ms interactions</td></tr>
+</tbody></table>
+<p>For the Prismatic Platform, the tradeoffs favor LiveView decisively. Our dashboards require persistent real-time data streams (<a href="https://prismatic-reality.com/glossary/security-rating/">security rating</a>s, asset discovery, agent status) where server-side state is authoritative. The rare cases where sub-50ms client interaction matters (drag-and-drop, complex form validation) are handled through LiveView's JavaScript hooks mechanism, which allows targeted JavaScript for specific interactions without abandoning the server-rendered model.</p>
+<h2 id="server-side-state-management">Server-Side State Management</h2>
+<p>All UI state in a LiveView process lives in the socket's <code>assigns</code> map. This is a deliberate constraint that produces several architectural benefits: state is always consistent (no client-server drift), state is always inspectable (via <code>:sys.get_state/1</code> on the process), and state transitions are always sequential (one message at a time in the process mailbox).</p>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-keyword z-control">defmodule</span><span class="z-entity z-other z-inherited-class"> PrismaticWeb</span><span>.</span><span class="z-entity z-name z-type z-class">PerimeterLive</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  use</span><span class="z-entity z-name z-type z-class"> PrismaticWeb</span><span class="z-punctuation z-constant z-other z-symbol">, :live_view</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">impl</span><span class="z-constant z-language"> true</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> mount</span><span class="z-punctuation">(</span><span class="z-comment">_params</span><span class="z-punctuation">,</span><span class="z-comment"> _session</span><span class="z-punctuation">,</span><span> socket</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">    if</span><span class="z-entity z-name z-function"> connected?</span><span class="z-punctuation">(</span><span>socket</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">      # Subscribe to real-time updates via PubSub</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type z-class">      PrismaticPerimeter</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">subscribe</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">      # Schedule periodic refresh of aggregate metrics</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type z-class">      Process</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">send_after</span><span class="z-punctuation">(</span><span class="z-entity z-name z-function">self</span><span class="z-punctuation z-constant z-other z-symbol">(), :refresh_metrics,</span><span class="z-constant z-numeric"> 30_000</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">    end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:ok,</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">     assign</span><span class="z-punctuation">(</span><span>socket</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>       assets</span><span class="z-punctuation">: [],</span></span>
+<span class="giallo-l"><span>       security_rating</span><span class="z-punctuation z-constant z-language">: nil,</span></span>
+<span class="giallo-l"><span>       compliance_status</span><span class="z-punctuation">:</span><span> %</span><span class="z-punctuation">{},</span></span>
+<span class="giallo-l"><span>       loading</span><span class="z-punctuation z-constant z-language">: true,</span></span>
+<span class="giallo-l"><span>       page</span><span class="z-punctuation">:</span><span class="z-constant z-numeric"> 1</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>       per_page</span><span class="z-punctuation">:</span><span class="z-constant z-numeric"> 25</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>       sort_by</span><span class="z-punctuation z-constant z-other z-symbol">: :discovered_at,</span></span>
+<span class="giallo-l"><span>       sort_dir</span><span class="z-punctuation z-constant z-other z-symbol">: :desc</span></span>
+<span class="giallo-l"><span class="z-punctuation">     )}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">impl</span><span class="z-constant z-language"> true</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> handle_info</span><span class="z-punctuation z-constant z-other z-symbol">({:asset_discovered,</span><span> asset</span><span class="z-punctuation">},</span><span> socket</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span>    socket </span><span class="z-keyword">=</span></span>
+<span class="giallo-l"><span>      socket</span></span>
+<span class="giallo-l"><span class="z-keyword">      |&gt;</span><span class="z-entity z-name z-function"> update</span><span class="z-punctuation z-constant z-other z-symbol">(:assets,</span><span class="z-keyword z-control"> fn</span><span> assets </span><span class="z-keyword">-&gt;</span></span>
+<span class="giallo-l"><span>        assets</span></span>
+<span class="giallo-l"><span class="z-keyword">        |&gt;</span><span class="z-entity z-name z-type z-class"> List</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">insert_at</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">,</span><span> asset</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword">        |&gt;</span><span class="z-entity z-name z-type z-class"> Enum</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">take</span><span class="z-punctuation">(</span><span>socket</span><span class="z-punctuation">.</span><span>assigns</span><span class="z-punctuation">.</span><span>per_page</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">      end</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword">      |&gt;</span><span class="z-entity z-name z-function"> push_event</span><span class="z-punctuation">(&quot;</span><span class="z-string">flash</span><span class="z-punctuation">&quot;,</span><span> %</span><span class="z-punctuation">{</span><span>message</span><span class="z-punctuation">: &quot;</span><span class="z-string">New asset: </span><span class="z-punctuation">#{</span><span class="z-meta z-embedded">asset</span><span class="z-punctuation">.</span><span class="z-meta z-embedded">domain</span><span class="z-punctuation">}&quot;})</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:noreply,</span><span> socket</span><span class="z-punctuation">}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">impl</span><span class="z-constant z-language"> true</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> handle_info</span><span class="z-punctuation z-constant z-other z-symbol">(:refresh_metrics,</span><span> socket</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type z-class">    Process</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">send_after</span><span class="z-punctuation">(</span><span class="z-entity z-name z-function">self</span><span class="z-punctuation z-constant z-other z-symbol">(), :refresh_metrics,</span><span class="z-constant z-numeric"> 30_000</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control">    case</span><span class="z-entity z-name z-type z-class"> PrismaticPerimeter</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">aggregate_metrics</span><span class="z-punctuation">()</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">      {:ok,</span><span> metrics</span><span class="z-punctuation z-keyword">} -&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">        {:noreply,</span><span class="z-entity z-name z-function"> assign</span><span class="z-punctuation">(</span><span>socket</span><span class="z-punctuation">,</span><span> metrics</span><span class="z-punctuation">:</span><span> metrics</span><span class="z-punctuation">)}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">      {:error,</span><span class="z-comment"> _reason</span><span class="z-punctuation z-keyword">} -&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">        {:noreply,</span><span> socket</span><span class="z-punctuation">}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">    end</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">impl</span><span class="z-constant z-language"> true</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> handle_event</span><span class="z-punctuation">(&quot;</span><span class="z-string">sort</span><span class="z-punctuation">&quot;,</span><span> %</span><span class="z-punctuation">{&quot;</span><span class="z-string">field</span><span class="z-punctuation z-keyword">&quot; =&gt;</span><span> field</span><span class="z-punctuation">},</span><span> socket</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span>    field </span><span class="z-keyword">=</span><span class="z-entity z-name z-type z-class"> String</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">to_existing_atom</span><span class="z-punctuation">(</span><span>field</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">    {</span><span>sort_by</span><span class="z-punctuation">,</span><span> sort_dir</span><span class="z-punctuation z-keyword">} =</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">      if</span><span> socket</span><span class="z-punctuation">.</span><span>assigns</span><span class="z-punctuation">.</span><span>sort_by </span><span class="z-keyword">==</span><span> field </span><span class="z-keyword z-control">do</span></span>
+<span class="giallo-l"><span class="z-punctuation">        {</span><span>field</span><span class="z-punctuation">,</span><span class="z-entity z-name z-function"> toggle_direction</span><span class="z-punctuation">(</span><span>socket</span><span class="z-punctuation">.</span><span>assigns</span><span class="z-punctuation">.</span><span>sort_dir</span><span class="z-punctuation">)}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">      else</span></span>
+<span class="giallo-l"><span class="z-punctuation">        {</span><span>field</span><span class="z-punctuation z-constant z-other z-symbol">, :asc}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">      end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    assets </span><span class="z-keyword">=</span><span class="z-entity z-name z-function"> sort_assets</span><span class="z-punctuation">(</span><span>socket</span><span class="z-punctuation">.</span><span>assigns</span><span class="z-punctuation">.</span><span>assets</span><span class="z-punctuation">,</span><span> sort_by</span><span class="z-punctuation">,</span><span> sort_dir</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:noreply,</span><span class="z-entity z-name z-function"> assign</span><span class="z-punctuation">(</span><span>socket</span><span class="z-punctuation">,</span><span> sort_by</span><span class="z-punctuation">:</span><span> sort_by</span><span class="z-punctuation">,</span><span> sort_dir</span><span class="z-punctuation">:</span><span> sort_dir</span><span class="z-punctuation">,</span><span> assets</span><span class="z-punctuation">:</span><span> assets</span><span class="z-punctuation">)}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control">  defp</span><span class="z-entity z-name z-function"> toggle_direction</span><span class="z-punctuation z-constant z-other z-symbol">(:asc),</span><span> do:</span><span class="z-punctuation z-constant z-other z-symbol"> :desc</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  defp</span><span class="z-entity z-name z-function"> toggle_direction</span><span class="z-punctuation z-constant z-other z-symbol">(:desc),</span><span> do:</span><span class="z-punctuation z-constant z-other z-symbol"> :asc</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">end</span></span></code></pre>
+<p>This pattern demonstrates a key architectural principle: the LiveView process is the single source of truth for the UI. The <code>handle_info/2</code> callback receives domain events from <a href="https://prismatic-reality.com/architecture/pubsub/">PubSub</a>, while <code>handle_event/3</code> handles user interactions. Both funnel through the same sequential process mailbox, making race conditions between user actions and server events structurally impossible.</p>
+<h2 id="component-architecture">Component Architecture</h2>
+<p>LiveView provides two component abstractions that map cleanly to the stateful/stateless distinction familiar from other UI frameworks, but with the critical difference that "stateful" means a separate BEAM process, not merely a client-side state container.</p>
+<h3 id="live-components-stateful">Live Components (Stateful)</h3>
+<p>Live components run as separate processes within the parent LiveView's process tree. They receive their own <code>update/2</code> callbacks and can handle events independently. This is appropriate for self-contained UI units with their own data lifecycle:</p>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-keyword z-control">defmodule</span><span class="z-entity z-other z-inherited-class"> PrismaticWeb</span><span>.</span><span class="z-entity z-other z-inherited-class">Components</span><span>.</span><span class="z-entity z-name z-type z-class">SecurityRatingCard</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  use</span><span class="z-entity z-name z-type z-class"> PrismaticWeb</span><span class="z-punctuation z-constant z-other z-symbol">, :live_component</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">impl</span><span class="z-constant z-language"> true</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> update</span><span class="z-punctuation">(</span><span>%</span><span class="z-punctuation">{</span><span>rating</span><span class="z-punctuation">:</span><span> rating</span><span class="z-punctuation z-keyword">} =</span><span> assigns</span><span class="z-punctuation">,</span><span> socket</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:ok,</span></span>
+<span class="giallo-l"><span>     socket</span></span>
+<span class="giallo-l"><span class="z-keyword">     |&gt;</span><span class="z-entity z-name z-function"> assign</span><span class="z-punctuation">(</span><span>assigns</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword">     |&gt;</span><span class="z-entity z-name z-function"> assign</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span>       trend</span><span class="z-punctuation">:</span><span class="z-entity z-name z-function"> calculate_trend</span><span class="z-punctuation">(</span><span>rating</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span>       grade_class</span><span class="z-punctuation">:</span><span class="z-entity z-name z-function"> grade_to_css_class</span><span class="z-punctuation">(</span><span>rating</span><span class="z-punctuation">.</span><span>grade</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span>       percentile_label</span><span class="z-punctuation">:</span><span class="z-entity z-name z-function"> format_percentile</span><span class="z-punctuation">(</span><span>rating</span><span class="z-punctuation">.</span><span>industry_percentile</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-punctuation">     )}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">impl</span><span class="z-constant z-language"> true</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> render</span><span class="z-punctuation">(</span><span>assigns</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span>    ~H&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">    &lt;</span><span class="z-entity z-name z-tag">div</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=</span><span class="z-string">{</span><span class="z-meta z-tag">&quot;rounded-xl</span><span class="z-entity z-other z-attribute-name"> p-6 #{@grade_class}</span><span class="z-meta z-tag z-punctuation z-definition z-tag">&quot;}&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">      &lt;</span><span class="z-entity z-name z-tag">div</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=&quot;</span><span class="z-string">flex items-center justify-between</span><span class="z-punctuation z-punctuation z-definition z-tag">&quot;&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">        &lt;</span><span class="z-entity z-name z-tag">div</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">          &lt;</span><span class="z-entity z-name z-tag">p</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=&quot;</span><span class="z-string">text-sm text-gray-400</span><span class="z-punctuation z-punctuation z-definition z-tag">&quot;&gt;</span><span>Security Rating</span><span class="z-punctuation z-definition z-tag">&lt;/</span><span class="z-entity z-name z-tag">p</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">          &lt;</span><span class="z-entity z-name z-tag">p</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=&quot;</span><span class="z-string">text-4xl font-bold</span><span class="z-punctuation z-punctuation z-definition z-tag">&quot;&gt;</span><span>&lt;%= @rating.grade %&gt;</span><span class="z-punctuation z-definition z-tag">&lt;/</span><span class="z-entity z-name z-tag">p</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">          &lt;</span><span class="z-entity z-name z-tag">p</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=&quot;</span><span class="z-string">text-sm</span><span class="z-punctuation z-punctuation z-definition z-tag">&quot;&gt;</span><span>&lt;%= @rating.score %&gt;/900</span><span class="z-punctuation z-definition z-tag">&lt;/</span><span class="z-entity z-name z-tag">p</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">        &lt;/</span><span class="z-entity z-name z-tag">div</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">        &lt;</span><span class="z-entity z-name z-tag">div</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=&quot;</span><span class="z-string">text-right</span><span class="z-punctuation z-punctuation z-definition z-tag">&quot;&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">          &lt;</span><span class="z-entity z-name z-tag">p</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=&quot;</span><span class="z-string">text-sm text-gray-400</span><span class="z-punctuation z-punctuation z-definition z-tag">&quot;&gt;</span><span>Industry Percentile</span><span class="z-punctuation z-definition z-tag">&lt;/</span><span class="z-entity z-name z-tag">p</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">          &lt;</span><span class="z-entity z-name z-tag">p</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=&quot;</span><span class="z-string">text-2xl font-semibold</span><span class="z-punctuation z-punctuation z-definition z-tag">&quot;&gt;</span><span>&lt;%= @percentile_label %&gt;</span><span class="z-punctuation z-definition z-tag">&lt;/</span><span class="z-entity z-name z-tag">p</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">          &lt;</span><span class="z-entity z-name z-tag">p</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=</span><span class="z-string">{</span><span class="z-meta z-tag">&quot;text-sm</span><span class="z-entity z-other z-attribute-name"> #{trend_class(@trend)}</span><span class="z-meta z-tag z-punctuation z-definition z-tag">&quot;}&gt;</span></span>
+<span class="giallo-l"><span>            &lt;%= trend_icon(@trend) %&gt; &lt;%= @trend.delta %&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">          &lt;/</span><span class="z-entity z-name z-tag">p</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">        &lt;/</span><span class="z-entity z-name z-tag">div</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">      &lt;/</span><span class="z-entity z-name z-tag">div</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">    &lt;/</span><span class="z-entity z-name z-tag">div</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span>    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control">  defp</span><span class="z-entity z-name z-function"> grade_to_css_class</span><span class="z-punctuation z-constant z-other z-symbol">(:A),</span><span> do:</span><span class="z-punctuation"> &quot;</span><span class="z-string">bg-green-900/30 border border-green-500/20</span><span class="z-punctuation">&quot;</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  defp</span><span class="z-entity z-name z-function"> grade_to_css_class</span><span class="z-punctuation z-constant z-other z-symbol">(:B),</span><span> do:</span><span class="z-punctuation"> &quot;</span><span class="z-string">bg-blue-900/30 border border-blue-500/20</span><span class="z-punctuation">&quot;</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  defp</span><span class="z-entity z-name z-function"> grade_to_css_class</span><span class="z-punctuation z-constant z-other z-symbol">(:C),</span><span> do:</span><span class="z-punctuation"> &quot;</span><span class="z-string">bg-yellow-900/30 border border-yellow-500/20</span><span class="z-punctuation">&quot;</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  defp</span><span class="z-entity z-name z-function"> grade_to_css_class</span><span class="z-punctuation">(</span><span class="z-comment">_</span><span class="z-punctuation">),</span><span> do:</span><span class="z-punctuation"> &quot;</span><span class="z-string">bg-red-900/30 border border-red-500/20</span><span class="z-punctuation">&quot;</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">end</span></span></code></pre><h3 id="function-components-stateless">Function Components (Stateless)</h3>
+<p>Function components are <a href="https://prismatic-reality.com/glossary/pure-function/">pure function</a>s that receive assigns and return HEEx templates. They are evaluated inline within the parent LiveView's render cycle, adding zero process overhead:</p>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-keyword z-control">defmodule</span><span class="z-entity z-other z-inherited-class"> PrismaticWeb</span><span>.</span><span class="z-entity z-other z-inherited-class">Components</span><span>.</span><span class="z-entity z-name z-type z-class">UI</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  use</span><span class="z-entity z-name z-type z-class"> Phoenix</span><span class="z-punctuation">.</span><span class="z-entity z-name z-type z-class">Component</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>  attr </span><span class="z-punctuation z-constant z-other z-symbol">:rating, :map,</span><span> required</span><span class="z-punctuation z-constant z-language">: true</span></span>
+<span class="giallo-l"><span>  attr </span><span class="z-punctuation z-constant z-other z-symbol">:size, :atom,</span><span> default</span><span class="z-punctuation z-constant z-other z-symbol">: :md,</span><span> values</span><span class="z-punctuation z-constant z-other z-symbol">: [:sm, :md, :lg]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> rating_badge</span><span class="z-punctuation">(</span><span>assigns</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span>    ~H&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">    &lt;</span><span class="z-entity z-name z-tag">span</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=</span><span class="z-string">{[</span></span>
+<span class="giallo-l"><span class="z-meta z-tag">      &quot;inline-flex</span><span class="z-entity z-other z-attribute-name"> items-center rounded-full font-semibold</span><span class="z-meta z-tag">&quot;,</span></span>
+<span class="giallo-l"><span class="z-entity z-other z-attribute-name">      size_class(@size),</span></span>
+<span class="giallo-l"><span class="z-entity z-other z-attribute-name">      rating_color(@rating.grade)</span></span>
+<span class="giallo-l"><span class="z-entity z-other z-attribute-name">    ]}</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span>      &lt;%= @rating.grade %&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">    &lt;/</span><span class="z-entity z-name z-tag">span</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span>    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>  attr </span><span class="z-punctuation z-constant z-other z-symbol">:label, :string,</span><span> required</span><span class="z-punctuation z-constant z-language">: true</span></span>
+<span class="giallo-l"><span>  attr </span><span class="z-punctuation z-constant z-other z-symbol">:value, :string,</span><span> required</span><span class="z-punctuation z-constant z-language">: true</span></span>
+<span class="giallo-l"><span>  attr </span><span class="z-punctuation z-constant z-other z-symbol">:trend, :atom,</span><span> default</span><span class="z-punctuation z-constant z-language">: nil,</span><span> values</span><span class="z-punctuation z-constant z-language z-constant z-other z-symbol">: [nil, :up, :down, :stable]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> metric_card</span><span class="z-punctuation">(</span><span>assigns</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span>    ~H&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">    &lt;</span><span class="z-entity z-name z-tag">div</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=&quot;</span><span class="z-string">rounded-lg bg-gray-800 p-4</span><span class="z-punctuation z-punctuation z-definition z-tag">&quot;&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">      &lt;</span><span class="z-entity z-name z-tag">p</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=&quot;</span><span class="z-string">text-sm text-gray-400</span><span class="z-punctuation z-punctuation z-definition z-tag">&quot;&gt;</span><span>&lt;%= @label %&gt;</span><span class="z-punctuation z-definition z-tag">&lt;/</span><span class="z-entity z-name z-tag">p</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">      &lt;</span><span class="z-entity z-name z-tag">p</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=&quot;</span><span class="z-string">text-2xl font-bold text-white</span><span class="z-punctuation z-punctuation z-definition z-tag">&quot;&gt;</span><span>&lt;%= @value %&gt;</span><span class="z-punctuation z-definition z-tag">&lt;/</span><span class="z-entity z-name z-tag">p</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">      &lt;</span><span class="z-entity z-name z-tag">p</span><span class="z-entity z-other z-attribute-name"> :if</span><span class="z-punctuation">=</span><span class="z-string">{@trend}</span><span class="z-entity z-other z-attribute-name"> class</span><span class="z-punctuation">=</span><span class="z-string">{trend_class(@trend)}</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span>        &lt;%= trend_arrow(@trend) %&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">      &lt;/</span><span class="z-entity z-name z-tag">p</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-tag">    &lt;/</span><span class="z-entity z-name z-tag">div</span><span class="z-punctuation z-definition z-tag">&gt;</span></span>
+<span class="giallo-l"><span>    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">end</span></span></code></pre>
+<p>The guideline for choosing between the two is straightforward: use function components by default (they are faster and simpler), and promote to live components only when the component needs to independently handle events, maintain internal state, or perform its own data fetching.</p>
+<h2 id="pubsub-integration-for-real-time-updates">PubSub Integration for Real-Time Updates</h2>
+<p>The integration between LiveView and <a href="https://prismatic-reality.com/architecture/pubsub/">Phoenix PubSub</a> is where the architecture truly distinguishes itself from traditional approaches. Because each LiveView is a BEAM process, it can subscribe to PubSub topics directly in its <code>mount/3</code> callback and receive messages through <code>handle_info/2</code> -- the same mechanism used for all inter-process communication in <a href="https://prismatic-reality.com/glossary/otp/">OTP</a>.</p>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-keyword z-control">defmodule</span><span class="z-entity z-other z-inherited-class"> PrismaticWeb</span><span>.</span><span class="z-entity z-name z-type z-class">AgentDashboardLive</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  use</span><span class="z-entity z-name z-type z-class"> PrismaticWeb</span><span class="z-punctuation z-constant z-other z-symbol">, :live_view</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">topics</span><span class="z-punctuation"> [&quot;</span><span class="z-string">agents:status</span><span class="z-punctuation">&quot;, &quot;</span><span class="z-string">agents:metrics</span><span class="z-punctuation">&quot;, &quot;</span><span class="z-string">agents:errors</span><span class="z-punctuation">&quot;]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">impl</span><span class="z-constant z-language"> true</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> mount</span><span class="z-punctuation">(</span><span class="z-comment">_params</span><span class="z-punctuation">,</span><span class="z-comment"> _session</span><span class="z-punctuation">,</span><span> socket</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">    if</span><span class="z-entity z-name z-function"> connected?</span><span class="z-punctuation">(</span><span>socket</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type z-class">      Enum</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">each</span><span class="z-punctuation">(@</span><span class="z-variable">topics</span><span class="z-punctuation">,</span><span class="z-variable"> &amp;</span><span class="z-entity z-name z-type z-class">Phoenix</span><span class="z-punctuation">.</span><span class="z-entity z-name z-type z-class">PubSub</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">subscribe</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type z-class">PrismaticPubSub</span><span class="z-punctuation">, &amp;</span><span class="z-variable">1</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">    end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:ok,</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">     assign</span><span class="z-punctuation">(</span><span>socket</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>       agents</span><span class="z-punctuation">:</span><span class="z-entity z-name z-type z-class"> PrismaticAgents</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">list_active</span><span class="z-punctuation">(),</span></span>
+<span class="giallo-l"><span>       error_count</span><span class="z-punctuation">:</span><span class="z-constant z-numeric"> 0</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>       last_event</span><span class="z-punctuation z-constant z-language">: nil</span></span>
+<span class="giallo-l"><span class="z-punctuation">     )}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">impl</span><span class="z-constant z-language"> true</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> handle_info</span><span class="z-punctuation z-constant z-other z-symbol">({:agent_started,</span><span> agent</span><span class="z-punctuation">},</span><span> socket</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:noreply,</span></span>
+<span class="giallo-l"><span>     socket</span></span>
+<span class="giallo-l"><span class="z-keyword">     |&gt;</span><span class="z-entity z-name z-function"> update</span><span class="z-punctuation z-constant z-other z-symbol">(:agents,</span><span class="z-variable"> &amp;</span><span class="z-entity z-name z-type z-class">Map</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">put</span><span class="z-punctuation">(&amp;</span><span class="z-variable">1</span><span class="z-punctuation">,</span><span> agent</span><span class="z-punctuation">.</span><span>id</span><span class="z-punctuation">,</span><span> agent</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-keyword">     |&gt;</span><span class="z-entity z-name z-function"> assign</span><span class="z-punctuation">(</span><span>last_event</span><span class="z-punctuation z-constant z-other z-symbol">: {:started,</span><span> agent</span><span class="z-punctuation">.</span><span>id</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type z-class"> DateTime</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">utc_now</span><span class="z-punctuation">()})}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">impl</span><span class="z-constant z-language"> true</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> handle_info</span><span class="z-punctuation z-constant z-other z-symbol">({:agent_error,</span><span> agent_id</span><span class="z-punctuation">,</span><span> error</span><span class="z-punctuation">},</span><span> socket</span><span class="z-punctuation">)</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:noreply,</span></span>
+<span class="giallo-l"><span>     socket</span></span>
+<span class="giallo-l"><span class="z-keyword">     |&gt;</span><span class="z-entity z-name z-function"> update</span><span class="z-punctuation z-constant z-other z-symbol">(:error_count,</span><span class="z-variable"> &amp;</span><span class="z-punctuation">(&amp;</span><span class="z-variable">1</span><span class="z-keyword"> +</span><span class="z-constant z-numeric"> 1</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-keyword">     |&gt;</span><span class="z-entity z-name z-function"> assign</span><span class="z-punctuation">(</span><span>last_event</span><span class="z-punctuation z-constant z-other z-symbol">: {:error,</span><span> agent_id</span><span class="z-punctuation">,</span><span class="z-entity z-name z-type z-class"> DateTime</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">utc_now</span><span class="z-punctuation">()})}</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">end</span></span></code></pre>
+<p>This pattern requires no additional API layer, no polling mechanism, and no client-side event bus. The domain event (<code>agent_started</code>) flows from the originating process through <a href="https://prismatic-reality.com/glossary/pubsub/">PubSub</a> directly into the LiveView process, which re-renders and sends a DOM diff to the browser. The entire path from domain event to screen update typically completes in under 10 milliseconds.</p>
+<h2 id="performance-characteristics">Performance Characteristics</h2>
+<h3 id="beam-vm-advantages-for-ui-serving">BEAM VM Advantages for UI Serving</h3>
+<p>The <a href="https://prismatic-reality.com/glossary/beam/">BEAM virtual machine</a> provides several properties that make it exceptionally suited for serving many concurrent LiveView connections:</p>
+<table><thead><tr><th>Property</th><th>Mechanism</th><th>Impact on LiveView</th></tr></thead><tbody>
+<tr><td><a href="https://prismatic-reality.com/glossary/process-isolation/">Process isolation</a></td><td>Separate heap per process</td><td>One user's crash never affects others</td></tr>
+<tr><td>Preemptive scheduling</td><td>Reduction counting</td><td>No single user can starve others</td></tr>
+<tr><td>Per-process GC</td><td>Generational, per-heap</td><td>No global GC pauses across all sessions</td></tr>
+<tr><td>Lightweight processes</td><td>~2KB initial memory</td><td>100,000+ concurrent sessions per node</td></tr>
+<tr><td><a href="https://prismatic-reality.com/glossary/hot-code-reload/">Hot code reload</a>ing</td><td>Module versioning</td><td>Zero-downtime dashboard updates</td></tr>
+</tbody></table>
+<h3 id="measured-performance">Measured Performance</h3>
+<p>Benchmarks from the Prismatic Platform production environment (single node, 8-core, 32GB RAM):</p>
+<table><thead><tr><th>Metric</th><th>Value</th><th>Methodology</th></tr></thead><tbody>
+<tr><td>Mount time (cold)</td><td>2-5ms</td><td><code>:telemetry</code> measurement of mount/3</td></tr>
+<tr><td>Mount time (warm, cached data)</td><td>&lt;1ms</td><td>Data pre-loaded in <a href="https://prismatic-reality.com/glossary/ets/">ETS</a></td></tr>
+<tr><td>DOM diff generation</td><td>50-200us</td><td>Template diffing engine</td></tr>
+<tr><td>WebSocket frame size (typical)</td><td>200-800 bytes</td><td>Compressed diff payload</td></tr>
+<tr><td>Concurrent connections (single node)</td><td>50,000+</td><td>Load tested with Tsung</td></tr>
+<tr><td>Memory per connection</td><td>30-50KB</td><td>Measured via <code>:erlang.process_info/2</code></td></tr>
+<tr><td>Event round-trip (user click to DOM update)</td><td>5-15ms</td><td>End-to-end with network</td></tr>
+</tbody></table>
+<h3 id="websocket-efficiency-vs-polling">WebSocket Efficiency vs Polling</h3>
+<p>The bandwidth savings are substantial for data-heavy dashboards:</p>
+<pre class="giallo z-code"><code data-lang="plain"><span class="giallo-l"><span>Scenario: 1,000 concurrent users on Perimeter dashboard, 2 updates/second</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>Traditional polling (REST API):</span></span>
+<span class="giallo-l"><span>  1,000 users x 2 req/s x ~4KB response = 8 MB/s bandwidth</span></span>
+<span class="giallo-l"><span>  + 1,000 users x 2 req/s x connection overhead = 2,000 TCP handshakes/s</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>LiveView (WebSocket + diffs):</span></span>
+<span class="giallo-l"><span>  1,000 persistent connections x 2 diffs/s x ~400 bytes = 0.8 MB/s bandwidth</span></span>
+<span class="giallo-l"><span>  + 0 TCP handshakes (persistent connections)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>Bandwidth reduction: ~90%</span></span>
+<span class="giallo-l"><span>Connection overhead reduction: ~100%</span></span></code></pre><h2 id="telemetry-and-observability">Telemetry and Observability</h2>
+<p>Every LiveView lifecycle event emits <a href="https://prismatic-reality.com/architecture/telemetry/">telemetry</a> events that integrate with the platform's <a href="https://prismatic-reality.com/glossary/observability/">observability</a> infrastructure:</p>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-keyword z-control">defmodule</span><span class="z-entity z-other z-inherited-class"> PrismaticWeb</span><span>.</span><span class="z-entity z-name z-type z-class">LiveViewTelemetry</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation">  @</span><span class="z-variable">events</span><span class="z-punctuation"> [</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    [:phoenix, :live_view, :mount, :start],</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    [:phoenix, :live_view, :mount, :stop],</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    [:phoenix, :live_view, :mount, :exception],</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    [:phoenix, :live_view, :handle_event, :start],</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    [:phoenix, :live_view, :handle_event, :stop],</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    [:phoenix, :live_view, :handle_event, :exception]</span></span>
+<span class="giallo-l"><span class="z-punctuation">  ]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control">  def</span><span class="z-entity z-name z-function"> attach</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-constant z-other z-symbol z-punctuation">    :telemetry.</span><span class="z-entity z-name z-function">attach_many</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-punctuation">      &quot;</span><span class="z-string">prismatic-liveview-metrics</span><span class="z-punctuation">&quot;,</span></span>
+<span class="giallo-l"><span class="z-punctuation">      @</span><span class="z-variable">events</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable">      &amp;handle_event</span><span class="z-keyword">/</span><span class="z-constant z-numeric">4</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span>      %</span><span class="z-punctuation">{}</span></span>
+<span class="giallo-l"><span class="z-punctuation">    )</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control">  defp</span><span class="z-entity z-name z-function"> handle_event</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">         [:phoenix, :live_view, :mount, :stop],</span></span>
+<span class="giallo-l"><span>         %</span><span class="z-punctuation">{</span><span>duration</span><span class="z-punctuation">:</span><span> duration</span><span class="z-punctuation">},</span></span>
+<span class="giallo-l"><span>         %</span><span class="z-punctuation">{</span><span>socket</span><span class="z-punctuation">:</span><span> socket</span><span class="z-punctuation">},</span></span>
+<span class="giallo-l"><span class="z-comment">         _config</span></span>
+<span class="giallo-l"><span class="z-punctuation">       )</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span>    view </span><span class="z-keyword">=</span><span> socket</span><span class="z-punctuation">.</span><span>view </span><span class="z-keyword">|&gt;</span><span class="z-entity z-name z-type z-class"> Module</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">split</span><span class="z-punctuation z-keyword">() |&gt;</span><span class="z-entity z-name z-type z-class"> List</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">last</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-constant z-other z-symbol z-punctuation">    :telemetry.</span><span class="z-entity z-name z-function">execute</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">      [:prismatic, :dashboard, :mount],</span></span>
+<span class="giallo-l"><span>      %</span><span class="z-punctuation">{</span><span>duration</span><span class="z-punctuation">:</span><span> duration</span><span class="z-punctuation">},</span></span>
+<span class="giallo-l"><span>      %</span><span class="z-punctuation">{</span><span>view</span><span class="z-punctuation">:</span><span> view</span><span class="z-punctuation">,</span><span> connected</span><span class="z-punctuation">:</span><span class="z-entity z-name z-type z-class"> Phoenix</span><span class="z-punctuation">.</span><span class="z-entity z-name z-type z-class">LiveView</span><span class="z-punctuation">.</span><span class="z-entity z-name z-function">connected?</span><span class="z-punctuation">(</span><span>socket</span><span class="z-punctuation">)}</span></span>
+<span class="giallo-l"><span class="z-punctuation">    )</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">end</span></span></code></pre>
+<p>This <a href="https://prismatic-reality.com/glossary/telemetry/">telemetry</a> data feeds into the platform's <a href="https://prismatic-reality.com/capabilities/quality-gates/">quality gates</a> and <a href="https://prismatic-reality.com/capabilities/real-time-monitoring/">real-time monitoring</a> systems, enabling automatic detection of performance regressions in dashboard rendering.</p>
+<h2 id="testing-liveview">Testing LiveView</h2>
+<p>LiveView provides a first-class testing API that exercises the full server-side lifecycle without requiring a browser:</p>
+<pre class="giallo z-code"><code data-lang="elixir"><span class="giallo-l"><span class="z-keyword z-control">defmodule</span><span class="z-entity z-other z-inherited-class"> PrismaticWeb</span><span>.</span><span class="z-entity z-name z-type z-class">PerimeterLiveTest</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  use</span><span class="z-entity z-name z-type z-class"> PrismaticWeb</span><span class="z-punctuation">.</span><span class="z-entity z-name z-type z-class">ConnCase</span><span class="z-punctuation">,</span><span> async</span><span class="z-punctuation z-constant z-language">: true</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  import</span><span class="z-entity z-name z-type z-class"> Phoenix</span><span class="z-punctuation">.</span><span class="z-entity z-name z-type z-class">LiveViewTest</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>  test </span><span class="z-punctuation">&quot;</span><span class="z-string">mounts with loading state</span><span class="z-punctuation">&quot;</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:ok,</span><span> view</span><span class="z-punctuation">,</span><span> html</span><span class="z-punctuation z-keyword">} =</span><span class="z-entity z-name z-function"> live</span><span class="z-punctuation">(</span><span>conn</span><span class="z-punctuation">, &quot;</span><span class="z-string">/perimeter</span><span class="z-punctuation">&quot;)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    assert html </span><span class="z-keyword z-punctuation">=~ &quot;</span><span class="z-string">Loading</span><span class="z-punctuation">&quot;</span></span>
+<span class="giallo-l"><span>    assert </span><span class="z-entity z-name z-function">has_element?</span><span class="z-punctuation">(</span><span>view</span><span class="z-punctuation">, &quot;</span><span class="z-string">#perimeter-dashboard</span><span class="z-punctuation">&quot;)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>  test </span><span class="z-punctuation">&quot;</span><span class="z-string">receives real-time asset discovery</span><span class="z-punctuation">&quot;</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:ok,</span><span> view</span><span class="z-punctuation">,</span><span class="z-comment"> _html</span><span class="z-punctuation z-keyword">} =</span><span class="z-entity z-name z-function"> live</span><span class="z-punctuation">(</span><span>conn</span><span class="z-punctuation">, &quot;</span><span class="z-string">/perimeter</span><span class="z-punctuation">&quot;)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # Simulate a PubSub event</span></span>
+<span class="giallo-l"><span>    asset </span><span class="z-keyword">=</span><span> %</span><span class="z-punctuation">{</span><span>id</span><span class="z-punctuation">: &quot;</span><span class="z-string">asset-1</span><span class="z-punctuation">&quot;,</span><span> domain</span><span class="z-punctuation">: &quot;</span><span class="z-string">example.com</span><span class="z-punctuation">&quot;,</span><span> type</span><span class="z-punctuation z-constant z-other z-symbol">: :domain}</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">    send</span><span class="z-punctuation">(</span><span>view</span><span class="z-punctuation">.</span><span>pid</span><span class="z-punctuation z-constant z-other z-symbol">, {:asset_discovered,</span><span> asset</span><span class="z-punctuation">})</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    assert </span><span class="z-entity z-name z-function">has_element?</span><span class="z-punctuation">(</span><span>view</span><span class="z-punctuation">, &quot;</span><span class="z-string">#asset-asset-1</span><span class="z-punctuation">&quot;)</span></span>
+<span class="giallo-l"><span>    assert </span><span class="z-entity z-name z-function">render</span><span class="z-punctuation">(</span><span>view</span><span class="z-punctuation z-keyword">) =~ &quot;</span><span class="z-string">example.com</span><span class="z-punctuation">&quot;</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>  test </span><span class="z-punctuation">&quot;</span><span class="z-string">handles sorting</span><span class="z-punctuation">&quot;</span><span class="z-keyword z-control"> do</span></span>
+<span class="giallo-l"><span class="z-punctuation z-constant z-other z-symbol">    {:ok,</span><span> view</span><span class="z-punctuation">,</span><span class="z-comment"> _html</span><span class="z-punctuation z-keyword">} =</span><span class="z-entity z-name z-function"> live</span><span class="z-punctuation">(</span><span>conn</span><span class="z-punctuation">, &quot;</span><span class="z-string">/perimeter</span><span class="z-punctuation">&quot;)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    view</span></span>
+<span class="giallo-l"><span class="z-keyword">    |&gt;</span><span class="z-entity z-name z-function"> element</span><span class="z-punctuation">(&quot;</span><span class="z-string">[data-sort=domain]</span><span class="z-punctuation">&quot;)</span></span>
+<span class="giallo-l"><span class="z-keyword">    |&gt;</span><span class="z-entity z-name z-function"> render_click</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span>    assert </span><span class="z-entity z-name z-function">has_element?</span><span class="z-punctuation">(</span><span>view</span><span class="z-punctuation">, &quot;</span><span class="z-string">[data-sort-dir=asc]</span><span class="z-punctuation">&quot;)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">  end</span></span>
+<span class="giallo-l"><span class="z-keyword z-control">end</span></span></code></pre>
+<p>These tests run in milliseconds, provide full coverage of the server-side logic, and catch rendering regressions without the brittleness of browser-based end-to-end tests. For interactions that involve JavaScript hooks, the platform uses Playwright for targeted integration tests.</p>
+<h2 id="comparison-with-alternative-approaches">Comparison with Alternative Approaches</h2>
+<h3 id="liveview-vs-htmx">LiveView vs HTMX</h3>
+<p>HTMX shares LiveView's philosophy of server-rendered interactivity but differs in mechanism: HTMX sends HTML fragments over HTTP requests, while LiveView maintains a persistent WebSocket with DOM diffing. For Prismatic's use case (continuous real-time data streams), LiveView's persistent connection model is substantially more efficient. HTMX would require either polling or a separate WebSocket layer for push updates.</p>
+<h3 id="liveview-vs-hotwire-turbo-stimulus">LiveView vs Hotwire (Turbo + Stimulus)</h3>
+<p>Rails' Hotwire approach uses Turbo Streams for server-pushed HTML updates and Stimulus for JavaScript behaviors. The key difference is process isolation: each LiveView connection gets a dedicated BEAM process with independent failure handling, while Turbo relies on Action Cable backed by a thread pool. Under high concurrency (10,000+ simultaneous dashboard users), the BEAM's process model scales more predictably than thread-based alternatives.</p>
+<h3 id="liveview-vs-server-sent-events-react">LiveView vs Server-Sent Events + React</h3>
+<p>A hybrid approach using SSE for server push and React for rendering would work but introduces the same bundle size and state synchronization costs as a full SPA. The Prismatic Platform considered this approach early in development and abandoned it because maintaining parallel server and client state models for 15+ dashboard types created an unsustainable maintenance burden.</p>
+<h2 id="deployment-and-scaling-considerations">Deployment and Scaling Considerations</h2>
+<p>LiveView connections are stateful -- each user has an associated server process -- which has implications for deployment. The Prismatic Platform uses the following strategies:</p>
+<ol>
+<li><strong>Sticky sessions</strong> via load balancer configuration ensure WebSocket reconnections route to the same node</li>
+<li><strong>Graceful draining</strong> during deploys allows existing connections to complete before node shutdown</li>
+<li><strong>PubSub clustering</strong> via <a href="https://prismatic-reality.com/glossary/cluster/">distributed Erlang</a> ensures events reach LiveView processes regardless of which node they run on</li>
+<li><strong>Connection limits</strong> per node prevent memory exhaustion (configured at 60,000 connections based on benchmarking)</li>
+</ol>
+<p>The <a href="https://prismatic-reality.com/architecture/supervision-trees/">supervision tree</a> for the web application ensures that crashed LiveView processes are automatically restarted, providing the user with a seamless reconnection experience through LiveView's built-in reconnection logic.</p>
+<h2 id="summary">Summary</h2>
+<p>Phoenix LiveView is not merely a convenience for avoiding JavaScript -- it is an architectural decision that aligns the UI layer with the same process-oriented, fault-tolerant model that governs the rest of the Prismatic Platform. Every dashboard is a supervised process. Every user interaction is a message. Every real-time update flows through the same <a href="https://prismatic-reality.com/architecture/pubsub/">PubSub</a> infrastructure that coordinates <a href="https://prismatic-reality.com/apps/prismatic-agents/">agents</a> and <a href="https://prismatic-reality.com/architecture/storage-adapters/">storage adapters</a>. This uniformity reduces cognitive overhead, eliminates entire categories of bugs (client-server state drift, race conditions between user actions and server events), and enables the platform to serve real-time dashboards at scale with a remarkably small codebase.</p>
+<hr />
+<h2 id="connect-contribute">Connect &amp; Contribute</h2>
+<p><strong>Created by <a rel="external" href="https://github.com/korczis">Tomáš Korcak (korczis)</a></strong> | Open Source under <a rel="external" href="https://github.com/korczis/prismatic-platform/blob/main/LICENSE">GHL</a></p>
+<ul>
+<li><a rel="external" href="https://github.com/korczis/prismatic-platform">GitHub</a> | <a rel="external" href="https://gitlab.com/korczis/prismatic-platform">GitLab</a> | <a rel="external" href="https://linkedin.com/in/korczis">LinkedIn</a> | <a href="mailto:korczis@gmail.com">Contact</a></li>
+<li><a href="/developers/">Developer Portal</a> | <a href="/architecture/">Architecture</a> | <a href="/about/author/">Meet the Creator</a></li>
+</ul>
+
+                </article>
+
+                <!-- Related Content -->
+                <div class="mt-16 pt-8 border-t border-gray-700">
+                    <h2 class="text-2xl font-bold text-white mb-6">Related Content</h2>
+                    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+                            class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                            <h3 class="font-bold text-white mb-1">Applications</h3>
+                            <p class="text-sm text-gray-400">115 umbrella apps powering the
+                                Prismatic Platform ecosystem.</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+                            class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                            <h3 class="font-bold text-white mb-1">Agent Ecosystem</h3>
+                            <p class="text-sm text-gray-400">530 autonomous agents across 14
+                                specialized domains.</p>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+                            class="p-5 bg-gray-800 rounded-xl border border-gray-700 hover:shadow-md transition-shadow">
+                            <h3 class="font-bold text-white mb-1">Color Teams</h3>
+                            <p class="text-sm text-gray-400">6 adversarial-defensive security teams with 20 specialized
+                                agents.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Back Button -->
+                <div class="mt-8 pt-8 border-t border-gray-700">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/"
+                        class="inline-flex items-center px-6 py-3 text-sm font-semibold text-gray-950 bg-white rounded-xl focus:ring-4 focus:ring-white/20 transition-all shadow-lg hover:shadow-xl">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Back to Architecture
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="hidden lg:block sticky top-4 space-y-6 self-start">
+
+                <!-- 1. Architecture Overview (expanded by default) -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6"
+                    x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded"
+                        class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors focus:outline-none focus:bg-gray-750">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Architecture Overview</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                        <dl class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <dt class="text-xs text-gray-400">Total Components</dt>
+                                <dd class="text-xs font-semibold text-emerald-400">6,652 modules</dd>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <dt class="text-xs text-gray-400">Umbrella Apps</dt>
+                                <dd class="text-xs font-semibold text-emerald-400">99</dd>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <dt class="text-xs text-gray-400">Quality Score</dt>
+                                <dd class="text-xs font-semibold text-emerald-400">100/100</dd>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <dt class="text-xs text-gray-400">Evolution</dt>
+                                <dd class="text-xs font-semibold text-emerald-400">Gen 18</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+
+                <!-- 2. Related Articles (expanded by default) -->
+                
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6"
+                    x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded"
+                        class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors focus:outline-none focus:bg-gray-750">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Related Articles (13)</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                        <ul class="space-y-1">
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;phoenix-liveview&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-emerald-400 font-semibold bg-emerald-900/20">
+                                    Phoenix LiveView
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;postgresql-kuzudb&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    PostgreSQL + KuzuDB
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;ollama&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Local AI (Ollama)
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;event-sourcing&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Event Sourcing
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;supervision-trees&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Supervision Trees
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;storage-adapters&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Storage Adapters
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;umbrella-apps&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Umbrella Architecture
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;meilisearch&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Meilisearch
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;nabla-framework&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    NABLA Framework
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;adaptive-architecture&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Adaptive Architecture
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;pubsub&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Phoenix PubSub
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;telemetry&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    Telemetry &amp; Metrics
+                                </a>
+                            </li>
+                            
+                            <li>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;architecture&#x2F;graphql&#x2F;"
+                                    class="block text-xs px-2 py-1.5 rounded-lg transition-all text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    GraphQL API
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                <!-- Quick Navigation Card -->
+                <div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden mb-6" x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-750 transition-colors focus:outline-none focus:bg-gray-750">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                            </svg>
+                            <span class="font-semibold text-white text-sm">Quick Navigation</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                        <nav class="space-y-1">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-purple-400 flex-shrink-0"></span><span>Agents</span></a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/capabilities/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0"></span><span>Capabilities</span></a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span><span>Apps</span></a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/technologies/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"></span><span>Technologies</span></a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/" class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span class="w-1.5 h-1.5 rounded-full bg-teal-400 flex-shrink-0"></span><span>Glossary</span></a>
+                        </nav>
+                    </div>
+                </div>
+                <!-- Related Glossary Terms -->
+                
+                <!-- Default Architecture Glossary -->
+                <div class="bg-gray-800/50 rounded-xl border border-white/5 overflow-hidden mb-6" x-data="{ expanded: true }">
+                    <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-700/50 transition-colors">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                            </svg>
+                            <span class="text-sm font-semibold text-white uppercase tracking-wider">Related Glossary</span>
+                        </div>
+                        <svg class="w-4 h-4 text-gray-400 transition-transform duration-200" :class="{'rotate-180': !expanded}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="expanded" x-collapse x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-4">
+                        <div class="flex flex-wrap gap-2">
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/elixir/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Elixir</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/otp/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">OTP</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/beam/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">BEAM</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/phoenix/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Phoenix</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/supervision-tree/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Supervision Tree</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/umbrella-project/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Umbrella Project</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/event-sourcing/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Event Sourcing</a>
+                            <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/ets/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">ETS</a>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/dd/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Due Diligence<span
+                class="ml-auto text-xs text-gray-600">122 src</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Interactive Labs<span
+                class="ml-auto text-xs text-gray-600">15 exp</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Academy<span
+                class="ml-auto text-xs text-gray-600">15 courses</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>API Reference</a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/apps/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-purple-400"></span>Applications<span
+                class="ml-auto text-xs text-gray-600">90</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Open source AI orchestration platform. 530 autonomous agents. 115 umbrella apps.
+                        Community-driven, self-evolving, unstoppable.
+                    </p>
+                    <div class="flex items-center space-x-4 mt-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitLab">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0L8.26 11.26H3.74L12 24l8.26-12.74H15.74L12 0zM3.74 11.26l4.52 7.41L12 0 8.26 11.26H3.74zM20.26 11.26l-4.52 7.41L12 0l3.74 11.26h4.52z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Connect on LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Follow on Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Executive</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/about/author/"
+                                class="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold">Meet the Creator</a></li>
+                        <li><a href="/executive/"
+                                class="text-gray-400 hover:text-white transition-colors">Value Proposition</a></li>
+                        <li><a href="/executive/roi-calculator/"
+                                class="text-gray-400 hover:text-white transition-colors">ROI Calculator</a></li>
+                        <li><a href="/executive/competitive-analysis/"
+                                class="text-gray-400 hover:text-white transition-colors">Competitive Analysis</a></li>
+                        <li><a href="/executive/case-studies/"
+                                class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Intelligence -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Intelligence</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/dd/"
+                                class="text-gray-400 hover:text-white transition-colors">Due Diligence</a></li>
+                        <li><a href="/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Interactive Labs</a></li>
+                        <li><a href="/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="/developers/sdk/"
+                                class="text-gray-400 hover:text-white transition-colors">SDK</a></li>
+                        <li><a href="/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="/blog/"
+                                class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Capabilities</a></li>
+                        <li><a href="/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (530)</a></li>
+                        <li><a href="/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (115+)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                        <li><a href="/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                        <p class="text-sm text-gray-500">
+                            &copy; 2026 <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis" class="text-gray-400 hover:text-white">Tomáš Korcak</a>.
+                            Licensed under <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform/blob/main/LICENSE" class="text-gray-400 hover:text-white">GHL</a>.
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Built with <a href="/capabilities/no-mercy/" class="text-gray-400 hover:text-white">NO MERCY</a>,
+                            <a href="/capabilities/no-doubts/" class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                        <span class="text-sm text-gray-500">v8.0.0</span>
+                        <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                        <span class="text-sm text-gray-400">Gen 19</span>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                    <div class="flex items-center space-x-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitHub</a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitLab</a>
+                        <a href="/blog/" class="hover:text-gray-400">Blog</a>
+                        <a href="/faq/" class="hover:text-gray-400">FAQ</a>
+                    </div>
+                    <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                        <span>530 agents</span>
+                        <span>•</span>
+                        <span>115 apps</span>
+                        <span>•</span>
+                        <span>2.8M LOC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Global Glossary Hover Card -->
+    <div x-data="glossaryHover()" x-init="init()">
+        <template x-teleport="body">
+            <div x-show="term"
+                 x-transition:enter="transition ease-out duration-200"
+                 x-transition:enter-start="opacity-0 scale-95"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition ease-in duration-150"
+                 x-transition:leave-start="opacity-100 scale-100"
+                 x-transition:leave-end="opacity-0 scale-95"
+                 class="fixed glossary-hover-card rounded-lg p-4"
+                 :style="`left: ${pos.x}px; top: ${pos.y}px;`"
+                 @mouseenter="clearHide()"
+                 @mouseleave="startHide()">
+                <div class="flex items-center gap-2 mb-2">
+                    <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+                    <h4 class="font-semibold text-white text-sm" x-text="term?.title"></h4>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed" x-text="term?.description"></p>
+                <div class="flex items-center gap-1 mt-2 text-xs text-gray-400">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                    </svg>
+                    <span>Click to explore</span>
+                </div>
+            </div>
+        </template>
+    </div>
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/glossary-data.js"></script>
+    <script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('glossaryHover', () => ({
+            term: null,
+            pos: { x: 0, y: 0 },
+            _timeout: null,
+            init() {
+                this.$nextTick(() => {
+                    document.querySelectorAll('a[href*="/glossary/"]').forEach(link => {
+                        link.addEventListener('mouseenter', (e) => this.show(e));
+                        link.addEventListener('mouseleave', () => this.startHide());
+                    });
+                });
+            },
+            show(event) {
+                this.clearHide();
+                const link = event.target.closest('a');
+                if (!link) return;
+                const rect = link.getBoundingClientRect();
+                const href = link.getAttribute('href');
+                const slug = href.split('/glossary/')[1]?.replace(/\/$/, '').split('/')[0];
+                if (!slug) return;
+                const data = window.__GLOSSARY_DATA__ || {};
+                this.term = data[slug] || {
+                    title: link.textContent.trim(),
+                    description: 'Explore this concept in the glossary'
+                };
+                this.pos = {
+                    x: Math.min(rect.left, window.innerWidth - 340),
+                    y: rect.bottom + 8
+                };
+                if (this.pos.y + 120 > window.innerHeight) {
+                    this.pos.y = rect.top - 120;
+                }
+            },
+            startHide() {
+                this._timeout = setTimeout(() => { this.term = null; }, 200);
+            },
+            clearHide() {
+                if (this._timeout) { clearTimeout(this._timeout); this._timeout = null; }
+            }
+        }));
+    });
+    </script>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Code Copy Buttons -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/code-copy.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Mobile Menu Toggle + Back to Top -->
+    <script>
+        (function () {
+            // Mobile menu toggle
+            var menu = document.getElementById('navbar-menu');
+            var toggle = document.querySelector('[data-collapse-toggle="navbar-menu"]');
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function () {
+                    menu.classList.toggle('hidden');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+                        menu.classList.add('hidden');
+                    }
+                });
+
+                // Close menu on window resize to large screens
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth >= 1024) {
+                        menu.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Back to top
+            var btn = document.getElementById('back-to-top');
+            if (btn) {
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > 400) {
+                        btn.classList.remove('hidden');
+                        btn.classList.add('flex');
+                    } else {
+                        btn.classList.add('hidden');
+                        btn.classList.remove('flex');
+                    }
+                });
+                btn.addEventListener('click', function () {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>

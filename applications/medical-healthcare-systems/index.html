@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base-url" content="https://prismatic-reality.com">
+    <title>Medical &amp; Healthcare Systems -- Research Frameworks for Clinical Informatics and Multi-Agent Healthcare Modeling - Applications - Prismatic Platform</title>
+
+    
+    
+    <meta property="og:type" content="website">
+    
+    <meta property="og:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;medical-healthcare-systems&#x2F;">
+
+    
+    <meta property="og:title" content="Medical &amp; Healthcare Systems -- Research Frameworks for Clinical Informatics and Multi-Agent Healthcare Modeling - Prismatic Platform">
+    <meta name="twitter:title" content="Medical &amp; Healthcare Systems -- Research Frameworks for Clinical Informatics and Multi-Agent Healthcare Modeling - Prismatic Platform">
+    
+
+    
+    
+    <meta property="og:description" content="Theoretical foundations and research frameworks for applying multi-agent coordination, epistemic verification, and blackboard-based decision support to medical informatics, clinical workflow modeling, and healthcare system simulation within the Prismatic Platform">
+    <meta name="description" content="Theoretical foundations and research frameworks for applying multi-agent coordination, epistemic verification, and blackboard-based decision support to medical informatics, clinical workflow modeling, and healthcare system simulation within the Prismatic Platform">
+    
+
+    
+    
+    <meta property="og:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;sections&#x2F;applications.png">
+    <meta name="twitter:image" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;images&#x2F;sections&#x2F;applications.png">
+    
+
+    
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    
+    <meta property="og:image:alt" content="Medical &amp; Healthcare Systems -- Research Frameworks for Clinical Informatics and Multi-Agent Healthcare Modeling - Prismatic Platform">
+    
+    <meta property="og:site_name" content="Prismatic Platform">
+    <meta property="og:locale" content="en_US">
+
+    
+    
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;medical-healthcare-systems&#x2F;">
+    
+    <meta name="twitter:description" content="Theoretical foundations and research frameworks for applying multi-agent coordination, epistemic verification, and blackboard-based decision support to medical informatics, clinical workflow modeling, and healthcare system simulation within the Prismatic Platform">
+    
+    
+    <meta name="twitter:image:alt" content="Medical &amp; Healthcare Systems -- Research Frameworks for Clinical Informatics and Multi-Agent Healthcare Modeling - Prismatic Platform">
+    
+    <meta name="twitter:creator" content="@korczis">
+
+    
+
+    
+    
+    <meta name="keywords" content="medical informatics, clinical decision support, healthcare simulation, multi-agent coordination, epistemic verification, patient safety modeling, clinical workflow, healthcare systems research, HIPAA compliance framework, medical ethics, Prismatic Platform">
+    
+
+    
+    
+    <meta property="article:author" content="Tomáš Korcak">
+    <meta property="article:section" content="Medical &amp; Healthcare Systems -- Research Frameworks for Clinical Informatics and Multi-Agent Healthcare Modeling">
+    <meta name="author" content="Tomáš Korcak">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;medical-healthcare-systems&#x2F;">
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Prismatic Platform Feed" href="/atom.xml">
+
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Prismatic Platform",
+        "url": "https://prismatic-reality.com",
+        "description": "Open Source AI-Orchestrated Intelligence Platform | 530+ Agents | 115 Apps | Community-Driven",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Prismatic Platform",
+            "url": "https://prismatic-reality.com"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://prismatic-reality.com/search/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://prismatic-reality.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Medical & Healthcare Systems -- Research Frameworks for Clinical Informatics and Multi-Agent Healthcare Modeling"
+            }
+        ]
+    }
+    </script>
+    
+
+    
+    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <!-- Additional Meta -->
+    <meta name="theme-color" content="#3b82f6">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Content Security Policy - block unauthorized cross-origin requests -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'none';">
+
+    <!-- Pre-compiled TailwindCSS + Flowbite (zero CDN dependency) -->
+    <link rel="stylesheet" href="/css/tailwind.css">
+    <link rel="stylesheet" href="/css/flowbite.min.css">
+    <script defer src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/alpine.min.js"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Prose Styles for Markdown -->
+    <link rel="stylesheet" href="/css/prose.css">
+
+    <!-- Zola/Giallo Server-Side Syntax Highlighting -->
+    <link rel="stylesheet" href="/giallo.css">
+
+    <!-- Diagram Toggle (Mermaid Source/Interactive) -->
+    <link rel="stylesheet" href="/css/diagram-toggle.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        code,
+        pre {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        }
+
+        .glossary-hover-card {
+            background: linear-gradient(135deg, rgba(31, 41, 55, 0.98) 0%, rgba(17, 24, 39, 0.98) 100%);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(79, 70, 229, 0.3);
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            max-width: 320px;
+            z-index: 1000;
+        }
+    </style>
+
+    
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+    <!-- Horizontal Navigation Bar (Flowbite navbar pattern) -->
+    <nav class="fixed top-0 z-50 w-full bg-gray-950/80 backdrop-blur-xl border-b border-gray-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <!-- Brand -->
+            <a href="/" class="flex items-center space-x-3 group">
+                <div class="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+                    <svg class="w-5 h-5 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-white">Prismatic</span>
+            </a>
+
+            <div class="flex items-center lg:order-2 gap-2">
+                <!-- GitHub Link -->
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                   class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-400 hover:text-white bg-gray-800/50 hover:bg-gray-800 rounded-lg border border-gray-700 transition-colors"
+                   title="View on GitHub">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <!-- Version Badge -->
+                <span class="hidden md:inline-flex items-center px-2.5 py-1 text-xs font-semibold text-emerald-400 bg-emerald-900/20 rounded-full border border-emerald-500/20">v8.0.0</span>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-menu" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-400 rounded-lg lg:hidden hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-white/10">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Menu - Grouped Information Architecture -->
+            <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="navbar-menu">
+                <ul class="flex flex-col p-4 lg:p-0 mt-4 font-medium rounded-lg bg-gray-900 lg:space-x-0.5 lg:flex-row lg:mt-0 lg:border-0 lg:bg-transparent border-gray-800 text-sm">
+
+                    <!-- Platform dropdown - indigo: core product features -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-indigo-300 rounded-lg hover:text-white hover:bg-indigo-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                            Platform
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute left-0 mt-2 w-56 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-indigo-400 uppercase tracking-wider">Intelligence</div>
+                            <a href="/dd/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-indigo-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                Due Diligence
+                            </a>
+                            <a href="/osint/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                OSINT
+                            </a>
+                            <a href="/lab/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 00.659 1.591L19 14.5m0 0l-1.47 4.409a2.25 2.25 0 01-2.133 1.541H8.603a2.25 2.25 0 01-2.134-1.541L5 14.5m14 0H5"/></svg>
+                                Interactive Labs
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-indigo-400 uppercase tracking-wider">Ecosystem</div>
+                            <a href="/agents/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                Agents
+                            </a>
+                            <a href="/apps/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                                Apps
+                            </a>
+                            <a href="/applications/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-indigo-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                Applications
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-indigo-400 uppercase tracking-wider">Hub</div>
+                            <a href="/hub/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+                                Dashboard Hub
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Developers dropdown - blue: technical resources -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-blue-300 rounded-lg hover:text-white hover:bg-blue-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                            Developers
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute left-0 mt-2 w-52 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/developers/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                                Developer Portal
+                            </a>
+                            <a href="/developers/sdk/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                                SDK
+                            </a>
+                            <a href="/api/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-teal-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                                API Reference
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <a href="/commands/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                                Commands
+                            </a>
+                            <a href="/registry/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg>
+                                Registry
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <a href="/developers/plugins/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-orange-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"/></svg>
+                                Plugins
+                            </a>
+                            <a href="/developers/ui-components/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-pink-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                                UI Components
+                            </a>
+                            <a href="/developers/community/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-yellow-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                Community
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Learn dropdown - emerald: educational & knowledge -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-emerald-300 rounded-lg hover:text-white hover:bg-emerald-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                            Learn
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute left-0 mt-2 w-52 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/academy/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                                Academy
+                            </a>
+                            <a href="/capabilities/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                                Capabilities
+                            </a>
+                            <a href="/philosophy/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                                Philosophy
+                            </a>
+                            <a href="/architecture/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-lime-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                Architecture
+                            </a>
+                            <a href="/technologies/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+                                Technologies
+                            </a>
+                            <a href="/glossary/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-teal-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                                Glossary
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <a href="/blog/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
+                                Blog
+                            </a>
+                            <a href="/faq/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-emerald-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                FAQ
+                            </a>
+                        </div>
+                    </li>
+
+                    <!-- Company dropdown - violet: about & business -->
+                    <li class="relative" x-data="{ open: false }">
+                        <button @click="open = !open" @click.outside="open = false"
+                            class="flex items-center gap-1.5 py-2 px-3 text-violet-300 rounded-lg hover:text-white hover:bg-violet-500/10 lg:px-3 lg:py-1.5 transition-colors font-medium">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                            Company
+                            <svg class="w-3 h-3 transition-transform" :class="open ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="open" x-transition:enter="transition ease-out duration-100"
+                            x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                            class="absolute right-0 mt-2 w-52 bg-gray-900 rounded-xl shadow-2xl border border-white/10 py-2 z-50"
+                            x-cloak>
+                            <a href="/executive/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-violet-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                                Executive Overview
+                            </a>
+                            <a href="/teams/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                                Color Teams
+                            </a>
+                            <a href="/about/author/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-violet-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                                Author
+                            </a>
+                            <div class="my-1.5 border-t border-white/5"></div>
+                            <div class="px-3 py-1.5 text-xs font-semibold text-violet-400 uppercase tracking-wider">For You</div>
+                            <a href="/about/for-executives/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                For Executives
+                            </a>
+                            <a href="/about/for-architects/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                For Architects
+                            </a>
+                            <a href="/about/for-developers/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-cyan-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                                For Developers
+                            </a>
+                            <a href="/about/for-security/" class="flex items-center gap-2.5 px-3 py-2 text-sm text-gray-300 hover:text-white hover:bg-white/5">
+                                <svg class="w-4 h-4 text-red-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                For Security
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-16"></div>
+    <main>
+        
+<!-- Hero Section -->
+<section class="bg-gray-900 py-12 lg:py-16 border-b border-gray-200 dark:border-gray-700">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <!-- Breadcrumb -->
+        <nav class="flex mb-8" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center">
+                    <a href="https:&#x2F;&#x2F;prismatic-reality.com" class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-rose-600 dark:text-gray-400 dark:hover:text-white">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/></svg>
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                        <a href="https:&#x2F;&#x2F;prismatic-reality.com/applications/" class="ml-1 text-sm font-medium text-gray-500 hover:text-rose-600 md:ml-2 dark:text-gray-400 dark:hover:text-white">Applications</a>
+                    </div>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+                        <span class="ml-1 text-sm font-medium text-gray-700 md:ml-2 dark:text-gray-200">Medical &amp; Healthcare Systems -- Research Frameworks for Clinical Informatics and Multi-Agent Healthcare Modeling</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+
+        <div class="text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 text-xs font-bold tracking-widest text-gray-400 bg-emerald-900/20 dark:bg-white/5 rounded-full uppercase border border-emerald-300/50 dark:border-white/10">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                </svg>
+                25 Applications
+            </div>
+            <h1 class="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-4">
+                Medical &amp; Healthcare Systems -- Research Frameworks for Clinical Informatics and Multi-Agent Healthcare Modeling
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                Theoretical foundations and research frameworks for applying multi-agent coordination, epistemic verification, and blackboard-based decision support to medical informatics, clinical workflow modeling, and healthcare system simulation within the Prismatic Platform
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- Section Content -->
+<section class="bg-gray-50 dark:bg-gray-800 py-12 lg:py-16 border-b border-gray-200 dark:border-gray-700">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="prose prose-lg dark:prose-invert max-w-4xl mx-auto">
+            <h2 id="regulatory-and-ethical-disclaimer">Regulatory and Ethical Disclaimer</h2>
+<blockquote>
+<p><strong>Important Notice</strong>: The frameworks described in this section are <strong>theoretical research tools and simulation environments</strong>. They are designed to support academic study of healthcare system modeling, clinical informatics theory, and multi-agent coordination patterns. <strong>None of these frameworks constitute medical devices, diagnostic tools, or clinical decision-making systems.</strong> They have not received approval from the FDA, EMA, or any regulatory body. They must not be used for actual patient care, clinical diagnosis, treatment planning, or any real-world medical decision-making. All scenarios described use synthetic data exclusively. Any resemblance to real clinical cases is coincidental and unintentional. Users must comply with all applicable regulations including HIPAA, GDPR, and local medical practice laws.</p>
+</blockquote>
+<h2 id="abstract">Abstract</h2>
+<p>This document provides a comprehensive overview of the Prismatic Platform's medical and healthcare systems research domain -- a collection of 25 theoretical frameworks designed to study the application of <a href="https://prismatic-reality.com/glossary/multi-agent-systems/">multi-agent systems</a>, <a href="https://prismatic-reality.com/glossary/epistemic-validation/">epistemic verification</a>, and <a href="https://prismatic-reality.com/glossary/blackboard/">blackboard</a>-based coordination to problems in medical informatics and healthcare system modeling. The domain spans six primary research areas: clinical decision support theory, healthcare resource optimization modeling, patient safety and adverse event analysis, clinical communication and empathy frameworks, public health and epidemiological simulation, and healthcare ethics and equity research.</p>
+<p>Each framework leverages the platform's <a href="https://prismatic-reality.com/glossary/agent-orchestration/">agent orchestration</a> infrastructure, <a href="https://prismatic-reality.com/glossary/formal-verification/">formal verification</a> capabilities, and <a href="https://prismatic-reality.com/glossary/signal-plurality/">signal plurality</a> axioms to model the inherent complexity, uncertainty, and multi-stakeholder nature of healthcare environments. The emphasis throughout is on reproducibility, auditability, and transparent reasoning -- properties derived from the platform's <a href="https://prismatic-reality.com/glossary/nabla-infinity/">NABLA Infinity</a> epistemic framework and <a href="https://prismatic-reality.com/glossary/trinity-gate/">Trinity Gate</a> validation system.</p>
+<p>All frameworks operate exclusively with synthetic data and are intended for research, education, and system design exploration. No clinical validation has been performed, and no framework should be interpreted as providing medical advice or clinical guidance.</p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="context-and-motivation">Context and Motivation</h3>
+<p>Healthcare systems represent one of the most demanding domains for computational modeling. The intersection of clinical uncertainty, time-critical decision-making, multi-stakeholder coordination, and life-safety requirements creates challenges that resist simplistic algorithmic approaches. Traditional software systems struggle to capture the epistemic complexity inherent in medical reasoning -- where contradictory evidence is common, absence of findings carries diagnostic weight, and confidence must be explicitly quantified rather than assumed.</p>
+<p>The Prismatic Platform's medical and healthcare systems domain was conceived as a research laboratory for studying how <a href="https://prismatic-reality.com/glossary/multi-agent-system/">multi-agent architectures</a>, <a href="https://prismatic-reality.com/glossary/epistemic-reasoning/">epistemic reasoning</a> frameworks, and formal verification methods might be applied to healthcare informatics problems. Rather than building clinical tools, the goal is to develop theoretical models that illuminate the structural properties of healthcare decision-making and to provide researchers with simulation environments for studying these properties.</p>
+<h3 id="problem-definition">Problem Definition</h3>
+<p>Healthcare informatics research faces several interconnected theoretical challenges:</p>
+<ol>
+<li>
+<p><strong>Epistemic Uncertainty Management</strong>: Clinical reasoning involves probabilistic inference under incomplete and often contradictory information. Standard computational approaches frequently fail to preserve the uncertainty inherent in diagnostic processes, collapsing probability distributions into misleading point estimates.</p>
+</li>
+<li>
+<p><strong>Multi-Stakeholder Coordination</strong>: Healthcare delivery involves coordination among numerous specialists, each contributing domain-specific knowledge. Modeling this coordination requires architectures that support concurrent, asynchronous knowledge contribution with conflict resolution mechanisms.</p>
+</li>
+<li>
+<p><strong>Temporal Dynamics</strong>: Patient conditions evolve over time, requiring models that account for <a href="https://prismatic-reality.com/glossary/time-decay/">time decay</a> of clinical relevance, temporal ordering constraints, and the relationship between observation timing and diagnostic significance.</p>
+</li>
+<li>
+<p><strong>Ethical Constraint Integration</strong>: Healthcare decisions are constrained by ethical principles (beneficence, non-maleficence, autonomy, justice) that must be formally representable within decision-support frameworks rather than treated as external considerations.</p>
+</li>
+<li>
+<p><strong>Audit and Reproducibility</strong>: Clinical decisions must be explainable and reproducible. Computational models supporting healthcare research must provide complete <a href="https://prismatic-reality.com/glossary/audit-trail/">audit trails</a> and deterministic replay capabilities.</p>
+</li>
+</ol>
+<h3 id="scope-and-objectives">Scope and Objectives</h3>
+<p>This research domain provides:</p>
+<ul>
+<li><strong>Theoretical frameworks</strong> for studying <a href="https://prismatic-reality.com/glossary/agent/">agent</a>-based clinical decision modeling</li>
+<li><strong>Simulation environments</strong> using exclusively synthetic clinical data</li>
+<li><strong>Formal reasoning tools</strong> leveraging <a href="https://prismatic-reality.com/glossary/formal-verification/">formal verification</a> for healthcare protocol analysis</li>
+<li><strong>Epistemic models</strong> that preserve uncertainty, <a href="https://prismatic-reality.com/glossary/contradiction-preservation/">contradiction</a>, and provenance throughout clinical reasoning chains</li>
+<li><strong>Ethical analysis frameworks</strong> for studying fairness, equity, and resource allocation in healthcare contexts</li>
+</ul>
+<p>This documentation does NOT provide:</p>
+<ul>
+<li>Clinical decision-making tools or medical advice</li>
+<li>Validated diagnostic or prognostic models</li>
+<li>Patient-facing healthcare applications</li>
+<li>FDA-cleared or CE-marked medical software</li>
+</ul>
+<h3 id="relationship-to-platform-architecture">Relationship to Platform Architecture</h3>
+<p>The healthcare research frameworks build upon several core platform subsystems:</p>
+<table><thead><tr><th>Platform Component</th><th>Healthcare Application</th><th>Research Purpose</th></tr></thead><tbody>
+<tr><td><strong><a href="https://prismatic-reality.com/glossary/blackboard/">Blackboard</a> Coordination</strong></td><td>Clinical information fusion</td><td>Study how concurrent knowledge contributions from multiple specialist agents can be synthesized</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/glossary/nabla-infinity/">NABLA Infinity</a> Axioms</strong></td><td>Diagnostic uncertainty management</td><td>Model the epistemic properties of clinical reasoning under uncertainty</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/glossary/agent-orchestration/">Agent Orchestration</a></strong></td><td>Multi-disciplinary team simulation</td><td>Simulate coordination patterns among healthcare roles</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/glossary/trinity-gate/">Trinity Gate</a> Validation</strong></td><td>Clinical reasoning verification</td><td>Study formal properties of healthcare decision chains</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/glossary/data-provenance/">Data Provenance</a></strong></td><td>Clinical evidence tracking</td><td>Model audit trail requirements in healthcare contexts</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/glossary/telemetry/">Telemetry</a></strong></td><td>Healthcare system metrics</td><td>Study performance characteristics of healthcare coordination models</td></tr>
+</tbody></table>
+<h2 id="research-domain-taxonomy">Research Domain Taxonomy</h2>
+<p>The 25 frameworks in this domain are organized into six research areas, each addressing a distinct aspect of healthcare informatics theory.</p>
+<h3 id="domain-1-clinical-decision-support-theory-5-frameworks">Domain 1: Clinical Decision Support Theory (5 frameworks)</h3>
+<p>Research into the formal properties of clinical reasoning, differential diagnosis, and triage classification systems.</p>
+<table><thead><tr><th>Framework</th><th>Research Focus</th><th>Theoretical Basis</th></tr></thead><tbody>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/clinical-triage-decision-support/">Clinical triage decision support</a></td><td>Acuity classification under uncertainty</td><td>Multi-criteria <a href="https://prismatic-reality.com/glossary/decision-making-hierarchy/">decision-making</a> with epistemic constraints</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/diagnostic-differential-reasoning/">Diagnostic differential reasoning</a></td><td>Probabilistic differential generation</td><td>Bayesian multi-agent belief propagation</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/sepsis-early-warning-agent/">Sepsis early warning agent</a></td><td>Time-series pattern recognition modeling</td><td>Temporal <a href="https://prismatic-reality.com/glossary/signal-plurality/">signal plurality</a> with decay functions</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/radiology-report-consistency-check/">Radiology report consistency check</a></td><td>Inter-observer agreement modeling</td><td>Natural language coherence analysis</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/clinical-documentation-assistant/">Clinical documentation assistant</a></td><td>Structured clinical narrative generation</td><td>Template-guided information extraction</td></tr>
+</tbody></table>
+<p>These frameworks study how <a href="https://prismatic-reality.com/glossary/epistemic-pipeline/">epistemic pipeline</a> architectures can represent the reasoning processes involved in clinical assessment. A central research question is how the platform's <a href="https://prismatic-reality.com/glossary/contradiction-preservation/">contradiction preservation</a> axiom maps to clinical scenarios where contradictory findings (e.g., normal lab values alongside symptomatic presentation) carry diagnostic significance.</p>
+<h3 id="domain-2-healthcare-resource-optimization-modeling-5-frameworks">Domain 2: Healthcare Resource Optimization Modeling (5 frameworks)</h3>
+<p>Theoretical models for studying resource allocation, patient flow, and operational efficiency in healthcare settings.</p>
+<table><thead><tr><th>Framework</th><th>Research Focus</th><th>Theoretical Basis</th></tr></thead><tbody>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/icu-resource-allocation-simulator/">ICU resource allocation simulator</a></td><td>Constrained resource allocation under uncertainty</td><td>Multi-objective optimization with ethical constraints</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/emergency-department-flow-agent/">Emergency department flow agent</a></td><td>Queueing theory and patient flow dynamics</td><td>Discrete event <a href="https://prismatic-reality.com/glossary/simulation/">simulation</a> with agent-based routing</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/care-pathway-optimization/">Care pathway optimization</a></td><td>Clinical <a href="https://prismatic-reality.com/glossary/workflow/">workflow</a> graph optimization</td><td>Directed acyclic graph analysis with temporal constraints</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/insurance-pre-auth-negotiation/">Insurance pre-auth negotiation</a></td><td>Administrative workflow modeling</td><td>Game-theoretic negotiation frameworks</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/rehabilitation-progression-planner/">Rehabilitation progression planner</a></td><td>Longitudinal care trajectory modeling</td><td>Markov decision processes with patient state transitions</td></tr>
+</tbody></table>
+<p>These models apply operations research methods within the platform's agent-based architecture. The ICU simulator, for example, studies how <a href="https://prismatic-reality.com/glossary/multi-agent-system/">multi-agent coordination</a> patterns can represent the competing demands for scarce medical resources, while the emergency department flow model applies queueing theory to study throughput and bottleneck dynamics.</p>
+<h3 id="domain-3-patient-safety-and-adverse-event-analysis-4-frameworks">Domain 3: Patient Safety and Adverse Event Analysis (4 frameworks)</h3>
+<p>Frameworks for studying how adverse events propagate through healthcare systems and how safety barriers can be formally modeled.</p>
+<table><thead><tr><th>Framework</th><th>Research Focus</th><th>Theoretical Basis</th></tr></thead><tbody>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/adverse-event-root-cause-replay/">Adverse event root-cause replay</a></td><td>Causal chain reconstruction</td><td>Swiss cheese model formalization with event replay</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/hospital-incident-command-replay/">Hospital incident command replay</a></td><td>Crisis coordination protocol analysis</td><td>Incident command system simulation</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/medical-device-incident-replay/">Medical device incident replay</a></td><td>Device failure mode analysis</td><td>Fault tree analysis with temporal sequencing</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/infection-control-scenario-lab/">Infection control scenario lab</a></td><td>Nosocomial transmission modeling</td><td>Agent-based epidemiological simulation</td></tr>
+</tbody></table>
+<p>The patient safety domain leverages the platform's event replay infrastructure to enable deterministic reconstruction of adverse event sequences. Each framework preserves complete <a href="https://prismatic-reality.com/glossary/provenance-mandatory/">provenance</a> chains, allowing researchers to study how information loss, communication failures, and cognitive biases contribute to adverse outcomes in theoretical models. All scenarios use entirely synthetic data with no connection to real clinical incidents.</p>
+<h3 id="domain-4-clinical-communication-and-empathy-frameworks-4-frameworks">Domain 4: Clinical Communication and Empathy Frameworks (4 frameworks)</h3>
+<p>Research into the computational modeling of clinical communication patterns, cultural competence, and therapeutic relationships.</p>
+<table><thead><tr><th>Framework</th><th>Research Focus</th><th>Theoretical Basis</th></tr></thead><tbody>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/telemedicine-empathy-coach/">Telemedicine empathy coach</a></td><td>Remote communication effectiveness modeling</td><td>Affective computing theory applied to telehealth</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/cross-cultural-bedside-manner-packs/">Cross-cultural bedside manner packs</a></td><td>Cultural competence modeling</td><td>Cross-cultural communication frameworks</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/surgical-teamwork-negotiation/">Surgical teamwork negotiation</a></td><td>Intraoperative team communication</td><td>Crew resource management theory</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/patient-narrative-coherence-analyzer/">Patient narrative coherence analyzer</a></td><td>Clinical narrative structure analysis</td><td>Discourse coherence and narrative medicine theory</td></tr>
+</tbody></table>
+<p>These frameworks study the intersection of natural language processing, cultural modeling, and healthcare communication theory. They apply the platform's multi-agent negotiation capabilities to model the complex social dynamics of clinical encounters. The patient narrative coherence analyzer, for instance, studies how the platform's <a href="https://prismatic-reality.com/glossary/epistemic-reasoning/">epistemic reasoning</a> capabilities can assess logical consistency and temporal coherence in clinical narratives without making any clinical judgments.</p>
+<h3 id="domain-5-public-health-and-epidemiological-simulation-3-frameworks">Domain 5: Public Health and Epidemiological Simulation (3 frameworks)</h3>
+<p>Simulation environments for studying population-level health phenomena, disease transmission dynamics, and public health intervention modeling.</p>
+<table><thead><tr><th>Framework</th><th>Research Focus</th><th>Theoretical Basis</th></tr></thead><tbody>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/public-health-outbreak-simulation/">Public health outbreak simulation</a></td><td>Compartmental epidemiological modeling</td><td>SIR/SEIR models with agent-based extensions</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/health-equity-access-modeling/">Health equity access modeling</a></td><td>Healthcare access disparity analysis</td><td>Spatial accessibility modeling with demographic factors</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/chronic-disease-self-management/">Chronic disease self-management</a></td><td>Long-term disease trajectory simulation</td><td>Behavioral change theory with longitudinal modeling</td></tr>
+</tbody></table>
+<p>The public health domain extends traditional compartmental epidemiological models with the platform's agent-based infrastructure, enabling researchers to study emergent population-level phenomena arising from individual-level interactions. The health equity framework applies <a href="https://prismatic-reality.com/glossary/risk-assessment/">risk assessment</a> methodologies to study structural determinants of healthcare access disparities using synthetic demographic data.</p>
+<h3 id="domain-6-healthcare-ethics-and-decision-capacity-4-frameworks">Domain 6: Healthcare Ethics and Decision Capacity (4 frameworks)</h3>
+<p>Formal frameworks for studying ethical reasoning in healthcare contexts, including resource allocation ethics, informed consent modeling, and end-of-life care considerations.</p>
+<table><thead><tr><th>Framework</th><th>Research Focus</th><th>Theoretical Basis</th></tr></thead><tbody>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/palliative-care-ethics-coach/">Palliative care ethics coach</a></td><td>End-of-life ethical reasoning modeling</td><td>Principlism (Beauchamp &amp; Childress) formalization</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/consent-capacity-evaluation/">Consent &amp; capacity evaluation</a></td><td>Decision capacity assessment modeling</td><td>Legal and ethical capacity frameworks</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/mental-health-intake-triage/">Mental health intake triage</a></td><td>Mental health assessment modeling</td><td>Structured clinical assessment theory</td></tr>
+<tr><td><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/medication-adherence-motivator/">Medication adherence motivator</a></td><td>Behavioral adherence pattern modeling</td><td>Health belief model and motivational interviewing theory</td></tr>
+</tbody></table>
+<p>The ethics domain represents one of the most theoretically significant areas, as it requires the <a href="https://prismatic-reality.com/glossary/formal-verification/">formal verification</a> capabilities to reason about normative constraints alongside empirical data. These frameworks study how ethical principles (autonomy, beneficence, non-maleficence, justice) can be formally represented as constraints within multi-agent decision systems, without presuming to resolve the underlying ethical questions themselves.</p>
+<h2 id="theoretical-foundations">Theoretical Foundations</h2>
+<h3 id="epistemic-architecture-for-healthcare-modeling">Epistemic Architecture for Healthcare Modeling</h3>
+<p>The healthcare research domain applies the platform's <a href="https://prismatic-reality.com/glossary/nabla-infinity/">NABLA Infinity</a> epistemic framework to model the unique epistemic properties of clinical reasoning. Each of the seven NABLA axioms has a specific interpretation in the healthcare modeling context:</p>
+<table><thead><tr><th>NABLA Axiom</th><th>Healthcare Interpretation</th><th>Research Application</th></tr></thead><tbody>
+<tr><td><strong><a href="https://prismatic-reality.com/glossary/signal-plurality/">Signal Plurality</a></strong></td><td>Multiple independent clinical findings required before diagnostic hypothesis formation</td><td>Models multi-source clinical evidence fusion</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/glossary/contradiction-preservation/">Contradiction Preservation</a></strong></td><td>Contradictory clinical findings preserved as diagnostically meaningful</td><td>Prevents premature diagnostic closure in models</td></tr>
+<tr><td><strong>Absence Informative</strong></td><td>Negative findings carry diagnostic weight (e.g., absence of fever in infection)</td><td>Models pertinent negatives in differential diagnosis</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/glossary/time-decay/">Time Decay</a></strong></td><td>Clinical relevance of findings decreases over time</td><td>Models temporal dynamics of clinical evidence</td></tr>
+<tr><td><strong>Unknown Valid</strong></td><td>Acknowledging diagnostic uncertainty as legitimate state</td><td>Prevents false certainty in probabilistic models</td></tr>
+<tr><td><strong>Source Independence</strong></td><td>Independent clinical assessments weighted higher than correlated opinions</td><td>Models inter-observer independence</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/glossary/provenance-mandatory/">Provenance Mandatory</a></strong></td><td>All clinical conclusions traceable to source observations</td><td>Supports audit trail modeling</td></tr>
+</tbody></table>
+<h3 id="multi-agent-clinical-team-modeling">Multi-Agent Clinical Team Modeling</h3>
+<p>Healthcare delivery is inherently multi-agent: physicians, nurses, pharmacists, therapists, and administrative staff each contribute domain-specific knowledge. The platform's <a href="https://prismatic-reality.com/glossary/agent/">agent</a> architecture provides a natural mapping for studying these coordination patterns:</p>
+<pre class="giallo z-code"><code data-lang="plain"><span class="giallo-l"><span>Attending Agent (Strategic)</span></span>
+<span class="giallo-l"><span>    |</span></span>
+<span class="giallo-l"><span>    +-- Specialist Agent (Cardiology, Neurology, ...)</span></span>
+<span class="giallo-l"><span>    |       |</span></span>
+<span class="giallo-l"><span>    |       +-- Diagnostic Reasoning SubAgent</span></span>
+<span class="giallo-l"><span>    |       +-- Treatment Planning SubAgent</span></span>
+<span class="giallo-l"><span>    |</span></span>
+<span class="giallo-l"><span>    +-- Nursing Agent (Patient Monitoring)</span></span>
+<span class="giallo-l"><span>    |       |</span></span>
+<span class="giallo-l"><span>    |       +-- Vital Signs Observer</span></span>
+<span class="giallo-l"><span>    |       +-- Medication Administration Tracker</span></span>
+<span class="giallo-l"><span>    |</span></span>
+<span class="giallo-l"><span>    +-- Pharmacy Agent (Drug Interaction Analysis)</span></span>
+<span class="giallo-l"><span>    |</span></span>
+<span class="giallo-l"><span>    +-- Ethics Consultation Agent (Ethical Constraint Evaluation)</span></span>
+<span class="giallo-l"><span>    |</span></span>
+<span class="giallo-l"><span>    +-- Blackboard (Shared Clinical State)</span></span>
+<span class="giallo-l"><span>            |</span></span>
+<span class="giallo-l"><span>            +-- Patient Record (Synthetic)</span></span>
+<span class="giallo-l"><span>            +-- Active Problem List</span></span>
+<span class="giallo-l"><span>            +-- Differential Diagnosis Set</span></span>
+<span class="giallo-l"><span>            +-- Treatment Plan Graph</span></span></code></pre>
+<p>This architecture is a research model for studying how information flows between healthcare roles. It does not represent an actual clinical system and operates exclusively with synthetic patient data.</p>
+<h3 id="formal-verification-in-healthcare-protocol-analysis">Formal Verification in Healthcare Protocol Analysis</h3>
+<p>The platform's <a href="https://prismatic-reality.com/glossary/formal-verification/">formal verification</a> capabilities, including Lean4 integration, provide tools for studying the formal properties of healthcare protocols:</p>
+<ul>
+<li><strong>Protocol Completeness</strong>: Whether a clinical protocol covers all reachable patient states</li>
+<li><strong>Safety Invariants</strong>: Whether safety constraints are maintained across all protocol execution paths</li>
+<li><strong>Temporal Properties</strong>: Whether time-dependent requirements (e.g., medication timing) are satisfiable</li>
+<li><strong>Resource Feasibility</strong>: Whether resource requirements remain within modeled capacity bounds</li>
+</ul>
+<p>These analyses operate on formal models of protocols using synthetic specifications. They do not validate real clinical protocols and should not be interpreted as clinical protocol endorsements.</p>
+<h2 id="data-privacy-and-compliance-framework">Data Privacy and Compliance Framework</h2>
+<h3 id="synthetic-data-architecture">Synthetic Data Architecture</h3>
+<p>All healthcare research frameworks operate exclusively with synthetic data. The platform employs the following data handling principles:</p>
+<table><thead><tr><th>Principle</th><th>Implementation</th><th>Verification</th></tr></thead><tbody>
+<tr><td><strong>No Real Patient Data</strong></td><td>All clinical scenarios use algorithmically generated synthetic records</td><td>Data generation auditable through <a href="https://prismatic-reality.com/glossary/data-provenance/">provenance</a> tracking</td></tr>
+<tr><td><strong>No PHI (Protected Health Information)</strong></td><td>Synthetic data generators cannot accept real patient inputs</td><td>Input validation at framework boundaries</td></tr>
+<tr><td><strong><a href="https://prismatic-reality.com/glossary/gdpr/">GDPR</a> Pattern Compliance</strong></td><td>Data handling patterns designed following GDPR principles</td><td><a href="https://prismatic-reality.com/glossary/compliance-framework/">Compliance framework</a> integration</td></tr>
+<tr><td><strong>HIPAA Research Exemption Awareness</strong></td><td>Frameworks designed with awareness of HIPAA research provisions</td><td>Documented compliance posture</td></tr>
+<tr><td><strong>Data Isolation</strong></td><td>Healthcare simulation data isolated from other platform domains</td><td><a href="https://prismatic-reality.com/glossary/supervision/">Supervision</a> tree boundaries enforce isolation</td></tr>
+<tr><td><strong>Immutable <a href="https://prismatic-reality.com/glossary/audit-logging/">Audit Logging</a></strong></td><td>All data access and transformations logged immutably</td><td><a href="https://prismatic-reality.com/glossary/audit-trail/">Audit trail</a> verification</td></tr>
+</tbody></table>
+<h3 id="regulatory-awareness">Regulatory Awareness</h3>
+<p>These research frameworks are designed with awareness of, but are not certified compliant with, the following regulatory frameworks:</p>
+<ul>
+<li><strong>HIPAA</strong> (Health Insurance Portability and Accountability Act): Data handling patterns follow Privacy Rule and Security Rule principles</li>
+<li><strong>GDPR</strong> (General Data Protection Regulation): Data minimization, purpose limitation, and right-to-explanation principles inform framework design</li>
+<li><strong>FDA 21 CFR Part 11</strong>: Electronic records and signatures principles inform audit trail design</li>
+<li><strong>IEC 62304</strong>: Medical device software lifecycle awareness informs development methodology</li>
+<li><strong>ISO 13485</strong>: Quality management system principles inform framework quality assurance</li>
+</ul>
+<p>Regulatory awareness does not constitute regulatory compliance. These frameworks are research tools and have not undergone regulatory review or certification.</p>
+<h2 id="contents">Contents</h2>
+<h3 id="clinical-decision-support-theory">Clinical Decision Support Theory</h3>
+<ul>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/clinical-triage-decision-support/">Clinical triage decision support</a> -- Acuity classification modeling with epistemic uncertainty</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/diagnostic-differential-reasoning/">Diagnostic differential reasoning</a> -- Multi-agent Bayesian differential generation</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/sepsis-early-warning-agent/">Sepsis early warning agent</a> -- Temporal pattern recognition with signal plurality</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/radiology-report-consistency-check/">Radiology report consistency check</a> -- Inter-observer agreement analysis</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/clinical-documentation-assistant/">Clinical documentation assistant</a> -- Structured clinical narrative generation</li>
+</ul>
+<h3 id="healthcare-resource-optimization">Healthcare Resource Optimization</h3>
+<ul>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/icu-resource-allocation-simulator/">ICU resource allocation simulator</a> -- Constrained resource allocation with ethical dimensions</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/emergency-department-flow-agent/">Emergency department flow agent</a> -- Patient flow queueing models</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/care-pathway-optimization/">Care pathway optimization</a> -- Clinical workflow graph analysis</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/insurance-pre-auth-negotiation/">Insurance pre-auth negotiation</a> -- Administrative workflow simulation</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/rehabilitation-progression-planner/">Rehabilitation progression planner</a> -- Longitudinal care trajectory modeling</li>
+</ul>
+<h3 id="patient-safety-and-adverse-events">Patient Safety and Adverse Events</h3>
+<ul>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/adverse-event-root-cause-replay/">Adverse event root-cause replay</a> -- Causal chain reconstruction with event replay</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/hospital-incident-command-replay/">Hospital incident command replay</a> -- Crisis coordination protocol simulation</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/medical-device-incident-replay/">Medical device incident replay</a> -- Device failure mode analysis</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/infection-control-scenario-lab/">Infection control scenario lab</a> -- Nosocomial transmission modeling</li>
+</ul>
+<h3 id="clinical-communication-and-empathy">Clinical Communication and Empathy</h3>
+<ul>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/telemedicine-empathy-coach/">Telemedicine empathy coach</a> -- Remote communication effectiveness modeling</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/cross-cultural-bedside-manner-packs/">Cross-cultural bedside manner packs</a> -- Cultural competence frameworks</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/surgical-teamwork-negotiation/">Surgical teamwork negotiation</a> -- Intraoperative team communication modeling</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/patient-narrative-coherence-analyzer/">Patient narrative coherence analyzer</a> -- Clinical narrative structure analysis</li>
+</ul>
+<h3 id="public-health-and-epidemiology">Public Health and Epidemiology</h3>
+<ul>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/public-health-outbreak-simulation/">Public health outbreak simulation</a> -- Compartmental and agent-based epidemiological models</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/health-equity-access-modeling/">Health equity access modeling</a> -- Healthcare access disparity analysis</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/chronic-disease-self-management/">Chronic disease self-management</a> -- Long-term disease trajectory simulation</li>
+</ul>
+<h3 id="healthcare-ethics-and-decision-capacity">Healthcare Ethics and Decision Capacity</h3>
+<ul>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/palliative-care-ethics-coach/">Palliative care ethics coach</a> -- End-of-life ethical reasoning formalization</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/consent-capacity-evaluation/">Consent &amp; capacity evaluation</a> -- Decision capacity assessment modeling</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/mental-health-intake-triage/">Mental health intake triage</a> -- Structured mental health assessment theory</li>
+<li><a href="https://prismatic-reality.com/applications/medical-healthcare-systems/medication-adherence-motivator/">Medication adherence motivator</a> -- Behavioral adherence pattern modeling</li>
+</ul>
+<h2 id="research-methodology">Research Methodology</h2>
+<h3 id="framework-development-process">Framework Development Process</h3>
+<p>Each healthcare research framework follows a structured development methodology:</p>
+<ol>
+<li><strong>Literature Review</strong>: Identify established theoretical foundations in medical informatics, healthcare operations research, and clinical decision science</li>
+<li><strong>Formal Model Construction</strong>: Define the computational model using platform primitives (<a href="https://prismatic-reality.com/glossary/agent/">agents</a>, <a href="https://prismatic-reality.com/glossary/blackboard/">blackboard</a>, <a href="https://prismatic-reality.com/glossary/epistemic-pipeline/">epistemic pipelines</a>)</li>
+<li><strong>Synthetic Data Generation</strong>: Create representative synthetic clinical scenarios using algorithmic generation (no real patient data)</li>
+<li><strong>Agent Architecture Design</strong>: Map clinical roles and reasoning processes to <a href="https://prismatic-reality.com/glossary/multi-agent-system/">multi-agent</a> architectures</li>
+<li><strong>Epistemic Constraint Application</strong>: Apply <a href="https://prismatic-reality.com/glossary/nabla-axioms/">NABLA axioms</a> to ensure uncertainty preservation and provenance tracking</li>
+<li><strong>Formal Property Verification</strong>: Use <a href="https://prismatic-reality.com/glossary/formal-verification/">formal verification</a> tools to study safety and liveness properties of the model</li>
+<li><strong>Simulation and Analysis</strong>: Execute scenarios and analyze emergent properties</li>
+</ol>
+<h3 id="validation-limitations">Validation Limitations</h3>
+<p>These frameworks have the following validation constraints that must be acknowledged:</p>
+<ul>
+<li><strong>No Clinical Validation</strong>: No framework has been validated against real clinical outcomes</li>
+<li><strong>Synthetic Data Only</strong>: All scenarios use algorithmically generated data that may not reflect real clinical distributions</li>
+<li><strong>Simplified Models</strong>: Clinical reality is significantly more complex than any computational model can capture</li>
+<li><strong>No Regulatory Review</strong>: No framework has undergone FDA, EMA, or equivalent regulatory review</li>
+<li><strong>Research Purpose Only</strong>: Frameworks are designed for studying theoretical properties, not for clinical deployment</li>
+</ul>
+<h2 id="performance-and-scalability-characteristics">Performance and Scalability Characteristics</h2>
+<h3 id="simulation-performance-metrics">Simulation Performance Metrics</h3>
+<table><thead><tr><th>Metric</th><th>Typical Range</th><th>Notes</th></tr></thead><tbody>
+<tr><td><strong>Agent initialization</strong></td><td>50-200ms</td><td>Per clinical role agent</td></tr>
+<tr><td><strong>Blackboard synchronization</strong></td><td>&lt;10ms</td><td>Shared clinical state updates</td></tr>
+<tr><td><strong>Differential generation</strong></td><td>100-500ms</td><td>Depends on hypothesis space size</td></tr>
+<tr><td><strong>Event replay</strong></td><td>&lt;50ms per event</td><td>Deterministic reconstruction</td></tr>
+<tr><td><strong>Full scenario simulation</strong></td><td>2-30s</td><td>Depends on scenario complexity</td></tr>
+<tr><td><strong>Formal property check</strong></td><td>5s-5min</td><td>Depends on state space size</td></tr>
+</tbody></table>
+<h3 id="scalability-considerations">Scalability Considerations</h3>
+<p>The <a href="https://prismatic-reality.com/glossary/otp/">OTP</a>-based <a href="https://prismatic-reality.com/glossary/supervision-tree/">supervision</a> architecture enables horizontal scaling of simulation workloads. Multiple independent scenarios can execute concurrently within isolated supervision subtrees, enabling batch simulation studies. The platform's <a href="https://prismatic-reality.com/glossary/health-monitoring/">health monitoring</a> infrastructure provides resource utilization tracking during large-scale simulation runs.</p>
+<h2 id="future-research-directions">Future Research Directions</h2>
+<h3 id="planned-research-extensions">Planned Research Extensions</h3>
+<ol>
+<li><strong>Federated Learning Simulation</strong>: Frameworks for studying privacy-preserving model training across simulated healthcare institutions</li>
+<li><strong>Genomic Data Integration Models</strong>: Theoretical frameworks for incorporating genomic information into clinical decision models</li>
+<li><strong>Social Determinants Modeling</strong>: Extended models incorporating social, economic, and environmental health determinants</li>
+<li><strong>Longitudinal Cohort Simulation</strong>: Multi-year synthetic cohort studies for studying chronic disease progression patterns</li>
+<li><strong>Interoperability Standards Research</strong>: Frameworks for studying HL7 FHIR and other healthcare interoperability standards in agent-based architectures</li>
+</ol>
+<h3 id="open-research-questions">Open Research Questions</h3>
+<ul>
+<li>How does <a href="https://prismatic-reality.com/glossary/contradiction-preservation/">contradiction preservation</a> interact with clinical diagnostic closure? Under what conditions should contradictions trigger additional investigation versus diagnostic resolution?</li>
+<li>What are the formal properties of ethical constraint satisfaction in multi-objective healthcare optimization? Are there provably Pareto-optimal solutions?</li>
+<li>How do <a href="https://prismatic-reality.com/glossary/time-decay/">time decay</a> functions for clinical evidence relevance differ across medical specialties, and can these differences be formally characterized?</li>
+<li>What agent communication patterns best model the information loss observed in clinical handoff scenarios?</li>
+</ul>
+<h2 id="references">References</h2>
+<h3 id="internal-documentation">Internal Documentation</h3>
+<ul>
+<li><a href="https://prismatic-reality.com/capabilities/">Platform Capabilities</a></li>
+<li><a href="https://prismatic-reality.com/glossary/multi-agent-systems/">Multi-Agent Systems</a></li>
+<li><a href="https://prismatic-reality.com/glossary/nabla-infinity/">NABLA Infinity Framework</a></li>
+<li><a href="https://prismatic-reality.com/glossary/blackboard/">Blackboard Architecture</a></li>
+<li><a href="https://prismatic-reality.com/glossary/formal-verification/">Formal Verification</a></li>
+<li><a href="https://prismatic-reality.com/glossary/agent-orchestration/">Agent Orchestration</a></li>
+<li><a href="https://prismatic-reality.com/glossary/epistemic-pipeline/">Epistemic Pipeline</a></li>
+<li><a href="https://prismatic-reality.com/glossary/risk-assessment/">Risk Assessment</a></li>
+<li><a href="https://prismatic-reality.com/glossary/compliance-framework/">Compliance Framework</a></li>
+<li><a href="https://prismatic-reality.com/glossary/data-provenance/">Data Provenance</a></li>
+</ul>
+<h3 id="external-standards-and-literature">External Standards and Literature</h3>
+<ul>
+<li><a rel="external" href="https://www.hhs.gov/hipaa/for-professionals/privacy/index.html">HIPAA Privacy Rule</a> -- U.S. Department of Health and Human Services</li>
+<li><a rel="external" href="https://gdpr.eu/">GDPR Official Text</a> -- European Union General Data Protection Regulation</li>
+<li><a rel="external" href="https://www.hl7.org/fhir/">HL7 FHIR Standard</a> -- Health Level Seven International</li>
+<li><a rel="external" href="https://www.iso.org/standard/38421.html">IEC 62304:2006</a> -- Medical device software lifecycle processes</li>
+<li><a rel="external" href="https://www.iso.org/standard/59752.html">ISO 13485:2016</a> -- Quality management systems for medical devices</li>
+<li>Beauchamp, T. L., &amp; Childress, J. F. (2019). <em>Principles of Biomedical Ethics</em> (8th ed.). Oxford University Press.</li>
+<li>Shortliffe, E. H., &amp; Cimino, J. J. (Eds.). (2014). <em>Biomedical Informatics: Computer Applications in Health Care and Biomedicine</em> (4th ed.). Springer.</li>
+<li>Wooldridge, M. (2009). <em>An Introduction to MultiAgent Systems</em> (2nd ed.). Wiley.</li>
+</ul>
+<hr />
+<p><em>This document describes theoretical research frameworks for studying healthcare system modeling within the Prismatic Platform. All frameworks use synthetic data exclusively and are intended for academic research and education. No framework constitutes a medical device or clinical decision-making tool. Last enhanced 2026-02-23.</em></p>
+<hr />
+<h2 id="connect-contribute">Connect &amp; Contribute</h2>
+<p><strong>Created by <a rel="external" href="https://github.com/korczis">Tomas Korcak (korczis)</a></strong> | Open Source under <a rel="external" href="https://github.com/korczis/prismatic-platform/blob/main/LICENSE">GHL</a></p>
+<ul>
+<li><a rel="external" href="https://github.com/korczis/prismatic-platform">GitHub</a> | <a rel="external" href="https://gitlab.com/korczis/prismatic-platform">GitLab</a> | <a rel="external" href="https://linkedin.com/in/korczis">LinkedIn</a> | <a href="mailto:korczis@gmail.com">Contact</a></li>
+<li><a href="/developers/">Developer Portal</a> | <a href="/architecture/">Architecture</a> | <a href="/about/author/">Meet the Creator</a></li>
+</ul>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Applications Grid -->
+<section class="bg-white dark:bg-gray-900 py-12 lg:py-16" x-data="categoryRegistry()">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <div class="grid gap-8 lg:grid-cols-4">
+            <!-- Main Content -->
+            <div class="lg:col-span-3">
+                <!-- Search Bar -->
+                <div class="mb-8 max-w-xl mx-auto">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                        <input type="text"
+                               x-model="searchTerm"
+                               class="block w-full pl-10 pr-4 py-2.5 text-sm text-gray-900 bg-white border border-gray-300 rounded-lg focus:ring-white/20 focus:border-white/20 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:focus:ring-white/20 dark:focus:border-white/20"
+                               placeholder="Search applications in this category...">
+                    </div>
+                    <div class="mt-2 text-sm text-gray-500 dark:text-gray-400 text-center">
+                        Showing <span class="font-semibold text-gray-300 dark:text-gray-400" x-text="filteredItems.length"></span> of <span class="font-semibold" x-text="items.length"></span> applications
+                    </div>
+                </div>
+
+                <!-- Card Grid -->
+                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <template x-for="item in filteredItems" :key="item.title">
+                        <a :href="item.url" class="group block p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-xl hover:border-white/20 dark:hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg bg-gray-700 flex items-center justify-center text-white flex-shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-gray-300 dark:group-hover:text-gray-400 transition-colors line-clamp-1" x-text="item.title"></h3>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-3" x-text="item.description"></p>
+                        </a>
+                    </template>
+                </div>
+
+                <!-- Empty State -->
+                <div x-show="filteredItems.length === 0" class="text-center py-16">
+                    <svg class="w-16 h-16 mx-auto text-gray-300 dark:text-gray-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <p class="text-gray-500 dark:text-gray-400 text-lg">No applications match your search.</p>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-1">
+                <div class="space-y-6 lg:sticky lg:top-24">
+                    <!-- Category Info Card -->
+                    <div class="bg-gray-800/50 rounded-xl border border-white/5 p-5">
+                        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Category Info</h3>
+                        <dl class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <dt class="text-sm text-gray-400">Category</dt>
+                                <dd class="text-sm font-semibold text-white">Medical &amp; Healthcare Systems -- Research Frameworks for Clinical Informatics and Multi-Agent Healthcare Modeling</dd>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <dt class="text-sm text-gray-400">Applications</dt>
+                                <dd class="text-sm font-semibold text-amber-400">25</dd>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <dt class="text-sm text-gray-400">Section</dt>
+                                <dd class="text-sm font-semibold text-gray-300">Applications</dd>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <dt class="text-sm text-gray-400">Platform</dt>
+                                <dd class="text-sm font-semibold text-gray-300">Prismatic v8.0</dd>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <dt class="text-sm text-gray-400">Quality Score</dt>
+                                <dd class="text-sm font-semibold text-emerald-400">100/100</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- Category Stats Visual -->
+                    <div class="bg-gray-800/50 rounded-xl border border-white/5 p-5">
+                        <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Category Stats</h3>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between text-xs mb-1">
+                                    <span class="text-gray-400">Apps in this category</span>
+                                    <span class="text-white font-bold">25</span>
+                                </div>
+                                <div class="w-full bg-gray-700 rounded-full h-2">
+                                    <div class="bg-amber-500 h-2 rounded-full" style="width: 27.77777777777778%"></div>
+                                </div>
+                            </div>
+                            <div class="pt-2 border-t border-gray-700">
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-gray-400">Total Platform Apps</span>
+                                    <span class="font-bold text-white">90</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-400">Umbrella Apps</span>
+                                <span class="font-bold text-white">99</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-400">Agents</span>
+                                <span class="font-bold text-white">434</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-400">Elixir Files</span>
+                                <span class="font-bold text-white">6,652</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-400">Total LOC</span>
+                                <span class="font-bold text-white">~2.8M</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Browse All Categories -->
+                    
+                    <div class="bg-gray-800/50 rounded-xl border border-white/5 overflow-hidden" x-data="{ expanded: true }">
+                        <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-700/50 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                                <span class="text-sm font-semibold text-white uppercase tracking-wider">App Categories</span>
+                            </div>
+                            <svg class="w-4 h-4 text-gray-400 transition-transform" :class="expanded ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div x-show="expanded" x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-3">
+                            <div class="max-h-[350px] overflow-y-auto space-y-1 pr-1 scrollbar-thin">
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;crisis-intervention-negotiation&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Crisis Intervention &amp; Negotiation -- Research Frameworks for De-escalation Modeling, Hostage Negotiation Theory, and Multi-Agent Crisis Response
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;education-adaptive-tutoring&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Education &amp; Adaptive Tutoring -- Research Frameworks for Personalized Learning, Cognitive Modeling, and Multi-Agent Pedagogical Systems
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;multi-agent-societies&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Multi-Agent Societies -- Research Frameworks for Emergent Social Behavior, Collective Intelligence, and Governance Dynamics
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;algorithmic-trading-finance&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Algorithmic Trading &amp; Finance -- Research Frameworks for Computational Market Modeling and Multi-Agent Financial Simulation
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;psychology-psychiatry&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Psychology &amp; Psychiatry -- Research Frameworks for Computational Behavioral Modeling, Therapeutic Simulation, and Clinical Psychology Theory
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;content-moderation-manipulation&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Content Moderation &amp; Manipulation -- Research Frameworks for Disinformation Detection, Epistemic Defense, and Community Resilience
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;consciousness-research&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Consciousness Research -- Research Frameworks for Computational Phenomenology, Self-Model Theory, and Recursive Awareness Modeling
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;academic-research-epistemology&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Academic Research &amp; Epistemology -- Research Frameworks for Computational Epistemology, Recursive Belief Modeling, and Formal Knowledge Theory
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;legal-governance-systems&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Legal &amp; Governance Systems -- Research Frameworks for Computational Law, Regulatory Simulation, and Multi-Agent Dispute Resolution
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;gaming-simulation&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Gaming &amp; Simulation -- Research Frameworks for NPC Intelligence, Procedural Content, Player Behavior, and Game Ethics
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;engineering-systems-design&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Engineering &amp; Systems Design -- Research Frameworks for Distributed Systems, Fault Tolerance, Formal Verification, and OTP Architecture
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;sustainability-ecology&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Sustainability &amp; Ecology -- Research Frameworks for Climate Modeling, Environmental Governance, and Ecological Resilience
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;arts-creative-simulation&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Arts &amp; Creative Simulation -- Research Frameworks for Computational Creativity, Generative Art, and Aesthetic Analysis
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;neuroscience-neurobiology&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Neuroscience &amp; Neurobiology -- Research Frameworks for Computational Neural Modeling, Brain-Computer Interfaces, and Neuroethics
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;business-organizational-training&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Business &amp; Organizational Training -- Research Frameworks for Leadership Development, Strategic Planning, and Compliance Simulation
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;documentation-knowledge-systems&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Documentation &amp; Knowledge Systems -- Engineering Frameworks for Content Quality, Knowledge Architecture, and Technical Writing Automation
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;defense-security&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Defense &amp; Security -- Research Frameworks for Threat Modeling, Crisis Coordination, and Adversarial Simulation
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;communication-media&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Communication &amp; Media -- Research Frameworks for Narrative Analysis, Fact-Checking, and Media Literacy
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;developer-tooling-runtime&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Developer Tooling &amp; Runtime — Advanced Development Infrastructure for Multi-Agent Platform Engineering
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">26</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;experimental-labs-ui-demonstrations&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Experimental Labs &amp; UI Demonstrations -- Interactive Frameworks for Agent Visualization, LiveView Prototyping, and Real-Time Debugging Interfaces
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;cross-disciplinary-meta-simulation&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Cross-disciplinary Meta-Simulation -- Federated Frameworks for Domain Integration, Research Reproducibility, and Inter-System Orchestration
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;intelligence-counter-intelligence&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Intelligence &amp; Counter-intelligence -- Research Frameworks for OSINT Analysis, Source Evaluation, and Adversarial Information Modeling
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;philosophy-metaphysics&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Philosophy &amp; Metaphysics -- Research Frameworks for Formal Logic, Thought Experiments, and Existential Risk Analysis
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;ethics-moral-philosophy&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-gray-400 hover:text-white hover:bg-gray-700/50">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Ethics &amp; Moral Philosophy -- Research Frameworks for Computational Ethics, Value Alignment, and Multi-Agent Moral Reasoning
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                                
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com&#x2F;applications&#x2F;medical-healthcare-systems&#x2F;" class="flex items-center justify-between gap-2 px-3 py-1.5 text-xs rounded-lg transition-colors text-amber-400 font-semibold bg-amber-900/20">
+                                    <span class="truncate flex items-center gap-2">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-500/50 flex-shrink-0"></span>
+                                        Medical &amp; Healthcare Systems -- Research Frameworks for Clinical Informatics and Multi-Agent Healthcare Modeling
+                                    </span>
+                                    <span class="flex-shrink-0 px-1.5 py-0.5 text-xs rounded bg-white/5">25</span>
+                                </a>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Related Glossary Terms -->
+                    <div class="bg-gray-800/50 rounded-xl border border-white/5 overflow-hidden" x-data="{ expanded: true }">
+                        <button @click="expanded = !expanded" class="w-full flex items-center justify-between p-4 text-left hover:bg-gray-700/50 transition-colors">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"/></svg>
+                                <span class="text-sm font-semibold text-white uppercase tracking-wider">Related Glossary</span>
+                            </div>
+                            <svg class="w-4 h-4 text-gray-400 transition-transform" :class="expanded ? 'rotate-180' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div x-show="expanded" x-transition class="px-4 pb-4 border-t border-gray-700/50 pt-3">
+                            <div class="flex flex-wrap gap-2">
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/elixir/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Elixir</a>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/otp/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">OTP</a>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/phoenix/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Phoenix</a>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/umbrella-project/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Umbrella Project</a>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/genserver/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">GenServer</a>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/supervision-tree/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">Supervision Tree</a>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/ets/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">ETS</a>
+                                <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/liveview/" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-gray-800/80 text-amber-400 rounded-lg border border-white/10 hover:bg-amber-900/40 hover:border-amber-500 transition-all">LiveView</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden" x-data="{ open: true }">
+    <button @click="open = !open" class="w-full flex items-center justify-between p-4 text-left">
+        <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Explore Platform</span>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" :class="{ 'rotate-180': !open }" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+    <div x-show="open" x-transition class="px-4 pb-4 space-y-1">
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/dd/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Due Diligence<span
+                class="ml-auto text-xs text-gray-600">122 src</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/osint/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>OSINT Sources<span
+                class="ml-auto text-xs text-gray-600">121+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/lab/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-teal-400"></span>Interactive Labs<span
+                class="ml-auto text-xs text-gray-600">15 exp</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/academy/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Academy<span
+                class="ml-auto text-xs text-gray-600">15 courses</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/api/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>API Reference</a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>Agents<span
+                class="ml-auto text-xs text-gray-600">434</span></a>
+        
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/glossary/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-pink-400"></span>Glossary<span
+                class="ml-auto text-xs text-gray-600">225+</span></a>
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/teams/"
+            class="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 hover:text-white hover:bg-gray-700/50 rounded-lg transition-colors"><span
+                class="w-1.5 h-1.5 rounded-full bg-red-400"></span>Color Teams<span
+                class="ml-auto text-xs text-gray-600">6</span></a>
+    </div>
+</div>
+
+
+<div class="bg-gray-800 rounded-xl border border-gray-700 overflow-hidden">
+    <div class="p-4">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Platform at a Glance</span>
+        </div>
+        <div class="space-y-2">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg><span class="text-xs text-gray-400">Agents</span></div>
+                <span class="text-xs font-bold text-white">434</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-emerald-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg><span class="text-xs text-gray-400">Commands</span></div>
+                <span class="text-xs font-bold text-white">217</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-purple-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg><span class="text-xs text-gray-400">Applications</span></div>
+                <span class="text-xs font-bold text-white">90</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-amber-400" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg><span class="text-xs text-gray-400">OSINT Sources</span></div>
+                <span class="text-xs font-bold text-white">121+</span>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-gray-700">
+                <span class="text-xs text-gray-500">Quality Score</span>
+                <span class="text-xs font-bold text-emerald-400">100/100</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div
+    class="relative bg-gradient-to-br from-indigo-900/40 to-purple-900/40 rounded-xl border border-indigo-500/20 overflow-hidden shadow-lg shadow-indigo-900/10">
+    <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+    <div class="p-4 pt-5">
+        <div class="flex items-center gap-2 mb-3">
+            <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span class="font-semibold text-white text-sm">Want to Know More?</span>
+            <svg class="w-3 h-3 text-purple-400 ml-auto" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+        </div>
+        <div class="text-xs text-gray-400 mb-3">
+            <p>Dive deeper into the Prismatic Platform -- explore our architecture, agents, and epistemic framework.</p>
+        </div>
+        <nav class="space-y-1">
+            
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/about/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>About Prismatic</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/agents/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>Agent Ecosystem (434)</a>
+            <a href="https:&#x2F;&#x2F;prismatic-reality.com/architecture/" class="group flex items-center gap-2 px-3 py-1.5 text-xs text-indigo-300 hover:text-white hover:bg-indigo-900&#x2F;30
+rounded-lg transition-all border-l-2 border-transparent hover:border-indigo-400"><svg class="w-3.5 h-3.5 flex-shrink-0 transition-transform group-hover:scale-110" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>Architecture</a>
+        </nav>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Back to Applications -->
+<section class="bg-gray-50 dark:bg-gray-800 py-8 border-t border-gray-200 dark:border-gray-700">
+    <div class="max-w-screen-xl px-4 mx-auto">
+        <a href="https:&#x2F;&#x2F;prismatic-reality.com/applications/" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-white text-gray-950 rounded-xl focus:ring-4 focus:ring-rose-300 dark:focus:ring-rose-800 transition-all shadow-lg hover:shadow-xl">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+            Back to Applications
+        </a>
+    </div>
+</section>
+
+<script id="category-data" type="application/json">
+[
+    
+    {
+        "title": "Adverse event root-cause replay",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/adverse-event-root-cause-replay/",
+        "description": "Adverse event root-cause replay — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architectu…"
+    },
+    
+    {
+        "title": "Care pathway optimization",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/care-pathway-optimization/",
+        "description": "Care pathway optimization — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architecture, im…"
+    },
+    
+    {
+        "title": "Chronic disease self-management",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/chronic-disease-self-management/",
+        "description": "Chronic disease self-management — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architectu…"
+    },
+    
+    {
+        "title": "Clinical documentation assistant",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/clinical-documentation-assistant/",
+        "description": "Clinical documentation assistant — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architect…"
+    },
+    
+    {
+        "title": "Clinical triage decision support",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/clinical-triage-decision-support/",
+        "description": "Clinical triage decision support — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architect…"
+    },
+    
+    {
+        "title": "Consent & capacity evaluation",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/consent-capacity-evaluation/",
+        "description": "Consent & capacity evaluation — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architecture…"
+    },
+    
+    {
+        "title": "Cross-cultural bedside manner packs",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/cross-cultural-bedside-manner-packs/",
+        "description": "Cross-cultural bedside manner packs — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system archit…"
+    },
+    
+    {
+        "title": "Diagnostic differential reasoning",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/diagnostic-differential-reasoning/",
+        "description": "Diagnostic differential reasoning — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architec…"
+    },
+    
+    {
+        "title": "Emergency department flow agent",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/emergency-department-flow-agent/",
+        "description": "Emergency department flow agent — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architectu…"
+    },
+    
+    {
+        "title": "Health equity access modeling",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/health-equity-access-modeling/",
+        "description": "Health equity access modeling — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architecture…"
+    },
+    
+    {
+        "title": "Hospital incident command replay",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/hospital-incident-command-replay/",
+        "description": "Hospital incident command replay — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architect…"
+    },
+    
+    {
+        "title": "ICU resource allocation simulator",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/icu-resource-allocation-simulator/",
+        "description": "ICU resource allocation simulator — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architec…"
+    },
+    
+    {
+        "title": "Infection control scenario lab",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/infection-control-scenario-lab/",
+        "description": "Infection control scenario lab — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architectur…"
+    },
+    
+    {
+        "title": "Insurance pre-auth negotiation",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/insurance-pre-auth-negotiation/",
+        "description": "Insurance pre-auth negotiation — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architectur…"
+    },
+    
+    {
+        "title": "Medical device incident replay",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/medical-device-incident-replay/",
+        "description": "Medical device incident replay — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architectur…"
+    },
+    
+    {
+        "title": "Medication adherence motivator",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/medication-adherence-motivator/",
+        "description": "Medication adherence motivator — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architectur…"
+    },
+    
+    {
+        "title": "Mental health intake triage",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/mental-health-intake-triage/",
+        "description": "Mental health intake triage — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architecture, …"
+    },
+    
+    {
+        "title": "Palliative care ethics coach",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/palliative-care-ethics-coach/",
+        "description": "Palliative care ethics coach — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architecture,…"
+    },
+    
+    {
+        "title": "Patient narrative coherence analyzer",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/patient-narrative-coherence-analyzer/",
+        "description": "Patient narrative coherence analyzer — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system archi…"
+    },
+    
+    {
+        "title": "Public health outbreak simulation",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/public-health-outbreak-simulation/",
+        "description": "Public health outbreak simulation — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architec…"
+    },
+    
+    {
+        "title": "Radiology report consistency check",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/radiology-report-consistency-check/",
+        "description": "Radiology report consistency check — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system archite…"
+    },
+    
+    {
+        "title": "Rehabilitation progression planner",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/rehabilitation-progression-planner/",
+        "description": "Rehabilitation progression planner — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system archite…"
+    },
+    
+    {
+        "title": "Sepsis early warning agent",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/sepsis-early-warning-agent/",
+        "description": "Sepsis early warning agent — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architecture, i…"
+    },
+    
+    {
+        "title": "Surgical teamwork negotiation",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/surgical-teamwork-negotiation/",
+        "description": "Surgical teamwork negotiation — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architecture…"
+    },
+    
+    {
+        "title": "Telemedicine empathy coach",
+        "url": "https://prismatic-reality.com/applications/medical-healthcare-systems/telemedicine-empathy-coach/",
+        "description": "Telemedicine empathy coach — An academic treatment of health informatics and clinical decision support within the Prismatic Platform ecosystem, covering theoretical foundations, system architecture, i…"
+    }
+    
+]
+</script>
+<script>
+function categoryRegistry() {
+    return {
+        searchTerm: '',
+        items: JSON.parse(document.getElementById('category-data').textContent),
+
+        get filteredItems() {
+            let result = [...this.items];
+            if (this.searchTerm) {
+                const q = this.searchTerm.toLowerCase();
+                result = result.filter(i =>
+                    i.title.toLowerCase().includes(q) ||
+                    i.description.toLowerCase().includes(q)
+                );
+            }
+            result.sort((a, b) => {
+                const av = a.title.toLowerCase();
+                const bv = b.title.toLowerCase();
+                return av > bv ? 1 : av < bv ? -1 : 0;
+            });
+            return result;
+        }
+    };
+}
+</script>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-white/5">
+        <div class="max-w-screen-xl px-4 py-12 mx-auto">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="/" class="flex items-center space-x-3 mb-4">
+                        <div
+                            class="w-10 h-10 bg-white rounded-xl flex items-center justify-center">
+                            <svg class="w-6 h-6 text-gray-950" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white">Prismatic Platform</span>
+                    </a>
+                    <p class="text-gray-400 max-w-md">
+                        Open source AI orchestration platform. 530 autonomous agents. 115 umbrella apps.
+                        Community-driven, self-evolving, unstoppable.
+                    </p>
+                    <div class="flex items-center space-x-4 mt-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="View on GitLab">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0L8.26 11.26H3.74L12 24l8.26-12.74H15.74L12 0zM3.74 11.26l4.52 7.41L12 0 8.26 11.26H3.74zM20.26 11.26l-4.52 7.41L12 0l3.74 11.26h4.52z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;linkedin.com&#x2F;in&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Connect on LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https:&#x2F;&#x2F;twitter.com&#x2F;korczis"
+                           class="text-gray-400 hover:text-white transition-colors"
+                           title="Follow on Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Executive</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/about/author/"
+                                class="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold">Meet the Creator</a></li>
+                        <li><a href="/executive/"
+                                class="text-gray-400 hover:text-white transition-colors">Value Proposition</a></li>
+                        <li><a href="/executive/roi-calculator/"
+                                class="text-gray-400 hover:text-white transition-colors">ROI Calculator</a></li>
+                        <li><a href="/executive/competitive-analysis/"
+                                class="text-gray-400 hover:text-white transition-colors">Competitive Analysis</a></li>
+                        <li><a href="/executive/case-studies/"
+                                class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Intelligence -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Intelligence</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/dd/"
+                                class="text-gray-400 hover:text-white transition-colors">Due Diligence</a></li>
+                        <li><a href="/osint/"
+                                class="text-gray-400 hover:text-white transition-colors">OSINT Sources (121+)</a></li>
+                        <li><a href="/lab/"
+                                class="text-gray-400 hover:text-white transition-colors">Interactive Labs</a></li>
+                        <li><a href="/academy/"
+                                class="text-gray-400 hover:text-white transition-colors">Academy</a></li>
+                        <li><a href="/developers/sdk/"
+                                class="text-gray-400 hover:text-white transition-colors">SDK</a></li>
+                        <li><a href="/api/"
+                                class="text-gray-400 hover:text-white transition-colors">API Reference</a></li>
+                        <li><a href="/blog/"
+                                class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Platform -->
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Platform</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/capabilities/"
+                                class="text-gray-400 hover:text-white transition-colors">Capabilities</a></li>
+                        <li><a href="/agents/"
+                                class="text-gray-400 hover:text-white transition-colors">Agents (530)</a></li>
+                        <li><a href="/apps/"
+                                class="text-gray-400 hover:text-white transition-colors">Applications (115+)</a></li>
+                        <li><a href="/architecture/"
+                                class="text-gray-400 hover:text-white transition-colors">Architecture</a></li>
+                        <li><a href="/technologies/"
+                                class="text-gray-400 hover:text-white transition-colors">Technologies</a></li>
+                        <li><a href="/teams/"
+                                class="text-gray-400 hover:text-white transition-colors">Color Teams</a></li>
+                        <li><a href="/glossary/"
+                                class="text-gray-400 hover:text-white transition-colors">Glossary</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/5">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-4">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+                        <p class="text-sm text-gray-500">
+                            &copy; 2026 <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis" class="text-gray-400 hover:text-white">Tomáš Korcak</a>.
+                            Licensed under <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform/blob/main/LICENSE" class="text-gray-400 hover:text-white">GHL</a>.
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            Built with <a href="/capabilities/no-mercy/" class="text-gray-400 hover:text-white">NO MERCY</a>,
+                            <a href="/capabilities/no-doubts/" class="text-gray-400 hover:text-white">NO DOUBTS</a>.
+                        </p>
+                    </div>
+                    <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                        <span class="text-sm text-gray-500">v8.0.0</span>
+                        <span class="text-sm text-gray-400 font-semibold">Quality: 100/100</span>
+                        <span class="text-sm text-gray-400">Gen 19</span>
+                    </div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                    <div class="flex items-center space-x-4">
+                        <a href="https:&#x2F;&#x2F;github.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitHub</a>
+                        <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;korczis&#x2F;prismatic-platform" class="hover:text-gray-400">GitLab</a>
+                        <a href="/blog/" class="hover:text-gray-400">Blog</a>
+                        <a href="/faq/" class="hover:text-gray-400">FAQ</a>
+                    </div>
+                    <div class="flex items-center space-x-2 mt-2 md:mt-0">
+                        <span>530 agents</span>
+                        <span>•</span>
+                        <span>115 apps</span>
+                        <span>•</span>
+                        <span>2.8M LOC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button (Flowbite-style) -->
+    <button id="back-to-top" type="button"
+        class="fixed bottom-6 right-6 z-50 hidden p-3 text-gray-950 bg-white rounded-xl shadow-lg hover:bg-gray-100 transition-all duration-300"
+        aria-label="Back to top">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <!-- Global Glossary Hover Card -->
+    <div x-data="glossaryHover()" x-init="init()">
+        <template x-teleport="body">
+            <div x-show="term"
+                 x-transition:enter="transition ease-out duration-200"
+                 x-transition:enter-start="opacity-0 scale-95"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition ease-in duration-150"
+                 x-transition:leave-start="opacity-100 scale-100"
+                 x-transition:leave-end="opacity-0 scale-95"
+                 class="fixed glossary-hover-card rounded-lg p-4"
+                 :style="`left: ${pos.x}px; top: ${pos.y}px;`"
+                 @mouseenter="clearHide()"
+                 @mouseleave="startHide()">
+                <div class="flex items-center gap-2 mb-2">
+                    <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+                    <h4 class="font-semibold text-white text-sm" x-text="term?.title"></h4>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed" x-text="term?.description"></p>
+                <div class="flex items-center gap-1 mt-2 text-xs text-gray-400">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                    </svg>
+                    <span>Click to explore</span>
+                </div>
+            </div>
+        </template>
+    </div>
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/glossary-data.js"></script>
+    <script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('glossaryHover', () => ({
+            term: null,
+            pos: { x: 0, y: 0 },
+            _timeout: null,
+            init() {
+                this.$nextTick(() => {
+                    document.querySelectorAll('a[href*="/glossary/"]').forEach(link => {
+                        link.addEventListener('mouseenter', (e) => this.show(e));
+                        link.addEventListener('mouseleave', () => this.startHide());
+                    });
+                });
+            },
+            show(event) {
+                this.clearHide();
+                const link = event.target.closest('a');
+                if (!link) return;
+                const rect = link.getBoundingClientRect();
+                const href = link.getAttribute('href');
+                const slug = href.split('/glossary/')[1]?.replace(/\/$/, '').split('/')[0];
+                if (!slug) return;
+                const data = window.__GLOSSARY_DATA__ || {};
+                this.term = data[slug] || {
+                    title: link.textContent.trim(),
+                    description: 'Explore this concept in the glossary'
+                };
+                this.pos = {
+                    x: Math.min(rect.left, window.innerWidth - 340),
+                    y: rect.bottom + 8
+                };
+                if (this.pos.y + 120 > window.innerHeight) {
+                    this.pos.y = rect.top - 120;
+                }
+            },
+            startHide() {
+                this._timeout = setTimeout(() => { this.term = null; }, 200);
+            },
+            clearHide() {
+                if (this._timeout) { clearTimeout(this._timeout); this._timeout = null; }
+            }
+        }));
+    });
+    </script>
+
+    <!-- Flowbite JS -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/flowbite.min.js"></script>
+
+    <!-- Code Copy Buttons -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/code-copy.js"></script>
+
+    <!-- Chart.js (for distribution charts on detail pages) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/vendor/chart.umd.min.js"></script>
+
+    <!-- Mermaid.js Initialization (on-demand) -->
+    <script src="https:&#x2F;&#x2F;prismatic-reality.com/js/mermaid-init.js" defer></script>
+
+    <!-- Mobile Menu Toggle + Back to Top -->
+    <script>
+        (function () {
+            // Mobile menu toggle
+            var menu = document.getElementById('navbar-menu');
+            var toggle = document.querySelector('[data-collapse-toggle="navbar-menu"]');
+
+            if (toggle && menu) {
+                toggle.addEventListener('click', function () {
+                    menu.classList.toggle('hidden');
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+                        menu.classList.add('hidden');
+                    }
+                });
+
+                // Close menu on window resize to large screens
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth >= 1024) {
+                        menu.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Back to top
+            var btn = document.getElementById('back-to-top');
+            if (btn) {
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > 400) {
+                        btn.classList.remove('hidden');
+                        btn.classList.add('flex');
+                    } else {
+                        btn.classList.add('hidden');
+                        btn.classList.remove('flex');
+                    }
+                });
+                btn.addEventListener('click', function () {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Prismatic Platform - Blog</title>
+    <subtitle>Open Source AI-Orchestrated Intelligence Platform | 530+ Agents | 115 Apps | Community-Driven</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://prismatic-reality.com/blog/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://prismatic-reality.com/blog/"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-02-21T00:00:00+00:00</updated>
+    <id>https://prismatic-reality.com/blog/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Generation 19: Ecosystem Expansion and Open Source Launch</title>
+        <published>2026-02-21T00:00:00+00:00</published>
+        <updated>2026-02-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://prismatic-reality.com/blog/generation-19-ecosystem-expansion/"/>
+        <id>https://prismatic-reality.com/blog/generation-19-ecosystem-expansion/</id>
+        
+        <content type="html" xml:base="https://prismatic-reality.com/blog/generation-19-ecosystem-expansion/">&lt;p&gt;Today we are proud to announce that Prismatic Platform has evolved to &lt;strong&gt;Generation 19&lt;&#x2F;strong&gt; -- codenamed &lt;strong&gt;Ecosystem Expansion&lt;&#x2F;strong&gt;. This generation represents a significant milestone: the platform now operates at a fitness score of &lt;strong&gt;0.9995&lt;&#x2F;strong&gt; (theoretical maximum: 1.0) and introduces a complete open-source developer ecosystem.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;what-is-platform-evolution&quot;&gt;What Is Platform Evolution?&lt;&#x2F;h2&gt;
+&lt;p&gt;Prismatic Platform is a self-evolving system. Unlike traditional software that changes only through manual releases, our platform continuously improves itself through a generational model inspired by genetic algorithms.&lt;&#x2F;p&gt;
+&lt;p&gt;Every session, the platform:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Scans&lt;&#x2F;strong&gt; for quality regressions, dead code, and anti-patterns&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Mutates&lt;&#x2F;strong&gt; by applying targeted code transformations&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Evaluates&lt;&#x2F;strong&gt; fitness through 13 independent quality domains&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Selects&lt;&#x2F;strong&gt; only changes that maintain or improve the quality score&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;This process has run through 19 generations since the initial architecture, advancing from basic adapter discovery (Gen 1) to full autonomous consciousness (Gen 18) and now to ecosystem expansion (Gen 19).&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;gen-19-highlights&quot;&gt;Gen 19 Highlights&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;open-source-ecosystem&quot;&gt;Open Source Ecosystem&lt;&#x2F;h3&gt;
+&lt;p&gt;Gen 19&#x27;s defining trait is the launch of four open-source packages:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Package&lt;&#x2F;th&gt;&lt;th&gt;Purpose&lt;&#x2F;th&gt;&lt;th&gt;License&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;developers&#x2F;sdk&#x2F;&quot;&gt;Prismatic SDK&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;Type-safe client libraries (TS, Python, Elixir, Go)&lt;&#x2F;td&gt;&lt;td&gt;MIT&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;developers&#x2F;plugins&#x2F;&quot;&gt;Plugin Kit&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;Custom intelligence adapter framework&lt;&#x2F;td&gt;&lt;td&gt;MIT&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;developers&#x2F;ui-components&#x2F;&quot;&gt;UI Components&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;React, Vue, Web Components for dashboards&lt;&#x2F;td&gt;&lt;td&gt;MIT&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;&#x2F;developers&#x2F;community&#x2F;&quot;&gt;Security Framework&lt;&#x2F;a&gt;&lt;&#x2F;td&gt;&lt;td&gt;IP protection and validation tools&lt;&#x2F;td&gt;&lt;td&gt;MIT&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;h3 id=&quot;agent-optimization&quot;&gt;Agent Optimization&lt;&#x2F;h3&gt;
+&lt;p&gt;Gen 19 reduced the agent population from 532 to &lt;strong&gt;530&lt;&#x2F;strong&gt; through targeted deduplication:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Removed 2 exact duplicates (intelligence_export_coordinator, manipulation-detection)&lt;&#x2F;li&gt;
+&lt;li&gt;Eliminated 8 obsolete presales&#x2F; subdirectory agents&lt;&#x2F;li&gt;
+&lt;li&gt;Renamed 5 agents from underscore to hyphen naming convention&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Every remaining agent is verified, documented, and uniquely purposeful.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;dependency-hardening&quot;&gt;Dependency Hardening&lt;&#x2F;h3&gt;
+&lt;p&gt;Retired the deprecated &lt;code&gt;prometheus&lt;&#x2F;code&gt; library in favor of native &lt;code&gt;:telemetry&lt;&#x2F;code&gt;. Zero retired packages now appear in &lt;code&gt;mix hex.audit&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;documentation-coverage&quot;&gt;Documentation Coverage&lt;&#x2F;h3&gt;
+&lt;p&gt;Achieved &lt;strong&gt;100% documentation coverage&lt;&#x2F;strong&gt; -- all 115 umbrella apps now have both &lt;code&gt;CLAUDE.md&lt;&#x2F;code&gt; and &lt;code&gt;README.md&lt;&#x2F;code&gt; files.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fitness-score-progression&quot;&gt;Fitness Score Progression&lt;&#x2F;h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Generation&lt;&#x2F;th&gt;&lt;th&gt;Fitness&lt;&#x2F;th&gt;&lt;th&gt;Key Achievement&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Gen 1&lt;&#x2F;td&gt;&lt;td&gt;0.500&lt;&#x2F;td&gt;&lt;td&gt;Initial architecture&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Gen 5&lt;&#x2F;td&gt;&lt;td&gt;0.750&lt;&#x2F;td&gt;&lt;td&gt;OSINT adapter framework&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Gen 10&lt;&#x2F;td&gt;&lt;td&gt;0.900&lt;&#x2F;td&gt;&lt;td&gt;Broadway pipelines, change detection&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Gen 15&lt;&#x2F;td&gt;&lt;td&gt;0.980&lt;&#x2F;td&gt;&lt;td&gt;Quality 100&#x2F;100, zero warnings&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Gen 18&lt;&#x2F;td&gt;&lt;td&gt;0.999&lt;&#x2F;td&gt;&lt;td&gt;Full autonomy consciousness&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;strong&gt;Gen 19&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;strong&gt;0.9995&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;strong&gt;Ecosystem expansion, open source&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;h2 id=&quot;what-s-next-gen-20&quot;&gt;What&#x27;s Next: Gen 20&lt;&#x2F;h2&gt;
+&lt;p&gt;Generation 20 -- codenamed &lt;strong&gt;Production Hardening&lt;&#x2F;strong&gt; -- will focus on:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Multi-region deployment architecture&lt;&#x2F;li&gt;
+&lt;li&gt;Chaos engineering and fault injection testing&lt;&#x2F;li&gt;
+&lt;li&gt;Performance benchmarking with automated regression gates&lt;&#x2F;li&gt;
+&lt;li&gt;Community contribution pipeline for OSINT adapters&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The platform evolves. Every session. Every generation.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;&lt;em&gt;Learn more about the evolution system in our &lt;a href=&quot;&#x2F;architecture&#x2F;&quot;&gt;Architecture documentation&lt;&#x2F;a&gt; or explore the &lt;a href=&quot;&#x2F;academy&#x2F;&quot;&gt;Academy&lt;&#x2F;a&gt; for hands-on tutorials.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Introducing Prismatic SDK: Open Source Intelligence Development Kit</title>
+        <published>2026-02-21T00:00:00+00:00</published>
+        <updated>2026-02-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://prismatic-reality.com/blog/introducing-prismatic-sdk/"/>
+        <id>https://prismatic-reality.com/blog/introducing-prismatic-sdk/</id>
+        
+        <content type="html" xml:base="https://prismatic-reality.com/blog/introducing-prismatic-sdk/">&lt;p&gt;We are excited to announce the general availability of &lt;a href=&quot;&#x2F;developers&#x2F;sdk&#x2F;&quot;&gt;Prismatic SDK&lt;&#x2F;a&gt; -- an open-source, MIT-licensed client library that makes it easy to integrate intelligence capabilities into any application.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;why-we-built-the-sdk&quot;&gt;Why We Built the SDK&lt;&#x2F;h2&gt;
+&lt;p&gt;Intelligence tooling has historically been locked behind enterprise APIs with opaque interfaces. Developers building security dashboards, due diligence workflows, or OSINT aggregators had to reverse-engineer proprietary protocols or build fragile integrations from scratch.&lt;&#x2F;p&gt;
+&lt;p&gt;Prismatic SDK changes this. It provides a unified, type-safe interface to the platform&#x27;s intelligence capabilities across four languages:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;TypeScript&#x2F;JavaScript&lt;&#x2F;strong&gt; -- Full type definitions, async&#x2F;await, streaming support&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Python&lt;&#x2F;strong&gt; -- Pythonic API with dataclass models, async support via &lt;code&gt;asyncio&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Elixir&lt;&#x2F;strong&gt; -- Native OTP integration, GenServer-backed connection pooling&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Go&lt;&#x2F;strong&gt; -- Idiomatic Go with context propagation and structured errors&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting Started&lt;&#x2F;h2&gt;
+&lt;p&gt;Install the SDK in your language of choice:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;# TypeScript&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name&quot;&gt;npm&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; install @prismatic&#x2F;sdk&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;# Python&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name&quot;&gt;pip&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; install prismatic-sdk&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;# Elixir&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;# Add to mix.exs: {:prismatic_sdk, &amp;quot;~&amp;gt; 0.8.0&amp;quot;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;# Go&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name&quot;&gt;go&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; get github.com&#x2F;prismatic-platform&#x2F;sdk-go&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;key-features&quot;&gt;Key Features&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;type-safe-entity-resolution&quot;&gt;Type-Safe Entity Resolution&lt;&#x2F;h3&gt;
+&lt;p&gt;Every API response is fully typed. No more &lt;code&gt;any&lt;&#x2F;code&gt; or &lt;code&gt;Dict[str, Any]&lt;&#x2F;code&gt; -- you get autocompletion and compile-time validation:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage z-type&quot;&gt;const&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt; result&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt; =&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt; await&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt; prismatic&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt;entities&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;resolve&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-meta z-object-literal z-key&quot;&gt;  name&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;Navigara AI s.r.o.&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-meta z-object-literal z-key&quot;&gt;  jurisdiction&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;CZ&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-meta z-object-literal z-key&quot;&gt;  identifiers&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;: {&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-object-literal z-key&quot;&gt; ico&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;21893641&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;quot; }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation&quot;&gt;}&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;&#x2F;&#x2F; result.entity.type is EntityType.COMPANY&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;&#x2F;&#x2F; result.confidence is a number between 0 and 1&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;&#x2F;&#x2F; result.evidence is Evidence[]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;built-in-retry-and-circuit-breaking&quot;&gt;Built-in Retry and Circuit Breaking&lt;&#x2F;h3&gt;
+&lt;p&gt;Network failures happen. The SDK handles transient errors with configurable exponential backoff and circuit breaker patterns -- the same patterns we use in our 530-agent production deployment.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;streaming-results&quot;&gt;Streaming Results&lt;&#x2F;h3&gt;
+&lt;p&gt;For large-scale intelligence gathering, stream results as they arrive instead of waiting for the full response:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;python&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;async for&lt;&#x2F;span&gt;&lt;span&gt; entity&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt; in&lt;&#x2F;span&gt;&lt;span&gt; prismatic&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-member z-access z-python&quot;&gt;osint&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-python&quot;&gt;stream_search&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;example.com&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;quot;):&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-support z-function&quot;&gt;    print&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-storage z-type&quot;&gt;f&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;&amp;quot;Found: &lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-character z-format z-placeholder z-other z-python&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments&quot;&gt;entity&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-member z-access z-python&quot;&gt;name&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-character z-format z-placeholder z-other z-python&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; (&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-character z-format z-placeholder z-other z-python&quot;&gt;{&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-function-call z-arguments&quot;&gt;entity&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-meta z-member z-access z-python&quot;&gt;type&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-character z-format z-placeholder z-other z-python&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;)&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;what-s-next&quot;&gt;What&#x27;s Next&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Plugin Kit integration&lt;&#x2F;strong&gt; -- Build custom adapters that plug directly into the SDK&#x27;s type system&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Interactive Labs&lt;&#x2F;strong&gt; -- Try SDK functions in our &lt;a href=&quot;&#x2F;lab&#x2F;&quot;&gt;sandboxed lab environment&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Academy courses&lt;&#x2F;strong&gt; -- Structured &lt;a href=&quot;&#x2F;academy&#x2F;&quot;&gt;learning paths&lt;&#x2F;a&gt; for SDK development&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Start building at &lt;a href=&quot;&#x2F;developers&#x2F;sdk&#x2F;&quot;&gt;prismatic-reality.com&#x2F;developers&#x2F;sdk&#x2F;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;&lt;em&gt;Prismatic SDK is MIT licensed. Contributions welcome on GitHub.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Building OSINT Adapters with Elixir: A Practical Guide</title>
+        <published>2026-02-20T00:00:00+00:00</published>
+        <updated>2026-02-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://prismatic-reality.com/blog/building-osint-adapters-with-elixir/"/>
+        <id>https://prismatic-reality.com/blog/building-osint-adapters-with-elixir/</id>
+        
+        <content type="html" xml:base="https://prismatic-reality.com/blog/building-osint-adapters-with-elixir/">&lt;p&gt;Intelligence gathering at scale requires adapters that are reliable, rate-limited, and recoverable. In this guide, we walk through building a production-grade OSINT adapter using Elixir and the Prismatic Plugin Kit.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-adapter-contract&quot;&gt;The Adapter Contract&lt;&#x2F;h2&gt;
+&lt;p&gt;Every OSINT adapter in Prismatic implements the &lt;code&gt;PrismaticOsintCore.Adapter&lt;&#x2F;code&gt; behaviour:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation&quot;&gt;@&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt;callback&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; search&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;query &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;::&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt; String&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;t&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(),&lt;&#x2F;span&gt;&lt;span&gt; opts &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;::&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; keyword&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-keyword&quot;&gt;()) ::&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-constant z-other z-symbol&quot;&gt;  {:ok,&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; list&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;map&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-keyword z-constant z-other z-symbol&quot;&gt;())} | {:error,&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; term&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;()}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation&quot;&gt;@&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt;callback&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; metadata&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-keyword&quot;&gt;() ::&lt;&#x2F;span&gt;&lt;span&gt; %&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  name&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt; String&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;t&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(),&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  category&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; atom&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(),&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  rate_limit_rpm&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; pos_integer&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(),&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  confidence_tier&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; atom&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;()&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This contract guarantees that every adapter -- whether it queries the Czech ARES registry or Shodan&#x27;s global index -- provides a consistent interface for the pipeline.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;scaffolding-with-plugin-kit&quot;&gt;Scaffolding with Plugin Kit&lt;&#x2F;h2&gt;
+&lt;p&gt;The &lt;a href=&quot;&#x2F;developers&#x2F;plugins&#x2F;&quot;&gt;Plugin Kit&lt;&#x2F;a&gt; provides a scaffold command:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name&quot;&gt;mix&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; prismatic.gen.adapter --name my_custom_source --category global&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This generates:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;lib&#x2F;adapters&#x2F;my_custom_source.ex&lt;&#x2F;code&gt; -- Adapter implementation&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;test&#x2F;adapters&#x2F;my_custom_source_test.exs&lt;&#x2F;code&gt; -- Contract tests&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;config&#x2F;my_custom_source.exs&lt;&#x2F;code&gt; -- Configuration template&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;implementing-the-adapter&quot;&gt;Implementing the Adapter&lt;&#x2F;h2&gt;
+&lt;p&gt;Here is a minimal adapter that queries a hypothetical threat intelligence API:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;defmodule&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-other z-inherited-class&quot;&gt; PrismaticOsintSources&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-other z-inherited-class&quot;&gt;Adapters&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-other z-inherited-class&quot;&gt;Global&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt;ThreatFeed&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt; do&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation&quot;&gt;  @&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt;behaviour&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt; PrismaticOsintCore&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt;Adapter&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation&quot;&gt;  @&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt;impl&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-language&quot;&gt; true&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;  def&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; metadata&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt; do&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    %&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      name&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;: &amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;ThreatFeed Intelligence&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;quot;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      category&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-constant z-other z-symbol&quot;&gt;: :global,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      rate_limit_rpm&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 30&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      confidence_tier&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-constant z-other z-symbol&quot;&gt;: :commercial_database&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation&quot;&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;  end&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation&quot;&gt;  @&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt;impl&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-language&quot;&gt; true&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;  def&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; search&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;query&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; opts&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-punctuation&quot;&gt; \\ []&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt; do&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;    with&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-constant z-other z-symbol&quot;&gt; {:ok,&lt;&#x2F;span&gt;&lt;span&gt; response&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-keyword&quot;&gt;} &amp;lt;-&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; fetch_data&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;query&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; opts&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;),&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-constant z-other z-symbol&quot;&gt;         {:ok,&lt;&#x2F;span&gt;&lt;span&gt; parsed&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-keyword&quot;&gt;} &amp;lt;-&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; parse_response&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;response&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;)&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt; do&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-constant z-other z-symbol&quot;&gt;      {:ok,&lt;&#x2F;span&gt;&lt;span&gt; parsed&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;    end&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;  end&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;  defp&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; fetch_data&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;query&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;,&lt;&#x2F;span&gt;&lt;span class=&quot;z-comment&quot;&gt; _opts&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;)&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt; do&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;    # HTTP client call with timeout&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-constant z-other z-symbol&quot;&gt;    {:ok,&lt;&#x2F;span&gt;&lt;span&gt; %&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;{&lt;&#x2F;span&gt;&lt;span&gt;status&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 200&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; body&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; %&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;{&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;results&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-keyword&quot;&gt;&amp;quot; =&amp;gt; []}}}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;  end&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;  defp&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; parse_response&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;%&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;{&lt;&#x2F;span&gt;&lt;span&gt;status&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt; 200&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; body&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; body&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;})&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt; do&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    results &lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt; Map&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;get&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;body&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;, &amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;results&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;quot;, [])&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-constant z-other z-symbol&quot;&gt;    {:ok,&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt; Enum&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;map&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;results&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;,&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt; &amp;amp;normalize&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-numeric&quot;&gt;1&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;)}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;  end&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;  defp&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; parse_response&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;%&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;{&lt;&#x2F;span&gt;&lt;span&gt;status&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; status&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;})&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt; do&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-constant z-other z-symbol&quot;&gt;    {:error, {:http_error,&lt;&#x2F;span&gt;&lt;span&gt; status&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;}}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;  end&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;  defp&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt; normalize&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;record&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;)&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt; do&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    %&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;{&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      name&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt; Map&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;get&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;record&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;, &amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;name&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;unknown&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;quot;),&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      type&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-constant z-other z-symbol&quot;&gt;: :domain,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      identifiers&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; %&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;{&lt;&#x2F;span&gt;&lt;span&gt;domain&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt; Map&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;get&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&lt;&#x2F;span&gt;&lt;span&gt;record&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;, &amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;domain&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;quot;)},&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;      raw_data&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; record&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation&quot;&gt;    }&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;  end&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;end&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;rate-limiting-and-backpressure&quot;&gt;Rate Limiting and Backpressure&lt;&#x2F;h2&gt;
+&lt;p&gt;Prismatic Hydra&#x27;s pipeline automatically enforces rate limits declared in &lt;code&gt;metadata&#x2F;0&lt;&#x2F;code&gt;. But for adapters making HTTP calls, you should also implement client-side throttling:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;# The pipeline&amp;#39;s circuit breaker will open after 5 consecutive failures&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;# and automatically retry after 30 seconds in half-open state&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The circuit breaker states:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Closed&lt;&#x2F;strong&gt; (normal) -- requests flow freely&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Open&lt;&#x2F;strong&gt; (stopped) -- 5 consecutive failures trigger a 30-second pause&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Half-open&lt;&#x2F;strong&gt; (testing) -- one test request; success resumes, failure re-opens&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;confidence-scoring&quot;&gt;Confidence Scoring&lt;&#x2F;h2&gt;
+&lt;p&gt;Every adapter result flows through the evidence chain, where confidence is assigned based on the source category:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Category&lt;&#x2F;th&gt;&lt;th&gt;Confidence&lt;&#x2F;th&gt;&lt;th&gt;Example Sources&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Official Registry&lt;&#x2F;td&gt;&lt;td&gt;0.95-1.00&lt;&#x2F;td&gt;&lt;td&gt;ARES, Justice Registry&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Commercial Database&lt;&#x2F;td&gt;&lt;td&gt;0.80-0.94&lt;&#x2F;td&gt;&lt;td&gt;Shodan, VirusTotal&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Web Scraping&lt;&#x2F;td&gt;&lt;td&gt;0.60-0.79&lt;&#x2F;td&gt;&lt;td&gt;Social media, web&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Derived&lt;&#x2F;td&gt;&lt;td&gt;0.40-0.59&lt;&#x2F;td&gt;&lt;td&gt;Computed data&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Unverified&lt;&#x2F;td&gt;&lt;td&gt;0.00-0.39&lt;&#x2F;td&gt;&lt;td&gt;Raw feeds&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;h2 id=&quot;testing-your-adapter&quot;&gt;Testing Your Adapter&lt;&#x2F;h2&gt;
+&lt;p&gt;The Plugin Kit includes contract tests that verify your adapter conforms to the expected interface:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;defmodule&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-other z-inherited-class&quot;&gt; PrismaticOsintSources&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-other z-inherited-class&quot;&gt;Adapters&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-other z-inherited-class&quot;&gt;Global&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt;ThreatFeedTest&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt; do&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;  use&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt; PrismaticOsintCore&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt;AdapterContractTest&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;,&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    adapter_module&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;:&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt; PrismaticOsintSources&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt;Adapters&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt;Global&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt;ThreatFeed&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt;end&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This automatically runs 15+ contract assertions covering metadata validation, return type compliance, error handling, and idempotency.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;next-steps&quot;&gt;Next Steps&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;&#x2F;developers&#x2F;sdk&#x2F;&quot;&gt;SDK Documentation&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt; -- Use the SDK to call your adapter from TypeScript or Python&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;&#x2F;lab&#x2F;&quot;&gt;Interactive Labs&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt; -- Test your adapter in a sandboxed environment&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;&#x2F;academy&#x2F;&quot;&gt;Academy&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt; -- Deeper courses on OSINT adapter patterns and OTP supervision&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;&#x2F;osint&#x2F;&quot;&gt;OSINT Sources&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt; -- Browse all 121+ existing adapters for reference&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;&lt;em&gt;The Prismatic Plugin Kit is MIT licensed. Build adapters, contribute back, and join the intelligence community.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Security Ratings and EASM: How Prismatic Perimeter Scores Your Attack Surface</title>
+        <published>2026-02-19T00:00:00+00:00</published>
+        <updated>2026-02-19T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://prismatic-reality.com/blog/security-ratings-easm-explained/"/>
+        <id>https://prismatic-reality.com/blog/security-ratings-easm-explained/</id>
+        
+        <content type="html" xml:base="https://prismatic-reality.com/blog/security-ratings-easm-explained/">&lt;p&gt;External Attack Surface Management (EASM) is the practice of continuously discovering, monitoring, and assessing an organization&#x27;s internet-facing assets. &lt;a href=&quot;&#x2F;capabilities&#x2F;easm&#x2F;&quot;&gt;Prismatic Perimeter&lt;&#x2F;a&gt; is our EASM capability, designed to provide transparent, evidence-based security ratings that compete with established vendors like BitSight, Black Kite, and SecurityScorecard.&lt;&#x2F;p&gt;
+&lt;p&gt;This post explains how the scoring methodology works.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;the-rating-scale&quot;&gt;The Rating Scale&lt;&#x2F;h2&gt;
+&lt;p&gt;Prismatic Perimeter assigns letter grades from A (best) to F (worst) with numeric scores on a 300-900 scale:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Grade&lt;&#x2F;th&gt;&lt;th&gt;Score Range&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;A&lt;&#x2F;td&gt;&lt;td&gt;800-900&lt;&#x2F;td&gt;&lt;td&gt;Excellent security posture&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;B&lt;&#x2F;td&gt;&lt;td&gt;700-799&lt;&#x2F;td&gt;&lt;td&gt;Good, minor improvements needed&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;C&lt;&#x2F;td&gt;&lt;td&gt;600-699&lt;&#x2F;td&gt;&lt;td&gt;Average, notable gaps exist&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;D&lt;&#x2F;td&gt;&lt;td&gt;400-599&lt;&#x2F;td&gt;&lt;td&gt;Below average, significant risks&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;F&lt;&#x2F;td&gt;&lt;td&gt;300-399&lt;&#x2F;td&gt;&lt;td&gt;Critical security failures&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;h2 id=&quot;asset-discovery&quot;&gt;Asset Discovery&lt;&#x2F;h2&gt;
+&lt;p&gt;The first step is enumerating the external attack surface. Perimeter discovers:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Domains and subdomains&lt;&#x2F;strong&gt; -- DNS enumeration, certificate transparency logs&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;IP addresses&lt;&#x2F;strong&gt; -- Reverse DNS, ASN mapping, BGP route analysis&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;TLS certificates&lt;&#x2F;strong&gt; -- Certificate chain validation, expiry tracking&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Cloud resources&lt;&#x2F;strong&gt; -- S3 buckets, Azure blobs, GCP storage&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Exposed services&lt;&#x2F;strong&gt; -- Port scanning, service fingerprinting&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Web applications&lt;&#x2F;strong&gt; -- Technology detection, security header analysis&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;scoring-dimensions&quot;&gt;Scoring Dimensions&lt;&#x2F;h2&gt;
+&lt;p&gt;The security rating is computed across multiple dimensions, each contributing a weighted score:&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;dns-security-15&quot;&gt;DNS Security (15%)&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;DNSSEC validation&lt;&#x2F;li&gt;
+&lt;li&gt;SPF, DKIM, DMARC configuration&lt;&#x2F;li&gt;
+&lt;li&gt;DNS zone transfer protection&lt;&#x2F;li&gt;
+&lt;li&gt;Nameserver diversity&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;tls-certificate-health-20&quot;&gt;TLS&#x2F;Certificate Health (20%)&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Certificate validity and chain completeness&lt;&#x2F;li&gt;
+&lt;li&gt;Protocol version (TLS 1.2+ required)&lt;&#x2F;li&gt;
+&lt;li&gt;Cipher suite strength&lt;&#x2F;li&gt;
+&lt;li&gt;HSTS deployment&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;web-application-security-25&quot;&gt;Web Application Security (25%)&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Security headers (CSP, X-Frame-Options, X-Content-Type-Options)&lt;&#x2F;li&gt;
+&lt;li&gt;Cookie security flags&lt;&#x2F;li&gt;
+&lt;li&gt;Mixed content detection&lt;&#x2F;li&gt;
+&lt;li&gt;Open redirect vulnerabilities&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;network-exposure-20&quot;&gt;Network Exposure (20%)&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Unnecessary open ports&lt;&#x2F;li&gt;
+&lt;li&gt;Service version currency&lt;&#x2F;li&gt;
+&lt;li&gt;Known vulnerability correlation (CVE matching)&lt;&#x2F;li&gt;
+&lt;li&gt;Default credential exposure&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;compliance-alignment-20&quot;&gt;Compliance Alignment (20%)&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;NIS2 Directive (EU 2022&#x2F;2555) requirement mapping&lt;&#x2F;li&gt;
+&lt;li&gt;ZKB 264&#x2F;2025 Sb. (Czech cybersecurity regulation)&lt;&#x2F;li&gt;
+&lt;li&gt;Evidence of incident response capability&lt;&#x2F;li&gt;
+&lt;li&gt;Supply chain risk documentation&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;evidence-based-transparency&quot;&gt;Evidence-Based Transparency&lt;&#x2F;h2&gt;
+&lt;p&gt;Every factor contributing to a rating is traceable to specific evidence:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;elixir&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-constant z-other z-symbol&quot;&gt;{:ok,&lt;&#x2F;span&gt;&lt;span&gt; rating&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-keyword&quot;&gt;} =&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-type z-class&quot;&gt; PrismaticPerimeter&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;security_rating&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;(&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;example.com&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;quot;)&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;# rating.grade =&amp;gt; :B&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;# rating.score =&amp;gt; 780&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;# rating.factors =&amp;gt; [&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;#   %{dimension: :tls, finding: &amp;quot;TLS 1.2+ on all endpoints&amp;quot;, impact: +40},&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;#   %{dimension: :dns, finding: &amp;quot;Missing DNSSEC&amp;quot;, impact: -25},&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;#   %{dimension: :web, finding: &amp;quot;CSP header present&amp;quot;, impact: +30},&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;#   ...&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt;# ]&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;No black-box scores. Every point gain or deduction is explainable.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;nis2-compliance-assessment&quot;&gt;NIS2 Compliance Assessment&lt;&#x2F;h2&gt;
+&lt;p&gt;The EU NIS2 Directive (2022&#x2F;2555) requires essential and important entities to implement specific cybersecurity measures. Perimeter maps discovered assets against NIS2 requirements:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Article 21&lt;&#x2F;strong&gt; -- Cybersecurity risk-management measures&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Article 23&lt;&#x2F;strong&gt; -- Reporting obligations&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Article 24&lt;&#x2F;strong&gt; -- Supply chain security&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The compliance assessment produces a gap analysis with remediation guidance, not just a pass&#x2F;fail result.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;getting-started&quot;&gt;Getting Started&lt;&#x2F;h2&gt;
+&lt;p&gt;Assess any domain&#x27;s attack surface with a single API call:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name&quot;&gt;curl&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; -X POST https:&#x2F;&#x2F;api.prismatic-reality.com&#x2F;v1&#x2F;perimeter&#x2F;discover&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-character z-escape&quot;&gt; \&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-string&quot;&gt;  -H&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt; &amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;Content-Type: application&#x2F;json&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-constant z-character z-escape&quot;&gt; \&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-string&quot;&gt;  -d&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt; &amp;#39;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;{&amp;quot;domain&amp;quot;: &amp;quot;your-company.com&amp;quot;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Or use the &lt;a href=&quot;&#x2F;developers&#x2F;sdk&#x2F;&quot;&gt;SDK&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage z-type&quot;&gt;const&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt; surface&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt; =&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-control&quot;&gt; await&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt; prismatic&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt;perimeter&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;discover&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;your-company.com&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-variable&quot;&gt;console&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;log&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;`&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;Grade: &lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-template-expression z-begin&quot;&gt;${&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt;surface&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt;rating&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt;grade&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-template-expression z-end&quot;&gt;}&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt;, Score: &lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-template-expression z-begin&quot;&gt;${&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt;surface&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt;rating&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;.&lt;&#x2F;span&gt;&lt;span class=&quot;z-variable&quot;&gt;score&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-template-expression z-end z-punctuation&quot;&gt;}`&lt;&#x2F;span&gt;&lt;span&gt;)&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation&quot;&gt;;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;further-reading&quot;&gt;Further Reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;&#x2F;capabilities&#x2F;easm&#x2F;&quot;&gt;Perimeter Dashboard&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt; -- Interactive EASM overview&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;&#x2F;dd&#x2F;&quot;&gt;Due Diligence&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt; -- How EASM integrates with DD workflows&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;&#x2F;capabilities&#x2F;compliance&#x2F;&quot;&gt;Compliance&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt; -- NIS2 and ZKB regulatory details&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;&#x2F;api&#x2F;&quot;&gt;API Reference&lt;&#x2F;a&gt;&lt;&#x2F;strong&gt; -- Full Perimeter API endpoints&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;&lt;em&gt;Prismatic Perimeter is available as part of the enterprise platform. Contact us for a security assessment of your organization.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

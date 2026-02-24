@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <!-- Multi-layer glow for bright edge effect -->
+    <filter id="glow" x="-100%" y="-100%" width="400%" height="400%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur2"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur3"/>
+      <feMerge>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur3"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Wide outer glow -->
+    <filter id="outerGlow" x="-100%" y="-100%" width="400%" height="400%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="30"/>
+    </filter>
+
+    <!-- Subtle beam glow -->
+    <filter id="beamGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <!-- Pure black background -->
+  <rect width="1200" height="630" fill="#000000"/>
+
+  <!-- Shadow/beam extending from bottom-right of triangle -->
+  <line x1="680" y1="420" x2="900" y2="600"
+        stroke="#b0d0e0" stroke-width="4" stroke-opacity="0.08"
+        filter="url(#beamGlow)"/>
+  <line x1="680" y1="420" x2="880" y2="590"
+        stroke="#d0e8f8" stroke-width="2" stroke-opacity="0.04"
+        filter="url(#beamGlow)"/>
+
+  <!-- Outermost glow (widest, softest) - INVERTED TRIANGLE -->
+  <path d="M480 160 L720 160 L600 420 Z"
+        fill="none"
+        stroke="#90b8d0"
+        stroke-width="18"
+        stroke-linejoin="round"
+        stroke-opacity="0.2"
+        filter="url(#outerGlow)"/>
+
+  <!-- Middle glow layer - INVERTED TRIANGLE -->
+  <path d="M480 160 L720 160 L600 420 Z"
+        fill="none"
+        stroke="#c8e4f4"
+        stroke-width="10"
+        stroke-linejoin="round"
+        stroke-opacity="0.6"
+        filter="url(#glow)"/>
+
+  <!-- Core bright triangle stroke - INVERTED TRIANGLE -->
+  <path d="M480 160 L720 160 L600 420 Z"
+        fill="none"
+        stroke="#ffffff"
+        stroke-width="5"
+        stroke-linejoin="round"
+        stroke-linecap="round"
+        stroke-opacity="0.95"/>
+
+  <!-- Very subtle interior -->
+  <path d="M488 168 L712 168 L600 412 Z"
+        fill="#ffffff"
+        opacity="0.015"/>
+</svg>

@@ -1,0 +1,10 @@
+Contact: mailto:security@prismatic-platform.com
+Expires: 2026-12-31T23:59:59.000Z
+Acknowledgments: https://prismatic-reality.com/security/acknowledgments
+Preferred-Languages: en, cs
+Canonical: https://prismatic-reality.com/.well-known/security.txt
+
+Policy: https://prismatic-reality.com/security/policy
+
+# This is a promotional/demo site for the Prismatic Platform
+# For actual security issues with the main platform, contact security@prismatic-platform.com
