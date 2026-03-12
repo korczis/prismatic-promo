@@ -1,0 +1,310 @@
+/**
+ * LiveView Glossary Hover Card Styles (Promo Site)
+ *
+ * Glass-morphism design with dark theme, optimized for static pages
+ * using REST API fallback. Much lighter than the 202KB Alpine.js version.
+ *
+ * File size: ~2KB (vs 202KB Alpine.js version)
+ */
+
+/* Container for hover cards */
+.glossary-hover-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* Main hover card container */
+.glossary-hover-card {
+  position: fixed;
+  z-index: 1000;
+  max-width: 24rem; /* 384px */
+  width: auto;
+  min-width: 16rem; /* 256px */
+  pointer-events: auto;
+  transform: translateY(-0.5rem);
+  opacity: 1;
+  transition: all 0.2s ease-out;
+}
+
+/* Glassmorphism background layer */
+.glossary-hover-card .absolute.inset-0 {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(17, 24, 39, 0.85); /* gray-900 with 85% opacity */
+  border: 1px solid rgba(75, 85, 99, 0.5); /* gray-600 with 50% opacity */
+  border-radius: 0.5rem;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.3),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Content area */
+.glossary-hover-card .relative {
+  position: relative;
+  padding: 1rem;
+}
+
+/* Title styling */
+.glossary-hover-card h3 {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+}
+
+/* Domain badge styling */
+.glossary-hover-card .inline-flex {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Domain-specific badge colors */
+.glossary-hover-card[data-domain="security"] .inline-flex {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.glossary-hover-card[data-domain="osint"] .inline-flex {
+  background-color: rgba(147, 51, 234, 0.2);
+  color: #c4b5fd;
+  border: 1px solid rgba(147, 51, 234, 0.3);
+}
+
+.glossary-hover-card[data-domain="ai"] .inline-flex {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.glossary-hover-card[data-domain="architecture"] .inline-flex {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #86efac;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.glossary-hover-card[data-domain="performance"] .inline-flex {
+  background-color: rgba(234, 179, 8, 0.2);
+  color: #fde047;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.glossary-hover-card[data-domain="quality"] .inline-flex {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: #c7d2fe;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+/* Generic domain fallback */
+.glossary-hover-card .inline-flex {
+  background-color: rgba(107, 114, 128, 0.2);
+  color: #d1d5db;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+/* Description text */
+.glossary-hover-card p {
+  color: #d1d5db; /* gray-300 */
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+/* Complexity indicator */
+.glossary-hover-card .text-xs {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Complexity colors */
+.text-green-400 { color: #4ade80; }
+.text-yellow-400 { color: #facc15; }
+.text-orange-400 { color: #fb923c; }
+.text-red-400 { color: #f87171; }
+.text-gray-400 { color: #9ca3af; }
+
+/* Learn more link */
+.glossary-hover-card a {
+  color: #60a5fa; /* blue-400 */
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.glossary-hover-card a:hover {
+  color: #93c5fd; /* blue-300 */
+  text-decoration: underline;
+}
+
+/* Error state styling */
+.glossary-hover-card[data-error="true"] {
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+.glossary-hover-card[data-error="true"] .absolute.inset-0 {
+  background: rgba(127, 29, 29, 0.9); /* red-900 with higher opacity */
+  border: 1px solid rgba(239, 68, 68, 0.5);
+}
+
+.glossary-hover-card .text-red-400 {
+  color: #f87171;
+}
+
+.glossary-hover-card .text-red-200 {
+  color: #fecaca;
+}
+
+/* Arrow pointer */
+.glossary-hover-card .absolute.-bottom-2 {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 1.5rem;
+  width: 1rem;
+  height: 1rem;
+  background: rgba(17, 24, 39, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(75, 85, 99, 0.5);
+  border-bottom: 1px solid rgba(75, 85, 99, 0.5);
+  transform: rotate(45deg);
+}
+
+/* Error state arrow */
+.glossary-hover-card[data-error="true"] .absolute.-bottom-2 {
+  background: rgba(127, 29, 29, 0.9);
+  border-right: 1px solid rgba(239, 68, 68, 0.5);
+  border-bottom: 1px solid rgba(239, 68, 68, 0.5);
+}
+
+/* Animation states */
+.glossary-hover-card.entering {
+  transform: translateY(-1rem);
+  opacity: 0;
+}
+
+.glossary-hover-card.leaving {
+  transform: translateY(-1rem);
+  opacity: 0;
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .glossary-hover-card {
+    max-width: 20rem; /* 320px */
+    min-width: 14rem; /* 224px */
+  }
+
+  .glossary-hover-card .relative {
+    padding: 0.75rem;
+  }
+
+  .glossary-hover-card h3 {
+    font-size: 0.8rem;
+  }
+
+  .glossary-hover-card p {
+    font-size: 0.7rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .glossary-hover-card .absolute.inset-0 {
+    background: rgba(0, 0, 0, 0.95);
+    border: 2px solid #ffffff;
+  }
+
+  .glossary-hover-card h3 {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .glossary-hover-card p {
+    color: #ffffff;
+    font-weight: 500;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .glossary-hover-card {
+    transition: none;
+  }
+
+  .glossary-hover-card.entering,
+  .glossary-hover-card.leaving {
+    transform: none;
+    transition: opacity 0.1s ease;
+  }
+}
+
+/* Print styles */
+@media print {
+  .glossary-hover-card {
+    display: none !important;
+  }
+}
+
+/* Focus and accessibility */
+.glossary-hover-card:focus-within {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+/* Utility classes for consistent spacing and typography */
+.font-semibold { font-weight: 600; }
+.font-medium { font-weight: 500; }
+.text-sm { font-size: 0.875rem; }
+.text-xs { font-size: 0.75rem; }
+.leading-tight { line-height: 1.25; }
+.leading-relaxed { line-height: 1.625; }
+.rounded { border-radius: 0.25rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.p-4 { padding: 1rem; }
+.px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.py-0\.5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.pr-2 { padding-right: 0.5rem; }
+.max-w-sm { max-width: 24rem; }
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.justify-between { justify-content: space-between; }
+.w-4 { width: 1rem; }
+.h-4 { height: 1rem; }
+.transform { transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1); }
+.rotate-45 { transform: rotate(45deg); }
+.transition-all { transition-property: all; }
+.duration-200 { transition-duration: 200ms; }
+.ease-out { transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+.z-1000 { z-index: 1000; }
+.fixed { position: fixed; }
+.absolute { position: absolute; }
+.relative { position: relative; }
+.inset-0 { top: 0px; right: 0px; bottom: 0px; left: 0px; }
+.-bottom-2 { bottom: -0.5rem; }
+.left-6 { left: 1.5rem; }
+.border { border-width: 1px; }
+.border-r { border-right-width: 1px; }
+.border-b { border-bottom-width: 1px; }
+.bg-gray-900\/80 { background-color: rgba(17, 24, 39, 0.8); }
+.border-gray-700\/50 { border-color: rgba(55, 65, 81, 0.5); }
+.backdrop-blur-md { backdrop-filter: blur(12px); }
+.text-white { color: rgb(255 255 255); }
+.text-gray-300 { color: rgb(209 213 219); }
+.text-blue-400 { color: rgb(96 165 250); }
+.hover\:text-blue-300:hover { color: rgb(147 197 253); }

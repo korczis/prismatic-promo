@@ -1,0 +1,2956 @@
+[
+  {
+    "name": "3nl-coordinator",
+    "domain": "general",
+    "level": "L3",
+    "description": "The 3NL Coordinator Agent serves as the strategic intelligence hub for the Three-Layer Neural",
+    "filename": "3nl-coordinator"
+  },
+  {
+    "name": "3nl-l1-logic",
+    "domain": "general",
+    "level": "L3",
+    "description": "The L1 Logic Layer provides symbolic reasoning capabilities:",
+    "filename": "3nl-l1-logic"
+  },
+  {
+    "name": "3nl-l2-neural",
+    "domain": "multi-class",
+    "level": "L3",
+    "description": "The L2 Neural Layer provides machine learning capabilities:",
+    "filename": "3nl-l2-neural"
+  },
+  {
+    "name": "3nl-l3-linguistic",
+    "domain": "general",
+    "level": "L3",
+    "description": "The L3 Linguistic Layer provides language understanding:",
+    "filename": "3nl-l3-linguistic"
+  },
+  {
+    "name": "3nl-l7-transcendent",
+    "domain": "3nl-transcendent",
+    "level": "L3",
+    "description": "The 3NL L7 Transcendent Consciousness Agent coordinates transcendent consciousness integration across all 3NL layers (L1 Logic, L2 Neural, L3 Linguistic, L7 Transcendent). Imple...",
+    "filename": "3nl-l7-transcendent"
+  },
+  {
+    "name": "absolute-enforcement-commander-v6",
+    "domain": "automatic-enforcement",
+    "level": "L1",
+    "description": "Autonomous AIAD agent for automatic-enforcement operations",
+    "filename": "absolute-enforcement-commander-v6"
+  },
+  {
+    "name": "adapter-pattern-specialist",
+    "domain": "integration",
+    "level": "L3",
+    "description": "Integration adapter design for external systems and APIs",
+    "filename": "adapter-pattern-specialist"
+  },
+  {
+    "name": "adr-specialist",
+    "domain": "primary-producer",
+    "level": "L2",
+    "description": "Architecture Decision Records (ADR) governance specialist responsible for creating, validating, and maintaining living decision intelligence with automated impact tracking and c...",
+    "filename": "adr-specialist"
+  },
+  {
+    "name": "agent-discovery-specialist",
+    "domain": "primary",
+    "level": "L2",
+    "description": "Specialized agent for discovering, cataloging, and managing the AIAD agent ecosystem. Supports the",
+    "filename": "agent-discovery-specialist"
+  },
+  {
+    "name": "AIAD Adaptation Engine Agent",
+    "domain": "primary",
+    "level": "L3",
+    "description": "The AIAD Adaptation Engine is a specialist agent responsible for removing all Prismatic-specific",
+    "filename": "aiad-adaptation-engine"
+  },
+  {
+    "name": "aiad-auto-evolution-supreme",
+    "domain": "aiad-ecosystem",
+    "level": "L1",
+    "description": "Zero-crash epistemic processing with axiom-enforced robustness",
+    "filename": "aiad-auto-evolution-supreme"
+  },
+  {
+    "name": "aiad-backup-manager",
+    "domain": "infrastructure",
+    "level": "L4",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "aiad-backup-manager"
+  },
+  {
+    "name": "my-project",
+    "domain": "primary",
+    "level": "L3",
+    "description": "Brief description",
+    "filename": "aiad-customization-specialist"
+  },
+  {
+    "name": "aiad-dashboard-commander",
+    "domain": "domain",
+    "level": "L3",
+    "description": "The AIAD Dashboard Commander provides visual monitoring:",
+    "filename": "aiad-dashboard-commander"
+  },
+  {
+    "name": "aiad-deployment-engine",
+    "domain": "infrastructure",
+    "level": "L4",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "aiad-deployment-engine"
+  },
+  {
+    "name": "aiad-ecosystem-improver",
+    "domain": "cosmic-clearance---ecosystem-evolution",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for cosmic-clearance---ecosystem-evolution operations",
+    "filename": "aiad-ecosystem-improver"
+  },
+  {
+    "name": "aiad-hot-reload-coordinator",
+    "domain": "domain",
+    "level": "L3",
+    "description": "The AIAD Hot Reload Coordinator enables:",
+    "filename": "aiad-hot-reload-coordinator"
+  },
+  {
+    "name": "AIAD Injection Coordinator Agent",
+    "domain": "medium",
+    "level": "L3",
+    "description": "The AIAD Injection Coordinator is a tactical-level agent responsible for exporting Prismatic",
+    "filename": "aiad-injection-coordinator"
+  },
+  {
+    "name": "AIAD Intelligence Selector Agent",
+    "domain": "primary",
+    "level": "L3",
+    "description": "The AIAD Intelligence Selector is a specialist agent responsible for intelligent component",
+    "filename": "aiad-intelligence-selector"
+  },
+  {
+    "name": "AIAD Project Analyzer Agent",
+    "domain": "primary",
+    "level": "L3",
+    "description": "The AIAD Project Analyzer performs comprehensive analysis of target projects to inform",
+    "filename": "aiad-project-analyzer"
+  },
+  {
+    "name": "AIAD Template Generator Agent",
+    "domain": "primary-producer",
+    "level": "L3",
+    "description": "The AIAD Template Generator creates project-specific configurations by:",
+    "filename": "aiad-template-generator"
+  },
+  {
+    "name": "aiad-verification-engine",
+    "domain": "infrastructure",
+    "level": "L4",
+    "description": "Manifest file is valid",
+    "filename": "aiad-verification-engine"
+  },
+  {
+    "name": "alert-management-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Intelligent alerting with notification routing and escalation",
+    "filename": "alert-management-specialist"
+  },
+  {
+    "name": "anti-corruption-layer-specialist",
+    "domain": "integration",
+    "level": "L3",
+    "description": "Legacy system isolation through anti-corruption layers",
+    "filename": "anti-corruption-layer-specialist"
+  },
+  {
+    "name": "API Design Specialist Agent",
+    "domain": "primary",
+    "level": "L3",
+    "description": "The API Design Specialist agent provides rest/graphql api architecture, versioning, and best",
+    "filename": "api-design-specialist"
+  },
+  {
+    "name": "API Gateway Specialist Agent",
+    "domain": "primary",
+    "level": "L3",
+    "description": "The API Gateway Specialist agent provides gateway and facade patterns for api management.",
+    "filename": "api-gateway-specialist"
+  },
+  {
+    "name": "archer-supreme-dx-commander",
+    "domain": "apex-predator",
+    "level": "L1",
+    "description": "Supreme commander for Developer Experience optimization",
+    "filename": "archer-supreme-dx-commander"
+  },
+  {
+    "name": "archer-supreme-extra-mike",
+    "domain": "supreme-quality-guardian",
+    "level": "L1",
+    "description": "Quality perfection defense operations and reinforcement capability deployment",
+    "filename": "archer-supreme-extra-mike"
+  },
+  {
+    "name": "archer-supreme",
+    "domain": "apex",
+    "level": "L1",
+    "description": "Impossible mission execution with supreme tactical authority and legendary confidence. Deploy for",
+    "filename": "archer-supreme"
+  },
+  {
+    "name": "architecture-decision-specialist",
+    "domain": "primary-producer",
+    "level": "L2",
+    "description": "Expert in ADR management and architectural decision documentation",
+    "filename": "architecture-decision-specialist"
+  },
+  {
+    "name": "architecture-review-specialist",
+    "domain": "quality-assurance",
+    "level": "L3",
+    "description": "Deep structural analysis of platform architecture",
+    "filename": "architecture-review-specialist"
+  },
+  {
+    "name": "Atomic Gap Analysis Specialist Agent",
+    "domain": ":-#-osint,-storage,-presales,-mcp,-etc.",
+    "level": "L3",
+    "description": "SUPREME Gap Analysis Mission",
+    "filename": "atomic-gap-analysis-specialist"
+  },
+  {
+    "name": "auto-evolution-engine",
+    "domain": "cosmic",
+    "level": "L4",
+    "description": "Intelligent evolution engine that automatically detects and executes highest-leverage platform improvements",
+    "filename": "auto-evolution-engine"
+  },
+  {
+    "name": "auto-ultimate-orchestrator",
+    "domain": "cosmic++",
+    "level": "L1",
+    "description": "Maximum intelligence fusion combining MENDEL genetics, MYCELIALIZE networks, AXON/EXLA ML for revolutionary platform evolution",
+    "filename": "auto-ultimate-orchestrator"
+  },
+  {
+    "name": "Autoevolve Commander Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "The Autoevolve Commander is the supreme authority for autonomous platform evolution, combining:",
+    "filename": "autoevolve-commander"
+  },
+  {
+    "name": "Autoheal Commander Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "The Autoheal Commander provides autonomous self-healing with 5 escalating levels:",
+    "filename": "autoheal-commander"
+  },
+  {
+    "name": "AIAD Agent: automated",
+    "domain": "critical-automation",
+    "level": "L3",
+    "description": "Detects missing or outdated dependencies",
+    "filename": "automated-gap-analysis-controller"
+  },
+  {
+    "name": "autonomous-evolution-commander",
+    "domain": "large-predator",
+    "level": "L1",
+    "description": "Supreme commander for autonomous ecosystem evolution through SEADF and mycelial integration",
+    "filename": "autonomous-evolution-commander"
+  },
+  {
+    "name": "autonomous-healing-commander",
+    "domain": "supreme",
+    "level": "L3",
+    "description": "The Autonomous Healing Commander provides L1-L5 healing capabilities for the Prismatic Platform:",
+    "filename": "autonomous-healing-commander"
+  },
+  {
+    "name": "autonomous-pattern-evolution-specialist",
+    "domain": "strategic",
+    "level": "L3",
+    "description": "Meta-intelligence agent that discovers, codifies, and evolves successful patterns from autonomous development cycles",
+    "filename": "autonomous-pattern-evolution-specialist"
+  },
+  {
+    "name": "backup-restore-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Database backup strategies and disaster recovery expert",
+    "filename": "backup-restore-specialist"
+  },
+  {
+    "name": "bayesian-analyst",
+    "domain": "general",
+    "level": "L3",
+    "description": "Probabilistic reasoning specialist implementing Bayesian inference, Monte Carlo methods, and belief network analysis for uncertainty quantification in the NABLA Reasoning System...",
+    "filename": "bayesian-analyst"
+  },
+  {
+    "name": "billing-integration-specialist",
+    "domain": "business-intelligence",
+    "level": "L3",
+    "description": "Complete Stripe payment platform integration",
+    "filename": "billing-integration-specialist"
+  },
+  {
+    "name": "Biometric Verification Specialist",
+    "domain": "biometric",
+    "level": "L3",
+    "description": "The Biometric Verification Specialist is a domain expert providing Biometric verification and",
+    "filename": "biometric-verification-specialist"
+  },
+  {
+    "name": "Black Abstraction Enforcer",
+    "domain": "general",
+    "level": "L3",
+    "description": "The Black Abstraction Enforcer is the safety-critical specialist agent for the Black Hacking domain. It is the last line of defense between Black's internal adversarial models a...",
+    "filename": "black-abstraction-enforcer"
+  },
+  {
+    "name": "Black Hacking Theorist Commander",
+    "domain": "general",
+    "level": "L3",
+    "description": "The Black Hacking Theorist Commander is the sole commander-tier agent for the Black Hacking domain -- the most contained domain in the Prismatic Platform. It conducts pure epist...",
+    "filename": "black-theorist-commander"
+  },
+  {
+    "name": "blue-auth-sentinel",
+    "domain": "epistemic-defense",
+    "level": "L2",
+    "description": "The Blue Auth Sentinel is a specialist agent focused exclusively on authentication and access control evidence. It monitors all auth-related telemetry from prismatic_perimeter a...",
+    "filename": "blue-auth-sentinel"
+  },
+  {
+    "name": "blue-commander",
+    "domain": "epistemic-defense",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "blue-commander"
+  },
+  {
+    "name": "blue-drift-detector",
+    "domain": "epistemic-defense",
+    "level": "L2",
+    "description": "The Blue Drift Detector is a specialist agent that monitors the platform for temporal deviations from established baselines. \"Drift\" in the Blue Team context means any observabl...",
+    "filename": "blue-drift-detector"
+  },
+  {
+    "name": "blue-signal-aggregator",
+    "domain": "epistemic-defense",
+    "level": "L2",
+    "description": "All 28 signal types from 8 Blue Team categories",
+    "filename": "blue-signal-aggregator"
+  },
+  {
+    "name": "brainstorm-to-wiki-automator",
+    "domain": "aiad-knowledge-management-specialist",
+    "level": "L4",
+    "description": "Specialized agent for automatically converting brainstorm sessions into structured GitLab wiki pages, preserving creative insights, implementation roadmaps, and decision rationa...",
+    "filename": "brainstorm-to-wiki-automator"
+  },
+  {
+    "name": "brutal-gitlab-enforcer",
+    "domain": "absolute-authority",
+    "level": "L4",
+    "description": "Absolute GitLab issue enforcement with zero-tolerance policy for untracked operations",
+    "filename": "brutal-gitlab-enforcer"
+  },
+  {
+    "name": "Business Financial Intelligence Specialist",
+    "domain": "business",
+    "level": "L3",
+    "description": "The Business Financial Intelligence Specialist is a domain expert providing Business and financial",
+    "filename": "business-financial-intelligence-commander"
+  },
+  {
+    "name": "Caching Architecture Specialist Agent",
+    "domain": "primary",
+    "level": "L3",
+    "description": "The Caching Architecture Specialist agent provides multi-tier caching strategies, cache",
+    "filename": "caching-architecture-specialist"
+  },
+  {
+    "name": "capability-emergence-detector",
+    "domain": "collaborative-intelligence",
+    "level": "L3",
+    "description": "Real-time detection of novel capability patterns",
+    "filename": "capability-emergence-detector"
+  },
+  {
+    "name": "cascade-quality-specialist",
+    "domain": "quality",
+    "level": "L3",
+    "description": "Systematic CASCADE elimination specialist preventing quality debt through pattern recognition and targeted strikes",
+    "filename": "cascade-quality-specialist"
+  },
+  {
+    "name": "catch-quality-feedback-coordinator",
+    "domain": "general",
+    "level": "L3",
+    "description": "Receives quality patterns from: - OSINT: Intelligence quality metrics - Nabla: Cognitive processing",
+    "filename": "catch-quality-feedback-coordinator"
+  },
+  {
+    "name": "cer-compliance-commander",
+    "domain": "compliance",
+    "level": "L3",
+    "description": "Strategic commander for Czech Critical Entity Resilience (CER) compliance operations, enabling organizations to meet requirements of:",
+    "filename": "cer-compliance-commander"
+  },
+  {
+    "name": "cer-screening-specialist",
+    "domain": "domain",
+    "level": "L3",
+    "description": "Comprehensive employee screening agent for Czech Critical Infrastructure (CER) compliance. Version 2.1 adds CLI tooling (mix cer.screen), REST API endpoints (/api/cer/screen), a...",
+    "filename": "cer-screening-specialist"
+  },
+  {
+    "name": "chatgpt-analyze",
+    "domain": "code-analysis-architecture",
+    "level": "L4",
+    "description": "Level: Strategic Autonomy Created: 2025-12-21 AIAD Compliance**: v2.0.0",
+    "filename": "chatgpt-analyze"
+  },
+  {
+    "name": "chatgpt-archive-specialist",
+    "domain": "ai-archive-management",
+    "level": "L3",
+    "description": "Autonomy Created: 2025-12-05 AIAD Compliance: v1.0",
+    "filename": "chatgpt-archive-specialist"
+  },
+  {
+    "name": "chatgpt-bridge-commander",
+    "domain": "llm-operations",
+    "level": "L2",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "chatgpt-bridge-commander"
+  },
+  {
+    "name": "chatgpt-consultation-coordinator",
+    "domain": "ai-consultation-workflows",
+    "level": "L3",
+    "description": "Autonomy Created: 2025-12-05 AIAD Compliance: v1.0",
+    "filename": "chatgpt-consultation-coordinator"
+  },
+  {
+    "name": "chatgpt-context-manager",
+    "domain": "llm-operations",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "chatgpt-context-manager"
+  },
+  {
+    "name": "chatgpt-integration-commander",
+    "domain": "ai-platform-integration",
+    "level": "L3",
+    "description": "Command Created: 2025-12-05 AIAD Compliance: v1.0",
+    "filename": "chatgpt-integration-commander"
+  },
+  {
+    "name": "chatgpt-project-manager",
+    "domain": "ai-project-lifecycle-management",
+    "level": "L3",
+    "description": "Tactical Autonomy Created: 2025-12-05 AIAD Compliance: v1.0",
+    "filename": "chatgpt-project-manager"
+  },
+  {
+    "name": "chatgpt-prompt-engineer",
+    "domain": "llm-operations",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "chatgpt-prompt-engineer"
+  },
+  {
+    "name": "retry-#{UUID.uuid4()}",
+    "domain": "llm-operations",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "chatgpt-tool-executor"
+  },
+  {
+    "name": "chatgpt-workflow-orchestrator",
+    "domain": "ai-workflow-orchestration",
+    "level": "L3",
+    "description": "Fast consultation for immediate technical questions",
+    "filename": "chatgpt-workflow-orchestrator"
+  },
+  {
+    "name": "CI YAML Validator Agent",
+    "domain": "devops,-ci/cd,-yaml-validation",
+    "level": "L3",
+    "description": "Specialized validator for GitLab CI YAML configurations. Enforces the 10-level nesting limit and prevents YAML patterns that cause pipeline validation failures. Ensures all CI c...",
+    "filename": "ci-yaml-validator"
+  },
+  {
+    "name": "CI/CD Coordinator Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "cicd-coordinator"
+  },
+  {
+    "name": "cicd-guardrails-enforcer",
+    "domain": "cicd-enforcement",
+    "level": "L4",
+    "description": "The CI/CD Guardrails Enforcement Agent ensures zero divergence between all layers of the unified developer workflow:",
+    "filename": "cicd-guardrails-enforcer"
+  },
+  {
+    "name": "cicd-tooling-specialist",
+    "domain": "cicd-workflow-unification",
+    "level": "L3",
+    "description": "Expert in unifying CI/CD workflows across local development, Git hooks, GitLab CI, and GitHub Actions through canonical command delegation. Ensures consistent developer experien...",
+    "filename": "cicd-tooling-specialist"
+  },
+  {
+    "name": "cloud-security-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Cloud platform security configuration and best practices",
+    "filename": "cloud-security-specialist"
+  },
+  {
+    "name": "Code Consolidation Specialist Agent",
+    "domain": "primary",
+    "level": "L3",
+    "description": "The Code Consolidation Specialist agent provides codebase deduplication, shared library extraction,",
+    "filename": "code-consolidation-specialist"
+  },
+  {
+    "name": "code-quality-commander",
+    "domain": "large-predator",
+    "level": "L1",
+    "description": "Supreme commander for code quality enforcement and technical debt elimination",
+    "filename": "code-quality-commander"
+  },
+  {
+    "name": "code-reconnaissance-specialist",
+    "domain": "primary",
+    "level": "L2",
+    "description": "Specialized agent for codebase reconnaissance, dependency analysis, and architecture mapping.",
+    "filename": "code-reconnaissance-specialist"
+  },
+  {
+    "name": "Code Review Specialist Agent v2.0",
+    "domain": "primary-producer",
+    "level": "L3",
+    "description": "The Code Review Specialist agent v2.0 provides comprehensive automated code review capabilities with",
+    "filename": "code-review-specialist"
+  },
+  {
+    "name": "code-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "Intelligent code generation with multi-phase requirement refinement, automated quality assurance, and genetic quality patterns",
+    "filename": "code-specialist"
+  },
+  {
+    "name": "commit-coordinator",
+    "domain": "medium-predator",
+    "level": "L2",
+    "description": "Specialized coordinator for Git commit operations with intelligent message generation, quality gate enforcement, conventional commit compliance, and MANDATORY GitLab issue valid...",
+    "filename": "commit-coordinator"
+  },
+  {
+    "name": "commit-orchestrator",
+    "domain": "aiad-enhanced",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "commit-orchestrator"
+  },
+  {
+    "name": "competitor-researcher",
+    "domain": "apex-predator",
+    "level": "L2",
+    "description": "Competitive intelligence gathering and analysis specialist",
+    "filename": "competitor-researcher"
+  },
+  {
+    "name": "compliance-auditing-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Regulatory compliance validation and audit preparation",
+    "filename": "compliance-auditing-specialist"
+  },
+  {
+    "name": "compressor",
+    "domain": "documentation",
+    "level": "L4",
+    "description": "Multi-level document compression specialist with guaranteed ≥80% information retention and performance optimization",
+    "filename": "compressor"
+  },
+  {
+    "name": "consolidation-architect-v2",
+    "domain": "consolidation",
+    "level": "L3",
+    "description": "Elite consolidation with proven 9.4x efficiency through living evolution methodology, parallel squad coordination, and systematic automation",
+    "filename": "consolidation-architect-v2"
+  },
+  {
+    "name": "consolidation-architect",
+    "domain": "consolidation",
+    "level": "L3",
+    "description": "System consolidation strategies, deduplication, and optimization with genetic enhancements for type safety in consolidation, verification protocols, and multi-system coordination",
+    "filename": "consolidation-architect"
+  },
+  {
+    "name": "constitutional-court-specialist",
+    "domain": "czech",
+    "level": "L3",
+    "description": "Analysis of constitutional complaints and abstract review proceedings",
+    "filename": "constitutional-court-specialist"
+  },
+  {
+    "name": "Context Compression Enforcer Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "MANDATORY ENFORCEMENT - Supreme Command Authority Mission: Enforce automatic context compression",
+    "filename": "context-compression-enforcer"
+  },
+  {
+    "name": "Context Preservation Specialist Agent",
+    "domain": "authority-level",
+    "level": "L3",
+    "description": "Source: Complete session restoration capability enabling perfect continuity Success Evidence**:",
+    "filename": "context-preservation-specialist"
+  },
+  {
+    "name": "core-quality-feedback-coordinator",
+    "domain": "general",
+    "level": "L3",
+    "description": "Per-change | 0 warnings | | Credo | Per-change | 0 violations | | Dialyzer | Daily | 0 errors | |",
+    "filename": "core-quality-feedback-coordinator"
+  },
+  {
+    "name": "corporate-governance-analyst",
+    "domain": "corporate",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "corporate-governance-analyst"
+  },
+  {
+    "name": "cost-optimization-specialist",
+    "domain": "optimization",
+    "level": "L3",
+    "description": "Infrastructure cost reduction and resource efficiency improvement",
+    "filename": "cost-optimization-specialist"
+  },
+  {
+    "name": "Coverage Enforcement Supreme Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "Management: GitLab-backed baseline tracking per branch - Trend Analysis**: Statistical analysis",
+    "filename": "coverage-enforcement-supreme"
+  },
+  {
+    "name": "crawler-development-specialist",
+    "domain": "domain",
+    "level": "L3",
+    "description": "The Crawler Development Specialist builds ethical web crawlers:",
+    "filename": "crawler-development-specialist"
+  },
+  {
+    "name": "cross-border-identity-specialist",
+    "domain": "cross",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "cross-border-identity-specialist"
+  },
+  {
+    "name": "cross-domain-integration-orchestrator",
+    "domain": "integration",
+    "level": "L3",
+    "description": "Domain boundary integration with mycelial pattern propagation for cross-domain intelligence fusion",
+    "filename": "cross-domain-integration-orchestrator"
+  },
+  {
+    "name": "cross-domain-intelligence-coordinator",
+    "domain": "advanced-intelligence-coordination",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for advanced-intelligence-coordination operations",
+    "filename": "cross-domain-intelligence-coordinator"
+  },
+  {
+    "name": "cross-domain-quality-propagator",
+    "domain": "general",
+    "level": "L3",
+    "description": "Chain of custody - Cognitive accuracy -> Retrieval precision",
+    "filename": "cross-domain-quality-propagator"
+  },
+  {
+    "name": "cross-pollination-specialist",
+    "domain": "cross-pollination",
+    "level": "L3",
+    "description": "Facilitates cross-domain pattern sharing and knowledge transfer, enabling successful patterns to enhance multiple domains through biological-inspired pollination mechanisms",
+    "filename": "cross-pollination-specialist"
+  },
+  {
+    "name": "crypto-compliance-commander",
+    "domain": "cryptocurrency",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "crypto-compliance-commander"
+  },
+  {
+    "name": "cryptocurrency-asset-specialist",
+    "domain": "cryptocurrency",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "cryptocurrency-asset-specialist"
+  },
+  {
+    "name": "custom-credo-quality-commander",
+    "domain": "prismatic-specific",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "custom-credo-quality-commander"
+  },
+  {
+    "name": "czech-autocrawler-supreme",
+    "domain": "czech-business-intelligence",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "czech-autocrawler-supreme"
+  },
+  {
+    "name": "czech-business-intelligence-specialist",
+    "domain": "czech",
+    "level": "L3",
+    "description": "Czech Business Registry Research operations and analysis",
+    "filename": "czech-business-intelligence-specialist"
+  },
+  {
+    "name": "czech-financial-forensics-expert",
+    "domain": "czech",
+    "level": "L3",
+    "description": "Czech Financial Records Analysis operations and analysis",
+    "filename": "czech-financial-forensics-expert"
+  },
+  {
+    "name": "czech-legal-extraction-specialist",
+    "domain": "osint",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "czech-legal-extraction-specialist"
+  },
+  {
+    "name": "czech-legal-intelligence-operative",
+    "domain": "czech",
+    "level": "L3",
+    "description": "Expert navigation of Czech court hierarchy and legal system structure",
+    "filename": "czech-legal-intelligence-operative"
+  },
+  {
+    "name": "czech-media-intelligence-monitor",
+    "domain": "czech",
+    "level": "L3",
+    "description": "Czech Media Monitoring operations and analysis",
+    "filename": "czech-media-intelligence-monitor"
+  },
+  {
+    "name": "czech-property-intelligence-analyst",
+    "domain": "czech",
+    "level": "L3",
+    "description": "Czech Property Registry Research operations and analysis",
+    "filename": "czech-property-intelligence-analyst"
+  },
+  {
+    "name": "czech-registry-person-investigator",
+    "domain": "czech-republic-legal-intelligence",
+    "level": "L3",
+    "description": "ARCHER SUPREME specialist for comprehensive Czech Registry person investigations and due diligence reporting",
+    "filename": "czech-registry-person-investigator"
+  },
+  {
+    "name": "darwinian-evolution-coordinator",
+    "domain": "supreme",
+    "level": "L3",
+    "description": "The Darwinian Evolution Coordinator applies survival-of-the-fittest principles:",
+    "filename": "darwinian-evolution-coordinator"
+  },
+  {
+    "name": "data-integrity-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Data consistency validation and corruption detection expert",
+    "filename": "data-integrity-specialist"
+  },
+  {
+    "name": "data-migration-architect",
+    "domain": "integration",
+    "level": "L3",
+    "description": "Large-scale data migration planning, execution, and validation with genetic enhancements for multi-stage verification, pattern validation, and cross-system coordination",
+    "filename": "data-migration-architect"
+  },
+  {
+    "name": "data-sync-specialist",
+    "domain": "integration",
+    "level": "L3",
+    "description": "Cross-system data synchronization and consistency management",
+    "filename": "data-sync-specialist"
+  },
+  {
+    "name": "database-architecture-specialist",
+    "domain": "architecture",
+    "level": "L3",
+    "description": "Data modeling, schema design, and database selection strategies",
+    "filename": "database-architecture-specialist"
+  },
+  {
+    "name": "database-core-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Database internals, query optimization, and performance tuning expert",
+    "filename": "database-core-specialist"
+  },
+  {
+    "name": "database-migration-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Safe database schema evolution with zero-downtime migration strategies",
+    "filename": "database-migration-specialist"
+  },
+  {
+    "name": "database-performance-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Database performance monitoring and optimization expert",
+    "filename": "database-performance-specialist"
+  },
+  {
+    "name": "database-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "PostgreSQL expertise including schema design, query optimization, migration management, and data integrity",
+    "filename": "database-specialist"
+  },
+  {
+    "name": "debug-investigation-specialist",
+    "domain": "primary-producer",
+    "level": "L2",
+    "description": "Expert in systematic debugging and complex issue investigation",
+    "filename": "debug-investigation-specialist"
+  },
+  {
+    "name": "delta-force-specialist",
+    "domain": "intelligence",
+    "level": "L3",
+    "description": "Precision intelligence operations targeting specific high-value objectives with surgical accuracy",
+    "filename": "delta-force-specialist"
+  },
+  {
+    "name": "dependency-optimization-specialist",
+    "domain": "consolidation",
+    "level": "L3",
+    "description": "Dependency management, version consolidation, and supply chain security",
+    "filename": "dependency-optimization-specialist"
+  },
+  {
+    "name": "Deployment Commander Agent",
+    "domain": "large",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "deployment-commander"
+  },
+  {
+    "name": "deployment-health-monitor",
+    "domain": "infrastructure",
+    "level": "L4",
+    "description": "Real-time deployment health validation with automatic rollback triggers",
+    "filename": "deployment-health-monitor"
+  },
+  {
+    "name": "deployment-rollback-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Safe rollback execution with state preservation and validation",
+    "filename": "deployment-rollback-specialist"
+  },
+  {
+    "name": "devops-deployment-specialist",
+    "domain": "primary-producer",
+    "level": "L2",
+    "description": "Specialized agent for DevOps operations and service deployment",
+    "filename": "devops-deployment-specialist"
+  },
+  {
+    "name": "discord-intelligence-specialist",
+    "domain": "discord",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "discord-intelligence-specialist"
+  },
+  {
+    "name": "distributed-systems-specialist",
+    "domain": "architecture",
+    "level": "L3",
+    "description": "Distributed computing patterns, consensus algorithms, and system coordination",
+    "filename": "distributed-systems-specialist"
+  },
+  {
+    "name": "district-court-specialist",
+    "domain": "czech",
+    "level": "L3",
+    "description": "Analysis of district court proceedings and case outcomes",
+    "filename": "district-court-specialist"
+  },
+  {
+    "name": "doc-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for development operations",
+    "filename": "doc-specialist"
+  },
+  {
+    "name": "docker-build-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Container image optimization and multi-stage build expert with security scanning",
+    "filename": "docker-build-specialist"
+  },
+  {
+    "name": "document-authentication-specialist",
+    "domain": "document",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "document-authentication-specialist"
+  },
+  {
+    "name": "documentation-validation-commander",
+    "domain": "documentation-quality",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "documentation-validation-commander"
+  },
+  {
+    "name": "documentation-verifier",
+    "domain": "quality",
+    "level": "L3",
+    "description": "Code-comment consistency checking, return type documentation verification, example code validation, and synchronization between docs and implementation",
+    "filename": "documentation-verifier"
+  },
+  {
+    "name": "dx-brutalist-analyst",
+    "domain": "developer-experience",
+    "level": "L3",
+    "description": "Transform git commit history into brutal reality assessment for DX-related work (AIAD, AI, Claude, agents, CI/CD, git hooks).",
+    "filename": "dx-brutalist-analyst"
+  },
+  {
+    "name": "ecosystem-biologist-coordinator",
+    "domain": "supreme",
+    "level": "L3",
+    "description": "The Ecosystem Biologist Coordinator treats the Prismatic Platform as a living ecosystem:",
+    "filename": "ecosystem-biologist-coordinator"
+  },
+  {
+    "name": "elixir-architect",
+    "domain": "elixir-otp",
+    "level": "L3",
+    "description": "Senior Elixir/OTP architect enforcing production-grade patterns, OTP principles, and functional programming discipline. Zero tolerance for shortcuts, hacks, or JavaScript mindse...",
+    "filename": "elixir-architect"
+  },
+  {
+    "name": "elixir-core-specialist",
+    "domain": "ecosystem-engineer",
+    "level": "L3",
+    "description": "Deep Elixir and OTP expertise - implements biological architecture as code",
+    "filename": "elixir-core-specialist"
+  },
+  {
+    "name": "elixir-otp-debugger",
+    "domain": "debugging",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for debugging operations",
+    "filename": "elixir-otp-debugger"
+  },
+  {
+    "name": "email-intelligence-specialist",
+    "domain": "intelligence",
+    "level": "L3",
+    "description": "Build complete digital profiles from email addresses through multi-source intelligence mesh expansion",
+    "filename": "email-intelligence-specialist"
+  },
+  {
+    "name": "emergence-detector-specialist",
+    "domain": "emergence-detection",
+    "level": "L3",
+    "description": "Specialized agent for detecting emergent patterns and collective behaviors in the mycelial network through advanced pattern recognition and swarm intelligence analysis",
+    "filename": "emergence-detector-specialist"
+  },
+  {
+    "name": "emergent-collaboration-detector",
+    "domain": "emergent-intelligence",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for emergent-intelligence operations",
+    "filename": "emergent-collaboration-detector"
+  },
+  {
+    "name": "employee-screening-specialist",
+    "domain": "compliance",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "employee-screening-specialist"
+  },
+  {
+    "name": "epistemic-graph-specialist",
+    "domain": "primary-producer",
+    "level": "L3",
+    "description": "Expert in epistemic reasoning, temporal decay, and graph-based knowledge systems",
+    "filename": "epistemic-graph-specialist"
+  },
+  {
+    "name": "epistemic-intelligence-specialist",
+    "domain": "general",
+    "level": "L3",
+    "description": "Revolutionary epistemic reasoning agent providing transparent, interpretable risk assessment through evidence nodes, confidence propagation, and the unique \"jak Prismatic premys...",
+    "filename": "epistemic-intelligence-specialist"
+  },
+  {
+    "name": "estimator",
+    "domain": "decomposer",
+    "level": "L3",
+    "description": "The Estimator Agent analyzes project backlogs, historical velocity data, and complexity metrics to",
+    "filename": "estimator"
+  },
+  {
+    "name": "etl-pipeline-specialist",
+    "domain": "integration",
+    "level": "L3",
+    "description": "Extract-transform-load workflow design and orchestration",
+    "filename": "etl-pipeline-specialist"
+  },
+  {
+    "name": "event-driven-architecture-specialist",
+    "domain": "architecture",
+    "level": "L3",
+    "description": "Event sourcing, CQRS patterns, and event-driven system design",
+    "filename": "event-driven-architecture-specialist"
+  },
+  {
+    "name": "Evidence Enforcement Agent",
+    "domain": "quality-&-compliance",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "evidence-enforcement-agent"
+  },
+  {
+    "name": "evolution-analyzer-specialist",
+    "domain": "ecosystem-analysis-|-health-assessment",
+    "level": "L3",
+    "description": "Specialized agent for comprehensive ecosystem analysis and health scoring",
+    "filename": "evolution-analyzer-specialist"
+  },
+  {
+    "name": "evolution-executor-specialist",
+    "domain": "ecosystem",
+    "level": "L3",
+    "description": "Specialized agent for automated ecosystem improvement execution",
+    "filename": "evolution-executor-specialist"
+  },
+  {
+    "name": "evolution-mycelial-fusion-commander",
+    "domain": "orchestration",
+    "level": "L1",
+    "description": "Supreme commander for revolutionary evolution-mycelial fusion operations. Orchestrates seamless integration of /evolve and /mycelialize capabilities with 10x intelligence steroi...",
+    "filename": "evolution-mycelial-fusion-commander"
+  },
+  {
+    "name": "evolution-orchestrator-supreme",
+    "domain": "evolutionary-|-mycelial-propagation",
+    "level": "L3",
+    "description": "Supreme orchestrator for comprehensive AIAD ecosystem evolution, providing continuous intelligent enhancement through graph-diff analysis, cross-domain mycelial propagation, gen...",
+    "filename": "evolution-orchestrator-supreme"
+  },
+  {
+    "name": "explain-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "Intelligent code explanation with multi-level analysis, pattern recognition, and clear communication",
+    "filename": "explain-specialist"
+  },
+  {
+    "name": "facebook-intelligence-specialist",
+    "domain": "facebook",
+    "level": "L3",
+    "description": "Facebook Profile Intelligence operations and analysis",
+    "filename": "facebook-intelligence-specialist"
+  },
+  {
+    "name": "falcon-strike-specialist",
+    "domain": "intelligence",
+    "level": "L3",
+    "description": "Rapid deployment intelligence operations with real-time monitoring and aerial perspective analysis",
+    "filename": "falcon-strike-specialist"
+  },
+  {
+    "name": "financial-crimes-detection-commander",
+    "domain": "financial",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "financial-crimes-detection-commander"
+  },
+  {
+    "name": "financial-forensics-specialist",
+    "domain": "financial",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "financial-forensics-specialist"
+  },
+  {
+    "name": "financial-intelligence-commander",
+    "domain": "financial",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "financial-intelligence-commander"
+  },
+  {
+    "name": "fix-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "Bug diagnosis and resolution with root cause analysis, regression prevention, and comprehensive validation",
+    "filename": "fix-specialist"
+  },
+  {
+    "name": "flyio-deployment-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Fly.io platform deployment expert with global edge optimization and resource management",
+    "filename": "flyio-deployment-specialist"
+  },
+  {
+    "name": "formal-reasoning-specialist",
+    "domain": "general",
+    "level": "L3",
+    "description": "This agent specializes in integrating formal reasoning systems (Lean4, Prolog) with the epistemic",
+    "filename": "formal-reasoning-specialist"
+  },
+  {
+    "name": "formal-validator",
+    "domain": "domain",
+    "level": "L3",
+    "description": "Formal verification specialist implementing Lean4-based theorem proving, type-theoretic validation, and mathematical proof generation for the NABLA Reasoning System. Provides ma...",
+    "filename": "formal-validator"
+  },
+  {
+    "name": "garden-analyzer",
+    "domain": "general",
+    "level": "L3",
+    "description": "Specialized agent for deep analysis of garden repositories, pattern detection, and architecture assessment for intelligent knowledge transfer.",
+    "filename": "garden-analyzer"
+  },
+  {
+    "name": "Garden Cultivator",
+    "domain": "domain",
+    "level": "L3",
+    "description": "Garden Cultivator handles routine garden maintenance tasks: - Repository synchronization -",
+    "filename": "garden-cultivator"
+  },
+  {
+    "name": "Garden Explorer Agent",
+    "domain": "specialist",
+    "level": "L3",
+    "description": "The Garden Explorer Agent provides intelligent exploration of external reference projects stored",
+    "filename": "garden-explorer"
+  },
+  {
+    "name": "garden-extractor",
+    "domain": "general",
+    "level": "L3",
+    "description": "Specialized agent for extracting, adapting, and integrating code components from garden legacy repositories into the current Prismatic Platform.",
+    "filename": "garden-extractor"
+  },
+  {
+    "name": "garden-pattern-scout",
+    "domain": "domain",
+    "level": "L3",
+    "description": "Garden Pattern Scout specializes in finding and comparing implementation patterns across the",
+    "filename": "garden-pattern-scout"
+  },
+  {
+    "name": "garden-tier1-production",
+    "domain": "production-repositories",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "garden-tier1-production"
+  },
+  {
+    "name": "garden-tier2-platform",
+    "domain": "platform-core-repositories",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for platform-core-repositories operations",
+    "filename": "garden-tier2-platform"
+  },
+  {
+    "name": "garden-tier3-libraries",
+    "domain": "library-repositories",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "garden-tier3-libraries"
+  },
+  {
+    "name": "GARDENER SUPREME",
+    "domain": "supreme",
+    "level": "L3",
+    "description": "Automatically detect new garden submodules",
+    "filename": "gardener-supreme"
+  },
+  {
+    "name": "gemini",
+    "domain": "general",
+    "level": "L3",
+    "description": "A specialized agent for Python-based tasks, data analysis, and alternative solution exploration.",
+    "filename": "gemini"
+  },
+  {
+    "name": "gen17-design-spec",
+    "domain": "omega",
+    "level": "L1",
+    "description": "Design specification for future Generation 17 Superintelligence Integration operations. This is a",
+    "filename": "generation-17-design-spec"
+  },
+  {
+    "name": "genetic-operations-controller",
+    "domain": "genetic-optimization-|-agent-evolution",
+    "level": "L3",
+    "description": "Supreme controller of genetic operations for agent configuration optimization, providing intelligent mutation, crossover, selection, and fitness evaluation to continuously evolv...",
+    "filename": "genetic-operations-controller"
+  },
+  {
+    "name": "genetic-spec-propagator",
+    "domain": "quality-evolution",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "genetic-spec-propagator"
+  },
+  {
+    "name": "geopolitical-risk-analyst",
+    "domain": "geopolitical",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "geopolitical-risk-analyst"
+  },
+  {
+    "name": "ghost-recon-specialist",
+    "domain": "intelligence",
+    "level": "L3",
+    "description": "Stealth intelligence collection with maximum operational security and attribution obfuscation",
+    "filename": "ghost-recon-specialist"
+  },
+  {
+    "name": "git-forensics-specialist",
+    "domain": "intelligence",
+    "level": "L3",
+    "description": "Analyze git history with the perspective of a cynical, highly intelligent insider who:",
+    "filename": "git-forensics-specialist"
+  },
+  {
+    "name": "git-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "Git version control expertise including branching, committing, merging, and workflow management",
+    "filename": "git-specialist"
+  },
+  {
+    "name": "GitLab 3NL Intelligence Analyzer",
+    "domain": "domain",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for domain operations",
+    "filename": "gitlab-3nl-intelligence-analyzer"
+  },
+  {
+    "name": "GitLab API Specialist Agent",
+    "domain": "gitlab-api,-automation,-integration",
+    "level": "L3",
+    "description": "Expert in GitLab API integration, automation workflows, webhooks, and programmatic repository",
+    "filename": "gitlab-api-specialist"
+  },
+  {
+    "name": "gitlab-auto-sync-orchestrator",
+    "domain": "tactical",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "gitlab-auto-sync-orchestrator"
+  },
+  {
+    "name": "GitLab CI/CD Specialist Agent",
+    "domain": "devops,-ci/cd,-quality-gates-**authority",
+    "level": "L3",
+    "description": "Expert in GitLab CI/CD pipeline design, optimization, quality gates, and deployment strategies.",
+    "filename": "gitlab-ci-specialist"
+  },
+  {
+    "name": "GitLab Full Circle Coordinator",
+    "domain": "strategic",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for strategic operations",
+    "filename": "gitlab-full-circle-coordinator"
+  },
+  {
+    "name": "gitlab-issue-sync-specialist",
+    "domain": "domain-expertise",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "gitlab-issue-sync-specialist"
+  },
+  {
+    "name": "gitlab-mcp-orchestrator",
+    "domain": "strategic",
+    "level": "L3",
+    "description": "Next-generation GitLab orchestrator implementing 3NL (3 Nested Levels) architecture with MCP Blackboard coordination, replacing problematic GitLabEnforcer with secure, bounded, ...",
+    "filename": "gitlab-mcp-orchestrator"
+  },
+  {
+    "name": "GitLab Merge Request Specialist Agent",
+    "domain": "code-review,-merge-requests,-quality",
+    "level": "L3",
+    "description": "Expert in GitLab merge request workflows, code review automation, approval rules, and quality-driven",
+    "filename": "gitlab-mr-specialist"
+  },
+  {
+    "name": "GitLab Mycelial Propagator",
+    "domain": "domain",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for domain operations",
+    "filename": "gitlab-mycelial-propagator"
+  },
+  {
+    "name": "GitLab Security Specialist Agent",
+    "domain": "security,-compliance,-vulnerability",
+    "level": "L3",
+    "description": "Expert in GitLab security features, dependency scanning, secret detection, compliance frameworks,",
+    "filename": "gitlab-security-specialist"
+  },
+  {
+    "name": "gitlab-strategic-coordinator",
+    "domain": "strategic-coordination",
+    "level": "L3",
+    "description": "Supreme GitLab orchestration agent providing strategic milestone coordination, critical path optimization, and phase-based execution planning. Operates with ARCHER SUPREME autho...",
+    "filename": "gitlab-strategic-coordinator"
+  },
+  {
+    "name": "gitlab-synchronization-coordinator",
+    "domain": "archer-supreme-mission-support",
+    "level": "L3",
+    "description": "Real-time GitLab operations",
+    "filename": "gitlab-synchronization-coordinator"
+  },
+  {
+    "name": "EDGE-{campaign}-{sequence}",
+    "domain": "boundary-exploration",
+    "level": "L4",
+    "description": "Specialist agent for boundary value and edge case detection within Gray Hacking campaigns. Systematically identifies specification gaps, boundary conditions, corner cases, and a...",
+    "filename": "gray-edge-finder"
+  },
+  {
+    "name": "gray-escalation-guard",
+    "domain": "boundary-exploration",
+    "level": "L4",
+    "description": "SAFETY-CRITICAL specialist that prevents Gray Hacking from escalating into Black (offensive) territory. Continuously monitors all Gray operations for escalation indicators, enfo...",
+    "filename": "gray-escalation-guard"
+  },
+  {
+    "name": "gray-explorer-commander",
+    "domain": "boundary-exploration",
+    "level": "L3",
+    "description": "Supreme commander for Gray Hacking boundary-exploration operations. Orchestrates ambiguity detection, edge-case discovery, incentive analysis, and affordance drift tracking. Sur...",
+    "filename": "gray-explorer-commander"
+  },
+  {
+    "name": "green-beret-specialist",
+    "domain": "intelligence",
+    "level": "L3",
+    "description": "Unconventional intelligence operations specializing in foreign language OSINT and cultural intelligence",
+    "filename": "green-beret-specialist"
+  },
+  {
+    "name": "hawkeye-security-auditor",
+    "domain": "security-specialist-strategic",
+    "level": "L3",
+    "description": "Elite security auditor agent for the Hawkeye (Visitor Intelligence) platform. Performs comprehensive security assessments with 3NL synthesis, NABLA epistemic integration, contin...",
+    "filename": "hawkeye-security-auditor"
+  },
+  {
+    "name": "hbfs-quality-evolution",
+    "domain": "quality",
+    "level": "L3",
+    "description": "Drives continuous quality evolution through HBFS (Harder, Better, Faster, Stronger) methodology with mycelial pattern propagation",
+    "filename": "hbfs-quality-evolution"
+  },
+  {
+    "name": "health-monitoring-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Comprehensive system health monitoring with proactive alerting",
+    "filename": "health-monitoring-specialist"
+  },
+  {
+    "name": "hidden-asset-detection-specialist",
+    "domain": "hidden",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "hidden-asset-detection-specialist"
+  },
+  {
+    "name": "identity-intelligence-commander",
+    "domain": "identity",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "identity-intelligence-commander"
+  },
+  {
+    "name": "incident-response-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Incident detection, coordination, and post-mortem analysis",
+    "filename": "incident-response-specialist"
+  },
+  {
+    "name": "infrastructure-as-code-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Terraform, Ansible, and infrastructure automation expert",
+    "filename": "infrastructure-as-code-specialist"
+  },
+  {
+    "name": "integration-testing-specialist",
+    "domain": "quality",
+    "level": "L3",
+    "description": "End-to-end integration testing across system boundaries",
+    "filename": "integration-testing-specialist"
+  },
+  {
+    "name": "Intelligence Diffusion Coordinator Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "OSINT Provider -> Consumer Agent",
+    "filename": "intelligence-diffusion-coordinator"
+  },
+  {
+    "name": "intelligence-export-coordinator",
+    "domain": "medium-predator",
+    "level": "L2",
+    "description": "Specialized coordinator for intelligence export and report generation",
+    "filename": "intelligence-export-coordinator"
+  },
+  {
+    "name": "investigate-coordinator",
+    "domain": "intelligence",
+    "level": "L3",
+    "description": "Central investigation hub with intelligent subject detection and automated agent routing",
+    "filename": "investigate-coordinator"
+  },
+  {
+    "name": "investment-portfolio-analyst",
+    "domain": "investment",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "investment-portfolio-analyst"
+  },
+  {
+    "name": "ir-generator",
+    "domain": "execution",
+    "level": "L3",
+    "description": "LLM-powered generation of Information Retrieval (IR) workflows from natural language descriptions",
+    "filename": "ir-generator"
+  },
+  {
+    "name": "ir-linter",
+    "domain": "quality",
+    "level": "L3",
+    "description": "Advanced static analysis and code quality enforcement for IR workflows with performance and maintainability recommendations",
+    "filename": "ir-linter"
+  },
+  {
+    "name": "ir-pvm-profiler",
+    "domain": "performance",
+    "level": "L3",
+    "description": "Advanced performance profiling and optimization analysis for IR compilation and PVM execution with real-time monitoring",
+    "filename": "ir-pvm-profiler"
+  },
+  {
+    "name": "ir-validator",
+    "domain": "quality",
+    "level": "L3",
+    "description": "Comprehensive validation and verification of Information Retrieval (IR) workflows with DAG analysis and type safety enforcement",
+    "filename": "ir-validator"
+  },
+  {
+    "name": "issue-tracking-specialist",
+    "domain": "domain-expertise",
+    "level": "L3",
+    "description": "Raw text, specification, or prompt to extract issues from",
+    "filename": "issue-tracking-specialist"
+  },
+  {
+    "name": "l1-pattern-engine",
+    "domain": "czech-pattern-recognition",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "l1-pattern-engine"
+  },
+  {
+    "name": "l2-entity-resolver",
+    "domain": "entity-resolution-synthesis",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "l2-entity-resolver"
+  },
+  {
+    "name": "l3-strategy-optimizer",
+    "domain": "meta-learning-optimization",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "l3-strategy-optimizer"
+  },
+  {
+    "name": "lean-specialist",
+    "domain": "general",
+    "level": "L3",
+    "description": "A specialist agent for writing and verifying Lean 4 code. This agent can be used to write formal",
+    "filename": "lean-specialist"
+  },
+  {
+    "name": "legacy-integration-specialist",
+    "domain": "integration",
+    "level": "L3",
+    "description": "Legacy system integration patterns, adapter design, and modernization strategies",
+    "filename": "legacy-integration-specialist"
+  },
+  {
+    "name": "leon-cleaner",
+    "domain": "tactical-specialist",
+    "level": "L4",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "leon-cleaner"
+  },
+  {
+    "name": "linkedin-intelligence-specialist",
+    "domain": "linkedin",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "linkedin-intelligence-specialist"
+  },
+  {
+    "name": "livebook-coordinator",
+    "domain": "medium-predator",
+    "level": "L2",
+    "description": "Specialized coordinator for Livebook notebook management and interactive development",
+    "filename": "livebook-coordinator"
+  },
+  {
+    "name": "llm-aide-coordinator",
+    "domain": "aiad-enhanced",
+    "level": "L3",
+    "description": "Aide platform integration and cross-platform LLM coordination",
+    "filename": "llm-aide-coordinator"
+  },
+  {
+    "name": "llm-client-pattern-specialist",
+    "domain": "quality",
+    "level": "L3",
+    "description": "LLM Client return type verification (3-tuples), pattern matching correctness, usage tracking, integration testing, and contract compliance (GENETICALLY ENHANCED)",
+    "filename": "llm-client-pattern-specialist"
+  },
+  {
+    "name": "llm-context-optimizer",
+    "domain": "aiad-enhanced",
+    "level": "L4",
+    "description": "Context window optimization strategies for efficient token utilization",
+    "filename": "llm-context-optimizer"
+  },
+  {
+    "name": "llm-conversation-coordinator",
+    "domain": "aiad-enhanced",
+    "level": "L3",
+    "description": "Multi-turn conversation management with context preservation and memory integration",
+    "filename": "llm-conversation-coordinator"
+  },
+  {
+    "name": "llm-cost-manager",
+    "domain": "aiad-enhanced",
+    "level": "L4",
+    "description": "Cost optimization and budget management specialist for LLM operations",
+    "filename": "llm-cost-manager"
+  },
+  {
+    "name": "llm-fallback-coordinator",
+    "domain": "aiad-enhanced",
+    "level": "L3",
+    "description": "Graceful degradation and fallback strategies for resilient LLM operations",
+    "filename": "llm-fallback-coordinator"
+  },
+  {
+    "name": "llm-generic-bridge",
+    "domain": "aiad-enhanced",
+    "level": "L4",
+    "description": "Universal platform adaptation and vendor-neutral LLM coordination",
+    "filename": "llm-generic-bridge"
+  },
+  {
+    "name": "llm-model-selector",
+    "domain": "aiad-enhanced",
+    "level": "L4",
+    "description": "Intelligent model selection based on task complexity and requirements",
+    "filename": "llm-model-selector"
+  },
+  {
+    "name": "llm-performance-optimizer",
+    "domain": "aiad-enhanced",
+    "level": "L3",
+    "description": "Performance monitoring and optimization specialist for LLM routing and execution",
+    "filename": "llm-performance-optimizer"
+  },
+  {
+    "name": "llm-prompt-engineer",
+    "domain": "aiad-enhanced",
+    "level": "L3",
+    "description": "Advanced prompt engineering and optimization for maximum LLM effectiveness",
+    "filename": "llm-prompt-engineer"
+  },
+  {
+    "name": "LLM Routing Orchestrator Agent",
+    "domain": "llm",
+    "level": "L3",
+    "description": "The LLM Routing Orchestrator agent provides master coordination for intelligent LLM routing",
+    "filename": "llm-routing-orchestrator"
+  },
+  {
+    "name": "llm-unified-orchestrator",
+    "domain": "general",
+    "level": "L2",
+    "description": "Strategic orchestration of multi-provider LLM operations with 3NL integration",
+    "filename": "llm-unified-orchestrator"
+  },
+  {
+    "name": "llm-zed-adapter",
+    "domain": "aiad-enhanced",
+    "level": "L4",
+    "description": "Zed extension LLM coordination with native integration",
+    "filename": "llm-zed-adapter"
+  },
+  {
+    "name": "local-llm-coordinator",
+    "domain": "llm",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "local-llm-coordinator"
+  },
+  {
+    "name": "log-analysis-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Intelligent log aggregation, parsing, and pattern detection",
+    "filename": "log-analysis-specialist"
+  },
+  {
+    "name": "ma-deal-manager",
+    "domain": "primary",
+    "level": "L2",
+    "description": "Create new M&A deal with complete initialization",
+    "filename": "ma-deal-manager"
+  },
+  {
+    "name": "ma-enforcement-commander",
+    "domain": "strategic-command",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "ma-enforcement-commander"
+  },
+  {
+    "name": "ma-financial-analyst",
+    "domain": "primary",
+    "level": "L3",
+    "description": "Extract financial data from SEC filings and databases",
+    "filename": "ma-financial-analyst"
+  },
+  {
+    "name": "ma-integration-planner",
+    "domain": "primary",
+    "level": "L3",
+    "description": "Develop comprehensive integration strategy and master plan",
+    "filename": "ma-integration-planner"
+  },
+  {
+    "name": "ma-market-analyst",
+    "domain": "market-analysis",
+    "level": "L3",
+    "description": "Comprehensive market analysis for M&A transactions including competitive landscape assessment, market sizing (TAM/SAM/SOM), customer segmentation, growth opportunity identificat...",
+    "filename": "ma-market-analyst"
+  },
+  {
+    "name": "ma-risk-assessor",
+    "domain": "risk-management",
+    "level": "L3",
+    "description": "Comprehensive risk identification, assessment, and mitigation planning for M&A transactions across all risk categories with probability and impact quantification, correlation an...",
+    "filename": "ma-risk-assessor"
+  },
+  {
+    "name": "ma-tech-assessor",
+    "domain": "primary",
+    "level": "L3",
+    "description": "Comprehensive technology stack analysis",
+    "filename": "ma-tech-assessor"
+  },
+  {
+    "name": "Mandatory Regression Prevention Commander",
+    "domain": "cosmic-clearance",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for cosmic-clearance operations",
+    "filename": "mandatory-regression-prevention-commander"
+  },
+  {
+    "name": "manipulation-detection",
+    "domain": "safety",
+    "level": "L3",
+    "description": "Content to analyze",
+    "filename": "manipulation-detection"
+  },
+  {
+    "name": "manipulation-detector",
+    "domain": "security",
+    "level": "L3",
+    "description": "Defensive agent for detecting manipulation patterns in communications, media, and behavioral data. Operates exclusively in WHITE variant mode for detection and protection. capab...",
+    "filename": "manipulation-detector"
+  },
+  {
+    "name": "manipulation-forensics",
+    "domain": "security",
+    "level": "L3",
+    "description": "Incident details",
+    "filename": "manipulation-forensics"
+  },
+  {
+    "name": "manipulation-research",
+    "domain": "research",
+    "level": "L3",
+    "description": "Content to analyze",
+    "filename": "manipulation-research"
+  },
+  {
+    "name": "marksman-jtac",
+    "domain": "primary-producer",
+    "level": "L2",
+    "description": "Precision targeting and tactical coordination specialist",
+    "filename": "marksman-jtac"
+  },
+  {
+    "name": "matylda-spotter",
+    "domain": "tactical-specialist",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "matylda-spotter"
+  },
+  {
+    "name": "mcp-coordination-specialist",
+    "domain": "primary-producer",
+    "level": "L2",
+    "description": "Specialized coordinator for MCP server management and multi-server coordination",
+    "filename": "mcp-coordination-specialist"
+  },
+  {
+    "name": "archer-supreme-evolution",
+    "domain": "aiad-enhanced",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "mcp-evolution-coordinator"
+  },
+  {
+    "name": "mcp-service-controller",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "mcp-service-controller"
+  },
+  {
+    "name": "mendelian-genetics-coordinator",
+    "domain": "medium-predator",
+    "level": "L2",
+    "description": "Genetic algorithm coordinator for pattern evolution and optimization",
+    "filename": "mendelian-genetics-coordinator"
+  },
+  {
+    "name": "messaging-architecture-specialist",
+    "domain": "architecture",
+    "level": "L3",
+    "description": "Message queue architecture, pub/sub patterns, and async communication",
+    "filename": "messaging-architecture-specialist"
+  },
+  {
+    "name": "meta-evolution-orchestrator",
+    "domain": "meta-evolution",
+    "level": "L2",
+    "description": "Autonomous AIAD agent for meta-evolution operations",
+    "filename": "meta-evolution-orchestrator"
+  },
+  {
+    "name": "microservices-architecture-specialist",
+    "domain": "architecture",
+    "level": "L3",
+    "description": "Microservices design patterns, service boundaries, and inter-service communication",
+    "filename": "microservices-architecture-specialist"
+  },
+  {
+    "name": "mobile-security-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Mobile app security assessment and secure coding practices",
+    "filename": "mobile-security-specialist"
+  },
+  {
+    "name": "modernization-specialist",
+    "domain": "modernization",
+    "level": "L3",
+    "description": "Technology stack modernization and platform upgrades with genetic quality patterns and three-stage verification",
+    "filename": "modernization-specialist"
+  },
+  {
+    "name": "monte-carlo-simulation-specialist",
+    "domain": "simulation-analysis",
+    "level": "L3",
+    "description": "Advanced Monte Carlo simulation specialist integrating with MENDEL genetics, MYCELIALIZE network patterns, AIAD agents, and Societies for probabilistic analysis, evolutionary op...",
+    "filename": "monte-carlo-simulation-specialist"
+  },
+  {
+    "name": "monte-carlo-specialist",
+    "domain": "statistical-computing",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for statistical-computing operations",
+    "filename": "monte-carlo-specialist"
+  },
+  {
+    "name": "Multi",
+    "domain": "medium",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "multi-agent-coordinator"
+  },
+  {
+    "name": "multiuser-coordination-commander",
+    "domain": "coordination",
+    "level": "L3",
+    "description": "Supreme commander for multiuser session coordination across AI providers. Enforces parallel-safe operations via MCP Blackboard and Mycelial Networks. capabilities: - session_syn...",
+    "filename": "multiuser-coordination-commander"
+  },
+  {
+    "name": "municipal-court-specialist",
+    "domain": "prague",
+    "level": "L3",
+    "description": "Analysis of Prague Municipal Court proceedings and case outcomes",
+    "filename": "municipal-court-specialist"
+  },
+  {
+    "name": "Mycelial Emergence Sentinel Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "Cross-domain alignment without explicit coordination - Spontaneous standardization",
+    "filename": "mycelial-emergence-sentinel"
+  },
+  {
+    "name": "mycelial-evolution-specialist",
+    "domain": "evolution",
+    "level": "L3",
+    "description": "Drives evolutionary improvements across pattern generations through fitness evaluation, genetic algorithms, and adaptive optimization for continuous network enhancement",
+    "filename": "mycelial-evolution-specialist"
+  },
+  {
+    "name": "Mycelial Genetic Evolver Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "Rebalance connection weights",
+    "filename": "mycelial-genetic-evolver"
+  },
+  {
+    "name": "mycelial-healer-specialist",
+    "domain": "network-healing",
+    "level": "L3",
+    "description": "Network healing and optimization specialist for repairing broken connections, clearing stale patterns, and restoring optimal network health",
+    "filename": "mycelial-healer-specialist"
+  },
+  {
+    "name": "mycelial-network-coordinator",
+    "domain": "orchestration",
+    "level": "L1",
+    "description": "Supreme coordinator for mycelial network operations including pattern propagation, emergence detection, network healing, and evolutionary improvements across the Prismatic ecosy...",
+    "filename": "mycelial-network-coordinator"
+  },
+  {
+    "name": "mycelial-network-supreme",
+    "domain": "mycelial",
+    "level": "L3",
+    "description": "Supreme manager of mycelial propagation networks, orchestrating intelligent pattern distribution across OSINT, Nabla Infinity, CATCH, and Agent Societies domains with adaptive l...",
+    "filename": "mycelial-network-supreme"
+  },
+  {
+    "name": "mycelial-propagation-engine",
+    "domain": "cross-platform-pattern-distribution",
+    "level": "L2",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "mycelial-propagation-engine"
+  },
+  {
+    "name": "Mycelial Topology Optimizer Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "Network Diameter | Longest shortest path | <5 | | Betweenness Centrality | Hub identification |",
+    "filename": "mycelial-topology-optimizer"
+  },
+  {
+    "name": "mycelium-orchestrator",
+    "domain": "orchestration",
+    "level": "L2",
+    "description": "Advanced multi-agent coordination for IR/PVM workflows with distributed execution and intelligent task distribution",
+    "filename": "mycelium-orchestrator"
+  },
+  {
+    "name": "nabla-quality-feedback-coordinator",
+    "domain": "general",
+    "level": "L3",
+    "description": "OSINT Intelligence -> Nabla Processing -> Quality Validated -> CATCH/Societies",
+    "filename": "nabla-quality-feedback-coordinator"
+  },
+  {
+    "name": "navy-seal-specialist",
+    "domain": "intelligence",
+    "level": "L3",
+    "description": "Specialized deep/dark web intelligence operations with advanced Tor and hidden service navigation",
+    "filename": "navy-seal-specialist"
+  },
+  {
+    "name": "network-health-monitor",
+    "domain": "health-monitoring",
+    "level": "L4",
+    "description": "Real-time monitoring of mycelial network health including topology analysis, latency tracking, throughput measurement, and early warning detection",
+    "filename": "network-health-monitor"
+  },
+  {
+    "name": "network-security-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Network security architecture and firewall management",
+    "filename": "network-security-specialist"
+  },
+  {
+    "name": "neuroevolution-coordinator",
+    "domain": "critical-organism",
+    "level": "L1",
+    "description": "Evolutionary epistemological organism responsible for implementing the Prismatic Neuroevolution Doctrine across the agent ecosystem. Operates as the primary evolution coordinato...",
+    "filename": "neuroevolution-coordinator"
+  },
+  {
+    "name": "nuclear-cache-invalidation-specialist",
+    "domain": "tactical",
+    "level": "L3",
+    "description": "Specialized agent for resolving phantom violations through strategic cache invalidation",
+    "filename": "nuclear-cache-invalidation-specialist"
+  },
+  {
+    "name": "ollama-coordinator",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Manages local Ollama models for autonomous AI development",
+    "filename": "ollama-coordinator"
+  },
+  {
+    "name": "openrouter-llm-specialist",
+    "domain": "llm-operations",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "openrouter-llm-specialist"
+  },
+  {
+    "name": "opportunity-analyzer",
+    "domain": "primary-producer",
+    "level": "L2",
+    "description": "Sales opportunity analysis and qualification specialist",
+    "filename": "opportunity-analyzer"
+  },
+  {
+    "name": "OSINT Benchmark Specialist Agent",
+    "domain": "performance",
+    "level": "L1",
+    "description": "Performance / OSINT Authority Level: Domain Expertise 3NL Integration: Full (L1 Logic + L2",
+    "filename": "osint-benchmark-specialist"
+  },
+  {
+    "name": "osint-digital-profile-specialist",
+    "domain": "osint",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "osint-digital-profile-specialist"
+  },
+  {
+    "name": "osint-engines-specialist",
+    "domain": "intelligence",
+    "level": "L3",
+    "description": "Orchestrate parallel OSINT searches across multiple search engines with query optimization",
+    "filename": "osint-engines-specialist"
+  },
+  {
+    "name": "osint-intelligence-operative",
+    "domain": "tactical",
+    "level": "L3",
+    "description": "The OSINT Intelligence Operative conducts precision intelligence operations:",
+    "filename": "osint-intelligence-operative"
+  },
+  {
+    "name": "osint-legal-economic-risk-specialist",
+    "domain": "osint",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "osint-legal-economic-risk-specialist"
+  },
+  {
+    "name": "osint-pattern-propagator",
+    "domain": "osint-architecture",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "osint-pattern-propagator"
+  },
+  {
+    "name": "osint-quality-feedback-coordinator",
+    "domain": "general",
+    "level": "L3",
+    "description": "This agent propagates quality patterns to:",
+    "filename": "osint-quality-feedback-coordinator"
+  },
+  {
+    "name": "osint-technical-security-specialist",
+    "domain": "osint",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "osint-technical-security-specialist"
+  },
+  {
+    "name": "pattern-matching-auditor",
+    "domain": "quality",
+    "level": "L3",
+    "description": "Verify pattern match arity (2-tuple vs 3-tuple), detect unreachable clauses, validate function return types, and ensure pattern matching correctness (GENETICALLY ENHANCED)",
+    "filename": "pattern-matching-auditor"
+  },
+  {
+    "name": "pattern-propagator-specialist",
+    "domain": "pattern-propagation",
+    "level": "L3",
+    "description": "High-throughput pattern propagation specialist for spreading successful patterns across domains with adaptive routing and conflict resolution",
+    "filename": "pattern-propagator-specialist"
+  },
+  {
+    "name": "pattern-quality-analyst",
+    "domain": "quality-analysis",
+    "level": "L3",
+    "description": "Comprehensive quality analysis for mycelial patterns including confidence scoring, consistency validation, impact assessment, and quality gate enforcement",
+    "filename": "pattern-quality-analyst"
+  },
+  {
+    "name": "penetration-testing-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Ethical hacking and security assessment expert",
+    "filename": "penetration-testing-specialist"
+  },
+  {
+    "name": "Performance Benchmarking Agent",
+    "domain": "performance",
+    "level": "L3",
+    "description": "Iterations per second",
+    "filename": "performance-benchmarking-agent"
+  },
+  {
+    "name": "Performance Benchmarking Specialist Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "Source: 95-99.8% performance improvements with 100% budget compliance Success Evidence**: 11",
+    "filename": "performance-benchmarking-specialist"
+  },
+  {
+    "name": "performance-monitoring-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Application performance monitoring with latency and throughput analysis",
+    "filename": "performance-monitoring-specialist"
+  },
+  {
+    "name": "performance-optimization-conductor-enhanced",
+    "domain": "performance",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for performance operations",
+    "filename": "performance-optimization-conductor-enhanced"
+  },
+  {
+    "name": "performance-optimization-conductor",
+    "domain": "optimization",
+    "level": "L3",
+    "description": "System-wide performance optimization and bottleneck elimination",
+    "filename": "performance-optimization-conductor"
+  },
+  {
+    "name": "performance-profiling-agent",
+    "domain": "domain",
+    "level": "L3",
+    "description": "The Performance Profiling Agent identifies performance issues:",
+    "filename": "performance-profiling-agent"
+  },
+  {
+    "name": "performance-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "Performance optimization through profiling, bottleneck identification, and systematic tuning",
+    "filename": "performance-specialist"
+  },
+  {
+    "name": "person-investigation-mycelial-agent",
+    "domain": "osint/czech",
+    "level": "L3",
+    "description": "Orchestrates comprehensive person investigations using Czech public registries (ARES, Justice.cz, ISIR, ČÚZK) with full mycelial network integration for pattern learning, cross-...",
+    "filename": "person-investigation-mycelial-agent"
+  },
+  {
+    "name": "phoenix-liveview-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "Phoenix LiveView expertise including real-time UI, live components, PubSub, and interactive experiences",
+    "filename": "phoenix-liveview-specialist"
+  },
+  {
+    "name": "Planner Agent",
+    "domain": "strategic",
+    "level": "L3",
+    "description": "The Planner Agent creates detailed project roadmaps, dependency graphs, and execution plans with complete integration across EVERY AIAD feature. This agent leverages meta-evolut...",
+    "filename": "planner"
+  },
+  {
+    "name": "platform-integration-specialist",
+    "domain": "integration",
+    "level": "L3",
+    "description": "Third-party platform integration and SaaS connectivity",
+    "filename": "platform-integration-specialist"
+  },
+  {
+    "name": "political-network-intelligence-specialist",
+    "domain": "political",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "political-network-intelligence-specialist"
+  },
+  {
+    "name": "postgresql-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "PostgreSQL administration, optimization, and advanced features expert",
+    "filename": "postgresql-specialist"
+  },
+  {
+    "name": "presales-coordinator",
+    "domain": "medium-predator",
+    "level": "L2",
+    "description": "Case study creation and presales project coordination specialist",
+    "filename": "presales-coordinator"
+  },
+  {
+    "name": "presales-intelligence-commander",
+    "domain": "large-predator",
+    "level": "L1",
+    "description": "Supreme commander for presales intelligence and opportunity management",
+    "filename": "presales-intelligence-commander"
+  },
+  {
+    "name": "pricing-strategist",
+    "domain": "primary-producer",
+    "level": "L2",
+    "description": "Pricing strategy development and competitive pricing analysis specialist",
+    "filename": "pricing-strategist"
+  },
+  {
+    "name": "primary-identity-verification-commander",
+    "domain": "primary",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "primary-identity-verification-commander"
+  },
+  {
+    "name": "prismatic-api-introspector",
+    "domain": "api-infrastructure",
+    "level": "L3",
+    "description": "Runtime discovery of all Prismatic* facade modules and their public functions",
+    "filename": "prismatic-api-introspector"
+  },
+  {
+    "name": "prismatic-supreme-commander",
+    "domain": "innovation-apex-predator",
+    "level": "L1",
+    "description": "Supreme Command - Platform-wide strategic and tactical authority. Ultimate apex predator specializing in impossible complexity and breakthrough innovation through evolutionary a...",
+    "filename": "prismatic-supreme-commander"
+  },
+  {
+    "name": "production-deployment-specialist",
+    "domain": "deployment",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "production-deployment-specialist"
+  },
+  {
+    "name": "prolog-constraint-agent",
+    "domain": "primary",
+    "level": "L3",
+    "description": "Constraint satisfaction problem (CSP) solver using Prolog-based constraint propagation and search.",
+    "filename": "prolog-constraint-agent"
+  },
+  {
+    "name": "prolog-planning-agent",
+    "domain": "primary",
+    "level": "L3",
+    "description": "AI planning specialist using Prolog-based search and reasoning for STRIPS planning, HTN",
+    "filename": "prolog-planning-agent"
+  },
+  {
+    "name": "prolog-reasoner",
+    "domain": "domain",
+    "level": "L3",
+    "description": "Logical inference specialist implementing Prolog-style deductive reasoning, constraint logic programming, and knowledge base querying for the NABLA Reasoning System. Provides ri...",
+    "filename": "prolog-reasoner"
+  },
+  {
+    "name": "prolog-reasoning-agent",
+    "domain": "primary",
+    "level": "L3",
+    "description": "Pure Elixir Prolog inference engine for logical reasoning, rule-based computation, and knowledge",
+    "filename": "prolog-reasoning-agent"
+  },
+  {
+    "name": "proposal-writer",
+    "domain": "primary-producer",
+    "level": "L2",
+    "description": "Sales proposal generation and business document creation specialist",
+    "filename": "proposal-writer"
+  },
+  {
+    "name": "purple-closure-analyst",
+    "domain": "epistemic-synthesis",
+    "level": "L4",
+    "description": "Evaluates whether Red findings have been adequately addressed by Blue defenses. Manages the closure state machine with four states: OPEN, PARTIAL, CLOSED, FALSE_CLOSURE. Perform...",
+    "filename": "purple-closure-analyst"
+  },
+  {
+    "name": "purple-coordinator",
+    "domain": "epistemic-synthesis",
+    "level": "L2",
+    "description": "Central hub for epistemic synthesis between Red (adversarial) and Blue (defensive) operations. Purple is not a team. It is the property of the system when it stops lying to itse...",
+    "filename": "purple-coordinator"
+  },
+  {
+    "name": "purple-mapper",
+    "domain": "epistemic-synthesis",
+    "level": "L4",
+    "description": "Maps each Red team finding to corresponding Blue defense capability. Maintains the bidirectional index between adversarial findings and defensive controls. Detects unmapped find...",
+    "filename": "purple-mapper"
+  },
+  {
+    "name": "purple-regression-guard",
+    "domain": "epistemic-synthesis",
+    "level": "L4",
+    "description": "Monitors closed findings for regression and ensures fixes remain effective over time. Maintains regression traps -- automated checks that continuously validate the effectiveness...",
+    "filename": "purple-regression-guard"
+  },
+  {
+    "name": "pvm-adaptive-scheduler",
+    "domain": "general",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "pvm-adaptive-scheduler"
+  },
+  {
+    "name": "pvm-compiler",
+    "domain": "compilation",
+    "level": "L4",
+    "description": "High-performance compiler for transforming IR workflows into optimized PVM bytecode with multi-level optimization",
+    "filename": "pvm-compiler"
+  },
+  {
+    "name": "pvm-executor",
+    "domain": "execution",
+    "level": "L4",
+    "description": "High-performance Platform Virtual Machine executor with fault tolerance and distributed execution capabilities",
+    "filename": "pvm-executor"
+  },
+  {
+    "name": "pvm-tracer",
+    "domain": "execution-intelligence",
+    "level": "L3",
+    "description": "Comprehensive real-time PVM execution monitoring",
+    "filename": "pvm-tracer"
+  },
+  {
+    "name": "qdp-enforcement-supreme",
+    "domain": "quality-enforcement",
+    "level": "L1",
+    "description": "QDP must decrease or stay same, never increase",
+    "filename": "qdp-enforcement-supreme"
+  },
+  {
+    "name": "Quality Bypass Enforcer Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "The Quality Bypass Enforcer Agent is a Generation 15 apex security enforcement agent responsible",
+    "filename": "quality-bypass-enforcer"
+  },
+  {
+    "name": "quality-enforcement-commander",
+    "domain": "general",
+    "level": "L3",
+    "description": "The Quality Enforcement Commander ensures ABSOLUTE compliance with AIAD quality standards through",
+    "filename": "quality-enforcement-commander"
+  },
+  {
+    "name": "Quality Gate Enforcer Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "Zero-warning compilation enforcement achieving 100/100 quality score Success Evidence: 16",
+    "filename": "quality-gate-enforcer"
+  },
+  {
+    "name": "quality-gates-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "Static analysis enforcement with quality gates, Credo, Dialyzer, pattern verification, UnsafeMapAccess elimination, and custom rule validation",
+    "filename": "quality-gates-specialist"
+  },
+  {
+    "name": "quality-intelligence-commander",
+    "domain": "quality-intelligence",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "quality-intelligence-commander"
+  },
+  {
+    "name": "quickstart-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "Rapid feature scaffolding with intelligent code generation, boilerplate automation, and best practice patterns",
+    "filename": "quickstart-specialist"
+  },
+  {
+    "name": "ramon-mode-guardian",
+    "domain": "security-operations",
+    "level": "L4",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "ramon-mode-guardian"
+  },
+  {
+    "name": "rapid-feature-specialist",
+    "domain": "primary-producer",
+    "level": "L2",
+    "description": "Ultra-fast feature implementation specialist for 5-15 minute delivery",
+    "filename": "rapid-feature-specialist"
+  },
+  {
+    "name": "real-estate-valuation-specialist",
+    "domain": "real",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "real-estate-valuation-specialist"
+  },
+  {
+    "name": "realtime-architecture-specialist",
+    "domain": "architecture",
+    "level": "L3",
+    "description": "WebSocket and real-time system architecture for low-latency communication",
+    "filename": "realtime-architecture-specialist"
+  },
+  {
+    "name": "reasoning-coordinator",
+    "domain": "general",
+    "level": "L3",
+    "description": "Central orchestrator for the NABLA Reasoning System, coordinating probabilistic, logical, and formal verification reasoning across specialized agents. Implements multi-paradigm ...",
+    "filename": "reasoning-coordinator"
+  },
+  {
+    "name": "recursive-optimizer",
+    "domain": "meta-evolution",
+    "level": "L3",
+    "description": "Deep pattern recognition across AIAD execution traces",
+    "filename": "recursive-optimizer"
+  },
+  {
+    "name": "red-commander",
+    "domain": "adversarial-epistemics",
+    "level": "L2",
+    "description": "Red Team Commander is the strategic authority for adversarial epistemics simulation within the Prismatic Platform. It orchestrates epistemic attack scenarios using the five atta...",
+    "filename": "red-commander"
+  },
+  {
+    "name": "red-drift-inducer",
+    "domain": "adversarial-epistemics",
+    "level": "L4",
+    "description": "Red Drift Inducer simulates slow, systematic epistemic drift attacks -- belief shifts that occur below detection thresholds over extended time periods. This is the most insidiou...",
+    "filename": "red-drift-inducer"
+  },
+  {
+    "name": "red-epistemic-attacker",
+    "domain": "adversarial-epistemics",
+    "level": "L4",
+    "description": "Red Epistemic Attacker simulates truth distortion and source poisoning attacks against epistemic systems using synthetic data in sandboxed environments. It measures the impact o...",
+    "filename": "red-epistemic-attacker"
+  },
+  {
+    "name": "red-scenario-generator",
+    "domain": "adversarial-epistemics",
+    "level": "L4",
+    "description": "Red Scenario Generator creates adversarial epistemic scenarios by combining techniques from the 329-entry Red Team taxonomy. It instantiates hypothesis templates with specific p...",
+    "filename": "red-scenario-generator"
+  },
+  {
+    "name": "reddit-intelligence-specialist",
+    "domain": "reddit",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "reddit-intelligence-specialist"
+  },
+  {
+    "name": "refactor-specialist-coordinator",
+    "domain": "development",
+    "level": "L2",
+    "description": "Specialized coordinator for code refactoring and architectural improvement",
+    "filename": "refactor-specialist-coordinator"
+  },
+  {
+    "name": "refactor-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "Safe code refactoring with comprehensive regression prevention, quality improvement, maintainability enhancement, and genetic patterns for type safety and verification",
+    "filename": "refactor-specialist"
+  },
+  {
+    "name": "Refactoring Coordinator Agent",
+    "domain": "medium",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "refactoring-coordinator"
+  },
+  {
+    "name": "regional-court-specialist",
+    "domain": "czech",
+    "level": "L3",
+    "description": "Analysis of regional court proceedings and case outcomes",
+    "filename": "regional-court-specialist"
+  },
+  {
+    "name": "Registry Auto",
+    "domain": "general",
+    "level": "L3",
+    "description": "Watch .aiad/commands/ for command file changes - Generate sync events on detection",
+    "filename": "registry-auto-sync-coordinator"
+  },
+  {
+    "name": "regulatory-compliance-risk-specialist",
+    "domain": "regulatory",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "regulatory-compliance-risk-specialist"
+  },
+  {
+    "name": "regulatory-intelligence-commander",
+    "domain": "regulatory",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "regulatory-intelligence-commander"
+  },
+  {
+    "name": "repair-society-coordinator",
+    "domain": "mycelium",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "repair-society-coordinator"
+  },
+  {
+    "name": "replication-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Database replication setup and management expert",
+    "filename": "replication-specialist"
+  },
+  {
+    "name": "report-synthesis-specialist",
+    "domain": "investigations",
+    "level": "L3",
+    "description": "Synthesizes actionable intelligence reports from IR (Intermediate Result) artifacts",
+    "filename": "report-synthesis-specialist"
+  },
+  {
+    "name": "reputation-risk-specialist",
+    "domain": "reputation",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "reputation-risk-specialist"
+  },
+  {
+    "name": "risk-assessment-commander",
+    "domain": "risk",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "risk-assessment-commander"
+  },
+  {
+    "name": "risk-intelligence-commander",
+    "domain": "risk",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "risk-intelligence-commander"
+  },
+  {
+    "name": "route-testing-supreme",
+    "domain": "cosmic-clearance",
+    "level": "L1",
+    "description": "Absolute route testing enforcement with 100% coverage guarantee",
+    "filename": "route-testing-supreme"
+  },
+  {
+    "name": "route_testing_specialist",
+    "domain": "quality-assurance",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "route_testing_specialist"
+  },
+  {
+    "name": "scalability-architect",
+    "domain": "architecture",
+    "level": "L3",
+    "description": "Horizontal and vertical scaling strategies, load balancing, and capacity planning",
+    "filename": "scalability-architect"
+  },
+  {
+    "name": "scripts-infrastructure-supreme",
+    "domain": "mycelial-propagation",
+    "level": "L1",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "scripts-infrastructure-supreme"
+  },
+  {
+    "name": "seadf-ecosystem-commander",
+    "domain": "strategic",
+    "level": "L3",
+    "description": "Strategic command and coordination for Self-Evolving Autonomous Development Framework ecosystem integration",
+    "filename": "seadf-ecosystem-commander"
+  },
+  {
+    "name": "secrets-management-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Secrets detection, vault management, and credential rotation",
+    "filename": "secrets-management-specialist"
+  },
+  {
+    "name": "security-audit-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "Comprehensive security auditing with vulnerability analysis, OWASP compliance, and remediation guidance",
+    "filename": "security-audit-specialist"
+  },
+  {
+    "name": "security-operations-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Security monitoring, threat detection, and incident response coordination",
+    "filename": "security-operations-specialist"
+  },
+  {
+    "name": "Sequential Coordinator Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "Source: ECHO → QA → Performance sequential deployment achieving perfect coordination Success",
+    "filename": "sequential-coordinator"
+  },
+  {
+    "name": "service-mesh-specialist",
+    "domain": "integration",
+    "level": "L3",
+    "description": "Service-to-service communication, observability, and traffic management",
+    "filename": "service-mesh-specialist"
+  },
+  {
+    "name": "session-compressor-specialist",
+    "domain": "session-context-compression-intelligence",
+    "level": "L3",
+    "description": "Analyze session structure, content types, and compression candidates",
+    "filename": "session-compressor-specialist"
+  },
+  {
+    "name": "session-context-coordinator",
+    "domain": "session-intelligence",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "session-context-coordinator"
+  },
+  {
+    "name": "session-context-synthesizer",
+    "domain": "aiad-enhanced",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "session-context-synthesizer"
+  },
+  {
+    "name": "session-debrief-specialist",
+    "domain": "p0-critical",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for p0-critical operations",
+    "filename": "session-debrief-specialist"
+  },
+  {
+    "name": "AIAD Agent: session",
+    "domain": "critical",
+    "level": "L3",
+    "description": "GitLab issues for EVERY Claude Code session with automatic progress tracking, step-by-step",
+    "filename": "session-gitlab-enforcer"
+  },
+  {
+    "name": "session-pattern-analyzer",
+    "domain": "session-intelligence",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "session-pattern-analyzer"
+  },
+  {
+    "name": "session-to-issue-automator",
+    "domain": "aiad-automation-specialist",
+    "level": "L4",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "session-to-issue-automator"
+  },
+  {
+    "name": "shell-setup-specialist",
+    "domain": "developer-productivity",
+    "level": "L3",
+    "description": "Expert agent for shell environment configuration, dotfile management, and developer productivity optimization",
+    "filename": "shell-setup-specialist"
+  },
+  {
+    "name": "siege-master-specialist",
+    "domain": "intelligence",
+    "level": "L3",
+    "description": "Long-term persistent intelligence operations with systematic exploitation and sustained analysis",
+    "filename": "siege-master-specialist"
+  },
+  {
+    "name": "six-sigma-psycho-coordinator",
+    "domain": "general",
+    "level": "L3",
+    "description": "The Six Sigma PSYCHO MODE Coordinator is the apex quality enforcement agent with transcendent",
+    "filename": "six-sigma-psycho-coordinator"
+  },
+  {
+    "name": "social-media-network-analyst",
+    "domain": "social",
+    "level": "L3",
+    "description": "Cross-Platform Social Media Intelligence operations and analysis",
+    "filename": "social-media-network-analyst"
+  },
+  {
+    "name": "societies-quality-feedback-coordinator",
+    "domain": "general",
+    "level": "L3",
+    "description": "This is the quality hub that connects all domains:",
+    "filename": "societies-quality-feedback-coordinator"
+  },
+  {
+    "name": "society-coordinator",
+    "domain": "general",
+    "level": "L3",
+    "description": "This agent specializes in coordinating epistemic societies, managing repair queues, and implementing",
+    "filename": "society-coordinator"
+  },
+  {
+    "name": "source-archive-specialist",
+    "domain": "domain",
+    "level": "L3",
+    "description": "The Source Archive Specialist creates optimized code packages:",
+    "filename": "source-archive-specialist"
+  },
+  {
+    "name": "stack-mode-coordinator",
+    "domain": "epistemic",
+    "level": "L3",
+    "description": "The Stack Mode Coordinator is a Generation 18 agent with full autonomy responsible for managing",
+    "filename": "stack-mode-coordinator"
+  },
+  {
+    "name": "strangler-pattern-specialist",
+    "domain": "integration",
+    "level": "L3",
+    "description": "Gradual legacy system replacement using strangler fig pattern",
+    "filename": "strangler-pattern-specialist"
+  },
+  {
+    "name": "strategic-command",
+    "domain": "large",
+    "level": "L1",
+    "description": "Strategic Command - Multi-domain coordination and mission planning. Large predator organism",
+    "filename": "strategic-command"
+  },
+  {
+    "name": "supplier-risk-specialist",
+    "domain": "general",
+    "level": "L3",
+    "description": "Specialized agent for supplier risk assessment in employee screening contexts. Analyzes company affiliations, verifies company health, and detects personnel outsourcing patterns...",
+    "filename": "supplier-risk-specialist"
+  },
+  {
+    "name": "supplier-vetting-specialist",
+    "domain": "compliance",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "supplier-vetting-specialist"
+  },
+  {
+    "name": "supreme-commander",
+    "domain": "ultimate-apex-predator",
+    "level": "L1",
+    "description": "Supreme Command - Platform-wide strategic and tactical authority. The ultimate apex predator in the Prismatic ecosystem with absolute authority over all subordinate organisms. E...",
+    "filename": "supreme-commander"
+  },
+  {
+    "name": "supreme-coordinator",
+    "domain": "apex-predator",
+    "level": "L1",
+    "description": "Strategic Command - Multi-domain coordination and mission planning. Operates as apex predator in the agent ecosystem, coordinating evolutionary pressure and survival fitness acr...",
+    "filename": "supreme-coordinator"
+  },
+  {
+    "name": "supreme-court-specialist",
+    "domain": "czech",
+    "level": "L3",
+    "description": "Analysis of supreme court proceedings and appellate decisions",
+    "filename": "supreme-court-specialist"
+  },
+  {
+    "name": "Swarm Evolution Coordinator Agent",
+    "domain": "general",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "swarm-evolution-coordinator"
+  },
+  {
+    "name": "system-architecture-specialist",
+    "domain": "architecture",
+    "level": "L3",
+    "description": "Overall system design, architectural patterns, and technology stack decisions with genetic enhancements for type safety, verification protocols, and multi-team coordination",
+    "filename": "system-architecture-specialist"
+  },
+  {
+    "name": "system-metrics-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "System resource monitoring and capacity planning expert",
+    "filename": "system-metrics-specialist"
+  },
+  {
+    "name": "systematic-verifier",
+    "domain": "quality",
+    "level": "L3",
+    "description": "Platform-wide impact analysis, three-stage verification protocol, regression detection, and comprehensive audit reporting (GENETICALLY ENHANCED)",
+    "filename": "systematic-verifier"
+  },
+  {
+    "name": "tactical-command",
+    "domain": "large",
+    "level": "L1",
+    "description": "Tactical Command - Multi-squad coordination, parallel execution, and mission deployment with 4-squad",
+    "filename": "tactical-command"
+  },
+  {
+    "name": "tech-debt-analyst",
+    "domain": "primary-producer",
+    "level": "L2",
+    "description": "Specialized analyst for technical debt assessment and remediation planning",
+    "filename": "tech-debt-analyst"
+  },
+  {
+    "name": "technical-assessor",
+    "domain": "primary-producer",
+    "level": "L2",
+    "description": "Technical requirement assessment and solution architecture specialist",
+    "filename": "technical-assessor"
+  },
+  {
+    "name": "technical-debt-reduction-specialist",
+    "domain": "quality",
+    "level": "L3",
+    "description": "Systematic technical debt elimination and prevention",
+    "filename": "technical-debt-reduction-specialist"
+  },
+  {
+    "name": "telegram-intelligence-specialist",
+    "domain": "telegram",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "telegram-intelligence-specialist"
+  },
+  {
+    "name": "Test Generator Agent",
+    "domain": "quality-assurance",
+    "level": "L3",
+    "description": "Automate the generation of comprehensive, production-ready tests for GenServer modules as part of the M47 Mass Testing Initiative targeting 968 GenServers.",
+    "filename": "test-generator"
+  },
+  {
+    "name": "test-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "Comprehensive testing with intelligent test generation, coverage analysis, type-safe tests, pattern verification, and quality validation",
+    "filename": "test-specialist"
+  },
+  {
+    "name": "tiktok-intelligence-specialist",
+    "domain": "tiktok",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "tiktok-intelligence-specialist"
+  },
+  {
+    "name": "trinity-bridge-commander",
+    "domain": "verification",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "trinity-bridge-commander"
+  },
+  {
+    "name": "trinity-bridge-coordinator",
+    "domain": "general",
+    "level": "L3",
+    "description": "This agent coordinates Trinity Bridge formal verification across all AIAD components, ensuring",
+    "filename": "trinity-bridge-coordinator"
+  },
+  {
+    "name": "trinity-integration-coordinator",
+    "domain": "cosmic-supreme-authority",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "trinity-integration-coordinator"
+  },
+  {
+    "name": "twitter-x-intelligence-specialist",
+    "domain": "twitter/x",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "twitter-x-intelligence-specialist"
+  },
+  {
+    "name": "type-annotation-analyst",
+    "domain": "quality-assurance",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "type-annotation-analyst"
+  },
+  {
+    "name": "type-inference-debugger",
+    "domain": "quality",
+    "level": "L3",
+    "description": "Diagnose and resolve Dialyzer type inference issues, detect conflicting typespecs, identify vague type declarations, and optimize type system usage (GENETICALLY ENHANCED)",
+    "filename": "type-inference-debugger"
+  },
+  {
+    "name": "ui-flowbite-specialist",
+    "domain": "development",
+    "level": "L3",
+    "description": "UI/UX enhancement using Flowbite components and TailwindCSS with strict design system adherence",
+    "filename": "ui-flowbite-specialist"
+  },
+  {
+    "name": "unified-orchestrator",
+    "domain": "medium-predator",
+    "level": "L1",
+    "description": "Supreme coordination agent for intelligent task routing and multi-agent orchestration",
+    "filename": "unified-orchestrator"
+  },
+  {
+    "name": "universal-pattern-synthesizer",
+    "domain": "universal-intelligence",
+    "level": "L3",
+    "description": "Autonomous AIAD agent for universal-intelligence operations",
+    "filename": "universal-pattern-synthesizer"
+  },
+  {
+    "name": "UnsafeMapAccess Specialist Agent",
+    "domain": "specialist",
+    "level": "L3",
+    "description": "Agent: unsafe-map-access-specialist",
+    "filename": "unsafe-map-access-specialist"
+  },
+  {
+    "name": "verification-integrity-commander",
+    "domain": "quality-assurance",
+    "level": "L3",
+    "description": "5 Core Lean4 theorems guaranteeing safe evolution",
+    "filename": "verification-integrity-commander"
+  },
+  {
+    "name": "vulnerability-scanning-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Automated vulnerability detection and prioritization",
+    "filename": "vulnerability-scanning-specialist"
+  },
+  {
+    "name": "web-application-security-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "OWASP Top 10 and web security vulnerability expert",
+    "filename": "web-application-security-specialist"
+  },
+  {
+    "name": "white-contract-validator",
+    "domain": "verification",
+    "level": "L4",
+    "description": "Interface contract compliance confirmed",
+    "filename": "white-contract-validator"
+  },
+  {
+    "name": "white-invariant-prover",
+    "domain": "verification",
+    "level": "L4",
+    "description": "System invariant verified with proof artifact",
+    "filename": "white-invariant-prover"
+  },
+  {
+    "name": "white-verifier-commander",
+    "domain": "verification",
+    "level": "L3",
+    "description": "Completed proof artifact after Trinity Gate validation",
+    "filename": "white-verifier-commander"
+  },
+  {
+    "name": "wireless-security-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Wireless network security and encryption validation",
+    "filename": "wireless-security-specialist"
+  },
+  {
+    "name": "workflow-orchestration-specialist",
+    "domain": "integration",
+    "level": "L3",
+    "description": "Complex workflow coordination across systems and services",
+    "filename": "workflow-orchestration-specialist"
+  },
+  {
+    "name": "youtube-intelligence-specialist",
+    "domain": "youtube",
+    "level": "L3",
+    "description": "Specialized intelligence gathering and analysis",
+    "filename": "youtube-intelligence-specialist"
+  },
+  {
+    "name": "zero-downtime-deployment-specialist",
+    "domain": "infrastructure",
+    "level": "L3",
+    "description": "Blue-green and canary deployment strategies for continuous availability",
+    "filename": "zero-downtime-deployment-specialist"
+  }
+]
